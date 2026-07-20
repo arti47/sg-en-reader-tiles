@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <rect width="512" height="512" rx="96" fill="#1f6f6b"/>
+  <rect x="96" y="150" width="150" height="150" rx="24" fill="#faf7f0"/>
+  <rect x="266" y="150" width="150" height="150" rx="24" fill="#f2b134"/>
+  <text x="171" y="258" font-family="Verdana,sans-serif" font-size="96" font-weight="700" text-anchor="middle" fill="#1f6f6b">a</text>
+  <text x="341" y="258" font-family="Verdana,sans-serif" font-size="96" font-weight="700" text-anchor="middle" fill="#1f6f6b">t</text>
+  <rect x="126" y="336" width="260" height="26" rx="13" fill="#faf7f0"/>
+</svg>
