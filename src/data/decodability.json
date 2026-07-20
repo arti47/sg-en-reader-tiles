@@ -71,5 +71,10 @@
   "SP-two-syllable": {
     "graphemes": ["igh","oi","oy","ou","aw","au","ar","or","er","ir","ur","ai","ay","ee","ea","oa","ow","oo","ew","ue","bb","cc","dd","ff","gg","ll","mm","nn","pp","rr","ss","tt","zz","sh","ch","th","ck","b","c","d","f","g","h","j","k","l","m","n","p","qu","r","s","t","v","w","x","y","z","a","e","i","o","u"],
     "highFrequency": []
+  },
+  "HF-words": {
+    "_note": "Sight/tricky words are not fully decodable — passed via the highFrequency list, not grapheme segmentation (graphemes empty).",
+    "graphemes": [],
+    "highFrequency": ["again","against","and","any","are","aye","bean","became","because","become","been","bin","bird","boy","build","built","bull","bury","bus","bush","busy","buy","bye","came","come","cool","could","cure","do","does","dome","done","dose","dove","earn","eye","eyes","for","fort","four","fried","friend","friends","full","gain","gave","give","go","goes","gone","great","greet","gush","have","he","hear","here","hive","how","lean","learn","life","live","love","man","many","oar","of","off","on","once","one","ones","our","pat","pebble","people","pit","pull","pure","purple","push","put","sad","said","same","saw","says","school","she","should","some","spool","sure","that","the","their","them","then","there","they","to","too","tow","treat","two","want","was","way","went","were","what","where","who","why","word","work","world","would","you","your"]
   }
 }

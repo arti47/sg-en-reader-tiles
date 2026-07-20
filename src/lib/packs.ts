@@ -19,6 +19,7 @@ import phonicsDi from '../data/packs/phonics-L09-diphthongs.json'
 import spellingDi from '../data/packs/spelling-L09-diphthongs.json'
 import phonics2s from '../data/packs/phonics-L10-two-syllable.json'
 import spelling2s from '../data/packs/spelling-L10-two-syllable.json'
+import phonicsHf from '../data/packs/phonics-L12-hf.json'
 
 const PACKS: ContentPack[] = [
   phonicsCvc as ContentPack,
@@ -38,7 +39,8 @@ const PACKS: ContentPack[] = [
   phonicsDi as ContentPack,
   spellingDi as ContentPack,
   phonics2s as ContentPack,
-  spelling2s as ContentPack
+  spelling2s as ContentPack,
+  phonicsHf as ContentPack
 ]
 
 export const SKILLS: SkillDef[] =

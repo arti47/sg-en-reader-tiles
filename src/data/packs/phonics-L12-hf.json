@@ -1,0 +1,1456 @@
+{
+  "packId": "phonics-L12-hf",
+  "strand": "phonics",
+  "skillIds": [
+    "HF-words"
+  ],
+  "version": 1,
+  "items": [
+    {
+      "id": "ph-hf-001",
+      "skillId": "HF-words",
+      "itemType": "decode_choice",
+      "difficulty": 1,
+      "stem": "Tap the word you hear.",
+      "audioText": "the",
+      "choices": [
+        {
+          "id": "a",
+          "label": "the"
+        },
+        {
+          "id": "b",
+          "label": "she"
+        },
+        {
+          "id": "c",
+          "label": "he"
+        }
+      ],
+      "correctChoiceId": "a",
+      "missedConceptOnFail": "sight-word",
+      "rationale": "\"the\" is a tricky word we learn by heart.",
+      "decodableWithin": "HF-words"
+    },
+    {
+      "id": "ph-hf-002",
+      "skillId": "HF-words",
+      "itemType": "decode_choice",
+      "difficulty": 1,
+      "stem": "Tap the word you hear.",
+      "audioText": "was",
+      "choices": [
+        {
+          "id": "a",
+          "label": "saw"
+        },
+        {
+          "id": "b",
+          "label": "was"
+        },
+        {
+          "id": "c",
+          "label": "way"
+        }
+      ],
+      "correctChoiceId": "b",
+      "missedConceptOnFail": "sight-word",
+      "rationale": "\"was\" is a tricky word we learn by heart.",
+      "decodableWithin": "HF-words"
+    },
+    {
+      "id": "ph-hf-003",
+      "skillId": "HF-words",
+      "itemType": "decode_choice",
+      "difficulty": 1,
+      "stem": "Tap the word you hear.",
+      "audioText": "of",
+      "choices": [
+        {
+          "id": "a",
+          "label": "off"
+        },
+        {
+          "id": "b",
+          "label": "for"
+        },
+        {
+          "id": "c",
+          "label": "of"
+        }
+      ],
+      "correctChoiceId": "c",
+      "missedConceptOnFail": "sight-word",
+      "rationale": "\"of\" is a tricky word we learn by heart.",
+      "decodableWithin": "HF-words"
+    },
+    {
+      "id": "ph-hf-004",
+      "skillId": "HF-words",
+      "itemType": "decode_choice",
+      "difficulty": 1,
+      "stem": "Tap the word you hear.",
+      "audioText": "to",
+      "choices": [
+        {
+          "id": "a",
+          "label": "to"
+        },
+        {
+          "id": "b",
+          "label": "too"
+        },
+        {
+          "id": "c",
+          "label": "do"
+        }
+      ],
+      "correctChoiceId": "a",
+      "missedConceptOnFail": "sight-word",
+      "rationale": "\"to\" is a tricky word we learn by heart.",
+      "decodableWithin": "HF-words"
+    },
+    {
+      "id": "ph-hf-005",
+      "skillId": "HF-words",
+      "itemType": "decode_choice",
+      "difficulty": 1,
+      "stem": "Tap the word you hear.",
+      "audioText": "do",
+      "choices": [
+        {
+          "id": "a",
+          "label": "to"
+        },
+        {
+          "id": "b",
+          "label": "do"
+        },
+        {
+          "id": "c",
+          "label": "go"
+        }
+      ],
+      "correctChoiceId": "b",
+      "missedConceptOnFail": "sight-word",
+      "rationale": "\"do\" is a tricky word we learn by heart.",
+      "decodableWithin": "HF-words"
+    },
+    {
+      "id": "ph-hf-006",
+      "skillId": "HF-words",
+      "itemType": "decode_choice",
+      "difficulty": 1,
+      "stem": "Tap the word you hear.",
+      "audioText": "you",
+      "choices": [
+        {
+          "id": "a",
+          "label": "your"
+        },
+        {
+          "id": "b",
+          "label": "our"
+        },
+        {
+          "id": "c",
+          "label": "you"
+        }
+      ],
+      "correctChoiceId": "c",
+      "missedConceptOnFail": "sight-word",
+      "rationale": "\"you\" is a tricky word we learn by heart.",
+      "decodableWithin": "HF-words"
+    },
+    {
+      "id": "ph-hf-007",
+      "skillId": "HF-words",
+      "itemType": "decode_choice",
+      "difficulty": 2,
+      "stem": "Tap the word you hear.",
+      "audioText": "your",
+      "choices": [
+        {
+          "id": "a",
+          "label": "your"
+        },
+        {
+          "id": "b",
+          "label": "you"
+        },
+        {
+          "id": "c",
+          "label": "our"
+        }
+      ],
+      "correctChoiceId": "a",
+      "missedConceptOnFail": "sight-word",
+      "rationale": "\"your\" is a tricky word we learn by heart.",
+      "decodableWithin": "HF-words"
+    },
+    {
+      "id": "ph-hf-008",
+      "skillId": "HF-words",
+      "itemType": "decode_choice",
+      "difficulty": 1,
+      "stem": "Tap the word you hear.",
+      "audioText": "are",
+      "choices": [
+        {
+          "id": "a",
+          "label": "our"
+        },
+        {
+          "id": "b",
+          "label": "are"
+        },
+        {
+          "id": "c",
+          "label": "oar"
+        }
+      ],
+      "correctChoiceId": "b",
+      "missedConceptOnFail": "sight-word",
+      "rationale": "\"are\" is a tricky word we learn by heart.",
+      "decodableWithin": "HF-words"
+    },
+    {
+      "id": "ph-hf-009",
+      "skillId": "HF-words",
+      "itemType": "decode_choice",
+      "difficulty": 2,
+      "stem": "Tap the word you hear.",
+      "audioText": "they",
+      "choices": [
+        {
+          "id": "a",
+          "label": "them"
+        },
+        {
+          "id": "b",
+          "label": "then"
+        },
+        {
+          "id": "c",
+          "label": "they"
+        }
+      ],
+      "correctChoiceId": "c",
+      "missedConceptOnFail": "sight-word",
+      "rationale": "\"they\" is a tricky word we learn by heart.",
+      "decodableWithin": "HF-words"
+    },
+    {
+      "id": "ph-hf-010",
+      "skillId": "HF-words",
+      "itemType": "decode_choice",
+      "difficulty": 3,
+      "stem": "Tap the word you hear.",
+      "audioText": "their",
+      "choices": [
+        {
+          "id": "a",
+          "label": "their"
+        },
+        {
+          "id": "b",
+          "label": "there"
+        },
+        {
+          "id": "c",
+          "label": "they"
+        }
+      ],
+      "correctChoiceId": "a",
+      "missedConceptOnFail": "sight-word",
+      "rationale": "\"their\" is a tricky word we learn by heart.",
+      "decodableWithin": "HF-words"
+    },
+    {
+      "id": "ph-hf-011",
+      "skillId": "HF-words",
+      "itemType": "decode_choice",
+      "difficulty": 2,
+      "stem": "Tap the word you hear.",
+      "audioText": "there",
+      "choices": [
+        {
+          "id": "a",
+          "label": "their"
+        },
+        {
+          "id": "b",
+          "label": "there"
+        },
+        {
+          "id": "c",
+          "label": "where"
+        }
+      ],
+      "correctChoiceId": "b",
+      "missedConceptOnFail": "sight-word",
+      "rationale": "\"there\" is a tricky word we learn by heart.",
+      "decodableWithin": "HF-words"
+    },
+    {
+      "id": "ph-hf-012",
+      "skillId": "HF-words",
+      "itemType": "decode_choice",
+      "difficulty": 2,
+      "stem": "Tap the word you hear.",
+      "audioText": "where",
+      "choices": [
+        {
+          "id": "a",
+          "label": "there"
+        },
+        {
+          "id": "b",
+          "label": "were"
+        },
+        {
+          "id": "c",
+          "label": "where"
+        }
+      ],
+      "correctChoiceId": "c",
+      "missedConceptOnFail": "sight-word",
+      "rationale": "\"where\" is a tricky word we learn by heart.",
+      "decodableWithin": "HF-words"
+    },
+    {
+      "id": "ph-hf-013",
+      "skillId": "HF-words",
+      "itemType": "decode_choice",
+      "difficulty": 2,
+      "stem": "Tap the word you hear.",
+      "audioText": "were",
+      "choices": [
+        {
+          "id": "a",
+          "label": "were"
+        },
+        {
+          "id": "b",
+          "label": "where"
+        },
+        {
+          "id": "c",
+          "label": "here"
+        }
+      ],
+      "correctChoiceId": "a",
+      "missedConceptOnFail": "sight-word",
+      "rationale": "\"were\" is a tricky word we learn by heart.",
+      "decodableWithin": "HF-words"
+    },
+    {
+      "id": "ph-hf-014",
+      "skillId": "HF-words",
+      "itemType": "decode_choice",
+      "difficulty": 1,
+      "stem": "Tap the word you hear.",
+      "audioText": "here",
+      "choices": [
+        {
+          "id": "a",
+          "label": "hear"
+        },
+        {
+          "id": "b",
+          "label": "here"
+        },
+        {
+          "id": "c",
+          "label": "were"
+        }
+      ],
+      "correctChoiceId": "b",
+      "missedConceptOnFail": "sight-word",
+      "rationale": "\"here\" is a tricky word we learn by heart.",
+      "decodableWithin": "HF-words"
+    },
+    {
+      "id": "ph-hf-015",
+      "skillId": "HF-words",
+      "itemType": "decode_choice",
+      "difficulty": 1,
+      "stem": "Tap the word you hear.",
+      "audioText": "one",
+      "choices": [
+        {
+          "id": "a",
+          "label": "once"
+        },
+        {
+          "id": "b",
+          "label": "on"
+        },
+        {
+          "id": "c",
+          "label": "one"
+        }
+      ],
+      "correctChoiceId": "c",
+      "missedConceptOnFail": "sight-word",
+      "rationale": "\"one\" is a tricky word we learn by heart.",
+      "decodableWithin": "HF-words"
+    },
+    {
+      "id": "ph-hf-016",
+      "skillId": "HF-words",
+      "itemType": "decode_choice",
+      "difficulty": 2,
+      "stem": "Tap the word you hear.",
+      "audioText": "once",
+      "choices": [
+        {
+          "id": "a",
+          "label": "once"
+        },
+        {
+          "id": "b",
+          "label": "one"
+        },
+        {
+          "id": "c",
+          "label": "ones"
+        }
+      ],
+      "correctChoiceId": "a",
+      "missedConceptOnFail": "sight-word",
+      "rationale": "\"once\" is a tricky word we learn by heart.",
+      "decodableWithin": "HF-words"
+    },
+    {
+      "id": "ph-hf-017",
+      "skillId": "HF-words",
+      "itemType": "decode_choice",
+      "difficulty": 1,
+      "stem": "Tap the word you hear.",
+      "audioText": "come",
+      "choices": [
+        {
+          "id": "a",
+          "label": "some"
+        },
+        {
+          "id": "b",
+          "label": "come"
+        },
+        {
+          "id": "c",
+          "label": "came"
+        }
+      ],
+      "correctChoiceId": "b",
+      "missedConceptOnFail": "sight-word",
+      "rationale": "\"come\" is a tricky word we learn by heart.",
+      "decodableWithin": "HF-words"
+    },
+    {
+      "id": "ph-hf-018",
+      "skillId": "HF-words",
+      "itemType": "decode_choice",
+      "difficulty": 2,
+      "stem": "Tap the word you hear.",
+      "audioText": "some",
+      "choices": [
+        {
+          "id": "a",
+          "label": "come"
+        },
+        {
+          "id": "b",
+          "label": "same"
+        },
+        {
+          "id": "c",
+          "label": "some"
+        }
+      ],
+      "correctChoiceId": "c",
+      "missedConceptOnFail": "sight-word",
+      "rationale": "\"some\" is a tricky word we learn by heart.",
+      "decodableWithin": "HF-words"
+    },
+    {
+      "id": "ph-hf-019",
+      "skillId": "HF-words",
+      "itemType": "decode_choice",
+      "difficulty": 2,
+      "stem": "Tap the word you hear.",
+      "audioText": "could",
+      "choices": [
+        {
+          "id": "a",
+          "label": "could"
+        },
+        {
+          "id": "b",
+          "label": "would"
+        },
+        {
+          "id": "c",
+          "label": "should"
+        }
+      ],
+      "correctChoiceId": "a",
+      "missedConceptOnFail": "sight-word",
+      "rationale": "\"could\" is a tricky word we learn by heart.",
+      "decodableWithin": "HF-words"
+    },
+    {
+      "id": "ph-hf-020",
+      "skillId": "HF-words",
+      "itemType": "decode_choice",
+      "difficulty": 2,
+      "stem": "Tap the word you hear.",
+      "audioText": "would",
+      "choices": [
+        {
+          "id": "a",
+          "label": "could"
+        },
+        {
+          "id": "b",
+          "label": "would"
+        },
+        {
+          "id": "c",
+          "label": "should"
+        }
+      ],
+      "correctChoiceId": "b",
+      "missedConceptOnFail": "sight-word",
+      "rationale": "\"would\" is a tricky word we learn by heart.",
+      "decodableWithin": "HF-words"
+    },
+    {
+      "id": "ph-hf-021",
+      "skillId": "HF-words",
+      "itemType": "decode_choice",
+      "difficulty": 3,
+      "stem": "Tap the word you hear.",
+      "audioText": "should",
+      "choices": [
+        {
+          "id": "a",
+          "label": "could"
+        },
+        {
+          "id": "b",
+          "label": "would"
+        },
+        {
+          "id": "c",
+          "label": "should"
+        }
+      ],
+      "correctChoiceId": "c",
+      "missedConceptOnFail": "sight-word",
+      "rationale": "\"should\" is a tricky word we learn by heart.",
+      "decodableWithin": "HF-words"
+    },
+    {
+      "id": "ph-hf-022",
+      "skillId": "HF-words",
+      "itemType": "decode_choice",
+      "difficulty": 2,
+      "stem": "Tap the word you hear.",
+      "audioText": "who",
+      "choices": [
+        {
+          "id": "a",
+          "label": "who"
+        },
+        {
+          "id": "b",
+          "label": "how"
+        },
+        {
+          "id": "c",
+          "label": "why"
+        }
+      ],
+      "correctChoiceId": "a",
+      "missedConceptOnFail": "sight-word",
+      "rationale": "\"who\" is a tricky word we learn by heart.",
+      "decodableWithin": "HF-words"
+    },
+    {
+      "id": "ph-hf-023",
+      "skillId": "HF-words",
+      "itemType": "decode_choice",
+      "difficulty": 1,
+      "stem": "Tap the word you hear.",
+      "audioText": "what",
+      "choices": [
+        {
+          "id": "a",
+          "label": "that"
+        },
+        {
+          "id": "b",
+          "label": "what"
+        },
+        {
+          "id": "c",
+          "label": "want"
+        }
+      ],
+      "correctChoiceId": "b",
+      "missedConceptOnFail": "sight-word",
+      "rationale": "\"what\" is a tricky word we learn by heart.",
+      "decodableWithin": "HF-words"
+    },
+    {
+      "id": "ph-hf-024",
+      "skillId": "HF-words",
+      "itemType": "decode_choice",
+      "difficulty": 2,
+      "stem": "Tap the word you hear.",
+      "audioText": "want",
+      "choices": [
+        {
+          "id": "a",
+          "label": "what"
+        },
+        {
+          "id": "b",
+          "label": "went"
+        },
+        {
+          "id": "c",
+          "label": "want"
+        }
+      ],
+      "correctChoiceId": "c",
+      "missedConceptOnFail": "sight-word",
+      "rationale": "\"want\" is a tricky word we learn by heart.",
+      "decodableWithin": "HF-words"
+    },
+    {
+      "id": "ph-hf-025",
+      "skillId": "HF-words",
+      "itemType": "decode_choice",
+      "difficulty": 1,
+      "stem": "Tap the word you hear.",
+      "audioText": "said",
+      "choices": [
+        {
+          "id": "a",
+          "label": "said"
+        },
+        {
+          "id": "b",
+          "label": "says"
+        },
+        {
+          "id": "c",
+          "label": "sad"
+        }
+      ],
+      "correctChoiceId": "a",
+      "missedConceptOnFail": "sight-word",
+      "rationale": "\"said\" is a tricky word we learn by heart.",
+      "decodableWithin": "HF-words"
+    },
+    {
+      "id": "ph-hf-026",
+      "skillId": "HF-words",
+      "itemType": "decode_choice",
+      "difficulty": 3,
+      "stem": "Tap the word you hear.",
+      "audioText": "because",
+      "choices": [
+        {
+          "id": "a",
+          "label": "became"
+        },
+        {
+          "id": "b",
+          "label": "because"
+        },
+        {
+          "id": "c",
+          "label": "become"
+        }
+      ],
+      "correctChoiceId": "b",
+      "missedConceptOnFail": "sight-word",
+      "rationale": "\"because\" is a tricky word we learn by heart.",
+      "decodableWithin": "HF-words"
+    },
+    {
+      "id": "ph-hf-027",
+      "skillId": "HF-words",
+      "itemType": "decode_choice",
+      "difficulty": 3,
+      "stem": "Tap the word you hear.",
+      "audioText": "people",
+      "choices": [
+        {
+          "id": "a",
+          "label": "purple"
+        },
+        {
+          "id": "b",
+          "label": "pebble"
+        },
+        {
+          "id": "c",
+          "label": "people"
+        }
+      ],
+      "correctChoiceId": "c",
+      "missedConceptOnFail": "sight-word",
+      "rationale": "\"people\" is a tricky word we learn by heart.",
+      "decodableWithin": "HF-words"
+    },
+    {
+      "id": "ph-hf-028",
+      "skillId": "HF-words",
+      "itemType": "decode_choice",
+      "difficulty": 3,
+      "stem": "Tap the word you hear.",
+      "audioText": "friend",
+      "choices": [
+        {
+          "id": "a",
+          "label": "friend"
+        },
+        {
+          "id": "b",
+          "label": "friends"
+        },
+        {
+          "id": "c",
+          "label": "fried"
+        }
+      ],
+      "correctChoiceId": "a",
+      "missedConceptOnFail": "sight-word",
+      "rationale": "\"friend\" is a tricky word we learn by heart.",
+      "decodableWithin": "HF-words"
+    },
+    {
+      "id": "ph-hf-029",
+      "skillId": "HF-words",
+      "itemType": "decode_choice",
+      "difficulty": 2,
+      "stem": "Tap the word you hear.",
+      "audioText": "school",
+      "choices": [
+        {
+          "id": "a",
+          "label": "cool"
+        },
+        {
+          "id": "b",
+          "label": "school"
+        },
+        {
+          "id": "c",
+          "label": "spool"
+        }
+      ],
+      "correctChoiceId": "b",
+      "missedConceptOnFail": "sight-word",
+      "rationale": "\"school\" is a tricky word we learn by heart.",
+      "decodableWithin": "HF-words"
+    },
+    {
+      "id": "ph-hf-030",
+      "skillId": "HF-words",
+      "itemType": "decode_choice",
+      "difficulty": 1,
+      "stem": "Tap the word you hear.",
+      "audioText": "been",
+      "choices": [
+        {
+          "id": "a",
+          "label": "bean"
+        },
+        {
+          "id": "b",
+          "label": "bin"
+        },
+        {
+          "id": "c",
+          "label": "been"
+        }
+      ],
+      "correctChoiceId": "c",
+      "missedConceptOnFail": "sight-word",
+      "rationale": "\"been\" is a tricky word we learn by heart.",
+      "decodableWithin": "HF-words"
+    },
+    {
+      "id": "ph-hf-031",
+      "skillId": "HF-words",
+      "itemType": "decode_choice",
+      "difficulty": 2,
+      "stem": "Tap the word you hear.",
+      "audioText": "does",
+      "choices": [
+        {
+          "id": "a",
+          "label": "does"
+        },
+        {
+          "id": "b",
+          "label": "goes"
+        },
+        {
+          "id": "c",
+          "label": "dose"
+        }
+      ],
+      "correctChoiceId": "a",
+      "missedConceptOnFail": "sight-word",
+      "rationale": "\"does\" is a tricky word we learn by heart.",
+      "decodableWithin": "HF-words"
+    },
+    {
+      "id": "ph-hf-032",
+      "skillId": "HF-words",
+      "itemType": "decode_choice",
+      "difficulty": 2,
+      "stem": "Tap the word you hear.",
+      "audioText": "done",
+      "choices": [
+        {
+          "id": "a",
+          "label": "gone"
+        },
+        {
+          "id": "b",
+          "label": "done"
+        },
+        {
+          "id": "c",
+          "label": "dome"
+        }
+      ],
+      "correctChoiceId": "b",
+      "missedConceptOnFail": "sight-word",
+      "rationale": "\"done\" is a tricky word we learn by heart.",
+      "decodableWithin": "HF-words"
+    },
+    {
+      "id": "ph-hf-033",
+      "skillId": "HF-words",
+      "itemType": "decode_choice",
+      "difficulty": 1,
+      "stem": "Tap the word you hear.",
+      "audioText": "give",
+      "choices": [
+        {
+          "id": "a",
+          "label": "gave"
+        },
+        {
+          "id": "b",
+          "label": "live"
+        },
+        {
+          "id": "c",
+          "label": "give"
+        }
+      ],
+      "correctChoiceId": "c",
+      "missedConceptOnFail": "sight-word",
+      "rationale": "\"give\" is a tricky word we learn by heart.",
+      "decodableWithin": "HF-words"
+    },
+    {
+      "id": "ph-hf-034",
+      "skillId": "HF-words",
+      "itemType": "decode_choice",
+      "difficulty": 1,
+      "stem": "Tap the word you hear.",
+      "audioText": "have",
+      "choices": [
+        {
+          "id": "a",
+          "label": "have"
+        },
+        {
+          "id": "b",
+          "label": "gave"
+        },
+        {
+          "id": "c",
+          "label": "hive"
+        }
+      ],
+      "correctChoiceId": "a",
+      "missedConceptOnFail": "sight-word",
+      "rationale": "\"have\" is a tricky word we learn by heart.",
+      "decodableWithin": "HF-words"
+    },
+    {
+      "id": "ph-hf-035",
+      "skillId": "HF-words",
+      "itemType": "decode_choice",
+      "difficulty": 2,
+      "stem": "Tap the word you hear.",
+      "audioText": "live",
+      "choices": [
+        {
+          "id": "a",
+          "label": "love"
+        },
+        {
+          "id": "b",
+          "label": "live"
+        },
+        {
+          "id": "c",
+          "label": "life"
+        }
+      ],
+      "correctChoiceId": "b",
+      "missedConceptOnFail": "sight-word",
+      "rationale": "\"live\" is a tricky word we learn by heart.",
+      "decodableWithin": "HF-words"
+    },
+    {
+      "id": "ph-hf-036",
+      "skillId": "HF-words",
+      "itemType": "decode_choice",
+      "difficulty": 2,
+      "stem": "Tap the word you hear.",
+      "audioText": "love",
+      "choices": [
+        {
+          "id": "a",
+          "label": "live"
+        },
+        {
+          "id": "b",
+          "label": "dove"
+        },
+        {
+          "id": "c",
+          "label": "love"
+        }
+      ],
+      "correctChoiceId": "c",
+      "missedConceptOnFail": "sight-word",
+      "rationale": "\"love\" is a tricky word we learn by heart.",
+      "decodableWithin": "HF-words"
+    },
+    {
+      "id": "ph-hf-037",
+      "skillId": "HF-words",
+      "itemType": "decode_choice",
+      "difficulty": 1,
+      "stem": "Tap the word you hear.",
+      "audioText": "put",
+      "choices": [
+        {
+          "id": "a",
+          "label": "put"
+        },
+        {
+          "id": "b",
+          "label": "pat"
+        },
+        {
+          "id": "c",
+          "label": "pit"
+        }
+      ],
+      "correctChoiceId": "a",
+      "missedConceptOnFail": "sight-word",
+      "rationale": "\"put\" is a tricky word we learn by heart.",
+      "decodableWithin": "HF-words"
+    },
+    {
+      "id": "ph-hf-038",
+      "skillId": "HF-words",
+      "itemType": "decode_choice",
+      "difficulty": 2,
+      "stem": "Tap the word you hear.",
+      "audioText": "pull",
+      "choices": [
+        {
+          "id": "a",
+          "label": "full"
+        },
+        {
+          "id": "b",
+          "label": "pull"
+        },
+        {
+          "id": "c",
+          "label": "bull"
+        }
+      ],
+      "correctChoiceId": "b",
+      "missedConceptOnFail": "sight-word",
+      "rationale": "\"pull\" is a tricky word we learn by heart.",
+      "decodableWithin": "HF-words"
+    },
+    {
+      "id": "ph-hf-039",
+      "skillId": "HF-words",
+      "itemType": "decode_choice",
+      "difficulty": 2,
+      "stem": "Tap the word you hear.",
+      "audioText": "full",
+      "choices": [
+        {
+          "id": "a",
+          "label": "pull"
+        },
+        {
+          "id": "b",
+          "label": "bull"
+        },
+        {
+          "id": "c",
+          "label": "full"
+        }
+      ],
+      "correctChoiceId": "c",
+      "missedConceptOnFail": "sight-word",
+      "rationale": "\"full\" is a tricky word we learn by heart.",
+      "decodableWithin": "HF-words"
+    },
+    {
+      "id": "ph-hf-040",
+      "skillId": "HF-words",
+      "itemType": "decode_choice",
+      "difficulty": 2,
+      "stem": "Tap the word you hear.",
+      "audioText": "push",
+      "choices": [
+        {
+          "id": "a",
+          "label": "push"
+        },
+        {
+          "id": "b",
+          "label": "bush"
+        },
+        {
+          "id": "c",
+          "label": "gush"
+        }
+      ],
+      "correctChoiceId": "a",
+      "missedConceptOnFail": "sight-word",
+      "rationale": "\"push\" is a tricky word we learn by heart.",
+      "decodableWithin": "HF-words"
+    },
+    {
+      "id": "ph-hf-041",
+      "skillId": "HF-words",
+      "itemType": "decode_choice",
+      "difficulty": 3,
+      "stem": "Tap the word you hear.",
+      "audioText": "sure",
+      "choices": [
+        {
+          "id": "a",
+          "label": "cure"
+        },
+        {
+          "id": "b",
+          "label": "sure"
+        },
+        {
+          "id": "c",
+          "label": "pure"
+        }
+      ],
+      "correctChoiceId": "b",
+      "missedConceptOnFail": "sight-word",
+      "rationale": "\"sure\" is a tricky word we learn by heart.",
+      "decodableWithin": "HF-words"
+    },
+    {
+      "id": "ph-hf-042",
+      "skillId": "HF-words",
+      "itemType": "decode_choice",
+      "difficulty": 1,
+      "stem": "Tap the word you hear.",
+      "audioText": "two",
+      "choices": [
+        {
+          "id": "a",
+          "label": "too"
+        },
+        {
+          "id": "b",
+          "label": "tow"
+        },
+        {
+          "id": "c",
+          "label": "two"
+        }
+      ],
+      "correctChoiceId": "c",
+      "missedConceptOnFail": "sight-word",
+      "rationale": "\"two\" is a tricky word we learn by heart.",
+      "decodableWithin": "HF-words"
+    },
+    {
+      "id": "ph-hf-043",
+      "skillId": "HF-words",
+      "itemType": "decode_choice",
+      "difficulty": 2,
+      "stem": "Tap the word you hear.",
+      "audioText": "four",
+      "choices": [
+        {
+          "id": "a",
+          "label": "four"
+        },
+        {
+          "id": "b",
+          "label": "for"
+        },
+        {
+          "id": "c",
+          "label": "fort"
+        }
+      ],
+      "correctChoiceId": "a",
+      "missedConceptOnFail": "sight-word",
+      "rationale": "\"four\" is a tricky word we learn by heart.",
+      "decodableWithin": "HF-words"
+    },
+    {
+      "id": "ph-hf-044",
+      "skillId": "HF-words",
+      "itemType": "decode_choice",
+      "difficulty": 1,
+      "stem": "Tap the word you hear.",
+      "audioText": "any",
+      "choices": [
+        {
+          "id": "a",
+          "label": "many"
+        },
+        {
+          "id": "b",
+          "label": "any"
+        },
+        {
+          "id": "c",
+          "label": "and"
+        }
+      ],
+      "correctChoiceId": "b",
+      "missedConceptOnFail": "sight-word",
+      "rationale": "\"any\" is a tricky word we learn by heart.",
+      "decodableWithin": "HF-words"
+    },
+    {
+      "id": "ph-hf-045",
+      "skillId": "HF-words",
+      "itemType": "decode_choice",
+      "difficulty": 2,
+      "stem": "Tap the word you hear.",
+      "audioText": "many",
+      "choices": [
+        {
+          "id": "a",
+          "label": "any"
+        },
+        {
+          "id": "b",
+          "label": "man"
+        },
+        {
+          "id": "c",
+          "label": "many"
+        }
+      ],
+      "correctChoiceId": "c",
+      "missedConceptOnFail": "sight-word",
+      "rationale": "\"many\" is a tricky word we learn by heart.",
+      "decodableWithin": "HF-words"
+    },
+    {
+      "id": "ph-hf-046",
+      "skillId": "HF-words",
+      "itemType": "decode_choice",
+      "difficulty": 3,
+      "stem": "Tap the word you hear.",
+      "audioText": "again",
+      "choices": [
+        {
+          "id": "a",
+          "label": "again"
+        },
+        {
+          "id": "b",
+          "label": "against"
+        },
+        {
+          "id": "c",
+          "label": "gain"
+        }
+      ],
+      "correctChoiceId": "a",
+      "missedConceptOnFail": "sight-word",
+      "rationale": "\"again\" is a tricky word we learn by heart.",
+      "decodableWithin": "HF-words"
+    },
+    {
+      "id": "ph-hf-047",
+      "skillId": "HF-words",
+      "itemType": "decode_choice",
+      "difficulty": 3,
+      "stem": "Tap the word you hear.",
+      "audioText": "great",
+      "choices": [
+        {
+          "id": "a",
+          "label": "greet"
+        },
+        {
+          "id": "b",
+          "label": "great"
+        },
+        {
+          "id": "c",
+          "label": "treat"
+        }
+      ],
+      "correctChoiceId": "b",
+      "missedConceptOnFail": "sight-word",
+      "rationale": "\"great\" is a tricky word we learn by heart.",
+      "decodableWithin": "HF-words"
+    },
+    {
+      "id": "ph-hf-048",
+      "skillId": "HF-words",
+      "itemType": "decode_choice",
+      "difficulty": 2,
+      "stem": "Tap the word you hear.",
+      "audioText": "buy",
+      "choices": [
+        {
+          "id": "a",
+          "label": "bye"
+        },
+        {
+          "id": "b",
+          "label": "boy"
+        },
+        {
+          "id": "c",
+          "label": "buy"
+        }
+      ],
+      "correctChoiceId": "c",
+      "missedConceptOnFail": "sight-word",
+      "rationale": "\"buy\" is a tricky word we learn by heart.",
+      "decodableWithin": "HF-words"
+    },
+    {
+      "id": "ph-hf-049",
+      "skillId": "HF-words",
+      "itemType": "decode_choice",
+      "difficulty": 3,
+      "stem": "Tap the word you hear.",
+      "audioText": "busy",
+      "choices": [
+        {
+          "id": "a",
+          "label": "busy"
+        },
+        {
+          "id": "b",
+          "label": "bury"
+        },
+        {
+          "id": "c",
+          "label": "bus"
+        }
+      ],
+      "correctChoiceId": "a",
+      "missedConceptOnFail": "sight-word",
+      "rationale": "\"busy\" is a tricky word we learn by heart.",
+      "decodableWithin": "HF-words"
+    },
+    {
+      "id": "ph-hf-050",
+      "skillId": "HF-words",
+      "itemType": "decode_choice",
+      "difficulty": 3,
+      "stem": "Tap the word you hear.",
+      "audioText": "build",
+      "choices": [
+        {
+          "id": "a",
+          "label": "built"
+        },
+        {
+          "id": "b",
+          "label": "build"
+        },
+        {
+          "id": "c",
+          "label": "bird"
+        }
+      ],
+      "correctChoiceId": "b",
+      "missedConceptOnFail": "sight-word",
+      "rationale": "\"build\" is a tricky word we learn by heart.",
+      "decodableWithin": "HF-words"
+    },
+    {
+      "id": "ph-hf-051",
+      "skillId": "HF-words",
+      "itemType": "decode_choice",
+      "difficulty": 2,
+      "stem": "Tap the word you hear.",
+      "audioText": "work",
+      "choices": [
+        {
+          "id": "a",
+          "label": "word"
+        },
+        {
+          "id": "b",
+          "label": "world"
+        },
+        {
+          "id": "c",
+          "label": "work"
+        }
+      ],
+      "correctChoiceId": "c",
+      "missedConceptOnFail": "sight-word",
+      "rationale": "\"work\" is a tricky word we learn by heart.",
+      "decodableWithin": "HF-words"
+    },
+    {
+      "id": "ph-hf-052",
+      "skillId": "HF-words",
+      "itemType": "decode_choice",
+      "difficulty": 2,
+      "stem": "Tap the word you hear.",
+      "audioText": "word",
+      "choices": [
+        {
+          "id": "a",
+          "label": "word"
+        },
+        {
+          "id": "b",
+          "label": "work"
+        },
+        {
+          "id": "c",
+          "label": "world"
+        }
+      ],
+      "correctChoiceId": "a",
+      "missedConceptOnFail": "sight-word",
+      "rationale": "\"word\" is a tricky word we learn by heart.",
+      "decodableWithin": "HF-words"
+    },
+    {
+      "id": "ph-hf-053",
+      "skillId": "HF-words",
+      "itemType": "decode_choice",
+      "difficulty": 3,
+      "stem": "Tap the word you hear.",
+      "audioText": "world",
+      "choices": [
+        {
+          "id": "a",
+          "label": "word"
+        },
+        {
+          "id": "b",
+          "label": "world"
+        },
+        {
+          "id": "c",
+          "label": "work"
+        }
+      ],
+      "correctChoiceId": "b",
+      "missedConceptOnFail": "sight-word",
+      "rationale": "\"world\" is a tricky word we learn by heart.",
+      "decodableWithin": "HF-words"
+    },
+    {
+      "id": "ph-hf-054",
+      "skillId": "HF-words",
+      "itemType": "decode_choice",
+      "difficulty": 3,
+      "stem": "Tap the word you hear.",
+      "audioText": "learn",
+      "choices": [
+        {
+          "id": "a",
+          "label": "earn"
+        },
+        {
+          "id": "b",
+          "label": "lean"
+        },
+        {
+          "id": "c",
+          "label": "learn"
+        }
+      ],
+      "correctChoiceId": "c",
+      "missedConceptOnFail": "sight-word",
+      "rationale": "\"learn\" is a tricky word we learn by heart.",
+      "decodableWithin": "HF-words"
+    },
+    {
+      "id": "ph-hf-055",
+      "skillId": "HF-words",
+      "itemType": "decode_choice",
+      "difficulty": 2,
+      "stem": "Tap the word you hear.",
+      "audioText": "eye",
+      "choices": [
+        {
+          "id": "a",
+          "label": "eye"
+        },
+        {
+          "id": "b",
+          "label": "eyes"
+        },
+        {
+          "id": "c",
+          "label": "aye"
+        }
+      ],
+      "correctChoiceId": "a",
+      "missedConceptOnFail": "sight-word",
+      "rationale": "\"eye\" is a tricky word we learn by heart.",
+      "decodableWithin": "HF-words"
+    }
+  ],
+  "lessons": {
+    "HF-words": {
+      "iCanStatement": "I can read tricky high-frequency words by heart.",
+      "explanation": "Some words don't follow the usual rules, so we can't always sound them out — we learn them by sight. Words like the, was, said, you, come and one turn up all the time, so knowing them by heart makes reading much faster. Look at the whole word and remember its shape.",
+      "workedExamples": [
+        {
+          "text": "said",
+          "note": "Looks like it should be \"sed\" — but we just remember: said."
+        },
+        {
+          "text": "one",
+          "note": "Sounds like \"wun\" — a tricky word to know by heart."
+        }
+      ]
+    }
+  }
+}
