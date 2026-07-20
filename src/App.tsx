@@ -7,7 +7,7 @@ import { Session } from './features/Session'
 import { initPWA } from './pwa'
 
 type View = 'pick' | 'add' | 'session'
-const APP_VERSION = '0.2.3'
+const APP_VERSION = '0.2.4'
 
 export default function App() {
   const [children, setChildren] = useState<Child[]>([])

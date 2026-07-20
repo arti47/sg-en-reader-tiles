@@ -1,0 +1,1846 @@
+{
+  "packId": "phonics-L04-blends",
+  "strand": "phonics",
+  "skillIds": [
+    "PH-blends"
+  ],
+  "version": 1,
+  "items": [
+    {
+      "id": "ph-bl-001",
+      "skillId": "PH-blends",
+      "itemType": "decode_choice",
+      "difficulty": 1,
+      "stem": "Tap the word you hear.",
+      "audioText": "black",
+      "choices": [
+        {
+          "id": "a",
+          "label": "black"
+        },
+        {
+          "id": "b",
+          "label": "block"
+        },
+        {
+          "id": "c",
+          "label": "brick"
+        }
+      ],
+      "correctChoiceId": "a",
+      "missedConceptOnFail": "blend-initial",
+      "rationale": "b-l-a-ck = black.",
+      "decodableWithin": "PH-blends"
+    },
+    {
+      "id": "ph-bl-002",
+      "skillId": "PH-blends",
+      "itemType": "decode_choice",
+      "difficulty": 2,
+      "stem": "Tap the word you hear.",
+      "audioText": "block",
+      "choices": [
+        {
+          "id": "a",
+          "label": "black"
+        },
+        {
+          "id": "b",
+          "label": "block"
+        },
+        {
+          "id": "c",
+          "label": "clock"
+        }
+      ],
+      "correctChoiceId": "b",
+      "missedConceptOnFail": "blend-initial",
+      "rationale": "b-l-o-ck = block.",
+      "decodableWithin": "PH-blends"
+    },
+    {
+      "id": "ph-bl-003",
+      "skillId": "PH-blends",
+      "itemType": "decode_choice",
+      "difficulty": 1,
+      "stem": "Tap the word you hear.",
+      "audioText": "clap",
+      "choices": [
+        {
+          "id": "a",
+          "label": "clip"
+        },
+        {
+          "id": "b",
+          "label": "flap"
+        },
+        {
+          "id": "c",
+          "label": "clap"
+        }
+      ],
+      "correctChoiceId": "c",
+      "missedConceptOnFail": "blend-initial",
+      "rationale": "c-l-a-p = clap.",
+      "decodableWithin": "PH-blends"
+    },
+    {
+      "id": "ph-bl-004",
+      "skillId": "PH-blends",
+      "itemType": "decode_choice",
+      "difficulty": 1,
+      "stem": "Tap the word you hear.",
+      "audioText": "clip",
+      "choices": [
+        {
+          "id": "a",
+          "label": "clip"
+        },
+        {
+          "id": "b",
+          "label": "clap"
+        },
+        {
+          "id": "c",
+          "label": "slip"
+        }
+      ],
+      "correctChoiceId": "a",
+      "missedConceptOnFail": "blend-initial",
+      "rationale": "c-l-i-p = clip.",
+      "decodableWithin": "PH-blends"
+    },
+    {
+      "id": "ph-bl-005",
+      "skillId": "PH-blends",
+      "itemType": "decode_choice",
+      "difficulty": 1,
+      "stem": "Tap the word you hear.",
+      "audioText": "flag",
+      "choices": [
+        {
+          "id": "a",
+          "label": "flap"
+        },
+        {
+          "id": "b",
+          "label": "flag"
+        },
+        {
+          "id": "c",
+          "label": "flog"
+        }
+      ],
+      "correctChoiceId": "b",
+      "missedConceptOnFail": "blend-initial",
+      "rationale": "f-l-a-g = flag.",
+      "decodableWithin": "PH-blends"
+    },
+    {
+      "id": "ph-bl-006",
+      "skillId": "PH-blends",
+      "itemType": "decode_choice",
+      "difficulty": 1,
+      "stem": "Tap the word you hear.",
+      "audioText": "flap",
+      "choices": [
+        {
+          "id": "a",
+          "label": "flag"
+        },
+        {
+          "id": "b",
+          "label": "slap"
+        },
+        {
+          "id": "c",
+          "label": "flap"
+        }
+      ],
+      "correctChoiceId": "c",
+      "missedConceptOnFail": "blend-initial",
+      "rationale": "f-l-a-p = flap.",
+      "decodableWithin": "PH-blends"
+    },
+    {
+      "id": "ph-bl-007",
+      "skillId": "PH-blends",
+      "itemType": "decode_choice",
+      "difficulty": 2,
+      "stem": "Tap the word you hear.",
+      "audioText": "frog",
+      "choices": [
+        {
+          "id": "a",
+          "label": "frog"
+        },
+        {
+          "id": "b",
+          "label": "from"
+        },
+        {
+          "id": "c",
+          "label": "drop"
+        }
+      ],
+      "correctChoiceId": "a",
+      "missedConceptOnFail": "blend-initial",
+      "rationale": "f-r-o-g = frog.",
+      "decodableWithin": "PH-blends"
+    },
+    {
+      "id": "ph-bl-008",
+      "skillId": "PH-blends",
+      "itemType": "decode_choice",
+      "difficulty": 2,
+      "stem": "Tap the word you hear.",
+      "audioText": "drum",
+      "choices": [
+        {
+          "id": "a",
+          "label": "drop"
+        },
+        {
+          "id": "b",
+          "label": "drum"
+        },
+        {
+          "id": "c",
+          "label": "dram"
+        }
+      ],
+      "correctChoiceId": "b",
+      "missedConceptOnFail": "blend-initial",
+      "rationale": "d-r-u-m = drum.",
+      "decodableWithin": "PH-blends"
+    },
+    {
+      "id": "ph-bl-009",
+      "skillId": "PH-blends",
+      "itemType": "decode_choice",
+      "difficulty": 1,
+      "stem": "Tap the word you hear.",
+      "audioText": "drop",
+      "choices": [
+        {
+          "id": "a",
+          "label": "drip"
+        },
+        {
+          "id": "b",
+          "label": "prop"
+        },
+        {
+          "id": "c",
+          "label": "drop"
+        }
+      ],
+      "correctChoiceId": "c",
+      "missedConceptOnFail": "blend-initial",
+      "rationale": "d-r-o-p = drop.",
+      "decodableWithin": "PH-blends"
+    },
+    {
+      "id": "ph-bl-010",
+      "skillId": "PH-blends",
+      "itemType": "decode_choice",
+      "difficulty": 2,
+      "stem": "Tap the word you hear.",
+      "audioText": "grab",
+      "choices": [
+        {
+          "id": "a",
+          "label": "grab"
+        },
+        {
+          "id": "b",
+          "label": "grub"
+        },
+        {
+          "id": "c",
+          "label": "crab"
+        }
+      ],
+      "correctChoiceId": "a",
+      "missedConceptOnFail": "blend-initial",
+      "rationale": "g-r-a-b = grab.",
+      "decodableWithin": "PH-blends"
+    },
+    {
+      "id": "ph-bl-011",
+      "skillId": "PH-blends",
+      "itemType": "decode_choice",
+      "difficulty": 2,
+      "stem": "Tap the word you hear.",
+      "audioText": "grin",
+      "choices": [
+        {
+          "id": "a",
+          "label": "grid"
+        },
+        {
+          "id": "b",
+          "label": "grin"
+        },
+        {
+          "id": "c",
+          "label": "grip"
+        }
+      ],
+      "correctChoiceId": "b",
+      "missedConceptOnFail": "blend-initial",
+      "rationale": "g-r-i-n = grin.",
+      "decodableWithin": "PH-blends"
+    },
+    {
+      "id": "ph-bl-012",
+      "skillId": "PH-blends",
+      "itemType": "decode_choice",
+      "difficulty": 1,
+      "stem": "Tap the word you hear.",
+      "audioText": "crab",
+      "choices": [
+        {
+          "id": "a",
+          "label": "grab"
+        },
+        {
+          "id": "b",
+          "label": "crib"
+        },
+        {
+          "id": "c",
+          "label": "crab"
+        }
+      ],
+      "correctChoiceId": "c",
+      "missedConceptOnFail": "blend-initial",
+      "rationale": "c-r-a-b = crab.",
+      "decodableWithin": "PH-blends"
+    },
+    {
+      "id": "ph-bl-013",
+      "skillId": "PH-blends",
+      "itemType": "decode_choice",
+      "difficulty": 1,
+      "stem": "Tap the word you hear.",
+      "audioText": "club",
+      "choices": [
+        {
+          "id": "a",
+          "label": "club"
+        },
+        {
+          "id": "b",
+          "label": "clap"
+        },
+        {
+          "id": "c",
+          "label": "clam"
+        }
+      ],
+      "correctChoiceId": "a",
+      "missedConceptOnFail": "blend-initial",
+      "rationale": "c-l-u-b = club.",
+      "decodableWithin": "PH-blends"
+    },
+    {
+      "id": "ph-bl-014",
+      "skillId": "PH-blends",
+      "itemType": "decode_choice",
+      "difficulty": 2,
+      "stem": "Tap the word you hear.",
+      "audioText": "clam",
+      "choices": [
+        {
+          "id": "a",
+          "label": "club"
+        },
+        {
+          "id": "b",
+          "label": "clam"
+        },
+        {
+          "id": "c",
+          "label": "slam"
+        }
+      ],
+      "correctChoiceId": "b",
+      "missedConceptOnFail": "blend-initial",
+      "rationale": "c-l-a-m = clam.",
+      "decodableWithin": "PH-blends"
+    },
+    {
+      "id": "ph-bl-015",
+      "skillId": "PH-blends",
+      "itemType": "decode_choice",
+      "difficulty": 1,
+      "stem": "Tap the word you hear.",
+      "audioText": "plan",
+      "choices": [
+        {
+          "id": "a",
+          "label": "plum"
+        },
+        {
+          "id": "b",
+          "label": "clan"
+        },
+        {
+          "id": "c",
+          "label": "plan"
+        }
+      ],
+      "correctChoiceId": "c",
+      "missedConceptOnFail": "blend-initial",
+      "rationale": "p-l-a-n = plan.",
+      "decodableWithin": "PH-blends"
+    },
+    {
+      "id": "ph-bl-016",
+      "skillId": "PH-blends",
+      "itemType": "decode_choice",
+      "difficulty": 1,
+      "stem": "Tap the word you hear.",
+      "audioText": "plum",
+      "choices": [
+        {
+          "id": "a",
+          "label": "plum"
+        },
+        {
+          "id": "b",
+          "label": "plan"
+        },
+        {
+          "id": "c",
+          "label": "plug"
+        }
+      ],
+      "correctChoiceId": "a",
+      "missedConceptOnFail": "blend-initial",
+      "rationale": "p-l-u-m = plum.",
+      "decodableWithin": "PH-blends"
+    },
+    {
+      "id": "ph-bl-017",
+      "skillId": "PH-blends",
+      "itemType": "decode_choice",
+      "difficulty": 2,
+      "stem": "Tap the word you hear.",
+      "audioText": "slam",
+      "choices": [
+        {
+          "id": "a",
+          "label": "slim"
+        },
+        {
+          "id": "b",
+          "label": "slam"
+        },
+        {
+          "id": "c",
+          "label": "clam"
+        }
+      ],
+      "correctChoiceId": "b",
+      "missedConceptOnFail": "blend-initial",
+      "rationale": "s-l-a-m = slam.",
+      "decodableWithin": "PH-blends"
+    },
+    {
+      "id": "ph-bl-018",
+      "skillId": "PH-blends",
+      "itemType": "decode_choice",
+      "difficulty": 1,
+      "stem": "Tap the word you hear.",
+      "audioText": "slip",
+      "choices": [
+        {
+          "id": "a",
+          "label": "slap"
+        },
+        {
+          "id": "b",
+          "label": "clip"
+        },
+        {
+          "id": "c",
+          "label": "slip"
+        }
+      ],
+      "correctChoiceId": "c",
+      "missedConceptOnFail": "blend-initial",
+      "rationale": "s-l-i-p = slip.",
+      "decodableWithin": "PH-blends"
+    },
+    {
+      "id": "ph-bl-019",
+      "skillId": "PH-blends",
+      "itemType": "decode_choice",
+      "difficulty": 1,
+      "stem": "Tap the word you hear.",
+      "audioText": "snap",
+      "choices": [
+        {
+          "id": "a",
+          "label": "snap"
+        },
+        {
+          "id": "b",
+          "label": "snip"
+        },
+        {
+          "id": "c",
+          "label": "slap"
+        }
+      ],
+      "correctChoiceId": "a",
+      "missedConceptOnFail": "blend-initial",
+      "rationale": "s-n-a-p = snap.",
+      "decodableWithin": "PH-blends"
+    },
+    {
+      "id": "ph-bl-020",
+      "skillId": "PH-blends",
+      "itemType": "decode_choice",
+      "difficulty": 2,
+      "stem": "Tap the word you hear.",
+      "audioText": "spin",
+      "choices": [
+        {
+          "id": "a",
+          "label": "span"
+        },
+        {
+          "id": "b",
+          "label": "spin"
+        },
+        {
+          "id": "c",
+          "label": "spun"
+        }
+      ],
+      "correctChoiceId": "b",
+      "missedConceptOnFail": "blend-initial",
+      "rationale": "s-p-i-n = spin.",
+      "decodableWithin": "PH-blends"
+    },
+    {
+      "id": "ph-bl-021",
+      "skillId": "PH-blends",
+      "itemType": "decode_choice",
+      "difficulty": 1,
+      "stem": "Tap the word you hear.",
+      "audioText": "spot",
+      "choices": [
+        {
+          "id": "a",
+          "label": "spit"
+        },
+        {
+          "id": "b",
+          "label": "slot"
+        },
+        {
+          "id": "c",
+          "label": "spot"
+        }
+      ],
+      "correctChoiceId": "c",
+      "missedConceptOnFail": "blend-initial",
+      "rationale": "s-p-o-t = spot.",
+      "decodableWithin": "PH-blends"
+    },
+    {
+      "id": "ph-bl-022",
+      "skillId": "PH-blends",
+      "itemType": "decode_choice",
+      "difficulty": 1,
+      "stem": "Tap the word you hear.",
+      "audioText": "stop",
+      "choices": [
+        {
+          "id": "a",
+          "label": "stop"
+        },
+        {
+          "id": "b",
+          "label": "step"
+        },
+        {
+          "id": "c",
+          "label": "shop"
+        }
+      ],
+      "correctChoiceId": "a",
+      "missedConceptOnFail": "blend-initial",
+      "rationale": "s-t-o-p = stop.",
+      "decodableWithin": "PH-blends"
+    },
+    {
+      "id": "ph-bl-023",
+      "skillId": "PH-blends",
+      "itemType": "decode_choice",
+      "difficulty": 1,
+      "stem": "Tap the word you hear.",
+      "audioText": "step",
+      "choices": [
+        {
+          "id": "a",
+          "label": "stop"
+        },
+        {
+          "id": "b",
+          "label": "step"
+        },
+        {
+          "id": "c",
+          "label": "stem"
+        }
+      ],
+      "correctChoiceId": "b",
+      "missedConceptOnFail": "blend-initial",
+      "rationale": "s-t-e-p = step.",
+      "decodableWithin": "PH-blends"
+    },
+    {
+      "id": "ph-bl-024",
+      "skillId": "PH-blends",
+      "itemType": "decode_choice",
+      "difficulty": 2,
+      "stem": "Tap the word you hear.",
+      "audioText": "swim",
+      "choices": [
+        {
+          "id": "a",
+          "label": "swam"
+        },
+        {
+          "id": "b",
+          "label": "slim"
+        },
+        {
+          "id": "c",
+          "label": "swim"
+        }
+      ],
+      "correctChoiceId": "c",
+      "missedConceptOnFail": "blend-initial",
+      "rationale": "s-w-i-m = swim.",
+      "decodableWithin": "PH-blends"
+    },
+    {
+      "id": "ph-bl-025",
+      "skillId": "PH-blends",
+      "itemType": "decode_choice",
+      "difficulty": 1,
+      "stem": "Tap the word you hear.",
+      "audioText": "trap",
+      "choices": [
+        {
+          "id": "a",
+          "label": "trap"
+        },
+        {
+          "id": "b",
+          "label": "trip"
+        },
+        {
+          "id": "c",
+          "label": "tram"
+        }
+      ],
+      "correctChoiceId": "a",
+      "missedConceptOnFail": "blend-initial",
+      "rationale": "t-r-a-p = trap.",
+      "decodableWithin": "PH-blends"
+    },
+    {
+      "id": "ph-bl-026",
+      "skillId": "PH-blends",
+      "itemType": "decode_choice",
+      "difficulty": 2,
+      "stem": "Tap the word you hear.",
+      "audioText": "trip",
+      "choices": [
+        {
+          "id": "a",
+          "label": "trap"
+        },
+        {
+          "id": "b",
+          "label": "trip"
+        },
+        {
+          "id": "c",
+          "label": "drip"
+        }
+      ],
+      "correctChoiceId": "b",
+      "missedConceptOnFail": "blend-initial",
+      "rationale": "t-r-i-p = trip.",
+      "decodableWithin": "PH-blends"
+    },
+    {
+      "id": "ph-bl-027",
+      "skillId": "PH-blends",
+      "itemType": "decode_choice",
+      "difficulty": 2,
+      "stem": "Tap the word you hear.",
+      "audioText": "skip",
+      "choices": [
+        {
+          "id": "a",
+          "label": "skid"
+        },
+        {
+          "id": "b",
+          "label": "slip"
+        },
+        {
+          "id": "c",
+          "label": "skip"
+        }
+      ],
+      "correctChoiceId": "c",
+      "missedConceptOnFail": "blend-initial",
+      "rationale": "s-k-i-p = skip.",
+      "decodableWithin": "PH-blends"
+    },
+    {
+      "id": "ph-bl-028",
+      "skillId": "PH-blends",
+      "itemType": "decode_choice",
+      "difficulty": 2,
+      "stem": "Tap the word you hear.",
+      "audioText": "skin",
+      "choices": [
+        {
+          "id": "a",
+          "label": "skin"
+        },
+        {
+          "id": "b",
+          "label": "skid"
+        },
+        {
+          "id": "c",
+          "label": "spin"
+        }
+      ],
+      "correctChoiceId": "a",
+      "missedConceptOnFail": "blend-initial",
+      "rationale": "s-k-i-n = skin.",
+      "decodableWithin": "PH-blends"
+    },
+    {
+      "id": "ph-bl-029",
+      "skillId": "PH-blends",
+      "itemType": "decode_choice",
+      "difficulty": 2,
+      "stem": "Tap the word you hear.",
+      "audioText": "twig",
+      "choices": [
+        {
+          "id": "a",
+          "label": "twin"
+        },
+        {
+          "id": "b",
+          "label": "twig"
+        },
+        {
+          "id": "c",
+          "label": "twit"
+        }
+      ],
+      "correctChoiceId": "b",
+      "missedConceptOnFail": "blend-initial",
+      "rationale": "t-w-i-g = twig.",
+      "decodableWithin": "PH-blends"
+    },
+    {
+      "id": "ph-bl-030",
+      "skillId": "PH-blends",
+      "itemType": "decode_choice",
+      "difficulty": 2,
+      "stem": "Tap the word you hear.",
+      "audioText": "twin",
+      "choices": [
+        {
+          "id": "a",
+          "label": "twig"
+        },
+        {
+          "id": "b",
+          "label": "twit"
+        },
+        {
+          "id": "c",
+          "label": "twin"
+        }
+      ],
+      "correctChoiceId": "c",
+      "missedConceptOnFail": "blend-initial",
+      "rationale": "t-w-i-n = twin.",
+      "decodableWithin": "PH-blends"
+    },
+    {
+      "id": "ph-bl-031",
+      "skillId": "PH-blends",
+      "itemType": "decode_choice",
+      "difficulty": 1,
+      "stem": "Tap the word you hear.",
+      "audioText": "hand",
+      "choices": [
+        {
+          "id": "a",
+          "label": "hand"
+        },
+        {
+          "id": "b",
+          "label": "band"
+        },
+        {
+          "id": "c",
+          "label": "sand"
+        }
+      ],
+      "correctChoiceId": "a",
+      "missedConceptOnFail": "blend-final",
+      "rationale": "h-a-n-d = hand.",
+      "decodableWithin": "PH-blends"
+    },
+    {
+      "id": "ph-bl-032",
+      "skillId": "PH-blends",
+      "itemType": "decode_choice",
+      "difficulty": 1,
+      "stem": "Tap the word you hear.",
+      "audioText": "band",
+      "choices": [
+        {
+          "id": "a",
+          "label": "hand"
+        },
+        {
+          "id": "b",
+          "label": "band"
+        },
+        {
+          "id": "c",
+          "label": "bond"
+        }
+      ],
+      "correctChoiceId": "b",
+      "missedConceptOnFail": "blend-final",
+      "rationale": "b-a-n-d = band.",
+      "decodableWithin": "PH-blends"
+    },
+    {
+      "id": "ph-bl-033",
+      "skillId": "PH-blends",
+      "itemType": "decode_choice",
+      "difficulty": 1,
+      "stem": "Tap the word you hear.",
+      "audioText": "sand",
+      "choices": [
+        {
+          "id": "a",
+          "label": "send"
+        },
+        {
+          "id": "b",
+          "label": "band"
+        },
+        {
+          "id": "c",
+          "label": "sand"
+        }
+      ],
+      "correctChoiceId": "c",
+      "missedConceptOnFail": "blend-final",
+      "rationale": "s-a-n-d = sand.",
+      "decodableWithin": "PH-blends"
+    },
+    {
+      "id": "ph-bl-034",
+      "skillId": "PH-blends",
+      "itemType": "decode_choice",
+      "difficulty": 1,
+      "stem": "Tap the word you hear.",
+      "audioText": "land",
+      "choices": [
+        {
+          "id": "a",
+          "label": "land"
+        },
+        {
+          "id": "b",
+          "label": "lend"
+        },
+        {
+          "id": "c",
+          "label": "hand"
+        }
+      ],
+      "correctChoiceId": "a",
+      "missedConceptOnFail": "blend-final",
+      "rationale": "l-a-n-d = land.",
+      "decodableWithin": "PH-blends"
+    },
+    {
+      "id": "ph-bl-035",
+      "skillId": "PH-blends",
+      "itemType": "decode_choice",
+      "difficulty": 2,
+      "stem": "Tap the word you hear.",
+      "audioText": "bend",
+      "choices": [
+        {
+          "id": "a",
+          "label": "band"
+        },
+        {
+          "id": "b",
+          "label": "bend"
+        },
+        {
+          "id": "c",
+          "label": "bond"
+        }
+      ],
+      "correctChoiceId": "b",
+      "missedConceptOnFail": "blend-final",
+      "rationale": "b-e-n-d = bend.",
+      "decodableWithin": "PH-blends"
+    },
+    {
+      "id": "ph-bl-036",
+      "skillId": "PH-blends",
+      "itemType": "decode_choice",
+      "difficulty": 2,
+      "stem": "Tap the word you hear.",
+      "audioText": "send",
+      "choices": [
+        {
+          "id": "a",
+          "label": "sand"
+        },
+        {
+          "id": "b",
+          "label": "sent"
+        },
+        {
+          "id": "c",
+          "label": "send"
+        }
+      ],
+      "correctChoiceId": "c",
+      "missedConceptOnFail": "blend-final",
+      "rationale": "s-e-n-d = send.",
+      "decodableWithin": "PH-blends"
+    },
+    {
+      "id": "ph-bl-037",
+      "skillId": "PH-blends",
+      "itemType": "decode_choice",
+      "difficulty": 2,
+      "stem": "Tap the word you hear.",
+      "audioText": "pond",
+      "choices": [
+        {
+          "id": "a",
+          "label": "pond"
+        },
+        {
+          "id": "b",
+          "label": "bond"
+        },
+        {
+          "id": "c",
+          "label": "fond"
+        }
+      ],
+      "correctChoiceId": "a",
+      "missedConceptOnFail": "blend-final",
+      "rationale": "p-o-n-d = pond.",
+      "decodableWithin": "PH-blends"
+    },
+    {
+      "id": "ph-bl-038",
+      "skillId": "PH-blends",
+      "itemType": "decode_choice",
+      "difficulty": 1,
+      "stem": "Tap the word you hear.",
+      "audioText": "tent",
+      "choices": [
+        {
+          "id": "a",
+          "label": "tint"
+        },
+        {
+          "id": "b",
+          "label": "tent"
+        },
+        {
+          "id": "c",
+          "label": "dent"
+        }
+      ],
+      "correctChoiceId": "b",
+      "missedConceptOnFail": "blend-final",
+      "rationale": "t-e-n-t = tent.",
+      "decodableWithin": "PH-blends"
+    },
+    {
+      "id": "ph-bl-039",
+      "skillId": "PH-blends",
+      "itemType": "decode_choice",
+      "difficulty": 2,
+      "stem": "Tap the word you hear.",
+      "audioText": "dent",
+      "choices": [
+        {
+          "id": "a",
+          "label": "tent"
+        },
+        {
+          "id": "b",
+          "label": "rent"
+        },
+        {
+          "id": "c",
+          "label": "dent"
+        }
+      ],
+      "correctChoiceId": "c",
+      "missedConceptOnFail": "blend-final",
+      "rationale": "d-e-n-t = dent.",
+      "decodableWithin": "PH-blends"
+    },
+    {
+      "id": "ph-bl-040",
+      "skillId": "PH-blends",
+      "itemType": "decode_choice",
+      "difficulty": 2,
+      "stem": "Tap the word you hear.",
+      "audioText": "hunt",
+      "choices": [
+        {
+          "id": "a",
+          "label": "hunt"
+        },
+        {
+          "id": "b",
+          "label": "hint"
+        },
+        {
+          "id": "c",
+          "label": "bunt"
+        }
+      ],
+      "correctChoiceId": "a",
+      "missedConceptOnFail": "blend-final",
+      "rationale": "h-u-n-t = hunt.",
+      "decodableWithin": "PH-blends"
+    },
+    {
+      "id": "ph-bl-041",
+      "skillId": "PH-blends",
+      "itemType": "decode_choice",
+      "difficulty": 1,
+      "stem": "Tap the word you hear.",
+      "audioText": "lamp",
+      "choices": [
+        {
+          "id": "a",
+          "label": "limp"
+        },
+        {
+          "id": "b",
+          "label": "lamp"
+        },
+        {
+          "id": "c",
+          "label": "lump"
+        }
+      ],
+      "correctChoiceId": "b",
+      "missedConceptOnFail": "blend-final",
+      "rationale": "l-a-m-p = lamp.",
+      "decodableWithin": "PH-blends"
+    },
+    {
+      "id": "ph-bl-042",
+      "skillId": "PH-blends",
+      "itemType": "decode_choice",
+      "difficulty": 1,
+      "stem": "Tap the word you hear.",
+      "audioText": "camp",
+      "choices": [
+        {
+          "id": "a",
+          "label": "lamp"
+        },
+        {
+          "id": "b",
+          "label": "damp"
+        },
+        {
+          "id": "c",
+          "label": "camp"
+        }
+      ],
+      "correctChoiceId": "c",
+      "missedConceptOnFail": "blend-final",
+      "rationale": "c-a-m-p = camp.",
+      "decodableWithin": "PH-blends"
+    },
+    {
+      "id": "ph-bl-043",
+      "skillId": "PH-blends",
+      "itemType": "decode_choice",
+      "difficulty": 1,
+      "stem": "Tap the word you hear.",
+      "audioText": "jump",
+      "choices": [
+        {
+          "id": "a",
+          "label": "jump"
+        },
+        {
+          "id": "b",
+          "label": "bump"
+        },
+        {
+          "id": "c",
+          "label": "dump"
+        }
+      ],
+      "correctChoiceId": "a",
+      "missedConceptOnFail": "blend-final",
+      "rationale": "j-u-m-p = jump.",
+      "decodableWithin": "PH-blends"
+    },
+    {
+      "id": "ph-bl-044",
+      "skillId": "PH-blends",
+      "itemType": "decode_choice",
+      "difficulty": 2,
+      "stem": "Tap the word you hear.",
+      "audioText": "bump",
+      "choices": [
+        {
+          "id": "a",
+          "label": "jump"
+        },
+        {
+          "id": "b",
+          "label": "bump"
+        },
+        {
+          "id": "c",
+          "label": "lump"
+        }
+      ],
+      "correctChoiceId": "b",
+      "missedConceptOnFail": "blend-final",
+      "rationale": "b-u-m-p = bump.",
+      "decodableWithin": "PH-blends"
+    },
+    {
+      "id": "ph-bl-045",
+      "skillId": "PH-blends",
+      "itemType": "decode_choice",
+      "difficulty": 1,
+      "stem": "Tap the word you hear.",
+      "audioText": "nest",
+      "choices": [
+        {
+          "id": "a",
+          "label": "best"
+        },
+        {
+          "id": "b",
+          "label": "rest"
+        },
+        {
+          "id": "c",
+          "label": "nest"
+        }
+      ],
+      "correctChoiceId": "c",
+      "missedConceptOnFail": "blend-final",
+      "rationale": "n-e-s-t = nest.",
+      "decodableWithin": "PH-blends"
+    },
+    {
+      "id": "ph-bl-046",
+      "skillId": "PH-blends",
+      "itemType": "decode_choice",
+      "difficulty": 1,
+      "stem": "Tap the word you hear.",
+      "audioText": "best",
+      "choices": [
+        {
+          "id": "a",
+          "label": "best"
+        },
+        {
+          "id": "b",
+          "label": "bust"
+        },
+        {
+          "id": "c",
+          "label": "rest"
+        }
+      ],
+      "correctChoiceId": "a",
+      "missedConceptOnFail": "blend-final",
+      "rationale": "b-e-s-t = best.",
+      "decodableWithin": "PH-blends"
+    },
+    {
+      "id": "ph-bl-047",
+      "skillId": "PH-blends",
+      "itemType": "decode_choice",
+      "difficulty": 2,
+      "stem": "Tap the word you hear.",
+      "audioText": "rest",
+      "choices": [
+        {
+          "id": "a",
+          "label": "rust"
+        },
+        {
+          "id": "b",
+          "label": "rest"
+        },
+        {
+          "id": "c",
+          "label": "test"
+        }
+      ],
+      "correctChoiceId": "b",
+      "missedConceptOnFail": "blend-final",
+      "rationale": "r-e-s-t = rest.",
+      "decodableWithin": "PH-blends"
+    },
+    {
+      "id": "ph-bl-048",
+      "skillId": "PH-blends",
+      "itemType": "decode_choice",
+      "difficulty": 2,
+      "stem": "Tap the word you hear.",
+      "audioText": "fist",
+      "choices": [
+        {
+          "id": "a",
+          "label": "fast"
+        },
+        {
+          "id": "b",
+          "label": "mist"
+        },
+        {
+          "id": "c",
+          "label": "fist"
+        }
+      ],
+      "correctChoiceId": "c",
+      "missedConceptOnFail": "blend-final",
+      "rationale": "f-i-s-t = fist.",
+      "decodableWithin": "PH-blends"
+    },
+    {
+      "id": "ph-bl-049",
+      "skillId": "PH-blends",
+      "itemType": "decode_choice",
+      "difficulty": 2,
+      "stem": "Tap the word you hear.",
+      "audioText": "list",
+      "choices": [
+        {
+          "id": "a",
+          "label": "list"
+        },
+        {
+          "id": "b",
+          "label": "last"
+        },
+        {
+          "id": "c",
+          "label": "lost"
+        }
+      ],
+      "correctChoiceId": "a",
+      "missedConceptOnFail": "blend-final",
+      "rationale": "l-i-s-t = list.",
+      "decodableWithin": "PH-blends"
+    },
+    {
+      "id": "ph-bl-050",
+      "skillId": "PH-blends",
+      "itemType": "decode_choice",
+      "difficulty": 2,
+      "stem": "Tap the word you hear.",
+      "audioText": "dust",
+      "choices": [
+        {
+          "id": "a",
+          "label": "must"
+        },
+        {
+          "id": "b",
+          "label": "dust"
+        },
+        {
+          "id": "c",
+          "label": "mist"
+        }
+      ],
+      "correctChoiceId": "b",
+      "missedConceptOnFail": "blend-final",
+      "rationale": "d-u-s-t = dust.",
+      "decodableWithin": "PH-blends"
+    },
+    {
+      "id": "ph-bl-051",
+      "skillId": "PH-blends",
+      "itemType": "decode_choice",
+      "difficulty": 2,
+      "stem": "Tap the word you hear.",
+      "audioText": "mask",
+      "choices": [
+        {
+          "id": "a",
+          "label": "task"
+        },
+        {
+          "id": "b",
+          "label": "musk"
+        },
+        {
+          "id": "c",
+          "label": "mask"
+        }
+      ],
+      "correctChoiceId": "c",
+      "missedConceptOnFail": "blend-final",
+      "rationale": "m-a-s-k = mask.",
+      "decodableWithin": "PH-blends"
+    },
+    {
+      "id": "ph-bl-052",
+      "skillId": "PH-blends",
+      "itemType": "decode_choice",
+      "difficulty": 1,
+      "stem": "Tap the word you hear.",
+      "audioText": "desk",
+      "choices": [
+        {
+          "id": "a",
+          "label": "desk"
+        },
+        {
+          "id": "b",
+          "label": "disk"
+        },
+        {
+          "id": "c",
+          "label": "dusk"
+        }
+      ],
+      "correctChoiceId": "a",
+      "missedConceptOnFail": "blend-final",
+      "rationale": "d-e-s-k = desk.",
+      "decodableWithin": "PH-blends"
+    },
+    {
+      "id": "ph-bl-053",
+      "skillId": "PH-blends",
+      "itemType": "decode_choice",
+      "difficulty": 2,
+      "stem": "Tap the word you hear.",
+      "audioText": "milk",
+      "choices": [
+        {
+          "id": "a",
+          "label": "silk"
+        },
+        {
+          "id": "b",
+          "label": "milk"
+        },
+        {
+          "id": "c",
+          "label": "sulk"
+        }
+      ],
+      "correctChoiceId": "b",
+      "missedConceptOnFail": "blend-final",
+      "rationale": "m-i-l-k = milk.",
+      "decodableWithin": "PH-blends"
+    },
+    {
+      "id": "ph-bl-054",
+      "skillId": "PH-blends",
+      "itemType": "decode_choice",
+      "difficulty": 2,
+      "stem": "Tap the word you hear.",
+      "audioText": "belt",
+      "choices": [
+        {
+          "id": "a",
+          "label": "melt"
+        },
+        {
+          "id": "b",
+          "label": "felt"
+        },
+        {
+          "id": "c",
+          "label": "belt"
+        }
+      ],
+      "correctChoiceId": "c",
+      "missedConceptOnFail": "blend-final",
+      "rationale": "b-e-l-t = belt.",
+      "decodableWithin": "PH-blends"
+    },
+    {
+      "id": "ph-bl-055",
+      "skillId": "PH-blends",
+      "itemType": "decode_choice",
+      "difficulty": 2,
+      "stem": "Tap the word you hear.",
+      "audioText": "melt",
+      "choices": [
+        {
+          "id": "a",
+          "label": "melt"
+        },
+        {
+          "id": "b",
+          "label": "belt"
+        },
+        {
+          "id": "c",
+          "label": "felt"
+        }
+      ],
+      "correctChoiceId": "a",
+      "missedConceptOnFail": "blend-final",
+      "rationale": "m-e-l-t = melt.",
+      "decodableWithin": "PH-blends"
+    },
+    {
+      "id": "ph-bl-056",
+      "skillId": "PH-blends",
+      "itemType": "decode_choice",
+      "difficulty": 1,
+      "stem": "Tap the word you hear.",
+      "audioText": "gift",
+      "choices": [
+        {
+          "id": "a",
+          "label": "lift"
+        },
+        {
+          "id": "b",
+          "label": "gift"
+        },
+        {
+          "id": "c",
+          "label": "sift"
+        }
+      ],
+      "correctChoiceId": "b",
+      "missedConceptOnFail": "blend-final",
+      "rationale": "g-i-f-t = gift.",
+      "decodableWithin": "PH-blends"
+    },
+    {
+      "id": "ph-bl-057",
+      "skillId": "PH-blends",
+      "itemType": "decode_choice",
+      "difficulty": 2,
+      "stem": "Tap the word you hear.",
+      "audioText": "lift",
+      "choices": [
+        {
+          "id": "a",
+          "label": "left"
+        },
+        {
+          "id": "b",
+          "label": "soft"
+        },
+        {
+          "id": "c",
+          "label": "lift"
+        }
+      ],
+      "correctChoiceId": "c",
+      "missedConceptOnFail": "blend-final",
+      "rationale": "l-i-f-t = lift.",
+      "decodableWithin": "PH-blends"
+    },
+    {
+      "id": "ph-bl-058",
+      "skillId": "PH-blends",
+      "itemType": "decode_choice",
+      "difficulty": 2,
+      "stem": "Tap the word you hear.",
+      "audioText": "soft",
+      "choices": [
+        {
+          "id": "a",
+          "label": "soft"
+        },
+        {
+          "id": "b",
+          "label": "gift"
+        },
+        {
+          "id": "c",
+          "label": "loft"
+        }
+      ],
+      "correctChoiceId": "a",
+      "missedConceptOnFail": "blend-final",
+      "rationale": "s-o-f-t = soft.",
+      "decodableWithin": "PH-blends"
+    },
+    {
+      "id": "ph-bl-059",
+      "skillId": "PH-blends",
+      "itemType": "decode_choice",
+      "difficulty": 2,
+      "stem": "Tap the word you hear.",
+      "audioText": "bank",
+      "choices": [
+        {
+          "id": "a",
+          "label": "sank"
+        },
+        {
+          "id": "b",
+          "label": "bank"
+        },
+        {
+          "id": "c",
+          "label": "bunk"
+        }
+      ],
+      "correctChoiceId": "b",
+      "missedConceptOnFail": "blend-final",
+      "rationale": "b-a-n-k = bank.",
+      "decodableWithin": "PH-blends"
+    },
+    {
+      "id": "ph-bl-060",
+      "skillId": "PH-blends",
+      "itemType": "decode_choice",
+      "difficulty": 3,
+      "stem": "Tap the word you hear.",
+      "audioText": "sink",
+      "choices": [
+        {
+          "id": "a",
+          "label": "sank"
+        },
+        {
+          "id": "b",
+          "label": "sunk"
+        },
+        {
+          "id": "c",
+          "label": "sink"
+        }
+      ],
+      "correctChoiceId": "c",
+      "missedConceptOnFail": "blend-final",
+      "rationale": "s-i-n-k = sink.",
+      "decodableWithin": "PH-blends"
+    },
+    {
+      "id": "ph-bl-061",
+      "skillId": "PH-blends",
+      "itemType": "decode_choice",
+      "difficulty": 3,
+      "stem": "Tap the word you hear.",
+      "audioText": "stand",
+      "choices": [
+        {
+          "id": "a",
+          "label": "stand"
+        },
+        {
+          "id": "b",
+          "label": "brand"
+        },
+        {
+          "id": "c",
+          "label": "stamp"
+        }
+      ],
+      "correctChoiceId": "a",
+      "missedConceptOnFail": "blend-final",
+      "rationale": "s-t-a-n-d = stand.",
+      "decodableWithin": "PH-blends"
+    },
+    {
+      "id": "ph-bl-062",
+      "skillId": "PH-blends",
+      "itemType": "decode_choice",
+      "difficulty": 3,
+      "stem": "Tap the word you hear.",
+      "audioText": "stamp",
+      "choices": [
+        {
+          "id": "a",
+          "label": "clamp"
+        },
+        {
+          "id": "b",
+          "label": "stamp"
+        },
+        {
+          "id": "c",
+          "label": "stump"
+        }
+      ],
+      "correctChoiceId": "b",
+      "missedConceptOnFail": "blend-final",
+      "rationale": "s-t-a-m-p = stamp.",
+      "decodableWithin": "PH-blends"
+    },
+    {
+      "id": "ph-bl-063",
+      "skillId": "PH-blends",
+      "itemType": "decode_choice",
+      "difficulty": 3,
+      "stem": "Tap the word you hear.",
+      "audioText": "crush",
+      "choices": [
+        {
+          "id": "a",
+          "label": "brush"
+        },
+        {
+          "id": "b",
+          "label": "crash"
+        },
+        {
+          "id": "c",
+          "label": "crush"
+        }
+      ],
+      "correctChoiceId": "c",
+      "missedConceptOnFail": "blend-initial",
+      "rationale": "c-r-u-sh = crush.",
+      "decodableWithin": "PH-blends"
+    },
+    {
+      "id": "ph-bl-064",
+      "skillId": "PH-blends",
+      "itemType": "decode_choice",
+      "difficulty": 3,
+      "stem": "Tap the word you hear.",
+      "audioText": "brush",
+      "choices": [
+        {
+          "id": "a",
+          "label": "brush"
+        },
+        {
+          "id": "b",
+          "label": "crush"
+        },
+        {
+          "id": "c",
+          "label": "brash"
+        }
+      ],
+      "correctChoiceId": "a",
+      "missedConceptOnFail": "blend-initial",
+      "rationale": "b-r-u-sh = brush.",
+      "decodableWithin": "PH-blends"
+    },
+    {
+      "id": "ph-bl-065",
+      "skillId": "PH-blends",
+      "itemType": "decode_choice",
+      "difficulty": 3,
+      "stem": "Tap the word you hear.",
+      "audioText": "crash",
+      "choices": [
+        {
+          "id": "a",
+          "label": "crush"
+        },
+        {
+          "id": "b",
+          "label": "crash"
+        },
+        {
+          "id": "c",
+          "label": "trash"
+        }
+      ],
+      "correctChoiceId": "b",
+      "missedConceptOnFail": "blend-initial",
+      "rationale": "c-r-a-sh = crash.",
+      "decodableWithin": "PH-blends"
+    },
+    {
+      "id": "ph-bl-066",
+      "skillId": "PH-blends",
+      "itemType": "decode_choice",
+      "difficulty": 3,
+      "stem": "Tap the word you hear.",
+      "audioText": "trust",
+      "choices": [
+        {
+          "id": "a",
+          "label": "crust"
+        },
+        {
+          "id": "b",
+          "label": "twist"
+        },
+        {
+          "id": "c",
+          "label": "trust"
+        }
+      ],
+      "correctChoiceId": "c",
+      "missedConceptOnFail": "blend-final",
+      "rationale": "t-r-u-s-t = trust.",
+      "decodableWithin": "PH-blends"
+    },
+    {
+      "id": "ph-bl-067",
+      "skillId": "PH-blends",
+      "itemType": "decode_choice",
+      "difficulty": 3,
+      "stem": "Tap the word you hear.",
+      "audioText": "blend",
+      "choices": [
+        {
+          "id": "a",
+          "label": "blend"
+        },
+        {
+          "id": "b",
+          "label": "bland"
+        },
+        {
+          "id": "c",
+          "label": "brand"
+        }
+      ],
+      "correctChoiceId": "a",
+      "missedConceptOnFail": "blend-final",
+      "rationale": "b-l-e-n-d = blend.",
+      "decodableWithin": "PH-blends"
+    },
+    {
+      "id": "ph-bl-068",
+      "skillId": "PH-blends",
+      "itemType": "decode_choice",
+      "difficulty": 3,
+      "stem": "Tap the word you hear.",
+      "audioText": "drink",
+      "choices": [
+        {
+          "id": "a",
+          "label": "drank"
+        },
+        {
+          "id": "b",
+          "label": "drink"
+        },
+        {
+          "id": "c",
+          "label": "drunk"
+        }
+      ],
+      "correctChoiceId": "b",
+      "missedConceptOnFail": "blend-initial",
+      "rationale": "d-r-i-n-k = drink.",
+      "decodableWithin": "PH-blends"
+    },
+    {
+      "id": "ph-bl-069",
+      "skillId": "PH-blends",
+      "itemType": "decode_choice",
+      "difficulty": 3,
+      "stem": "Tap the word you hear.",
+      "audioText": "frost",
+      "choices": [
+        {
+          "id": "a",
+          "label": "crust"
+        },
+        {
+          "id": "b",
+          "label": "cost"
+        },
+        {
+          "id": "c",
+          "label": "frost"
+        }
+      ],
+      "correctChoiceId": "c",
+      "missedConceptOnFail": "blend-final",
+      "rationale": "f-r-o-s-t = frost.",
+      "decodableWithin": "PH-blends"
+    },
+    {
+      "id": "ph-bl-070",
+      "skillId": "PH-blends",
+      "itemType": "decode_choice",
+      "difficulty": 3,
+      "stem": "Tap the word you hear.",
+      "audioText": "twist",
+      "choices": [
+        {
+          "id": "a",
+          "label": "twist"
+        },
+        {
+          "id": "b",
+          "label": "trust"
+        },
+        {
+          "id": "c",
+          "label": "twin"
+        }
+      ],
+      "correctChoiceId": "a",
+      "missedConceptOnFail": "blend-initial",
+      "rationale": "t-w-i-s-t = twist.",
+      "decodableWithin": "PH-blends"
+    }
+  ],
+  "lessons": {
+    "PH-blends": {
+      "iCanStatement": "I can read words with consonant blends.",
+      "explanation": "When two consonants sit side by side, blend their sounds together smoothly — say BOTH. s-t-o-p → stop. Blends can be at the start (stop, clap) or the end (hand, jump).",
+      "workedExamples": [
+        {
+          "text": "stop",
+          "note": "s /s/ · t /t/ · o /o/ · p /p/ → stop"
+        },
+        {
+          "text": "hand",
+          "note": "h · a · n · d → hand (hear the n AND the d)"
+        }
+      ]
+    }
+  }
+}

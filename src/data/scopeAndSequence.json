@@ -47,6 +47,28 @@
           "itemPool": "spelling-L03-digraphs",
           "encodePairId": "PH-digraphs",
           "mastery": { "window": 12, "accuracyToPass": 0.85, "minItems": 8 }
+        },
+        {
+          "id": "PH-blends",
+          "strand": "phonics",
+          "objective": "Decode words with initial and final consonant blends.",
+          "iCanStatement": "I can read words with consonant blends.",
+          "prereqs": ["PH-digraphs"],
+          "itemType": "decode_choice",
+          "itemPool": "phonics-L04-blends",
+          "encodePairId": "SP-blends",
+          "mastery": { "window": 12, "accuracyToPass": 0.85, "minItems": 8 }
+        },
+        {
+          "id": "SP-blends",
+          "strand": "spelling",
+          "objective": "Spell words with initial and final consonant blends from tiles.",
+          "iCanStatement": "I can spell words with consonant blends.",
+          "prereqs": ["PH-blends"],
+          "itemType": "build_word",
+          "itemPool": "spelling-L04-blends",
+          "encodePairId": "PH-blends",
+          "mastery": { "window": 12, "accuracyToPass": 0.85, "minItems": 8 }
         }
       ]
     }

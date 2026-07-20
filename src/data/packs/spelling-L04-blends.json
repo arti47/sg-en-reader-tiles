@@ -1,0 +1,1626 @@
+{
+  "packId": "spelling-L04-blends",
+  "strand": "spelling",
+  "skillIds": [
+    "SP-blends"
+  ],
+  "version": 1,
+  "items": [
+    {
+      "id": "sp-bl-001",
+      "skillId": "SP-blends",
+      "itemType": "build_word",
+      "difficulty": 1,
+      "stem": "Build the word you hear.",
+      "displayWord": "black",
+      "audioText": "black",
+      "graphemes": [
+        "b",
+        "l",
+        "a",
+        "ck"
+      ],
+      "distractorGraphemes": [
+        "sh",
+        "ch"
+      ],
+      "missedConceptOnFail": "blend-initial",
+      "rationale": "black = b-l-a-ck.",
+      "decodableWithin": "SP-blends"
+    },
+    {
+      "id": "sp-bl-002",
+      "skillId": "SP-blends",
+      "itemType": "build_word",
+      "difficulty": 2,
+      "stem": "Build the word you hear.",
+      "displayWord": "block",
+      "audioText": "block",
+      "graphemes": [
+        "b",
+        "l",
+        "o",
+        "ck"
+      ],
+      "distractorGraphemes": [
+        "sh",
+        "ch",
+        "th"
+      ],
+      "missedConceptOnFail": "blend-initial",
+      "rationale": "block = b-l-o-ck.",
+      "decodableWithin": "SP-blends"
+    },
+    {
+      "id": "sp-bl-003",
+      "skillId": "SP-blends",
+      "itemType": "build_word",
+      "difficulty": 1,
+      "stem": "Build the word you hear.",
+      "displayWord": "clap",
+      "audioText": "clap",
+      "graphemes": [
+        "c",
+        "l",
+        "a",
+        "p"
+      ],
+      "distractorGraphemes": [
+        "sh",
+        "ch"
+      ],
+      "missedConceptOnFail": "blend-initial",
+      "rationale": "clap = c-l-a-p.",
+      "decodableWithin": "SP-blends"
+    },
+    {
+      "id": "sp-bl-004",
+      "skillId": "SP-blends",
+      "itemType": "build_word",
+      "difficulty": 1,
+      "stem": "Build the word you hear.",
+      "displayWord": "clip",
+      "audioText": "clip",
+      "graphemes": [
+        "c",
+        "l",
+        "i",
+        "p"
+      ],
+      "distractorGraphemes": [
+        "sh",
+        "ch"
+      ],
+      "missedConceptOnFail": "blend-initial",
+      "rationale": "clip = c-l-i-p.",
+      "decodableWithin": "SP-blends"
+    },
+    {
+      "id": "sp-bl-005",
+      "skillId": "SP-blends",
+      "itemType": "build_word",
+      "difficulty": 1,
+      "stem": "Build the word you hear.",
+      "displayWord": "flag",
+      "audioText": "flag",
+      "graphemes": [
+        "f",
+        "l",
+        "a",
+        "g"
+      ],
+      "distractorGraphemes": [
+        "sh",
+        "ch"
+      ],
+      "missedConceptOnFail": "blend-initial",
+      "rationale": "flag = f-l-a-g.",
+      "decodableWithin": "SP-blends"
+    },
+    {
+      "id": "sp-bl-006",
+      "skillId": "SP-blends",
+      "itemType": "build_word",
+      "difficulty": 1,
+      "stem": "Build the word you hear.",
+      "displayWord": "flap",
+      "audioText": "flap",
+      "graphemes": [
+        "f",
+        "l",
+        "a",
+        "p"
+      ],
+      "distractorGraphemes": [
+        "sh",
+        "ch"
+      ],
+      "missedConceptOnFail": "blend-initial",
+      "rationale": "flap = f-l-a-p.",
+      "decodableWithin": "SP-blends"
+    },
+    {
+      "id": "sp-bl-007",
+      "skillId": "SP-blends",
+      "itemType": "build_word",
+      "difficulty": 2,
+      "stem": "Build the word you hear.",
+      "displayWord": "frog",
+      "audioText": "frog",
+      "graphemes": [
+        "f",
+        "r",
+        "o",
+        "g"
+      ],
+      "distractorGraphemes": [
+        "sh",
+        "ch",
+        "th"
+      ],
+      "missedConceptOnFail": "blend-initial",
+      "rationale": "frog = f-r-o-g.",
+      "decodableWithin": "SP-blends"
+    },
+    {
+      "id": "sp-bl-008",
+      "skillId": "SP-blends",
+      "itemType": "build_word",
+      "difficulty": 2,
+      "stem": "Build the word you hear.",
+      "displayWord": "drum",
+      "audioText": "drum",
+      "graphemes": [
+        "d",
+        "r",
+        "u",
+        "m"
+      ],
+      "distractorGraphemes": [
+        "sh",
+        "ch",
+        "th"
+      ],
+      "missedConceptOnFail": "blend-initial",
+      "rationale": "drum = d-r-u-m.",
+      "decodableWithin": "SP-blends"
+    },
+    {
+      "id": "sp-bl-009",
+      "skillId": "SP-blends",
+      "itemType": "build_word",
+      "difficulty": 1,
+      "stem": "Build the word you hear.",
+      "displayWord": "drop",
+      "audioText": "drop",
+      "graphemes": [
+        "d",
+        "r",
+        "o",
+        "p"
+      ],
+      "distractorGraphemes": [
+        "sh",
+        "ch"
+      ],
+      "missedConceptOnFail": "blend-initial",
+      "rationale": "drop = d-r-o-p.",
+      "decodableWithin": "SP-blends"
+    },
+    {
+      "id": "sp-bl-010",
+      "skillId": "SP-blends",
+      "itemType": "build_word",
+      "difficulty": 2,
+      "stem": "Build the word you hear.",
+      "displayWord": "grab",
+      "audioText": "grab",
+      "graphemes": [
+        "g",
+        "r",
+        "a",
+        "b"
+      ],
+      "distractorGraphemes": [
+        "sh",
+        "ch",
+        "th"
+      ],
+      "missedConceptOnFail": "blend-initial",
+      "rationale": "grab = g-r-a-b.",
+      "decodableWithin": "SP-blends"
+    },
+    {
+      "id": "sp-bl-011",
+      "skillId": "SP-blends",
+      "itemType": "build_word",
+      "difficulty": 2,
+      "stem": "Build the word you hear.",
+      "displayWord": "grin",
+      "audioText": "grin",
+      "graphemes": [
+        "g",
+        "r",
+        "i",
+        "n"
+      ],
+      "distractorGraphemes": [
+        "sh",
+        "ch",
+        "th"
+      ],
+      "missedConceptOnFail": "blend-initial",
+      "rationale": "grin = g-r-i-n.",
+      "decodableWithin": "SP-blends"
+    },
+    {
+      "id": "sp-bl-012",
+      "skillId": "SP-blends",
+      "itemType": "build_word",
+      "difficulty": 1,
+      "stem": "Build the word you hear.",
+      "displayWord": "crab",
+      "audioText": "crab",
+      "graphemes": [
+        "c",
+        "r",
+        "a",
+        "b"
+      ],
+      "distractorGraphemes": [
+        "sh",
+        "ch"
+      ],
+      "missedConceptOnFail": "blend-initial",
+      "rationale": "crab = c-r-a-b.",
+      "decodableWithin": "SP-blends"
+    },
+    {
+      "id": "sp-bl-013",
+      "skillId": "SP-blends",
+      "itemType": "build_word",
+      "difficulty": 1,
+      "stem": "Build the word you hear.",
+      "displayWord": "club",
+      "audioText": "club",
+      "graphemes": [
+        "c",
+        "l",
+        "u",
+        "b"
+      ],
+      "distractorGraphemes": [
+        "sh",
+        "ch"
+      ],
+      "missedConceptOnFail": "blend-initial",
+      "rationale": "club = c-l-u-b.",
+      "decodableWithin": "SP-blends"
+    },
+    {
+      "id": "sp-bl-014",
+      "skillId": "SP-blends",
+      "itemType": "build_word",
+      "difficulty": 2,
+      "stem": "Build the word you hear.",
+      "displayWord": "clam",
+      "audioText": "clam",
+      "graphemes": [
+        "c",
+        "l",
+        "a",
+        "m"
+      ],
+      "distractorGraphemes": [
+        "sh",
+        "ch",
+        "th"
+      ],
+      "missedConceptOnFail": "blend-initial",
+      "rationale": "clam = c-l-a-m.",
+      "decodableWithin": "SP-blends"
+    },
+    {
+      "id": "sp-bl-015",
+      "skillId": "SP-blends",
+      "itemType": "build_word",
+      "difficulty": 1,
+      "stem": "Build the word you hear.",
+      "displayWord": "plan",
+      "audioText": "plan",
+      "graphemes": [
+        "p",
+        "l",
+        "a",
+        "n"
+      ],
+      "distractorGraphemes": [
+        "sh",
+        "ch"
+      ],
+      "missedConceptOnFail": "blend-initial",
+      "rationale": "plan = p-l-a-n.",
+      "decodableWithin": "SP-blends"
+    },
+    {
+      "id": "sp-bl-016",
+      "skillId": "SP-blends",
+      "itemType": "build_word",
+      "difficulty": 1,
+      "stem": "Build the word you hear.",
+      "displayWord": "plum",
+      "audioText": "plum",
+      "graphemes": [
+        "p",
+        "l",
+        "u",
+        "m"
+      ],
+      "distractorGraphemes": [
+        "sh",
+        "ch"
+      ],
+      "missedConceptOnFail": "blend-initial",
+      "rationale": "plum = p-l-u-m.",
+      "decodableWithin": "SP-blends"
+    },
+    {
+      "id": "sp-bl-017",
+      "skillId": "SP-blends",
+      "itemType": "build_word",
+      "difficulty": 2,
+      "stem": "Build the word you hear.",
+      "displayWord": "slam",
+      "audioText": "slam",
+      "graphemes": [
+        "s",
+        "l",
+        "a",
+        "m"
+      ],
+      "distractorGraphemes": [
+        "sh",
+        "ch",
+        "th"
+      ],
+      "missedConceptOnFail": "blend-initial",
+      "rationale": "slam = s-l-a-m.",
+      "decodableWithin": "SP-blends"
+    },
+    {
+      "id": "sp-bl-018",
+      "skillId": "SP-blends",
+      "itemType": "build_word",
+      "difficulty": 1,
+      "stem": "Build the word you hear.",
+      "displayWord": "slip",
+      "audioText": "slip",
+      "graphemes": [
+        "s",
+        "l",
+        "i",
+        "p"
+      ],
+      "distractorGraphemes": [
+        "sh",
+        "ch"
+      ],
+      "missedConceptOnFail": "blend-initial",
+      "rationale": "slip = s-l-i-p.",
+      "decodableWithin": "SP-blends"
+    },
+    {
+      "id": "sp-bl-019",
+      "skillId": "SP-blends",
+      "itemType": "build_word",
+      "difficulty": 1,
+      "stem": "Build the word you hear.",
+      "displayWord": "snap",
+      "audioText": "snap",
+      "graphemes": [
+        "s",
+        "n",
+        "a",
+        "p"
+      ],
+      "distractorGraphemes": [
+        "sh",
+        "ch"
+      ],
+      "missedConceptOnFail": "blend-initial",
+      "rationale": "snap = s-n-a-p.",
+      "decodableWithin": "SP-blends"
+    },
+    {
+      "id": "sp-bl-020",
+      "skillId": "SP-blends",
+      "itemType": "build_word",
+      "difficulty": 2,
+      "stem": "Build the word you hear.",
+      "displayWord": "spin",
+      "audioText": "spin",
+      "graphemes": [
+        "s",
+        "p",
+        "i",
+        "n"
+      ],
+      "distractorGraphemes": [
+        "sh",
+        "ch",
+        "th"
+      ],
+      "missedConceptOnFail": "blend-initial",
+      "rationale": "spin = s-p-i-n.",
+      "decodableWithin": "SP-blends"
+    },
+    {
+      "id": "sp-bl-021",
+      "skillId": "SP-blends",
+      "itemType": "build_word",
+      "difficulty": 1,
+      "stem": "Build the word you hear.",
+      "displayWord": "spot",
+      "audioText": "spot",
+      "graphemes": [
+        "s",
+        "p",
+        "o",
+        "t"
+      ],
+      "distractorGraphemes": [
+        "sh",
+        "ch"
+      ],
+      "missedConceptOnFail": "blend-initial",
+      "rationale": "spot = s-p-o-t.",
+      "decodableWithin": "SP-blends"
+    },
+    {
+      "id": "sp-bl-022",
+      "skillId": "SP-blends",
+      "itemType": "build_word",
+      "difficulty": 1,
+      "stem": "Build the word you hear.",
+      "displayWord": "stop",
+      "audioText": "stop",
+      "graphemes": [
+        "s",
+        "t",
+        "o",
+        "p"
+      ],
+      "distractorGraphemes": [
+        "sh",
+        "ch"
+      ],
+      "missedConceptOnFail": "blend-initial",
+      "rationale": "stop = s-t-o-p.",
+      "decodableWithin": "SP-blends"
+    },
+    {
+      "id": "sp-bl-023",
+      "skillId": "SP-blends",
+      "itemType": "build_word",
+      "difficulty": 1,
+      "stem": "Build the word you hear.",
+      "displayWord": "step",
+      "audioText": "step",
+      "graphemes": [
+        "s",
+        "t",
+        "e",
+        "p"
+      ],
+      "distractorGraphemes": [
+        "sh",
+        "ch"
+      ],
+      "missedConceptOnFail": "blend-initial",
+      "rationale": "step = s-t-e-p.",
+      "decodableWithin": "SP-blends"
+    },
+    {
+      "id": "sp-bl-024",
+      "skillId": "SP-blends",
+      "itemType": "build_word",
+      "difficulty": 2,
+      "stem": "Build the word you hear.",
+      "displayWord": "swim",
+      "audioText": "swim",
+      "graphemes": [
+        "s",
+        "w",
+        "i",
+        "m"
+      ],
+      "distractorGraphemes": [
+        "sh",
+        "ch",
+        "th"
+      ],
+      "missedConceptOnFail": "blend-initial",
+      "rationale": "swim = s-w-i-m.",
+      "decodableWithin": "SP-blends"
+    },
+    {
+      "id": "sp-bl-025",
+      "skillId": "SP-blends",
+      "itemType": "build_word",
+      "difficulty": 1,
+      "stem": "Build the word you hear.",
+      "displayWord": "trap",
+      "audioText": "trap",
+      "graphemes": [
+        "t",
+        "r",
+        "a",
+        "p"
+      ],
+      "distractorGraphemes": [
+        "sh",
+        "ch"
+      ],
+      "missedConceptOnFail": "blend-initial",
+      "rationale": "trap = t-r-a-p.",
+      "decodableWithin": "SP-blends"
+    },
+    {
+      "id": "sp-bl-026",
+      "skillId": "SP-blends",
+      "itemType": "build_word",
+      "difficulty": 2,
+      "stem": "Build the word you hear.",
+      "displayWord": "trip",
+      "audioText": "trip",
+      "graphemes": [
+        "t",
+        "r",
+        "i",
+        "p"
+      ],
+      "distractorGraphemes": [
+        "sh",
+        "ch",
+        "th"
+      ],
+      "missedConceptOnFail": "blend-initial",
+      "rationale": "trip = t-r-i-p.",
+      "decodableWithin": "SP-blends"
+    },
+    {
+      "id": "sp-bl-027",
+      "skillId": "SP-blends",
+      "itemType": "build_word",
+      "difficulty": 2,
+      "stem": "Build the word you hear.",
+      "displayWord": "skip",
+      "audioText": "skip",
+      "graphemes": [
+        "s",
+        "k",
+        "i",
+        "p"
+      ],
+      "distractorGraphemes": [
+        "sh",
+        "ch",
+        "th"
+      ],
+      "missedConceptOnFail": "blend-initial",
+      "rationale": "skip = s-k-i-p.",
+      "decodableWithin": "SP-blends"
+    },
+    {
+      "id": "sp-bl-028",
+      "skillId": "SP-blends",
+      "itemType": "build_word",
+      "difficulty": 2,
+      "stem": "Build the word you hear.",
+      "displayWord": "skin",
+      "audioText": "skin",
+      "graphemes": [
+        "s",
+        "k",
+        "i",
+        "n"
+      ],
+      "distractorGraphemes": [
+        "sh",
+        "ch",
+        "th"
+      ],
+      "missedConceptOnFail": "blend-initial",
+      "rationale": "skin = s-k-i-n.",
+      "decodableWithin": "SP-blends"
+    },
+    {
+      "id": "sp-bl-029",
+      "skillId": "SP-blends",
+      "itemType": "build_word",
+      "difficulty": 2,
+      "stem": "Build the word you hear.",
+      "displayWord": "twig",
+      "audioText": "twig",
+      "graphemes": [
+        "t",
+        "w",
+        "i",
+        "g"
+      ],
+      "distractorGraphemes": [
+        "sh",
+        "ch",
+        "th"
+      ],
+      "missedConceptOnFail": "blend-initial",
+      "rationale": "twig = t-w-i-g.",
+      "decodableWithin": "SP-blends"
+    },
+    {
+      "id": "sp-bl-030",
+      "skillId": "SP-blends",
+      "itemType": "build_word",
+      "difficulty": 2,
+      "stem": "Build the word you hear.",
+      "displayWord": "twin",
+      "audioText": "twin",
+      "graphemes": [
+        "t",
+        "w",
+        "i",
+        "n"
+      ],
+      "distractorGraphemes": [
+        "sh",
+        "ch",
+        "th"
+      ],
+      "missedConceptOnFail": "blend-initial",
+      "rationale": "twin = t-w-i-n.",
+      "decodableWithin": "SP-blends"
+    },
+    {
+      "id": "sp-bl-031",
+      "skillId": "SP-blends",
+      "itemType": "build_word",
+      "difficulty": 1,
+      "stem": "Build the word you hear.",
+      "displayWord": "hand",
+      "audioText": "hand",
+      "graphemes": [
+        "h",
+        "a",
+        "n",
+        "d"
+      ],
+      "distractorGraphemes": [
+        "sh",
+        "ch"
+      ],
+      "missedConceptOnFail": "blend-final",
+      "rationale": "hand = h-a-n-d.",
+      "decodableWithin": "SP-blends"
+    },
+    {
+      "id": "sp-bl-032",
+      "skillId": "SP-blends",
+      "itemType": "build_word",
+      "difficulty": 1,
+      "stem": "Build the word you hear.",
+      "displayWord": "band",
+      "audioText": "band",
+      "graphemes": [
+        "b",
+        "a",
+        "n",
+        "d"
+      ],
+      "distractorGraphemes": [
+        "sh",
+        "ch"
+      ],
+      "missedConceptOnFail": "blend-final",
+      "rationale": "band = b-a-n-d.",
+      "decodableWithin": "SP-blends"
+    },
+    {
+      "id": "sp-bl-033",
+      "skillId": "SP-blends",
+      "itemType": "build_word",
+      "difficulty": 1,
+      "stem": "Build the word you hear.",
+      "displayWord": "sand",
+      "audioText": "sand",
+      "graphemes": [
+        "s",
+        "a",
+        "n",
+        "d"
+      ],
+      "distractorGraphemes": [
+        "sh",
+        "ch"
+      ],
+      "missedConceptOnFail": "blend-final",
+      "rationale": "sand = s-a-n-d.",
+      "decodableWithin": "SP-blends"
+    },
+    {
+      "id": "sp-bl-034",
+      "skillId": "SP-blends",
+      "itemType": "build_word",
+      "difficulty": 1,
+      "stem": "Build the word you hear.",
+      "displayWord": "land",
+      "audioText": "land",
+      "graphemes": [
+        "l",
+        "a",
+        "n",
+        "d"
+      ],
+      "distractorGraphemes": [
+        "sh",
+        "ch"
+      ],
+      "missedConceptOnFail": "blend-final",
+      "rationale": "land = l-a-n-d.",
+      "decodableWithin": "SP-blends"
+    },
+    {
+      "id": "sp-bl-035",
+      "skillId": "SP-blends",
+      "itemType": "build_word",
+      "difficulty": 2,
+      "stem": "Build the word you hear.",
+      "displayWord": "bend",
+      "audioText": "bend",
+      "graphemes": [
+        "b",
+        "e",
+        "n",
+        "d"
+      ],
+      "distractorGraphemes": [
+        "sh",
+        "ch",
+        "th"
+      ],
+      "missedConceptOnFail": "blend-final",
+      "rationale": "bend = b-e-n-d.",
+      "decodableWithin": "SP-blends"
+    },
+    {
+      "id": "sp-bl-036",
+      "skillId": "SP-blends",
+      "itemType": "build_word",
+      "difficulty": 2,
+      "stem": "Build the word you hear.",
+      "displayWord": "send",
+      "audioText": "send",
+      "graphemes": [
+        "s",
+        "e",
+        "n",
+        "d"
+      ],
+      "distractorGraphemes": [
+        "sh",
+        "ch",
+        "th"
+      ],
+      "missedConceptOnFail": "blend-final",
+      "rationale": "send = s-e-n-d.",
+      "decodableWithin": "SP-blends"
+    },
+    {
+      "id": "sp-bl-037",
+      "skillId": "SP-blends",
+      "itemType": "build_word",
+      "difficulty": 2,
+      "stem": "Build the word you hear.",
+      "displayWord": "pond",
+      "audioText": "pond",
+      "graphemes": [
+        "p",
+        "o",
+        "n",
+        "d"
+      ],
+      "distractorGraphemes": [
+        "sh",
+        "ch",
+        "th"
+      ],
+      "missedConceptOnFail": "blend-final",
+      "rationale": "pond = p-o-n-d.",
+      "decodableWithin": "SP-blends"
+    },
+    {
+      "id": "sp-bl-038",
+      "skillId": "SP-blends",
+      "itemType": "build_word",
+      "difficulty": 1,
+      "stem": "Build the word you hear.",
+      "displayWord": "tent",
+      "audioText": "tent",
+      "graphemes": [
+        "t",
+        "e",
+        "n",
+        "t"
+      ],
+      "distractorGraphemes": [
+        "sh",
+        "ch"
+      ],
+      "missedConceptOnFail": "blend-final",
+      "rationale": "tent = t-e-n-t.",
+      "decodableWithin": "SP-blends"
+    },
+    {
+      "id": "sp-bl-039",
+      "skillId": "SP-blends",
+      "itemType": "build_word",
+      "difficulty": 2,
+      "stem": "Build the word you hear.",
+      "displayWord": "dent",
+      "audioText": "dent",
+      "graphemes": [
+        "d",
+        "e",
+        "n",
+        "t"
+      ],
+      "distractorGraphemes": [
+        "sh",
+        "ch",
+        "th"
+      ],
+      "missedConceptOnFail": "blend-final",
+      "rationale": "dent = d-e-n-t.",
+      "decodableWithin": "SP-blends"
+    },
+    {
+      "id": "sp-bl-040",
+      "skillId": "SP-blends",
+      "itemType": "build_word",
+      "difficulty": 2,
+      "stem": "Build the word you hear.",
+      "displayWord": "hunt",
+      "audioText": "hunt",
+      "graphemes": [
+        "h",
+        "u",
+        "n",
+        "t"
+      ],
+      "distractorGraphemes": [
+        "sh",
+        "ch",
+        "th"
+      ],
+      "missedConceptOnFail": "blend-final",
+      "rationale": "hunt = h-u-n-t.",
+      "decodableWithin": "SP-blends"
+    },
+    {
+      "id": "sp-bl-041",
+      "skillId": "SP-blends",
+      "itemType": "build_word",
+      "difficulty": 1,
+      "stem": "Build the word you hear.",
+      "displayWord": "lamp",
+      "audioText": "lamp",
+      "graphemes": [
+        "l",
+        "a",
+        "m",
+        "p"
+      ],
+      "distractorGraphemes": [
+        "sh",
+        "ch"
+      ],
+      "missedConceptOnFail": "blend-final",
+      "rationale": "lamp = l-a-m-p.",
+      "decodableWithin": "SP-blends"
+    },
+    {
+      "id": "sp-bl-042",
+      "skillId": "SP-blends",
+      "itemType": "build_word",
+      "difficulty": 1,
+      "stem": "Build the word you hear.",
+      "displayWord": "camp",
+      "audioText": "camp",
+      "graphemes": [
+        "c",
+        "a",
+        "m",
+        "p"
+      ],
+      "distractorGraphemes": [
+        "sh",
+        "ch"
+      ],
+      "missedConceptOnFail": "blend-final",
+      "rationale": "camp = c-a-m-p.",
+      "decodableWithin": "SP-blends"
+    },
+    {
+      "id": "sp-bl-043",
+      "skillId": "SP-blends",
+      "itemType": "build_word",
+      "difficulty": 1,
+      "stem": "Build the word you hear.",
+      "displayWord": "jump",
+      "audioText": "jump",
+      "graphemes": [
+        "j",
+        "u",
+        "m",
+        "p"
+      ],
+      "distractorGraphemes": [
+        "sh",
+        "ch"
+      ],
+      "missedConceptOnFail": "blend-final",
+      "rationale": "jump = j-u-m-p.",
+      "decodableWithin": "SP-blends"
+    },
+    {
+      "id": "sp-bl-044",
+      "skillId": "SP-blends",
+      "itemType": "build_word",
+      "difficulty": 2,
+      "stem": "Build the word you hear.",
+      "displayWord": "bump",
+      "audioText": "bump",
+      "graphemes": [
+        "b",
+        "u",
+        "m",
+        "p"
+      ],
+      "distractorGraphemes": [
+        "sh",
+        "ch",
+        "th"
+      ],
+      "missedConceptOnFail": "blend-final",
+      "rationale": "bump = b-u-m-p.",
+      "decodableWithin": "SP-blends"
+    },
+    {
+      "id": "sp-bl-045",
+      "skillId": "SP-blends",
+      "itemType": "build_word",
+      "difficulty": 1,
+      "stem": "Build the word you hear.",
+      "displayWord": "nest",
+      "audioText": "nest",
+      "graphemes": [
+        "n",
+        "e",
+        "s",
+        "t"
+      ],
+      "distractorGraphemes": [
+        "sh",
+        "ch"
+      ],
+      "missedConceptOnFail": "blend-final",
+      "rationale": "nest = n-e-s-t.",
+      "decodableWithin": "SP-blends"
+    },
+    {
+      "id": "sp-bl-046",
+      "skillId": "SP-blends",
+      "itemType": "build_word",
+      "difficulty": 1,
+      "stem": "Build the word you hear.",
+      "displayWord": "best",
+      "audioText": "best",
+      "graphemes": [
+        "b",
+        "e",
+        "s",
+        "t"
+      ],
+      "distractorGraphemes": [
+        "sh",
+        "ch"
+      ],
+      "missedConceptOnFail": "blend-final",
+      "rationale": "best = b-e-s-t.",
+      "decodableWithin": "SP-blends"
+    },
+    {
+      "id": "sp-bl-047",
+      "skillId": "SP-blends",
+      "itemType": "build_word",
+      "difficulty": 2,
+      "stem": "Build the word you hear.",
+      "displayWord": "rest",
+      "audioText": "rest",
+      "graphemes": [
+        "r",
+        "e",
+        "s",
+        "t"
+      ],
+      "distractorGraphemes": [
+        "sh",
+        "ch",
+        "th"
+      ],
+      "missedConceptOnFail": "blend-final",
+      "rationale": "rest = r-e-s-t.",
+      "decodableWithin": "SP-blends"
+    },
+    {
+      "id": "sp-bl-048",
+      "skillId": "SP-blends",
+      "itemType": "build_word",
+      "difficulty": 2,
+      "stem": "Build the word you hear.",
+      "displayWord": "fist",
+      "audioText": "fist",
+      "graphemes": [
+        "f",
+        "i",
+        "s",
+        "t"
+      ],
+      "distractorGraphemes": [
+        "sh",
+        "ch",
+        "th"
+      ],
+      "missedConceptOnFail": "blend-final",
+      "rationale": "fist = f-i-s-t.",
+      "decodableWithin": "SP-blends"
+    },
+    {
+      "id": "sp-bl-049",
+      "skillId": "SP-blends",
+      "itemType": "build_word",
+      "difficulty": 2,
+      "stem": "Build the word you hear.",
+      "displayWord": "list",
+      "audioText": "list",
+      "graphemes": [
+        "l",
+        "i",
+        "s",
+        "t"
+      ],
+      "distractorGraphemes": [
+        "sh",
+        "ch",
+        "th"
+      ],
+      "missedConceptOnFail": "blend-final",
+      "rationale": "list = l-i-s-t.",
+      "decodableWithin": "SP-blends"
+    },
+    {
+      "id": "sp-bl-050",
+      "skillId": "SP-blends",
+      "itemType": "build_word",
+      "difficulty": 2,
+      "stem": "Build the word you hear.",
+      "displayWord": "dust",
+      "audioText": "dust",
+      "graphemes": [
+        "d",
+        "u",
+        "s",
+        "t"
+      ],
+      "distractorGraphemes": [
+        "sh",
+        "ch",
+        "th"
+      ],
+      "missedConceptOnFail": "blend-final",
+      "rationale": "dust = d-u-s-t.",
+      "decodableWithin": "SP-blends"
+    },
+    {
+      "id": "sp-bl-051",
+      "skillId": "SP-blends",
+      "itemType": "build_word",
+      "difficulty": 2,
+      "stem": "Build the word you hear.",
+      "displayWord": "mask",
+      "audioText": "mask",
+      "graphemes": [
+        "m",
+        "a",
+        "s",
+        "k"
+      ],
+      "distractorGraphemes": [
+        "sh",
+        "ch",
+        "th"
+      ],
+      "missedConceptOnFail": "blend-final",
+      "rationale": "mask = m-a-s-k.",
+      "decodableWithin": "SP-blends"
+    },
+    {
+      "id": "sp-bl-052",
+      "skillId": "SP-blends",
+      "itemType": "build_word",
+      "difficulty": 1,
+      "stem": "Build the word you hear.",
+      "displayWord": "desk",
+      "audioText": "desk",
+      "graphemes": [
+        "d",
+        "e",
+        "s",
+        "k"
+      ],
+      "distractorGraphemes": [
+        "sh",
+        "ch"
+      ],
+      "missedConceptOnFail": "blend-final",
+      "rationale": "desk = d-e-s-k.",
+      "decodableWithin": "SP-blends"
+    },
+    {
+      "id": "sp-bl-053",
+      "skillId": "SP-blends",
+      "itemType": "build_word",
+      "difficulty": 2,
+      "stem": "Build the word you hear.",
+      "displayWord": "milk",
+      "audioText": "milk",
+      "graphemes": [
+        "m",
+        "i",
+        "l",
+        "k"
+      ],
+      "distractorGraphemes": [
+        "sh",
+        "ch",
+        "th"
+      ],
+      "missedConceptOnFail": "blend-final",
+      "rationale": "milk = m-i-l-k.",
+      "decodableWithin": "SP-blends"
+    },
+    {
+      "id": "sp-bl-054",
+      "skillId": "SP-blends",
+      "itemType": "build_word",
+      "difficulty": 2,
+      "stem": "Build the word you hear.",
+      "displayWord": "belt",
+      "audioText": "belt",
+      "graphemes": [
+        "b",
+        "e",
+        "l",
+        "t"
+      ],
+      "distractorGraphemes": [
+        "sh",
+        "ch",
+        "th"
+      ],
+      "missedConceptOnFail": "blend-final",
+      "rationale": "belt = b-e-l-t.",
+      "decodableWithin": "SP-blends"
+    },
+    {
+      "id": "sp-bl-055",
+      "skillId": "SP-blends",
+      "itemType": "build_word",
+      "difficulty": 2,
+      "stem": "Build the word you hear.",
+      "displayWord": "melt",
+      "audioText": "melt",
+      "graphemes": [
+        "m",
+        "e",
+        "l",
+        "t"
+      ],
+      "distractorGraphemes": [
+        "sh",
+        "ch",
+        "th"
+      ],
+      "missedConceptOnFail": "blend-final",
+      "rationale": "melt = m-e-l-t.",
+      "decodableWithin": "SP-blends"
+    },
+    {
+      "id": "sp-bl-056",
+      "skillId": "SP-blends",
+      "itemType": "build_word",
+      "difficulty": 1,
+      "stem": "Build the word you hear.",
+      "displayWord": "gift",
+      "audioText": "gift",
+      "graphemes": [
+        "g",
+        "i",
+        "f",
+        "t"
+      ],
+      "distractorGraphemes": [
+        "sh",
+        "ch"
+      ],
+      "missedConceptOnFail": "blend-final",
+      "rationale": "gift = g-i-f-t.",
+      "decodableWithin": "SP-blends"
+    },
+    {
+      "id": "sp-bl-057",
+      "skillId": "SP-blends",
+      "itemType": "build_word",
+      "difficulty": 2,
+      "stem": "Build the word you hear.",
+      "displayWord": "lift",
+      "audioText": "lift",
+      "graphemes": [
+        "l",
+        "i",
+        "f",
+        "t"
+      ],
+      "distractorGraphemes": [
+        "sh",
+        "ch",
+        "th"
+      ],
+      "missedConceptOnFail": "blend-final",
+      "rationale": "lift = l-i-f-t.",
+      "decodableWithin": "SP-blends"
+    },
+    {
+      "id": "sp-bl-058",
+      "skillId": "SP-blends",
+      "itemType": "build_word",
+      "difficulty": 2,
+      "stem": "Build the word you hear.",
+      "displayWord": "soft",
+      "audioText": "soft",
+      "graphemes": [
+        "s",
+        "o",
+        "f",
+        "t"
+      ],
+      "distractorGraphemes": [
+        "sh",
+        "ch",
+        "th"
+      ],
+      "missedConceptOnFail": "blend-final",
+      "rationale": "soft = s-o-f-t.",
+      "decodableWithin": "SP-blends"
+    },
+    {
+      "id": "sp-bl-059",
+      "skillId": "SP-blends",
+      "itemType": "build_word",
+      "difficulty": 2,
+      "stem": "Build the word you hear.",
+      "displayWord": "bank",
+      "audioText": "bank",
+      "graphemes": [
+        "b",
+        "a",
+        "n",
+        "k"
+      ],
+      "distractorGraphemes": [
+        "sh",
+        "ch",
+        "th"
+      ],
+      "missedConceptOnFail": "blend-final",
+      "rationale": "bank = b-a-n-k.",
+      "decodableWithin": "SP-blends"
+    },
+    {
+      "id": "sp-bl-060",
+      "skillId": "SP-blends",
+      "itemType": "build_word",
+      "difficulty": 3,
+      "stem": "Build the word you hear.",
+      "displayWord": "sink",
+      "audioText": "sink",
+      "graphemes": [
+        "s",
+        "i",
+        "n",
+        "k"
+      ],
+      "distractorGraphemes": [
+        "sh",
+        "ch",
+        "th",
+        "ck"
+      ],
+      "missedConceptOnFail": "blend-final",
+      "rationale": "sink = s-i-n-k.",
+      "decodableWithin": "SP-blends"
+    },
+    {
+      "id": "sp-bl-061",
+      "skillId": "SP-blends",
+      "itemType": "build_word",
+      "difficulty": 3,
+      "stem": "Build the word you hear.",
+      "displayWord": "stand",
+      "audioText": "stand",
+      "graphemes": [
+        "s",
+        "t",
+        "a",
+        "n",
+        "d"
+      ],
+      "distractorGraphemes": [
+        "sh",
+        "ch",
+        "th",
+        "ck"
+      ],
+      "missedConceptOnFail": "blend-final",
+      "rationale": "stand = s-t-a-n-d.",
+      "decodableWithin": "SP-blends"
+    },
+    {
+      "id": "sp-bl-062",
+      "skillId": "SP-blends",
+      "itemType": "build_word",
+      "difficulty": 3,
+      "stem": "Build the word you hear.",
+      "displayWord": "stamp",
+      "audioText": "stamp",
+      "graphemes": [
+        "s",
+        "t",
+        "a",
+        "m",
+        "p"
+      ],
+      "distractorGraphemes": [
+        "sh",
+        "ch",
+        "th",
+        "ck"
+      ],
+      "missedConceptOnFail": "blend-final",
+      "rationale": "stamp = s-t-a-m-p.",
+      "decodableWithin": "SP-blends"
+    },
+    {
+      "id": "sp-bl-063",
+      "skillId": "SP-blends",
+      "itemType": "build_word",
+      "difficulty": 3,
+      "stem": "Build the word you hear.",
+      "displayWord": "crush",
+      "audioText": "crush",
+      "graphemes": [
+        "c",
+        "r",
+        "u",
+        "sh"
+      ],
+      "distractorGraphemes": [
+        "ch",
+        "th",
+        "ck",
+        "s"
+      ],
+      "missedConceptOnFail": "blend-initial",
+      "rationale": "crush = c-r-u-sh.",
+      "decodableWithin": "SP-blends"
+    },
+    {
+      "id": "sp-bl-064",
+      "skillId": "SP-blends",
+      "itemType": "build_word",
+      "difficulty": 3,
+      "stem": "Build the word you hear.",
+      "displayWord": "brush",
+      "audioText": "brush",
+      "graphemes": [
+        "b",
+        "r",
+        "u",
+        "sh"
+      ],
+      "distractorGraphemes": [
+        "ch",
+        "th",
+        "ck",
+        "s"
+      ],
+      "missedConceptOnFail": "blend-initial",
+      "rationale": "brush = b-r-u-sh.",
+      "decodableWithin": "SP-blends"
+    },
+    {
+      "id": "sp-bl-065",
+      "skillId": "SP-blends",
+      "itemType": "build_word",
+      "difficulty": 3,
+      "stem": "Build the word you hear.",
+      "displayWord": "crash",
+      "audioText": "crash",
+      "graphemes": [
+        "c",
+        "r",
+        "a",
+        "sh"
+      ],
+      "distractorGraphemes": [
+        "ch",
+        "th",
+        "ck",
+        "s"
+      ],
+      "missedConceptOnFail": "blend-initial",
+      "rationale": "crash = c-r-a-sh.",
+      "decodableWithin": "SP-blends"
+    },
+    {
+      "id": "sp-bl-066",
+      "skillId": "SP-blends",
+      "itemType": "build_word",
+      "difficulty": 3,
+      "stem": "Build the word you hear.",
+      "displayWord": "trust",
+      "audioText": "trust",
+      "graphemes": [
+        "t",
+        "r",
+        "u",
+        "s",
+        "t"
+      ],
+      "distractorGraphemes": [
+        "sh",
+        "ch",
+        "th",
+        "ck"
+      ],
+      "missedConceptOnFail": "blend-final",
+      "rationale": "trust = t-r-u-s-t.",
+      "decodableWithin": "SP-blends"
+    },
+    {
+      "id": "sp-bl-067",
+      "skillId": "SP-blends",
+      "itemType": "build_word",
+      "difficulty": 3,
+      "stem": "Build the word you hear.",
+      "displayWord": "blend",
+      "audioText": "blend",
+      "graphemes": [
+        "b",
+        "l",
+        "e",
+        "n",
+        "d"
+      ],
+      "distractorGraphemes": [
+        "sh",
+        "ch",
+        "th",
+        "ck"
+      ],
+      "missedConceptOnFail": "blend-final",
+      "rationale": "blend = b-l-e-n-d.",
+      "decodableWithin": "SP-blends"
+    },
+    {
+      "id": "sp-bl-068",
+      "skillId": "SP-blends",
+      "itemType": "build_word",
+      "difficulty": 3,
+      "stem": "Build the word you hear.",
+      "displayWord": "drink",
+      "audioText": "drink",
+      "graphemes": [
+        "d",
+        "r",
+        "i",
+        "n",
+        "k"
+      ],
+      "distractorGraphemes": [
+        "sh",
+        "ch",
+        "th",
+        "ck"
+      ],
+      "missedConceptOnFail": "blend-initial",
+      "rationale": "drink = d-r-i-n-k.",
+      "decodableWithin": "SP-blends"
+    },
+    {
+      "id": "sp-bl-069",
+      "skillId": "SP-blends",
+      "itemType": "build_word",
+      "difficulty": 3,
+      "stem": "Build the word you hear.",
+      "displayWord": "frost",
+      "audioText": "frost",
+      "graphemes": [
+        "f",
+        "r",
+        "o",
+        "s",
+        "t"
+      ],
+      "distractorGraphemes": [
+        "sh",
+        "ch",
+        "th",
+        "ck"
+      ],
+      "missedConceptOnFail": "blend-final",
+      "rationale": "frost = f-r-o-s-t.",
+      "decodableWithin": "SP-blends"
+    },
+    {
+      "id": "sp-bl-070",
+      "skillId": "SP-blends",
+      "itemType": "build_word",
+      "difficulty": 3,
+      "stem": "Build the word you hear.",
+      "displayWord": "twist",
+      "audioText": "twist",
+      "graphemes": [
+        "t",
+        "w",
+        "i",
+        "s",
+        "t"
+      ],
+      "distractorGraphemes": [
+        "sh",
+        "ch",
+        "th",
+        "ck"
+      ],
+      "missedConceptOnFail": "blend-initial",
+      "rationale": "twist = t-w-i-s-t.",
+      "decodableWithin": "SP-blends"
+    }
+  ],
+  "lessons": {
+    "SP-blends": {
+      "iCanStatement": "I can spell words with consonant blends.",
+      "explanation": "A blend has TWO consonant sounds next to each other — do not miss either one. stop needs s AND t; hand needs n AND d. Say the word slowly and place a tile for every sound.",
+      "workedExamples": [
+        {
+          "text": "clap",
+          "note": "Hear c-l-a-p → tiles c · l · a · p"
+        },
+        {
+          "text": "jump",
+          "note": "Hear j-u-m-p → tiles j · u · m · p"
+        }
+      ]
+    }
+  }
+}
