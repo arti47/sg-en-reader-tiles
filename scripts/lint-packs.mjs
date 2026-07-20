@@ -15,6 +15,7 @@ const scope = readJSON(join(dataDir, 'scopeAndSequence.json'))
 const decode = readJSON(join(dataDir, 'decodability.json'))
 const skills = new Map(scope.levels.flatMap(l => l.skills).map(s => [s.id, s]))
 const packs = readdirSync(packDir).filter(f => f.endsWith('.json')).map(f => ({ f, pack: readJSON(join(packDir, f)) }))
+const packById = new Map(packs.map(({ pack }) => [pack.packId, pack]))
 
 const errors = []
 const warnings = []
@@ -90,8 +91,20 @@ for (const { f, pack } of packs) {
       }
     }
   }
-  // lessons present for each skill in this pack
-  for (const sid of pack.skillIds ?? []) if (!pack.lessons?.[sid]) warn(f, sid, 'no lesson for skill')
+}
+
+// (7) lessons (§8, T13): every runtime skill must ship a well-formed, en-SG explicit lesson
+// in its pool pack — the struggle→lesson branch has nothing to serve otherwise.
+for (const [sid, skill] of skills) {
+  const L = packById.get(skill.itemPool)?.lessons?.[sid]
+  if (!L) { err('-', sid, `no lesson in pack ${skill.itemPool} (§8/T13)`); continue }
+  if (!L.iCanStatement?.trim()) err(skill.itemPool, sid, 'lesson missing iCanStatement')
+  if (!L.explanation || L.explanation.trim().length < 10) err(skill.itemPool, sid, 'lesson explanation missing/too short')
+  if (!Array.isArray(L.workedExamples) || L.workedExamples.length < 1) err(skill.itemPool, sid, 'lesson needs ≥1 worked example')
+  else L.workedExamples.forEach((ex, i) => {
+    if (!ex?.text?.trim() || !ex?.note?.trim()) err(skill.itemPool, sid, `worked example ${i} missing text/note`)
+  })
+  for (const t of [L.iCanStatement, L.explanation, ...(L.workedExamples ?? []).flatMap(e => [e?.text, e?.note])]) scanEnSG(skill.itemPool, sid, t)
 }
 
 // (6) pool size
