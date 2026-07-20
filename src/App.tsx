@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import type { Child } from './types'
-import { getChildren, addChild } from './store'
+import { getChildren, addChild, removeChild, resetChild } from './store'
 import { ChildPicker } from './features/ChildPicker'
 import { AddStudent } from './features/AddStudent'
 import { Session } from './features/Session'
@@ -11,7 +11,7 @@ import * as srs from './lib/srs'
 if (import.meta.env.DEV) (window as unknown as { __srs?: typeof srs }).__srs = srs
 
 type View = 'pick' | 'add' | 'placement' | 'session'
-const APP_VERSION = '0.2.13'
+const APP_VERSION = '0.2.14'
 
 export default function App() {
   const [children, setChildren] = useState<Child[]>([])
@@ -28,6 +28,12 @@ export default function App() {
   async function placementDone() {
     setChildren(await getChildren()); setView('pick')
   }
+  async function removeStudent(c: Child) {
+    await removeChild(c.id); setChildren(await getChildren())
+  }
+  async function resetStudent(c: Child) {
+    await resetChild(c); setActive({ ...c, entrySkillId: undefined }); setView('placement')
+  }
 
   return (
     <div className="app">
@@ -41,7 +47,9 @@ export default function App() {
         {view === 'pick' && (
           <ChildPicker children={children}
             onPick={(c) => { setActive(c); setView('session') }}
-            onAdd={() => setView('add')} />
+            onAdd={() => setView('add')}
+            onRemove={removeStudent}
+            onReset={resetStudent} />
         )}
         {view === 'add' && <AddStudent onSave={save} onCancel={() => setView('pick')} />}
         {view === 'placement' && active && <Placement child={active} onDone={placementDone} />}

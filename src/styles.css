@@ -86,6 +86,7 @@ h1 { font-size: 1.8rem; font-weight: 700; margin: 8px 0 0; }
 }
 .btn.small { min-height: 40px; flex: 0; }
 .btn.ghost { background: #fff; color: var(--ink); border: 3px solid var(--teal-soft); }
+.btn.danger { background: var(--no); color: var(--paper); }
 .btn:disabled { opacity: .4; }
 .btn:focus-visible, .tile:focus-visible, .avatar:focus-visible { outline: 3px solid var(--amber); outline-offset: 3px; }
 .link, .btn-link { background: none; border: none; color: var(--teal); font: inherit; font-weight: 600; cursor: pointer; align-self: flex-start; padding: 6px 0; }

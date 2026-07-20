@@ -63,3 +63,43 @@ export const getReviews = (childId: string) =>
     .then(rows => rows.filter(r => r.key.startsWith(childId + '::')))
 export const putReview = (childId: string, rv: Review) =>
   req('reviews', 'readwrite', s => s.put({ ...rv, key: pKey(childId, rv.skillId) }))
+
+// Multi-store transaction that resolves on completion.
+function run(stores: string[], mode: IDBTransactionMode, fn: (t: IDBTransaction) => void): Promise<void> {
+  return open().then(db => new Promise<void>((res, rej) => {
+    const t = db.transaction(stores, mode)
+    t.oncomplete = () => res(); t.onerror = () => rej(t.error); t.onabort = () => rej(t.error)
+    fn(t)
+  }))
+}
+
+// Delete all of a child's data (attempts by index; progress/certs/reviews by key prefix).
+function clearChildData(childId: string): Promise<void> {
+  return run(['attempts', 'progress', 'certificates', 'reviews'], 'readwrite', t => {
+    const at = t.objectStore('attempts')
+    at.index('childId').getAllKeys(childId).onsuccess = e =>
+      (e.target as IDBRequest<IDBValidKey[]>).result.forEach(k => at.delete(k))
+    for (const name of ['progress', 'certificates', 'reviews']) {
+      const st = t.objectStore(name)
+      st.getAllKeys().onsuccess = e =>
+        (e.target as IDBRequest<IDBValidKey[]>).result.forEach(k => {
+          if (String(k).startsWith(childId + '::')) st.delete(k)
+        })
+    }
+  })
+}
+
+// Remove a student entirely (profile + all their data).
+export async function removeChild(childId: string): Promise<void> {
+  await clearChildData(childId)
+  await req('children', 'readwrite', s => s.delete(childId))
+}
+
+// Reset a student: wipe all progress/attempts/certs/reviews and clear the entry
+// skill so the warm-up placement runs again. Keeps the profile.
+export async function resetChild(child: Child): Promise<void> {
+  await clearChildData(child.id)
+  const fresh: Child = { ...child }
+  delete fresh.entrySkillId
+  await addChild(fresh)
+}

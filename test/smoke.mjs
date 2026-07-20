@@ -108,6 +108,31 @@ try {
     await ctx.close()
   }
 
+  // Manage students: add one, run placement, then remove it and assert it's gone.
+  {
+    const mctx = await browser.newContext({ viewport: { width: 390, height: 800 } })
+    const mp = await mctx.newPage(); mp.setDefaultTimeout(6000)
+    await mp.goto(BASE, { waitUntil: 'networkidle' })
+    await mp.getByText('Add student').click()
+    await mp.locator('input').fill('Mgr')
+    await mp.getByRole('button', { name: 'P1', exact: true }).click()
+    await mp.getByRole('button', { name: 'Save' }).click()
+    for (let i = 0; i < 30; i++) {
+      const kind = await mp.waitForFunction(() => {
+        if (/Who's reading\?/.test(document.body.innerText)) return 'pick'
+        return document.querySelector('button.tile:not([disabled])') ? 'item' : null
+      }, { timeout: 8000 }).then(h => h.jsonValue())
+      if (kind === 'pick') break
+      await mp.locator('button.tile:not([disabled])').first().click()
+    }
+    await mp.getByRole('button', { name: 'Manage' }).click()
+    await mp.getByRole('button', { name: 'Remove', exact: true }).click() // open confirm
+    await mp.getByRole('button', { name: 'Remove', exact: true }).click() // confirm
+    await mp.waitForFunction(() => !/Mgr/.test(document.body.innerText), { timeout: 6000 })
+      .catch(() => fail('manage: remove student did not delete the profile'))
+    await mctx.close()
+  }
+
   // SRS pure-function invariants (§7): +2/+7/+21d schedule, pass advances, fail demotes, due filter+cap.
   const srsPage = await browser.newPage()
   await srsPage.goto(BASE, { waitUntil: 'networkidle' })
@@ -156,6 +181,6 @@ try {
   if (bad.db.progress.some(p => p.skillId === 'SP-cvc-short-vowels')) fail('dual gate: encode must stay locked when decode <70%')
   if (bad.db.certs.length) fail('struggle path: no certificate should be awarded')
 
-  console.log('PASS — placement→session, mastery+certs+review-scheduled, struggle→lesson, dual-gate lockout, SRS math, zero errors, no overflow')
+  console.log('PASS — placement→session, mastery+certs+review-scheduled, struggle→lesson, dual-gate lockout, SRS math, remove-student, zero errors, no overflow')
   stop(); process.exit(0)
 } catch (e) { fail(e.message || String(e)) }
