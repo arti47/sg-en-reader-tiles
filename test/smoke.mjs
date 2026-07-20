@@ -40,6 +40,7 @@ try {
 
     const overflow = await page.evaluate(() => document.documentElement.scrollWidth > window.innerWidth + 1)
     let lessons = 0
+    let firstSkill = null // first skill the session serves (A1: must respect placement, not restart at CVC)
     const lbl = g => new RegExp('^' + g.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + '$')
 
     // Warm-up placement runs first (quiet decode items, auto-advance on tap). Drive it
@@ -83,6 +84,7 @@ try {
       if (kind === 'lesson') { lessons++; await page.getByRole('button', { name: "Let's try" }).click(); continue }
 
       const item = await page.evaluate(() => window.__item || null)
+      if (!firstSkill) firstSkill = item.skillId
       if (item.graphemes) {
         for (const g of item.graphemes) await page.locator('button.tile', { hasText: lbl(g) }).first().click()
         await page.getByRole('button', { name: 'Check' }).click()
@@ -104,7 +106,7 @@ try {
         t.oncomplete = () => res(out)
       }
     }))
-    results.push({ WRONG, errors, overflow, lessons, db })
+    results.push({ WRONG, errors, overflow, lessons, db, firstSkill })
     await ctx.close()
   }
 
@@ -158,8 +160,40 @@ try {
     if (s.dueReviews(many, now).length !== 4) return 'dueReviews cap 4'
     return 'ok'
   })
+  // Engine invariants (§7): A2 dual gate, A1 placement-mastery, A3 difficulty streak.
+  const engineCheck = await srsPage.evaluate(() => {
+    const e = window.__engine, gs = window.__getSkill
+    if (!e || !gs) return '__engine/__getSkill missing'
+    let k = 0
+    const mk = (skillId, correct) => ({ id: String(k), childId: 'c', skillId, itemId: 'i', correct, difficulty: 1, latencyMs: 1, ts: k++ })
+    const arr = (id, n, ok = true) => Array.from({ length: n }, () => mk(id, ok))
+    const PH = 'PH-cvc-short-vowels', SP = 'SP-cvc-short-vowels'
+    const dec = gs(PH)
+    // A2 — a pattern needs BOTH decode and encode; decode alone must not pass.
+    const decodeOnly = arr(PH, 8, true)
+    if (!e.skillMastered(decodeOnly, dec)) return 'A2 decode should master'
+    if (e.patternMastered(decodeOnly, dec)) return 'A2 pattern must NOT pass on decode alone'
+    if (!e.patternMastered([...decodeOnly, ...arr(SP, 8, true)], dec)) return 'A2 pattern should pass with both'
+    // A2 advancement gate — with only CVC decode mastered, the next decode skill (digraphs) must
+    // NOT be eligible (its encode partner is); it unlocks only once the whole CVC pattern is done.
+    const decElig = e.eligibleSkills(decodeOnly).map(s => s.id)
+    if (decElig.includes('PH-digraphs')) return 'A2 advancement: digraphs unlocked on decode alone'
+    if (!decElig.includes(SP)) return 'A2 encode partner should be eligible at ≥70% decode'
+    if (!e.eligibleSkills([...decodeOnly, ...arr(SP, 8, true)]).map(s => s.id).includes('PH-digraphs')) return 'A2 advancement: digraphs should unlock after full pattern'
+    // A1 — placement-mastered skills count without attempts.
+    if (e.isMastered([], dec)) return 'A1 unmastered without attempts'
+    if (!e.isMastered([], dec, new Set([PH]))) return 'A1 placement-mastered should count'
+    if (!e.patternMastered([], dec, new Set([PH, SP]))) return 'A1 placement pattern'
+    // A3 — streak of 3 climbs one step; 4 holds (reset after promotion); 6 climbs again; 2 wrong demotes.
+    if (e.nextDifficulty(arr(PH, 3, true), PH, 1) !== 2) return 'A3 streak3 → +1'
+    if (e.nextDifficulty(arr(PH, 4, true), PH, 2) !== 2) return 'A3 streak4 → hold'
+    if (e.nextDifficulty(arr(PH, 6, true), PH, 2) !== 3) return 'A3 streak6 → +1'
+    if (e.nextDifficulty([...arr(PH, 2, true), mk(PH, false), mk(PH, false)], PH, 3) !== 2) return 'A3 two wrong → −1'
+    return 'ok'
+  })
   await browser.close()
   if (srsCheck !== 'ok') fail('SRS invariant: ' + srsCheck)
+  if (engineCheck !== 'ok') fail('engine invariant: ' + engineCheck)
 
   // Assertions
   for (const r of results) {
@@ -173,6 +207,10 @@ try {
   if (good.db.certs.length < 1) fail(`expected ≥1 certificate on mastery path, got ${good.db.certs.length}`)
   const cvc = good.db.progress.find(p => p.skillId === 'PH-cvc-short-vowels')
   if (!cvc || cvc.status !== 'mastered') fail('placement: CVC decode should be marked mastered')
+  // A1 — the session must honour placement: it should NOT re-serve the CVC skill placement
+  // already mastered, i.e. it starts at the entry skill above it.
+  if (good.firstSkill === 'PH-cvc-short-vowels') fail('A1: session ignored placement — re-served mastered CVC')
+  if (!good.firstSkill) fail('A1: no session item was served on the good path')
   // Mastering a skill in-session schedules its first spaced review (+2d, stage 0).
   const sched = (good.db.reviews || []).find(r => r.stage === 0 && r.status === 'scheduled')
   if (!sched) fail('SRS: mastering a skill should schedule a review')

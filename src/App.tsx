@@ -7,11 +7,16 @@ import { Session } from './features/Session'
 import { Placement } from './features/Placement'
 import { initPWA } from './pwa'
 import * as srs from './lib/srs'
+import * as engine from './lib/engine'
+import { getSkill } from './lib/packs'
 
-if (import.meta.env.DEV) (window as unknown as { __srs?: typeof srs }).__srs = srs
+if (import.meta.env.DEV) {
+  const w = window as unknown as { __srs?: typeof srs; __engine?: typeof engine; __getSkill?: typeof getSkill }
+  w.__srs = srs; w.__engine = engine; w.__getSkill = getSkill
+}
 
 type View = 'pick' | 'add' | 'placement' | 'session'
-const APP_VERSION = '0.2.14'
+const APP_VERSION = '0.2.15'
 
 export default function App() {
   const [children, setChildren] = useState<Child[]>([])

@@ -9,7 +9,8 @@ export function scoreMcq(item: PackItem, choiceId: string): ScoreResult {
 }
 
 // Encode (build_word/spell_tiles): grapheme sequence must match exactly (§12).
-// Error analysis: first positional grapheme mismatch → concept tag, else generic.
+// On any mismatch the item's authored missedConceptOnFail tag is emitted (per-grapheme
+// concept mapping isn't authored in the pack, so scoring stays at item granularity).
 export function scoreTiles(item: PackItem, answer: string[]): ScoreResult {
   const target = item.graphemes ?? []
   const correct = answer.length === target.length && answer.every((g, i) => g === target[i])

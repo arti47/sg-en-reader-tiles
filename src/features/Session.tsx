@@ -3,7 +3,7 @@ import type { Child, PackItem, Attempt, SkillProgress, Difficulty, SkillDef, Cer
 import type { ScoreResult } from '../lib/scoring'
 import { addAttempt, getAttempts, getProgress, putProgress, putCertificate, getReviews, putReview } from '../store'
 import { SKILLS, getSkill, getLesson, pickItem } from '../lib/packs'
-import { rollingAccuracy, itemsAnswered, nextDifficulty, skillMastered, encodeUnlocked, struggling } from '../lib/engine'
+import { rollingAccuracy, itemsAnswered, nextDifficulty, skillMastered, isMastered, patternMastered, struggling, eligibleSkills, patternDecodeSkill } from '../lib/engine'
 import { scheduleFirst, onReviewPass, onReviewFail, dueReviews } from '../lib/srs'
 import { McqItem } from './items/McqItem'
 import { TileItem } from './items/TileItem'
@@ -12,22 +12,12 @@ import { LessonView } from './LessonView'
 const SESSION_LEN = 16
 type Phase = 'loading' | 'item' | 'lesson' | 'cert' | 'summary'
 
-// Eligible skills: not yet mastered, prereqs met (encode partner unlocks at 70%, §7).
-function eligibleSkills(attempts: Attempt[]): SkillDef[] {
-  return SKILLS.filter(s => {
-    if (skillMastered(attempts, s)) return false
-    return s.prereqs.every(p => {
-      const pre = getSkill(p); if (!pre) return false
-      return s.encodePairId === p ? encodeUnlocked(attempts, pre) : skillMastered(attempts, pre)
-    })
-  })
-}
-
 export function Session(props: { child: Child; onExit: () => void }) {
   const attemptsRef = useRef<Attempt[]>([])
   const diffRef = useRef<Map<string, Difficulty>>(new Map())
   const seenRef = useRef<Set<string>>(new Set())
   const lessonShownRef = useRef<Set<string>>(new Set())
+  const masteredRef = useRef<Set<string>>(new Set()) // skills mastered at placement (§7)
   const startRef = useRef<number>(Date.now())
   const countRef = useRef(0)
   const reviewsRef = useRef<Review[]>([])       // spaced-repetition schedule (§7)
@@ -44,7 +34,10 @@ export function Session(props: { child: Child; onExit: () => void }) {
     void (async () => {
       attemptsRef.current = await getAttempts(props.child.id)
       const prog = await getProgress(props.child.id)
-      for (const p of prog) diffRef.current.set(p.skillId, p.difficulty)
+      for (const p of prog) {
+        diffRef.current.set(p.skillId, p.difficulty)
+        if (p.status === 'mastered') masteredRef.current.add(p.skillId) // seed placement mastery
+      }
       reviewsRef.current = await getReviews(props.child.id)
       dueQueueRef.current = dueReviews(reviewsRef.current, Date.now()).map(r => r.skillId)
       advance(true)
@@ -72,7 +65,7 @@ export function Session(props: { child: Child; onExit: () => void }) {
       if (rs) { reviewingRef.current = dueSkillId; loadItem(rs, 1); return }
     }
     reviewingRef.current = null
-    const elig = eligibleSkills(attemptsRef.current)
+    const elig = eligibleSkills(attemptsRef.current, masteredRef.current)
     if (!elig.length) { setPhase('summary'); return }
     const skill = elig[countRef.current % elig.length]
     if (struggling(attemptsRef.current, skill) && !lessonShownRef.current.has(skill.id) && getLesson(skill.id)) {
@@ -86,7 +79,8 @@ export function Session(props: { child: Child; onExit: () => void }) {
   async function onAnswer(r: ScoreResult) {
     if (!item) return
     const skill = getSkill(item.skillId)!
-    const wasMastered = skillMastered(attemptsRef.current, skill)
+    const patternSkill = patternDecodeSkill(skill) // pattern identity = decode skill
+    const wasPatternDone = patternMastered(attemptsRef.current, patternSkill, masteredRef.current)
     const a: Attempt = {
       id: crypto.randomUUID(), childId: props.child.id, skillId: item.skillId, itemId: item.id,
       correct: r.correct, difficulty: item.difficulty, missedConcept: r.missedConcept,
@@ -116,11 +110,12 @@ export function Session(props: { child: Child; onExit: () => void }) {
         reviewsRef.current = reviewsRef.current.map(x => x.skillId === skill.id ? upd : x)
         await putReview(props.child.id, upd)
       }
-    } else if (!wasMastered && nowMastered) {
-      const c: Certificate = { skillId: skill.id, iCanStatement: skill.iCanStatement, awardedAt: now }
+    } else if (!wasPatternDone && patternMastered(attemptsRef.current, patternSkill, masteredRef.current)) {
+      // Dual gate cleared (decode AND encode): award ONE pattern certificate + schedule its review (§7).
+      const c: Certificate = { skillId: patternSkill.id, iCanStatement: patternSkill.iCanStatement, awardedAt: now }
       await putCertificate(props.child.id, c); setCert(c)
-      const rev = scheduleFirst(skill.id, now)   // schedule spaced review on new mastery
-      reviewsRef.current = [...reviewsRef.current.filter(x => x.skillId !== skill.id), rev]
+      const rev = scheduleFirst(patternSkill.id, now)
+      reviewsRef.current = [...reviewsRef.current.filter(x => x.skillId !== patternSkill.id), rev]
       await putReview(props.child.id, rev)
     }
     setAnswered(r)
@@ -134,7 +129,7 @@ export function Session(props: { child: Child; onExit: () => void }) {
   if (phase === 'loading') return <div className="stack center"><p className="note">Loading…</p></div>
 
   if (phase === 'summary') {
-    const mastered = SKILLS.filter(s => skillMastered(attemptsRef.current, s))
+    const mastered = SKILLS.filter(s => isMastered(attemptsRef.current, s, masteredRef.current))
     return (
       <div className="stack center">
         <div className="cert">🌟</div>
