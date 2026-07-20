@@ -4,7 +4,7 @@
 // level, decoupled from chronological P-level). Short (≤ MAX_ITEMS), low-pressure,
 // no right/wrong feedback shown during the walk (that's enforced in the UI).
 import type { SkillDef } from '../types'
-import { SKILLS } from './packs'
+import { SKILLS, getSkill } from './packs'
 
 // The decoding ladder = phonics decode skills that have an encode partner (the
 // dual-gated pattern skills), in scope order. Excludes HF-words (no encode pair).
@@ -37,10 +37,19 @@ export function nextPlacement(results: PlaceResult[]): { done: boolean; skillId?
   return { done: true, entrySkillId: decodeLadder[decodeLadder.length - 1].id }
 }
 
-// Skills to mark mastered on placement: every ladder skill BELOW the entry level,
-// plus their encode partners (the child already reads/spells those).
+// Skills to mark mastered on placement: every ladder skill BELOW the entry level, plus
+// their encode partners (the child already reads/spells those), plus any non-ladder
+// foundation skill those rungs depend on (e.g. letter-sounds under CVC) so a high placement
+// doesn't leave the foundation unmastered and blocking. Disabled foundations resolve to
+// undefined via getSkill and are skipped.
 export function priorSkillIds(entrySkillId: string): string[] {
   const idx = decodeLadder.findIndex(s => s.id === entrySkillId)
   if (idx <= 0) return []
-  return decodeLadder.slice(0, idx).flatMap(s => s.encodePairId ? [s.id, s.encodePairId] : [s.id])
+  const priors = decodeLadder.slice(0, idx)
+  const ids = priors.flatMap(s => s.encodePairId ? [s.id, s.encodePairId] : [s.id])
+  for (const s of priors) for (const p of s.prereqs) {
+    const pre = getSkill(p)
+    if (pre && !decodeLadder.includes(pre) && !ids.includes(p)) ids.push(p)
+  }
+  return ids
 }

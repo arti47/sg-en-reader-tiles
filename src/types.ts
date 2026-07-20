@@ -17,6 +17,7 @@ export interface PackItem {
   difficulty: Difficulty
   stem: string
   audioText?: string             // what TTS speaks (defaults to displayWord)
+  phonemeId?: string             // isolated-phoneme clip id (§6c) — prompt plays audio.phoneme(), not TTS
   displayWord?: string           // target word (encode items)
   graphemes?: string[]           // tile segmentation, e.g. "ship" → ["sh","i","p"]
   distractorGraphemes?: string[] // confusable tiles added to tray
@@ -52,6 +53,8 @@ export interface SkillDef {
   itemType: ItemType
   itemPool: string               // packId
   encodePairId?: string          // dual-gate partner (phonics ↔ spelling)
+  enabled?: boolean              // false = authored but inert (e.g. T01 pending phoneme audio); default enabled
+  ladder?: boolean               // reserved: reading-level rung marker
   mastery: { window: number; accuracyToPass: number; minItems: number }
 }
 

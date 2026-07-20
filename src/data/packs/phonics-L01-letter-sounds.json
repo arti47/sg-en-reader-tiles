@@ -1,0 +1,1314 @@
+{
+  "packId": "phonics-L01-letter-sounds",
+  "strand": "phonics",
+  "skillIds": [
+    "PH-letter-sounds"
+  ],
+  "version": 1,
+  "items": [
+    {
+      "id": "ls-a-1",
+      "skillId": "PH-letter-sounds",
+      "itemType": "decode_choice",
+      "difficulty": 1,
+      "stem": "Which letter makes this sound? Tap 🔊 to hear it.",
+      "phonemeId": "a",
+      "choices": [
+        {
+          "id": "a",
+          "label": "e"
+        },
+        {
+          "id": "b",
+          "label": "a"
+        },
+        {
+          "id": "c",
+          "label": "o"
+        }
+      ],
+      "correctChoiceId": "b",
+      "missedConceptOnFail": "letter-sound-a",
+      "decodableWithin": "PH-letter-sounds",
+      "rationale": "The letter 'a' makes the sound you hear, like at the start of ant."
+    },
+    {
+      "id": "ls-a-2",
+      "skillId": "PH-letter-sounds",
+      "itemType": "decode_choice",
+      "difficulty": 2,
+      "stem": "Which letter makes this sound? Tap 🔊 to hear it.",
+      "phonemeId": "a",
+      "choices": [
+        {
+          "id": "a",
+          "label": "o"
+        },
+        {
+          "id": "b",
+          "label": "e"
+        },
+        {
+          "id": "c",
+          "label": "a"
+        },
+        {
+          "id": "d",
+          "label": "i"
+        }
+      ],
+      "correctChoiceId": "c",
+      "missedConceptOnFail": "letter-sound-a",
+      "decodableWithin": "PH-letter-sounds",
+      "rationale": "The letter 'a' makes the sound you hear, like at the start of ant."
+    },
+    {
+      "id": "ls-e-1",
+      "skillId": "PH-letter-sounds",
+      "itemType": "decode_choice",
+      "difficulty": 1,
+      "stem": "Which letter makes this sound? Tap 🔊 to hear it.",
+      "phonemeId": "e",
+      "choices": [
+        {
+          "id": "a",
+          "label": "i"
+        },
+        {
+          "id": "b",
+          "label": "a"
+        },
+        {
+          "id": "c",
+          "label": "e"
+        }
+      ],
+      "correctChoiceId": "c",
+      "missedConceptOnFail": "letter-sound-e",
+      "decodableWithin": "PH-letter-sounds",
+      "rationale": "The letter 'e' makes the sound you hear, like at the start of egg."
+    },
+    {
+      "id": "ls-e-2",
+      "skillId": "PH-letter-sounds",
+      "itemType": "decode_choice",
+      "difficulty": 2,
+      "stem": "Which letter makes this sound? Tap 🔊 to hear it.",
+      "phonemeId": "e",
+      "choices": [
+        {
+          "id": "a",
+          "label": "i"
+        },
+        {
+          "id": "b",
+          "label": "a"
+        },
+        {
+          "id": "c",
+          "label": "e"
+        },
+        {
+          "id": "d",
+          "label": "u"
+        }
+      ],
+      "correctChoiceId": "c",
+      "missedConceptOnFail": "letter-sound-e",
+      "decodableWithin": "PH-letter-sounds",
+      "rationale": "The letter 'e' makes the sound you hear, like at the start of egg."
+    },
+    {
+      "id": "ls-i-1",
+      "skillId": "PH-letter-sounds",
+      "itemType": "decode_choice",
+      "difficulty": 1,
+      "stem": "Which letter makes this sound? Tap 🔊 to hear it.",
+      "phonemeId": "i",
+      "choices": [
+        {
+          "id": "a",
+          "label": "i"
+        },
+        {
+          "id": "b",
+          "label": "e"
+        },
+        {
+          "id": "c",
+          "label": "a"
+        }
+      ],
+      "correctChoiceId": "a",
+      "missedConceptOnFail": "letter-sound-i",
+      "decodableWithin": "PH-letter-sounds",
+      "rationale": "The letter 'i' makes the sound you hear, like at the start of ink."
+    },
+    {
+      "id": "ls-i-2",
+      "skillId": "PH-letter-sounds",
+      "itemType": "decode_choice",
+      "difficulty": 2,
+      "stem": "Which letter makes this sound? Tap 🔊 to hear it.",
+      "phonemeId": "i",
+      "choices": [
+        {
+          "id": "a",
+          "label": "a"
+        },
+        {
+          "id": "b",
+          "label": "e"
+        },
+        {
+          "id": "c",
+          "label": "i"
+        },
+        {
+          "id": "d",
+          "label": "o"
+        }
+      ],
+      "correctChoiceId": "c",
+      "missedConceptOnFail": "letter-sound-i",
+      "decodableWithin": "PH-letter-sounds",
+      "rationale": "The letter 'i' makes the sound you hear, like at the start of ink."
+    },
+    {
+      "id": "ls-o-1",
+      "skillId": "PH-letter-sounds",
+      "itemType": "decode_choice",
+      "difficulty": 1,
+      "stem": "Which letter makes this sound? Tap 🔊 to hear it.",
+      "phonemeId": "o",
+      "choices": [
+        {
+          "id": "a",
+          "label": "o"
+        },
+        {
+          "id": "b",
+          "label": "a"
+        },
+        {
+          "id": "c",
+          "label": "u"
+        }
+      ],
+      "correctChoiceId": "a",
+      "missedConceptOnFail": "letter-sound-o",
+      "decodableWithin": "PH-letter-sounds",
+      "rationale": "The letter 'o' makes the sound you hear, like at the start of orange."
+    },
+    {
+      "id": "ls-o-2",
+      "skillId": "PH-letter-sounds",
+      "itemType": "decode_choice",
+      "difficulty": 2,
+      "stem": "Which letter makes this sound? Tap 🔊 to hear it.",
+      "phonemeId": "o",
+      "choices": [
+        {
+          "id": "a",
+          "label": "o"
+        },
+        {
+          "id": "b",
+          "label": "a"
+        },
+        {
+          "id": "c",
+          "label": "u"
+        },
+        {
+          "id": "d",
+          "label": "e"
+        }
+      ],
+      "correctChoiceId": "a",
+      "missedConceptOnFail": "letter-sound-o",
+      "decodableWithin": "PH-letter-sounds",
+      "rationale": "The letter 'o' makes the sound you hear, like at the start of orange."
+    },
+    {
+      "id": "ls-u-1",
+      "skillId": "PH-letter-sounds",
+      "itemType": "decode_choice",
+      "difficulty": 1,
+      "stem": "Which letter makes this sound? Tap 🔊 to hear it.",
+      "phonemeId": "u",
+      "choices": [
+        {
+          "id": "a",
+          "label": "u"
+        },
+        {
+          "id": "b",
+          "label": "o"
+        },
+        {
+          "id": "c",
+          "label": "a"
+        }
+      ],
+      "correctChoiceId": "a",
+      "missedConceptOnFail": "letter-sound-u",
+      "decodableWithin": "PH-letter-sounds",
+      "rationale": "The letter 'u' makes the sound you hear, like at the start of umbrella."
+    },
+    {
+      "id": "ls-u-2",
+      "skillId": "PH-letter-sounds",
+      "itemType": "decode_choice",
+      "difficulty": 2,
+      "stem": "Which letter makes this sound? Tap 🔊 to hear it.",
+      "phonemeId": "u",
+      "choices": [
+        {
+          "id": "a",
+          "label": "a"
+        },
+        {
+          "id": "b",
+          "label": "o"
+        },
+        {
+          "id": "c",
+          "label": "u"
+        },
+        {
+          "id": "d",
+          "label": "e"
+        }
+      ],
+      "correctChoiceId": "c",
+      "missedConceptOnFail": "letter-sound-u",
+      "decodableWithin": "PH-letter-sounds",
+      "rationale": "The letter 'u' makes the sound you hear, like at the start of umbrella."
+    },
+    {
+      "id": "ls-b-1",
+      "skillId": "PH-letter-sounds",
+      "itemType": "decode_choice",
+      "difficulty": 1,
+      "stem": "Which letter makes this sound? Tap 🔊 to hear it.",
+      "phonemeId": "b",
+      "choices": [
+        {
+          "id": "a",
+          "label": "p"
+        },
+        {
+          "id": "b",
+          "label": "d"
+        },
+        {
+          "id": "c",
+          "label": "b"
+        }
+      ],
+      "correctChoiceId": "c",
+      "missedConceptOnFail": "letter-sound-b",
+      "decodableWithin": "PH-letter-sounds",
+      "rationale": "The letter 'b' makes the sound you hear, like at the start of bat."
+    },
+    {
+      "id": "ls-b-2",
+      "skillId": "PH-letter-sounds",
+      "itemType": "decode_choice",
+      "difficulty": 2,
+      "stem": "Which letter makes this sound? Tap 🔊 to hear it.",
+      "phonemeId": "b",
+      "choices": [
+        {
+          "id": "a",
+          "label": "h"
+        },
+        {
+          "id": "b",
+          "label": "d"
+        },
+        {
+          "id": "c",
+          "label": "p"
+        },
+        {
+          "id": "d",
+          "label": "b"
+        }
+      ],
+      "correctChoiceId": "d",
+      "missedConceptOnFail": "letter-sound-b",
+      "decodableWithin": "PH-letter-sounds",
+      "rationale": "The letter 'b' makes the sound you hear, like at the start of bat."
+    },
+    {
+      "id": "ls-d-1",
+      "skillId": "PH-letter-sounds",
+      "itemType": "decode_choice",
+      "difficulty": 1,
+      "stem": "Which letter makes this sound? Tap 🔊 to hear it.",
+      "phonemeId": "d",
+      "choices": [
+        {
+          "id": "a",
+          "label": "b"
+        },
+        {
+          "id": "b",
+          "label": "d"
+        },
+        {
+          "id": "c",
+          "label": "p"
+        }
+      ],
+      "correctChoiceId": "b",
+      "missedConceptOnFail": "letter-sound-d",
+      "decodableWithin": "PH-letter-sounds",
+      "rationale": "The letter 'd' makes the sound you hear, like at the start of dog."
+    },
+    {
+      "id": "ls-d-2",
+      "skillId": "PH-letter-sounds",
+      "itemType": "decode_choice",
+      "difficulty": 2,
+      "stem": "Which letter makes this sound? Tap 🔊 to hear it.",
+      "phonemeId": "d",
+      "choices": [
+        {
+          "id": "a",
+          "label": "b"
+        },
+        {
+          "id": "b",
+          "label": "d"
+        },
+        {
+          "id": "c",
+          "label": "p"
+        },
+        {
+          "id": "d",
+          "label": "g"
+        }
+      ],
+      "correctChoiceId": "b",
+      "missedConceptOnFail": "letter-sound-d",
+      "decodableWithin": "PH-letter-sounds",
+      "rationale": "The letter 'd' makes the sound you hear, like at the start of dog."
+    },
+    {
+      "id": "ls-f-1",
+      "skillId": "PH-letter-sounds",
+      "itemType": "decode_choice",
+      "difficulty": 1,
+      "stem": "Which letter makes this sound? Tap 🔊 to hear it.",
+      "phonemeId": "f",
+      "choices": [
+        {
+          "id": "a",
+          "label": "f"
+        },
+        {
+          "id": "b",
+          "label": "t"
+        },
+        {
+          "id": "c",
+          "label": "l"
+        }
+      ],
+      "correctChoiceId": "a",
+      "missedConceptOnFail": "letter-sound-f",
+      "decodableWithin": "PH-letter-sounds",
+      "rationale": "The letter 'f' makes the sound you hear, like at the start of fan."
+    },
+    {
+      "id": "ls-f-2",
+      "skillId": "PH-letter-sounds",
+      "itemType": "decode_choice",
+      "difficulty": 2,
+      "stem": "Which letter makes this sound? Tap 🔊 to hear it.",
+      "phonemeId": "f",
+      "choices": [
+        {
+          "id": "a",
+          "label": "s"
+        },
+        {
+          "id": "b",
+          "label": "t"
+        },
+        {
+          "id": "c",
+          "label": "l"
+        },
+        {
+          "id": "d",
+          "label": "f"
+        }
+      ],
+      "correctChoiceId": "d",
+      "missedConceptOnFail": "letter-sound-f",
+      "decodableWithin": "PH-letter-sounds",
+      "rationale": "The letter 'f' makes the sound you hear, like at the start of fan."
+    },
+    {
+      "id": "ls-g-1",
+      "skillId": "PH-letter-sounds",
+      "itemType": "decode_choice",
+      "difficulty": 1,
+      "stem": "Which letter makes this sound? Tap 🔊 to hear it.",
+      "phonemeId": "g",
+      "choices": [
+        {
+          "id": "a",
+          "label": "d"
+        },
+        {
+          "id": "b",
+          "label": "g"
+        },
+        {
+          "id": "c",
+          "label": "p"
+        }
+      ],
+      "correctChoiceId": "b",
+      "missedConceptOnFail": "letter-sound-g",
+      "decodableWithin": "PH-letter-sounds",
+      "rationale": "The letter 'g' makes the sound you hear, like at the start of goat."
+    },
+    {
+      "id": "ls-g-2",
+      "skillId": "PH-letter-sounds",
+      "itemType": "decode_choice",
+      "difficulty": 2,
+      "stem": "Which letter makes this sound? Tap 🔊 to hear it.",
+      "phonemeId": "g",
+      "choices": [
+        {
+          "id": "a",
+          "label": "g"
+        },
+        {
+          "id": "b",
+          "label": "d"
+        },
+        {
+          "id": "c",
+          "label": "p"
+        },
+        {
+          "id": "d",
+          "label": "b"
+        }
+      ],
+      "correctChoiceId": "a",
+      "missedConceptOnFail": "letter-sound-g",
+      "decodableWithin": "PH-letter-sounds",
+      "rationale": "The letter 'g' makes the sound you hear, like at the start of goat."
+    },
+    {
+      "id": "ls-h-1",
+      "skillId": "PH-letter-sounds",
+      "itemType": "decode_choice",
+      "difficulty": 1,
+      "stem": "Which letter makes this sound? Tap 🔊 to hear it.",
+      "phonemeId": "h",
+      "choices": [
+        {
+          "id": "a",
+          "label": "m"
+        },
+        {
+          "id": "b",
+          "label": "n"
+        },
+        {
+          "id": "c",
+          "label": "h"
+        }
+      ],
+      "correctChoiceId": "c",
+      "missedConceptOnFail": "letter-sound-h",
+      "decodableWithin": "PH-letter-sounds",
+      "rationale": "The letter 'h' makes the sound you hear, like at the start of hat."
+    },
+    {
+      "id": "ls-h-2",
+      "skillId": "PH-letter-sounds",
+      "itemType": "decode_choice",
+      "difficulty": 2,
+      "stem": "Which letter makes this sound? Tap 🔊 to hear it.",
+      "phonemeId": "h",
+      "choices": [
+        {
+          "id": "a",
+          "label": "n"
+        },
+        {
+          "id": "b",
+          "label": "h"
+        },
+        {
+          "id": "c",
+          "label": "m"
+        },
+        {
+          "id": "d",
+          "label": "k"
+        }
+      ],
+      "correctChoiceId": "b",
+      "missedConceptOnFail": "letter-sound-h",
+      "decodableWithin": "PH-letter-sounds",
+      "rationale": "The letter 'h' makes the sound you hear, like at the start of hat."
+    },
+    {
+      "id": "ls-j-1",
+      "skillId": "PH-letter-sounds",
+      "itemType": "decode_choice",
+      "difficulty": 1,
+      "stem": "Which letter makes this sound? Tap 🔊 to hear it.",
+      "phonemeId": "j",
+      "choices": [
+        {
+          "id": "a",
+          "label": "y"
+        },
+        {
+          "id": "b",
+          "label": "j"
+        },
+        {
+          "id": "c",
+          "label": "l"
+        }
+      ],
+      "correctChoiceId": "b",
+      "missedConceptOnFail": "letter-sound-j",
+      "decodableWithin": "PH-letter-sounds",
+      "rationale": "The letter 'j' makes the sound you hear, like at the start of jam."
+    },
+    {
+      "id": "ls-j-2",
+      "skillId": "PH-letter-sounds",
+      "itemType": "decode_choice",
+      "difficulty": 2,
+      "stem": "Which letter makes this sound? Tap 🔊 to hear it.",
+      "phonemeId": "j",
+      "choices": [
+        {
+          "id": "a",
+          "label": "z"
+        },
+        {
+          "id": "b",
+          "label": "y"
+        },
+        {
+          "id": "c",
+          "label": "l"
+        },
+        {
+          "id": "d",
+          "label": "j"
+        }
+      ],
+      "correctChoiceId": "d",
+      "missedConceptOnFail": "letter-sound-j",
+      "decodableWithin": "PH-letter-sounds",
+      "rationale": "The letter 'j' makes the sound you hear, like at the start of jam."
+    },
+    {
+      "id": "ls-k-1",
+      "skillId": "PH-letter-sounds",
+      "itemType": "decode_choice",
+      "difficulty": 1,
+      "stem": "Which letter makes this sound? Tap 🔊 to hear it.",
+      "phonemeId": "k",
+      "choices": [
+        {
+          "id": "a",
+          "label": "l"
+        },
+        {
+          "id": "b",
+          "label": "t"
+        },
+        {
+          "id": "c",
+          "label": "k"
+        }
+      ],
+      "correctChoiceId": "c",
+      "missedConceptOnFail": "letter-sound-k",
+      "decodableWithin": "PH-letter-sounds",
+      "rationale": "The letter 'k' makes the sound you hear, like at the start of kite."
+    },
+    {
+      "id": "ls-k-2",
+      "skillId": "PH-letter-sounds",
+      "itemType": "decode_choice",
+      "difficulty": 2,
+      "stem": "Which letter makes this sound? Tap 🔊 to hear it.",
+      "phonemeId": "k",
+      "choices": [
+        {
+          "id": "a",
+          "label": "k"
+        },
+        {
+          "id": "b",
+          "label": "t"
+        },
+        {
+          "id": "c",
+          "label": "l"
+        },
+        {
+          "id": "d",
+          "label": "f"
+        }
+      ],
+      "correctChoiceId": "a",
+      "missedConceptOnFail": "letter-sound-k",
+      "decodableWithin": "PH-letter-sounds",
+      "rationale": "The letter 'k' makes the sound you hear, like at the start of kite."
+    },
+    {
+      "id": "ls-l-1",
+      "skillId": "PH-letter-sounds",
+      "itemType": "decode_choice",
+      "difficulty": 1,
+      "stem": "Which letter makes this sound? Tap 🔊 to hear it.",
+      "phonemeId": "l",
+      "choices": [
+        {
+          "id": "a",
+          "label": "l"
+        },
+        {
+          "id": "b",
+          "label": "r"
+        },
+        {
+          "id": "c",
+          "label": "t"
+        }
+      ],
+      "correctChoiceId": "a",
+      "missedConceptOnFail": "letter-sound-l",
+      "decodableWithin": "PH-letter-sounds",
+      "rationale": "The letter 'l' makes the sound you hear, like at the start of leg."
+    },
+    {
+      "id": "ls-l-2",
+      "skillId": "PH-letter-sounds",
+      "itemType": "decode_choice",
+      "difficulty": 2,
+      "stem": "Which letter makes this sound? Tap 🔊 to hear it.",
+      "phonemeId": "l",
+      "choices": [
+        {
+          "id": "a",
+          "label": "r"
+        },
+        {
+          "id": "b",
+          "label": "l"
+        },
+        {
+          "id": "c",
+          "label": "t"
+        },
+        {
+          "id": "d",
+          "label": "f"
+        }
+      ],
+      "correctChoiceId": "b",
+      "missedConceptOnFail": "letter-sound-l",
+      "decodableWithin": "PH-letter-sounds",
+      "rationale": "The letter 'l' makes the sound you hear, like at the start of leg."
+    },
+    {
+      "id": "ls-m-1",
+      "skillId": "PH-letter-sounds",
+      "itemType": "decode_choice",
+      "difficulty": 1,
+      "stem": "Which letter makes this sound? Tap 🔊 to hear it.",
+      "phonemeId": "m",
+      "choices": [
+        {
+          "id": "a",
+          "label": "n"
+        },
+        {
+          "id": "b",
+          "label": "m"
+        },
+        {
+          "id": "c",
+          "label": "w"
+        }
+      ],
+      "correctChoiceId": "b",
+      "missedConceptOnFail": "letter-sound-m",
+      "decodableWithin": "PH-letter-sounds",
+      "rationale": "The letter 'm' makes the sound you hear, like at the start of man."
+    },
+    {
+      "id": "ls-m-2",
+      "skillId": "PH-letter-sounds",
+      "itemType": "decode_choice",
+      "difficulty": 2,
+      "stem": "Which letter makes this sound? Tap 🔊 to hear it.",
+      "phonemeId": "m",
+      "choices": [
+        {
+          "id": "a",
+          "label": "w"
+        },
+        {
+          "id": "b",
+          "label": "n"
+        },
+        {
+          "id": "c",
+          "label": "m"
+        },
+        {
+          "id": "d",
+          "label": "r"
+        }
+      ],
+      "correctChoiceId": "c",
+      "missedConceptOnFail": "letter-sound-m",
+      "decodableWithin": "PH-letter-sounds",
+      "rationale": "The letter 'm' makes the sound you hear, like at the start of man."
+    },
+    {
+      "id": "ls-n-1",
+      "skillId": "PH-letter-sounds",
+      "itemType": "decode_choice",
+      "difficulty": 1,
+      "stem": "Which letter makes this sound? Tap 🔊 to hear it.",
+      "phonemeId": "n",
+      "choices": [
+        {
+          "id": "a",
+          "label": "h"
+        },
+        {
+          "id": "b",
+          "label": "m"
+        },
+        {
+          "id": "c",
+          "label": "n"
+        }
+      ],
+      "correctChoiceId": "c",
+      "missedConceptOnFail": "letter-sound-n",
+      "decodableWithin": "PH-letter-sounds",
+      "rationale": "The letter 'n' makes the sound you hear, like at the start of net."
+    },
+    {
+      "id": "ls-n-2",
+      "skillId": "PH-letter-sounds",
+      "itemType": "decode_choice",
+      "difficulty": 2,
+      "stem": "Which letter makes this sound? Tap 🔊 to hear it.",
+      "phonemeId": "n",
+      "choices": [
+        {
+          "id": "a",
+          "label": "r"
+        },
+        {
+          "id": "b",
+          "label": "m"
+        },
+        {
+          "id": "c",
+          "label": "h"
+        },
+        {
+          "id": "d",
+          "label": "n"
+        }
+      ],
+      "correctChoiceId": "d",
+      "missedConceptOnFail": "letter-sound-n",
+      "decodableWithin": "PH-letter-sounds",
+      "rationale": "The letter 'n' makes the sound you hear, like at the start of net."
+    },
+    {
+      "id": "ls-p-1",
+      "skillId": "PH-letter-sounds",
+      "itemType": "decode_choice",
+      "difficulty": 1,
+      "stem": "Which letter makes this sound? Tap 🔊 to hear it.",
+      "phonemeId": "p",
+      "choices": [
+        {
+          "id": "a",
+          "label": "b"
+        },
+        {
+          "id": "b",
+          "label": "p"
+        },
+        {
+          "id": "c",
+          "label": "d"
+        }
+      ],
+      "correctChoiceId": "b",
+      "missedConceptOnFail": "letter-sound-p",
+      "decodableWithin": "PH-letter-sounds",
+      "rationale": "The letter 'p' makes the sound you hear, like at the start of pig."
+    },
+    {
+      "id": "ls-p-2",
+      "skillId": "PH-letter-sounds",
+      "itemType": "decode_choice",
+      "difficulty": 2,
+      "stem": "Which letter makes this sound? Tap 🔊 to hear it.",
+      "phonemeId": "p",
+      "choices": [
+        {
+          "id": "a",
+          "label": "b"
+        },
+        {
+          "id": "b",
+          "label": "p"
+        },
+        {
+          "id": "c",
+          "label": "d"
+        },
+        {
+          "id": "d",
+          "label": "r"
+        }
+      ],
+      "correctChoiceId": "b",
+      "missedConceptOnFail": "letter-sound-p",
+      "decodableWithin": "PH-letter-sounds",
+      "rationale": "The letter 'p' makes the sound you hear, like at the start of pig."
+    },
+    {
+      "id": "ls-r-1",
+      "skillId": "PH-letter-sounds",
+      "itemType": "decode_choice",
+      "difficulty": 1,
+      "stem": "Which letter makes this sound? Tap 🔊 to hear it.",
+      "phonemeId": "r",
+      "choices": [
+        {
+          "id": "a",
+          "label": "r"
+        },
+        {
+          "id": "b",
+          "label": "n"
+        },
+        {
+          "id": "c",
+          "label": "l"
+        }
+      ],
+      "correctChoiceId": "a",
+      "missedConceptOnFail": "letter-sound-r",
+      "decodableWithin": "PH-letter-sounds",
+      "rationale": "The letter 'r' makes the sound you hear, like at the start of rat."
+    },
+    {
+      "id": "ls-r-2",
+      "skillId": "PH-letter-sounds",
+      "itemType": "decode_choice",
+      "difficulty": 2,
+      "stem": "Which letter makes this sound? Tap 🔊 to hear it.",
+      "phonemeId": "r",
+      "choices": [
+        {
+          "id": "a",
+          "label": "w"
+        },
+        {
+          "id": "b",
+          "label": "n"
+        },
+        {
+          "id": "c",
+          "label": "l"
+        },
+        {
+          "id": "d",
+          "label": "r"
+        }
+      ],
+      "correctChoiceId": "d",
+      "missedConceptOnFail": "letter-sound-r",
+      "decodableWithin": "PH-letter-sounds",
+      "rationale": "The letter 'r' makes the sound you hear, like at the start of rat."
+    },
+    {
+      "id": "ls-s-1",
+      "skillId": "PH-letter-sounds",
+      "itemType": "decode_choice",
+      "difficulty": 1,
+      "stem": "Which letter makes this sound? Tap 🔊 to hear it.",
+      "phonemeId": "s",
+      "choices": [
+        {
+          "id": "a",
+          "label": "f"
+        },
+        {
+          "id": "b",
+          "label": "s"
+        },
+        {
+          "id": "c",
+          "label": "t"
+        }
+      ],
+      "correctChoiceId": "b",
+      "missedConceptOnFail": "letter-sound-s",
+      "decodableWithin": "PH-letter-sounds",
+      "rationale": "The letter 's' makes the sound you hear, like at the start of sun."
+    },
+    {
+      "id": "ls-s-2",
+      "skillId": "PH-letter-sounds",
+      "itemType": "decode_choice",
+      "difficulty": 2,
+      "stem": "Which letter makes this sound? Tap 🔊 to hear it.",
+      "phonemeId": "s",
+      "choices": [
+        {
+          "id": "a",
+          "label": "s"
+        },
+        {
+          "id": "b",
+          "label": "f"
+        },
+        {
+          "id": "c",
+          "label": "t"
+        },
+        {
+          "id": "d",
+          "label": "l"
+        }
+      ],
+      "correctChoiceId": "a",
+      "missedConceptOnFail": "letter-sound-s",
+      "decodableWithin": "PH-letter-sounds",
+      "rationale": "The letter 's' makes the sound you hear, like at the start of sun."
+    },
+    {
+      "id": "ls-t-1",
+      "skillId": "PH-letter-sounds",
+      "itemType": "decode_choice",
+      "difficulty": 1,
+      "stem": "Which letter makes this sound? Tap 🔊 to hear it.",
+      "phonemeId": "t",
+      "choices": [
+        {
+          "id": "a",
+          "label": "f"
+        },
+        {
+          "id": "b",
+          "label": "k"
+        },
+        {
+          "id": "c",
+          "label": "t"
+        }
+      ],
+      "correctChoiceId": "c",
+      "missedConceptOnFail": "letter-sound-t",
+      "decodableWithin": "PH-letter-sounds",
+      "rationale": "The letter 't' makes the sound you hear, like at the start of tap."
+    },
+    {
+      "id": "ls-t-2",
+      "skillId": "PH-letter-sounds",
+      "itemType": "decode_choice",
+      "difficulty": 2,
+      "stem": "Which letter makes this sound? Tap 🔊 to hear it.",
+      "phonemeId": "t",
+      "choices": [
+        {
+          "id": "a",
+          "label": "k"
+        },
+        {
+          "id": "b",
+          "label": "t"
+        },
+        {
+          "id": "c",
+          "label": "f"
+        },
+        {
+          "id": "d",
+          "label": "l"
+        }
+      ],
+      "correctChoiceId": "b",
+      "missedConceptOnFail": "letter-sound-t",
+      "decodableWithin": "PH-letter-sounds",
+      "rationale": "The letter 't' makes the sound you hear, like at the start of tap."
+    },
+    {
+      "id": "ls-v-1",
+      "skillId": "PH-letter-sounds",
+      "itemType": "decode_choice",
+      "difficulty": 1,
+      "stem": "Which letter makes this sound? Tap 🔊 to hear it.",
+      "phonemeId": "v",
+      "choices": [
+        {
+          "id": "a",
+          "label": "w"
+        },
+        {
+          "id": "b",
+          "label": "v"
+        },
+        {
+          "id": "c",
+          "label": "y"
+        }
+      ],
+      "correctChoiceId": "b",
+      "missedConceptOnFail": "letter-sound-v",
+      "decodableWithin": "PH-letter-sounds",
+      "rationale": "The letter 'v' makes the sound you hear, like at the start of van."
+    },
+    {
+      "id": "ls-v-2",
+      "skillId": "PH-letter-sounds",
+      "itemType": "decode_choice",
+      "difficulty": 2,
+      "stem": "Which letter makes this sound? Tap 🔊 to hear it.",
+      "phonemeId": "v",
+      "choices": [
+        {
+          "id": "a",
+          "label": "r"
+        },
+        {
+          "id": "b",
+          "label": "w"
+        },
+        {
+          "id": "c",
+          "label": "y"
+        },
+        {
+          "id": "d",
+          "label": "v"
+        }
+      ],
+      "correctChoiceId": "d",
+      "missedConceptOnFail": "letter-sound-v",
+      "decodableWithin": "PH-letter-sounds",
+      "rationale": "The letter 'v' makes the sound you hear, like at the start of van."
+    },
+    {
+      "id": "ls-w-1",
+      "skillId": "PH-letter-sounds",
+      "itemType": "decode_choice",
+      "difficulty": 1,
+      "stem": "Which letter makes this sound? Tap 🔊 to hear it.",
+      "phonemeId": "w",
+      "choices": [
+        {
+          "id": "a",
+          "label": "v"
+        },
+        {
+          "id": "b",
+          "label": "m"
+        },
+        {
+          "id": "c",
+          "label": "w"
+        }
+      ],
+      "correctChoiceId": "c",
+      "missedConceptOnFail": "letter-sound-w",
+      "decodableWithin": "PH-letter-sounds",
+      "rationale": "The letter 'w' makes the sound you hear, like at the start of web."
+    },
+    {
+      "id": "ls-w-2",
+      "skillId": "PH-letter-sounds",
+      "itemType": "decode_choice",
+      "difficulty": 2,
+      "stem": "Which letter makes this sound? Tap 🔊 to hear it.",
+      "phonemeId": "w",
+      "choices": [
+        {
+          "id": "a",
+          "label": "w"
+        },
+        {
+          "id": "b",
+          "label": "m"
+        },
+        {
+          "id": "c",
+          "label": "v"
+        },
+        {
+          "id": "d",
+          "label": "r"
+        }
+      ],
+      "correctChoiceId": "a",
+      "missedConceptOnFail": "letter-sound-w",
+      "decodableWithin": "PH-letter-sounds",
+      "rationale": "The letter 'w' makes the sound you hear, like at the start of web."
+    },
+    {
+      "id": "ls-y-1",
+      "skillId": "PH-letter-sounds",
+      "itemType": "decode_choice",
+      "difficulty": 1,
+      "stem": "Which letter makes this sound? Tap 🔊 to hear it.",
+      "phonemeId": "y",
+      "choices": [
+        {
+          "id": "a",
+          "label": "v"
+        },
+        {
+          "id": "b",
+          "label": "y"
+        },
+        {
+          "id": "c",
+          "label": "w"
+        }
+      ],
+      "correctChoiceId": "b",
+      "missedConceptOnFail": "letter-sound-y",
+      "decodableWithin": "PH-letter-sounds",
+      "rationale": "The letter 'y' makes the sound you hear, like at the start of yak."
+    },
+    {
+      "id": "ls-y-2",
+      "skillId": "PH-letter-sounds",
+      "itemType": "decode_choice",
+      "difficulty": 2,
+      "stem": "Which letter makes this sound? Tap 🔊 to hear it.",
+      "phonemeId": "y",
+      "choices": [
+        {
+          "id": "a",
+          "label": "w"
+        },
+        {
+          "id": "b",
+          "label": "v"
+        },
+        {
+          "id": "c",
+          "label": "y"
+        },
+        {
+          "id": "d",
+          "label": "j"
+        }
+      ],
+      "correctChoiceId": "c",
+      "missedConceptOnFail": "letter-sound-y",
+      "decodableWithin": "PH-letter-sounds",
+      "rationale": "The letter 'y' makes the sound you hear, like at the start of yak."
+    },
+    {
+      "id": "ls-z-1",
+      "skillId": "PH-letter-sounds",
+      "itemType": "decode_choice",
+      "difficulty": 1,
+      "stem": "Which letter makes this sound? Tap 🔊 to hear it.",
+      "phonemeId": "z",
+      "choices": [
+        {
+          "id": "a",
+          "label": "l"
+        },
+        {
+          "id": "b",
+          "label": "v"
+        },
+        {
+          "id": "c",
+          "label": "z"
+        }
+      ],
+      "correctChoiceId": "c",
+      "missedConceptOnFail": "letter-sound-z",
+      "decodableWithin": "PH-letter-sounds",
+      "rationale": "The letter 'z' makes the sound you hear, like at the start of zip."
+    },
+    {
+      "id": "ls-z-2",
+      "skillId": "PH-letter-sounds",
+      "itemType": "decode_choice",
+      "difficulty": 2,
+      "stem": "Which letter makes this sound? Tap 🔊 to hear it.",
+      "phonemeId": "z",
+      "choices": [
+        {
+          "id": "a",
+          "label": "r"
+        },
+        {
+          "id": "b",
+          "label": "v"
+        },
+        {
+          "id": "c",
+          "label": "l"
+        },
+        {
+          "id": "d",
+          "label": "z"
+        }
+      ],
+      "correctChoiceId": "d",
+      "missedConceptOnFail": "letter-sound-z",
+      "decodableWithin": "PH-letter-sounds",
+      "rationale": "The letter 'z' makes the sound you hear, like at the start of zip."
+    }
+  ],
+  "lessons": {
+    "PH-letter-sounds": {
+      "iCanStatement": "I can hear the sound each letter makes.",
+      "explanation": "Every letter makes a sound. Tap the speaker to hear a sound, then find the letter that makes it. Remember to say the sound, not the letter's name — 'mmm', not 'em'.",
+      "workedExamples": [
+        {
+          "text": "man",
+          "note": "m makes the first sound in man — /mmm/."
+        },
+        {
+          "text": "ant",
+          "note": "a makes the first sound in ant — /a/."
+        }
+      ]
+    }
+  }
+}

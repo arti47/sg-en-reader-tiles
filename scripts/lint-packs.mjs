@@ -13,6 +13,7 @@ const readJSON = (p) => JSON.parse(readFileSync(p, 'utf8'))
 
 const scope = readJSON(join(dataDir, 'scopeAndSequence.json'))
 const decode = readJSON(join(dataDir, 'decodability.json'))
+const phonemes = readJSON(join(dataDir, 'phonemes.json'))
 const skills = new Map(scope.levels.flatMap(l => l.skills).map(s => [s.id, s]))
 const packs = readdirSync(packDir).filter(f => f.endsWith('.json')).map(f => ({ f, pack: readJSON(join(packDir, f)) }))
 const packById = new Map(packs.map(({ pack }) => [pack.packId, pack]))
@@ -61,6 +62,9 @@ for (const { f, pack } of packs) {
     skillItemCount.set(it.skillId, (skillItemCount.get(it.skillId) ?? 0) + 1)
 
     if (!it.missedConceptOnFail) err(f, it.id, 'missing missedConceptOnFail (error taxonomy)')
+
+    // phoneme prompt (§6c) must resolve to a manifested clip
+    if (it.phonemeId && !phonemes[it.phonemeId]) err(f, it.id, `phonemeId "${it.phonemeId}" not in phonemes.json`)
 
     // (1)(2) answer keys
     const mcqTypes = ['grammar_mcq', 'decode_choice', 'vocab_mcq']

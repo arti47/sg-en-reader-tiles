@@ -1,17 +1,19 @@
 import { useEffect, useState } from 'react'
 import type { PackItem } from '../../types'
 import { scoreMcq, type ScoreResult } from '../../lib/scoring'
-import { speak } from '../../lib/audio'
+import { speak, phoneme } from '../../lib/audio'
 
-// grammar_mcq / decode_choice: tap a choice. decode_choice speaks the target word.
+// grammar_mcq / decode_choice: tap a choice. decode_choice plays its prompt — an isolated
+// phoneme clip (letter-sounds, T01) when `phonemeId` is set, else the spoken word via TTS.
 // `quiet` suppresses right/wrong styling + feedback (used by the placement warm-up).
 export function McqItem(props: { item: PackItem; quiet?: boolean; onAnswer: (r: ScoreResult, choiceId: string) => void }) {
   const { item } = props
   const [picked, setPicked] = useState<string | null>(null)
   const isAudio = item.itemType === 'decode_choice'
   const result = picked ? scoreMcq(item, picked) : null
+  const playPrompt = () => { if (item.phonemeId) phoneme(item.phonemeId); else speak(item.audioText ?? '') }
 
-  useEffect(() => { if (isAudio) speak(item.audioText ?? '') }, [item.id])
+  useEffect(() => { if (isAudio) playPrompt() }, [item.id])
 
   function choose(id: string) {
     if (picked) return
@@ -23,7 +25,7 @@ export function McqItem(props: { item: PackItem; quiet?: boolean; onAnswer: (r: 
     <div className="stack">
       {isAudio && (
         <div className="row">
-          <button className="btn ghost" onClick={() => speak(item.audioText ?? '')} aria-label="Hear the word again">🔊 Hear it</button>
+          <button className="btn ghost" onClick={playPrompt} aria-label={item.phonemeId ? 'Hear the sound again' : 'Hear the word again'}>🔊 {item.phonemeId ? 'Hear the sound' : 'Hear it'}</button>
         </div>
       )}
       <p className="stem">{item.stem}</p>

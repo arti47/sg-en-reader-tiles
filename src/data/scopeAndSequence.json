@@ -5,11 +5,22 @@
       "name": "Primary 1",
       "skills": [
         {
+          "id": "PH-letter-sounds",
+          "strand": "phonics",
+          "objective": "Hear and identify the sound each single letter makes.",
+          "iCanStatement": "I can hear the sound each letter makes.",
+          "prereqs": [],
+          "itemType": "decode_choice",
+          "itemPool": "phonics-L01-letter-sounds",
+          "enabled": false,
+          "mastery": { "window": 12, "accuracyToPass": 0.85, "minItems": 8 }
+        },
+        {
           "id": "PH-cvc-short-vowels",
           "strand": "phonics",
           "objective": "Decode CVC words with short vowels.",
           "iCanStatement": "I can read short-vowel words.",
-          "prereqs": [],
+          "prereqs": ["PH-letter-sounds"],
           "itemType": "decode_choice",
           "itemPool": "phonics-L02-cvc-short-vowels",
           "encodePairId": "SP-cvc-short-vowels",

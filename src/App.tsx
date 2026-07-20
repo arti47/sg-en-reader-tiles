@@ -16,7 +16,7 @@ if (import.meta.env.DEV) {
 }
 
 type View = 'pick' | 'add' | 'placement' | 'session'
-const APP_VERSION = '0.2.16'
+const APP_VERSION = '0.2.17'
 
 export default function App() {
   const [children, setChildren] = useState<Child[]>([])

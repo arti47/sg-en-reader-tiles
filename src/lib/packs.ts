@@ -1,6 +1,7 @@
 // Pack + scope loading and pure lookups (CLAUDE.md §12, §18.7).
 import type { ContentPack, PackItem, SkillDef, Lesson, Difficulty } from '../types'
 import scope from '../data/scopeAndSequence.json'
+import phonicsLs from '../data/packs/phonics-L01-letter-sounds.json'
 import phonicsCvc from '../data/packs/phonics-L02-cvc-short-vowels.json'
 import spellingCvc from '../data/packs/spelling-L02-cvc-short-vowels.json'
 import phonicsDig from '../data/packs/phonics-L03-digraphs.json'
@@ -22,6 +23,7 @@ import spelling2s from '../data/packs/spelling-L10-two-syllable.json'
 import phonicsHf from '../data/packs/phonics-L12-hf.json'
 
 const PACKS: ContentPack[] = [
+  phonicsLs as ContentPack,
   phonicsCvc as ContentPack,
   spellingCvc as ContentPack,
   phonicsDig as ContentPack,
@@ -43,8 +45,15 @@ const PACKS: ContentPack[] = [
   phonicsHf as ContentPack
 ]
 
-export const SKILLS: SkillDef[] =
-  (scope.levels as Array<{ skills: SkillDef[] }>).flatMap(l => l.skills)
+// Runtime skill graph. Skills flagged `enabled: false` (authored but inert — e.g. T01
+// pending phoneme audio) are dropped, and any prereq pointing at a dropped skill is
+// stripped so the remaining graph stays valid (a disabled foundation doesn't block its
+// dependants). Flip `enabled` in scope + ship the assets to activate.
+const RAW_SKILLS: SkillDef[] = (scope.levels as Array<{ skills: SkillDef[] }>).flatMap(l => l.skills)
+const ENABLED = new Set(RAW_SKILLS.filter(s => s.enabled !== false).map(s => s.id))
+export const SKILLS: SkillDef[] = RAW_SKILLS
+  .filter(s => s.enabled !== false)
+  .map(s => ({ ...s, prereqs: s.prereqs.filter(p => ENABLED.has(p)) }))
 
 export const firstSkillId = (): string => SKILLS[0].id
 export const getSkill = (id: string): SkillDef | undefined => SKILLS.find(s => s.id === id)

@@ -23,7 +23,10 @@ export default defineConfig({
           { src: 'icon.svg', sizes: 'any', type: 'image/svg+xml', purpose: 'any maskable' }
         ]
       },
-      workbox: { globPatterns: ['**/*.{js,css,html,svg,json,woff2,mp3}'] }
+      workbox: {
+        globPatterns: ['**/*.{js,css,html,svg,json,woff2,mp3,m4a}'], // m4a = phoneme clips (§6c)
+        maximumFileSizeToCacheInBytes: 6 * 1024 * 1024
+      }
     })
   ]
 })
