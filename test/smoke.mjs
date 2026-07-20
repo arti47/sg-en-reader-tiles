@@ -100,8 +100,12 @@ try {
     if (r.overflow) fail('horizontal overflow at 390px')
   }
   const good = results.find(r => !r.WRONG)
-  if (good.db.certs.length !== 2) fail(`expected 2 certificates on mastery path, got ${good.db.certs.length}`)
-  if (!good.db.progress.every(p => p.status === 'mastered')) fail('mastery path: both skills should be mastered')
+  // With >2 skills in scope, later skills unlock as CVC masters, so a fixed-length
+  // session won't master every skill. Assert the entry skill masters and certifies.
+  if (good.db.certs.length < 1) fail(`expected ≥1 certificate on mastery path, got ${good.db.certs.length}`)
+  const cvc = good.db.progress.find(p => p.skillId === 'PH-cvc-short-vowels')
+  if (!cvc || cvc.status !== 'mastered') fail('mastery path: CVC decode should reach mastered')
+  if (!good.db.certs.some(c => c.skillId === 'PH-cvc-short-vowels')) fail('mastery path: CVC decode certificate should be awarded')
   const bad = results.find(r => r.WRONG)
   if (bad.lessons < 1) fail('struggle path: expected a lesson branch')
   if (bad.db.progress.some(p => p.skillId === 'SP-cvc-short-vowels')) fail('dual gate: encode must stay locked when decode <70%')

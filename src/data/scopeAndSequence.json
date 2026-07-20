@@ -25,6 +25,28 @@
           "itemPool": "spelling-L02-cvc-short-vowels",
           "encodePairId": "PH-cvc-short-vowels",
           "mastery": { "window": 12, "accuracyToPass": 0.85, "minItems": 8 }
+        },
+        {
+          "id": "PH-digraphs",
+          "strand": "phonics",
+          "objective": "Decode words with consonant digraphs sh, ch, th, ck.",
+          "iCanStatement": "I can read words with sh, ch, th and ck.",
+          "prereqs": ["PH-cvc-short-vowels"],
+          "itemType": "decode_choice",
+          "itemPool": "phonics-L03-digraphs",
+          "encodePairId": "SP-digraphs",
+          "mastery": { "window": 12, "accuracyToPass": 0.85, "minItems": 8 }
+        },
+        {
+          "id": "SP-digraphs",
+          "strand": "spelling",
+          "objective": "Spell words with consonant digraphs sh, ch, th, ck from tiles.",
+          "iCanStatement": "I can spell words with sh, ch, th and ck.",
+          "prereqs": ["PH-digraphs"],
+          "itemType": "build_word",
+          "itemPool": "spelling-L03-digraphs",
+          "encodePairId": "PH-digraphs",
+          "mastery": { "window": 12, "accuracyToPass": 0.85, "minItems": 8 }
         }
       ]
     }
