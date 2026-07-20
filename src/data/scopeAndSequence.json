@@ -1,0 +1,32 @@
+{
+  "levels": [
+    {
+      "id": "P1",
+      "name": "Primary 1",
+      "skills": [
+        {
+          "id": "PH-cvc-short-vowels",
+          "strand": "phonics",
+          "objective": "Decode CVC words with short vowels.",
+          "iCanStatement": "I can read short-vowel words.",
+          "prereqs": [],
+          "itemType": "decode_choice",
+          "itemPool": "phonics-L02-cvc-short-vowels",
+          "encodePairId": "SP-cvc-short-vowels",
+          "mastery": { "window": 12, "accuracyToPass": 0.85, "minItems": 8 }
+        },
+        {
+          "id": "SP-cvc-short-vowels",
+          "strand": "spelling",
+          "objective": "Spell CVC words with short vowels from tiles.",
+          "iCanStatement": "I can spell short-vowel words.",
+          "prereqs": ["PH-cvc-short-vowels"],
+          "itemType": "build_word",
+          "itemPool": "spelling-L02-cvc-short-vowels",
+          "encodePairId": "PH-cvc-short-vowels",
+          "mastery": { "window": 12, "accuracyToPass": 0.85, "minItems": 8 }
+        }
+      ]
+    }
+  ]
+}

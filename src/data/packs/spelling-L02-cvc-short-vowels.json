@@ -1,0 +1,30 @@
+{
+  "packId": "spelling-L02-cvc-short-vowels",
+  "strand": "spelling",
+  "skillIds": ["SP-cvc-short-vowels"],
+  "version": 1,
+  "items": [
+    { "id": "sp-cvc-001", "skillId": "SP-cvc-short-vowels", "itemType": "build_word", "difficulty": 1, "stem": "Build the word you hear.", "displayWord": "cat", "audioText": "cat", "graphemes": ["c", "a", "t"], "distractorGraphemes": ["o", "k"], "missedConceptOnFail": "vowel-short-a", "rationale": "cat = c-a-t.", "decodableWithin": "SP-cvc-short-vowels" },
+    { "id": "sp-cvc-002", "skillId": "SP-cvc-short-vowels", "itemType": "build_word", "difficulty": 1, "stem": "Build the word you hear.", "displayWord": "dog", "audioText": "dog", "graphemes": ["d", "o", "g"], "distractorGraphemes": ["a", "b"], "missedConceptOnFail": "vowel-short-o", "rationale": "dog = d-o-g.", "decodableWithin": "SP-cvc-short-vowels" },
+    { "id": "sp-cvc-003", "skillId": "SP-cvc-short-vowels", "itemType": "build_word", "difficulty": 1, "stem": "Build the word you hear.", "displayWord": "pig", "audioText": "pig", "graphemes": ["p", "i", "g"], "distractorGraphemes": ["e", "b"], "missedConceptOnFail": "vowel-short-i", "rationale": "pig = p-i-g.", "decodableWithin": "SP-cvc-short-vowels" },
+    { "id": "sp-cvc-004", "skillId": "SP-cvc-short-vowels", "itemType": "build_word", "difficulty": 1, "stem": "Build the word you hear.", "displayWord": "sun", "audioText": "sun", "graphemes": ["s", "u", "n"], "distractorGraphemes": ["o", "m"], "missedConceptOnFail": "vowel-short-u", "rationale": "sun = s-u-n.", "decodableWithin": "SP-cvc-short-vowels" },
+    { "id": "sp-cvc-005", "skillId": "SP-cvc-short-vowels", "itemType": "build_word", "difficulty": 1, "stem": "Build the word you hear.", "displayWord": "bed", "audioText": "bed", "graphemes": ["b", "e", "d"], "distractorGraphemes": ["a", "d"], "missedConceptOnFail": "vowel-short-e", "rationale": "bed = b-e-d.", "decodableWithin": "SP-cvc-short-vowels" },
+    { "id": "sp-cvc-006", "skillId": "SP-cvc-short-vowels", "itemType": "build_word", "difficulty": 1, "stem": "Build the word you hear.", "displayWord": "hat", "audioText": "hat", "graphemes": ["h", "a", "t"], "distractorGraphemes": ["u", "n"], "missedConceptOnFail": "vowel-short-a", "rationale": "hat = h-a-t.", "decodableWithin": "SP-cvc-short-vowels" },
+    { "id": "sp-cvc-007", "skillId": "SP-cvc-short-vowels", "itemType": "build_word", "difficulty": 2, "stem": "Build the word you hear.", "displayWord": "net", "audioText": "net", "graphemes": ["n", "e", "t"], "distractorGraphemes": ["o", "m", "a"], "missedConceptOnFail": "vowel-short-e", "rationale": "net = n-e-t.", "decodableWithin": "SP-cvc-short-vowels" },
+    { "id": "sp-cvc-008", "skillId": "SP-cvc-short-vowels", "itemType": "build_word", "difficulty": 2, "stem": "Build the word you hear.", "displayWord": "cup", "audioText": "cup", "graphemes": ["c", "u", "p"], "distractorGraphemes": ["a", "o", "b"], "missedConceptOnFail": "vowel-short-u", "rationale": "cup = c-u-p.", "decodableWithin": "SP-cvc-short-vowels" },
+    { "id": "sp-cvc-009", "skillId": "SP-cvc-short-vowels", "itemType": "build_word", "difficulty": 2, "stem": "Build the word you hear.", "displayWord": "pin", "audioText": "pin", "graphemes": ["p", "i", "n"], "distractorGraphemes": ["e", "a", "m"], "missedConceptOnFail": "vowel-short-i", "rationale": "pin = p-i-n.", "decodableWithin": "SP-cvc-short-vowels" },
+    { "id": "sp-cvc-010", "skillId": "SP-cvc-short-vowels", "itemType": "build_word", "difficulty": 2, "stem": "Build the word you hear.", "displayWord": "log", "audioText": "log", "graphemes": ["l", "o", "g"], "distractorGraphemes": ["e", "a", "d"], "missedConceptOnFail": "vowel-short-o", "rationale": "log = l-o-g.", "decodableWithin": "SP-cvc-short-vowels" },
+    { "id": "sp-cvc-011", "skillId": "SP-cvc-short-vowels", "itemType": "build_word", "difficulty": 3, "stem": "Build the word you hear.", "displayWord": "mud", "audioText": "mud", "graphemes": ["m", "u", "d"], "distractorGraphemes": ["a", "i", "o", "n"], "missedConceptOnFail": "vowel-short-u", "rationale": "mud = m-u-d.", "decodableWithin": "SP-cvc-short-vowels" },
+    { "id": "sp-cvc-012", "skillId": "SP-cvc-short-vowels", "itemType": "build_word", "difficulty": 3, "stem": "Build the word you hear.", "displayWord": "ten", "audioText": "ten", "graphemes": ["t", "e", "n"], "distractorGraphemes": ["a", "i", "o", "m"], "missedConceptOnFail": "vowel-short-e", "rationale": "ten = t-e-n.", "decodableWithin": "SP-cvc-short-vowels" }
+  ],
+  "lessons": {
+    "SP-cvc-short-vowels": {
+      "iCanStatement": "I can spell short-vowel words.",
+      "explanation": "To spell a short word, say it slowly and tap out each sound. Then choose one tile for each sound, in order: cat → c, a, t.",
+      "workedExamples": [
+        { "text": "sun", "note": "Hear s-u-n → tiles s · u · n" },
+        { "text": "bed", "note": "Hear b-e-d → tiles b · e · d" }
+      ]
+    }
+  }
+}

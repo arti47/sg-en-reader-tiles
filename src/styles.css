@@ -101,4 +101,24 @@ h1 { font-size: 1.8rem; font-weight: 700; margin: 8px 0 0; }
 }
 .ver { text-align: center; color: #93a29f; font-size: .8rem; padding: 12px; }
 
+/* Encode word-building slots (grapheme tiles land here) */
+.slots { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; }
+.slot {
+  min-width: 56px; min-height: 64px; padding: 0 8px;
+  display: grid; place-items: center; font-size: 1.7rem; font-weight: 700;
+  background: #fff; border: 3px dashed var(--teal-soft); border-radius: 14px;
+}
+.slot.filled { border-style: solid; }
+.slot.correct { background: var(--ok-soft); border-color: var(--ok); }
+.slot.wrong { background: var(--no-soft); border-color: var(--no); }
+
+/* Lesson (explicit re-teaching — visually distinct) */
+.lesson { background: #fffaf0; border: 3px solid var(--amber); border-radius: var(--radius); padding: 20px; }
+.lesson-badge { align-self: flex-start; background: var(--amber); color: var(--ink); font-weight: 700; padding: 6px 14px; border-radius: 999px; }
+.example {
+  display: flex; flex-direction: column; gap: 4px; text-align: left; cursor: pointer;
+  background: #fff; border: 3px solid var(--teal-soft); border-radius: 14px; padding: 14px; font: inherit;
+}
+.example-word { font-size: 1.4rem; font-weight: 700; }
+
 @media (prefers-reduced-motion: reduce) { * { transition: none !important; } }

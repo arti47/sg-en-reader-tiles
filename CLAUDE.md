@@ -439,6 +439,7 @@ type PackItem = {
 |---|---|---|---|---|
 | 2026-07-20 | Spec instantiated | Project start | — | — |
 | 2026-07-20 | M0 scaffold: Vite+React+TS+PWA, Actions→Pages, IndexedDB store, add-student, ChildPicker, one grammar_mcq loop, update-toast, dyslexia-first styles | First Session Playable milestone start | Offline env — build verified via Actions on push | v0.1.0 |
+| 2026-07-20 | M1 first increment: adaptive engine (`engine.ts` — rolling-window mastery, difficulty 1–3, dual decode+encode gate, encode-unlock @70%, struggle→lesson), scope&sequence loader (`packs.ts`, `scopeAndSequence.json`), tile encode renderer (`build_word`) + `decode_choice` MCQ renderer, `scoring.scoreTiles` grapheme-sequence match, `audio.ts` TTS `speak()` (en-GB) + stubbed `phoneme()`, real Session runner (interleaved skills, SESSION_LEN=16, certificates), store schema v2 (attempts keyed by uuid + childId index, progress/certificates stores). CVC short-vowel decode+spelling packs (12 items each) + lessons. Committed `npm test` Playwright harness. Root-cause: tsconfig.node `noEmit` broke `tsc -b` (TS6310) → emitDeclarationOnly+outDir. | M1 MVP core (decoding+spelling engine) start; reaches First Lesson Playable 🏁 (§18.10) | `npm test` PASS headless @390px: mastery→2 certs, dual-gate lockout (encode stays locked when decode <70%), struggle→lesson fires once, zero console errors, no horizontal overflow; `npm run build` green | v0.2.0 |
 
 **18.3 Content Pack Ledger (mandatory).** A **T-numbered checkbox ledger** lists every content pack the app needs, grouped by strand and mapped to roadmap phases. Preamble for any AI resuming the project: work top-to-bottom within the current phase; author the pack; run §6b lint; deliver to owner for review (§12.5); **tick the box only after owner sign-off, in the same change, with a changelog row. An unticked box = content not approved; NEVER build/ship UI against an unticked pack.**
 
@@ -458,6 +459,8 @@ type PackItem = {
 - [ ] T14 grammar starter track (articles, SVA-simple, tenses-basic)
 - [ ] T15 vocab starter track
 - [ ] T16+ PSLE Paper-2 packs (M3; enumerate when reached)
+
+> **Ledger status (2026-07-20).** T02 (`phonics-L02-cvc-short-vowels`, decode), the CVC slice of T11 (`spelling-L02-cvc-short-vowels`, encode), and the CVC lessons of T13 are **authored and wired** (12 items each, manually decodability-checked against the CVC envelope, en-SG). Boxes stay **unticked** pending (a) the automated §6b build-lint script — not yet written — and (b) **owner sign-off**. Per §18.3 these are the first UI shipped against packs; treat as provisional until reviewed. Phoneme audio (T01) deferred: TTS-only this pass, `audio.phoneme()` stubbed.
 
 **18.4 Per-feature spec format (every roadmap item).** **Objective** (pedagogical rule/behaviour, exact numbers) · **Target** (file · module · function) · **Behaviour/UI** · **Schema** (new fields: name/type/default/location, §11 updated) · **Acceptance** (how to confirm in a browser).
 
@@ -491,7 +494,9 @@ type PackItem = {
 
 Adding/moving a module: update this table **and** the SW app-shell list, bump `CACHE_VERSION` — same change.
 
-**18.10 Milestone — First Lesson Playable 🏁.** Add student → warm-up placement → decode + spell-tiles items → struggle triggers Lesson → resume → certificate — end-to-end **offline**, verified on iPad Safari (or simulated viewport). M2+ features are gated on this milestone.
+**Actual layout as built (M1, 2026-07-20):** `src/lib/packs.ts`, `src/lib/engine.ts`, `src/lib/scoring.ts`, `src/lib/audio.ts`; `src/store.ts` (persistence; schemaVersion migration + aggregates/export-import still TODO); `src/features/Session.tsx` (session runner); `src/features/items/McqItem.tsx` (grammar_mcq + decode_choice), `src/features/items/TileItem.tsx` (build_word/spell_tiles); `src/features/{ChildPicker,AddStudent,LessonView}.tsx`; `src/App.tsx` (router/boot); `src/data/scopeAndSequence.json` + `src/data/packs/*.json`. **Not yet built:** `srs.ts` (spaced repetition), `placement.ts` (warm-up walk), `ui.ts` (shared modal/toast primitives), `dashboard.ts`, §6b build-lint, export/import — all M1-remaining / M2.
+
+**18.10 Milestone — First Lesson Playable 🏁.** Add student → warm-up placement → decode + spell-tiles items → struggle triggers Lesson → resume → certificate — end-to-end **offline**, verified on iPad Safari (or simulated viewport). M2+ features are gated on this milestone. **Status (2026-07-20): substantially met** via `npm test` (add student → decode + spell-tiles → struggle→Lesson → certificate, offline, 390px). Gap: placement walk (`placement.ts`) not yet built — entry is currently first-skill, not placement-driven; this remains before the milestone is fully closed.
 
 **18.11 Content & pedagogy audit (before "done").** Re-verify the finished app against spec + packs: every answer key resolves; decodability holds for every shipped item; en-SG spelling throughout; grapheme segmentations correct; mastery/SRS gating and once-per-X behaviours match §7 exactly (audit hardest on *engine behaviour* — reference projects found data layers clean but engine sequencing deviating). Findings = numbered work-list (Rule/Target/Fix/Why); each closed with a regression check; record what was verified clean.
 

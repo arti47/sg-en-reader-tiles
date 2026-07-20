@@ -1,0 +1,30 @@
+{
+  "packId": "phonics-L02-cvc-short-vowels",
+  "strand": "phonics",
+  "skillIds": ["PH-cvc-short-vowels"],
+  "version": 1,
+  "items": [
+    { "id": "ph-cvc-001", "skillId": "PH-cvc-short-vowels", "itemType": "decode_choice", "difficulty": 1, "stem": "Tap the word you hear.", "audioText": "cat", "choices": [{ "id": "a", "label": "cat" }, { "id": "b", "label": "cot" }, { "id": "c", "label": "cut" }], "correctChoiceId": "a", "missedConceptOnFail": "vowel-short-a", "rationale": "c-a-t = cat. The short a says /a/.", "decodableWithin": "PH-cvc-short-vowels" },
+    { "id": "ph-cvc-002", "skillId": "PH-cvc-short-vowels", "itemType": "decode_choice", "difficulty": 1, "stem": "Tap the word you hear.", "audioText": "dog", "choices": [{ "id": "a", "label": "dig" }, { "id": "b", "label": "dog" }, { "id": "c", "label": "dug" }], "correctChoiceId": "b", "missedConceptOnFail": "vowel-short-o", "rationale": "d-o-g = dog. The short o says /o/.", "decodableWithin": "PH-cvc-short-vowels" },
+    { "id": "ph-cvc-003", "skillId": "PH-cvc-short-vowels", "itemType": "decode_choice", "difficulty": 1, "stem": "Tap the word you hear.", "audioText": "pig", "choices": [{ "id": "a", "label": "peg" }, { "id": "b", "label": "pug" }, { "id": "c", "label": "pig" }], "correctChoiceId": "c", "missedConceptOnFail": "vowel-short-i", "rationale": "p-i-g = pig. The short i says /i/.", "decodableWithin": "PH-cvc-short-vowels" },
+    { "id": "ph-cvc-004", "skillId": "PH-cvc-short-vowels", "itemType": "decode_choice", "difficulty": 1, "stem": "Tap the word you hear.", "audioText": "sun", "choices": [{ "id": "a", "label": "sun" }, { "id": "b", "label": "son" }, { "id": "c", "label": "sin" }], "correctChoiceId": "a", "missedConceptOnFail": "vowel-short-u", "rationale": "s-u-n = sun. The short u says /u/.", "decodableWithin": "PH-cvc-short-vowels" },
+    { "id": "ph-cvc-005", "skillId": "PH-cvc-short-vowels", "itemType": "decode_choice", "difficulty": 1, "stem": "Tap the word you hear.", "audioText": "bed", "choices": [{ "id": "a", "label": "bad" }, { "id": "b", "label": "bed" }, { "id": "c", "label": "bud" }], "correctChoiceId": "b", "missedConceptOnFail": "vowel-short-e", "rationale": "b-e-d = bed. The short e says /e/.", "decodableWithin": "PH-cvc-short-vowels" },
+    { "id": "ph-cvc-006", "skillId": "PH-cvc-short-vowels", "itemType": "decode_choice", "difficulty": 1, "stem": "Tap the word you hear.", "audioText": "hat", "choices": [{ "id": "a", "label": "hut" }, { "id": "b", "label": "hit" }, { "id": "c", "label": "hat" }], "correctChoiceId": "c", "missedConceptOnFail": "vowel-short-a", "rationale": "h-a-t = hat.", "decodableWithin": "PH-cvc-short-vowels" },
+    { "id": "ph-cvc-007", "skillId": "PH-cvc-short-vowels", "itemType": "decode_choice", "difficulty": 2, "stem": "Tap the word you hear.", "audioText": "net", "choices": [{ "id": "a", "label": "net" }, { "id": "b", "label": "not" }, { "id": "c", "label": "nut" }], "correctChoiceId": "a", "missedConceptOnFail": "vowel-short-e", "rationale": "n-e-t = net.", "decodableWithin": "PH-cvc-short-vowels" },
+    { "id": "ph-cvc-008", "skillId": "PH-cvc-short-vowels", "itemType": "decode_choice", "difficulty": 2, "stem": "Tap the word you hear.", "audioText": "cup", "choices": [{ "id": "a", "label": "cap" }, { "id": "b", "label": "cup" }, { "id": "c", "label": "cop" }], "correctChoiceId": "b", "missedConceptOnFail": "vowel-short-u", "rationale": "c-u-p = cup.", "decodableWithin": "PH-cvc-short-vowels" },
+    { "id": "ph-cvc-009", "skillId": "PH-cvc-short-vowels", "itemType": "decode_choice", "difficulty": 2, "stem": "Tap the word you hear.", "audioText": "pin", "choices": [{ "id": "a", "label": "pan" }, { "id": "b", "label": "pen" }, { "id": "c", "label": "pin" }], "correctChoiceId": "c", "missedConceptOnFail": "vowel-short-i", "rationale": "p-i-n = pin.", "decodableWithin": "PH-cvc-short-vowels" },
+    { "id": "ph-cvc-010", "skillId": "PH-cvc-short-vowels", "itemType": "decode_choice", "difficulty": 2, "stem": "Tap the word you hear.", "audioText": "log", "choices": [{ "id": "a", "label": "log" }, { "id": "b", "label": "leg" }, { "id": "c", "label": "lag" }], "correctChoiceId": "a", "missedConceptOnFail": "vowel-short-o", "rationale": "l-o-g = log.", "decodableWithin": "PH-cvc-short-vowels" },
+    { "id": "ph-cvc-011", "skillId": "PH-cvc-short-vowels", "itemType": "decode_choice", "difficulty": 3, "stem": "Tap the word you hear.", "audioText": "mud", "choices": [{ "id": "a", "label": "mad" }, { "id": "b", "label": "mud" }, { "id": "c", "label": "mid" }], "correctChoiceId": "b", "missedConceptOnFail": "vowel-short-u", "rationale": "m-u-d = mud.", "decodableWithin": "PH-cvc-short-vowels" },
+    { "id": "ph-cvc-012", "skillId": "PH-cvc-short-vowels", "itemType": "decode_choice", "difficulty": 3, "stem": "Tap the word you hear.", "audioText": "ten", "choices": [{ "id": "a", "label": "tan" }, { "id": "b", "label": "tin" }, { "id": "c", "label": "ten" }], "correctChoiceId": "c", "missedConceptOnFail": "vowel-short-e", "rationale": "t-e-n = ten.", "decodableWithin": "PH-cvc-short-vowels" }
+  ],
+  "lessons": {
+    "PH-cvc-short-vowels": {
+      "iCanStatement": "I can read short-vowel words.",
+      "explanation": "A short word is often three sounds: consonant, vowel, consonant. Say each sound, then blend them: c-a-t → cat.",
+      "workedExamples": [
+        { "text": "cat", "note": "c /k/ · a /a/ · t /t/ → cat" },
+        { "text": "dog", "note": "d /d/ · o /o/ · g /g/ → dog" }
+      ]
+    }
+  }
+}
