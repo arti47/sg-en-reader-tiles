@@ -1,0 +1,1898 @@
+{
+  "packId": "phonics-L07-vowel-teams",
+  "strand": "phonics",
+  "skillIds": [
+    "PH-vowel-teams"
+  ],
+  "version": 1,
+  "items": [
+    {
+      "id": "ph-vt-001",
+      "skillId": "PH-vowel-teams",
+      "itemType": "decode_choice",
+      "difficulty": 1,
+      "stem": "Tap the word you hear.",
+      "audioText": "rain",
+      "choices": [
+        {
+          "id": "a",
+          "label": "rain"
+        },
+        {
+          "id": "b",
+          "label": "main"
+        },
+        {
+          "id": "c",
+          "label": "pain"
+        }
+      ],
+      "correctChoiceId": "a",
+      "missedConceptOnFail": "vowel-team-ai",
+      "rationale": "r-ai-n = rain.",
+      "decodableWithin": "PH-vowel-teams"
+    },
+    {
+      "id": "ph-vt-002",
+      "skillId": "PH-vowel-teams",
+      "itemType": "decode_choice",
+      "difficulty": 1,
+      "stem": "Tap the word you hear.",
+      "audioText": "main",
+      "choices": [
+        {
+          "id": "a",
+          "label": "rain"
+        },
+        {
+          "id": "b",
+          "label": "main"
+        },
+        {
+          "id": "c",
+          "label": "pain"
+        }
+      ],
+      "correctChoiceId": "b",
+      "missedConceptOnFail": "vowel-team-ai",
+      "rationale": "m-ai-n = main.",
+      "decodableWithin": "PH-vowel-teams"
+    },
+    {
+      "id": "ph-vt-003",
+      "skillId": "PH-vowel-teams",
+      "itemType": "decode_choice",
+      "difficulty": 2,
+      "stem": "Tap the word you hear.",
+      "audioText": "pain",
+      "choices": [
+        {
+          "id": "a",
+          "label": "rain"
+        },
+        {
+          "id": "b",
+          "label": "main"
+        },
+        {
+          "id": "c",
+          "label": "pain"
+        }
+      ],
+      "correctChoiceId": "c",
+      "missedConceptOnFail": "vowel-team-ai",
+      "rationale": "p-ai-n = pain.",
+      "decodableWithin": "PH-vowel-teams"
+    },
+    {
+      "id": "ph-vt-004",
+      "skillId": "PH-vowel-teams",
+      "itemType": "decode_choice",
+      "difficulty": 1,
+      "stem": "Tap the word you hear.",
+      "audioText": "wait",
+      "choices": [
+        {
+          "id": "a",
+          "label": "wait"
+        },
+        {
+          "id": "b",
+          "label": "tail"
+        },
+        {
+          "id": "c",
+          "label": "sail"
+        }
+      ],
+      "correctChoiceId": "a",
+      "missedConceptOnFail": "vowel-team-ai",
+      "rationale": "w-ai-t = wait.",
+      "decodableWithin": "PH-vowel-teams"
+    },
+    {
+      "id": "ph-vt-005",
+      "skillId": "PH-vowel-teams",
+      "itemType": "decode_choice",
+      "difficulty": 1,
+      "stem": "Tap the word you hear.",
+      "audioText": "tail",
+      "choices": [
+        {
+          "id": "a",
+          "label": "nail"
+        },
+        {
+          "id": "b",
+          "label": "tail"
+        },
+        {
+          "id": "c",
+          "label": "sail"
+        }
+      ],
+      "correctChoiceId": "b",
+      "missedConceptOnFail": "vowel-team-ai",
+      "rationale": "t-ai-l = tail.",
+      "decodableWithin": "PH-vowel-teams"
+    },
+    {
+      "id": "ph-vt-006",
+      "skillId": "PH-vowel-teams",
+      "itemType": "decode_choice",
+      "difficulty": 2,
+      "stem": "Tap the word you hear.",
+      "audioText": "nail",
+      "choices": [
+        {
+          "id": "a",
+          "label": "tail"
+        },
+        {
+          "id": "b",
+          "label": "sail"
+        },
+        {
+          "id": "c",
+          "label": "nail"
+        }
+      ],
+      "correctChoiceId": "c",
+      "missedConceptOnFail": "vowel-team-ai",
+      "rationale": "n-ai-l = nail.",
+      "decodableWithin": "PH-vowel-teams"
+    },
+    {
+      "id": "ph-vt-007",
+      "skillId": "PH-vowel-teams",
+      "itemType": "decode_choice",
+      "difficulty": 2,
+      "stem": "Tap the word you hear.",
+      "audioText": "sail",
+      "choices": [
+        {
+          "id": "a",
+          "label": "sail"
+        },
+        {
+          "id": "b",
+          "label": "tail"
+        },
+        {
+          "id": "c",
+          "label": "nail"
+        }
+      ],
+      "correctChoiceId": "a",
+      "missedConceptOnFail": "vowel-team-ai",
+      "rationale": "s-ai-l = sail.",
+      "decodableWithin": "PH-vowel-teams"
+    },
+    {
+      "id": "ph-vt-008",
+      "skillId": "PH-vowel-teams",
+      "itemType": "decode_choice",
+      "difficulty": 2,
+      "stem": "Tap the word you hear.",
+      "audioText": "rail",
+      "choices": [
+        {
+          "id": "a",
+          "label": "tail"
+        },
+        {
+          "id": "b",
+          "label": "rail"
+        },
+        {
+          "id": "c",
+          "label": "nail"
+        }
+      ],
+      "correctChoiceId": "b",
+      "missedConceptOnFail": "vowel-team-ai",
+      "rationale": "r-ai-l = rail.",
+      "decodableWithin": "PH-vowel-teams"
+    },
+    {
+      "id": "ph-vt-009",
+      "skillId": "PH-vowel-teams",
+      "itemType": "decode_choice",
+      "difficulty": 1,
+      "stem": "Tap the word you hear.",
+      "audioText": "play",
+      "choices": [
+        {
+          "id": "a",
+          "label": "stay"
+        },
+        {
+          "id": "b",
+          "label": "clay"
+        },
+        {
+          "id": "c",
+          "label": "play"
+        }
+      ],
+      "correctChoiceId": "c",
+      "missedConceptOnFail": "vowel-team-ay",
+      "rationale": "p-l-ay = play.",
+      "decodableWithin": "PH-vowel-teams"
+    },
+    {
+      "id": "ph-vt-010",
+      "skillId": "PH-vowel-teams",
+      "itemType": "decode_choice",
+      "difficulty": 1,
+      "stem": "Tap the word you hear.",
+      "audioText": "stay",
+      "choices": [
+        {
+          "id": "a",
+          "label": "stay"
+        },
+        {
+          "id": "b",
+          "label": "play"
+        },
+        {
+          "id": "c",
+          "label": "day"
+        }
+      ],
+      "correctChoiceId": "a",
+      "missedConceptOnFail": "vowel-team-ay",
+      "rationale": "s-t-ay = stay.",
+      "decodableWithin": "PH-vowel-teams"
+    },
+    {
+      "id": "ph-vt-011",
+      "skillId": "PH-vowel-teams",
+      "itemType": "decode_choice",
+      "difficulty": 1,
+      "stem": "Tap the word you hear.",
+      "audioText": "day",
+      "choices": [
+        {
+          "id": "a",
+          "label": "way"
+        },
+        {
+          "id": "b",
+          "label": "day"
+        },
+        {
+          "id": "c",
+          "label": "say"
+        }
+      ],
+      "correctChoiceId": "b",
+      "missedConceptOnFail": "vowel-team-ay",
+      "rationale": "d-ay = day.",
+      "decodableWithin": "PH-vowel-teams"
+    },
+    {
+      "id": "ph-vt-012",
+      "skillId": "PH-vowel-teams",
+      "itemType": "decode_choice",
+      "difficulty": 1,
+      "stem": "Tap the word you hear.",
+      "audioText": "way",
+      "choices": [
+        {
+          "id": "a",
+          "label": "day"
+        },
+        {
+          "id": "b",
+          "label": "say"
+        },
+        {
+          "id": "c",
+          "label": "way"
+        }
+      ],
+      "correctChoiceId": "c",
+      "missedConceptOnFail": "vowel-team-ay",
+      "rationale": "w-ay = way.",
+      "decodableWithin": "PH-vowel-teams"
+    },
+    {
+      "id": "ph-vt-013",
+      "skillId": "PH-vowel-teams",
+      "itemType": "decode_choice",
+      "difficulty": 2,
+      "stem": "Tap the word you hear.",
+      "audioText": "say",
+      "choices": [
+        {
+          "id": "a",
+          "label": "say"
+        },
+        {
+          "id": "b",
+          "label": "day"
+        },
+        {
+          "id": "c",
+          "label": "way"
+        }
+      ],
+      "correctChoiceId": "a",
+      "missedConceptOnFail": "vowel-team-ay",
+      "rationale": "s-ay = say.",
+      "decodableWithin": "PH-vowel-teams"
+    },
+    {
+      "id": "ph-vt-014",
+      "skillId": "PH-vowel-teams",
+      "itemType": "decode_choice",
+      "difficulty": 2,
+      "stem": "Tap the word you hear.",
+      "audioText": "tray",
+      "choices": [
+        {
+          "id": "a",
+          "label": "clay"
+        },
+        {
+          "id": "b",
+          "label": "tray"
+        },
+        {
+          "id": "c",
+          "label": "play"
+        }
+      ],
+      "correctChoiceId": "b",
+      "missedConceptOnFail": "vowel-team-ay",
+      "rationale": "t-r-ay = tray.",
+      "decodableWithin": "PH-vowel-teams"
+    },
+    {
+      "id": "ph-vt-015",
+      "skillId": "PH-vowel-teams",
+      "itemType": "decode_choice",
+      "difficulty": 2,
+      "stem": "Tap the word you hear.",
+      "audioText": "clay",
+      "choices": [
+        {
+          "id": "a",
+          "label": "tray"
+        },
+        {
+          "id": "b",
+          "label": "play"
+        },
+        {
+          "id": "c",
+          "label": "clay"
+        }
+      ],
+      "correctChoiceId": "c",
+      "missedConceptOnFail": "vowel-team-ay",
+      "rationale": "c-l-ay = clay.",
+      "decodableWithin": "PH-vowel-teams"
+    },
+    {
+      "id": "ph-vt-016",
+      "skillId": "PH-vowel-teams",
+      "itemType": "decode_choice",
+      "difficulty": 3,
+      "stem": "Tap the word you hear.",
+      "audioText": "spray",
+      "choices": [
+        {
+          "id": "a",
+          "label": "spray"
+        },
+        {
+          "id": "b",
+          "label": "tray"
+        },
+        {
+          "id": "c",
+          "label": "clay"
+        }
+      ],
+      "correctChoiceId": "a",
+      "missedConceptOnFail": "vowel-team-ay",
+      "rationale": "s-p-r-ay = spray.",
+      "decodableWithin": "PH-vowel-teams"
+    },
+    {
+      "id": "ph-vt-017",
+      "skillId": "PH-vowel-teams",
+      "itemType": "decode_choice",
+      "difficulty": 1,
+      "stem": "Tap the word you hear.",
+      "audioText": "feet",
+      "choices": [
+        {
+          "id": "a",
+          "label": "feed"
+        },
+        {
+          "id": "b",
+          "label": "feet"
+        },
+        {
+          "id": "c",
+          "label": "seed"
+        }
+      ],
+      "correctChoiceId": "b",
+      "missedConceptOnFail": "vowel-team-ee",
+      "rationale": "f-ee-t = feet.",
+      "decodableWithin": "PH-vowel-teams"
+    },
+    {
+      "id": "ph-vt-018",
+      "skillId": "PH-vowel-teams",
+      "itemType": "decode_choice",
+      "difficulty": 1,
+      "stem": "Tap the word you hear.",
+      "audioText": "feed",
+      "choices": [
+        {
+          "id": "a",
+          "label": "seed"
+        },
+        {
+          "id": "b",
+          "label": "need"
+        },
+        {
+          "id": "c",
+          "label": "feed"
+        }
+      ],
+      "correctChoiceId": "c",
+      "missedConceptOnFail": "vowel-team-ee",
+      "rationale": "f-ee-d = feed.",
+      "decodableWithin": "PH-vowel-teams"
+    },
+    {
+      "id": "ph-vt-019",
+      "skillId": "PH-vowel-teams",
+      "itemType": "decode_choice",
+      "difficulty": 1,
+      "stem": "Tap the word you hear.",
+      "audioText": "seed",
+      "choices": [
+        {
+          "id": "a",
+          "label": "seed"
+        },
+        {
+          "id": "b",
+          "label": "feed"
+        },
+        {
+          "id": "c",
+          "label": "need"
+        }
+      ],
+      "correctChoiceId": "a",
+      "missedConceptOnFail": "vowel-team-ee",
+      "rationale": "s-ee-d = seed.",
+      "decodableWithin": "PH-vowel-teams"
+    },
+    {
+      "id": "ph-vt-020",
+      "skillId": "PH-vowel-teams",
+      "itemType": "decode_choice",
+      "difficulty": 2,
+      "stem": "Tap the word you hear.",
+      "audioText": "need",
+      "choices": [
+        {
+          "id": "a",
+          "label": "seed"
+        },
+        {
+          "id": "b",
+          "label": "need"
+        },
+        {
+          "id": "c",
+          "label": "feed"
+        }
+      ],
+      "correctChoiceId": "b",
+      "missedConceptOnFail": "vowel-team-ee",
+      "rationale": "n-ee-d = need.",
+      "decodableWithin": "PH-vowel-teams"
+    },
+    {
+      "id": "ph-vt-021",
+      "skillId": "PH-vowel-teams",
+      "itemType": "decode_choice",
+      "difficulty": 2,
+      "stem": "Tap the word you hear.",
+      "audioText": "keep",
+      "choices": [
+        {
+          "id": "a",
+          "label": "deep"
+        },
+        {
+          "id": "b",
+          "label": "feet"
+        },
+        {
+          "id": "c",
+          "label": "keep"
+        }
+      ],
+      "correctChoiceId": "c",
+      "missedConceptOnFail": "vowel-team-ee",
+      "rationale": "k-ee-p = keep.",
+      "decodableWithin": "PH-vowel-teams"
+    },
+    {
+      "id": "ph-vt-022",
+      "skillId": "PH-vowel-teams",
+      "itemType": "decode_choice",
+      "difficulty": 2,
+      "stem": "Tap the word you hear.",
+      "audioText": "deep",
+      "choices": [
+        {
+          "id": "a",
+          "label": "deep"
+        },
+        {
+          "id": "b",
+          "label": "keep"
+        },
+        {
+          "id": "c",
+          "label": "feet"
+        }
+      ],
+      "correctChoiceId": "a",
+      "missedConceptOnFail": "vowel-team-ee",
+      "rationale": "d-ee-p = deep.",
+      "decodableWithin": "PH-vowel-teams"
+    },
+    {
+      "id": "ph-vt-023",
+      "skillId": "PH-vowel-teams",
+      "itemType": "decode_choice",
+      "difficulty": 2,
+      "stem": "Tap the word you hear.",
+      "audioText": "tree",
+      "choices": [
+        {
+          "id": "a",
+          "label": "feet"
+        },
+        {
+          "id": "b",
+          "label": "tree"
+        },
+        {
+          "id": "c",
+          "label": "green"
+        }
+      ],
+      "correctChoiceId": "b",
+      "missedConceptOnFail": "vowel-team-ee",
+      "rationale": "t-r-ee = tree.",
+      "decodableWithin": "PH-vowel-teams"
+    },
+    {
+      "id": "ph-vt-024",
+      "skillId": "PH-vowel-teams",
+      "itemType": "decode_choice",
+      "difficulty": 3,
+      "stem": "Tap the word you hear.",
+      "audioText": "green",
+      "choices": [
+        {
+          "id": "a",
+          "label": "tree"
+        },
+        {
+          "id": "b",
+          "label": "feet"
+        },
+        {
+          "id": "c",
+          "label": "green"
+        }
+      ],
+      "correctChoiceId": "c",
+      "missedConceptOnFail": "vowel-team-ee",
+      "rationale": "g-r-ee-n = green.",
+      "decodableWithin": "PH-vowel-teams"
+    },
+    {
+      "id": "ph-vt-025",
+      "skillId": "PH-vowel-teams",
+      "itemType": "decode_choice",
+      "difficulty": 1,
+      "stem": "Tap the word you hear.",
+      "audioText": "leaf",
+      "choices": [
+        {
+          "id": "a",
+          "label": "leaf"
+        },
+        {
+          "id": "b",
+          "label": "bean"
+        },
+        {
+          "id": "c",
+          "label": "read"
+        }
+      ],
+      "correctChoiceId": "a",
+      "missedConceptOnFail": "vowel-team-ea",
+      "rationale": "l-ea-f = leaf.",
+      "decodableWithin": "PH-vowel-teams"
+    },
+    {
+      "id": "ph-vt-026",
+      "skillId": "PH-vowel-teams",
+      "itemType": "decode_choice",
+      "difficulty": 1,
+      "stem": "Tap the word you hear.",
+      "audioText": "bean",
+      "choices": [
+        {
+          "id": "a",
+          "label": "read"
+        },
+        {
+          "id": "b",
+          "label": "bean"
+        },
+        {
+          "id": "c",
+          "label": "seat"
+        }
+      ],
+      "correctChoiceId": "b",
+      "missedConceptOnFail": "vowel-team-ea",
+      "rationale": "b-ea-n = bean.",
+      "decodableWithin": "PH-vowel-teams"
+    },
+    {
+      "id": "ph-vt-027",
+      "skillId": "PH-vowel-teams",
+      "itemType": "decode_choice",
+      "difficulty": 2,
+      "stem": "Tap the word you hear.",
+      "audioText": "read",
+      "choices": [
+        {
+          "id": "a",
+          "label": "bean"
+        },
+        {
+          "id": "b",
+          "label": "seat"
+        },
+        {
+          "id": "c",
+          "label": "read"
+        }
+      ],
+      "correctChoiceId": "c",
+      "missedConceptOnFail": "vowel-team-ea",
+      "rationale": "r-ea-d = read.",
+      "decodableWithin": "PH-vowel-teams"
+    },
+    {
+      "id": "ph-vt-028",
+      "skillId": "PH-vowel-teams",
+      "itemType": "decode_choice",
+      "difficulty": 2,
+      "stem": "Tap the word you hear.",
+      "audioText": "seat",
+      "choices": [
+        {
+          "id": "a",
+          "label": "seat"
+        },
+        {
+          "id": "b",
+          "label": "meat"
+        },
+        {
+          "id": "c",
+          "label": "beat"
+        }
+      ],
+      "correctChoiceId": "a",
+      "missedConceptOnFail": "vowel-team-ea",
+      "rationale": "s-ea-t = seat.",
+      "decodableWithin": "PH-vowel-teams"
+    },
+    {
+      "id": "ph-vt-029",
+      "skillId": "PH-vowel-teams",
+      "itemType": "decode_choice",
+      "difficulty": 2,
+      "stem": "Tap the word you hear.",
+      "audioText": "meat",
+      "choices": [
+        {
+          "id": "a",
+          "label": "seat"
+        },
+        {
+          "id": "b",
+          "label": "meat"
+        },
+        {
+          "id": "c",
+          "label": "beat"
+        }
+      ],
+      "correctChoiceId": "b",
+      "missedConceptOnFail": "vowel-team-ea",
+      "rationale": "m-ea-t = meat.",
+      "decodableWithin": "PH-vowel-teams"
+    },
+    {
+      "id": "ph-vt-030",
+      "skillId": "PH-vowel-teams",
+      "itemType": "decode_choice",
+      "difficulty": 2,
+      "stem": "Tap the word you hear.",
+      "audioText": "team",
+      "choices": [
+        {
+          "id": "a",
+          "label": "meat"
+        },
+        {
+          "id": "b",
+          "label": "seat"
+        },
+        {
+          "id": "c",
+          "label": "team"
+        }
+      ],
+      "correctChoiceId": "c",
+      "missedConceptOnFail": "vowel-team-ea",
+      "rationale": "t-ea-m = team.",
+      "decodableWithin": "PH-vowel-teams"
+    },
+    {
+      "id": "ph-vt-031",
+      "skillId": "PH-vowel-teams",
+      "itemType": "decode_choice",
+      "difficulty": 3,
+      "stem": "Tap the word you hear.",
+      "audioText": "heat",
+      "choices": [
+        {
+          "id": "a",
+          "label": "heat"
+        },
+        {
+          "id": "b",
+          "label": "meat"
+        },
+        {
+          "id": "c",
+          "label": "beat"
+        }
+      ],
+      "correctChoiceId": "a",
+      "missedConceptOnFail": "vowel-team-ea",
+      "rationale": "h-ea-t = heat.",
+      "decodableWithin": "PH-vowel-teams"
+    },
+    {
+      "id": "ph-vt-032",
+      "skillId": "PH-vowel-teams",
+      "itemType": "decode_choice",
+      "difficulty": 3,
+      "stem": "Tap the word you hear.",
+      "audioText": "beat",
+      "choices": [
+        {
+          "id": "a",
+          "label": "heat"
+        },
+        {
+          "id": "b",
+          "label": "beat"
+        },
+        {
+          "id": "c",
+          "label": "seat"
+        }
+      ],
+      "correctChoiceId": "b",
+      "missedConceptOnFail": "vowel-team-ea",
+      "rationale": "b-ea-t = beat.",
+      "decodableWithin": "PH-vowel-teams"
+    },
+    {
+      "id": "ph-vt-033",
+      "skillId": "PH-vowel-teams",
+      "itemType": "decode_choice",
+      "difficulty": 1,
+      "stem": "Tap the word you hear.",
+      "audioText": "boat",
+      "choices": [
+        {
+          "id": "a",
+          "label": "coat"
+        },
+        {
+          "id": "b",
+          "label": "goat"
+        },
+        {
+          "id": "c",
+          "label": "boat"
+        }
+      ],
+      "correctChoiceId": "c",
+      "missedConceptOnFail": "vowel-team-oa",
+      "rationale": "b-oa-t = boat.",
+      "decodableWithin": "PH-vowel-teams"
+    },
+    {
+      "id": "ph-vt-034",
+      "skillId": "PH-vowel-teams",
+      "itemType": "decode_choice",
+      "difficulty": 1,
+      "stem": "Tap the word you hear.",
+      "audioText": "coat",
+      "choices": [
+        {
+          "id": "a",
+          "label": "coat"
+        },
+        {
+          "id": "b",
+          "label": "boat"
+        },
+        {
+          "id": "c",
+          "label": "goat"
+        }
+      ],
+      "correctChoiceId": "a",
+      "missedConceptOnFail": "vowel-team-oa",
+      "rationale": "c-oa-t = coat.",
+      "decodableWithin": "PH-vowel-teams"
+    },
+    {
+      "id": "ph-vt-035",
+      "skillId": "PH-vowel-teams",
+      "itemType": "decode_choice",
+      "difficulty": 2,
+      "stem": "Tap the word you hear.",
+      "audioText": "goat",
+      "choices": [
+        {
+          "id": "a",
+          "label": "boat"
+        },
+        {
+          "id": "b",
+          "label": "goat"
+        },
+        {
+          "id": "c",
+          "label": "coat"
+        }
+      ],
+      "correctChoiceId": "b",
+      "missedConceptOnFail": "vowel-team-oa",
+      "rationale": "g-oa-t = goat.",
+      "decodableWithin": "PH-vowel-teams"
+    },
+    {
+      "id": "ph-vt-036",
+      "skillId": "PH-vowel-teams",
+      "itemType": "decode_choice",
+      "difficulty": 1,
+      "stem": "Tap the word you hear.",
+      "audioText": "road",
+      "choices": [
+        {
+          "id": "a",
+          "label": "load"
+        },
+        {
+          "id": "b",
+          "label": "soap"
+        },
+        {
+          "id": "c",
+          "label": "road"
+        }
+      ],
+      "correctChoiceId": "c",
+      "missedConceptOnFail": "vowel-team-oa",
+      "rationale": "r-oa-d = road.",
+      "decodableWithin": "PH-vowel-teams"
+    },
+    {
+      "id": "ph-vt-037",
+      "skillId": "PH-vowel-teams",
+      "itemType": "decode_choice",
+      "difficulty": 2,
+      "stem": "Tap the word you hear.",
+      "audioText": "load",
+      "choices": [
+        {
+          "id": "a",
+          "label": "load"
+        },
+        {
+          "id": "b",
+          "label": "road"
+        },
+        {
+          "id": "c",
+          "label": "soap"
+        }
+      ],
+      "correctChoiceId": "a",
+      "missedConceptOnFail": "vowel-team-oa",
+      "rationale": "l-oa-d = load.",
+      "decodableWithin": "PH-vowel-teams"
+    },
+    {
+      "id": "ph-vt-038",
+      "skillId": "PH-vowel-teams",
+      "itemType": "decode_choice",
+      "difficulty": 2,
+      "stem": "Tap the word you hear.",
+      "audioText": "soap",
+      "choices": [
+        {
+          "id": "a",
+          "label": "road"
+        },
+        {
+          "id": "b",
+          "label": "soap"
+        },
+        {
+          "id": "c",
+          "label": "coal"
+        }
+      ],
+      "correctChoiceId": "b",
+      "missedConceptOnFail": "vowel-team-oa",
+      "rationale": "s-oa-p = soap.",
+      "decodableWithin": "PH-vowel-teams"
+    },
+    {
+      "id": "ph-vt-039",
+      "skillId": "PH-vowel-teams",
+      "itemType": "decode_choice",
+      "difficulty": 3,
+      "stem": "Tap the word you hear.",
+      "audioText": "coal",
+      "choices": [
+        {
+          "id": "a",
+          "label": "goal"
+        },
+        {
+          "id": "b",
+          "label": "soap"
+        },
+        {
+          "id": "c",
+          "label": "coal"
+        }
+      ],
+      "correctChoiceId": "c",
+      "missedConceptOnFail": "vowel-team-oa",
+      "rationale": "c-oa-l = coal.",
+      "decodableWithin": "PH-vowel-teams"
+    },
+    {
+      "id": "ph-vt-040",
+      "skillId": "PH-vowel-teams",
+      "itemType": "decode_choice",
+      "difficulty": 3,
+      "stem": "Tap the word you hear.",
+      "audioText": "goal",
+      "choices": [
+        {
+          "id": "a",
+          "label": "goal"
+        },
+        {
+          "id": "b",
+          "label": "coal"
+        },
+        {
+          "id": "c",
+          "label": "soap"
+        }
+      ],
+      "correctChoiceId": "a",
+      "missedConceptOnFail": "vowel-team-oa",
+      "rationale": "g-oa-l = goal.",
+      "decodableWithin": "PH-vowel-teams"
+    },
+    {
+      "id": "ph-vt-041",
+      "skillId": "PH-vowel-teams",
+      "itemType": "decode_choice",
+      "difficulty": 1,
+      "stem": "Tap the word you hear.",
+      "audioText": "snow",
+      "choices": [
+        {
+          "id": "a",
+          "label": "slow"
+        },
+        {
+          "id": "b",
+          "label": "snow"
+        },
+        {
+          "id": "c",
+          "label": "grow"
+        }
+      ],
+      "correctChoiceId": "b",
+      "missedConceptOnFail": "vowel-team-ow",
+      "rationale": "s-n-ow = snow.",
+      "decodableWithin": "PH-vowel-teams"
+    },
+    {
+      "id": "ph-vt-042",
+      "skillId": "PH-vowel-teams",
+      "itemType": "decode_choice",
+      "difficulty": 1,
+      "stem": "Tap the word you hear.",
+      "audioText": "slow",
+      "choices": [
+        {
+          "id": "a",
+          "label": "snow"
+        },
+        {
+          "id": "b",
+          "label": "grow"
+        },
+        {
+          "id": "c",
+          "label": "slow"
+        }
+      ],
+      "correctChoiceId": "c",
+      "missedConceptOnFail": "vowel-team-ow",
+      "rationale": "s-l-ow = slow.",
+      "decodableWithin": "PH-vowel-teams"
+    },
+    {
+      "id": "ph-vt-043",
+      "skillId": "PH-vowel-teams",
+      "itemType": "decode_choice",
+      "difficulty": 2,
+      "stem": "Tap the word you hear.",
+      "audioText": "grow",
+      "choices": [
+        {
+          "id": "a",
+          "label": "grow"
+        },
+        {
+          "id": "b",
+          "label": "slow"
+        },
+        {
+          "id": "c",
+          "label": "blow"
+        }
+      ],
+      "correctChoiceId": "a",
+      "missedConceptOnFail": "vowel-team-ow",
+      "rationale": "g-r-ow = grow.",
+      "decodableWithin": "PH-vowel-teams"
+    },
+    {
+      "id": "ph-vt-044",
+      "skillId": "PH-vowel-teams",
+      "itemType": "decode_choice",
+      "difficulty": 2,
+      "stem": "Tap the word you hear.",
+      "audioText": "blow",
+      "choices": [
+        {
+          "id": "a",
+          "label": "glow"
+        },
+        {
+          "id": "b",
+          "label": "blow"
+        },
+        {
+          "id": "c",
+          "label": "grow"
+        }
+      ],
+      "correctChoiceId": "b",
+      "missedConceptOnFail": "vowel-team-ow",
+      "rationale": "b-l-ow = blow.",
+      "decodableWithin": "PH-vowel-teams"
+    },
+    {
+      "id": "ph-vt-045",
+      "skillId": "PH-vowel-teams",
+      "itemType": "decode_choice",
+      "difficulty": 2,
+      "stem": "Tap the word you hear.",
+      "audioText": "glow",
+      "choices": [
+        {
+          "id": "a",
+          "label": "blow"
+        },
+        {
+          "id": "b",
+          "label": "show"
+        },
+        {
+          "id": "c",
+          "label": "glow"
+        }
+      ],
+      "correctChoiceId": "c",
+      "missedConceptOnFail": "vowel-team-ow",
+      "rationale": "g-l-ow = glow.",
+      "decodableWithin": "PH-vowel-teams"
+    },
+    {
+      "id": "ph-vt-046",
+      "skillId": "PH-vowel-teams",
+      "itemType": "decode_choice",
+      "difficulty": 2,
+      "stem": "Tap the word you hear.",
+      "audioText": "show",
+      "choices": [
+        {
+          "id": "a",
+          "label": "show"
+        },
+        {
+          "id": "b",
+          "label": "flow"
+        },
+        {
+          "id": "c",
+          "label": "glow"
+        }
+      ],
+      "correctChoiceId": "a",
+      "missedConceptOnFail": "vowel-team-ow",
+      "rationale": "sh-ow = show.",
+      "decodableWithin": "PH-vowel-teams"
+    },
+    {
+      "id": "ph-vt-047",
+      "skillId": "PH-vowel-teams",
+      "itemType": "decode_choice",
+      "difficulty": 3,
+      "stem": "Tap the word you hear.",
+      "audioText": "flow",
+      "choices": [
+        {
+          "id": "a",
+          "label": "show"
+        },
+        {
+          "id": "b",
+          "label": "flow"
+        },
+        {
+          "id": "c",
+          "label": "blow"
+        }
+      ],
+      "correctChoiceId": "b",
+      "missedConceptOnFail": "vowel-team-ow",
+      "rationale": "f-l-ow = flow.",
+      "decodableWithin": "PH-vowel-teams"
+    },
+    {
+      "id": "ph-vt-048",
+      "skillId": "PH-vowel-teams",
+      "itemType": "decode_choice",
+      "difficulty": 3,
+      "stem": "Tap the word you hear.",
+      "audioText": "crow",
+      "choices": [
+        {
+          "id": "a",
+          "label": "grow"
+        },
+        {
+          "id": "b",
+          "label": "snow"
+        },
+        {
+          "id": "c",
+          "label": "crow"
+        }
+      ],
+      "correctChoiceId": "c",
+      "missedConceptOnFail": "vowel-team-ow",
+      "rationale": "c-r-ow = crow.",
+      "decodableWithin": "PH-vowel-teams"
+    },
+    {
+      "id": "ph-vt-049",
+      "skillId": "PH-vowel-teams",
+      "itemType": "decode_choice",
+      "difficulty": 1,
+      "stem": "Tap the word you hear.",
+      "audioText": "moon",
+      "choices": [
+        {
+          "id": "a",
+          "label": "moon"
+        },
+        {
+          "id": "b",
+          "label": "soon"
+        },
+        {
+          "id": "c",
+          "label": "food"
+        }
+      ],
+      "correctChoiceId": "a",
+      "missedConceptOnFail": "vowel-team-oo",
+      "rationale": "m-oo-n = moon.",
+      "decodableWithin": "PH-vowel-teams"
+    },
+    {
+      "id": "ph-vt-050",
+      "skillId": "PH-vowel-teams",
+      "itemType": "decode_choice",
+      "difficulty": 1,
+      "stem": "Tap the word you hear.",
+      "audioText": "soon",
+      "choices": [
+        {
+          "id": "a",
+          "label": "moon"
+        },
+        {
+          "id": "b",
+          "label": "soon"
+        },
+        {
+          "id": "c",
+          "label": "food"
+        }
+      ],
+      "correctChoiceId": "b",
+      "missedConceptOnFail": "vowel-team-oo",
+      "rationale": "s-oo-n = soon.",
+      "decodableWithin": "PH-vowel-teams"
+    },
+    {
+      "id": "ph-vt-051",
+      "skillId": "PH-vowel-teams",
+      "itemType": "decode_choice",
+      "difficulty": 2,
+      "stem": "Tap the word you hear.",
+      "audioText": "food",
+      "choices": [
+        {
+          "id": "a",
+          "label": "room"
+        },
+        {
+          "id": "b",
+          "label": "moon"
+        },
+        {
+          "id": "c",
+          "label": "food"
+        }
+      ],
+      "correctChoiceId": "c",
+      "missedConceptOnFail": "vowel-team-oo",
+      "rationale": "f-oo-d = food.",
+      "decodableWithin": "PH-vowel-teams"
+    },
+    {
+      "id": "ph-vt-052",
+      "skillId": "PH-vowel-teams",
+      "itemType": "decode_choice",
+      "difficulty": 2,
+      "stem": "Tap the word you hear.",
+      "audioText": "room",
+      "choices": [
+        {
+          "id": "a",
+          "label": "room"
+        },
+        {
+          "id": "b",
+          "label": "food"
+        },
+        {
+          "id": "c",
+          "label": "boot"
+        }
+      ],
+      "correctChoiceId": "a",
+      "missedConceptOnFail": "vowel-team-oo",
+      "rationale": "r-oo-m = room.",
+      "decodableWithin": "PH-vowel-teams"
+    },
+    {
+      "id": "ph-vt-053",
+      "skillId": "PH-vowel-teams",
+      "itemType": "decode_choice",
+      "difficulty": 2,
+      "stem": "Tap the word you hear.",
+      "audioText": "boot",
+      "choices": [
+        {
+          "id": "a",
+          "label": "root"
+        },
+        {
+          "id": "b",
+          "label": "boot"
+        },
+        {
+          "id": "c",
+          "label": "food"
+        }
+      ],
+      "correctChoiceId": "b",
+      "missedConceptOnFail": "vowel-team-oo",
+      "rationale": "b-oo-t = boot.",
+      "decodableWithin": "PH-vowel-teams"
+    },
+    {
+      "id": "ph-vt-054",
+      "skillId": "PH-vowel-teams",
+      "itemType": "decode_choice",
+      "difficulty": 3,
+      "stem": "Tap the word you hear.",
+      "audioText": "root",
+      "choices": [
+        {
+          "id": "a",
+          "label": "boot"
+        },
+        {
+          "id": "b",
+          "label": "room"
+        },
+        {
+          "id": "c",
+          "label": "root"
+        }
+      ],
+      "correctChoiceId": "c",
+      "missedConceptOnFail": "vowel-team-oo",
+      "rationale": "r-oo-t = root.",
+      "decodableWithin": "PH-vowel-teams"
+    },
+    {
+      "id": "ph-vt-055",
+      "skillId": "PH-vowel-teams",
+      "itemType": "decode_choice",
+      "difficulty": 2,
+      "stem": "Tap the word you hear.",
+      "audioText": "cool",
+      "choices": [
+        {
+          "id": "a",
+          "label": "cool"
+        },
+        {
+          "id": "b",
+          "label": "food"
+        },
+        {
+          "id": "c",
+          "label": "room"
+        }
+      ],
+      "correctChoiceId": "a",
+      "missedConceptOnFail": "vowel-team-oo",
+      "rationale": "c-oo-l = cool.",
+      "decodableWithin": "PH-vowel-teams"
+    },
+    {
+      "id": "ph-vt-056",
+      "skillId": "PH-vowel-teams",
+      "itemType": "decode_choice",
+      "difficulty": 3,
+      "stem": "Tap the word you hear.",
+      "audioText": "spoon",
+      "choices": [
+        {
+          "id": "a",
+          "label": "moon"
+        },
+        {
+          "id": "b",
+          "label": "spoon"
+        },
+        {
+          "id": "c",
+          "label": "soon"
+        }
+      ],
+      "correctChoiceId": "b",
+      "missedConceptOnFail": "vowel-team-oo",
+      "rationale": "s-p-oo-n = spoon.",
+      "decodableWithin": "PH-vowel-teams"
+    },
+    {
+      "id": "ph-vt-057",
+      "skillId": "PH-vowel-teams",
+      "itemType": "decode_choice",
+      "difficulty": 1,
+      "stem": "Tap the word you hear.",
+      "audioText": "new",
+      "choices": [
+        {
+          "id": "a",
+          "label": "chew"
+        },
+        {
+          "id": "b",
+          "label": "crew"
+        },
+        {
+          "id": "c",
+          "label": "new"
+        }
+      ],
+      "correctChoiceId": "c",
+      "missedConceptOnFail": "vowel-team-ew",
+      "rationale": "n-ew = new.",
+      "decodableWithin": "PH-vowel-teams"
+    },
+    {
+      "id": "ph-vt-058",
+      "skillId": "PH-vowel-teams",
+      "itemType": "decode_choice",
+      "difficulty": 2,
+      "stem": "Tap the word you hear.",
+      "audioText": "chew",
+      "choices": [
+        {
+          "id": "a",
+          "label": "chew"
+        },
+        {
+          "id": "b",
+          "label": "new"
+        },
+        {
+          "id": "c",
+          "label": "crew"
+        }
+      ],
+      "correctChoiceId": "a",
+      "missedConceptOnFail": "vowel-team-ew",
+      "rationale": "ch-ew = chew.",
+      "decodableWithin": "PH-vowel-teams"
+    },
+    {
+      "id": "ph-vt-059",
+      "skillId": "PH-vowel-teams",
+      "itemType": "decode_choice",
+      "difficulty": 2,
+      "stem": "Tap the word you hear.",
+      "audioText": "crew",
+      "choices": [
+        {
+          "id": "a",
+          "label": "drew"
+        },
+        {
+          "id": "b",
+          "label": "crew"
+        },
+        {
+          "id": "c",
+          "label": "blew"
+        }
+      ],
+      "correctChoiceId": "b",
+      "missedConceptOnFail": "vowel-team-ew",
+      "rationale": "c-r-ew = crew.",
+      "decodableWithin": "PH-vowel-teams"
+    },
+    {
+      "id": "ph-vt-060",
+      "skillId": "PH-vowel-teams",
+      "itemType": "decode_choice",
+      "difficulty": 3,
+      "stem": "Tap the word you hear.",
+      "audioText": "drew",
+      "choices": [
+        {
+          "id": "a",
+          "label": "crew"
+        },
+        {
+          "id": "b",
+          "label": "blew"
+        },
+        {
+          "id": "c",
+          "label": "drew"
+        }
+      ],
+      "correctChoiceId": "c",
+      "missedConceptOnFail": "vowel-team-ew",
+      "rationale": "d-r-ew = drew.",
+      "decodableWithin": "PH-vowel-teams"
+    },
+    {
+      "id": "ph-vt-061",
+      "skillId": "PH-vowel-teams",
+      "itemType": "decode_choice",
+      "difficulty": 3,
+      "stem": "Tap the word you hear.",
+      "audioText": "blew",
+      "choices": [
+        {
+          "id": "a",
+          "label": "blew"
+        },
+        {
+          "id": "b",
+          "label": "grew"
+        },
+        {
+          "id": "c",
+          "label": "crew"
+        }
+      ],
+      "correctChoiceId": "a",
+      "missedConceptOnFail": "vowel-team-ew",
+      "rationale": "b-l-ew = blew.",
+      "decodableWithin": "PH-vowel-teams"
+    },
+    {
+      "id": "ph-vt-062",
+      "skillId": "PH-vowel-teams",
+      "itemType": "decode_choice",
+      "difficulty": 3,
+      "stem": "Tap the word you hear.",
+      "audioText": "grew",
+      "choices": [
+        {
+          "id": "a",
+          "label": "blew"
+        },
+        {
+          "id": "b",
+          "label": "grew"
+        },
+        {
+          "id": "c",
+          "label": "drew"
+        }
+      ],
+      "correctChoiceId": "b",
+      "missedConceptOnFail": "vowel-team-ew",
+      "rationale": "g-r-ew = grew.",
+      "decodableWithin": "PH-vowel-teams"
+    },
+    {
+      "id": "ph-vt-063",
+      "skillId": "PH-vowel-teams",
+      "itemType": "decode_choice",
+      "difficulty": 1,
+      "stem": "Tap the word you hear.",
+      "audioText": "blue",
+      "choices": [
+        {
+          "id": "a",
+          "label": "glue"
+        },
+        {
+          "id": "b",
+          "label": "true"
+        },
+        {
+          "id": "c",
+          "label": "blue"
+        }
+      ],
+      "correctChoiceId": "c",
+      "missedConceptOnFail": "vowel-team-ue",
+      "rationale": "b-l-ue = blue.",
+      "decodableWithin": "PH-vowel-teams"
+    },
+    {
+      "id": "ph-vt-064",
+      "skillId": "PH-vowel-teams",
+      "itemType": "decode_choice",
+      "difficulty": 2,
+      "stem": "Tap the word you hear.",
+      "audioText": "glue",
+      "choices": [
+        {
+          "id": "a",
+          "label": "glue"
+        },
+        {
+          "id": "b",
+          "label": "blue"
+        },
+        {
+          "id": "c",
+          "label": "clue"
+        }
+      ],
+      "correctChoiceId": "a",
+      "missedConceptOnFail": "vowel-team-ue",
+      "rationale": "g-l-ue = glue.",
+      "decodableWithin": "PH-vowel-teams"
+    },
+    {
+      "id": "ph-vt-065",
+      "skillId": "PH-vowel-teams",
+      "itemType": "decode_choice",
+      "difficulty": 2,
+      "stem": "Tap the word you hear.",
+      "audioText": "true",
+      "choices": [
+        {
+          "id": "a",
+          "label": "clue"
+        },
+        {
+          "id": "b",
+          "label": "true"
+        },
+        {
+          "id": "c",
+          "label": "blue"
+        }
+      ],
+      "correctChoiceId": "b",
+      "missedConceptOnFail": "vowel-team-ue",
+      "rationale": "t-r-ue = true.",
+      "decodableWithin": "PH-vowel-teams"
+    },
+    {
+      "id": "ph-vt-066",
+      "skillId": "PH-vowel-teams",
+      "itemType": "decode_choice",
+      "difficulty": 3,
+      "stem": "Tap the word you hear.",
+      "audioText": "clue",
+      "choices": [
+        {
+          "id": "a",
+          "label": "glue"
+        },
+        {
+          "id": "b",
+          "label": "due"
+        },
+        {
+          "id": "c",
+          "label": "clue"
+        }
+      ],
+      "correctChoiceId": "c",
+      "missedConceptOnFail": "vowel-team-ue",
+      "rationale": "c-l-ue = clue.",
+      "decodableWithin": "PH-vowel-teams"
+    },
+    {
+      "id": "ph-vt-067",
+      "skillId": "PH-vowel-teams",
+      "itemType": "decode_choice",
+      "difficulty": 2,
+      "stem": "Tap the word you hear.",
+      "audioText": "due",
+      "choices": [
+        {
+          "id": "a",
+          "label": "due"
+        },
+        {
+          "id": "b",
+          "label": "blue"
+        },
+        {
+          "id": "c",
+          "label": "glue"
+        }
+      ],
+      "correctChoiceId": "a",
+      "missedConceptOnFail": "vowel-team-ue",
+      "rationale": "d-ue = due.",
+      "decodableWithin": "PH-vowel-teams"
+    },
+    {
+      "id": "ph-vt-068",
+      "skillId": "PH-vowel-teams",
+      "itemType": "decode_choice",
+      "difficulty": 1,
+      "stem": "Tap the word you hear.",
+      "audioText": "light",
+      "choices": [
+        {
+          "id": "a",
+          "label": "night"
+        },
+        {
+          "id": "b",
+          "label": "light"
+        },
+        {
+          "id": "c",
+          "label": "right"
+        }
+      ],
+      "correctChoiceId": "b",
+      "missedConceptOnFail": "vowel-team-igh",
+      "rationale": "l-igh-t = light.",
+      "decodableWithin": "PH-vowel-teams"
+    },
+    {
+      "id": "ph-vt-069",
+      "skillId": "PH-vowel-teams",
+      "itemType": "decode_choice",
+      "difficulty": 2,
+      "stem": "Tap the word you hear.",
+      "audioText": "night",
+      "choices": [
+        {
+          "id": "a",
+          "label": "light"
+        },
+        {
+          "id": "b",
+          "label": "right"
+        },
+        {
+          "id": "c",
+          "label": "night"
+        }
+      ],
+      "correctChoiceId": "c",
+      "missedConceptOnFail": "vowel-team-igh",
+      "rationale": "n-igh-t = night.",
+      "decodableWithin": "PH-vowel-teams"
+    },
+    {
+      "id": "ph-vt-070",
+      "skillId": "PH-vowel-teams",
+      "itemType": "decode_choice",
+      "difficulty": 2,
+      "stem": "Tap the word you hear.",
+      "audioText": "right",
+      "choices": [
+        {
+          "id": "a",
+          "label": "right"
+        },
+        {
+          "id": "b",
+          "label": "might"
+        },
+        {
+          "id": "c",
+          "label": "light"
+        }
+      ],
+      "correctChoiceId": "a",
+      "missedConceptOnFail": "vowel-team-igh",
+      "rationale": "r-igh-t = right.",
+      "decodableWithin": "PH-vowel-teams"
+    },
+    {
+      "id": "ph-vt-071",
+      "skillId": "PH-vowel-teams",
+      "itemType": "decode_choice",
+      "difficulty": 3,
+      "stem": "Tap the word you hear.",
+      "audioText": "might",
+      "choices": [
+        {
+          "id": "a",
+          "label": "right"
+        },
+        {
+          "id": "b",
+          "label": "might"
+        },
+        {
+          "id": "c",
+          "label": "light"
+        }
+      ],
+      "correctChoiceId": "b",
+      "missedConceptOnFail": "vowel-team-igh",
+      "rationale": "m-igh-t = might.",
+      "decodableWithin": "PH-vowel-teams"
+    },
+    {
+      "id": "ph-vt-072",
+      "skillId": "PH-vowel-teams",
+      "itemType": "decode_choice",
+      "difficulty": 3,
+      "stem": "Tap the word you hear.",
+      "audioText": "high",
+      "choices": [
+        {
+          "id": "a",
+          "label": "night"
+        },
+        {
+          "id": "b",
+          "label": "right"
+        },
+        {
+          "id": "c",
+          "label": "high"
+        }
+      ],
+      "correctChoiceId": "c",
+      "missedConceptOnFail": "vowel-team-igh",
+      "rationale": "h-igh = high.",
+      "decodableWithin": "PH-vowel-teams"
+    }
+  ],
+  "lessons": {
+    "PH-vowel-teams": {
+      "iCanStatement": "I can read words where two letters make one long vowel.",
+      "explanation": "A vowel team is two letters that work together to make ONE long vowel sound. When two vowels go walking, the first often says its name: ai/ay say long a (rain, play), ee/ea say long e (feet, leaf), oa/ow say long o (boat, snow), oo says /oo/ (moon). Read the team as one sound.",
+      "workedExamples": [
+        {
+          "text": "rain",
+          "note": "r · ai · n → rain (ai = long a)"
+        },
+        {
+          "text": "feet",
+          "note": "f · ee · t → feet (ee = long e)"
+        }
+      ]
+    }
+  }
+}

@@ -113,6 +113,28 @@
           "itemPool": "spelling-L06-silent-e",
           "encodePairId": "PH-silent-e",
           "mastery": { "window": 12, "accuracyToPass": 0.85, "minItems": 8 }
+        },
+        {
+          "id": "PH-vowel-teams",
+          "strand": "phonics",
+          "objective": "Decode vowel-team long vowels: ai/ay, ee/ea, oa/ow, oo, ew/ue, igh.",
+          "iCanStatement": "I can read words where two letters make one long vowel.",
+          "prereqs": ["PH-silent-e"],
+          "itemType": "decode_choice",
+          "itemPool": "phonics-L07-vowel-teams",
+          "encodePairId": "SP-vowel-teams",
+          "mastery": { "window": 12, "accuracyToPass": 0.85, "minItems": 8 }
+        },
+        {
+          "id": "SP-vowel-teams",
+          "strand": "spelling",
+          "objective": "Spell vowel-team words, choosing the right team for the long vowel.",
+          "iCanStatement": "I can spell words where two letters make one long vowel.",
+          "prereqs": ["PH-vowel-teams"],
+          "itemType": "build_word",
+          "itemPool": "spelling-L07-vowel-teams",
+          "encodePairId": "PH-vowel-teams",
+          "mastery": { "window": 12, "accuracyToPass": 0.85, "minItems": 8 }
         }
       ]
     }

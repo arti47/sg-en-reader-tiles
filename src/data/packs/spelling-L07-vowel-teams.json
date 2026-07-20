@@ -1,0 +1,1598 @@
+{
+  "packId": "spelling-L07-vowel-teams",
+  "strand": "spelling",
+  "skillIds": [
+    "SP-vowel-teams"
+  ],
+  "version": 1,
+  "items": [
+    {
+      "id": "sp-vt-001",
+      "skillId": "SP-vowel-teams",
+      "itemType": "build_word",
+      "difficulty": 1,
+      "stem": "Build the word you hear.",
+      "displayWord": "rain",
+      "audioText": "rain",
+      "graphemes": [
+        "r",
+        "ai",
+        "n"
+      ],
+      "distractorGraphemes": [
+        "ay",
+        "ee"
+      ],
+      "missedConceptOnFail": "vowel-team-ai",
+      "rationale": "rain = r-ai-n.",
+      "decodableWithin": "SP-vowel-teams"
+    },
+    {
+      "id": "sp-vt-002",
+      "skillId": "SP-vowel-teams",
+      "itemType": "build_word",
+      "difficulty": 1,
+      "stem": "Build the word you hear.",
+      "displayWord": "main",
+      "audioText": "main",
+      "graphemes": [
+        "m",
+        "ai",
+        "n"
+      ],
+      "distractorGraphemes": [
+        "ay",
+        "ee"
+      ],
+      "missedConceptOnFail": "vowel-team-ai",
+      "rationale": "main = m-ai-n.",
+      "decodableWithin": "SP-vowel-teams"
+    },
+    {
+      "id": "sp-vt-003",
+      "skillId": "SP-vowel-teams",
+      "itemType": "build_word",
+      "difficulty": 2,
+      "stem": "Build the word you hear.",
+      "displayWord": "pain",
+      "audioText": "pain",
+      "graphemes": [
+        "p",
+        "ai",
+        "n"
+      ],
+      "distractorGraphemes": [
+        "ay",
+        "ee",
+        "ea"
+      ],
+      "missedConceptOnFail": "vowel-team-ai",
+      "rationale": "pain = p-ai-n.",
+      "decodableWithin": "SP-vowel-teams"
+    },
+    {
+      "id": "sp-vt-004",
+      "skillId": "SP-vowel-teams",
+      "itemType": "build_word",
+      "difficulty": 1,
+      "stem": "Build the word you hear.",
+      "displayWord": "wait",
+      "audioText": "wait",
+      "graphemes": [
+        "w",
+        "ai",
+        "t"
+      ],
+      "distractorGraphemes": [
+        "ay",
+        "ee"
+      ],
+      "missedConceptOnFail": "vowel-team-ai",
+      "rationale": "wait = w-ai-t.",
+      "decodableWithin": "SP-vowel-teams"
+    },
+    {
+      "id": "sp-vt-005",
+      "skillId": "SP-vowel-teams",
+      "itemType": "build_word",
+      "difficulty": 1,
+      "stem": "Build the word you hear.",
+      "displayWord": "tail",
+      "audioText": "tail",
+      "graphemes": [
+        "t",
+        "ai",
+        "l"
+      ],
+      "distractorGraphemes": [
+        "ay",
+        "ee"
+      ],
+      "missedConceptOnFail": "vowel-team-ai",
+      "rationale": "tail = t-ai-l.",
+      "decodableWithin": "SP-vowel-teams"
+    },
+    {
+      "id": "sp-vt-006",
+      "skillId": "SP-vowel-teams",
+      "itemType": "build_word",
+      "difficulty": 2,
+      "stem": "Build the word you hear.",
+      "displayWord": "nail",
+      "audioText": "nail",
+      "graphemes": [
+        "n",
+        "ai",
+        "l"
+      ],
+      "distractorGraphemes": [
+        "ay",
+        "ee",
+        "ea"
+      ],
+      "missedConceptOnFail": "vowel-team-ai",
+      "rationale": "nail = n-ai-l.",
+      "decodableWithin": "SP-vowel-teams"
+    },
+    {
+      "id": "sp-vt-007",
+      "skillId": "SP-vowel-teams",
+      "itemType": "build_word",
+      "difficulty": 2,
+      "stem": "Build the word you hear.",
+      "displayWord": "sail",
+      "audioText": "sail",
+      "graphemes": [
+        "s",
+        "ai",
+        "l"
+      ],
+      "distractorGraphemes": [
+        "ay",
+        "ee",
+        "ea"
+      ],
+      "missedConceptOnFail": "vowel-team-ai",
+      "rationale": "sail = s-ai-l.",
+      "decodableWithin": "SP-vowel-teams"
+    },
+    {
+      "id": "sp-vt-008",
+      "skillId": "SP-vowel-teams",
+      "itemType": "build_word",
+      "difficulty": 2,
+      "stem": "Build the word you hear.",
+      "displayWord": "rail",
+      "audioText": "rail",
+      "graphemes": [
+        "r",
+        "ai",
+        "l"
+      ],
+      "distractorGraphemes": [
+        "ay",
+        "ee",
+        "ea"
+      ],
+      "missedConceptOnFail": "vowel-team-ai",
+      "rationale": "rail = r-ai-l.",
+      "decodableWithin": "SP-vowel-teams"
+    },
+    {
+      "id": "sp-vt-009",
+      "skillId": "SP-vowel-teams",
+      "itemType": "build_word",
+      "difficulty": 1,
+      "stem": "Build the word you hear.",
+      "displayWord": "play",
+      "audioText": "play",
+      "graphemes": [
+        "p",
+        "l",
+        "ay"
+      ],
+      "distractorGraphemes": [
+        "ai",
+        "ee"
+      ],
+      "missedConceptOnFail": "vowel-team-ay",
+      "rationale": "play = p-l-ay.",
+      "decodableWithin": "SP-vowel-teams"
+    },
+    {
+      "id": "sp-vt-010",
+      "skillId": "SP-vowel-teams",
+      "itemType": "build_word",
+      "difficulty": 1,
+      "stem": "Build the word you hear.",
+      "displayWord": "stay",
+      "audioText": "stay",
+      "graphemes": [
+        "s",
+        "t",
+        "ay"
+      ],
+      "distractorGraphemes": [
+        "ai",
+        "ee"
+      ],
+      "missedConceptOnFail": "vowel-team-ay",
+      "rationale": "stay = s-t-ay.",
+      "decodableWithin": "SP-vowel-teams"
+    },
+    {
+      "id": "sp-vt-011",
+      "skillId": "SP-vowel-teams",
+      "itemType": "build_word",
+      "difficulty": 1,
+      "stem": "Build the word you hear.",
+      "displayWord": "day",
+      "audioText": "day",
+      "graphemes": [
+        "d",
+        "ay"
+      ],
+      "distractorGraphemes": [
+        "ai",
+        "ee"
+      ],
+      "missedConceptOnFail": "vowel-team-ay",
+      "rationale": "day = d-ay.",
+      "decodableWithin": "SP-vowel-teams"
+    },
+    {
+      "id": "sp-vt-012",
+      "skillId": "SP-vowel-teams",
+      "itemType": "build_word",
+      "difficulty": 1,
+      "stem": "Build the word you hear.",
+      "displayWord": "way",
+      "audioText": "way",
+      "graphemes": [
+        "w",
+        "ay"
+      ],
+      "distractorGraphemes": [
+        "ai",
+        "ee"
+      ],
+      "missedConceptOnFail": "vowel-team-ay",
+      "rationale": "way = w-ay.",
+      "decodableWithin": "SP-vowel-teams"
+    },
+    {
+      "id": "sp-vt-013",
+      "skillId": "SP-vowel-teams",
+      "itemType": "build_word",
+      "difficulty": 2,
+      "stem": "Build the word you hear.",
+      "displayWord": "say",
+      "audioText": "say",
+      "graphemes": [
+        "s",
+        "ay"
+      ],
+      "distractorGraphemes": [
+        "ai",
+        "ee",
+        "ea"
+      ],
+      "missedConceptOnFail": "vowel-team-ay",
+      "rationale": "say = s-ay.",
+      "decodableWithin": "SP-vowel-teams"
+    },
+    {
+      "id": "sp-vt-014",
+      "skillId": "SP-vowel-teams",
+      "itemType": "build_word",
+      "difficulty": 2,
+      "stem": "Build the word you hear.",
+      "displayWord": "tray",
+      "audioText": "tray",
+      "graphemes": [
+        "t",
+        "r",
+        "ay"
+      ],
+      "distractorGraphemes": [
+        "ai",
+        "ee",
+        "ea"
+      ],
+      "missedConceptOnFail": "vowel-team-ay",
+      "rationale": "tray = t-r-ay.",
+      "decodableWithin": "SP-vowel-teams"
+    },
+    {
+      "id": "sp-vt-015",
+      "skillId": "SP-vowel-teams",
+      "itemType": "build_word",
+      "difficulty": 2,
+      "stem": "Build the word you hear.",
+      "displayWord": "clay",
+      "audioText": "clay",
+      "graphemes": [
+        "c",
+        "l",
+        "ay"
+      ],
+      "distractorGraphemes": [
+        "ai",
+        "ee",
+        "ea"
+      ],
+      "missedConceptOnFail": "vowel-team-ay",
+      "rationale": "clay = c-l-ay.",
+      "decodableWithin": "SP-vowel-teams"
+    },
+    {
+      "id": "sp-vt-016",
+      "skillId": "SP-vowel-teams",
+      "itemType": "build_word",
+      "difficulty": 3,
+      "stem": "Build the word you hear.",
+      "displayWord": "spray",
+      "audioText": "spray",
+      "graphemes": [
+        "s",
+        "p",
+        "r",
+        "ay"
+      ],
+      "distractorGraphemes": [
+        "ai",
+        "ee",
+        "ea",
+        "oa"
+      ],
+      "missedConceptOnFail": "vowel-team-ay",
+      "rationale": "spray = s-p-r-ay.",
+      "decodableWithin": "SP-vowel-teams"
+    },
+    {
+      "id": "sp-vt-017",
+      "skillId": "SP-vowel-teams",
+      "itemType": "build_word",
+      "difficulty": 1,
+      "stem": "Build the word you hear.",
+      "displayWord": "feet",
+      "audioText": "feet",
+      "graphemes": [
+        "f",
+        "ee",
+        "t"
+      ],
+      "distractorGraphemes": [
+        "ai",
+        "ay"
+      ],
+      "missedConceptOnFail": "vowel-team-ee",
+      "rationale": "feet = f-ee-t.",
+      "decodableWithin": "SP-vowel-teams"
+    },
+    {
+      "id": "sp-vt-018",
+      "skillId": "SP-vowel-teams",
+      "itemType": "build_word",
+      "difficulty": 1,
+      "stem": "Build the word you hear.",
+      "displayWord": "feed",
+      "audioText": "feed",
+      "graphemes": [
+        "f",
+        "ee",
+        "d"
+      ],
+      "distractorGraphemes": [
+        "ai",
+        "ay"
+      ],
+      "missedConceptOnFail": "vowel-team-ee",
+      "rationale": "feed = f-ee-d.",
+      "decodableWithin": "SP-vowel-teams"
+    },
+    {
+      "id": "sp-vt-019",
+      "skillId": "SP-vowel-teams",
+      "itemType": "build_word",
+      "difficulty": 1,
+      "stem": "Build the word you hear.",
+      "displayWord": "seed",
+      "audioText": "seed",
+      "graphemes": [
+        "s",
+        "ee",
+        "d"
+      ],
+      "distractorGraphemes": [
+        "ai",
+        "ay"
+      ],
+      "missedConceptOnFail": "vowel-team-ee",
+      "rationale": "seed = s-ee-d.",
+      "decodableWithin": "SP-vowel-teams"
+    },
+    {
+      "id": "sp-vt-020",
+      "skillId": "SP-vowel-teams",
+      "itemType": "build_word",
+      "difficulty": 2,
+      "stem": "Build the word you hear.",
+      "displayWord": "need",
+      "audioText": "need",
+      "graphemes": [
+        "n",
+        "ee",
+        "d"
+      ],
+      "distractorGraphemes": [
+        "ai",
+        "ay",
+        "ea"
+      ],
+      "missedConceptOnFail": "vowel-team-ee",
+      "rationale": "need = n-ee-d.",
+      "decodableWithin": "SP-vowel-teams"
+    },
+    {
+      "id": "sp-vt-021",
+      "skillId": "SP-vowel-teams",
+      "itemType": "build_word",
+      "difficulty": 2,
+      "stem": "Build the word you hear.",
+      "displayWord": "keep",
+      "audioText": "keep",
+      "graphemes": [
+        "k",
+        "ee",
+        "p"
+      ],
+      "distractorGraphemes": [
+        "ai",
+        "ay",
+        "ea"
+      ],
+      "missedConceptOnFail": "vowel-team-ee",
+      "rationale": "keep = k-ee-p.",
+      "decodableWithin": "SP-vowel-teams"
+    },
+    {
+      "id": "sp-vt-022",
+      "skillId": "SP-vowel-teams",
+      "itemType": "build_word",
+      "difficulty": 2,
+      "stem": "Build the word you hear.",
+      "displayWord": "deep",
+      "audioText": "deep",
+      "graphemes": [
+        "d",
+        "ee",
+        "p"
+      ],
+      "distractorGraphemes": [
+        "ai",
+        "ay",
+        "ea"
+      ],
+      "missedConceptOnFail": "vowel-team-ee",
+      "rationale": "deep = d-ee-p.",
+      "decodableWithin": "SP-vowel-teams"
+    },
+    {
+      "id": "sp-vt-023",
+      "skillId": "SP-vowel-teams",
+      "itemType": "build_word",
+      "difficulty": 2,
+      "stem": "Build the word you hear.",
+      "displayWord": "tree",
+      "audioText": "tree",
+      "graphemes": [
+        "t",
+        "r",
+        "ee"
+      ],
+      "distractorGraphemes": [
+        "ai",
+        "ay",
+        "ea"
+      ],
+      "missedConceptOnFail": "vowel-team-ee",
+      "rationale": "tree = t-r-ee.",
+      "decodableWithin": "SP-vowel-teams"
+    },
+    {
+      "id": "sp-vt-024",
+      "skillId": "SP-vowel-teams",
+      "itemType": "build_word",
+      "difficulty": 3,
+      "stem": "Build the word you hear.",
+      "displayWord": "green",
+      "audioText": "green",
+      "graphemes": [
+        "g",
+        "r",
+        "ee",
+        "n"
+      ],
+      "distractorGraphemes": [
+        "ai",
+        "ay",
+        "ea",
+        "oa"
+      ],
+      "missedConceptOnFail": "vowel-team-ee",
+      "rationale": "green = g-r-ee-n.",
+      "decodableWithin": "SP-vowel-teams"
+    },
+    {
+      "id": "sp-vt-025",
+      "skillId": "SP-vowel-teams",
+      "itemType": "build_word",
+      "difficulty": 1,
+      "stem": "Build the word you hear.",
+      "displayWord": "leaf",
+      "audioText": "leaf",
+      "graphemes": [
+        "l",
+        "ea",
+        "f"
+      ],
+      "distractorGraphemes": [
+        "ai",
+        "ay"
+      ],
+      "missedConceptOnFail": "vowel-team-ea",
+      "rationale": "leaf = l-ea-f.",
+      "decodableWithin": "SP-vowel-teams"
+    },
+    {
+      "id": "sp-vt-026",
+      "skillId": "SP-vowel-teams",
+      "itemType": "build_word",
+      "difficulty": 1,
+      "stem": "Build the word you hear.",
+      "displayWord": "bean",
+      "audioText": "bean",
+      "graphemes": [
+        "b",
+        "ea",
+        "n"
+      ],
+      "distractorGraphemes": [
+        "ai",
+        "ay"
+      ],
+      "missedConceptOnFail": "vowel-team-ea",
+      "rationale": "bean = b-ea-n.",
+      "decodableWithin": "SP-vowel-teams"
+    },
+    {
+      "id": "sp-vt-027",
+      "skillId": "SP-vowel-teams",
+      "itemType": "build_word",
+      "difficulty": 2,
+      "stem": "Build the word you hear.",
+      "displayWord": "read",
+      "audioText": "read",
+      "graphemes": [
+        "r",
+        "ea",
+        "d"
+      ],
+      "distractorGraphemes": [
+        "ai",
+        "ay",
+        "ee"
+      ],
+      "missedConceptOnFail": "vowel-team-ea",
+      "rationale": "read = r-ea-d.",
+      "decodableWithin": "SP-vowel-teams"
+    },
+    {
+      "id": "sp-vt-028",
+      "skillId": "SP-vowel-teams",
+      "itemType": "build_word",
+      "difficulty": 2,
+      "stem": "Build the word you hear.",
+      "displayWord": "seat",
+      "audioText": "seat",
+      "graphemes": [
+        "s",
+        "ea",
+        "t"
+      ],
+      "distractorGraphemes": [
+        "ai",
+        "ay",
+        "ee"
+      ],
+      "missedConceptOnFail": "vowel-team-ea",
+      "rationale": "seat = s-ea-t.",
+      "decodableWithin": "SP-vowel-teams"
+    },
+    {
+      "id": "sp-vt-029",
+      "skillId": "SP-vowel-teams",
+      "itemType": "build_word",
+      "difficulty": 2,
+      "stem": "Build the word you hear.",
+      "displayWord": "meat",
+      "audioText": "meat",
+      "graphemes": [
+        "m",
+        "ea",
+        "t"
+      ],
+      "distractorGraphemes": [
+        "ai",
+        "ay",
+        "ee"
+      ],
+      "missedConceptOnFail": "vowel-team-ea",
+      "rationale": "meat = m-ea-t.",
+      "decodableWithin": "SP-vowel-teams"
+    },
+    {
+      "id": "sp-vt-030",
+      "skillId": "SP-vowel-teams",
+      "itemType": "build_word",
+      "difficulty": 2,
+      "stem": "Build the word you hear.",
+      "displayWord": "team",
+      "audioText": "team",
+      "graphemes": [
+        "t",
+        "ea",
+        "m"
+      ],
+      "distractorGraphemes": [
+        "ai",
+        "ay",
+        "ee"
+      ],
+      "missedConceptOnFail": "vowel-team-ea",
+      "rationale": "team = t-ea-m.",
+      "decodableWithin": "SP-vowel-teams"
+    },
+    {
+      "id": "sp-vt-031",
+      "skillId": "SP-vowel-teams",
+      "itemType": "build_word",
+      "difficulty": 3,
+      "stem": "Build the word you hear.",
+      "displayWord": "heat",
+      "audioText": "heat",
+      "graphemes": [
+        "h",
+        "ea",
+        "t"
+      ],
+      "distractorGraphemes": [
+        "ai",
+        "ay",
+        "ee",
+        "oa"
+      ],
+      "missedConceptOnFail": "vowel-team-ea",
+      "rationale": "heat = h-ea-t.",
+      "decodableWithin": "SP-vowel-teams"
+    },
+    {
+      "id": "sp-vt-032",
+      "skillId": "SP-vowel-teams",
+      "itemType": "build_word",
+      "difficulty": 3,
+      "stem": "Build the word you hear.",
+      "displayWord": "beat",
+      "audioText": "beat",
+      "graphemes": [
+        "b",
+        "ea",
+        "t"
+      ],
+      "distractorGraphemes": [
+        "ai",
+        "ay",
+        "ee",
+        "oa"
+      ],
+      "missedConceptOnFail": "vowel-team-ea",
+      "rationale": "beat = b-ea-t.",
+      "decodableWithin": "SP-vowel-teams"
+    },
+    {
+      "id": "sp-vt-033",
+      "skillId": "SP-vowel-teams",
+      "itemType": "build_word",
+      "difficulty": 1,
+      "stem": "Build the word you hear.",
+      "displayWord": "boat",
+      "audioText": "boat",
+      "graphemes": [
+        "b",
+        "oa",
+        "t"
+      ],
+      "distractorGraphemes": [
+        "ai",
+        "ay"
+      ],
+      "missedConceptOnFail": "vowel-team-oa",
+      "rationale": "boat = b-oa-t.",
+      "decodableWithin": "SP-vowel-teams"
+    },
+    {
+      "id": "sp-vt-034",
+      "skillId": "SP-vowel-teams",
+      "itemType": "build_word",
+      "difficulty": 1,
+      "stem": "Build the word you hear.",
+      "displayWord": "coat",
+      "audioText": "coat",
+      "graphemes": [
+        "c",
+        "oa",
+        "t"
+      ],
+      "distractorGraphemes": [
+        "ai",
+        "ay"
+      ],
+      "missedConceptOnFail": "vowel-team-oa",
+      "rationale": "coat = c-oa-t.",
+      "decodableWithin": "SP-vowel-teams"
+    },
+    {
+      "id": "sp-vt-035",
+      "skillId": "SP-vowel-teams",
+      "itemType": "build_word",
+      "difficulty": 2,
+      "stem": "Build the word you hear.",
+      "displayWord": "goat",
+      "audioText": "goat",
+      "graphemes": [
+        "g",
+        "oa",
+        "t"
+      ],
+      "distractorGraphemes": [
+        "ai",
+        "ay",
+        "ee"
+      ],
+      "missedConceptOnFail": "vowel-team-oa",
+      "rationale": "goat = g-oa-t.",
+      "decodableWithin": "SP-vowel-teams"
+    },
+    {
+      "id": "sp-vt-036",
+      "skillId": "SP-vowel-teams",
+      "itemType": "build_word",
+      "difficulty": 1,
+      "stem": "Build the word you hear.",
+      "displayWord": "road",
+      "audioText": "road",
+      "graphemes": [
+        "r",
+        "oa",
+        "d"
+      ],
+      "distractorGraphemes": [
+        "ai",
+        "ay"
+      ],
+      "missedConceptOnFail": "vowel-team-oa",
+      "rationale": "road = r-oa-d.",
+      "decodableWithin": "SP-vowel-teams"
+    },
+    {
+      "id": "sp-vt-037",
+      "skillId": "SP-vowel-teams",
+      "itemType": "build_word",
+      "difficulty": 2,
+      "stem": "Build the word you hear.",
+      "displayWord": "load",
+      "audioText": "load",
+      "graphemes": [
+        "l",
+        "oa",
+        "d"
+      ],
+      "distractorGraphemes": [
+        "ai",
+        "ay",
+        "ee"
+      ],
+      "missedConceptOnFail": "vowel-team-oa",
+      "rationale": "load = l-oa-d.",
+      "decodableWithin": "SP-vowel-teams"
+    },
+    {
+      "id": "sp-vt-038",
+      "skillId": "SP-vowel-teams",
+      "itemType": "build_word",
+      "difficulty": 2,
+      "stem": "Build the word you hear.",
+      "displayWord": "soap",
+      "audioText": "soap",
+      "graphemes": [
+        "s",
+        "oa",
+        "p"
+      ],
+      "distractorGraphemes": [
+        "ai",
+        "ay",
+        "ee"
+      ],
+      "missedConceptOnFail": "vowel-team-oa",
+      "rationale": "soap = s-oa-p.",
+      "decodableWithin": "SP-vowel-teams"
+    },
+    {
+      "id": "sp-vt-039",
+      "skillId": "SP-vowel-teams",
+      "itemType": "build_word",
+      "difficulty": 3,
+      "stem": "Build the word you hear.",
+      "displayWord": "coal",
+      "audioText": "coal",
+      "graphemes": [
+        "c",
+        "oa",
+        "l"
+      ],
+      "distractorGraphemes": [
+        "ai",
+        "ay",
+        "ee",
+        "ea"
+      ],
+      "missedConceptOnFail": "vowel-team-oa",
+      "rationale": "coal = c-oa-l.",
+      "decodableWithin": "SP-vowel-teams"
+    },
+    {
+      "id": "sp-vt-040",
+      "skillId": "SP-vowel-teams",
+      "itemType": "build_word",
+      "difficulty": 3,
+      "stem": "Build the word you hear.",
+      "displayWord": "goal",
+      "audioText": "goal",
+      "graphemes": [
+        "g",
+        "oa",
+        "l"
+      ],
+      "distractorGraphemes": [
+        "ai",
+        "ay",
+        "ee",
+        "ea"
+      ],
+      "missedConceptOnFail": "vowel-team-oa",
+      "rationale": "goal = g-oa-l.",
+      "decodableWithin": "SP-vowel-teams"
+    },
+    {
+      "id": "sp-vt-041",
+      "skillId": "SP-vowel-teams",
+      "itemType": "build_word",
+      "difficulty": 1,
+      "stem": "Build the word you hear.",
+      "displayWord": "snow",
+      "audioText": "snow",
+      "graphemes": [
+        "s",
+        "n",
+        "ow"
+      ],
+      "distractorGraphemes": [
+        "ai",
+        "ay"
+      ],
+      "missedConceptOnFail": "vowel-team-ow",
+      "rationale": "snow = s-n-ow.",
+      "decodableWithin": "SP-vowel-teams"
+    },
+    {
+      "id": "sp-vt-042",
+      "skillId": "SP-vowel-teams",
+      "itemType": "build_word",
+      "difficulty": 1,
+      "stem": "Build the word you hear.",
+      "displayWord": "slow",
+      "audioText": "slow",
+      "graphemes": [
+        "s",
+        "l",
+        "ow"
+      ],
+      "distractorGraphemes": [
+        "ai",
+        "ay"
+      ],
+      "missedConceptOnFail": "vowel-team-ow",
+      "rationale": "slow = s-l-ow.",
+      "decodableWithin": "SP-vowel-teams"
+    },
+    {
+      "id": "sp-vt-043",
+      "skillId": "SP-vowel-teams",
+      "itemType": "build_word",
+      "difficulty": 2,
+      "stem": "Build the word you hear.",
+      "displayWord": "grow",
+      "audioText": "grow",
+      "graphemes": [
+        "g",
+        "r",
+        "ow"
+      ],
+      "distractorGraphemes": [
+        "ai",
+        "ay",
+        "ee"
+      ],
+      "missedConceptOnFail": "vowel-team-ow",
+      "rationale": "grow = g-r-ow.",
+      "decodableWithin": "SP-vowel-teams"
+    },
+    {
+      "id": "sp-vt-044",
+      "skillId": "SP-vowel-teams",
+      "itemType": "build_word",
+      "difficulty": 2,
+      "stem": "Build the word you hear.",
+      "displayWord": "blow",
+      "audioText": "blow",
+      "graphemes": [
+        "b",
+        "l",
+        "ow"
+      ],
+      "distractorGraphemes": [
+        "ai",
+        "ay",
+        "ee"
+      ],
+      "missedConceptOnFail": "vowel-team-ow",
+      "rationale": "blow = b-l-ow.",
+      "decodableWithin": "SP-vowel-teams"
+    },
+    {
+      "id": "sp-vt-045",
+      "skillId": "SP-vowel-teams",
+      "itemType": "build_word",
+      "difficulty": 2,
+      "stem": "Build the word you hear.",
+      "displayWord": "glow",
+      "audioText": "glow",
+      "graphemes": [
+        "g",
+        "l",
+        "ow"
+      ],
+      "distractorGraphemes": [
+        "ai",
+        "ay",
+        "ee"
+      ],
+      "missedConceptOnFail": "vowel-team-ow",
+      "rationale": "glow = g-l-ow.",
+      "decodableWithin": "SP-vowel-teams"
+    },
+    {
+      "id": "sp-vt-046",
+      "skillId": "SP-vowel-teams",
+      "itemType": "build_word",
+      "difficulty": 2,
+      "stem": "Build the word you hear.",
+      "displayWord": "show",
+      "audioText": "show",
+      "graphemes": [
+        "sh",
+        "ow"
+      ],
+      "distractorGraphemes": [
+        "ai",
+        "ay",
+        "ee"
+      ],
+      "missedConceptOnFail": "vowel-team-ow",
+      "rationale": "show = sh-ow.",
+      "decodableWithin": "SP-vowel-teams"
+    },
+    {
+      "id": "sp-vt-047",
+      "skillId": "SP-vowel-teams",
+      "itemType": "build_word",
+      "difficulty": 3,
+      "stem": "Build the word you hear.",
+      "displayWord": "flow",
+      "audioText": "flow",
+      "graphemes": [
+        "f",
+        "l",
+        "ow"
+      ],
+      "distractorGraphemes": [
+        "ai",
+        "ay",
+        "ee",
+        "ea"
+      ],
+      "missedConceptOnFail": "vowel-team-ow",
+      "rationale": "flow = f-l-ow.",
+      "decodableWithin": "SP-vowel-teams"
+    },
+    {
+      "id": "sp-vt-048",
+      "skillId": "SP-vowel-teams",
+      "itemType": "build_word",
+      "difficulty": 3,
+      "stem": "Build the word you hear.",
+      "displayWord": "crow",
+      "audioText": "crow",
+      "graphemes": [
+        "c",
+        "r",
+        "ow"
+      ],
+      "distractorGraphemes": [
+        "ai",
+        "ay",
+        "ee",
+        "ea"
+      ],
+      "missedConceptOnFail": "vowel-team-ow",
+      "rationale": "crow = c-r-ow.",
+      "decodableWithin": "SP-vowel-teams"
+    },
+    {
+      "id": "sp-vt-049",
+      "skillId": "SP-vowel-teams",
+      "itemType": "build_word",
+      "difficulty": 1,
+      "stem": "Build the word you hear.",
+      "displayWord": "moon",
+      "audioText": "moon",
+      "graphemes": [
+        "m",
+        "oo",
+        "n"
+      ],
+      "distractorGraphemes": [
+        "ai",
+        "ay"
+      ],
+      "missedConceptOnFail": "vowel-team-oo",
+      "rationale": "moon = m-oo-n.",
+      "decodableWithin": "SP-vowel-teams"
+    },
+    {
+      "id": "sp-vt-050",
+      "skillId": "SP-vowel-teams",
+      "itemType": "build_word",
+      "difficulty": 1,
+      "stem": "Build the word you hear.",
+      "displayWord": "soon",
+      "audioText": "soon",
+      "graphemes": [
+        "s",
+        "oo",
+        "n"
+      ],
+      "distractorGraphemes": [
+        "ai",
+        "ay"
+      ],
+      "missedConceptOnFail": "vowel-team-oo",
+      "rationale": "soon = s-oo-n.",
+      "decodableWithin": "SP-vowel-teams"
+    },
+    {
+      "id": "sp-vt-051",
+      "skillId": "SP-vowel-teams",
+      "itemType": "build_word",
+      "difficulty": 2,
+      "stem": "Build the word you hear.",
+      "displayWord": "food",
+      "audioText": "food",
+      "graphemes": [
+        "f",
+        "oo",
+        "d"
+      ],
+      "distractorGraphemes": [
+        "ai",
+        "ay",
+        "ee"
+      ],
+      "missedConceptOnFail": "vowel-team-oo",
+      "rationale": "food = f-oo-d.",
+      "decodableWithin": "SP-vowel-teams"
+    },
+    {
+      "id": "sp-vt-052",
+      "skillId": "SP-vowel-teams",
+      "itemType": "build_word",
+      "difficulty": 2,
+      "stem": "Build the word you hear.",
+      "displayWord": "room",
+      "audioText": "room",
+      "graphemes": [
+        "r",
+        "oo",
+        "m"
+      ],
+      "distractorGraphemes": [
+        "ai",
+        "ay",
+        "ee"
+      ],
+      "missedConceptOnFail": "vowel-team-oo",
+      "rationale": "room = r-oo-m.",
+      "decodableWithin": "SP-vowel-teams"
+    },
+    {
+      "id": "sp-vt-053",
+      "skillId": "SP-vowel-teams",
+      "itemType": "build_word",
+      "difficulty": 2,
+      "stem": "Build the word you hear.",
+      "displayWord": "boot",
+      "audioText": "boot",
+      "graphemes": [
+        "b",
+        "oo",
+        "t"
+      ],
+      "distractorGraphemes": [
+        "ai",
+        "ay",
+        "ee"
+      ],
+      "missedConceptOnFail": "vowel-team-oo",
+      "rationale": "boot = b-oo-t.",
+      "decodableWithin": "SP-vowel-teams"
+    },
+    {
+      "id": "sp-vt-054",
+      "skillId": "SP-vowel-teams",
+      "itemType": "build_word",
+      "difficulty": 3,
+      "stem": "Build the word you hear.",
+      "displayWord": "root",
+      "audioText": "root",
+      "graphemes": [
+        "r",
+        "oo",
+        "t"
+      ],
+      "distractorGraphemes": [
+        "ai",
+        "ay",
+        "ee",
+        "ea"
+      ],
+      "missedConceptOnFail": "vowel-team-oo",
+      "rationale": "root = r-oo-t.",
+      "decodableWithin": "SP-vowel-teams"
+    },
+    {
+      "id": "sp-vt-055",
+      "skillId": "SP-vowel-teams",
+      "itemType": "build_word",
+      "difficulty": 2,
+      "stem": "Build the word you hear.",
+      "displayWord": "cool",
+      "audioText": "cool",
+      "graphemes": [
+        "c",
+        "oo",
+        "l"
+      ],
+      "distractorGraphemes": [
+        "ai",
+        "ay",
+        "ee"
+      ],
+      "missedConceptOnFail": "vowel-team-oo",
+      "rationale": "cool = c-oo-l.",
+      "decodableWithin": "SP-vowel-teams"
+    },
+    {
+      "id": "sp-vt-056",
+      "skillId": "SP-vowel-teams",
+      "itemType": "build_word",
+      "difficulty": 3,
+      "stem": "Build the word you hear.",
+      "displayWord": "spoon",
+      "audioText": "spoon",
+      "graphemes": [
+        "s",
+        "p",
+        "oo",
+        "n"
+      ],
+      "distractorGraphemes": [
+        "ai",
+        "ay",
+        "ee",
+        "ea"
+      ],
+      "missedConceptOnFail": "vowel-team-oo",
+      "rationale": "spoon = s-p-oo-n.",
+      "decodableWithin": "SP-vowel-teams"
+    },
+    {
+      "id": "sp-vt-057",
+      "skillId": "SP-vowel-teams",
+      "itemType": "build_word",
+      "difficulty": 1,
+      "stem": "Build the word you hear.",
+      "displayWord": "new",
+      "audioText": "new",
+      "graphemes": [
+        "n",
+        "ew"
+      ],
+      "distractorGraphemes": [
+        "ai",
+        "ay"
+      ],
+      "missedConceptOnFail": "vowel-team-ew",
+      "rationale": "new = n-ew.",
+      "decodableWithin": "SP-vowel-teams"
+    },
+    {
+      "id": "sp-vt-058",
+      "skillId": "SP-vowel-teams",
+      "itemType": "build_word",
+      "difficulty": 2,
+      "stem": "Build the word you hear.",
+      "displayWord": "chew",
+      "audioText": "chew",
+      "graphemes": [
+        "ch",
+        "ew"
+      ],
+      "distractorGraphemes": [
+        "ai",
+        "ay",
+        "ee"
+      ],
+      "missedConceptOnFail": "vowel-team-ew",
+      "rationale": "chew = ch-ew.",
+      "decodableWithin": "SP-vowel-teams"
+    },
+    {
+      "id": "sp-vt-059",
+      "skillId": "SP-vowel-teams",
+      "itemType": "build_word",
+      "difficulty": 2,
+      "stem": "Build the word you hear.",
+      "displayWord": "crew",
+      "audioText": "crew",
+      "graphemes": [
+        "c",
+        "r",
+        "ew"
+      ],
+      "distractorGraphemes": [
+        "ai",
+        "ay",
+        "ee"
+      ],
+      "missedConceptOnFail": "vowel-team-ew",
+      "rationale": "crew = c-r-ew.",
+      "decodableWithin": "SP-vowel-teams"
+    },
+    {
+      "id": "sp-vt-060",
+      "skillId": "SP-vowel-teams",
+      "itemType": "build_word",
+      "difficulty": 3,
+      "stem": "Build the word you hear.",
+      "displayWord": "drew",
+      "audioText": "drew",
+      "graphemes": [
+        "d",
+        "r",
+        "ew"
+      ],
+      "distractorGraphemes": [
+        "ai",
+        "ay",
+        "ee",
+        "ea"
+      ],
+      "missedConceptOnFail": "vowel-team-ew",
+      "rationale": "drew = d-r-ew.",
+      "decodableWithin": "SP-vowel-teams"
+    },
+    {
+      "id": "sp-vt-061",
+      "skillId": "SP-vowel-teams",
+      "itemType": "build_word",
+      "difficulty": 3,
+      "stem": "Build the word you hear.",
+      "displayWord": "blew",
+      "audioText": "blew",
+      "graphemes": [
+        "b",
+        "l",
+        "ew"
+      ],
+      "distractorGraphemes": [
+        "ai",
+        "ay",
+        "ee",
+        "ea"
+      ],
+      "missedConceptOnFail": "vowel-team-ew",
+      "rationale": "blew = b-l-ew.",
+      "decodableWithin": "SP-vowel-teams"
+    },
+    {
+      "id": "sp-vt-062",
+      "skillId": "SP-vowel-teams",
+      "itemType": "build_word",
+      "difficulty": 3,
+      "stem": "Build the word you hear.",
+      "displayWord": "grew",
+      "audioText": "grew",
+      "graphemes": [
+        "g",
+        "r",
+        "ew"
+      ],
+      "distractorGraphemes": [
+        "ai",
+        "ay",
+        "ee",
+        "ea"
+      ],
+      "missedConceptOnFail": "vowel-team-ew",
+      "rationale": "grew = g-r-ew.",
+      "decodableWithin": "SP-vowel-teams"
+    },
+    {
+      "id": "sp-vt-063",
+      "skillId": "SP-vowel-teams",
+      "itemType": "build_word",
+      "difficulty": 1,
+      "stem": "Build the word you hear.",
+      "displayWord": "blue",
+      "audioText": "blue",
+      "graphemes": [
+        "b",
+        "l",
+        "ue"
+      ],
+      "distractorGraphemes": [
+        "ai",
+        "ay"
+      ],
+      "missedConceptOnFail": "vowel-team-ue",
+      "rationale": "blue = b-l-ue.",
+      "decodableWithin": "SP-vowel-teams"
+    },
+    {
+      "id": "sp-vt-064",
+      "skillId": "SP-vowel-teams",
+      "itemType": "build_word",
+      "difficulty": 2,
+      "stem": "Build the word you hear.",
+      "displayWord": "glue",
+      "audioText": "glue",
+      "graphemes": [
+        "g",
+        "l",
+        "ue"
+      ],
+      "distractorGraphemes": [
+        "ai",
+        "ay",
+        "ee"
+      ],
+      "missedConceptOnFail": "vowel-team-ue",
+      "rationale": "glue = g-l-ue.",
+      "decodableWithin": "SP-vowel-teams"
+    },
+    {
+      "id": "sp-vt-065",
+      "skillId": "SP-vowel-teams",
+      "itemType": "build_word",
+      "difficulty": 2,
+      "stem": "Build the word you hear.",
+      "displayWord": "true",
+      "audioText": "true",
+      "graphemes": [
+        "t",
+        "r",
+        "ue"
+      ],
+      "distractorGraphemes": [
+        "ai",
+        "ay",
+        "ee"
+      ],
+      "missedConceptOnFail": "vowel-team-ue",
+      "rationale": "true = t-r-ue.",
+      "decodableWithin": "SP-vowel-teams"
+    },
+    {
+      "id": "sp-vt-066",
+      "skillId": "SP-vowel-teams",
+      "itemType": "build_word",
+      "difficulty": 3,
+      "stem": "Build the word you hear.",
+      "displayWord": "clue",
+      "audioText": "clue",
+      "graphemes": [
+        "c",
+        "l",
+        "ue"
+      ],
+      "distractorGraphemes": [
+        "ai",
+        "ay",
+        "ee",
+        "ea"
+      ],
+      "missedConceptOnFail": "vowel-team-ue",
+      "rationale": "clue = c-l-ue.",
+      "decodableWithin": "SP-vowel-teams"
+    },
+    {
+      "id": "sp-vt-067",
+      "skillId": "SP-vowel-teams",
+      "itemType": "build_word",
+      "difficulty": 2,
+      "stem": "Build the word you hear.",
+      "displayWord": "due",
+      "audioText": "due",
+      "graphemes": [
+        "d",
+        "ue"
+      ],
+      "distractorGraphemes": [
+        "ai",
+        "ay",
+        "ee"
+      ],
+      "missedConceptOnFail": "vowel-team-ue",
+      "rationale": "due = d-ue.",
+      "decodableWithin": "SP-vowel-teams"
+    },
+    {
+      "id": "sp-vt-068",
+      "skillId": "SP-vowel-teams",
+      "itemType": "build_word",
+      "difficulty": 1,
+      "stem": "Build the word you hear.",
+      "displayWord": "light",
+      "audioText": "light",
+      "graphemes": [
+        "l",
+        "igh",
+        "t"
+      ],
+      "distractorGraphemes": [
+        "ai",
+        "ay"
+      ],
+      "missedConceptOnFail": "vowel-team-igh",
+      "rationale": "light = l-igh-t.",
+      "decodableWithin": "SP-vowel-teams"
+    },
+    {
+      "id": "sp-vt-069",
+      "skillId": "SP-vowel-teams",
+      "itemType": "build_word",
+      "difficulty": 2,
+      "stem": "Build the word you hear.",
+      "displayWord": "night",
+      "audioText": "night",
+      "graphemes": [
+        "n",
+        "igh",
+        "t"
+      ],
+      "distractorGraphemes": [
+        "ai",
+        "ay",
+        "ee"
+      ],
+      "missedConceptOnFail": "vowel-team-igh",
+      "rationale": "night = n-igh-t.",
+      "decodableWithin": "SP-vowel-teams"
+    },
+    {
+      "id": "sp-vt-070",
+      "skillId": "SP-vowel-teams",
+      "itemType": "build_word",
+      "difficulty": 2,
+      "stem": "Build the word you hear.",
+      "displayWord": "right",
+      "audioText": "right",
+      "graphemes": [
+        "r",
+        "igh",
+        "t"
+      ],
+      "distractorGraphemes": [
+        "ai",
+        "ay",
+        "ee"
+      ],
+      "missedConceptOnFail": "vowel-team-igh",
+      "rationale": "right = r-igh-t.",
+      "decodableWithin": "SP-vowel-teams"
+    },
+    {
+      "id": "sp-vt-071",
+      "skillId": "SP-vowel-teams",
+      "itemType": "build_word",
+      "difficulty": 3,
+      "stem": "Build the word you hear.",
+      "displayWord": "might",
+      "audioText": "might",
+      "graphemes": [
+        "m",
+        "igh",
+        "t"
+      ],
+      "distractorGraphemes": [
+        "ai",
+        "ay",
+        "ee",
+        "ea"
+      ],
+      "missedConceptOnFail": "vowel-team-igh",
+      "rationale": "might = m-igh-t.",
+      "decodableWithin": "SP-vowel-teams"
+    },
+    {
+      "id": "sp-vt-072",
+      "skillId": "SP-vowel-teams",
+      "itemType": "build_word",
+      "difficulty": 3,
+      "stem": "Build the word you hear.",
+      "displayWord": "high",
+      "audioText": "high",
+      "graphemes": [
+        "h",
+        "igh"
+      ],
+      "distractorGraphemes": [
+        "ai",
+        "ay",
+        "ee",
+        "ea"
+      ],
+      "missedConceptOnFail": "vowel-team-igh",
+      "rationale": "high = h-igh.",
+      "decodableWithin": "SP-vowel-teams"
+    }
+  ],
+  "lessons": {
+    "SP-vowel-teams": {
+      "iCanStatement": "I can spell words where two letters make one long vowel.",
+      "explanation": "For a long-vowel sound, pick the right vowel-team tile. Long a is often ai in the middle (rain) and ay at the end (play). Long e is ee (feet) or ea (leaf). Long o is oa in the middle (boat) or ow at the end (snow).",
+      "workedExamples": [
+        {
+          "text": "play",
+          "note": "Hear p-l-ay, long a at the end → p · l · ay"
+        },
+        {
+          "text": "boat",
+          "note": "Hear b-oa-t, long o in the middle → b · oa · t"
+        }
+      ]
+    }
+  }
+}
