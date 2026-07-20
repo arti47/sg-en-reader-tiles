@@ -3,12 +3,10 @@ import type { ContentPack, PackItem, SkillDef, Lesson, Difficulty } from '../typ
 import scope from '../data/scopeAndSequence.json'
 import phonicsCvc from '../data/packs/phonics-L02-cvc-short-vowels.json'
 import spellingCvc from '../data/packs/spelling-L02-cvc-short-vowels.json'
-import grammarArticles from '../data/packs/grammar-L01-articles.json'
 
 const PACKS: ContentPack[] = [
   phonicsCvc as ContentPack,
-  spellingCvc as ContentPack,
-  grammarArticles as ContentPack
+  spellingCvc as ContentPack
 ]
 
 export const SKILLS: SkillDef[] =

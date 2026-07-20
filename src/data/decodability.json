@@ -1,0 +1,11 @@
+{
+  "_note": "§6a decodability envelopes. Keyed by `decodableWithin` skill id. `graphemes` = every grapheme tile allowed at/before that skill; `highFrequency` = tricky words permitted despite not being fully decodable. A word passes if it segments entirely into allowed graphemes (greedy longest-match) or is on the HF list. Only phonics/spelling strands are decodability-checked.",
+  "PH-cvc-short-vowels": {
+    "graphemes": ["b","c","d","f","g","h","j","k","l","m","n","p","qu","r","s","t","v","w","x","y","z","a","e","i","o","u"],
+    "highFrequency": []
+  },
+  "SP-cvc-short-vowels": {
+    "graphemes": ["b","c","d","f","g","h","j","k","l","m","n","p","qu","r","s","t","v","w","x","y","z","a","e","i","o","u"],
+    "highFrequency": []
+  }
+}

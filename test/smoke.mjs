@@ -7,16 +7,20 @@ import { spawn } from 'node:child_process'
 import { setTimeout as sleep } from 'node:timers/promises'
 
 const EXE = process.env.PW_EXE || '/opt/pw-browsers/chromium_headless_shell-1194/chrome-linux/headless_shell'
-const PORT = 5199
+const PORT = 5100 + Math.floor(Math.random() * 800) // avoid orphaned-server port clashes
 const BASE = `http://localhost:${PORT}/sg-en-reader-tiles/`
 
-const bin = process.platform === 'win32' ? 'vite.cmd' : 'vite'
-const server = spawn(new URL(`../node_modules/.bin/${bin}`, import.meta.url).pathname,
-  ['--port', String(PORT), '--strictPort'], { stdio: 'ignore' })
-const fail = (m) => { console.error('FAIL:', m); server.kill(); process.exit(1) }
+// Spawn Vite's JS entry via node directly (not the .bin/vite shim, which doesn't
+// forward signals), so killing this child process reliably stops the server.
+const viteJs = new URL('../node_modules/vite/bin/vite.js', import.meta.url).pathname
+const server = spawn(process.execPath, [viteJs, '--port', String(PORT), '--strictPort'], { stdio: 'ignore' })
+const stop = () => { try { server.kill('SIGKILL') } catch {} }
+const fail = (m) => { console.error('FAIL:', m); stop(); process.exit(1) }
 try {
-  // wait for server
-  for (let i = 0; i < 40; i++) { try { const r = await fetch(BASE); if (r.ok) break } catch {} await sleep(250) }
+  // wait for a real HTTP 200 (not just a resolved fetch)
+  let up = false
+  for (let i = 0; i < 60; i++) { try { const r = await fetch(BASE); if (r.status === 200) { up = true; break } } catch {} await sleep(250) }
+  if (!up) fail('dev server did not become ready')
 
   const browser = await chromium.launch({ executablePath: EXE })
   const results = []
@@ -37,21 +41,42 @@ try {
 
     const overflow = await page.evaluate(() => document.documentElement.scrollWidth > window.innerWidth + 1)
     let lessons = 0
+    const lbl = g => new RegExp('^' + g.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + '$')
     for (let step = 0; step < 90; step++) {
-      if (await page.getByText('Great session').count()) break
-      if (await page.getByText('Certificate earned!').count()) { await page.getByRole('button', { name: 'Keep going' }).click(); continue }
-      if (await page.getByText("Let's learn this").count()) { lessons++; await page.getByRole('button', { name: "Let's try" }).click(); continue }
-      await page.waitForTimeout(80)
+      // Wait for a settled screen: an end/lesson/cert screen, OR a FRESH interactive
+      // item (an enabled tile present and no "Continue" yet). This rules out acting on
+      // a stale/answered screen while window.__item has already advanced.
+      const kind = await page.waitForFunction(() => {
+        const t = document.body.innerText
+        if (/Great session/.test(t)) return 'summary'
+        if (/Certificate earned!/.test(t)) return 'cert'
+        if (/Let's learn this/.test(t)) return 'lesson'
+        const hasContinue = [...document.querySelectorAll('button')].some(b => b.textContent.trim() === 'Continue')
+        const freshTile = document.querySelector('button.tile:not([disabled])')
+        return (freshTile && !hasContinue) ? 'item' : null
+      }, { timeout: 8000 }).then(h => h.jsonValue()).catch(async () => {
+        const body = (await page.evaluate(() => document.body.innerText)).replace(/\n+/g, ' | ')
+        const state = await page.evaluate(() => ({
+          continue: [...document.querySelectorAll('button')].some(b => b.textContent.trim() === 'Continue'),
+          tiles: document.querySelectorAll('button.tile').length,
+          freshTiles: document.querySelectorAll('button.tile:not([disabled])').length
+        }))
+        fail(`stall @ WRONG=${WRONG} step=${step}: body="${body.slice(0, 90)}" ${JSON.stringify(state)} errors=${JSON.stringify(errors)}`)
+      })
+
+      if (kind === 'summary') break
+      if (kind === 'cert') { await page.getByRole('button', { name: 'Keep going' }).click(); continue }
+      if (kind === 'lesson') { lessons++; await page.getByRole('button', { name: "Let's try" }).click(); continue }
+
       const item = await page.evaluate(() => window.__item || null)
-      if (!item) { await page.waitForTimeout(50); continue }
       if (item.graphemes) {
-        for (const g of item.graphemes) await page.locator('button.tile', { hasText: new RegExp('^' + g + '$') }).first().click()
+        for (const g of item.graphemes) await page.locator('button.tile', { hasText: lbl(g) }).first().click()
         await page.getByRole('button', { name: 'Check' }).click()
       } else {
         const pick = (WRONG && item.itemType === 'decode_choice')
           ? item.choices.find(c => c.id !== item.correctChoiceId).id : item.correctChoiceId
         const label = item.choices.find(c => c.id === pick).label
-        await page.locator('button.tile', { hasText: new RegExp('^' + label + '$') }).first().click()
+        await page.locator('button.tile', { hasText: lbl(label) }).first().click()
       }
       await page.getByRole('button', { name: 'Continue' }).click()
     }
@@ -83,5 +108,5 @@ try {
   if (bad.db.certs.length) fail('struggle path: no certificate should be awarded')
 
   console.log('PASS — mastery+certs, struggle→lesson, dual-gate lockout, zero errors, no overflow')
-  server.kill(); process.exit(0)
+  stop(); process.exit(0)
 } catch (e) { fail(e.message || String(e)) }

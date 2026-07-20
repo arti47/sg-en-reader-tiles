@@ -34,6 +34,7 @@ export function Session(props: { child: Child; onExit: () => void }) {
   const [answered, setAnswered] = useState<ScoreResult | null>(null)
   const [cert, setCert] = useState<Certificate | null>(null)
   const [count, setCount] = useState(0)
+  const [serve, setServe] = useState(0) // bumps every item served → forces renderer remount (fresh internal state)
 
   useEffect(() => {
     void (async () => {
@@ -52,7 +53,7 @@ export function Session(props: { child: Child; onExit: () => void }) {
     if (!it) { setPhase('summary'); return }
     seenRef.current.add(it.id)
     if (import.meta.env.DEV) (window as unknown as { __item?: PackItem }).__item = it
-    setItem(it); setAnswered(null); setPhase('item'); startRef.current = Date.now()
+    setItem(it); setAnswered(null); setPhase('item'); setServe(s => s + 1); startRef.current = Date.now()
   }
 
   // Choose next skill (interleave eligible), then serve lesson-on-struggle or an item.
@@ -144,8 +145,8 @@ export function Session(props: { child: Child; onExit: () => void }) {
           <span className="note">{Math.min(count + 1, SESSION_LEN)}/{SESSION_LEN}</span>
         </div>
         {isTile
-          ? <TileItem key={item.id} item={item} onAnswer={onAnswer} />
-          : <McqItem key={item.id} item={item} onAnswer={onAnswer} />}
+          ? <TileItem key={serve} item={item} onAnswer={onAnswer} />
+          : <McqItem key={serve} item={item} onAnswer={onAnswer} />}
         {answered && <button className="btn" onClick={onContinue}>Continue</button>}
       </div>
     )
