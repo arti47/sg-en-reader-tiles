@@ -1,0 +1,1487 @@
+{
+  "packId": "spelling-L06-silent-e",
+  "strand": "spelling",
+  "skillIds": [
+    "SP-silent-e"
+  ],
+  "version": 1,
+  "items": [
+    {
+      "id": "sp-se-001",
+      "skillId": "SP-silent-e",
+      "itemType": "build_word",
+      "difficulty": 1,
+      "stem": "Build the word you hear.",
+      "displayWord": "cake",
+      "audioText": "cake",
+      "graphemes": [
+        "c",
+        "a",
+        "k",
+        "e"
+      ],
+      "distractorGraphemes": [
+        "i",
+        "o"
+      ],
+      "missedConceptOnFail": "silent-e-a",
+      "rationale": "cake = c-a-k-e (don't forget the magic e).",
+      "decodableWithin": "SP-silent-e"
+    },
+    {
+      "id": "sp-se-002",
+      "skillId": "SP-silent-e",
+      "itemType": "build_word",
+      "difficulty": 1,
+      "stem": "Build the word you hear.",
+      "displayWord": "lake",
+      "audioText": "lake",
+      "graphemes": [
+        "l",
+        "a",
+        "k",
+        "e"
+      ],
+      "distractorGraphemes": [
+        "i",
+        "o"
+      ],
+      "missedConceptOnFail": "silent-e-a",
+      "rationale": "lake = l-a-k-e (don't forget the magic e).",
+      "decodableWithin": "SP-silent-e"
+    },
+    {
+      "id": "sp-se-003",
+      "skillId": "SP-silent-e",
+      "itemType": "build_word",
+      "difficulty": 1,
+      "stem": "Build the word you hear.",
+      "displayWord": "make",
+      "audioText": "make",
+      "graphemes": [
+        "m",
+        "a",
+        "k",
+        "e"
+      ],
+      "distractorGraphemes": [
+        "i",
+        "o"
+      ],
+      "missedConceptOnFail": "silent-e-a",
+      "rationale": "make = m-a-k-e (don't forget the magic e).",
+      "decodableWithin": "SP-silent-e"
+    },
+    {
+      "id": "sp-se-004",
+      "skillId": "SP-silent-e",
+      "itemType": "build_word",
+      "difficulty": 2,
+      "stem": "Build the word you hear.",
+      "displayWord": "take",
+      "audioText": "take",
+      "graphemes": [
+        "t",
+        "a",
+        "k",
+        "e"
+      ],
+      "distractorGraphemes": [
+        "i",
+        "o",
+        "u"
+      ],
+      "missedConceptOnFail": "silent-e-a",
+      "rationale": "take = t-a-k-e (don't forget the magic e).",
+      "decodableWithin": "SP-silent-e"
+    },
+    {
+      "id": "sp-se-005",
+      "skillId": "SP-silent-e",
+      "itemType": "build_word",
+      "difficulty": 2,
+      "stem": "Build the word you hear.",
+      "displayWord": "bake",
+      "audioText": "bake",
+      "graphemes": [
+        "b",
+        "a",
+        "k",
+        "e"
+      ],
+      "distractorGraphemes": [
+        "i",
+        "o",
+        "u"
+      ],
+      "missedConceptOnFail": "silent-e-a",
+      "rationale": "bake = b-a-k-e (don't forget the magic e).",
+      "decodableWithin": "SP-silent-e"
+    },
+    {
+      "id": "sp-se-006",
+      "skillId": "SP-silent-e",
+      "itemType": "build_word",
+      "difficulty": 1,
+      "stem": "Build the word you hear.",
+      "displayWord": "name",
+      "audioText": "name",
+      "graphemes": [
+        "n",
+        "a",
+        "m",
+        "e"
+      ],
+      "distractorGraphemes": [
+        "i",
+        "o"
+      ],
+      "missedConceptOnFail": "silent-e-a",
+      "rationale": "name = n-a-m-e (don't forget the magic e).",
+      "decodableWithin": "SP-silent-e"
+    },
+    {
+      "id": "sp-se-007",
+      "skillId": "SP-silent-e",
+      "itemType": "build_word",
+      "difficulty": 1,
+      "stem": "Build the word you hear.",
+      "displayWord": "game",
+      "audioText": "game",
+      "graphemes": [
+        "g",
+        "a",
+        "m",
+        "e"
+      ],
+      "distractorGraphemes": [
+        "i",
+        "o"
+      ],
+      "missedConceptOnFail": "silent-e-a",
+      "rationale": "game = g-a-m-e (don't forget the magic e).",
+      "decodableWithin": "SP-silent-e"
+    },
+    {
+      "id": "sp-se-008",
+      "skillId": "SP-silent-e",
+      "itemType": "build_word",
+      "difficulty": 1,
+      "stem": "Build the word you hear.",
+      "displayWord": "gate",
+      "audioText": "gate",
+      "graphemes": [
+        "g",
+        "a",
+        "t",
+        "e"
+      ],
+      "distractorGraphemes": [
+        "i",
+        "o"
+      ],
+      "missedConceptOnFail": "silent-e-a",
+      "rationale": "gate = g-a-t-e (don't forget the magic e).",
+      "decodableWithin": "SP-silent-e"
+    },
+    {
+      "id": "sp-se-009",
+      "skillId": "SP-silent-e",
+      "itemType": "build_word",
+      "difficulty": 2,
+      "stem": "Build the word you hear.",
+      "displayWord": "late",
+      "audioText": "late",
+      "graphemes": [
+        "l",
+        "a",
+        "t",
+        "e"
+      ],
+      "distractorGraphemes": [
+        "i",
+        "o",
+        "u"
+      ],
+      "missedConceptOnFail": "silent-e-a",
+      "rationale": "late = l-a-t-e (don't forget the magic e).",
+      "decodableWithin": "SP-silent-e"
+    },
+    {
+      "id": "sp-se-010",
+      "skillId": "SP-silent-e",
+      "itemType": "build_word",
+      "difficulty": 2,
+      "stem": "Build the word you hear.",
+      "displayWord": "cape",
+      "audioText": "cape",
+      "graphemes": [
+        "c",
+        "a",
+        "p",
+        "e"
+      ],
+      "distractorGraphemes": [
+        "i",
+        "o",
+        "u"
+      ],
+      "missedConceptOnFail": "silent-e-a",
+      "rationale": "cape = c-a-p-e (don't forget the magic e).",
+      "decodableWithin": "SP-silent-e"
+    },
+    {
+      "id": "sp-se-011",
+      "skillId": "SP-silent-e",
+      "itemType": "build_word",
+      "difficulty": 2,
+      "stem": "Build the word you hear.",
+      "displayWord": "tape",
+      "audioText": "tape",
+      "graphemes": [
+        "t",
+        "a",
+        "p",
+        "e"
+      ],
+      "distractorGraphemes": [
+        "i",
+        "o",
+        "u"
+      ],
+      "missedConceptOnFail": "silent-e-a",
+      "rationale": "tape = t-a-p-e (don't forget the magic e).",
+      "decodableWithin": "SP-silent-e"
+    },
+    {
+      "id": "sp-se-012",
+      "skillId": "SP-silent-e",
+      "itemType": "build_word",
+      "difficulty": 2,
+      "stem": "Build the word you hear.",
+      "displayWord": "hate",
+      "audioText": "hate",
+      "graphemes": [
+        "h",
+        "a",
+        "t",
+        "e"
+      ],
+      "distractorGraphemes": [
+        "i",
+        "o",
+        "u"
+      ],
+      "missedConceptOnFail": "silent-e-a",
+      "rationale": "hate = h-a-t-e (don't forget the magic e).",
+      "decodableWithin": "SP-silent-e"
+    },
+    {
+      "id": "sp-se-013",
+      "skillId": "SP-silent-e",
+      "itemType": "build_word",
+      "difficulty": 3,
+      "stem": "Build the word you hear.",
+      "displayWord": "snake",
+      "audioText": "snake",
+      "graphemes": [
+        "s",
+        "n",
+        "a",
+        "k",
+        "e"
+      ],
+      "distractorGraphemes": [
+        "i",
+        "o",
+        "u",
+        "sh"
+      ],
+      "missedConceptOnFail": "silent-e-a",
+      "rationale": "snake = s-n-a-k-e (don't forget the magic e).",
+      "decodableWithin": "SP-silent-e"
+    },
+    {
+      "id": "sp-se-014",
+      "skillId": "SP-silent-e",
+      "itemType": "build_word",
+      "difficulty": 3,
+      "stem": "Build the word you hear.",
+      "displayWord": "shake",
+      "audioText": "shake",
+      "graphemes": [
+        "sh",
+        "a",
+        "k",
+        "e"
+      ],
+      "distractorGraphemes": [
+        "i",
+        "o",
+        "u",
+        "ch"
+      ],
+      "missedConceptOnFail": "silent-e-a",
+      "rationale": "shake = sh-a-k-e (don't forget the magic e).",
+      "decodableWithin": "SP-silent-e"
+    },
+    {
+      "id": "sp-se-015",
+      "skillId": "SP-silent-e",
+      "itemType": "build_word",
+      "difficulty": 3,
+      "stem": "Build the word you hear.",
+      "displayWord": "grape",
+      "audioText": "grape",
+      "graphemes": [
+        "g",
+        "r",
+        "a",
+        "p",
+        "e"
+      ],
+      "distractorGraphemes": [
+        "i",
+        "o",
+        "u",
+        "sh"
+      ],
+      "missedConceptOnFail": "silent-e-a",
+      "rationale": "grape = g-r-a-p-e (don't forget the magic e).",
+      "decodableWithin": "SP-silent-e"
+    },
+    {
+      "id": "sp-se-016",
+      "skillId": "SP-silent-e",
+      "itemType": "build_word",
+      "difficulty": 3,
+      "stem": "Build the word you hear.",
+      "displayWord": "plane",
+      "audioText": "plane",
+      "graphemes": [
+        "p",
+        "l",
+        "a",
+        "n",
+        "e"
+      ],
+      "distractorGraphemes": [
+        "i",
+        "o",
+        "u",
+        "sh"
+      ],
+      "missedConceptOnFail": "silent-e-a",
+      "rationale": "plane = p-l-a-n-e (don't forget the magic e).",
+      "decodableWithin": "SP-silent-e"
+    },
+    {
+      "id": "sp-se-017",
+      "skillId": "SP-silent-e",
+      "itemType": "build_word",
+      "difficulty": 1,
+      "stem": "Build the word you hear.",
+      "displayWord": "bike",
+      "audioText": "bike",
+      "graphemes": [
+        "b",
+        "i",
+        "k",
+        "e"
+      ],
+      "distractorGraphemes": [
+        "a",
+        "o"
+      ],
+      "missedConceptOnFail": "silent-e-i",
+      "rationale": "bike = b-i-k-e (don't forget the magic e).",
+      "decodableWithin": "SP-silent-e"
+    },
+    {
+      "id": "sp-se-018",
+      "skillId": "SP-silent-e",
+      "itemType": "build_word",
+      "difficulty": 1,
+      "stem": "Build the word you hear.",
+      "displayWord": "like",
+      "audioText": "like",
+      "graphemes": [
+        "l",
+        "i",
+        "k",
+        "e"
+      ],
+      "distractorGraphemes": [
+        "a",
+        "o"
+      ],
+      "missedConceptOnFail": "silent-e-i",
+      "rationale": "like = l-i-k-e (don't forget the magic e).",
+      "decodableWithin": "SP-silent-e"
+    },
+    {
+      "id": "sp-se-019",
+      "skillId": "SP-silent-e",
+      "itemType": "build_word",
+      "difficulty": 2,
+      "stem": "Build the word you hear.",
+      "displayWord": "hike",
+      "audioText": "hike",
+      "graphemes": [
+        "h",
+        "i",
+        "k",
+        "e"
+      ],
+      "distractorGraphemes": [
+        "a",
+        "o",
+        "u"
+      ],
+      "missedConceptOnFail": "silent-e-i",
+      "rationale": "hike = h-i-k-e (don't forget the magic e).",
+      "decodableWithin": "SP-silent-e"
+    },
+    {
+      "id": "sp-se-020",
+      "skillId": "SP-silent-e",
+      "itemType": "build_word",
+      "difficulty": 1,
+      "stem": "Build the word you hear.",
+      "displayWord": "bite",
+      "audioText": "bite",
+      "graphemes": [
+        "b",
+        "i",
+        "t",
+        "e"
+      ],
+      "distractorGraphemes": [
+        "a",
+        "o"
+      ],
+      "missedConceptOnFail": "silent-e-i",
+      "rationale": "bite = b-i-t-e (don't forget the magic e).",
+      "decodableWithin": "SP-silent-e"
+    },
+    {
+      "id": "sp-se-021",
+      "skillId": "SP-silent-e",
+      "itemType": "build_word",
+      "difficulty": 1,
+      "stem": "Build the word you hear.",
+      "displayWord": "kite",
+      "audioText": "kite",
+      "graphemes": [
+        "k",
+        "i",
+        "t",
+        "e"
+      ],
+      "distractorGraphemes": [
+        "a",
+        "o"
+      ],
+      "missedConceptOnFail": "silent-e-i",
+      "rationale": "kite = k-i-t-e (don't forget the magic e).",
+      "decodableWithin": "SP-silent-e"
+    },
+    {
+      "id": "sp-se-022",
+      "skillId": "SP-silent-e",
+      "itemType": "build_word",
+      "difficulty": 1,
+      "stem": "Build the word you hear.",
+      "displayWord": "time",
+      "audioText": "time",
+      "graphemes": [
+        "t",
+        "i",
+        "m",
+        "e"
+      ],
+      "distractorGraphemes": [
+        "a",
+        "o"
+      ],
+      "missedConceptOnFail": "silent-e-i",
+      "rationale": "time = t-i-m-e (don't forget the magic e).",
+      "decodableWithin": "SP-silent-e"
+    },
+    {
+      "id": "sp-se-023",
+      "skillId": "SP-silent-e",
+      "itemType": "build_word",
+      "difficulty": 2,
+      "stem": "Build the word you hear.",
+      "displayWord": "lime",
+      "audioText": "lime",
+      "graphemes": [
+        "l",
+        "i",
+        "m",
+        "e"
+      ],
+      "distractorGraphemes": [
+        "a",
+        "o",
+        "u"
+      ],
+      "missedConceptOnFail": "silent-e-i",
+      "rationale": "lime = l-i-m-e (don't forget the magic e).",
+      "decodableWithin": "SP-silent-e"
+    },
+    {
+      "id": "sp-se-024",
+      "skillId": "SP-silent-e",
+      "itemType": "build_word",
+      "difficulty": 2,
+      "stem": "Build the word you hear.",
+      "displayWord": "dine",
+      "audioText": "dine",
+      "graphemes": [
+        "d",
+        "i",
+        "n",
+        "e"
+      ],
+      "distractorGraphemes": [
+        "a",
+        "o",
+        "u"
+      ],
+      "missedConceptOnFail": "silent-e-i",
+      "rationale": "dine = d-i-n-e (don't forget the magic e).",
+      "decodableWithin": "SP-silent-e"
+    },
+    {
+      "id": "sp-se-025",
+      "skillId": "SP-silent-e",
+      "itemType": "build_word",
+      "difficulty": 1,
+      "stem": "Build the word you hear.",
+      "displayWord": "line",
+      "audioText": "line",
+      "graphemes": [
+        "l",
+        "i",
+        "n",
+        "e"
+      ],
+      "distractorGraphemes": [
+        "a",
+        "o"
+      ],
+      "missedConceptOnFail": "silent-e-i",
+      "rationale": "line = l-i-n-e (don't forget the magic e).",
+      "decodableWithin": "SP-silent-e"
+    },
+    {
+      "id": "sp-se-026",
+      "skillId": "SP-silent-e",
+      "itemType": "build_word",
+      "difficulty": 1,
+      "stem": "Build the word you hear.",
+      "displayWord": "mine",
+      "audioText": "mine",
+      "graphemes": [
+        "m",
+        "i",
+        "n",
+        "e"
+      ],
+      "distractorGraphemes": [
+        "a",
+        "o"
+      ],
+      "missedConceptOnFail": "silent-e-i",
+      "rationale": "mine = m-i-n-e (don't forget the magic e).",
+      "decodableWithin": "SP-silent-e"
+    },
+    {
+      "id": "sp-se-027",
+      "skillId": "SP-silent-e",
+      "itemType": "build_word",
+      "difficulty": 2,
+      "stem": "Build the word you hear.",
+      "displayWord": "nine",
+      "audioText": "nine",
+      "graphemes": [
+        "n",
+        "i",
+        "n",
+        "e"
+      ],
+      "distractorGraphemes": [
+        "a",
+        "o",
+        "u"
+      ],
+      "missedConceptOnFail": "silent-e-i",
+      "rationale": "nine = n-i-n-e (don't forget the magic e).",
+      "decodableWithin": "SP-silent-e"
+    },
+    {
+      "id": "sp-se-028",
+      "skillId": "SP-silent-e",
+      "itemType": "build_word",
+      "difficulty": 2,
+      "stem": "Build the word you hear.",
+      "displayWord": "pine",
+      "audioText": "pine",
+      "graphemes": [
+        "p",
+        "i",
+        "n",
+        "e"
+      ],
+      "distractorGraphemes": [
+        "a",
+        "o",
+        "u"
+      ],
+      "missedConceptOnFail": "silent-e-i",
+      "rationale": "pine = p-i-n-e (don't forget the magic e).",
+      "decodableWithin": "SP-silent-e"
+    },
+    {
+      "id": "sp-se-029",
+      "skillId": "SP-silent-e",
+      "itemType": "build_word",
+      "difficulty": 2,
+      "stem": "Build the word you hear.",
+      "displayWord": "fine",
+      "audioText": "fine",
+      "graphemes": [
+        "f",
+        "i",
+        "n",
+        "e"
+      ],
+      "distractorGraphemes": [
+        "a",
+        "o",
+        "u"
+      ],
+      "missedConceptOnFail": "silent-e-i",
+      "rationale": "fine = f-i-n-e (don't forget the magic e).",
+      "decodableWithin": "SP-silent-e"
+    },
+    {
+      "id": "sp-se-030",
+      "skillId": "SP-silent-e",
+      "itemType": "build_word",
+      "difficulty": 1,
+      "stem": "Build the word you hear.",
+      "displayWord": "ride",
+      "audioText": "ride",
+      "graphemes": [
+        "r",
+        "i",
+        "d",
+        "e"
+      ],
+      "distractorGraphemes": [
+        "a",
+        "o"
+      ],
+      "missedConceptOnFail": "silent-e-i",
+      "rationale": "ride = r-i-d-e (don't forget the magic e).",
+      "decodableWithin": "SP-silent-e"
+    },
+    {
+      "id": "sp-se-031",
+      "skillId": "SP-silent-e",
+      "itemType": "build_word",
+      "difficulty": 2,
+      "stem": "Build the word you hear.",
+      "displayWord": "side",
+      "audioText": "side",
+      "graphemes": [
+        "s",
+        "i",
+        "d",
+        "e"
+      ],
+      "distractorGraphemes": [
+        "a",
+        "o",
+        "u"
+      ],
+      "missedConceptOnFail": "silent-e-i",
+      "rationale": "side = s-i-d-e (don't forget the magic e).",
+      "decodableWithin": "SP-silent-e"
+    },
+    {
+      "id": "sp-se-032",
+      "skillId": "SP-silent-e",
+      "itemType": "build_word",
+      "difficulty": 2,
+      "stem": "Build the word you hear.",
+      "displayWord": "ripe",
+      "audioText": "ripe",
+      "graphemes": [
+        "r",
+        "i",
+        "p",
+        "e"
+      ],
+      "distractorGraphemes": [
+        "a",
+        "o",
+        "u"
+      ],
+      "missedConceptOnFail": "silent-e-i",
+      "rationale": "ripe = r-i-p-e (don't forget the magic e).",
+      "decodableWithin": "SP-silent-e"
+    },
+    {
+      "id": "sp-se-033",
+      "skillId": "SP-silent-e",
+      "itemType": "build_word",
+      "difficulty": 1,
+      "stem": "Build the word you hear.",
+      "displayWord": "bone",
+      "audioText": "bone",
+      "graphemes": [
+        "b",
+        "o",
+        "n",
+        "e"
+      ],
+      "distractorGraphemes": [
+        "a",
+        "i"
+      ],
+      "missedConceptOnFail": "silent-e-o",
+      "rationale": "bone = b-o-n-e (don't forget the magic e).",
+      "decodableWithin": "SP-silent-e"
+    },
+    {
+      "id": "sp-se-034",
+      "skillId": "SP-silent-e",
+      "itemType": "build_word",
+      "difficulty": 1,
+      "stem": "Build the word you hear.",
+      "displayWord": "cone",
+      "audioText": "cone",
+      "graphemes": [
+        "c",
+        "o",
+        "n",
+        "e"
+      ],
+      "distractorGraphemes": [
+        "a",
+        "i"
+      ],
+      "missedConceptOnFail": "silent-e-o",
+      "rationale": "cone = c-o-n-e (don't forget the magic e).",
+      "decodableWithin": "SP-silent-e"
+    },
+    {
+      "id": "sp-se-035",
+      "skillId": "SP-silent-e",
+      "itemType": "build_word",
+      "difficulty": 2,
+      "stem": "Build the word you hear.",
+      "displayWord": "tone",
+      "audioText": "tone",
+      "graphemes": [
+        "t",
+        "o",
+        "n",
+        "e"
+      ],
+      "distractorGraphemes": [
+        "a",
+        "i",
+        "u"
+      ],
+      "missedConceptOnFail": "silent-e-o",
+      "rationale": "tone = t-o-n-e (don't forget the magic e).",
+      "decodableWithin": "SP-silent-e"
+    },
+    {
+      "id": "sp-se-036",
+      "skillId": "SP-silent-e",
+      "itemType": "build_word",
+      "difficulty": 1,
+      "stem": "Build the word you hear.",
+      "displayWord": "note",
+      "audioText": "note",
+      "graphemes": [
+        "n",
+        "o",
+        "t",
+        "e"
+      ],
+      "distractorGraphemes": [
+        "a",
+        "i"
+      ],
+      "missedConceptOnFail": "silent-e-o",
+      "rationale": "note = n-o-t-e (don't forget the magic e).",
+      "decodableWithin": "SP-silent-e"
+    },
+    {
+      "id": "sp-se-037",
+      "skillId": "SP-silent-e",
+      "itemType": "build_word",
+      "difficulty": 2,
+      "stem": "Build the word you hear.",
+      "displayWord": "vote",
+      "audioText": "vote",
+      "graphemes": [
+        "v",
+        "o",
+        "t",
+        "e"
+      ],
+      "distractorGraphemes": [
+        "a",
+        "i",
+        "u"
+      ],
+      "missedConceptOnFail": "silent-e-o",
+      "rationale": "vote = v-o-t-e (don't forget the magic e).",
+      "decodableWithin": "SP-silent-e"
+    },
+    {
+      "id": "sp-se-038",
+      "skillId": "SP-silent-e",
+      "itemType": "build_word",
+      "difficulty": 1,
+      "stem": "Build the word you hear.",
+      "displayWord": "rope",
+      "audioText": "rope",
+      "graphemes": [
+        "r",
+        "o",
+        "p",
+        "e"
+      ],
+      "distractorGraphemes": [
+        "a",
+        "i"
+      ],
+      "missedConceptOnFail": "silent-e-o",
+      "rationale": "rope = r-o-p-e (don't forget the magic e).",
+      "decodableWithin": "SP-silent-e"
+    },
+    {
+      "id": "sp-se-039",
+      "skillId": "SP-silent-e",
+      "itemType": "build_word",
+      "difficulty": 1,
+      "stem": "Build the word you hear.",
+      "displayWord": "hope",
+      "audioText": "hope",
+      "graphemes": [
+        "h",
+        "o",
+        "p",
+        "e"
+      ],
+      "distractorGraphemes": [
+        "a",
+        "i"
+      ],
+      "missedConceptOnFail": "silent-e-o",
+      "rationale": "hope = h-o-p-e (don't forget the magic e).",
+      "decodableWithin": "SP-silent-e"
+    },
+    {
+      "id": "sp-se-040",
+      "skillId": "SP-silent-e",
+      "itemType": "build_word",
+      "difficulty": 2,
+      "stem": "Build the word you hear.",
+      "displayWord": "cope",
+      "audioText": "cope",
+      "graphemes": [
+        "c",
+        "o",
+        "p",
+        "e"
+      ],
+      "distractorGraphemes": [
+        "a",
+        "i",
+        "u"
+      ],
+      "missedConceptOnFail": "silent-e-o",
+      "rationale": "cope = c-o-p-e (don't forget the magic e).",
+      "decodableWithin": "SP-silent-e"
+    },
+    {
+      "id": "sp-se-041",
+      "skillId": "SP-silent-e",
+      "itemType": "build_word",
+      "difficulty": 1,
+      "stem": "Build the word you hear.",
+      "displayWord": "nose",
+      "audioText": "nose",
+      "graphemes": [
+        "n",
+        "o",
+        "s",
+        "e"
+      ],
+      "distractorGraphemes": [
+        "a",
+        "i"
+      ],
+      "missedConceptOnFail": "silent-e-o",
+      "rationale": "nose = n-o-s-e (don't forget the magic e).",
+      "decodableWithin": "SP-silent-e"
+    },
+    {
+      "id": "sp-se-042",
+      "skillId": "SP-silent-e",
+      "itemType": "build_word",
+      "difficulty": 1,
+      "stem": "Build the word you hear.",
+      "displayWord": "rose",
+      "audioText": "rose",
+      "graphemes": [
+        "r",
+        "o",
+        "s",
+        "e"
+      ],
+      "distractorGraphemes": [
+        "a",
+        "i"
+      ],
+      "missedConceptOnFail": "silent-e-o",
+      "rationale": "rose = r-o-s-e (don't forget the magic e).",
+      "decodableWithin": "SP-silent-e"
+    },
+    {
+      "id": "sp-se-043",
+      "skillId": "SP-silent-e",
+      "itemType": "build_word",
+      "difficulty": 2,
+      "stem": "Build the word you hear.",
+      "displayWord": "hose",
+      "audioText": "hose",
+      "graphemes": [
+        "h",
+        "o",
+        "s",
+        "e"
+      ],
+      "distractorGraphemes": [
+        "a",
+        "i",
+        "u"
+      ],
+      "missedConceptOnFail": "silent-e-o",
+      "rationale": "hose = h-o-s-e (don't forget the magic e).",
+      "decodableWithin": "SP-silent-e"
+    },
+    {
+      "id": "sp-se-044",
+      "skillId": "SP-silent-e",
+      "itemType": "build_word",
+      "difficulty": 2,
+      "stem": "Build the word you hear.",
+      "displayWord": "pose",
+      "audioText": "pose",
+      "graphemes": [
+        "p",
+        "o",
+        "s",
+        "e"
+      ],
+      "distractorGraphemes": [
+        "a",
+        "i",
+        "u"
+      ],
+      "missedConceptOnFail": "silent-e-o",
+      "rationale": "pose = p-o-s-e (don't forget the magic e).",
+      "decodableWithin": "SP-silent-e"
+    },
+    {
+      "id": "sp-se-045",
+      "skillId": "SP-silent-e",
+      "itemType": "build_word",
+      "difficulty": 2,
+      "stem": "Build the word you hear.",
+      "displayWord": "robe",
+      "audioText": "robe",
+      "graphemes": [
+        "r",
+        "o",
+        "b",
+        "e"
+      ],
+      "distractorGraphemes": [
+        "a",
+        "i",
+        "u"
+      ],
+      "missedConceptOnFail": "silent-e-o",
+      "rationale": "robe = r-o-b-e (don't forget the magic e).",
+      "decodableWithin": "SP-silent-e"
+    },
+    {
+      "id": "sp-se-046",
+      "skillId": "SP-silent-e",
+      "itemType": "build_word",
+      "difficulty": 2,
+      "stem": "Build the word you hear.",
+      "displayWord": "code",
+      "audioText": "code",
+      "graphemes": [
+        "c",
+        "o",
+        "d",
+        "e"
+      ],
+      "distractorGraphemes": [
+        "a",
+        "i",
+        "u"
+      ],
+      "missedConceptOnFail": "silent-e-o",
+      "rationale": "code = c-o-d-e (don't forget the magic e).",
+      "decodableWithin": "SP-silent-e"
+    },
+    {
+      "id": "sp-se-047",
+      "skillId": "SP-silent-e",
+      "itemType": "build_word",
+      "difficulty": 2,
+      "stem": "Build the word you hear.",
+      "displayWord": "hole",
+      "audioText": "hole",
+      "graphemes": [
+        "h",
+        "o",
+        "l",
+        "e"
+      ],
+      "distractorGraphemes": [
+        "a",
+        "i",
+        "u"
+      ],
+      "missedConceptOnFail": "silent-e-o",
+      "rationale": "hole = h-o-l-e (don't forget the magic e).",
+      "decodableWithin": "SP-silent-e"
+    },
+    {
+      "id": "sp-se-048",
+      "skillId": "SP-silent-e",
+      "itemType": "build_word",
+      "difficulty": 2,
+      "stem": "Build the word you hear.",
+      "displayWord": "mole",
+      "audioText": "mole",
+      "graphemes": [
+        "m",
+        "o",
+        "l",
+        "e"
+      ],
+      "distractorGraphemes": [
+        "a",
+        "i",
+        "u"
+      ],
+      "missedConceptOnFail": "silent-e-o",
+      "rationale": "mole = m-o-l-e (don't forget the magic e).",
+      "decodableWithin": "SP-silent-e"
+    },
+    {
+      "id": "sp-se-049",
+      "skillId": "SP-silent-e",
+      "itemType": "build_word",
+      "difficulty": 1,
+      "stem": "Build the word you hear.",
+      "displayWord": "cube",
+      "audioText": "cube",
+      "graphemes": [
+        "c",
+        "u",
+        "b",
+        "e"
+      ],
+      "distractorGraphemes": [
+        "a",
+        "i"
+      ],
+      "missedConceptOnFail": "silent-e-u",
+      "rationale": "cube = c-u-b-e (don't forget the magic e).",
+      "decodableWithin": "SP-silent-e"
+    },
+    {
+      "id": "sp-se-050",
+      "skillId": "SP-silent-e",
+      "itemType": "build_word",
+      "difficulty": 1,
+      "stem": "Build the word you hear.",
+      "displayWord": "tube",
+      "audioText": "tube",
+      "graphemes": [
+        "t",
+        "u",
+        "b",
+        "e"
+      ],
+      "distractorGraphemes": [
+        "a",
+        "i"
+      ],
+      "missedConceptOnFail": "silent-e-u",
+      "rationale": "tube = t-u-b-e (don't forget the magic e).",
+      "decodableWithin": "SP-silent-e"
+    },
+    {
+      "id": "sp-se-051",
+      "skillId": "SP-silent-e",
+      "itemType": "build_word",
+      "difficulty": 1,
+      "stem": "Build the word you hear.",
+      "displayWord": "cute",
+      "audioText": "cute",
+      "graphemes": [
+        "c",
+        "u",
+        "t",
+        "e"
+      ],
+      "distractorGraphemes": [
+        "a",
+        "i"
+      ],
+      "missedConceptOnFail": "silent-e-u",
+      "rationale": "cute = c-u-t-e (don't forget the magic e).",
+      "decodableWithin": "SP-silent-e"
+    },
+    {
+      "id": "sp-se-052",
+      "skillId": "SP-silent-e",
+      "itemType": "build_word",
+      "difficulty": 2,
+      "stem": "Build the word you hear.",
+      "displayWord": "mute",
+      "audioText": "mute",
+      "graphemes": [
+        "m",
+        "u",
+        "t",
+        "e"
+      ],
+      "distractorGraphemes": [
+        "a",
+        "i",
+        "o"
+      ],
+      "missedConceptOnFail": "silent-e-u",
+      "rationale": "mute = m-u-t-e (don't forget the magic e).",
+      "decodableWithin": "SP-silent-e"
+    },
+    {
+      "id": "sp-se-053",
+      "skillId": "SP-silent-e",
+      "itemType": "build_word",
+      "difficulty": 2,
+      "stem": "Build the word you hear.",
+      "displayWord": "dune",
+      "audioText": "dune",
+      "graphemes": [
+        "d",
+        "u",
+        "n",
+        "e"
+      ],
+      "distractorGraphemes": [
+        "a",
+        "i",
+        "o"
+      ],
+      "missedConceptOnFail": "silent-e-u",
+      "rationale": "dune = d-u-n-e (don't forget the magic e).",
+      "decodableWithin": "SP-silent-e"
+    },
+    {
+      "id": "sp-se-054",
+      "skillId": "SP-silent-e",
+      "itemType": "build_word",
+      "difficulty": 2,
+      "stem": "Build the word you hear.",
+      "displayWord": "tune",
+      "audioText": "tune",
+      "graphemes": [
+        "t",
+        "u",
+        "n",
+        "e"
+      ],
+      "distractorGraphemes": [
+        "a",
+        "i",
+        "o"
+      ],
+      "missedConceptOnFail": "silent-e-u",
+      "rationale": "tune = t-u-n-e (don't forget the magic e).",
+      "decodableWithin": "SP-silent-e"
+    },
+    {
+      "id": "sp-se-055",
+      "skillId": "SP-silent-e",
+      "itemType": "build_word",
+      "difficulty": 2,
+      "stem": "Build the word you hear.",
+      "displayWord": "rude",
+      "audioText": "rude",
+      "graphemes": [
+        "r",
+        "u",
+        "d",
+        "e"
+      ],
+      "distractorGraphemes": [
+        "a",
+        "i",
+        "o"
+      ],
+      "missedConceptOnFail": "silent-e-u",
+      "rationale": "rude = r-u-d-e (don't forget the magic e).",
+      "decodableWithin": "SP-silent-e"
+    },
+    {
+      "id": "sp-se-056",
+      "skillId": "SP-silent-e",
+      "itemType": "build_word",
+      "difficulty": 2,
+      "stem": "Build the word you hear.",
+      "displayWord": "rule",
+      "audioText": "rule",
+      "graphemes": [
+        "r",
+        "u",
+        "l",
+        "e"
+      ],
+      "distractorGraphemes": [
+        "a",
+        "i",
+        "o"
+      ],
+      "missedConceptOnFail": "silent-e-u",
+      "rationale": "rule = r-u-l-e (don't forget the magic e).",
+      "decodableWithin": "SP-silent-e"
+    },
+    {
+      "id": "sp-se-057",
+      "skillId": "SP-silent-e",
+      "itemType": "build_word",
+      "difficulty": 2,
+      "stem": "Build the word you hear.",
+      "displayWord": "mule",
+      "audioText": "mule",
+      "graphemes": [
+        "m",
+        "u",
+        "l",
+        "e"
+      ],
+      "distractorGraphemes": [
+        "a",
+        "i",
+        "o"
+      ],
+      "missedConceptOnFail": "silent-e-u",
+      "rationale": "mule = m-u-l-e (don't forget the magic e).",
+      "decodableWithin": "SP-silent-e"
+    },
+    {
+      "id": "sp-se-058",
+      "skillId": "SP-silent-e",
+      "itemType": "build_word",
+      "difficulty": 3,
+      "stem": "Build the word you hear.",
+      "displayWord": "fume",
+      "audioText": "fume",
+      "graphemes": [
+        "f",
+        "u",
+        "m",
+        "e"
+      ],
+      "distractorGraphemes": [
+        "a",
+        "i",
+        "o",
+        "sh"
+      ],
+      "missedConceptOnFail": "silent-e-u",
+      "rationale": "fume = f-u-m-e (don't forget the magic e).",
+      "decodableWithin": "SP-silent-e"
+    },
+    {
+      "id": "sp-se-059",
+      "skillId": "SP-silent-e",
+      "itemType": "build_word",
+      "difficulty": 3,
+      "stem": "Build the word you hear.",
+      "displayWord": "fuse",
+      "audioText": "fuse",
+      "graphemes": [
+        "f",
+        "u",
+        "s",
+        "e"
+      ],
+      "distractorGraphemes": [
+        "a",
+        "i",
+        "o",
+        "sh"
+      ],
+      "missedConceptOnFail": "silent-e-u",
+      "rationale": "fuse = f-u-s-e (don't forget the magic e).",
+      "decodableWithin": "SP-silent-e"
+    },
+    {
+      "id": "sp-se-060",
+      "skillId": "SP-silent-e",
+      "itemType": "build_word",
+      "difficulty": 2,
+      "stem": "Build the word you hear.",
+      "displayWord": "use",
+      "audioText": "use",
+      "graphemes": [
+        "u",
+        "s",
+        "e"
+      ],
+      "distractorGraphemes": [
+        "a",
+        "i",
+        "o"
+      ],
+      "missedConceptOnFail": "silent-e-u",
+      "rationale": "use = u-s-e (don't forget the magic e).",
+      "decodableWithin": "SP-silent-e"
+    },
+    {
+      "id": "sp-se-061",
+      "skillId": "SP-silent-e",
+      "itemType": "build_word",
+      "difficulty": 3,
+      "stem": "Build the word you hear.",
+      "displayWord": "duke",
+      "audioText": "duke",
+      "graphemes": [
+        "d",
+        "u",
+        "k",
+        "e"
+      ],
+      "distractorGraphemes": [
+        "a",
+        "i",
+        "o",
+        "sh"
+      ],
+      "missedConceptOnFail": "silent-e-u",
+      "rationale": "duke = d-u-k-e (don't forget the magic e).",
+      "decodableWithin": "SP-silent-e"
+    },
+    {
+      "id": "sp-se-062",
+      "skillId": "SP-silent-e",
+      "itemType": "build_word",
+      "difficulty": 2,
+      "stem": "Build the word you hear.",
+      "displayWord": "jute",
+      "audioText": "jute",
+      "graphemes": [
+        "j",
+        "u",
+        "t",
+        "e"
+      ],
+      "distractorGraphemes": [
+        "a",
+        "i",
+        "o"
+      ],
+      "missedConceptOnFail": "silent-e-u",
+      "rationale": "jute = j-u-t-e (don't forget the magic e).",
+      "decodableWithin": "SP-silent-e"
+    },
+    {
+      "id": "sp-se-063",
+      "skillId": "SP-silent-e",
+      "itemType": "build_word",
+      "difficulty": 3,
+      "stem": "Build the word you hear.",
+      "displayWord": "flute",
+      "audioText": "flute",
+      "graphemes": [
+        "f",
+        "l",
+        "u",
+        "t",
+        "e"
+      ],
+      "distractorGraphemes": [
+        "a",
+        "i",
+        "o",
+        "sh"
+      ],
+      "missedConceptOnFail": "silent-e-u",
+      "rationale": "flute = f-l-u-t-e (don't forget the magic e).",
+      "decodableWithin": "SP-silent-e"
+    },
+    {
+      "id": "sp-se-064",
+      "skillId": "SP-silent-e",
+      "itemType": "build_word",
+      "difficulty": 3,
+      "stem": "Build the word you hear.",
+      "displayWord": "prune",
+      "audioText": "prune",
+      "graphemes": [
+        "p",
+        "r",
+        "u",
+        "n",
+        "e"
+      ],
+      "distractorGraphemes": [
+        "a",
+        "i",
+        "o",
+        "sh"
+      ],
+      "missedConceptOnFail": "silent-e-u",
+      "rationale": "prune = p-r-u-n-e (don't forget the magic e).",
+      "decodableWithin": "SP-silent-e"
+    }
+  ],
+  "lessons": {
+    "SP-silent-e": {
+      "iCanStatement": "I can spell words with a bossy silent e.",
+      "explanation": "To spell a long-vowel word, build the sounds then add the silent 'e' tile at the end to make the vowel long: c-a-k + e → cake. Without the e it would be 'cak'.",
+      "workedExamples": [
+        {
+          "text": "bike",
+          "note": "Hear b-i-k, long i → tiles b · i · k · e"
+        },
+        {
+          "text": "tube",
+          "note": "Hear t-u-b, long u → tiles t · u · b · e"
+        }
+      ]
+    }
+  }
+}

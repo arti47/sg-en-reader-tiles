@@ -91,6 +91,28 @@
           "itemPool": "spelling-L05-floss",
           "encodePairId": "PH-floss",
           "mastery": { "window": 12, "accuracyToPass": 0.85, "minItems": 8 }
+        },
+        {
+          "id": "PH-silent-e",
+          "strand": "phonics",
+          "objective": "Decode silent-e (magic-e) long-vowel words: a_e, i_e, o_e, u_e.",
+          "iCanStatement": "I can read words with a bossy silent e.",
+          "prereqs": ["PH-floss"],
+          "itemType": "decode_choice",
+          "itemPool": "phonics-L06-silent-e",
+          "encodePairId": "SP-silent-e",
+          "mastery": { "window": 12, "accuracyToPass": 0.85, "minItems": 8 }
+        },
+        {
+          "id": "SP-silent-e",
+          "strand": "spelling",
+          "objective": "Spell silent-e words, adding the magic e that makes the vowel long.",
+          "iCanStatement": "I can spell words with a bossy silent e.",
+          "prereqs": ["PH-silent-e"],
+          "itemType": "build_word",
+          "itemPool": "spelling-L06-silent-e",
+          "encodePairId": "PH-silent-e",
+          "mastery": { "window": 12, "accuracyToPass": 0.85, "minItems": 8 }
         }
       ]
     }

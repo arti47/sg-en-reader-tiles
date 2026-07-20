@@ -31,5 +31,13 @@
   "SP-floss": {
     "graphemes": ["ff","ll","ss","zz","sh","ch","th","ck","b","c","d","f","g","h","j","k","l","m","n","p","qu","r","s","t","v","w","x","y","z","a","e","i","o","u"],
     "highFrequency": []
+  },
+  "PH-silent-e": {
+    "graphemes": ["ff","ll","ss","zz","sh","ch","th","ck","b","c","d","f","g","h","j","k","l","m","n","p","qu","r","s","t","v","w","x","y","z","a","e","i","o","u"],
+    "highFrequency": []
+  },
+  "SP-silent-e": {
+    "graphemes": ["ff","ll","ss","zz","sh","ch","th","ck","b","c","d","f","g","h","j","k","l","m","n","p","qu","r","s","t","v","w","x","y","z","a","e","i","o","u"],
+    "highFrequency": []
   }
 }

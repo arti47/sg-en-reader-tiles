@@ -9,6 +9,8 @@ import phonicsBl from '../data/packs/phonics-L04-blends.json'
 import spellingBl from '../data/packs/spelling-L04-blends.json'
 import phonicsFl from '../data/packs/phonics-L05-floss.json'
 import spellingFl from '../data/packs/spelling-L05-floss.json'
+import phonicsSe from '../data/packs/phonics-L06-silent-e.json'
+import spellingSe from '../data/packs/spelling-L06-silent-e.json'
 
 const PACKS: ContentPack[] = [
   phonicsCvc as ContentPack,
@@ -18,7 +20,9 @@ const PACKS: ContentPack[] = [
   phonicsBl as ContentPack,
   spellingBl as ContentPack,
   phonicsFl as ContentPack,
-  spellingFl as ContentPack
+  spellingFl as ContentPack,
+  phonicsSe as ContentPack,
+  spellingSe as ContentPack
 ]
 
 export const SKILLS: SkillDef[] =

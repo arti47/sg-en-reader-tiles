@@ -1,0 +1,1690 @@
+{
+  "packId": "phonics-L06-silent-e",
+  "strand": "phonics",
+  "skillIds": [
+    "PH-silent-e"
+  ],
+  "version": 1,
+  "items": [
+    {
+      "id": "ph-se-001",
+      "skillId": "PH-silent-e",
+      "itemType": "decode_choice",
+      "difficulty": 1,
+      "stem": "Tap the word you hear.",
+      "audioText": "cake",
+      "choices": [
+        {
+          "id": "a",
+          "label": "cake"
+        },
+        {
+          "id": "b",
+          "label": "lake"
+        },
+        {
+          "id": "c",
+          "label": "bake"
+        }
+      ],
+      "correctChoiceId": "a",
+      "missedConceptOnFail": "silent-e-a",
+      "rationale": "cake — the silent e makes the vowel say its name.",
+      "decodableWithin": "PH-silent-e"
+    },
+    {
+      "id": "ph-se-002",
+      "skillId": "PH-silent-e",
+      "itemType": "decode_choice",
+      "difficulty": 1,
+      "stem": "Tap the word you hear.",
+      "audioText": "lake",
+      "choices": [
+        {
+          "id": "a",
+          "label": "cake"
+        },
+        {
+          "id": "b",
+          "label": "lake"
+        },
+        {
+          "id": "c",
+          "label": "make"
+        }
+      ],
+      "correctChoiceId": "b",
+      "missedConceptOnFail": "silent-e-a",
+      "rationale": "lake — the silent e makes the vowel say its name.",
+      "decodableWithin": "PH-silent-e"
+    },
+    {
+      "id": "ph-se-003",
+      "skillId": "PH-silent-e",
+      "itemType": "decode_choice",
+      "difficulty": 1,
+      "stem": "Tap the word you hear.",
+      "audioText": "make",
+      "choices": [
+        {
+          "id": "a",
+          "label": "take"
+        },
+        {
+          "id": "b",
+          "label": "bake"
+        },
+        {
+          "id": "c",
+          "label": "make"
+        }
+      ],
+      "correctChoiceId": "c",
+      "missedConceptOnFail": "silent-e-a",
+      "rationale": "make — the silent e makes the vowel say its name.",
+      "decodableWithin": "PH-silent-e"
+    },
+    {
+      "id": "ph-se-004",
+      "skillId": "PH-silent-e",
+      "itemType": "decode_choice",
+      "difficulty": 2,
+      "stem": "Tap the word you hear.",
+      "audioText": "take",
+      "choices": [
+        {
+          "id": "a",
+          "label": "take"
+        },
+        {
+          "id": "b",
+          "label": "make"
+        },
+        {
+          "id": "c",
+          "label": "lake"
+        }
+      ],
+      "correctChoiceId": "a",
+      "missedConceptOnFail": "silent-e-a",
+      "rationale": "take — the silent e makes the vowel say its name.",
+      "decodableWithin": "PH-silent-e"
+    },
+    {
+      "id": "ph-se-005",
+      "skillId": "PH-silent-e",
+      "itemType": "decode_choice",
+      "difficulty": 2,
+      "stem": "Tap the word you hear.",
+      "audioText": "bake",
+      "choices": [
+        {
+          "id": "a",
+          "label": "cake"
+        },
+        {
+          "id": "b",
+          "label": "bake"
+        },
+        {
+          "id": "c",
+          "label": "take"
+        }
+      ],
+      "correctChoiceId": "b",
+      "missedConceptOnFail": "silent-e-a",
+      "rationale": "bake — the silent e makes the vowel say its name.",
+      "decodableWithin": "PH-silent-e"
+    },
+    {
+      "id": "ph-se-006",
+      "skillId": "PH-silent-e",
+      "itemType": "decode_choice",
+      "difficulty": 1,
+      "stem": "Tap the word you hear.",
+      "audioText": "name",
+      "choices": [
+        {
+          "id": "a",
+          "label": "game"
+        },
+        {
+          "id": "b",
+          "label": "same"
+        },
+        {
+          "id": "c",
+          "label": "name"
+        }
+      ],
+      "correctChoiceId": "c",
+      "missedConceptOnFail": "silent-e-a",
+      "rationale": "name — the silent e makes the vowel say its name.",
+      "decodableWithin": "PH-silent-e"
+    },
+    {
+      "id": "ph-se-007",
+      "skillId": "PH-silent-e",
+      "itemType": "decode_choice",
+      "difficulty": 1,
+      "stem": "Tap the word you hear.",
+      "audioText": "game",
+      "choices": [
+        {
+          "id": "a",
+          "label": "game"
+        },
+        {
+          "id": "b",
+          "label": "name"
+        },
+        {
+          "id": "c",
+          "label": "same"
+        }
+      ],
+      "correctChoiceId": "a",
+      "missedConceptOnFail": "silent-e-a",
+      "rationale": "game — the silent e makes the vowel say its name.",
+      "decodableWithin": "PH-silent-e"
+    },
+    {
+      "id": "ph-se-008",
+      "skillId": "PH-silent-e",
+      "itemType": "decode_choice",
+      "difficulty": 1,
+      "stem": "Tap the word you hear.",
+      "audioText": "gate",
+      "choices": [
+        {
+          "id": "a",
+          "label": "late"
+        },
+        {
+          "id": "b",
+          "label": "gate"
+        },
+        {
+          "id": "c",
+          "label": "date"
+        }
+      ],
+      "correctChoiceId": "b",
+      "missedConceptOnFail": "silent-e-a",
+      "rationale": "gate — the silent e makes the vowel say its name.",
+      "decodableWithin": "PH-silent-e"
+    },
+    {
+      "id": "ph-se-009",
+      "skillId": "PH-silent-e",
+      "itemType": "decode_choice",
+      "difficulty": 2,
+      "stem": "Tap the word you hear.",
+      "audioText": "late",
+      "choices": [
+        {
+          "id": "a",
+          "label": "gate"
+        },
+        {
+          "id": "b",
+          "label": "date"
+        },
+        {
+          "id": "c",
+          "label": "late"
+        }
+      ],
+      "correctChoiceId": "c",
+      "missedConceptOnFail": "silent-e-a",
+      "rationale": "late — the silent e makes the vowel say its name.",
+      "decodableWithin": "PH-silent-e"
+    },
+    {
+      "id": "ph-se-010",
+      "skillId": "PH-silent-e",
+      "itemType": "decode_choice",
+      "difficulty": 2,
+      "stem": "Tap the word you hear.",
+      "audioText": "cape",
+      "choices": [
+        {
+          "id": "a",
+          "label": "cape"
+        },
+        {
+          "id": "b",
+          "label": "cap"
+        },
+        {
+          "id": "c",
+          "label": "tape"
+        }
+      ],
+      "correctChoiceId": "a",
+      "missedConceptOnFail": "silent-e-a",
+      "rationale": "cape — the silent e makes the vowel say its name.",
+      "decodableWithin": "PH-silent-e"
+    },
+    {
+      "id": "ph-se-011",
+      "skillId": "PH-silent-e",
+      "itemType": "decode_choice",
+      "difficulty": 2,
+      "stem": "Tap the word you hear.",
+      "audioText": "tape",
+      "choices": [
+        {
+          "id": "a",
+          "label": "tap"
+        },
+        {
+          "id": "b",
+          "label": "tape"
+        },
+        {
+          "id": "c",
+          "label": "cape"
+        }
+      ],
+      "correctChoiceId": "b",
+      "missedConceptOnFail": "silent-e-a",
+      "rationale": "tape — the silent e makes the vowel say its name.",
+      "decodableWithin": "PH-silent-e"
+    },
+    {
+      "id": "ph-se-012",
+      "skillId": "PH-silent-e",
+      "itemType": "decode_choice",
+      "difficulty": 2,
+      "stem": "Tap the word you hear.",
+      "audioText": "hate",
+      "choices": [
+        {
+          "id": "a",
+          "label": "hat"
+        },
+        {
+          "id": "b",
+          "label": "gate"
+        },
+        {
+          "id": "c",
+          "label": "hate"
+        }
+      ],
+      "correctChoiceId": "c",
+      "missedConceptOnFail": "silent-e-a",
+      "rationale": "hate — the silent e makes the vowel say its name.",
+      "decodableWithin": "PH-silent-e"
+    },
+    {
+      "id": "ph-se-013",
+      "skillId": "PH-silent-e",
+      "itemType": "decode_choice",
+      "difficulty": 3,
+      "stem": "Tap the word you hear.",
+      "audioText": "snake",
+      "choices": [
+        {
+          "id": "a",
+          "label": "snake"
+        },
+        {
+          "id": "b",
+          "label": "shake"
+        },
+        {
+          "id": "c",
+          "label": "shape"
+        }
+      ],
+      "correctChoiceId": "a",
+      "missedConceptOnFail": "silent-e-a",
+      "rationale": "snake — the silent e makes the vowel say its name.",
+      "decodableWithin": "PH-silent-e"
+    },
+    {
+      "id": "ph-se-014",
+      "skillId": "PH-silent-e",
+      "itemType": "decode_choice",
+      "difficulty": 3,
+      "stem": "Tap the word you hear.",
+      "audioText": "shake",
+      "choices": [
+        {
+          "id": "a",
+          "label": "snake"
+        },
+        {
+          "id": "b",
+          "label": "shake"
+        },
+        {
+          "id": "c",
+          "label": "shape"
+        }
+      ],
+      "correctChoiceId": "b",
+      "missedConceptOnFail": "silent-e-a",
+      "rationale": "shake — the silent e makes the vowel say its name.",
+      "decodableWithin": "PH-silent-e"
+    },
+    {
+      "id": "ph-se-015",
+      "skillId": "PH-silent-e",
+      "itemType": "decode_choice",
+      "difficulty": 3,
+      "stem": "Tap the word you hear.",
+      "audioText": "grape",
+      "choices": [
+        {
+          "id": "a",
+          "label": "grade"
+        },
+        {
+          "id": "b",
+          "label": "brave"
+        },
+        {
+          "id": "c",
+          "label": "grape"
+        }
+      ],
+      "correctChoiceId": "c",
+      "missedConceptOnFail": "silent-e-a",
+      "rationale": "grape — the silent e makes the vowel say its name.",
+      "decodableWithin": "PH-silent-e"
+    },
+    {
+      "id": "ph-se-016",
+      "skillId": "PH-silent-e",
+      "itemType": "decode_choice",
+      "difficulty": 3,
+      "stem": "Tap the word you hear.",
+      "audioText": "plane",
+      "choices": [
+        {
+          "id": "a",
+          "label": "plane"
+        },
+        {
+          "id": "b",
+          "label": "plate"
+        },
+        {
+          "id": "c",
+          "label": "place"
+        }
+      ],
+      "correctChoiceId": "a",
+      "missedConceptOnFail": "silent-e-a",
+      "rationale": "plane — the silent e makes the vowel say its name.",
+      "decodableWithin": "PH-silent-e"
+    },
+    {
+      "id": "ph-se-017",
+      "skillId": "PH-silent-e",
+      "itemType": "decode_choice",
+      "difficulty": 1,
+      "stem": "Tap the word you hear.",
+      "audioText": "bike",
+      "choices": [
+        {
+          "id": "a",
+          "label": "like"
+        },
+        {
+          "id": "b",
+          "label": "bike"
+        },
+        {
+          "id": "c",
+          "label": "hike"
+        }
+      ],
+      "correctChoiceId": "b",
+      "missedConceptOnFail": "silent-e-i",
+      "rationale": "bike — the silent e makes the vowel say its name.",
+      "decodableWithin": "PH-silent-e"
+    },
+    {
+      "id": "ph-se-018",
+      "skillId": "PH-silent-e",
+      "itemType": "decode_choice",
+      "difficulty": 1,
+      "stem": "Tap the word you hear.",
+      "audioText": "like",
+      "choices": [
+        {
+          "id": "a",
+          "label": "bike"
+        },
+        {
+          "id": "b",
+          "label": "hike"
+        },
+        {
+          "id": "c",
+          "label": "like"
+        }
+      ],
+      "correctChoiceId": "c",
+      "missedConceptOnFail": "silent-e-i",
+      "rationale": "like — the silent e makes the vowel say its name.",
+      "decodableWithin": "PH-silent-e"
+    },
+    {
+      "id": "ph-se-019",
+      "skillId": "PH-silent-e",
+      "itemType": "decode_choice",
+      "difficulty": 2,
+      "stem": "Tap the word you hear.",
+      "audioText": "hike",
+      "choices": [
+        {
+          "id": "a",
+          "label": "hike"
+        },
+        {
+          "id": "b",
+          "label": "bike"
+        },
+        {
+          "id": "c",
+          "label": "like"
+        }
+      ],
+      "correctChoiceId": "a",
+      "missedConceptOnFail": "silent-e-i",
+      "rationale": "hike — the silent e makes the vowel say its name.",
+      "decodableWithin": "PH-silent-e"
+    },
+    {
+      "id": "ph-se-020",
+      "skillId": "PH-silent-e",
+      "itemType": "decode_choice",
+      "difficulty": 1,
+      "stem": "Tap the word you hear.",
+      "audioText": "bite",
+      "choices": [
+        {
+          "id": "a",
+          "label": "bit"
+        },
+        {
+          "id": "b",
+          "label": "bite"
+        },
+        {
+          "id": "c",
+          "label": "kite"
+        }
+      ],
+      "correctChoiceId": "b",
+      "missedConceptOnFail": "silent-e-i",
+      "rationale": "bite — the silent e makes the vowel say its name.",
+      "decodableWithin": "PH-silent-e"
+    },
+    {
+      "id": "ph-se-021",
+      "skillId": "PH-silent-e",
+      "itemType": "decode_choice",
+      "difficulty": 1,
+      "stem": "Tap the word you hear.",
+      "audioText": "kite",
+      "choices": [
+        {
+          "id": "a",
+          "label": "kit"
+        },
+        {
+          "id": "b",
+          "label": "bite"
+        },
+        {
+          "id": "c",
+          "label": "kite"
+        }
+      ],
+      "correctChoiceId": "c",
+      "missedConceptOnFail": "silent-e-i",
+      "rationale": "kite — the silent e makes the vowel say its name.",
+      "decodableWithin": "PH-silent-e"
+    },
+    {
+      "id": "ph-se-022",
+      "skillId": "PH-silent-e",
+      "itemType": "decode_choice",
+      "difficulty": 1,
+      "stem": "Tap the word you hear.",
+      "audioText": "time",
+      "choices": [
+        {
+          "id": "a",
+          "label": "time"
+        },
+        {
+          "id": "b",
+          "label": "lime"
+        },
+        {
+          "id": "c",
+          "label": "dime"
+        }
+      ],
+      "correctChoiceId": "a",
+      "missedConceptOnFail": "silent-e-i",
+      "rationale": "time — the silent e makes the vowel say its name.",
+      "decodableWithin": "PH-silent-e"
+    },
+    {
+      "id": "ph-se-023",
+      "skillId": "PH-silent-e",
+      "itemType": "decode_choice",
+      "difficulty": 2,
+      "stem": "Tap the word you hear.",
+      "audioText": "lime",
+      "choices": [
+        {
+          "id": "a",
+          "label": "time"
+        },
+        {
+          "id": "b",
+          "label": "lime"
+        },
+        {
+          "id": "c",
+          "label": "dime"
+        }
+      ],
+      "correctChoiceId": "b",
+      "missedConceptOnFail": "silent-e-i",
+      "rationale": "lime — the silent e makes the vowel say its name.",
+      "decodableWithin": "PH-silent-e"
+    },
+    {
+      "id": "ph-se-024",
+      "skillId": "PH-silent-e",
+      "itemType": "decode_choice",
+      "difficulty": 2,
+      "stem": "Tap the word you hear.",
+      "audioText": "dine",
+      "choices": [
+        {
+          "id": "a",
+          "label": "din"
+        },
+        {
+          "id": "b",
+          "label": "line"
+        },
+        {
+          "id": "c",
+          "label": "dine"
+        }
+      ],
+      "correctChoiceId": "c",
+      "missedConceptOnFail": "silent-e-i",
+      "rationale": "dine — the silent e makes the vowel say its name.",
+      "decodableWithin": "PH-silent-e"
+    },
+    {
+      "id": "ph-se-025",
+      "skillId": "PH-silent-e",
+      "itemType": "decode_choice",
+      "difficulty": 1,
+      "stem": "Tap the word you hear.",
+      "audioText": "line",
+      "choices": [
+        {
+          "id": "a",
+          "label": "line"
+        },
+        {
+          "id": "b",
+          "label": "mine"
+        },
+        {
+          "id": "c",
+          "label": "nine"
+        }
+      ],
+      "correctChoiceId": "a",
+      "missedConceptOnFail": "silent-e-i",
+      "rationale": "line — the silent e makes the vowel say its name.",
+      "decodableWithin": "PH-silent-e"
+    },
+    {
+      "id": "ph-se-026",
+      "skillId": "PH-silent-e",
+      "itemType": "decode_choice",
+      "difficulty": 1,
+      "stem": "Tap the word you hear.",
+      "audioText": "mine",
+      "choices": [
+        {
+          "id": "a",
+          "label": "nine"
+        },
+        {
+          "id": "b",
+          "label": "mine"
+        },
+        {
+          "id": "c",
+          "label": "line"
+        }
+      ],
+      "correctChoiceId": "b",
+      "missedConceptOnFail": "silent-e-i",
+      "rationale": "mine — the silent e makes the vowel say its name.",
+      "decodableWithin": "PH-silent-e"
+    },
+    {
+      "id": "ph-se-027",
+      "skillId": "PH-silent-e",
+      "itemType": "decode_choice",
+      "difficulty": 2,
+      "stem": "Tap the word you hear.",
+      "audioText": "nine",
+      "choices": [
+        {
+          "id": "a",
+          "label": "mine"
+        },
+        {
+          "id": "b",
+          "label": "line"
+        },
+        {
+          "id": "c",
+          "label": "nine"
+        }
+      ],
+      "correctChoiceId": "c",
+      "missedConceptOnFail": "silent-e-i",
+      "rationale": "nine — the silent e makes the vowel say its name.",
+      "decodableWithin": "PH-silent-e"
+    },
+    {
+      "id": "ph-se-028",
+      "skillId": "PH-silent-e",
+      "itemType": "decode_choice",
+      "difficulty": 2,
+      "stem": "Tap the word you hear.",
+      "audioText": "pine",
+      "choices": [
+        {
+          "id": "a",
+          "label": "pine"
+        },
+        {
+          "id": "b",
+          "label": "pin"
+        },
+        {
+          "id": "c",
+          "label": "fine"
+        }
+      ],
+      "correctChoiceId": "a",
+      "missedConceptOnFail": "silent-e-i",
+      "rationale": "pine — the silent e makes the vowel say its name.",
+      "decodableWithin": "PH-silent-e"
+    },
+    {
+      "id": "ph-se-029",
+      "skillId": "PH-silent-e",
+      "itemType": "decode_choice",
+      "difficulty": 2,
+      "stem": "Tap the word you hear.",
+      "audioText": "fine",
+      "choices": [
+        {
+          "id": "a",
+          "label": "fin"
+        },
+        {
+          "id": "b",
+          "label": "fine"
+        },
+        {
+          "id": "c",
+          "label": "pine"
+        }
+      ],
+      "correctChoiceId": "b",
+      "missedConceptOnFail": "silent-e-i",
+      "rationale": "fine — the silent e makes the vowel say its name.",
+      "decodableWithin": "PH-silent-e"
+    },
+    {
+      "id": "ph-se-030",
+      "skillId": "PH-silent-e",
+      "itemType": "decode_choice",
+      "difficulty": 1,
+      "stem": "Tap the word you hear.",
+      "audioText": "ride",
+      "choices": [
+        {
+          "id": "a",
+          "label": "rid"
+        },
+        {
+          "id": "b",
+          "label": "side"
+        },
+        {
+          "id": "c",
+          "label": "ride"
+        }
+      ],
+      "correctChoiceId": "c",
+      "missedConceptOnFail": "silent-e-i",
+      "rationale": "ride — the silent e makes the vowel say its name.",
+      "decodableWithin": "PH-silent-e"
+    },
+    {
+      "id": "ph-se-031",
+      "skillId": "PH-silent-e",
+      "itemType": "decode_choice",
+      "difficulty": 2,
+      "stem": "Tap the word you hear.",
+      "audioText": "side",
+      "choices": [
+        {
+          "id": "a",
+          "label": "side"
+        },
+        {
+          "id": "b",
+          "label": "ride"
+        },
+        {
+          "id": "c",
+          "label": "wide"
+        }
+      ],
+      "correctChoiceId": "a",
+      "missedConceptOnFail": "silent-e-i",
+      "rationale": "side — the silent e makes the vowel say its name.",
+      "decodableWithin": "PH-silent-e"
+    },
+    {
+      "id": "ph-se-032",
+      "skillId": "PH-silent-e",
+      "itemType": "decode_choice",
+      "difficulty": 2,
+      "stem": "Tap the word you hear.",
+      "audioText": "ripe",
+      "choices": [
+        {
+          "id": "a",
+          "label": "rip"
+        },
+        {
+          "id": "b",
+          "label": "ripe"
+        },
+        {
+          "id": "c",
+          "label": "wipe"
+        }
+      ],
+      "correctChoiceId": "b",
+      "missedConceptOnFail": "silent-e-i",
+      "rationale": "ripe — the silent e makes the vowel say its name.",
+      "decodableWithin": "PH-silent-e"
+    },
+    {
+      "id": "ph-se-033",
+      "skillId": "PH-silent-e",
+      "itemType": "decode_choice",
+      "difficulty": 1,
+      "stem": "Tap the word you hear.",
+      "audioText": "bone",
+      "choices": [
+        {
+          "id": "a",
+          "label": "cone"
+        },
+        {
+          "id": "b",
+          "label": "tone"
+        },
+        {
+          "id": "c",
+          "label": "bone"
+        }
+      ],
+      "correctChoiceId": "c",
+      "missedConceptOnFail": "silent-e-o",
+      "rationale": "bone — the silent e makes the vowel say its name.",
+      "decodableWithin": "PH-silent-e"
+    },
+    {
+      "id": "ph-se-034",
+      "skillId": "PH-silent-e",
+      "itemType": "decode_choice",
+      "difficulty": 1,
+      "stem": "Tap the word you hear.",
+      "audioText": "cone",
+      "choices": [
+        {
+          "id": "a",
+          "label": "cone"
+        },
+        {
+          "id": "b",
+          "label": "bone"
+        },
+        {
+          "id": "c",
+          "label": "tone"
+        }
+      ],
+      "correctChoiceId": "a",
+      "missedConceptOnFail": "silent-e-o",
+      "rationale": "cone — the silent e makes the vowel say its name.",
+      "decodableWithin": "PH-silent-e"
+    },
+    {
+      "id": "ph-se-035",
+      "skillId": "PH-silent-e",
+      "itemType": "decode_choice",
+      "difficulty": 2,
+      "stem": "Tap the word you hear.",
+      "audioText": "tone",
+      "choices": [
+        {
+          "id": "a",
+          "label": "bone"
+        },
+        {
+          "id": "b",
+          "label": "tone"
+        },
+        {
+          "id": "c",
+          "label": "cone"
+        }
+      ],
+      "correctChoiceId": "b",
+      "missedConceptOnFail": "silent-e-o",
+      "rationale": "tone — the silent e makes the vowel say its name.",
+      "decodableWithin": "PH-silent-e"
+    },
+    {
+      "id": "ph-se-036",
+      "skillId": "PH-silent-e",
+      "itemType": "decode_choice",
+      "difficulty": 1,
+      "stem": "Tap the word you hear.",
+      "audioText": "note",
+      "choices": [
+        {
+          "id": "a",
+          "label": "not"
+        },
+        {
+          "id": "b",
+          "label": "vote"
+        },
+        {
+          "id": "c",
+          "label": "note"
+        }
+      ],
+      "correctChoiceId": "c",
+      "missedConceptOnFail": "silent-e-o",
+      "rationale": "note — the silent e makes the vowel say its name.",
+      "decodableWithin": "PH-silent-e"
+    },
+    {
+      "id": "ph-se-037",
+      "skillId": "PH-silent-e",
+      "itemType": "decode_choice",
+      "difficulty": 2,
+      "stem": "Tap the word you hear.",
+      "audioText": "vote",
+      "choices": [
+        {
+          "id": "a",
+          "label": "vote"
+        },
+        {
+          "id": "b",
+          "label": "note"
+        },
+        {
+          "id": "c",
+          "label": "dote"
+        }
+      ],
+      "correctChoiceId": "a",
+      "missedConceptOnFail": "silent-e-o",
+      "rationale": "vote — the silent e makes the vowel say its name.",
+      "decodableWithin": "PH-silent-e"
+    },
+    {
+      "id": "ph-se-038",
+      "skillId": "PH-silent-e",
+      "itemType": "decode_choice",
+      "difficulty": 1,
+      "stem": "Tap the word you hear.",
+      "audioText": "rope",
+      "choices": [
+        {
+          "id": "a",
+          "label": "hope"
+        },
+        {
+          "id": "b",
+          "label": "rope"
+        },
+        {
+          "id": "c",
+          "label": "cope"
+        }
+      ],
+      "correctChoiceId": "b",
+      "missedConceptOnFail": "silent-e-o",
+      "rationale": "rope — the silent e makes the vowel say its name.",
+      "decodableWithin": "PH-silent-e"
+    },
+    {
+      "id": "ph-se-039",
+      "skillId": "PH-silent-e",
+      "itemType": "decode_choice",
+      "difficulty": 1,
+      "stem": "Tap the word you hear.",
+      "audioText": "hope",
+      "choices": [
+        {
+          "id": "a",
+          "label": "hop"
+        },
+        {
+          "id": "b",
+          "label": "rope"
+        },
+        {
+          "id": "c",
+          "label": "hope"
+        }
+      ],
+      "correctChoiceId": "c",
+      "missedConceptOnFail": "silent-e-o",
+      "rationale": "hope — the silent e makes the vowel say its name.",
+      "decodableWithin": "PH-silent-e"
+    },
+    {
+      "id": "ph-se-040",
+      "skillId": "PH-silent-e",
+      "itemType": "decode_choice",
+      "difficulty": 2,
+      "stem": "Tap the word you hear.",
+      "audioText": "cope",
+      "choices": [
+        {
+          "id": "a",
+          "label": "cope"
+        },
+        {
+          "id": "b",
+          "label": "cop"
+        },
+        {
+          "id": "c",
+          "label": "rope"
+        }
+      ],
+      "correctChoiceId": "a",
+      "missedConceptOnFail": "silent-e-o",
+      "rationale": "cope — the silent e makes the vowel say its name.",
+      "decodableWithin": "PH-silent-e"
+    },
+    {
+      "id": "ph-se-041",
+      "skillId": "PH-silent-e",
+      "itemType": "decode_choice",
+      "difficulty": 1,
+      "stem": "Tap the word you hear.",
+      "audioText": "nose",
+      "choices": [
+        {
+          "id": "a",
+          "label": "rose"
+        },
+        {
+          "id": "b",
+          "label": "nose"
+        },
+        {
+          "id": "c",
+          "label": "hose"
+        }
+      ],
+      "correctChoiceId": "b",
+      "missedConceptOnFail": "silent-e-o",
+      "rationale": "nose — the silent e makes the vowel say its name.",
+      "decodableWithin": "PH-silent-e"
+    },
+    {
+      "id": "ph-se-042",
+      "skillId": "PH-silent-e",
+      "itemType": "decode_choice",
+      "difficulty": 1,
+      "stem": "Tap the word you hear.",
+      "audioText": "rose",
+      "choices": [
+        {
+          "id": "a",
+          "label": "nose"
+        },
+        {
+          "id": "b",
+          "label": "hose"
+        },
+        {
+          "id": "c",
+          "label": "rose"
+        }
+      ],
+      "correctChoiceId": "c",
+      "missedConceptOnFail": "silent-e-o",
+      "rationale": "rose — the silent e makes the vowel say its name.",
+      "decodableWithin": "PH-silent-e"
+    },
+    {
+      "id": "ph-se-043",
+      "skillId": "PH-silent-e",
+      "itemType": "decode_choice",
+      "difficulty": 2,
+      "stem": "Tap the word you hear.",
+      "audioText": "hose",
+      "choices": [
+        {
+          "id": "a",
+          "label": "hose"
+        },
+        {
+          "id": "b",
+          "label": "nose"
+        },
+        {
+          "id": "c",
+          "label": "rose"
+        }
+      ],
+      "correctChoiceId": "a",
+      "missedConceptOnFail": "silent-e-o",
+      "rationale": "hose — the silent e makes the vowel say its name.",
+      "decodableWithin": "PH-silent-e"
+    },
+    {
+      "id": "ph-se-044",
+      "skillId": "PH-silent-e",
+      "itemType": "decode_choice",
+      "difficulty": 2,
+      "stem": "Tap the word you hear.",
+      "audioText": "pose",
+      "choices": [
+        {
+          "id": "a",
+          "label": "nose"
+        },
+        {
+          "id": "b",
+          "label": "pose"
+        },
+        {
+          "id": "c",
+          "label": "rose"
+        }
+      ],
+      "correctChoiceId": "b",
+      "missedConceptOnFail": "silent-e-o",
+      "rationale": "pose — the silent e makes the vowel say its name.",
+      "decodableWithin": "PH-silent-e"
+    },
+    {
+      "id": "ph-se-045",
+      "skillId": "PH-silent-e",
+      "itemType": "decode_choice",
+      "difficulty": 2,
+      "stem": "Tap the word you hear.",
+      "audioText": "robe",
+      "choices": [
+        {
+          "id": "a",
+          "label": "rob"
+        },
+        {
+          "id": "b",
+          "label": "rope"
+        },
+        {
+          "id": "c",
+          "label": "robe"
+        }
+      ],
+      "correctChoiceId": "c",
+      "missedConceptOnFail": "silent-e-o",
+      "rationale": "robe — the silent e makes the vowel say its name.",
+      "decodableWithin": "PH-silent-e"
+    },
+    {
+      "id": "ph-se-046",
+      "skillId": "PH-silent-e",
+      "itemType": "decode_choice",
+      "difficulty": 2,
+      "stem": "Tap the word you hear.",
+      "audioText": "code",
+      "choices": [
+        {
+          "id": "a",
+          "label": "code"
+        },
+        {
+          "id": "b",
+          "label": "cod"
+        },
+        {
+          "id": "c",
+          "label": "mode"
+        }
+      ],
+      "correctChoiceId": "a",
+      "missedConceptOnFail": "silent-e-o",
+      "rationale": "code — the silent e makes the vowel say its name.",
+      "decodableWithin": "PH-silent-e"
+    },
+    {
+      "id": "ph-se-047",
+      "skillId": "PH-silent-e",
+      "itemType": "decode_choice",
+      "difficulty": 2,
+      "stem": "Tap the word you hear.",
+      "audioText": "hole",
+      "choices": [
+        {
+          "id": "a",
+          "label": "mole"
+        },
+        {
+          "id": "b",
+          "label": "hole"
+        },
+        {
+          "id": "c",
+          "label": "pole"
+        }
+      ],
+      "correctChoiceId": "b",
+      "missedConceptOnFail": "silent-e-o",
+      "rationale": "hole — the silent e makes the vowel say its name.",
+      "decodableWithin": "PH-silent-e"
+    },
+    {
+      "id": "ph-se-048",
+      "skillId": "PH-silent-e",
+      "itemType": "decode_choice",
+      "difficulty": 2,
+      "stem": "Tap the word you hear.",
+      "audioText": "mole",
+      "choices": [
+        {
+          "id": "a",
+          "label": "hole"
+        },
+        {
+          "id": "b",
+          "label": "pole"
+        },
+        {
+          "id": "c",
+          "label": "mole"
+        }
+      ],
+      "correctChoiceId": "c",
+      "missedConceptOnFail": "silent-e-o",
+      "rationale": "mole — the silent e makes the vowel say its name.",
+      "decodableWithin": "PH-silent-e"
+    },
+    {
+      "id": "ph-se-049",
+      "skillId": "PH-silent-e",
+      "itemType": "decode_choice",
+      "difficulty": 1,
+      "stem": "Tap the word you hear.",
+      "audioText": "cube",
+      "choices": [
+        {
+          "id": "a",
+          "label": "cube"
+        },
+        {
+          "id": "b",
+          "label": "cub"
+        },
+        {
+          "id": "c",
+          "label": "tube"
+        }
+      ],
+      "correctChoiceId": "a",
+      "missedConceptOnFail": "silent-e-u",
+      "rationale": "cube — the silent e makes the vowel say its name.",
+      "decodableWithin": "PH-silent-e"
+    },
+    {
+      "id": "ph-se-050",
+      "skillId": "PH-silent-e",
+      "itemType": "decode_choice",
+      "difficulty": 1,
+      "stem": "Tap the word you hear.",
+      "audioText": "tube",
+      "choices": [
+        {
+          "id": "a",
+          "label": "tub"
+        },
+        {
+          "id": "b",
+          "label": "tube"
+        },
+        {
+          "id": "c",
+          "label": "cube"
+        }
+      ],
+      "correctChoiceId": "b",
+      "missedConceptOnFail": "silent-e-u",
+      "rationale": "tube — the silent e makes the vowel say its name.",
+      "decodableWithin": "PH-silent-e"
+    },
+    {
+      "id": "ph-se-051",
+      "skillId": "PH-silent-e",
+      "itemType": "decode_choice",
+      "difficulty": 1,
+      "stem": "Tap the word you hear.",
+      "audioText": "cute",
+      "choices": [
+        {
+          "id": "a",
+          "label": "cut"
+        },
+        {
+          "id": "b",
+          "label": "mute"
+        },
+        {
+          "id": "c",
+          "label": "cute"
+        }
+      ],
+      "correctChoiceId": "c",
+      "missedConceptOnFail": "silent-e-u",
+      "rationale": "cute — the silent e makes the vowel say its name.",
+      "decodableWithin": "PH-silent-e"
+    },
+    {
+      "id": "ph-se-052",
+      "skillId": "PH-silent-e",
+      "itemType": "decode_choice",
+      "difficulty": 2,
+      "stem": "Tap the word you hear.",
+      "audioText": "mute",
+      "choices": [
+        {
+          "id": "a",
+          "label": "mute"
+        },
+        {
+          "id": "b",
+          "label": "cute"
+        },
+        {
+          "id": "c",
+          "label": "mule"
+        }
+      ],
+      "correctChoiceId": "a",
+      "missedConceptOnFail": "silent-e-u",
+      "rationale": "mute — the silent e makes the vowel say its name.",
+      "decodableWithin": "PH-silent-e"
+    },
+    {
+      "id": "ph-se-053",
+      "skillId": "PH-silent-e",
+      "itemType": "decode_choice",
+      "difficulty": 2,
+      "stem": "Tap the word you hear.",
+      "audioText": "dune",
+      "choices": [
+        {
+          "id": "a",
+          "label": "tune"
+        },
+        {
+          "id": "b",
+          "label": "dune"
+        },
+        {
+          "id": "c",
+          "label": "rude"
+        }
+      ],
+      "correctChoiceId": "b",
+      "missedConceptOnFail": "silent-e-u",
+      "rationale": "dune — the silent e makes the vowel say its name.",
+      "decodableWithin": "PH-silent-e"
+    },
+    {
+      "id": "ph-se-054",
+      "skillId": "PH-silent-e",
+      "itemType": "decode_choice",
+      "difficulty": 2,
+      "stem": "Tap the word you hear.",
+      "audioText": "tune",
+      "choices": [
+        {
+          "id": "a",
+          "label": "dune"
+        },
+        {
+          "id": "b",
+          "label": "rude"
+        },
+        {
+          "id": "c",
+          "label": "tune"
+        }
+      ],
+      "correctChoiceId": "c",
+      "missedConceptOnFail": "silent-e-u",
+      "rationale": "tune — the silent e makes the vowel say its name.",
+      "decodableWithin": "PH-silent-e"
+    },
+    {
+      "id": "ph-se-055",
+      "skillId": "PH-silent-e",
+      "itemType": "decode_choice",
+      "difficulty": 2,
+      "stem": "Tap the word you hear.",
+      "audioText": "rude",
+      "choices": [
+        {
+          "id": "a",
+          "label": "rude"
+        },
+        {
+          "id": "b",
+          "label": "rule"
+        },
+        {
+          "id": "c",
+          "label": "dude"
+        }
+      ],
+      "correctChoiceId": "a",
+      "missedConceptOnFail": "silent-e-u",
+      "rationale": "rude — the silent e makes the vowel say its name.",
+      "decodableWithin": "PH-silent-e"
+    },
+    {
+      "id": "ph-se-056",
+      "skillId": "PH-silent-e",
+      "itemType": "decode_choice",
+      "difficulty": 2,
+      "stem": "Tap the word you hear.",
+      "audioText": "rule",
+      "choices": [
+        {
+          "id": "a",
+          "label": "rude"
+        },
+        {
+          "id": "b",
+          "label": "rule"
+        },
+        {
+          "id": "c",
+          "label": "mule"
+        }
+      ],
+      "correctChoiceId": "b",
+      "missedConceptOnFail": "silent-e-u",
+      "rationale": "rule — the silent e makes the vowel say its name.",
+      "decodableWithin": "PH-silent-e"
+    },
+    {
+      "id": "ph-se-057",
+      "skillId": "PH-silent-e",
+      "itemType": "decode_choice",
+      "difficulty": 2,
+      "stem": "Tap the word you hear.",
+      "audioText": "mule",
+      "choices": [
+        {
+          "id": "a",
+          "label": "rule"
+        },
+        {
+          "id": "b",
+          "label": "mute"
+        },
+        {
+          "id": "c",
+          "label": "mule"
+        }
+      ],
+      "correctChoiceId": "c",
+      "missedConceptOnFail": "silent-e-u",
+      "rationale": "mule — the silent e makes the vowel say its name.",
+      "decodableWithin": "PH-silent-e"
+    },
+    {
+      "id": "ph-se-058",
+      "skillId": "PH-silent-e",
+      "itemType": "decode_choice",
+      "difficulty": 3,
+      "stem": "Tap the word you hear.",
+      "audioText": "fume",
+      "choices": [
+        {
+          "id": "a",
+          "label": "fume"
+        },
+        {
+          "id": "b",
+          "label": "fuse"
+        },
+        {
+          "id": "c",
+          "label": "cube"
+        }
+      ],
+      "correctChoiceId": "a",
+      "missedConceptOnFail": "silent-e-u",
+      "rationale": "fume — the silent e makes the vowel say its name.",
+      "decodableWithin": "PH-silent-e"
+    },
+    {
+      "id": "ph-se-059",
+      "skillId": "PH-silent-e",
+      "itemType": "decode_choice",
+      "difficulty": 3,
+      "stem": "Tap the word you hear.",
+      "audioText": "fuse",
+      "choices": [
+        {
+          "id": "a",
+          "label": "fume"
+        },
+        {
+          "id": "b",
+          "label": "fuse"
+        },
+        {
+          "id": "c",
+          "label": "use"
+        }
+      ],
+      "correctChoiceId": "b",
+      "missedConceptOnFail": "silent-e-u",
+      "rationale": "fuse — the silent e makes the vowel say its name.",
+      "decodableWithin": "PH-silent-e"
+    },
+    {
+      "id": "ph-se-060",
+      "skillId": "PH-silent-e",
+      "itemType": "decode_choice",
+      "difficulty": 2,
+      "stem": "Tap the word you hear.",
+      "audioText": "use",
+      "choices": [
+        {
+          "id": "a",
+          "label": "fuse"
+        },
+        {
+          "id": "b",
+          "label": "fume"
+        },
+        {
+          "id": "c",
+          "label": "use"
+        }
+      ],
+      "correctChoiceId": "c",
+      "missedConceptOnFail": "silent-e-u",
+      "rationale": "use — the silent e makes the vowel say its name.",
+      "decodableWithin": "PH-silent-e"
+    },
+    {
+      "id": "ph-se-061",
+      "skillId": "PH-silent-e",
+      "itemType": "decode_choice",
+      "difficulty": 3,
+      "stem": "Tap the word you hear.",
+      "audioText": "duke",
+      "choices": [
+        {
+          "id": "a",
+          "label": "duke"
+        },
+        {
+          "id": "b",
+          "label": "dude"
+        },
+        {
+          "id": "c",
+          "label": "cube"
+        }
+      ],
+      "correctChoiceId": "a",
+      "missedConceptOnFail": "silent-e-u",
+      "rationale": "duke — the silent e makes the vowel say its name.",
+      "decodableWithin": "PH-silent-e"
+    },
+    {
+      "id": "ph-se-062",
+      "skillId": "PH-silent-e",
+      "itemType": "decode_choice",
+      "difficulty": 2,
+      "stem": "Tap the word you hear.",
+      "audioText": "jute",
+      "choices": [
+        {
+          "id": "a",
+          "label": "cute"
+        },
+        {
+          "id": "b",
+          "label": "jute"
+        },
+        {
+          "id": "c",
+          "label": "mute"
+        }
+      ],
+      "correctChoiceId": "b",
+      "missedConceptOnFail": "silent-e-u",
+      "rationale": "jute — the silent e makes the vowel say its name.",
+      "decodableWithin": "PH-silent-e"
+    },
+    {
+      "id": "ph-se-063",
+      "skillId": "PH-silent-e",
+      "itemType": "decode_choice",
+      "difficulty": 3,
+      "stem": "Tap the word you hear.",
+      "audioText": "flute",
+      "choices": [
+        {
+          "id": "a",
+          "label": "brute"
+        },
+        {
+          "id": "b",
+          "label": "prune"
+        },
+        {
+          "id": "c",
+          "label": "flute"
+        }
+      ],
+      "correctChoiceId": "c",
+      "missedConceptOnFail": "silent-e-u",
+      "rationale": "flute — the silent e makes the vowel say its name.",
+      "decodableWithin": "PH-silent-e"
+    },
+    {
+      "id": "ph-se-064",
+      "skillId": "PH-silent-e",
+      "itemType": "decode_choice",
+      "difficulty": 3,
+      "stem": "Tap the word you hear.",
+      "audioText": "prune",
+      "choices": [
+        {
+          "id": "a",
+          "label": "prune"
+        },
+        {
+          "id": "b",
+          "label": "flute"
+        },
+        {
+          "id": "c",
+          "label": "brute"
+        }
+      ],
+      "correctChoiceId": "a",
+      "missedConceptOnFail": "silent-e-u",
+      "rationale": "prune — the silent e makes the vowel say its name.",
+      "decodableWithin": "PH-silent-e"
+    }
+  ],
+  "lessons": {
+    "PH-silent-e": {
+      "iCanStatement": "I can read words with a bossy silent e.",
+      "explanation": "A silent 'e' at the end is bossy: it jumps back over one consonant and makes the vowel say its NAME (long sound). cap → cape, kit → kite, hop → hope, cub → cube. You don't say the e itself.",
+      "workedExamples": [
+        {
+          "text": "cape",
+          "note": "cap (short a) + magic e → cape (long a, /ay/)"
+        },
+        {
+          "text": "hope",
+          "note": "hop (short o) + magic e → hope (long o)"
+        }
+      ]
+    }
+  }
+}
