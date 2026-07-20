@@ -187,6 +187,8 @@ iOS `speechSynthesis` with an **on-device en-GB voice** for words/sentences — 
 ### 6d. Item pools & variety (replaces infinite generation)
 Each skill ships a **pool of 20–40 hand-curated items per difficulty**. Runtime variety via: shuffle, distractor rotation (distractor sets stored per item, sampled), and never repeating an item within its pool cycle. Pool exhaustion recycles with reshuffle — acceptable given spaced repetition spreads exposure.
 
+> **Owner directive (2026-07-20) — MAX OUT EVERY PHONICS PACK.** For all phonics/spelling packs (T01–T12: CVC, digraphs, **blends**, FLOSS, silent-e, vowel teams, r-controlled, diphthongs, two-syllable, HF sets), author to the **quality ceiling** of that pattern (as many decodable, en-SG, child-safe words as the pattern cleanly yields — typically ~60 items/skill), not merely the §6d floor. Applies to every future pack **when building blends and beyond** — always go to max before requesting owner sign-off. Precedent: CVC 60, digraphs 60.
+
 **Multisensory (OG requirement):** pair sound + visual + motor (tile drag, typing) for every phonics/spelling pattern.
 
 ---
