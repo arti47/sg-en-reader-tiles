@@ -87,6 +87,14 @@ export interface SkillProgress {
   masteredAt?: number
 }
 export interface Certificate { skillId: string; iCanStatement: string; awardedAt: number }
+
+// ---- M2 analytics (§10, §11) ----
+// Per (child, ISO-week, skill) rollup — never rolled off; feeds the trend chart.
+export interface Aggregate { childId: string; week: string; skillId: string; items: number; correct: number; minutes: number }
+// Usage/fidelity mechanic (§14) — sessions toward a weekly target + streak.
+export interface Usage { childId: string; weeklySessionTarget: number; sessionsThisWeek: number; weekKey: string; streakWeeks: number; lastSessionTs: number }
+// Global settings (§11).
+export interface Settings { pin?: string; ttsRate: number; englishVariant: 'en-SG'; sessionLength: number }
 export interface Review {
   skillId: string
   due: number                    // next review timestamp

@@ -1,22 +1,27 @@
 import { useEffect, useState } from 'react'
 import type { Child } from './types'
 import { getChildren, addChild, removeChild, resetChild } from './store'
+import * as store from './store'
 import { ChildPicker } from './features/ChildPicker'
 import { AddStudent } from './features/AddStudent'
 import { Session } from './features/Session'
 import { Placement } from './features/Placement'
+import { ParentDashboard } from './features/ParentDashboard'
 import { initPWA } from './pwa'
 import * as srs from './lib/srs'
 import * as engine from './lib/engine'
+import * as readiness from './lib/readiness'
+import * as aggregate from './lib/aggregate'
 import { getSkill } from './lib/packs'
 
 if (import.meta.env.DEV) {
-  const w = window as unknown as { __srs?: typeof srs; __engine?: typeof engine; __getSkill?: typeof getSkill }
+  const w = window as unknown as Record<string, unknown>
   w.__srs = srs; w.__engine = engine; w.__getSkill = getSkill
+  w.__store = store; w.__readiness = readiness; w.__aggregate = aggregate
 }
 
-type View = 'pick' | 'add' | 'placement' | 'session'
-const APP_VERSION = '0.2.17'
+type View = 'pick' | 'add' | 'placement' | 'session' | 'dashboard'
+const APP_VERSION = '0.2.18'
 
 export default function App() {
   const [children, setChildren] = useState<Child[]>([])
@@ -54,11 +59,15 @@ export default function App() {
             onPick={(c) => { setActive(c); setView('session') }}
             onAdd={() => setView('add')}
             onRemove={removeStudent}
-            onReset={resetStudent} />
+            onReset={resetStudent}
+            onParent={() => setView('dashboard')} />
         )}
         {view === 'add' && <AddStudent onSave={save} onCancel={() => setView('pick')} />}
         {view === 'placement' && active && <Placement child={active} onDone={placementDone} />}
         {view === 'session' && active && <Session child={active} onExit={() => setView('pick')} />}
+        {view === 'dashboard' && (
+          <ParentDashboard children={children} onExit={() => setView('pick')} onReset={resetStudent} />
+        )}
       </main>
       <footer className="ver">v{APP_VERSION}</footer>
     </div>

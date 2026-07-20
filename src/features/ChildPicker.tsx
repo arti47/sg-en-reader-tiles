@@ -7,6 +7,7 @@ export function ChildPicker(props: {
   onAdd: () => void
   onRemove: (c: Child) => void
   onReset: (c: Child) => void
+  onParent: () => void
 }) {
   const [editing, setEditing] = useState(false)
   const [confirm, setConfirm] = useState<{ id: string; action: 'remove' | 'reset' } | null>(null)
@@ -66,6 +67,10 @@ export function ChildPicker(props: {
           </button>
         )}
       </div>
+
+      {!editing && (
+        <button className="link" onClick={props.onParent} aria-label="Open the parent area">🔒 Parent area</button>
+      )}
     </div>
   )
 }

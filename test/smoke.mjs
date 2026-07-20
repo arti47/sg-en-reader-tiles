@@ -59,10 +59,12 @@ try {
     const readDb = () => page.evaluate(() => new Promise(res => {
       const o = indexedDB.open('sg-reader')
       o.onsuccess = () => {
-        const t = o.result.transaction(['progress', 'certificates', 'reviews'], 'readonly'); const out = {}
+        const t = o.result.transaction(['progress', 'certificates', 'reviews', 'aggregates', 'usage'], 'readonly'); const out = {}
         t.objectStore('progress').getAll().onsuccess = e => out.progress = e.target.result
         t.objectStore('certificates').getAll().onsuccess = e => out.certs = e.target.result
         t.objectStore('reviews').getAll().onsuccess = e => out.reviews = e.target.result
+        t.objectStore('aggregates').getAll().onsuccess = e => out.aggregates = e.target.result
+        t.objectStore('usage').getAll().onsuccess = e => out.usage = e.target.result
         t.oncomplete = () => res(out)
       }
     }))
@@ -149,6 +151,45 @@ try {
     await mctx.close()
   }
 
+  // M2 parent dashboard: add a child, open Parent area, create a PIN, see a growth card. Export works.
+  {
+    const dctx = await browser.newContext({ viewport: { width: 390, height: 800 } })
+    const dp = await dctx.newPage(); dp.setDefaultTimeout(6000)
+    const dErrors = []
+    dp.on('console', m => { if (m.type() === 'error') dErrors.push(m.text()) })
+    dp.on('pageerror', e => dErrors.push('pageerror: ' + e.message))
+    await dp.goto(BASE, { waitUntil: 'networkidle' })
+    await dp.getByText('Add student').click()
+    await dp.locator('input').fill('Dash')
+    await dp.getByRole('button', { name: 'P2', exact: true }).click()
+    await dp.getByRole('button', { name: 'Save' }).click()
+    for (let i = 0; i < 30; i++) {
+      const kind = await dp.waitForFunction(() => {
+        if (/Who's reading\?/.test(document.body.innerText)) return 'pick'
+        return document.querySelector('button.tile:not([disabled])') ? 'item' : null
+      }, { timeout: 8000 }).then(h => h.jsonValue())
+      if (kind === 'pick') break
+      await dp.locator('button.tile:not([disabled])').first().click()
+    }
+    await dp.getByRole('button', { name: /parent area/i }).click()
+    await dp.waitForFunction(() => /Create a parent PIN/.test(document.body.innerText), { timeout: 6000 })
+    for (const d of ['1', '2', '3', '4']) await dp.getByRole('button', { name: d, exact: true }).click()
+    await dp.waitForFunction(() => /Re-enter to confirm/.test(document.body.innerText), { timeout: 6000 })
+    for (const d of ['1', '2', '3', '4']) await dp.getByRole('button', { name: d, exact: true }).click()
+    await dp.waitForFunction(() => /Parent area/.test(document.body.innerText) && /skills mastered/.test(document.body.innerText), { timeout: 6000 })
+      .catch(() => fail('dashboard: card did not render after PIN'))
+    if (!/Dash/.test(await dp.evaluate(() => document.body.innerText))) fail('dashboard: child card missing')
+    const dOverflow = await dp.evaluate(() => document.documentElement.scrollWidth > window.innerWidth + 1)
+    if (dOverflow) fail('dashboard: horizontal overflow at 390px')
+    const [dl] = await Promise.all([
+      dp.waitForEvent('download', { timeout: 5000 }).catch(() => null),
+      dp.getByRole('button', { name: 'Export backup' }).click()
+    ])
+    if (!dl) fail('dashboard: export backup did not download')
+    if (dErrors.length) fail('dashboard console errors: ' + dErrors.slice(0, 3))
+    await dctx.close()
+  }
+
   // SRS pure-function invariants (§7): +2/+7/+21d schedule, pass advances, fail demotes, due filter+cap.
   const srsPage = await browser.newPage()
   await srsPage.goto(BASE, { waitUntil: 'networkidle' })
@@ -217,9 +258,27 @@ try {
     if (gs(PH).prereqs.length !== 0) return 'T01 disabled → CVC prereq should be stripped'
     return 'ok'
   })
+
+  // M2 invariants (§10, §11): readiness status + non-destructive export/import round-trip.
+  const m2Check = await srsPage.evaluate(async () => {
+    const rd = window.__readiness, store = window.__store
+    if (!rd || !store) return '__readiness/__store missing'
+    if (rd.computeReadiness([], new Set(), [], 10).status !== 'On-Target') return 'readiness: empty → On-Target'
+    const wrong = Array.from({ length: 6 }, (_, i) => ({ id: 'w' + i, childId: 'c', skillId: 'PH-cvc-short-vowels', itemId: 'i', correct: false, difficulty: 1, latencyMs: 1, ts: i }))
+    if (rd.computeReadiness(wrong, new Set(), [], 10).status !== 'High-Risk') return 'readiness: 6 wrong → High-Risk'
+    const before = await store.exportAll()
+    if (before.schemaVersion !== 4) return 'export schemaVersion should be 4'
+    await store.importAll(before)
+    const after = await store.exportAll()
+    const count = d => Object.fromEntries(Object.entries(d.stores).map(([k, v]) => [k, v.length]))
+    if (JSON.stringify(count(before)) !== JSON.stringify(count(after))) return 'export/import round-trip changed row counts'
+    return 'ok'
+  })
+
   await browser.close()
   if (srsCheck !== 'ok') fail('SRS invariant: ' + srsCheck)
   if (engineCheck !== 'ok') fail('engine invariant: ' + engineCheck)
+  if (m2Check !== 'ok') fail('M2 invariant: ' + m2Check)
 
   // Assertions
   for (const r of results) {
@@ -240,11 +299,17 @@ try {
   // Mastering a skill in-session schedules its first spaced review (+2d, stage 0).
   const sched = (good.db.reviews || []).find(r => r.stage === 0 && r.status === 'scheduled')
   if (!sched) fail('SRS: mastering a skill should schedule a review')
+  // M2: sessions write weekly aggregates + a usage/streak row.
+  if (!(good.db.aggregates || []).length) fail('M2: session should write weekly aggregates')
+  const agg0 = good.db.aggregates[0]
+  if (!(agg0.items >= 1 && 'correct' in agg0 && 'minutes' in agg0 && agg0.week)) fail('M2: aggregate row shape')
+  const usage0 = (good.db.usage || [])[0]
+  if (!(usage0 && usage0.sessionsThisWeek >= 1 && usage0.weeklySessionTarget === 4)) fail('M2: usage/session-count row')
   const bad = results.find(r => r.WRONG)
   if (bad.lessons < 1) fail('struggle path: expected a lesson branch')
   if (bad.db.progress.some(p => p.skillId === 'SP-cvc-short-vowels')) fail('dual gate: encode must stay locked when decode <70%')
   if (bad.db.certs.length) fail('struggle path: no certificate should be awarded')
 
-  console.log('PASS — placement→session, mastery+certs+review-scheduled, struggle→lesson, dual-gate lockout, SRS math, remove-student, zero errors, no overflow')
+  console.log('PASS — placement→session, mastery+certs+review-scheduled, struggle→lesson, dual-gate lockout, SRS math, remove-student, M2 dashboard (PIN+readiness+aggregates+usage+export/import), zero errors, no overflow')
   stop(); process.exit(0)
 } catch (e) { fail((e.stack || e.message || String(e)).split('\n').slice(0, 4).join(' | ')) }

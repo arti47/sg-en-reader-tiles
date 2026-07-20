@@ -1,10 +1,11 @@
 import { useEffect, useRef, useState } from 'react'
 import type { Child, PackItem, Attempt, SkillProgress, Difficulty, SkillDef, Certificate, Review } from '../types'
 import type { ScoreResult } from '../lib/scoring'
-import { addAttempt, getAttempts, getProgress, putProgress, putCertificate, getReviews, putReview } from '../store'
+import { addAttempt, getAttempts, getProgress, putProgress, putCertificate, getReviews, putReview, bumpAggregate, getUsage, putUsage } from '../store'
 import { SKILLS, getSkill, getLesson, pickItem } from '../lib/packs'
 import { rollingAccuracy, itemsAnswered, nextDifficulty, isMastered, patternMastered, struggling, eligibleSkills, patternDecodeSkill, interleavedReviewSkill } from '../lib/engine'
 import { scheduleFirst, onReviewPass, onReviewFail, dueReviews } from '../lib/srs'
+import { isoWeek, isConsecutiveWeek } from '../lib/aggregate'
 import { McqItem } from './items/McqItem'
 import { TileItem } from './items/TileItem'
 import { LessonView } from './LessonView'
@@ -40,12 +41,24 @@ export function Session(props: { child: Child; onExit: () => void }) {
       }
       reviewsRef.current = await getReviews(props.child.id)
       dueQueueRef.current = dueReviews(reviewsRef.current, Date.now()).map(r => r.skillId)
+      await countSession()
       advance(true)
     })()
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
   const diffFor = (id: string): Difficulty => diffRef.current.get(id) ?? 1
+
+  // Fidelity mechanic (§14): count this session toward the weekly target; roll the streak
+  // when a new ISO week starts (consecutive week → +1, gap → reset to 1).
+  async function countSession() {
+    const now = Date.now(); const wk = isoWeek(now)
+    const u = await getUsage(props.child.id)
+    if (!u) { await putUsage({ childId: props.child.id, weeklySessionTarget: 4, sessionsThisWeek: 1, weekKey: wk, streakWeeks: 1, lastSessionTs: now }); return }
+    if (u.weekKey === wk) { await putUsage({ ...u, sessionsThisWeek: u.sessionsThisWeek + 1, lastSessionTs: now }); return }
+    const streak = isConsecutiveWeek(u.weekKey, wk) ? u.streakWeeks + 1 : 1
+    await putUsage({ ...u, weekKey: wk, sessionsThisWeek: 1, streakWeeks: streak, lastSessionTs: now })
+  }
 
   function loadItem(skill: SkillDef, forceDiff?: Difficulty) {
     const it = pickItem(skill.id, forceDiff ?? diffFor(skill.id), seenRef.current)
@@ -104,6 +117,8 @@ export function Session(props: { child: Child; onExit: () => void }) {
       difficulty: nd, lastSeen: Date.now(), masteredAt: nowMastered ? Date.now() : undefined
     }
     await putProgress(props.child.id, sp)
+    // Weekly rollup for the trend chart (§11): items/correct/minutes per (child, week, skill).
+    await bumpAggregate(props.child.id, skill.id, isoWeek(a.ts), r.correct, a.latencyMs / 60000)
 
     countRef.current += 1; setCount(countRef.current)
     const now = Date.now()

@@ -126,4 +126,41 @@ h1 { font-size: 1.8rem; font-weight: 700; margin: 8px 0 0; }
 }
 .example-word { font-size: 1.4rem; font-weight: 700; }
 
+.btn.danger { background: var(--no); color: var(--paper); }
+
+/* PIN pad (§14) */
+.pinpad { gap: 18px; }
+.pin-dots { display: flex; gap: 14px; }
+.pin-dot { width: 18px; height: 18px; border-radius: 50%; border: 3px solid var(--teal-soft); }
+.pin-dot.on { background: var(--teal); border-color: var(--teal); }
+.keypad { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; width: 100%; max-width: 320px; }
+.key {
+  min-height: 64px; font: inherit; font-size: 1.5rem; font-weight: 700;
+  background: #fff; color: var(--ink); border: 3px solid var(--teal-soft);
+  border-radius: 14px; cursor: pointer;
+}
+.key.ghost { background: var(--teal-soft); font-size: 1.1rem; }
+.key:focus-visible { outline: 3px solid var(--amber); outline-offset: 2px; }
+
+/* Parent dashboard (§10, §14) */
+.dash-card { background: #fff; border: 3px solid var(--teal-soft); border-radius: var(--radius); padding: 16px; display: flex; flex-direction: column; gap: 10px; }
+.status-dot { font-weight: 700; font-size: .95rem; white-space: nowrap; }
+.status-dot.green { color: var(--ok); }
+.status-dot.amber { color: var(--amber); }
+.status-dot.red { color: var(--no); }
+.stat-row { display: flex; gap: 10px; }
+.stat { flex: 1; background: var(--teal-soft); border-radius: 12px; padding: 10px; text-align: center; display: flex; flex-direction: column; }
+.stat b { font-size: 1.4rem; }
+.stat span { font-size: .78rem; color: #4c5f5c; }
+.chart { display: flex; align-items: flex-end; gap: 8px; height: 88px; padding-top: 4px; overflow-x: auto; }
+.bar-wrap { display: flex; flex-direction: column; align-items: center; gap: 4px; min-width: 28px; }
+.bar { width: 22px; background: var(--teal); border-radius: 6px 6px 0 0; }
+.bar-lbl { font-size: .65rem; color: #93a29f; }
+.action { background: var(--ok-soft); border-radius: 12px; padding: 10px 12px; }
+.chips { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 6px; }
+.chip { background: var(--no-soft); color: #7a3d16; border-radius: 999px; padding: 3px 10px; font-size: .8rem; font-weight: 600; }
+.certs-list ul { margin: 6px 0 0; padding-left: 18px; }
+.certs-list li { font-size: .9rem; }
+.note.tiny { font-size: .78rem; color: #93a29f; }
+
 @media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
