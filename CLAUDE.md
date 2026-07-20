@@ -433,6 +433,8 @@ type PackItem = {
 
 ## 18. Engineering Process (adapted from proven reference template) — LOCKED
 
+**18.0 Owner working conventions (2026-07-20) — LOCKED.** (1) Keep replies **terse, technical, non-verbose** — conserve tokens. (2) **Give suggestions** where useful. (3) **Ask one relevant question at a time** (not batched) unless told to stop. (4) **Always merge to `main`** (feature-branch dev is fine, but every change lands on `main` = deploy). (5) **Always update this CLAUDE.md in the same change** (per §18.1).
+
 **18.1 Living spec.** This CLAUDE.md is canonical. **Every code change updates it in the same change** — features, data model, file/module tables, roadmap checkboxes, ledger ticks, changelog. A code change with a stale CLAUDE.md is incomplete. All work merges to `main` (= deploy).
 
 **18.2 Changelog table.** Every change appends a dated row: what · why · root cause (for fixes) · verification performed · CACHE_VERSION.
