@@ -71,6 +71,17 @@ export function eligibleSkills(attempts: Attempt[], pre?: Set<string>): SkillDef
   })
 }
 
+// Cumulative interleaving (§7, §17D): every Nth session item is a quick review of an
+// already-mastered skill. ~18% of a 16-item session. Returns the skill to review, else
+// undefined. Rotates through the mastered set so reviews spread across skills.
+export const INTERLEAVE_EVERY = 5
+export function interleavedReviewSkill(attempts: Attempt[], count: number, pre?: Set<string>): SkillDef | undefined {
+  if (count <= 0 || count % INTERLEAVE_EVERY !== 0) return undefined
+  const mastered = SKILLS.filter(s => isMastered(attempts, s, pre))
+  if (!mastered.length) return undefined
+  return mastered[Math.floor(count / INTERLEAVE_EVERY) % mastered.length]
+}
+
 // Struggle: accuracy < 0.5 over ≥6 items, or 3 same-concept misses.
 export function struggling(attempts: Attempt[], skill: SkillDef): boolean {
   const s = bySkill(attempts, skill.id)

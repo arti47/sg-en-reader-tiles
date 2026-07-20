@@ -3,7 +3,7 @@ import type { Child, PackItem, Attempt, SkillProgress, Difficulty, SkillDef, Cer
 import type { ScoreResult } from '../lib/scoring'
 import { addAttempt, getAttempts, getProgress, putProgress, putCertificate, getReviews, putReview } from '../store'
 import { SKILLS, getSkill, getLesson, pickItem } from '../lib/packs'
-import { rollingAccuracy, itemsAnswered, nextDifficulty, skillMastered, isMastered, patternMastered, struggling, eligibleSkills, patternDecodeSkill } from '../lib/engine'
+import { rollingAccuracy, itemsAnswered, nextDifficulty, isMastered, patternMastered, struggling, eligibleSkills, patternDecodeSkill, interleavedReviewSkill } from '../lib/engine'
 import { scheduleFirst, onReviewPass, onReviewFail, dueReviews } from '../lib/srs'
 import { McqItem } from './items/McqItem'
 import { TileItem } from './items/TileItem'
@@ -65,6 +65,9 @@ export function Session(props: { child: Child; onExit: () => void }) {
       if (rs) { reviewingRef.current = dueSkillId; loadItem(rs, 1); return }
     }
     reviewingRef.current = null
+    // Cumulative interleave (§7): every Nth item, slip in a quick review of a mastered skill.
+    const review = interleavedReviewSkill(attemptsRef.current, countRef.current, masteredRef.current)
+    if (review) { loadItem(review, 1); return } // normal attempt (not an SRS review)
     const elig = eligibleSkills(attemptsRef.current, masteredRef.current)
     if (!elig.length) { setPhase('summary'); return }
     const skill = elig[countRef.current % elig.length]
@@ -91,7 +94,9 @@ export function Session(props: { child: Child; onExit: () => void }) {
 
     const nd = nextDifficulty(attemptsRef.current, skill.id, diffFor(skill.id))
     diffRef.current.set(skill.id, nd)
-    const nowMastered = skillMastered(attemptsRef.current, skill)
+    // Use placement-aware mastery so an interleaved review of a placement-mastered skill
+    // (which has few/no attempts) never downgrades its persisted 'mastered' status (§7 A1).
+    const nowMastered = isMastered(attemptsRef.current, skill, masteredRef.current)
     const sp: SkillProgress = {
       skillId: skill.id, status: nowMastered ? 'mastered' : 'active',
       itemsAnswered: itemsAnswered(attemptsRef.current, skill.id),

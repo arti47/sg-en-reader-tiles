@@ -56,47 +56,7 @@ try {
       const pick = WRONG ? it.choices.find(c => c.id !== it.correctChoiceId) : it.choices.find(c => c.id === it.correctChoiceId)
       await page.locator('button.tile', { hasText: lbl(pick.label) }).first().click()
     }
-    await page.getByRole('button', { name: /Test/ }).click()
-    for (let step = 0; step < 90; step++) {
-      // Wait for a settled screen: an end/lesson/cert screen, OR a FRESH interactive
-      // item (an enabled tile present and no "Continue" yet). This rules out acting on
-      // a stale/answered screen while window.__item has already advanced.
-      const kind = await page.waitForFunction(() => {
-        const t = document.body.innerText
-        if (/Great session/.test(t)) return 'summary'
-        if (/Certificate earned!/.test(t)) return 'cert'
-        if (/Let's learn this/.test(t)) return 'lesson'
-        const hasContinue = [...document.querySelectorAll('button')].some(b => b.textContent.trim() === 'Continue')
-        const freshTile = document.querySelector('button.tile:not([disabled])')
-        return (freshTile && !hasContinue) ? 'item' : null
-      }, { timeout: 8000 }).then(h => h.jsonValue()).catch(async () => {
-        const body = (await page.evaluate(() => document.body.innerText)).replace(/\n+/g, ' | ')
-        const state = await page.evaluate(() => ({
-          continue: [...document.querySelectorAll('button')].some(b => b.textContent.trim() === 'Continue'),
-          tiles: document.querySelectorAll('button.tile').length,
-          freshTiles: document.querySelectorAll('button.tile:not([disabled])').length
-        }))
-        fail(`stall @ WRONG=${WRONG} step=${step}: body="${body.slice(0, 90)}" ${JSON.stringify(state)} errors=${JSON.stringify(errors)}`)
-      })
-
-      if (kind === 'summary') break
-      if (kind === 'cert') { await page.getByRole('button', { name: 'Keep going' }).click(); continue }
-      if (kind === 'lesson') { lessons++; await page.getByRole('button', { name: "Let's try" }).click(); continue }
-
-      const item = await page.evaluate(() => window.__item || null)
-      if (!firstSkill) firstSkill = item.skillId
-      if (item.graphemes) {
-        for (const g of item.graphemes) await page.locator('button.tile', { hasText: lbl(g) }).first().click()
-        await page.getByRole('button', { name: 'Check' }).click()
-      } else {
-        const pick = (WRONG && item.itemType === 'decode_choice')
-          ? item.choices.find(c => c.id !== item.correctChoiceId).id : item.correctChoiceId
-        const label = item.choices.find(c => c.id === pick).label
-        await page.locator('button.tile', { hasText: lbl(label) }).first().click()
-      }
-      await page.getByRole('button', { name: 'Continue' }).click()
-    }
-    const db = await page.evaluate(() => new Promise(res => {
+    const readDb = () => page.evaluate(() => new Promise(res => {
       const o = indexedDB.open('sg-reader')
       o.onsuccess = () => {
         const t = o.result.transaction(['progress', 'certificates', 'reviews'], 'readonly'); const out = {}
@@ -106,6 +66,60 @@ try {
         t.oncomplete = () => res(out)
       }
     }))
+    // With ~18% cumulative interleave (§7 A5), a full dual pattern can span more than one
+    // 16-item session, so the mastery path re-enters sessions until a certificate lands.
+    const SESSIONS = WRONG ? 1 : 6
+    let db = null
+    for (let s = 0; s < SESSIONS; s++) {
+      await page.getByRole('button', { name: /Test/ }).click()
+      for (let step = 0; step < 90; step++) {
+        // Wait for a settled screen: an end/lesson/cert screen, OR a FRESH interactive
+        // item (an enabled tile present and no "Continue" yet). This rules out acting on
+        // a stale/answered screen while window.__item has already advanced.
+        const kind = await page.waitForFunction(() => {
+          const t = document.body.innerText
+          if (/Great session/.test(t)) return 'summary'
+          if (/Certificate earned!/.test(t)) return 'cert'
+          if (/Let's learn this/.test(t)) return 'lesson'
+          const hasContinue = [...document.querySelectorAll('button')].some(b => b.textContent.trim() === 'Continue')
+          const freshTile = document.querySelector('button.tile:not([disabled])')
+          return (freshTile && !hasContinue) ? 'item' : null
+        }, { timeout: 8000 }).then(h => h.jsonValue()).catch(async () => {
+          const body = (await page.evaluate(() => document.body.innerText)).replace(/\n+/g, ' | ')
+          const state = await page.evaluate(() => ({
+            continue: [...document.querySelectorAll('button')].some(b => b.textContent.trim() === 'Continue'),
+            tiles: document.querySelectorAll('button.tile').length,
+            freshTiles: document.querySelectorAll('button.tile:not([disabled])').length
+          }))
+          fail(`stall @ WRONG=${WRONG} session=${s} step=${step}: body="${body.slice(0, 90)}" ${JSON.stringify(state)} errors=${JSON.stringify(errors)}`)
+        })
+
+        if (kind === 'summary') break
+        if (kind === 'cert') { await page.getByRole('button', { name: 'Keep going' }).click(); continue }
+        if (kind === 'lesson') { lessons++; await page.getByRole('button', { name: "Let's try" }).click(); continue }
+
+        const item = await page.evaluate(() => window.__item || null)
+        if (!firstSkill) firstSkill = item.skillId
+        if (item.graphemes) {
+          // Click an ENABLED matching tile each time (words with a repeated grapheme, e.g. p·o·p,
+          // reuse the same label — .first() alone would re-target the now-disabled first tile).
+          for (const g of item.graphemes) await page.locator('button.tile:not([disabled])', { hasText: lbl(g) }).first().click()
+          await page.getByRole('button', { name: 'Check' }).click()
+        } else {
+          const pick = (WRONG && item.itemType === 'decode_choice')
+            ? item.choices.find(c => c.id !== item.correctChoiceId).id : item.correctChoiceId
+          const label = item.choices.find(c => c.id === pick).label
+          await page.locator('button.tile', { hasText: lbl(label) }).first().click()
+        }
+        await page.getByRole('button', { name: 'Continue' }).click()
+      }
+      db = await readDb()
+      if (!WRONG && db.certs.length >= 1) break
+      if (s < SESSIONS - 1) {
+        await page.getByRole('button', { name: 'Done' }).click()
+        await page.waitForFunction(() => /Who's reading\?/.test(document.body.innerText), { timeout: 6000 })
+      }
+    }
     results.push({ WRONG, errors, overflow, lessons, db, firstSkill })
     await ctx.close()
   }
@@ -189,6 +203,14 @@ try {
     if (e.nextDifficulty(arr(PH, 4, true), PH, 2) !== 2) return 'A3 streak4 → hold'
     if (e.nextDifficulty(arr(PH, 6, true), PH, 2) !== 3) return 'A3 streak6 → +1'
     if (e.nextDifficulty([...arr(PH, 2, true), mk(PH, false), mk(PH, false)], PH, 3) !== 2) return 'A3 two wrong → −1'
+    // A5 — every 5th item interleaves a mastered-skill review (~18% of 16); none off-cadence or when nothing mastered.
+    if (e.interleavedReviewSkill([], 0, new Set([PH]))) return 'A5 no interleave at count 0'
+    if (e.interleavedReviewSkill([], 3, new Set([PH]))) return 'A5 no interleave off-cadence'
+    const rev = e.interleavedReviewSkill([], 5, new Set([PH]))
+    if (!rev || rev.id !== PH) return 'A5 interleave should pick a mastered skill'
+    if (e.interleavedReviewSkill([], 5, new Set())) return 'A5 none when nothing mastered'
+    let fires = 0; for (let n = 1; n <= 16; n++) if (e.interleavedReviewSkill([], n, new Set([PH]))) fires++
+    if (fires !== 3) return 'A5 cadence should fire 3× per 16 items'
     return 'ok'
   })
   await browser.close()
@@ -221,4 +243,4 @@ try {
 
   console.log('PASS — placement→session, mastery+certs+review-scheduled, struggle→lesson, dual-gate lockout, SRS math, remove-student, zero errors, no overflow')
   stop(); process.exit(0)
-} catch (e) { fail(e.message || String(e)) }
+} catch (e) { fail((e.stack || e.message || String(e)).split('\n').slice(0, 4).join(' | ')) }
