@@ -1,4 +1,4 @@
-# sg-en-reader-tiles
+# sg-en-reader-tiles 
 
 Offline-first English reading & spelling tutor for Singapore Primary (P1–P6), built for learners with decoding/dyslexia difficulties. Fully offline, no accounts, no AI at runtime. Installable to the iPad/iPhone home screen. Full spec: **CLAUDE.md**.
 
