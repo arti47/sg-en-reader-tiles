@@ -4,10 +4,11 @@ import { getChildren, addChild } from './store'
 import { ChildPicker } from './features/ChildPicker'
 import { AddStudent } from './features/AddStudent'
 import { Session } from './features/Session'
+import { Placement } from './features/Placement'
 import { initPWA } from './pwa'
 
-type View = 'pick' | 'add' | 'session'
-const APP_VERSION = '0.2.11'
+type View = 'pick' | 'add' | 'placement' | 'session'
+const APP_VERSION = '0.2.12'
 
 export default function App() {
   const [children, setChildren] = useState<Child[]>([])
@@ -19,7 +20,10 @@ export default function App() {
   useEffect(() => { initPWA((r) => setReload(() => r)) }, [])
 
   async function save(c: Child) {
-    await addChild(c); setChildren(await getChildren()); setView('pick')
+    await addChild(c); setActive(c); setView('placement') // run the warm-up placement next
+  }
+  async function placementDone() {
+    setChildren(await getChildren()); setView('pick')
   }
 
   return (
@@ -37,6 +41,7 @@ export default function App() {
             onAdd={() => setView('add')} />
         )}
         {view === 'add' && <AddStudent onSave={save} onCancel={() => setView('pick')} />}
+        {view === 'placement' && active && <Placement child={active} onDone={placementDone} />}
         {view === 'session' && active && <Session child={active} onExit={() => setView('pick')} />}
       </main>
       <footer className="ver">v{APP_VERSION}</footer>

@@ -94,6 +94,10 @@ h1 { font-size: 1.8rem; font-weight: 700; margin: 8px 0 0; }
 .feedback.ok { background: var(--ok-soft); color: #1c5a39; }
 .feedback.no { background: var(--no-soft); color: #7a3d16; }
 
+.dots { display: flex; flex-wrap: wrap; gap: 8px; }
+.dot { width: 14px; height: 14px; border-radius: 50%; background: var(--teal-soft); }
+.dot.on { background: var(--teal); }
+
 .cert { font-size: 4rem; }
 .toast {
   display: flex; align-items: center; gap: 12px; justify-content: center;

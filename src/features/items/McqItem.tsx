@@ -4,7 +4,8 @@ import { scoreMcq, type ScoreResult } from '../../lib/scoring'
 import { speak } from '../../lib/audio'
 
 // grammar_mcq / decode_choice: tap a choice. decode_choice speaks the target word.
-export function McqItem(props: { item: PackItem; onAnswer: (r: ScoreResult, choiceId: string) => void }) {
+// `quiet` suppresses right/wrong styling + feedback (used by the placement warm-up).
+export function McqItem(props: { item: PackItem; quiet?: boolean; onAnswer: (r: ScoreResult, choiceId: string) => void }) {
   const { item } = props
   const [picked, setPicked] = useState<string | null>(null)
   const isAudio = item.itemType === 'decode_choice'
@@ -29,7 +30,7 @@ export function McqItem(props: { item: PackItem; onAnswer: (r: ScoreResult, choi
       <div className="tile-grid">
         {(item.choices ?? []).map(c => {
           let cls = 'tile'
-          if (picked) {
+          if (picked && !props.quiet) {
             if (c.id === item.correctChoiceId) cls += ' correct'
             else if (c.id === picked) cls += ' wrong'
           }
@@ -38,7 +39,7 @@ export function McqItem(props: { item: PackItem; onAnswer: (r: ScoreResult, choi
           )
         })}
       </div>
-      {result && (
+      {result && !props.quiet && (
         <div className={'feedback ' + (result.correct ? 'ok' : 'no')} aria-live="polite">
           {result.correct ? 'Yes! ' : 'Not yet. '}{item.rationale}
         </div>

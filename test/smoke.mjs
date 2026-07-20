@@ -37,11 +37,25 @@ try {
     await page.locator('input').fill('Test')
     await page.getByRole('button', { name: 'P1', exact: true }).click()
     await page.getByRole('button', { name: 'Save' }).click()
-    await page.getByRole('button', { name: /Test/ }).click()
 
     const overflow = await page.evaluate(() => document.documentElement.scrollWidth > window.innerWidth + 1)
     let lessons = 0
     const lbl = g => new RegExp('^' + g.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + '$')
+
+    // Warm-up placement runs first (quiet decode items, auto-advance on tap). Drive it
+    // until the child picker appears. Gate on a fresh screen (enabled tile) so
+    // window.__item is never read ahead of the rendered item (same race as the session).
+    for (let step = 0; step < 30; step++) {
+      const kind = await page.waitForFunction(() => {
+        if (/Who's reading\?/.test(document.body.innerText)) return 'pick'
+        return document.querySelector('button.tile:not([disabled])') ? 'item' : null
+      }, { timeout: 8000 }).then(h => h.jsonValue())
+      if (kind === 'pick') break
+      const it = await page.evaluate(() => window.__item || null)
+      const pick = WRONG ? it.choices.find(c => c.id !== it.correctChoiceId) : it.choices.find(c => c.id === it.correctChoiceId)
+      await page.locator('button.tile', { hasText: lbl(pick.label) }).first().click()
+    }
+    await page.getByRole('button', { name: /Test/ }).click()
     for (let step = 0; step < 90; step++) {
       // Wait for a settled screen: an end/lesson/cert screen, OR a FRESH interactive
       // item (an enabled tile present and no "Continue" yet). This rules out acting on
@@ -100,12 +114,12 @@ try {
     if (r.overflow) fail('horizontal overflow at 390px')
   }
   const good = results.find(r => !r.WRONG)
-  // With >2 skills in scope, later skills unlock as CVC masters, so a fixed-length
-  // session won't master every skill. Assert the entry skill masters and certifies.
+  // Answering placement correctly places the child above CVC (CVC marked mastered by
+  // placement), then the session masters the entry skill and certifies. Assert ≥1
+  // certificate and that placement marked CVC decode mastered.
   if (good.db.certs.length < 1) fail(`expected ≥1 certificate on mastery path, got ${good.db.certs.length}`)
   const cvc = good.db.progress.find(p => p.skillId === 'PH-cvc-short-vowels')
-  if (!cvc || cvc.status !== 'mastered') fail('mastery path: CVC decode should reach mastered')
-  if (!good.db.certs.some(c => c.skillId === 'PH-cvc-short-vowels')) fail('mastery path: CVC decode certificate should be awarded')
+  if (!cvc || cvc.status !== 'mastered') fail('placement: CVC decode should be marked mastered')
   const bad = results.find(r => r.WRONG)
   if (bad.lessons < 1) fail('struggle path: expected a lesson branch')
   if (bad.db.progress.some(p => p.skillId === 'SP-cvc-short-vowels')) fail('dual gate: encode must stay locked when decode <70%')
