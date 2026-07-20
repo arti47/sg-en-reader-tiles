@@ -135,6 +135,28 @@
           "itemPool": "spelling-L07-vowel-teams",
           "encodePairId": "PH-vowel-teams",
           "mastery": { "window": 12, "accuracyToPass": 0.85, "minItems": 8 }
+        },
+        {
+          "id": "PH-r-controlled",
+          "strand": "phonics",
+          "objective": "Decode r-controlled vowels: ar, or, er, ir, ur (bossy r).",
+          "iCanStatement": "I can read words with a bossy r (ar, or, er, ir, ur).",
+          "prereqs": ["PH-vowel-teams"],
+          "itemType": "decode_choice",
+          "itemPool": "phonics-L08-r-controlled",
+          "encodePairId": "SP-r-controlled",
+          "mastery": { "window": 12, "accuracyToPass": 0.85, "minItems": 8 }
+        },
+        {
+          "id": "SP-r-controlled",
+          "strand": "spelling",
+          "objective": "Spell r-controlled vowel words (ar, or, er, ir, ur).",
+          "iCanStatement": "I can spell words with a bossy r.",
+          "prereqs": ["PH-r-controlled"],
+          "itemType": "build_word",
+          "itemPool": "spelling-L08-r-controlled",
+          "encodePairId": "PH-r-controlled",
+          "mastery": { "window": 12, "accuracyToPass": 0.85, "minItems": 8 }
         }
       ]
     }
