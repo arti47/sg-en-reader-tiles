@@ -1,0 +1,1639 @@
+{
+  "packId": "spelling-L10-two-syllable",
+  "strand": "spelling",
+  "skillIds": [
+    "SP-two-syllable"
+  ],
+  "version": 1,
+  "items": [
+    {
+      "id": "sp-2s-001",
+      "skillId": "SP-two-syllable",
+      "itemType": "build_word",
+      "difficulty": 1,
+      "stem": "Build the word you hear.",
+      "displayWord": "sunset",
+      "audioText": "sunset",
+      "graphemes": [
+        "s",
+        "u",
+        "n",
+        "s",
+        "e",
+        "t"
+      ],
+      "distractorGraphemes": [
+        "bb",
+        "tt"
+      ],
+      "missedConceptOnFail": "syllable-compound",
+      "rationale": "sunset = s-u-n-s-e-t.",
+      "decodableWithin": "SP-two-syllable"
+    },
+    {
+      "id": "sp-2s-002",
+      "skillId": "SP-two-syllable",
+      "itemType": "build_word",
+      "difficulty": 1,
+      "stem": "Build the word you hear.",
+      "displayWord": "cobweb",
+      "audioText": "cobweb",
+      "graphemes": [
+        "c",
+        "o",
+        "b",
+        "w",
+        "e",
+        "b"
+      ],
+      "distractorGraphemes": [
+        "bb",
+        "tt"
+      ],
+      "missedConceptOnFail": "syllable-compound",
+      "rationale": "cobweb = c-o-b-w-e-b.",
+      "decodableWithin": "SP-two-syllable"
+    },
+    {
+      "id": "sp-2s-003",
+      "skillId": "SP-two-syllable",
+      "itemType": "build_word",
+      "difficulty": 2,
+      "stem": "Build the word you hear.",
+      "displayWord": "catfish",
+      "audioText": "catfish",
+      "graphemes": [
+        "c",
+        "a",
+        "t",
+        "f",
+        "i",
+        "sh"
+      ],
+      "distractorGraphemes": [
+        "bb",
+        "tt",
+        "nn"
+      ],
+      "missedConceptOnFail": "syllable-compound",
+      "rationale": "catfish = c-a-t-f-i-sh.",
+      "decodableWithin": "SP-two-syllable"
+    },
+    {
+      "id": "sp-2s-004",
+      "skillId": "SP-two-syllable",
+      "itemType": "build_word",
+      "difficulty": 1,
+      "stem": "Build the word you hear.",
+      "displayWord": "laptop",
+      "audioText": "laptop",
+      "graphemes": [
+        "l",
+        "a",
+        "p",
+        "t",
+        "o",
+        "p"
+      ],
+      "distractorGraphemes": [
+        "bb",
+        "tt"
+      ],
+      "missedConceptOnFail": "syllable-compound",
+      "rationale": "laptop = l-a-p-t-o-p.",
+      "decodableWithin": "SP-two-syllable"
+    },
+    {
+      "id": "sp-2s-005",
+      "skillId": "SP-two-syllable",
+      "itemType": "build_word",
+      "difficulty": 2,
+      "stem": "Build the word you hear.",
+      "displayWord": "hilltop",
+      "audioText": "hilltop",
+      "graphemes": [
+        "h",
+        "i",
+        "ll",
+        "t",
+        "o",
+        "p"
+      ],
+      "distractorGraphemes": [
+        "bb",
+        "tt",
+        "nn"
+      ],
+      "missedConceptOnFail": "syllable-compound",
+      "rationale": "hilltop = h-i-ll-t-o-p.",
+      "decodableWithin": "SP-two-syllable"
+    },
+    {
+      "id": "sp-2s-006",
+      "skillId": "SP-two-syllable",
+      "itemType": "build_word",
+      "difficulty": 2,
+      "stem": "Build the word you hear.",
+      "displayWord": "bathtub",
+      "audioText": "bathtub",
+      "graphemes": [
+        "b",
+        "a",
+        "th",
+        "t",
+        "u",
+        "b"
+      ],
+      "distractorGraphemes": [
+        "bb",
+        "tt",
+        "nn"
+      ],
+      "missedConceptOnFail": "syllable-compound",
+      "rationale": "bathtub = b-a-th-t-u-b.",
+      "decodableWithin": "SP-two-syllable"
+    },
+    {
+      "id": "sp-2s-007",
+      "skillId": "SP-two-syllable",
+      "itemType": "build_word",
+      "difficulty": 2,
+      "stem": "Build the word you hear.",
+      "displayWord": "sandbox",
+      "audioText": "sandbox",
+      "graphemes": [
+        "s",
+        "a",
+        "n",
+        "d",
+        "b",
+        "o",
+        "x"
+      ],
+      "distractorGraphemes": [
+        "bb",
+        "tt",
+        "nn"
+      ],
+      "missedConceptOnFail": "syllable-compound",
+      "rationale": "sandbox = s-a-n-d-b-o-x.",
+      "decodableWithin": "SP-two-syllable"
+    },
+    {
+      "id": "sp-2s-008",
+      "skillId": "SP-two-syllable",
+      "itemType": "build_word",
+      "difficulty": 2,
+      "stem": "Build the word you hear.",
+      "displayWord": "popcorn",
+      "audioText": "popcorn",
+      "graphemes": [
+        "p",
+        "o",
+        "p",
+        "c",
+        "or",
+        "n"
+      ],
+      "distractorGraphemes": [
+        "bb",
+        "tt",
+        "nn"
+      ],
+      "missedConceptOnFail": "syllable-compound",
+      "rationale": "popcorn = p-o-p-c-or-n.",
+      "decodableWithin": "SP-two-syllable"
+    },
+    {
+      "id": "sp-2s-009",
+      "skillId": "SP-two-syllable",
+      "itemType": "build_word",
+      "difficulty": 2,
+      "stem": "Build the word you hear.",
+      "displayWord": "dustbin",
+      "audioText": "dustbin",
+      "graphemes": [
+        "d",
+        "u",
+        "s",
+        "t",
+        "b",
+        "i",
+        "n"
+      ],
+      "distractorGraphemes": [
+        "bb",
+        "tt",
+        "nn"
+      ],
+      "missedConceptOnFail": "syllable-compound",
+      "rationale": "dustbin = d-u-s-t-b-i-n.",
+      "decodableWithin": "SP-two-syllable"
+    },
+    {
+      "id": "sp-2s-010",
+      "skillId": "SP-two-syllable",
+      "itemType": "build_word",
+      "difficulty": 1,
+      "stem": "Build the word you hear.",
+      "displayWord": "hotdog",
+      "audioText": "hotdog",
+      "graphemes": [
+        "h",
+        "o",
+        "t",
+        "d",
+        "o",
+        "g"
+      ],
+      "distractorGraphemes": [
+        "bb",
+        "tt"
+      ],
+      "missedConceptOnFail": "syllable-compound",
+      "rationale": "hotdog = h-o-t-d-o-g.",
+      "decodableWithin": "SP-two-syllable"
+    },
+    {
+      "id": "sp-2s-011",
+      "skillId": "SP-two-syllable",
+      "itemType": "build_word",
+      "difficulty": 1,
+      "stem": "Build the word you hear.",
+      "displayWord": "pigpen",
+      "audioText": "pigpen",
+      "graphemes": [
+        "p",
+        "i",
+        "g",
+        "p",
+        "e",
+        "n"
+      ],
+      "distractorGraphemes": [
+        "bb",
+        "tt"
+      ],
+      "missedConceptOnFail": "syllable-compound",
+      "rationale": "pigpen = p-i-g-p-e-n.",
+      "decodableWithin": "SP-two-syllable"
+    },
+    {
+      "id": "sp-2s-012",
+      "skillId": "SP-two-syllable",
+      "itemType": "build_word",
+      "difficulty": 2,
+      "stem": "Build the word you hear.",
+      "displayWord": "backpack",
+      "audioText": "backpack",
+      "graphemes": [
+        "b",
+        "a",
+        "ck",
+        "p",
+        "a",
+        "ck"
+      ],
+      "distractorGraphemes": [
+        "bb",
+        "tt",
+        "nn"
+      ],
+      "missedConceptOnFail": "syllable-compound",
+      "rationale": "backpack = b-a-ck-p-a-ck.",
+      "decodableWithin": "SP-two-syllable"
+    },
+    {
+      "id": "sp-2s-013",
+      "skillId": "SP-two-syllable",
+      "itemType": "build_word",
+      "difficulty": 1,
+      "stem": "Build the word you hear.",
+      "displayWord": "upon",
+      "audioText": "upon",
+      "graphemes": [
+        "u",
+        "p",
+        "o",
+        "n"
+      ],
+      "distractorGraphemes": [
+        "bb",
+        "tt"
+      ],
+      "missedConceptOnFail": "syllable-compound",
+      "rationale": "upon = u-p-o-n.",
+      "decodableWithin": "SP-two-syllable"
+    },
+    {
+      "id": "sp-2s-014",
+      "skillId": "SP-two-syllable",
+      "itemType": "build_word",
+      "difficulty": 1,
+      "stem": "Build the word you hear.",
+      "displayWord": "into",
+      "audioText": "into",
+      "graphemes": [
+        "i",
+        "n",
+        "t",
+        "o"
+      ],
+      "distractorGraphemes": [
+        "bb",
+        "tt"
+      ],
+      "missedConceptOnFail": "syllable-compound",
+      "rationale": "into = i-n-t-o.",
+      "decodableWithin": "SP-two-syllable"
+    },
+    {
+      "id": "sp-2s-015",
+      "skillId": "SP-two-syllable",
+      "itemType": "build_word",
+      "difficulty": 1,
+      "stem": "Build the word you hear.",
+      "displayWord": "upset",
+      "audioText": "upset",
+      "graphemes": [
+        "u",
+        "p",
+        "s",
+        "e",
+        "t"
+      ],
+      "distractorGraphemes": [
+        "bb",
+        "tt"
+      ],
+      "missedConceptOnFail": "syllable-compound",
+      "rationale": "upset = u-p-s-e-t.",
+      "decodableWithin": "SP-two-syllable"
+    },
+    {
+      "id": "sp-2s-016",
+      "skillId": "SP-two-syllable",
+      "itemType": "build_word",
+      "difficulty": 2,
+      "stem": "Build the word you hear.",
+      "displayWord": "until",
+      "audioText": "until",
+      "graphemes": [
+        "u",
+        "n",
+        "t",
+        "i",
+        "l"
+      ],
+      "distractorGraphemes": [
+        "bb",
+        "tt",
+        "nn"
+      ],
+      "missedConceptOnFail": "syllable-compound",
+      "rationale": "until = u-n-t-i-l.",
+      "decodableWithin": "SP-two-syllable"
+    },
+    {
+      "id": "sp-2s-017",
+      "skillId": "SP-two-syllable",
+      "itemType": "build_word",
+      "difficulty": 1,
+      "stem": "Build the word you hear.",
+      "displayWord": "suntan",
+      "audioText": "suntan",
+      "graphemes": [
+        "s",
+        "u",
+        "n",
+        "t",
+        "a",
+        "n"
+      ],
+      "distractorGraphemes": [
+        "bb",
+        "tt"
+      ],
+      "missedConceptOnFail": "syllable-compound",
+      "rationale": "suntan = s-u-n-t-a-n.",
+      "decodableWithin": "SP-two-syllable"
+    },
+    {
+      "id": "sp-2s-018",
+      "skillId": "SP-two-syllable",
+      "itemType": "build_word",
+      "difficulty": 2,
+      "stem": "Build the word you hear.",
+      "displayWord": "bobcat",
+      "audioText": "bobcat",
+      "graphemes": [
+        "b",
+        "o",
+        "b",
+        "c",
+        "a",
+        "t"
+      ],
+      "distractorGraphemes": [
+        "bb",
+        "tt",
+        "nn"
+      ],
+      "missedConceptOnFail": "syllable-compound",
+      "rationale": "bobcat = b-o-b-c-a-t.",
+      "decodableWithin": "SP-two-syllable"
+    },
+    {
+      "id": "sp-2s-019",
+      "skillId": "SP-two-syllable",
+      "itemType": "build_word",
+      "difficulty": 2,
+      "stem": "Build the word you hear.",
+      "displayWord": "gumdrop",
+      "audioText": "gumdrop",
+      "graphemes": [
+        "g",
+        "u",
+        "m",
+        "d",
+        "r",
+        "o",
+        "p"
+      ],
+      "distractorGraphemes": [
+        "bb",
+        "tt",
+        "nn"
+      ],
+      "missedConceptOnFail": "syllable-compound",
+      "rationale": "gumdrop = g-u-m-d-r-o-p.",
+      "decodableWithin": "SP-two-syllable"
+    },
+    {
+      "id": "sp-2s-020",
+      "skillId": "SP-two-syllable",
+      "itemType": "build_word",
+      "difficulty": 2,
+      "stem": "Build the word you hear.",
+      "displayWord": "cannot",
+      "audioText": "cannot",
+      "graphemes": [
+        "c",
+        "a",
+        "nn",
+        "o",
+        "t"
+      ],
+      "distractorGraphemes": [
+        "bb",
+        "tt",
+        "pp"
+      ],
+      "missedConceptOnFail": "syllable-compound",
+      "rationale": "cannot = c-a-nn-o-t.",
+      "decodableWithin": "SP-two-syllable"
+    },
+    {
+      "id": "sp-2s-021",
+      "skillId": "SP-two-syllable",
+      "itemType": "build_word",
+      "difficulty": 1,
+      "stem": "Build the word you hear.",
+      "displayWord": "sunlit",
+      "audioText": "sunlit",
+      "graphemes": [
+        "s",
+        "u",
+        "n",
+        "l",
+        "i",
+        "t"
+      ],
+      "distractorGraphemes": [
+        "bb",
+        "tt"
+      ],
+      "missedConceptOnFail": "syllable-compound",
+      "rationale": "sunlit = s-u-n-l-i-t.",
+      "decodableWithin": "SP-two-syllable"
+    },
+    {
+      "id": "sp-2s-022",
+      "skillId": "SP-two-syllable",
+      "itemType": "build_word",
+      "difficulty": 3,
+      "stem": "Build the word you hear.",
+      "displayWord": "cupcake",
+      "audioText": "cupcake",
+      "graphemes": [
+        "c",
+        "u",
+        "p",
+        "c",
+        "a",
+        "k",
+        "e"
+      ],
+      "distractorGraphemes": [
+        "bb",
+        "tt",
+        "nn",
+        "pp"
+      ],
+      "missedConceptOnFail": "syllable-compound",
+      "rationale": "cupcake = c-u-p-c-a-k-e.",
+      "decodableWithin": "SP-two-syllable"
+    },
+    {
+      "id": "sp-2s-023",
+      "skillId": "SP-two-syllable",
+      "itemType": "build_word",
+      "difficulty": 2,
+      "stem": "Build the word you hear.",
+      "displayWord": "napkin",
+      "audioText": "napkin",
+      "graphemes": [
+        "n",
+        "a",
+        "p",
+        "k",
+        "i",
+        "n"
+      ],
+      "distractorGraphemes": [
+        "bb",
+        "tt",
+        "nn"
+      ],
+      "missedConceptOnFail": "syllable-vccv",
+      "rationale": "napkin = n-a-p-k-i-n.",
+      "decodableWithin": "SP-two-syllable"
+    },
+    {
+      "id": "sp-2s-024",
+      "skillId": "SP-two-syllable",
+      "itemType": "build_word",
+      "difficulty": 2,
+      "stem": "Build the word you hear.",
+      "displayWord": "magnet",
+      "audioText": "magnet",
+      "graphemes": [
+        "m",
+        "a",
+        "g",
+        "n",
+        "e",
+        "t"
+      ],
+      "distractorGraphemes": [
+        "bb",
+        "tt",
+        "nn"
+      ],
+      "missedConceptOnFail": "syllable-vccv",
+      "rationale": "magnet = m-a-g-n-e-t.",
+      "decodableWithin": "SP-two-syllable"
+    },
+    {
+      "id": "sp-2s-025",
+      "skillId": "SP-two-syllable",
+      "itemType": "build_word",
+      "difficulty": 2,
+      "stem": "Build the word you hear.",
+      "displayWord": "basket",
+      "audioText": "basket",
+      "graphemes": [
+        "b",
+        "a",
+        "s",
+        "k",
+        "e",
+        "t"
+      ],
+      "distractorGraphemes": [
+        "bb",
+        "tt",
+        "nn"
+      ],
+      "missedConceptOnFail": "syllable-vccv",
+      "rationale": "basket = b-a-s-k-e-t.",
+      "decodableWithin": "SP-two-syllable"
+    },
+    {
+      "id": "sp-2s-026",
+      "skillId": "SP-two-syllable",
+      "itemType": "build_word",
+      "difficulty": 2,
+      "stem": "Build the word you hear.",
+      "displayWord": "helmet",
+      "audioText": "helmet",
+      "graphemes": [
+        "h",
+        "e",
+        "l",
+        "m",
+        "e",
+        "t"
+      ],
+      "distractorGraphemes": [
+        "bb",
+        "tt",
+        "nn"
+      ],
+      "missedConceptOnFail": "syllable-vccv",
+      "rationale": "helmet = h-e-l-m-e-t.",
+      "decodableWithin": "SP-two-syllable"
+    },
+    {
+      "id": "sp-2s-027",
+      "skillId": "SP-two-syllable",
+      "itemType": "build_word",
+      "difficulty": 2,
+      "stem": "Build the word you hear.",
+      "displayWord": "insect",
+      "audioText": "insect",
+      "graphemes": [
+        "i",
+        "n",
+        "s",
+        "e",
+        "c",
+        "t"
+      ],
+      "distractorGraphemes": [
+        "bb",
+        "tt",
+        "nn"
+      ],
+      "missedConceptOnFail": "syllable-vccv",
+      "rationale": "insect = i-n-s-e-c-t.",
+      "decodableWithin": "SP-two-syllable"
+    },
+    {
+      "id": "sp-2s-028",
+      "skillId": "SP-two-syllable",
+      "itemType": "build_word",
+      "difficulty": 2,
+      "stem": "Build the word you hear.",
+      "displayWord": "picnic",
+      "audioText": "picnic",
+      "graphemes": [
+        "p",
+        "i",
+        "c",
+        "n",
+        "i",
+        "c"
+      ],
+      "distractorGraphemes": [
+        "bb",
+        "tt",
+        "nn"
+      ],
+      "missedConceptOnFail": "syllable-vccv",
+      "rationale": "picnic = p-i-c-n-i-c.",
+      "decodableWithin": "SP-two-syllable"
+    },
+    {
+      "id": "sp-2s-029",
+      "skillId": "SP-two-syllable",
+      "itemType": "build_word",
+      "difficulty": 3,
+      "stem": "Build the word you hear.",
+      "displayWord": "contest",
+      "audioText": "contest",
+      "graphemes": [
+        "c",
+        "o",
+        "n",
+        "t",
+        "e",
+        "s",
+        "t"
+      ],
+      "distractorGraphemes": [
+        "bb",
+        "tt",
+        "nn",
+        "pp"
+      ],
+      "missedConceptOnFail": "syllable-vccv",
+      "rationale": "contest = c-o-n-t-e-s-t.",
+      "decodableWithin": "SP-two-syllable"
+    },
+    {
+      "id": "sp-2s-030",
+      "skillId": "SP-two-syllable",
+      "itemType": "build_word",
+      "difficulty": 3,
+      "stem": "Build the word you hear.",
+      "displayWord": "velvet",
+      "audioText": "velvet",
+      "graphemes": [
+        "v",
+        "e",
+        "l",
+        "v",
+        "e",
+        "t"
+      ],
+      "distractorGraphemes": [
+        "bb",
+        "tt",
+        "nn",
+        "pp"
+      ],
+      "missedConceptOnFail": "syllable-vccv",
+      "rationale": "velvet = v-e-l-v-e-t.",
+      "decodableWithin": "SP-two-syllable"
+    },
+    {
+      "id": "sp-2s-031",
+      "skillId": "SP-two-syllable",
+      "itemType": "build_word",
+      "difficulty": 3,
+      "stem": "Build the word you hear.",
+      "displayWord": "goblin",
+      "audioText": "goblin",
+      "graphemes": [
+        "g",
+        "o",
+        "b",
+        "l",
+        "i",
+        "n"
+      ],
+      "distractorGraphemes": [
+        "bb",
+        "tt",
+        "nn",
+        "pp"
+      ],
+      "missedConceptOnFail": "syllable-vccv",
+      "rationale": "goblin = g-o-b-l-i-n.",
+      "decodableWithin": "SP-two-syllable"
+    },
+    {
+      "id": "sp-2s-032",
+      "skillId": "SP-two-syllable",
+      "itemType": "build_word",
+      "difficulty": 2,
+      "stem": "Build the word you hear.",
+      "displayWord": "index",
+      "audioText": "index",
+      "graphemes": [
+        "i",
+        "n",
+        "d",
+        "e",
+        "x"
+      ],
+      "distractorGraphemes": [
+        "bb",
+        "tt",
+        "nn"
+      ],
+      "missedConceptOnFail": "syllable-vccv",
+      "rationale": "index = i-n-d-e-x.",
+      "decodableWithin": "SP-two-syllable"
+    },
+    {
+      "id": "sp-2s-033",
+      "skillId": "SP-two-syllable",
+      "itemType": "build_word",
+      "difficulty": 3,
+      "stem": "Build the word you hear.",
+      "displayWord": "cactus",
+      "audioText": "cactus",
+      "graphemes": [
+        "c",
+        "a",
+        "c",
+        "t",
+        "u",
+        "s"
+      ],
+      "distractorGraphemes": [
+        "bb",
+        "tt",
+        "nn",
+        "pp"
+      ],
+      "missedConceptOnFail": "syllable-vccv",
+      "rationale": "cactus = c-a-c-t-u-s.",
+      "decodableWithin": "SP-two-syllable"
+    },
+    {
+      "id": "sp-2s-034",
+      "skillId": "SP-two-syllable",
+      "itemType": "build_word",
+      "difficulty": 2,
+      "stem": "Build the word you hear.",
+      "displayWord": "walnut",
+      "audioText": "walnut",
+      "graphemes": [
+        "w",
+        "a",
+        "l",
+        "n",
+        "u",
+        "t"
+      ],
+      "distractorGraphemes": [
+        "bb",
+        "tt",
+        "nn"
+      ],
+      "missedConceptOnFail": "syllable-vccv",
+      "rationale": "walnut = w-a-l-n-u-t.",
+      "decodableWithin": "SP-two-syllable"
+    },
+    {
+      "id": "sp-2s-035",
+      "skillId": "SP-two-syllable",
+      "itemType": "build_word",
+      "difficulty": 3,
+      "stem": "Build the word you hear.",
+      "displayWord": "absent",
+      "audioText": "absent",
+      "graphemes": [
+        "a",
+        "b",
+        "s",
+        "e",
+        "n",
+        "t"
+      ],
+      "distractorGraphemes": [
+        "bb",
+        "tt",
+        "nn",
+        "pp"
+      ],
+      "missedConceptOnFail": "syllable-vccv",
+      "rationale": "absent = a-b-s-e-n-t.",
+      "decodableWithin": "SP-two-syllable"
+    },
+    {
+      "id": "sp-2s-036",
+      "skillId": "SP-two-syllable",
+      "itemType": "build_word",
+      "difficulty": 3,
+      "stem": "Build the word you hear.",
+      "displayWord": "dentist",
+      "audioText": "dentist",
+      "graphemes": [
+        "d",
+        "e",
+        "n",
+        "t",
+        "i",
+        "s",
+        "t"
+      ],
+      "distractorGraphemes": [
+        "bb",
+        "tt",
+        "nn",
+        "pp"
+      ],
+      "missedConceptOnFail": "syllable-vccv",
+      "rationale": "dentist = d-e-n-t-i-s-t.",
+      "decodableWithin": "SP-two-syllable"
+    },
+    {
+      "id": "sp-2s-037",
+      "skillId": "SP-two-syllable",
+      "itemType": "build_word",
+      "difficulty": 2,
+      "stem": "Build the word you hear.",
+      "displayWord": "mascot",
+      "audioText": "mascot",
+      "graphemes": [
+        "m",
+        "a",
+        "s",
+        "c",
+        "o",
+        "t"
+      ],
+      "distractorGraphemes": [
+        "bb",
+        "tt",
+        "nn"
+      ],
+      "missedConceptOnFail": "syllable-vccv",
+      "rationale": "mascot = m-a-s-c-o-t.",
+      "decodableWithin": "SP-two-syllable"
+    },
+    {
+      "id": "sp-2s-038",
+      "skillId": "SP-two-syllable",
+      "itemType": "build_word",
+      "difficulty": 3,
+      "stem": "Build the word you hear.",
+      "displayWord": "tandem",
+      "audioText": "tandem",
+      "graphemes": [
+        "t",
+        "a",
+        "n",
+        "d",
+        "e",
+        "m"
+      ],
+      "distractorGraphemes": [
+        "bb",
+        "tt",
+        "nn",
+        "pp"
+      ],
+      "missedConceptOnFail": "syllable-vccv",
+      "rationale": "tandem = t-a-n-d-e-m.",
+      "decodableWithin": "SP-two-syllable"
+    },
+    {
+      "id": "sp-2s-039",
+      "skillId": "SP-two-syllable",
+      "itemType": "build_word",
+      "difficulty": 3,
+      "stem": "Build the word you hear.",
+      "displayWord": "ransom",
+      "audioText": "ransom",
+      "graphemes": [
+        "r",
+        "a",
+        "n",
+        "s",
+        "o",
+        "m"
+      ],
+      "distractorGraphemes": [
+        "bb",
+        "tt",
+        "nn",
+        "pp"
+      ],
+      "missedConceptOnFail": "syllable-vccv",
+      "rationale": "ransom = r-a-n-s-o-m.",
+      "decodableWithin": "SP-two-syllable"
+    },
+    {
+      "id": "sp-2s-040",
+      "skillId": "SP-two-syllable",
+      "itemType": "build_word",
+      "difficulty": 2,
+      "stem": "Build the word you hear.",
+      "displayWord": "zigzag",
+      "audioText": "zigzag",
+      "graphemes": [
+        "z",
+        "i",
+        "g",
+        "z",
+        "a",
+        "g"
+      ],
+      "distractorGraphemes": [
+        "bb",
+        "tt",
+        "nn"
+      ],
+      "missedConceptOnFail": "syllable-vccv",
+      "rationale": "zigzag = z-i-g-z-a-g.",
+      "decodableWithin": "SP-two-syllable"
+    },
+    {
+      "id": "sp-2s-041",
+      "skillId": "SP-two-syllable",
+      "itemType": "build_word",
+      "difficulty": 3,
+      "stem": "Build the word you hear.",
+      "displayWord": "hectic",
+      "audioText": "hectic",
+      "graphemes": [
+        "h",
+        "e",
+        "c",
+        "t",
+        "i",
+        "c"
+      ],
+      "distractorGraphemes": [
+        "bb",
+        "tt",
+        "nn",
+        "pp"
+      ],
+      "missedConceptOnFail": "syllable-vccv",
+      "rationale": "hectic = h-e-c-t-i-c.",
+      "decodableWithin": "SP-two-syllable"
+    },
+    {
+      "id": "sp-2s-042",
+      "skillId": "SP-two-syllable",
+      "itemType": "build_word",
+      "difficulty": 2,
+      "stem": "Build the word you hear.",
+      "displayWord": "campus",
+      "audioText": "campus",
+      "graphemes": [
+        "c",
+        "a",
+        "m",
+        "p",
+        "u",
+        "s"
+      ],
+      "distractorGraphemes": [
+        "bb",
+        "tt",
+        "nn"
+      ],
+      "missedConceptOnFail": "syllable-vccv",
+      "rationale": "campus = c-a-m-p-u-s.",
+      "decodableWithin": "SP-two-syllable"
+    },
+    {
+      "id": "sp-2s-043",
+      "skillId": "SP-two-syllable",
+      "itemType": "build_word",
+      "difficulty": 3,
+      "stem": "Build the word you hear.",
+      "displayWord": "publish",
+      "audioText": "publish",
+      "graphemes": [
+        "p",
+        "u",
+        "b",
+        "l",
+        "i",
+        "sh"
+      ],
+      "distractorGraphemes": [
+        "bb",
+        "tt",
+        "nn",
+        "pp"
+      ],
+      "missedConceptOnFail": "syllable-vccv",
+      "rationale": "publish = p-u-b-l-i-sh.",
+      "decodableWithin": "SP-two-syllable"
+    },
+    {
+      "id": "sp-2s-044",
+      "skillId": "SP-two-syllable",
+      "itemType": "build_word",
+      "difficulty": 3,
+      "stem": "Build the word you hear.",
+      "displayWord": "punish",
+      "audioText": "punish",
+      "graphemes": [
+        "p",
+        "u",
+        "n",
+        "i",
+        "sh"
+      ],
+      "distractorGraphemes": [
+        "bb",
+        "tt",
+        "nn",
+        "pp"
+      ],
+      "missedConceptOnFail": "syllable-vccv",
+      "rationale": "punish = p-u-n-i-sh.",
+      "decodableWithin": "SP-two-syllable"
+    },
+    {
+      "id": "sp-2s-045",
+      "skillId": "SP-two-syllable",
+      "itemType": "build_word",
+      "difficulty": 2,
+      "stem": "Build the word you hear.",
+      "displayWord": "finish",
+      "audioText": "finish",
+      "graphemes": [
+        "f",
+        "i",
+        "n",
+        "i",
+        "sh"
+      ],
+      "distractorGraphemes": [
+        "bb",
+        "tt",
+        "nn"
+      ],
+      "missedConceptOnFail": "syllable-vccv",
+      "rationale": "finish = f-i-n-i-sh.",
+      "decodableWithin": "SP-two-syllable"
+    },
+    {
+      "id": "sp-2s-046",
+      "skillId": "SP-two-syllable",
+      "itemType": "build_word",
+      "difficulty": 3,
+      "stem": "Build the word you hear.",
+      "displayWord": "radish",
+      "audioText": "radish",
+      "graphemes": [
+        "r",
+        "a",
+        "d",
+        "i",
+        "sh"
+      ],
+      "distractorGraphemes": [
+        "bb",
+        "tt",
+        "nn",
+        "pp"
+      ],
+      "missedConceptOnFail": "syllable-vccv",
+      "rationale": "radish = r-a-d-i-sh.",
+      "decodableWithin": "SP-two-syllable"
+    },
+    {
+      "id": "sp-2s-047",
+      "skillId": "SP-two-syllable",
+      "itemType": "build_word",
+      "difficulty": 2,
+      "stem": "Build the word you hear.",
+      "displayWord": "rabbit",
+      "audioText": "rabbit",
+      "graphemes": [
+        "r",
+        "a",
+        "bb",
+        "i",
+        "t"
+      ],
+      "distractorGraphemes": [
+        "tt",
+        "nn",
+        "pp"
+      ],
+      "missedConceptOnFail": "syllable-double",
+      "rationale": "rabbit = r-a-bb-i-t.",
+      "decodableWithin": "SP-two-syllable"
+    },
+    {
+      "id": "sp-2s-048",
+      "skillId": "SP-two-syllable",
+      "itemType": "build_word",
+      "difficulty": 2,
+      "stem": "Build the word you hear.",
+      "displayWord": "kitten",
+      "audioText": "kitten",
+      "graphemes": [
+        "k",
+        "i",
+        "tt",
+        "e",
+        "n"
+      ],
+      "distractorGraphemes": [
+        "bb",
+        "nn",
+        "pp"
+      ],
+      "missedConceptOnFail": "syllable-double",
+      "rationale": "kitten = k-i-tt-e-n.",
+      "decodableWithin": "SP-two-syllable"
+    },
+    {
+      "id": "sp-2s-049",
+      "skillId": "SP-two-syllable",
+      "itemType": "build_word",
+      "difficulty": 2,
+      "stem": "Build the word you hear.",
+      "displayWord": "mitten",
+      "audioText": "mitten",
+      "graphemes": [
+        "m",
+        "i",
+        "tt",
+        "e",
+        "n"
+      ],
+      "distractorGraphemes": [
+        "bb",
+        "nn",
+        "pp"
+      ],
+      "missedConceptOnFail": "syllable-double",
+      "rationale": "mitten = m-i-tt-e-n.",
+      "decodableWithin": "SP-two-syllable"
+    },
+    {
+      "id": "sp-2s-050",
+      "skillId": "SP-two-syllable",
+      "itemType": "build_word",
+      "difficulty": 2,
+      "stem": "Build the word you hear.",
+      "displayWord": "button",
+      "audioText": "button",
+      "graphemes": [
+        "b",
+        "u",
+        "tt",
+        "o",
+        "n"
+      ],
+      "distractorGraphemes": [
+        "bb",
+        "nn",
+        "pp"
+      ],
+      "missedConceptOnFail": "syllable-double",
+      "rationale": "button = b-u-tt-o-n.",
+      "decodableWithin": "SP-two-syllable"
+    },
+    {
+      "id": "sp-2s-051",
+      "skillId": "SP-two-syllable",
+      "itemType": "build_word",
+      "difficulty": 3,
+      "stem": "Build the word you hear.",
+      "displayWord": "ribbon",
+      "audioText": "ribbon",
+      "graphemes": [
+        "r",
+        "i",
+        "bb",
+        "o",
+        "n"
+      ],
+      "distractorGraphemes": [
+        "tt",
+        "nn",
+        "pp",
+        "dd"
+      ],
+      "missedConceptOnFail": "syllable-double",
+      "rationale": "ribbon = r-i-bb-o-n.",
+      "decodableWithin": "SP-two-syllable"
+    },
+    {
+      "id": "sp-2s-052",
+      "skillId": "SP-two-syllable",
+      "itemType": "build_word",
+      "difficulty": 2,
+      "stem": "Build the word you hear.",
+      "displayWord": "happen",
+      "audioText": "happen",
+      "graphemes": [
+        "h",
+        "a",
+        "pp",
+        "e",
+        "n"
+      ],
+      "distractorGraphemes": [
+        "bb",
+        "tt",
+        "nn"
+      ],
+      "missedConceptOnFail": "syllable-double",
+      "rationale": "happen = h-a-pp-e-n.",
+      "decodableWithin": "SP-two-syllable"
+    },
+    {
+      "id": "sp-2s-053",
+      "skillId": "SP-two-syllable",
+      "itemType": "build_word",
+      "difficulty": 3,
+      "stem": "Build the word you hear.",
+      "displayWord": "puppet",
+      "audioText": "puppet",
+      "graphemes": [
+        "p",
+        "u",
+        "pp",
+        "e",
+        "t"
+      ],
+      "distractorGraphemes": [
+        "bb",
+        "tt",
+        "nn",
+        "dd"
+      ],
+      "missedConceptOnFail": "syllable-double",
+      "rationale": "puppet = p-u-pp-e-t.",
+      "decodableWithin": "SP-two-syllable"
+    },
+    {
+      "id": "sp-2s-054",
+      "skillId": "SP-two-syllable",
+      "itemType": "build_word",
+      "difficulty": 2,
+      "stem": "Build the word you hear.",
+      "displayWord": "muffin",
+      "audioText": "muffin",
+      "graphemes": [
+        "m",
+        "u",
+        "ff",
+        "i",
+        "n"
+      ],
+      "distractorGraphemes": [
+        "bb",
+        "tt",
+        "nn"
+      ],
+      "missedConceptOnFail": "syllable-double",
+      "rationale": "muffin = m-u-ff-i-n.",
+      "decodableWithin": "SP-two-syllable"
+    },
+    {
+      "id": "sp-2s-055",
+      "skillId": "SP-two-syllable",
+      "itemType": "build_word",
+      "difficulty": 3,
+      "stem": "Build the word you hear.",
+      "displayWord": "hidden",
+      "audioText": "hidden",
+      "graphemes": [
+        "h",
+        "i",
+        "dd",
+        "e",
+        "n"
+      ],
+      "distractorGraphemes": [
+        "bb",
+        "tt",
+        "nn",
+        "pp"
+      ],
+      "missedConceptOnFail": "syllable-double",
+      "rationale": "hidden = h-i-dd-e-n.",
+      "decodableWithin": "SP-two-syllable"
+    },
+    {
+      "id": "sp-2s-056",
+      "skillId": "SP-two-syllable",
+      "itemType": "build_word",
+      "difficulty": 3,
+      "stem": "Build the word you hear.",
+      "displayWord": "sudden",
+      "audioText": "sudden",
+      "graphemes": [
+        "s",
+        "u",
+        "dd",
+        "e",
+        "n"
+      ],
+      "distractorGraphemes": [
+        "bb",
+        "tt",
+        "nn",
+        "pp"
+      ],
+      "missedConceptOnFail": "syllable-double",
+      "rationale": "sudden = s-u-dd-e-n.",
+      "decodableWithin": "SP-two-syllable"
+    },
+    {
+      "id": "sp-2s-057",
+      "skillId": "SP-two-syllable",
+      "itemType": "build_word",
+      "difficulty": 3,
+      "stem": "Build the word you hear.",
+      "displayWord": "rotten",
+      "audioText": "rotten",
+      "graphemes": [
+        "r",
+        "o",
+        "tt",
+        "e",
+        "n"
+      ],
+      "distractorGraphemes": [
+        "bb",
+        "nn",
+        "pp",
+        "dd"
+      ],
+      "missedConceptOnFail": "syllable-double",
+      "rationale": "rotten = r-o-tt-e-n.",
+      "decodableWithin": "SP-two-syllable"
+    },
+    {
+      "id": "sp-2s-058",
+      "skillId": "SP-two-syllable",
+      "itemType": "build_word",
+      "difficulty": 3,
+      "stem": "Build the word you hear.",
+      "displayWord": "common",
+      "audioText": "common",
+      "graphemes": [
+        "c",
+        "o",
+        "mm",
+        "o",
+        "n"
+      ],
+      "distractorGraphemes": [
+        "bb",
+        "tt",
+        "nn",
+        "pp"
+      ],
+      "missedConceptOnFail": "syllable-double",
+      "rationale": "common = c-o-mm-o-n.",
+      "decodableWithin": "SP-two-syllable"
+    },
+    {
+      "id": "sp-2s-059",
+      "skillId": "SP-two-syllable",
+      "itemType": "build_word",
+      "difficulty": 3,
+      "stem": "Build the word you hear.",
+      "displayWord": "dinner",
+      "audioText": "dinner",
+      "graphemes": [
+        "d",
+        "i",
+        "nn",
+        "er"
+      ],
+      "distractorGraphemes": [
+        "bb",
+        "tt",
+        "pp",
+        "dd"
+      ],
+      "missedConceptOnFail": "syllable-double",
+      "rationale": "dinner = d-i-nn-er.",
+      "decodableWithin": "SP-two-syllable"
+    },
+    {
+      "id": "sp-2s-060",
+      "skillId": "SP-two-syllable",
+      "itemType": "build_word",
+      "difficulty": 3,
+      "stem": "Build the word you hear.",
+      "displayWord": "summer",
+      "audioText": "summer",
+      "graphemes": [
+        "s",
+        "u",
+        "mm",
+        "er"
+      ],
+      "distractorGraphemes": [
+        "bb",
+        "tt",
+        "nn",
+        "pp"
+      ],
+      "missedConceptOnFail": "syllable-double",
+      "rationale": "summer = s-u-mm-er.",
+      "decodableWithin": "SP-two-syllable"
+    },
+    {
+      "id": "sp-2s-061",
+      "skillId": "SP-two-syllable",
+      "itemType": "build_word",
+      "difficulty": 3,
+      "stem": "Build the word you hear.",
+      "displayWord": "mammoth",
+      "audioText": "mammoth",
+      "graphemes": [
+        "m",
+        "a",
+        "mm",
+        "o",
+        "th"
+      ],
+      "distractorGraphemes": [
+        "bb",
+        "tt",
+        "nn",
+        "pp"
+      ],
+      "missedConceptOnFail": "syllable-double",
+      "rationale": "mammoth = m-a-mm-o-th.",
+      "decodableWithin": "SP-two-syllable"
+    },
+    {
+      "id": "sp-2s-062",
+      "skillId": "SP-two-syllable",
+      "itemType": "build_word",
+      "difficulty": 3,
+      "stem": "Build the word you hear.",
+      "displayWord": "traffic",
+      "audioText": "traffic",
+      "graphemes": [
+        "t",
+        "r",
+        "a",
+        "ff",
+        "i",
+        "c"
+      ],
+      "distractorGraphemes": [
+        "bb",
+        "tt",
+        "nn",
+        "pp"
+      ],
+      "missedConceptOnFail": "syllable-double",
+      "rationale": "traffic = t-r-a-ff-i-c.",
+      "decodableWithin": "SP-two-syllable"
+    },
+    {
+      "id": "sp-2s-063",
+      "skillId": "SP-two-syllable",
+      "itemType": "build_word",
+      "difficulty": 2,
+      "stem": "Build the word you hear.",
+      "displayWord": "tennis",
+      "audioText": "tennis",
+      "graphemes": [
+        "t",
+        "e",
+        "nn",
+        "i",
+        "s"
+      ],
+      "distractorGraphemes": [
+        "bb",
+        "tt",
+        "pp"
+      ],
+      "missedConceptOnFail": "syllable-double",
+      "rationale": "tennis = t-e-nn-i-s.",
+      "decodableWithin": "SP-two-syllable"
+    },
+    {
+      "id": "sp-2s-064",
+      "skillId": "SP-two-syllable",
+      "itemType": "build_word",
+      "difficulty": 3,
+      "stem": "Build the word you hear.",
+      "displayWord": "gossip",
+      "audioText": "gossip",
+      "graphemes": [
+        "g",
+        "o",
+        "ss",
+        "i",
+        "p"
+      ],
+      "distractorGraphemes": [
+        "bb",
+        "tt",
+        "nn",
+        "pp"
+      ],
+      "missedConceptOnFail": "syllable-double",
+      "rationale": "gossip = g-o-ss-i-p.",
+      "decodableWithin": "SP-two-syllable"
+    },
+    {
+      "id": "sp-2s-065",
+      "skillId": "SP-two-syllable",
+      "itemType": "build_word",
+      "difficulty": 2,
+      "stem": "Build the word you hear.",
+      "displayWord": "attic",
+      "audioText": "attic",
+      "graphemes": [
+        "a",
+        "tt",
+        "i",
+        "c"
+      ],
+      "distractorGraphemes": [
+        "bb",
+        "nn",
+        "pp"
+      ],
+      "missedConceptOnFail": "syllable-double",
+      "rationale": "attic = a-tt-i-c.",
+      "decodableWithin": "SP-two-syllable"
+    }
+  ],
+  "lessons": {
+    "SP-two-syllable": {
+      "iCanStatement": "I can spell two-syllable words chunk by chunk.",
+      "explanation": "Say the word slowly and spell one chunk at a time: nap … kin → napkin. In many words the middle consonant DOUBLES to keep the first vowel short: rabbit, kitten, button. Build each chunk in order.",
+      "workedExamples": [
+        {
+          "text": "basket",
+          "note": "Hear bas | ket → b · a · s · k · e · t"
+        },
+        {
+          "text": "rabbit",
+          "note": "Hear rab | bit → r · a · bb · i · t (double b)"
+        }
+      ]
+    }
+  }
+}

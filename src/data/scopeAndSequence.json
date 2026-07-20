@@ -179,6 +179,28 @@
           "itemPool": "spelling-L09-diphthongs",
           "encodePairId": "PH-diphthongs",
           "mastery": { "window": 12, "accuracyToPass": 0.85, "minItems": 8 }
+        },
+        {
+          "id": "PH-two-syllable",
+          "strand": "phonics",
+          "objective": "Decode two-syllable words (compound, closed VCCV, medial doubles).",
+          "iCanStatement": "I can read two-syllable words by breaking them into chunks.",
+          "prereqs": ["PH-diphthongs"],
+          "itemType": "decode_choice",
+          "itemPool": "phonics-L10-two-syllable",
+          "encodePairId": "SP-two-syllable",
+          "mastery": { "window": 12, "accuracyToPass": 0.85, "minItems": 8 }
+        },
+        {
+          "id": "SP-two-syllable",
+          "strand": "spelling",
+          "objective": "Spell two-syllable words, chunk by chunk (incl. medial doubles).",
+          "iCanStatement": "I can spell two-syllable words chunk by chunk.",
+          "prereqs": ["PH-two-syllable"],
+          "itemType": "build_word",
+          "itemPool": "spelling-L10-two-syllable",
+          "encodePairId": "PH-two-syllable",
+          "mastery": { "window": 12, "accuracyToPass": 0.85, "minItems": 8 }
         }
       ]
     }

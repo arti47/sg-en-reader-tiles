@@ -1,0 +1,1716 @@
+{
+  "packId": "phonics-L10-two-syllable",
+  "strand": "phonics",
+  "skillIds": [
+    "PH-two-syllable"
+  ],
+  "version": 1,
+  "items": [
+    {
+      "id": "ph-2s-001",
+      "skillId": "PH-two-syllable",
+      "itemType": "decode_choice",
+      "difficulty": 1,
+      "stem": "Tap the word you hear.",
+      "audioText": "sunset",
+      "choices": [
+        {
+          "id": "a",
+          "label": "sunset"
+        },
+        {
+          "id": "b",
+          "label": "cobweb"
+        },
+        {
+          "id": "c",
+          "label": "catfish"
+        }
+      ],
+      "correctChoiceId": "a",
+      "missedConceptOnFail": "syllable-compound",
+      "rationale": "sunset — read it in two chunks.",
+      "decodableWithin": "PH-two-syllable"
+    },
+    {
+      "id": "ph-2s-002",
+      "skillId": "PH-two-syllable",
+      "itemType": "decode_choice",
+      "difficulty": 1,
+      "stem": "Tap the word you hear.",
+      "audioText": "cobweb",
+      "choices": [
+        {
+          "id": "a",
+          "label": "sunset"
+        },
+        {
+          "id": "b",
+          "label": "cobweb"
+        },
+        {
+          "id": "c",
+          "label": "catfish"
+        }
+      ],
+      "correctChoiceId": "b",
+      "missedConceptOnFail": "syllable-compound",
+      "rationale": "cobweb — read it in two chunks.",
+      "decodableWithin": "PH-two-syllable"
+    },
+    {
+      "id": "ph-2s-003",
+      "skillId": "PH-two-syllable",
+      "itemType": "decode_choice",
+      "difficulty": 2,
+      "stem": "Tap the word you hear.",
+      "audioText": "catfish",
+      "choices": [
+        {
+          "id": "a",
+          "label": "sunset"
+        },
+        {
+          "id": "b",
+          "label": "cobweb"
+        },
+        {
+          "id": "c",
+          "label": "catfish"
+        }
+      ],
+      "correctChoiceId": "c",
+      "missedConceptOnFail": "syllable-compound",
+      "rationale": "catfish — read it in two chunks.",
+      "decodableWithin": "PH-two-syllable"
+    },
+    {
+      "id": "ph-2s-004",
+      "skillId": "PH-two-syllable",
+      "itemType": "decode_choice",
+      "difficulty": 1,
+      "stem": "Tap the word you hear.",
+      "audioText": "laptop",
+      "choices": [
+        {
+          "id": "a",
+          "label": "laptop"
+        },
+        {
+          "id": "b",
+          "label": "sunset"
+        },
+        {
+          "id": "c",
+          "label": "hilltop"
+        }
+      ],
+      "correctChoiceId": "a",
+      "missedConceptOnFail": "syllable-compound",
+      "rationale": "laptop — read it in two chunks.",
+      "decodableWithin": "PH-two-syllable"
+    },
+    {
+      "id": "ph-2s-005",
+      "skillId": "PH-two-syllable",
+      "itemType": "decode_choice",
+      "difficulty": 2,
+      "stem": "Tap the word you hear.",
+      "audioText": "hilltop",
+      "choices": [
+        {
+          "id": "a",
+          "label": "laptop"
+        },
+        {
+          "id": "b",
+          "label": "hilltop"
+        },
+        {
+          "id": "c",
+          "label": "sunset"
+        }
+      ],
+      "correctChoiceId": "b",
+      "missedConceptOnFail": "syllable-compound",
+      "rationale": "hilltop — read it in two chunks.",
+      "decodableWithin": "PH-two-syllable"
+    },
+    {
+      "id": "ph-2s-006",
+      "skillId": "PH-two-syllable",
+      "itemType": "decode_choice",
+      "difficulty": 2,
+      "stem": "Tap the word you hear.",
+      "audioText": "bathtub",
+      "choices": [
+        {
+          "id": "a",
+          "label": "sandbox"
+        },
+        {
+          "id": "b",
+          "label": "dustbin"
+        },
+        {
+          "id": "c",
+          "label": "bathtub"
+        }
+      ],
+      "correctChoiceId": "c",
+      "missedConceptOnFail": "syllable-compound",
+      "rationale": "bathtub — read it in two chunks.",
+      "decodableWithin": "PH-two-syllable"
+    },
+    {
+      "id": "ph-2s-007",
+      "skillId": "PH-two-syllable",
+      "itemType": "decode_choice",
+      "difficulty": 2,
+      "stem": "Tap the word you hear.",
+      "audioText": "sandbox",
+      "choices": [
+        {
+          "id": "a",
+          "label": "sandbox"
+        },
+        {
+          "id": "b",
+          "label": "bathtub"
+        },
+        {
+          "id": "c",
+          "label": "dustbin"
+        }
+      ],
+      "correctChoiceId": "a",
+      "missedConceptOnFail": "syllable-compound",
+      "rationale": "sandbox — read it in two chunks.",
+      "decodableWithin": "PH-two-syllable"
+    },
+    {
+      "id": "ph-2s-008",
+      "skillId": "PH-two-syllable",
+      "itemType": "decode_choice",
+      "difficulty": 2,
+      "stem": "Tap the word you hear.",
+      "audioText": "popcorn",
+      "choices": [
+        {
+          "id": "a",
+          "label": "sunset"
+        },
+        {
+          "id": "b",
+          "label": "popcorn"
+        },
+        {
+          "id": "c",
+          "label": "cobweb"
+        }
+      ],
+      "correctChoiceId": "b",
+      "missedConceptOnFail": "syllable-compound",
+      "rationale": "popcorn — read it in two chunks.",
+      "decodableWithin": "PH-two-syllable"
+    },
+    {
+      "id": "ph-2s-009",
+      "skillId": "PH-two-syllable",
+      "itemType": "decode_choice",
+      "difficulty": 2,
+      "stem": "Tap the word you hear.",
+      "audioText": "dustbin",
+      "choices": [
+        {
+          "id": "a",
+          "label": "sandbox"
+        },
+        {
+          "id": "b",
+          "label": "bathtub"
+        },
+        {
+          "id": "c",
+          "label": "dustbin"
+        }
+      ],
+      "correctChoiceId": "c",
+      "missedConceptOnFail": "syllable-compound",
+      "rationale": "dustbin — read it in two chunks.",
+      "decodableWithin": "PH-two-syllable"
+    },
+    {
+      "id": "ph-2s-010",
+      "skillId": "PH-two-syllable",
+      "itemType": "decode_choice",
+      "difficulty": 1,
+      "stem": "Tap the word you hear.",
+      "audioText": "hotdog",
+      "choices": [
+        {
+          "id": "a",
+          "label": "hotdog"
+        },
+        {
+          "id": "b",
+          "label": "laptop"
+        },
+        {
+          "id": "c",
+          "label": "sunset"
+        }
+      ],
+      "correctChoiceId": "a",
+      "missedConceptOnFail": "syllable-compound",
+      "rationale": "hotdog — read it in two chunks.",
+      "decodableWithin": "PH-two-syllable"
+    },
+    {
+      "id": "ph-2s-011",
+      "skillId": "PH-two-syllable",
+      "itemType": "decode_choice",
+      "difficulty": 1,
+      "stem": "Tap the word you hear.",
+      "audioText": "pigpen",
+      "choices": [
+        {
+          "id": "a",
+          "label": "hotdog"
+        },
+        {
+          "id": "b",
+          "label": "pigpen"
+        },
+        {
+          "id": "c",
+          "label": "sunset"
+        }
+      ],
+      "correctChoiceId": "b",
+      "missedConceptOnFail": "syllable-compound",
+      "rationale": "pigpen — read it in two chunks.",
+      "decodableWithin": "PH-two-syllable"
+    },
+    {
+      "id": "ph-2s-012",
+      "skillId": "PH-two-syllable",
+      "itemType": "decode_choice",
+      "difficulty": 2,
+      "stem": "Tap the word you hear.",
+      "audioText": "backpack",
+      "choices": [
+        {
+          "id": "a",
+          "label": "laptop"
+        },
+        {
+          "id": "b",
+          "label": "catfish"
+        },
+        {
+          "id": "c",
+          "label": "backpack"
+        }
+      ],
+      "correctChoiceId": "c",
+      "missedConceptOnFail": "syllable-compound",
+      "rationale": "backpack — read it in two chunks.",
+      "decodableWithin": "PH-two-syllable"
+    },
+    {
+      "id": "ph-2s-013",
+      "skillId": "PH-two-syllable",
+      "itemType": "decode_choice",
+      "difficulty": 1,
+      "stem": "Tap the word you hear.",
+      "audioText": "upon",
+      "choices": [
+        {
+          "id": "a",
+          "label": "upon"
+        },
+        {
+          "id": "b",
+          "label": "into"
+        },
+        {
+          "id": "c",
+          "label": "upset"
+        }
+      ],
+      "correctChoiceId": "a",
+      "missedConceptOnFail": "syllable-compound",
+      "rationale": "upon — read it in two chunks.",
+      "decodableWithin": "PH-two-syllable"
+    },
+    {
+      "id": "ph-2s-014",
+      "skillId": "PH-two-syllable",
+      "itemType": "decode_choice",
+      "difficulty": 1,
+      "stem": "Tap the word you hear.",
+      "audioText": "into",
+      "choices": [
+        {
+          "id": "a",
+          "label": "upon"
+        },
+        {
+          "id": "b",
+          "label": "into"
+        },
+        {
+          "id": "c",
+          "label": "upset"
+        }
+      ],
+      "correctChoiceId": "b",
+      "missedConceptOnFail": "syllable-compound",
+      "rationale": "into — read it in two chunks.",
+      "decodableWithin": "PH-two-syllable"
+    },
+    {
+      "id": "ph-2s-015",
+      "skillId": "PH-two-syllable",
+      "itemType": "decode_choice",
+      "difficulty": 1,
+      "stem": "Tap the word you hear.",
+      "audioText": "upset",
+      "choices": [
+        {
+          "id": "a",
+          "label": "until"
+        },
+        {
+          "id": "b",
+          "label": "upon"
+        },
+        {
+          "id": "c",
+          "label": "upset"
+        }
+      ],
+      "correctChoiceId": "c",
+      "missedConceptOnFail": "syllable-compound",
+      "rationale": "upset — read it in two chunks.",
+      "decodableWithin": "PH-two-syllable"
+    },
+    {
+      "id": "ph-2s-016",
+      "skillId": "PH-two-syllable",
+      "itemType": "decode_choice",
+      "difficulty": 2,
+      "stem": "Tap the word you hear.",
+      "audioText": "until",
+      "choices": [
+        {
+          "id": "a",
+          "label": "until"
+        },
+        {
+          "id": "b",
+          "label": "upset"
+        },
+        {
+          "id": "c",
+          "label": "upon"
+        }
+      ],
+      "correctChoiceId": "a",
+      "missedConceptOnFail": "syllable-compound",
+      "rationale": "until — read it in two chunks.",
+      "decodableWithin": "PH-two-syllable"
+    },
+    {
+      "id": "ph-2s-017",
+      "skillId": "PH-two-syllable",
+      "itemType": "decode_choice",
+      "difficulty": 1,
+      "stem": "Tap the word you hear.",
+      "audioText": "suntan",
+      "choices": [
+        {
+          "id": "a",
+          "label": "sunset"
+        },
+        {
+          "id": "b",
+          "label": "suntan"
+        },
+        {
+          "id": "c",
+          "label": "hotdog"
+        }
+      ],
+      "correctChoiceId": "b",
+      "missedConceptOnFail": "syllable-compound",
+      "rationale": "suntan — read it in two chunks.",
+      "decodableWithin": "PH-two-syllable"
+    },
+    {
+      "id": "ph-2s-018",
+      "skillId": "PH-two-syllable",
+      "itemType": "decode_choice",
+      "difficulty": 2,
+      "stem": "Tap the word you hear.",
+      "audioText": "bobcat",
+      "choices": [
+        {
+          "id": "a",
+          "label": "hotdog"
+        },
+        {
+          "id": "b",
+          "label": "catfish"
+        },
+        {
+          "id": "c",
+          "label": "bobcat"
+        }
+      ],
+      "correctChoiceId": "c",
+      "missedConceptOnFail": "syllable-compound",
+      "rationale": "bobcat — read it in two chunks.",
+      "decodableWithin": "PH-two-syllable"
+    },
+    {
+      "id": "ph-2s-019",
+      "skillId": "PH-two-syllable",
+      "itemType": "decode_choice",
+      "difficulty": 2,
+      "stem": "Tap the word you hear.",
+      "audioText": "gumdrop",
+      "choices": [
+        {
+          "id": "a",
+          "label": "gumdrop"
+        },
+        {
+          "id": "b",
+          "label": "sunset"
+        },
+        {
+          "id": "c",
+          "label": "laptop"
+        }
+      ],
+      "correctChoiceId": "a",
+      "missedConceptOnFail": "syllable-compound",
+      "rationale": "gumdrop — read it in two chunks.",
+      "decodableWithin": "PH-two-syllable"
+    },
+    {
+      "id": "ph-2s-020",
+      "skillId": "PH-two-syllable",
+      "itemType": "decode_choice",
+      "difficulty": 2,
+      "stem": "Tap the word you hear.",
+      "audioText": "cannot",
+      "choices": [
+        {
+          "id": "a",
+          "label": "upon"
+        },
+        {
+          "id": "b",
+          "label": "cannot"
+        },
+        {
+          "id": "c",
+          "label": "into"
+        }
+      ],
+      "correctChoiceId": "b",
+      "missedConceptOnFail": "syllable-compound",
+      "rationale": "cannot — read it in two chunks.",
+      "decodableWithin": "PH-two-syllable"
+    },
+    {
+      "id": "ph-2s-021",
+      "skillId": "PH-two-syllable",
+      "itemType": "decode_choice",
+      "difficulty": 1,
+      "stem": "Tap the word you hear.",
+      "audioText": "sunlit",
+      "choices": [
+        {
+          "id": "a",
+          "label": "suntan"
+        },
+        {
+          "id": "b",
+          "label": "sunset"
+        },
+        {
+          "id": "c",
+          "label": "sunlit"
+        }
+      ],
+      "correctChoiceId": "c",
+      "missedConceptOnFail": "syllable-compound",
+      "rationale": "sunlit — read it in two chunks.",
+      "decodableWithin": "PH-two-syllable"
+    },
+    {
+      "id": "ph-2s-022",
+      "skillId": "PH-two-syllable",
+      "itemType": "decode_choice",
+      "difficulty": 3,
+      "stem": "Tap the word you hear.",
+      "audioText": "cupcake",
+      "choices": [
+        {
+          "id": "a",
+          "label": "cupcake"
+        },
+        {
+          "id": "b",
+          "label": "laptop"
+        },
+        {
+          "id": "c",
+          "label": "catfish"
+        }
+      ],
+      "correctChoiceId": "a",
+      "missedConceptOnFail": "syllable-compound",
+      "rationale": "cupcake — read it in two chunks.",
+      "decodableWithin": "PH-two-syllable"
+    },
+    {
+      "id": "ph-2s-023",
+      "skillId": "PH-two-syllable",
+      "itemType": "decode_choice",
+      "difficulty": 2,
+      "stem": "Tap the word you hear.",
+      "audioText": "napkin",
+      "choices": [
+        {
+          "id": "a",
+          "label": "magnet"
+        },
+        {
+          "id": "b",
+          "label": "napkin"
+        },
+        {
+          "id": "c",
+          "label": "basket"
+        }
+      ],
+      "correctChoiceId": "b",
+      "missedConceptOnFail": "syllable-vccv",
+      "rationale": "napkin — read it in two chunks.",
+      "decodableWithin": "PH-two-syllable"
+    },
+    {
+      "id": "ph-2s-024",
+      "skillId": "PH-two-syllable",
+      "itemType": "decode_choice",
+      "difficulty": 2,
+      "stem": "Tap the word you hear.",
+      "audioText": "magnet",
+      "choices": [
+        {
+          "id": "a",
+          "label": "napkin"
+        },
+        {
+          "id": "b",
+          "label": "helmet"
+        },
+        {
+          "id": "c",
+          "label": "magnet"
+        }
+      ],
+      "correctChoiceId": "c",
+      "missedConceptOnFail": "syllable-vccv",
+      "rationale": "magnet — read it in two chunks.",
+      "decodableWithin": "PH-two-syllable"
+    },
+    {
+      "id": "ph-2s-025",
+      "skillId": "PH-two-syllable",
+      "itemType": "decode_choice",
+      "difficulty": 2,
+      "stem": "Tap the word you hear.",
+      "audioText": "basket",
+      "choices": [
+        {
+          "id": "a",
+          "label": "basket"
+        },
+        {
+          "id": "b",
+          "label": "napkin"
+        },
+        {
+          "id": "c",
+          "label": "helmet"
+        }
+      ],
+      "correctChoiceId": "a",
+      "missedConceptOnFail": "syllable-vccv",
+      "rationale": "basket — read it in two chunks.",
+      "decodableWithin": "PH-two-syllable"
+    },
+    {
+      "id": "ph-2s-026",
+      "skillId": "PH-two-syllable",
+      "itemType": "decode_choice",
+      "difficulty": 2,
+      "stem": "Tap the word you hear.",
+      "audioText": "helmet",
+      "choices": [
+        {
+          "id": "a",
+          "label": "magnet"
+        },
+        {
+          "id": "b",
+          "label": "helmet"
+        },
+        {
+          "id": "c",
+          "label": "velvet"
+        }
+      ],
+      "correctChoiceId": "b",
+      "missedConceptOnFail": "syllable-vccv",
+      "rationale": "helmet — read it in two chunks.",
+      "decodableWithin": "PH-two-syllable"
+    },
+    {
+      "id": "ph-2s-027",
+      "skillId": "PH-two-syllable",
+      "itemType": "decode_choice",
+      "difficulty": 2,
+      "stem": "Tap the word you hear.",
+      "audioText": "insect",
+      "choices": [
+        {
+          "id": "a",
+          "label": "contest"
+        },
+        {
+          "id": "b",
+          "label": "velvet"
+        },
+        {
+          "id": "c",
+          "label": "insect"
+        }
+      ],
+      "correctChoiceId": "c",
+      "missedConceptOnFail": "syllable-vccv",
+      "rationale": "insect — read it in two chunks.",
+      "decodableWithin": "PH-two-syllable"
+    },
+    {
+      "id": "ph-2s-028",
+      "skillId": "PH-two-syllable",
+      "itemType": "decode_choice",
+      "difficulty": 2,
+      "stem": "Tap the word you hear.",
+      "audioText": "picnic",
+      "choices": [
+        {
+          "id": "a",
+          "label": "picnic"
+        },
+        {
+          "id": "b",
+          "label": "napkin"
+        },
+        {
+          "id": "c",
+          "label": "magnet"
+        }
+      ],
+      "correctChoiceId": "a",
+      "missedConceptOnFail": "syllable-vccv",
+      "rationale": "picnic — read it in two chunks.",
+      "decodableWithin": "PH-two-syllable"
+    },
+    {
+      "id": "ph-2s-029",
+      "skillId": "PH-two-syllable",
+      "itemType": "decode_choice",
+      "difficulty": 3,
+      "stem": "Tap the word you hear.",
+      "audioText": "contest",
+      "choices": [
+        {
+          "id": "a",
+          "label": "insect"
+        },
+        {
+          "id": "b",
+          "label": "contest"
+        },
+        {
+          "id": "c",
+          "label": "velvet"
+        }
+      ],
+      "correctChoiceId": "b",
+      "missedConceptOnFail": "syllable-vccv",
+      "rationale": "contest — read it in two chunks.",
+      "decodableWithin": "PH-two-syllable"
+    },
+    {
+      "id": "ph-2s-030",
+      "skillId": "PH-two-syllable",
+      "itemType": "decode_choice",
+      "difficulty": 3,
+      "stem": "Tap the word you hear.",
+      "audioText": "velvet",
+      "choices": [
+        {
+          "id": "a",
+          "label": "helmet"
+        },
+        {
+          "id": "b",
+          "label": "magnet"
+        },
+        {
+          "id": "c",
+          "label": "velvet"
+        }
+      ],
+      "correctChoiceId": "c",
+      "missedConceptOnFail": "syllable-vccv",
+      "rationale": "velvet — read it in two chunks.",
+      "decodableWithin": "PH-two-syllable"
+    },
+    {
+      "id": "ph-2s-031",
+      "skillId": "PH-two-syllable",
+      "itemType": "decode_choice",
+      "difficulty": 3,
+      "stem": "Tap the word you hear.",
+      "audioText": "goblin",
+      "choices": [
+        {
+          "id": "a",
+          "label": "goblin"
+        },
+        {
+          "id": "b",
+          "label": "napkin"
+        },
+        {
+          "id": "c",
+          "label": "cactus"
+        }
+      ],
+      "correctChoiceId": "a",
+      "missedConceptOnFail": "syllable-vccv",
+      "rationale": "goblin — read it in two chunks.",
+      "decodableWithin": "PH-two-syllable"
+    },
+    {
+      "id": "ph-2s-032",
+      "skillId": "PH-two-syllable",
+      "itemType": "decode_choice",
+      "difficulty": 2,
+      "stem": "Tap the word you hear.",
+      "audioText": "index",
+      "choices": [
+        {
+          "id": "a",
+          "label": "insect"
+        },
+        {
+          "id": "b",
+          "label": "index"
+        },
+        {
+          "id": "c",
+          "label": "contest"
+        }
+      ],
+      "correctChoiceId": "b",
+      "missedConceptOnFail": "syllable-vccv",
+      "rationale": "index — read it in two chunks.",
+      "decodableWithin": "PH-two-syllable"
+    },
+    {
+      "id": "ph-2s-033",
+      "skillId": "PH-two-syllable",
+      "itemType": "decode_choice",
+      "difficulty": 3,
+      "stem": "Tap the word you hear.",
+      "audioText": "cactus",
+      "choices": [
+        {
+          "id": "a",
+          "label": "walnut"
+        },
+        {
+          "id": "b",
+          "label": "campus"
+        },
+        {
+          "id": "c",
+          "label": "cactus"
+        }
+      ],
+      "correctChoiceId": "c",
+      "missedConceptOnFail": "syllable-vccv",
+      "rationale": "cactus — read it in two chunks.",
+      "decodableWithin": "PH-two-syllable"
+    },
+    {
+      "id": "ph-2s-034",
+      "skillId": "PH-two-syllable",
+      "itemType": "decode_choice",
+      "difficulty": 2,
+      "stem": "Tap the word you hear.",
+      "audioText": "walnut",
+      "choices": [
+        {
+          "id": "a",
+          "label": "walnut"
+        },
+        {
+          "id": "b",
+          "label": "cactus"
+        },
+        {
+          "id": "c",
+          "label": "helmet"
+        }
+      ],
+      "correctChoiceId": "a",
+      "missedConceptOnFail": "syllable-vccv",
+      "rationale": "walnut — read it in two chunks.",
+      "decodableWithin": "PH-two-syllable"
+    },
+    {
+      "id": "ph-2s-035",
+      "skillId": "PH-two-syllable",
+      "itemType": "decode_choice",
+      "difficulty": 3,
+      "stem": "Tap the word you hear.",
+      "audioText": "absent",
+      "choices": [
+        {
+          "id": "a",
+          "label": "insect"
+        },
+        {
+          "id": "b",
+          "label": "absent"
+        },
+        {
+          "id": "c",
+          "label": "contest"
+        }
+      ],
+      "correctChoiceId": "b",
+      "missedConceptOnFail": "syllable-vccv",
+      "rationale": "absent — read it in two chunks.",
+      "decodableWithin": "PH-two-syllable"
+    },
+    {
+      "id": "ph-2s-036",
+      "skillId": "PH-two-syllable",
+      "itemType": "decode_choice",
+      "difficulty": 3,
+      "stem": "Tap the word you hear.",
+      "audioText": "dentist",
+      "choices": [
+        {
+          "id": "a",
+          "label": "insect"
+        },
+        {
+          "id": "b",
+          "label": "contest"
+        },
+        {
+          "id": "c",
+          "label": "dentist"
+        }
+      ],
+      "correctChoiceId": "c",
+      "missedConceptOnFail": "syllable-vccv",
+      "rationale": "dentist — read it in two chunks.",
+      "decodableWithin": "PH-two-syllable"
+    },
+    {
+      "id": "ph-2s-037",
+      "skillId": "PH-two-syllable",
+      "itemType": "decode_choice",
+      "difficulty": 2,
+      "stem": "Tap the word you hear.",
+      "audioText": "mascot",
+      "choices": [
+        {
+          "id": "a",
+          "label": "mascot"
+        },
+        {
+          "id": "b",
+          "label": "cactus"
+        },
+        {
+          "id": "c",
+          "label": "walnut"
+        }
+      ],
+      "correctChoiceId": "a",
+      "missedConceptOnFail": "syllable-vccv",
+      "rationale": "mascot — read it in two chunks.",
+      "decodableWithin": "PH-two-syllable"
+    },
+    {
+      "id": "ph-2s-038",
+      "skillId": "PH-two-syllable",
+      "itemType": "decode_choice",
+      "difficulty": 3,
+      "stem": "Tap the word you hear.",
+      "audioText": "tandem",
+      "choices": [
+        {
+          "id": "a",
+          "label": "ransom"
+        },
+        {
+          "id": "b",
+          "label": "tandem"
+        },
+        {
+          "id": "c",
+          "label": "velvet"
+        }
+      ],
+      "correctChoiceId": "b",
+      "missedConceptOnFail": "syllable-vccv",
+      "rationale": "tandem — read it in two chunks.",
+      "decodableWithin": "PH-two-syllable"
+    },
+    {
+      "id": "ph-2s-039",
+      "skillId": "PH-two-syllable",
+      "itemType": "decode_choice",
+      "difficulty": 3,
+      "stem": "Tap the word you hear.",
+      "audioText": "ransom",
+      "choices": [
+        {
+          "id": "a",
+          "label": "tandem"
+        },
+        {
+          "id": "b",
+          "label": "velvet"
+        },
+        {
+          "id": "c",
+          "label": "ransom"
+        }
+      ],
+      "correctChoiceId": "c",
+      "missedConceptOnFail": "syllable-vccv",
+      "rationale": "ransom — read it in two chunks.",
+      "decodableWithin": "PH-two-syllable"
+    },
+    {
+      "id": "ph-2s-040",
+      "skillId": "PH-two-syllable",
+      "itemType": "decode_choice",
+      "difficulty": 2,
+      "stem": "Tap the word you hear.",
+      "audioText": "zigzag",
+      "choices": [
+        {
+          "id": "a",
+          "label": "zigzag"
+        },
+        {
+          "id": "b",
+          "label": "napkin"
+        },
+        {
+          "id": "c",
+          "label": "magnet"
+        }
+      ],
+      "correctChoiceId": "a",
+      "missedConceptOnFail": "syllable-vccv",
+      "rationale": "zigzag — read it in two chunks.",
+      "decodableWithin": "PH-two-syllable"
+    },
+    {
+      "id": "ph-2s-041",
+      "skillId": "PH-two-syllable",
+      "itemType": "decode_choice",
+      "difficulty": 3,
+      "stem": "Tap the word you hear.",
+      "audioText": "hectic",
+      "choices": [
+        {
+          "id": "a",
+          "label": "picnic"
+        },
+        {
+          "id": "b",
+          "label": "hectic"
+        },
+        {
+          "id": "c",
+          "label": "cactus"
+        }
+      ],
+      "correctChoiceId": "b",
+      "missedConceptOnFail": "syllable-vccv",
+      "rationale": "hectic — read it in two chunks.",
+      "decodableWithin": "PH-two-syllable"
+    },
+    {
+      "id": "ph-2s-042",
+      "skillId": "PH-two-syllable",
+      "itemType": "decode_choice",
+      "difficulty": 2,
+      "stem": "Tap the word you hear.",
+      "audioText": "campus",
+      "choices": [
+        {
+          "id": "a",
+          "label": "cactus"
+        },
+        {
+          "id": "b",
+          "label": "walnut"
+        },
+        {
+          "id": "c",
+          "label": "campus"
+        }
+      ],
+      "correctChoiceId": "c",
+      "missedConceptOnFail": "syllable-vccv",
+      "rationale": "campus — read it in two chunks.",
+      "decodableWithin": "PH-two-syllable"
+    },
+    {
+      "id": "ph-2s-043",
+      "skillId": "PH-two-syllable",
+      "itemType": "decode_choice",
+      "difficulty": 3,
+      "stem": "Tap the word you hear.",
+      "audioText": "publish",
+      "choices": [
+        {
+          "id": "a",
+          "label": "publish"
+        },
+        {
+          "id": "b",
+          "label": "punish"
+        },
+        {
+          "id": "c",
+          "label": "finish"
+        }
+      ],
+      "correctChoiceId": "a",
+      "missedConceptOnFail": "syllable-vccv",
+      "rationale": "publish — read it in two chunks.",
+      "decodableWithin": "PH-two-syllable"
+    },
+    {
+      "id": "ph-2s-044",
+      "skillId": "PH-two-syllable",
+      "itemType": "decode_choice",
+      "difficulty": 3,
+      "stem": "Tap the word you hear.",
+      "audioText": "punish",
+      "choices": [
+        {
+          "id": "a",
+          "label": "publish"
+        },
+        {
+          "id": "b",
+          "label": "punish"
+        },
+        {
+          "id": "c",
+          "label": "finish"
+        }
+      ],
+      "correctChoiceId": "b",
+      "missedConceptOnFail": "syllable-vccv",
+      "rationale": "punish — read it in two chunks.",
+      "decodableWithin": "PH-two-syllable"
+    },
+    {
+      "id": "ph-2s-045",
+      "skillId": "PH-two-syllable",
+      "itemType": "decode_choice",
+      "difficulty": 2,
+      "stem": "Tap the word you hear.",
+      "audioText": "finish",
+      "choices": [
+        {
+          "id": "a",
+          "label": "punish"
+        },
+        {
+          "id": "b",
+          "label": "radish"
+        },
+        {
+          "id": "c",
+          "label": "finish"
+        }
+      ],
+      "correctChoiceId": "c",
+      "missedConceptOnFail": "syllable-vccv",
+      "rationale": "finish — read it in two chunks.",
+      "decodableWithin": "PH-two-syllable"
+    },
+    {
+      "id": "ph-2s-046",
+      "skillId": "PH-two-syllable",
+      "itemType": "decode_choice",
+      "difficulty": 3,
+      "stem": "Tap the word you hear.",
+      "audioText": "radish",
+      "choices": [
+        {
+          "id": "a",
+          "label": "radish"
+        },
+        {
+          "id": "b",
+          "label": "finish"
+        },
+        {
+          "id": "c",
+          "label": "punish"
+        }
+      ],
+      "correctChoiceId": "a",
+      "missedConceptOnFail": "syllable-vccv",
+      "rationale": "radish — read it in two chunks.",
+      "decodableWithin": "PH-two-syllable"
+    },
+    {
+      "id": "ph-2s-047",
+      "skillId": "PH-two-syllable",
+      "itemType": "decode_choice",
+      "difficulty": 2,
+      "stem": "Tap the word you hear.",
+      "audioText": "rabbit",
+      "choices": [
+        {
+          "id": "a",
+          "label": "kitten"
+        },
+        {
+          "id": "b",
+          "label": "rabbit"
+        },
+        {
+          "id": "c",
+          "label": "mitten"
+        }
+      ],
+      "correctChoiceId": "b",
+      "missedConceptOnFail": "syllable-double",
+      "rationale": "rabbit — read it in two chunks.",
+      "decodableWithin": "PH-two-syllable"
+    },
+    {
+      "id": "ph-2s-048",
+      "skillId": "PH-two-syllable",
+      "itemType": "decode_choice",
+      "difficulty": 2,
+      "stem": "Tap the word you hear.",
+      "audioText": "kitten",
+      "choices": [
+        {
+          "id": "a",
+          "label": "rabbit"
+        },
+        {
+          "id": "b",
+          "label": "mitten"
+        },
+        {
+          "id": "c",
+          "label": "kitten"
+        }
+      ],
+      "correctChoiceId": "c",
+      "missedConceptOnFail": "syllable-double",
+      "rationale": "kitten — read it in two chunks.",
+      "decodableWithin": "PH-two-syllable"
+    },
+    {
+      "id": "ph-2s-049",
+      "skillId": "PH-two-syllable",
+      "itemType": "decode_choice",
+      "difficulty": 2,
+      "stem": "Tap the word you hear.",
+      "audioText": "mitten",
+      "choices": [
+        {
+          "id": "a",
+          "label": "mitten"
+        },
+        {
+          "id": "b",
+          "label": "kitten"
+        },
+        {
+          "id": "c",
+          "label": "rabbit"
+        }
+      ],
+      "correctChoiceId": "a",
+      "missedConceptOnFail": "syllable-double",
+      "rationale": "mitten — read it in two chunks.",
+      "decodableWithin": "PH-two-syllable"
+    },
+    {
+      "id": "ph-2s-050",
+      "skillId": "PH-two-syllable",
+      "itemType": "decode_choice",
+      "difficulty": 2,
+      "stem": "Tap the word you hear.",
+      "audioText": "button",
+      "choices": [
+        {
+          "id": "a",
+          "label": "kitten"
+        },
+        {
+          "id": "b",
+          "label": "button"
+        },
+        {
+          "id": "c",
+          "label": "ribbon"
+        }
+      ],
+      "correctChoiceId": "b",
+      "missedConceptOnFail": "syllable-double",
+      "rationale": "button — read it in two chunks.",
+      "decodableWithin": "PH-two-syllable"
+    },
+    {
+      "id": "ph-2s-051",
+      "skillId": "PH-two-syllable",
+      "itemType": "decode_choice",
+      "difficulty": 3,
+      "stem": "Tap the word you hear.",
+      "audioText": "ribbon",
+      "choices": [
+        {
+          "id": "a",
+          "label": "button"
+        },
+        {
+          "id": "b",
+          "label": "kitten"
+        },
+        {
+          "id": "c",
+          "label": "ribbon"
+        }
+      ],
+      "correctChoiceId": "c",
+      "missedConceptOnFail": "syllable-double",
+      "rationale": "ribbon — read it in two chunks.",
+      "decodableWithin": "PH-two-syllable"
+    },
+    {
+      "id": "ph-2s-052",
+      "skillId": "PH-two-syllable",
+      "itemType": "decode_choice",
+      "difficulty": 2,
+      "stem": "Tap the word you hear.",
+      "audioText": "happen",
+      "choices": [
+        {
+          "id": "a",
+          "label": "happen"
+        },
+        {
+          "id": "b",
+          "label": "rabbit"
+        },
+        {
+          "id": "c",
+          "label": "button"
+        }
+      ],
+      "correctChoiceId": "a",
+      "missedConceptOnFail": "syllable-double",
+      "rationale": "happen — read it in two chunks.",
+      "decodableWithin": "PH-two-syllable"
+    },
+    {
+      "id": "ph-2s-053",
+      "skillId": "PH-two-syllable",
+      "itemType": "decode_choice",
+      "difficulty": 3,
+      "stem": "Tap the word you hear.",
+      "audioText": "puppet",
+      "choices": [
+        {
+          "id": "a",
+          "label": "rabbit"
+        },
+        {
+          "id": "b",
+          "label": "puppet"
+        },
+        {
+          "id": "c",
+          "label": "button"
+        }
+      ],
+      "correctChoiceId": "b",
+      "missedConceptOnFail": "syllable-double",
+      "rationale": "puppet — read it in two chunks.",
+      "decodableWithin": "PH-two-syllable"
+    },
+    {
+      "id": "ph-2s-054",
+      "skillId": "PH-two-syllable",
+      "itemType": "decode_choice",
+      "difficulty": 2,
+      "stem": "Tap the word you hear.",
+      "audioText": "muffin",
+      "choices": [
+        {
+          "id": "a",
+          "label": "rabbit"
+        },
+        {
+          "id": "b",
+          "label": "kitten"
+        },
+        {
+          "id": "c",
+          "label": "muffin"
+        }
+      ],
+      "correctChoiceId": "c",
+      "missedConceptOnFail": "syllable-double",
+      "rationale": "muffin — read it in two chunks.",
+      "decodableWithin": "PH-two-syllable"
+    },
+    {
+      "id": "ph-2s-055",
+      "skillId": "PH-two-syllable",
+      "itemType": "decode_choice",
+      "difficulty": 3,
+      "stem": "Tap the word you hear.",
+      "audioText": "hidden",
+      "choices": [
+        {
+          "id": "a",
+          "label": "hidden"
+        },
+        {
+          "id": "b",
+          "label": "rabbit"
+        },
+        {
+          "id": "c",
+          "label": "button"
+        }
+      ],
+      "correctChoiceId": "a",
+      "missedConceptOnFail": "syllable-double",
+      "rationale": "hidden — read it in two chunks.",
+      "decodableWithin": "PH-two-syllable"
+    },
+    {
+      "id": "ph-2s-056",
+      "skillId": "PH-two-syllable",
+      "itemType": "decode_choice",
+      "difficulty": 3,
+      "stem": "Tap the word you hear.",
+      "audioText": "sudden",
+      "choices": [
+        {
+          "id": "a",
+          "label": "hidden"
+        },
+        {
+          "id": "b",
+          "label": "sudden"
+        },
+        {
+          "id": "c",
+          "label": "button"
+        }
+      ],
+      "correctChoiceId": "b",
+      "missedConceptOnFail": "syllable-double",
+      "rationale": "sudden — read it in two chunks.",
+      "decodableWithin": "PH-two-syllable"
+    },
+    {
+      "id": "ph-2s-057",
+      "skillId": "PH-two-syllable",
+      "itemType": "decode_choice",
+      "difficulty": 3,
+      "stem": "Tap the word you hear.",
+      "audioText": "rotten",
+      "choices": [
+        {
+          "id": "a",
+          "label": "kitten"
+        },
+        {
+          "id": "b",
+          "label": "mitten"
+        },
+        {
+          "id": "c",
+          "label": "rotten"
+        }
+      ],
+      "correctChoiceId": "c",
+      "missedConceptOnFail": "syllable-double",
+      "rationale": "rotten — read it in two chunks.",
+      "decodableWithin": "PH-two-syllable"
+    },
+    {
+      "id": "ph-2s-058",
+      "skillId": "PH-two-syllable",
+      "itemType": "decode_choice",
+      "difficulty": 3,
+      "stem": "Tap the word you hear.",
+      "audioText": "common",
+      "choices": [
+        {
+          "id": "a",
+          "label": "common"
+        },
+        {
+          "id": "b",
+          "label": "button"
+        },
+        {
+          "id": "c",
+          "label": "ribbon"
+        }
+      ],
+      "correctChoiceId": "a",
+      "missedConceptOnFail": "syllable-double",
+      "rationale": "common — read it in two chunks.",
+      "decodableWithin": "PH-two-syllable"
+    },
+    {
+      "id": "ph-2s-059",
+      "skillId": "PH-two-syllable",
+      "itemType": "decode_choice",
+      "difficulty": 3,
+      "stem": "Tap the word you hear.",
+      "audioText": "dinner",
+      "choices": [
+        {
+          "id": "a",
+          "label": "summer"
+        },
+        {
+          "id": "b",
+          "label": "dinner"
+        },
+        {
+          "id": "c",
+          "label": "button"
+        }
+      ],
+      "correctChoiceId": "b",
+      "missedConceptOnFail": "syllable-double",
+      "rationale": "dinner — read it in two chunks.",
+      "decodableWithin": "PH-two-syllable"
+    },
+    {
+      "id": "ph-2s-060",
+      "skillId": "PH-two-syllable",
+      "itemType": "decode_choice",
+      "difficulty": 3,
+      "stem": "Tap the word you hear.",
+      "audioText": "summer",
+      "choices": [
+        {
+          "id": "a",
+          "label": "dinner"
+        },
+        {
+          "id": "b",
+          "label": "button"
+        },
+        {
+          "id": "c",
+          "label": "summer"
+        }
+      ],
+      "correctChoiceId": "c",
+      "missedConceptOnFail": "syllable-double",
+      "rationale": "summer — read it in two chunks.",
+      "decodableWithin": "PH-two-syllable"
+    },
+    {
+      "id": "ph-2s-061",
+      "skillId": "PH-two-syllable",
+      "itemType": "decode_choice",
+      "difficulty": 3,
+      "stem": "Tap the word you hear.",
+      "audioText": "mammoth",
+      "choices": [
+        {
+          "id": "a",
+          "label": "mammoth"
+        },
+        {
+          "id": "b",
+          "label": "button"
+        },
+        {
+          "id": "c",
+          "label": "ribbon"
+        }
+      ],
+      "correctChoiceId": "a",
+      "missedConceptOnFail": "syllable-double",
+      "rationale": "mammoth — read it in two chunks.",
+      "decodableWithin": "PH-two-syllable"
+    },
+    {
+      "id": "ph-2s-062",
+      "skillId": "PH-two-syllable",
+      "itemType": "decode_choice",
+      "difficulty": 3,
+      "stem": "Tap the word you hear.",
+      "audioText": "traffic",
+      "choices": [
+        {
+          "id": "a",
+          "label": "muffin"
+        },
+        {
+          "id": "b",
+          "label": "traffic"
+        },
+        {
+          "id": "c",
+          "label": "rabbit"
+        }
+      ],
+      "correctChoiceId": "b",
+      "missedConceptOnFail": "syllable-double",
+      "rationale": "traffic — read it in two chunks.",
+      "decodableWithin": "PH-two-syllable"
+    },
+    {
+      "id": "ph-2s-063",
+      "skillId": "PH-two-syllable",
+      "itemType": "decode_choice",
+      "difficulty": 2,
+      "stem": "Tap the word you hear.",
+      "audioText": "tennis",
+      "choices": [
+        {
+          "id": "a",
+          "label": "rabbit"
+        },
+        {
+          "id": "b",
+          "label": "kitten"
+        },
+        {
+          "id": "c",
+          "label": "tennis"
+        }
+      ],
+      "correctChoiceId": "c",
+      "missedConceptOnFail": "syllable-double",
+      "rationale": "tennis — read it in two chunks.",
+      "decodableWithin": "PH-two-syllable"
+    },
+    {
+      "id": "ph-2s-064",
+      "skillId": "PH-two-syllable",
+      "itemType": "decode_choice",
+      "difficulty": 3,
+      "stem": "Tap the word you hear.",
+      "audioText": "gossip",
+      "choices": [
+        {
+          "id": "a",
+          "label": "gossip"
+        },
+        {
+          "id": "b",
+          "label": "button"
+        },
+        {
+          "id": "c",
+          "label": "rabbit"
+        }
+      ],
+      "correctChoiceId": "a",
+      "missedConceptOnFail": "syllable-double",
+      "rationale": "gossip — read it in two chunks.",
+      "decodableWithin": "PH-two-syllable"
+    },
+    {
+      "id": "ph-2s-065",
+      "skillId": "PH-two-syllable",
+      "itemType": "decode_choice",
+      "difficulty": 2,
+      "stem": "Tap the word you hear.",
+      "audioText": "attic",
+      "choices": [
+        {
+          "id": "a",
+          "label": "rabbit"
+        },
+        {
+          "id": "b",
+          "label": "attic"
+        },
+        {
+          "id": "c",
+          "label": "kitten"
+        }
+      ],
+      "correctChoiceId": "b",
+      "missedConceptOnFail": "syllable-double",
+      "rationale": "attic — read it in two chunks.",
+      "decodableWithin": "PH-two-syllable"
+    }
+  ],
+  "lessons": {
+    "PH-two-syllable": {
+      "iCanStatement": "I can read two-syllable words by breaking them into chunks.",
+      "explanation": "Long words are easier in two chunks (syllables). For compound words, split between the two little words: sun|set, cob|web. For other words, split between the two middle consonants: nap|kin, bas|ket. A double letter shows the split too: rab|bit. Read each chunk, then blend them.",
+      "workedExamples": [
+        {
+          "text": "sunset",
+          "note": "sun + set → sunset"
+        },
+        {
+          "text": "napkin",
+          "note": "nap | kin → napkin (split between p and k)"
+        }
+      ]
+    }
+  }
+}
