@@ -69,6 +69,28 @@
           "itemPool": "spelling-L04-blends",
           "encodePairId": "PH-blends",
           "mastery": { "window": 12, "accuracyToPass": 0.85, "minItems": 8 }
+        },
+        {
+          "id": "PH-floss",
+          "strand": "phonics",
+          "objective": "Decode words ending in doubled ff, ll, ss, zz (FLOSS rule).",
+          "iCanStatement": "I can read words that end in ff, ll, ss and zz.",
+          "prereqs": ["PH-blends"],
+          "itemType": "decode_choice",
+          "itemPool": "phonics-L05-floss",
+          "encodePairId": "SP-floss",
+          "mastery": { "window": 12, "accuracyToPass": 0.85, "minItems": 8 }
+        },
+        {
+          "id": "SP-floss",
+          "strand": "spelling",
+          "objective": "Spell FLOSS words, doubling final f, l, s, z after a short vowel.",
+          "iCanStatement": "I can spell words that end in ff, ll, ss and zz.",
+          "prereqs": ["PH-floss"],
+          "itemType": "build_word",
+          "itemPool": "spelling-L05-floss",
+          "encodePairId": "PH-floss",
+          "mastery": { "window": 12, "accuracyToPass": 0.85, "minItems": 8 }
         }
       ]
     }

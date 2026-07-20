@@ -1,0 +1,1534 @@
+{
+  "packId": "phonics-L05-floss",
+  "strand": "phonics",
+  "skillIds": [
+    "PH-floss"
+  ],
+  "version": 1,
+  "items": [
+    {
+      "id": "ph-fl-001",
+      "skillId": "PH-floss",
+      "itemType": "decode_choice",
+      "difficulty": 1,
+      "stem": "Tap the word you hear.",
+      "audioText": "off",
+      "choices": [
+        {
+          "id": "a",
+          "label": "off"
+        },
+        {
+          "id": "b",
+          "label": "puff"
+        },
+        {
+          "id": "c",
+          "label": "cuff"
+        }
+      ],
+      "correctChoiceId": "a",
+      "missedConceptOnFail": "floss-ff",
+      "rationale": "o-ff = off.",
+      "decodableWithin": "PH-floss"
+    },
+    {
+      "id": "ph-fl-002",
+      "skillId": "PH-floss",
+      "itemType": "decode_choice",
+      "difficulty": 1,
+      "stem": "Tap the word you hear.",
+      "audioText": "puff",
+      "choices": [
+        {
+          "id": "a",
+          "label": "cuff"
+        },
+        {
+          "id": "b",
+          "label": "puff"
+        },
+        {
+          "id": "c",
+          "label": "huff"
+        }
+      ],
+      "correctChoiceId": "b",
+      "missedConceptOnFail": "floss-ff",
+      "rationale": "p-u-ff = puff.",
+      "decodableWithin": "PH-floss"
+    },
+    {
+      "id": "ph-fl-003",
+      "skillId": "PH-floss",
+      "itemType": "decode_choice",
+      "difficulty": 1,
+      "stem": "Tap the word you hear.",
+      "audioText": "cuff",
+      "choices": [
+        {
+          "id": "a",
+          "label": "puff"
+        },
+        {
+          "id": "b",
+          "label": "huff"
+        },
+        {
+          "id": "c",
+          "label": "cuff"
+        }
+      ],
+      "correctChoiceId": "c",
+      "missedConceptOnFail": "floss-ff",
+      "rationale": "c-u-ff = cuff.",
+      "decodableWithin": "PH-floss"
+    },
+    {
+      "id": "ph-fl-004",
+      "skillId": "PH-floss",
+      "itemType": "decode_choice",
+      "difficulty": 2,
+      "stem": "Tap the word you hear.",
+      "audioText": "huff",
+      "choices": [
+        {
+          "id": "a",
+          "label": "huff"
+        },
+        {
+          "id": "b",
+          "label": "puff"
+        },
+        {
+          "id": "c",
+          "label": "buff"
+        }
+      ],
+      "correctChoiceId": "a",
+      "missedConceptOnFail": "floss-ff",
+      "rationale": "h-u-ff = huff.",
+      "decodableWithin": "PH-floss"
+    },
+    {
+      "id": "ph-fl-005",
+      "skillId": "PH-floss",
+      "itemType": "decode_choice",
+      "difficulty": 2,
+      "stem": "Tap the word you hear.",
+      "audioText": "buff",
+      "choices": [
+        {
+          "id": "a",
+          "label": "cuff"
+        },
+        {
+          "id": "b",
+          "label": "buff"
+        },
+        {
+          "id": "c",
+          "label": "muff"
+        }
+      ],
+      "correctChoiceId": "b",
+      "missedConceptOnFail": "floss-ff",
+      "rationale": "b-u-ff = buff.",
+      "decodableWithin": "PH-floss"
+    },
+    {
+      "id": "ph-fl-006",
+      "skillId": "PH-floss",
+      "itemType": "decode_choice",
+      "difficulty": 2,
+      "stem": "Tap the word you hear.",
+      "audioText": "muff",
+      "choices": [
+        {
+          "id": "a",
+          "label": "huff"
+        },
+        {
+          "id": "b",
+          "label": "buff"
+        },
+        {
+          "id": "c",
+          "label": "muff"
+        }
+      ],
+      "correctChoiceId": "c",
+      "missedConceptOnFail": "floss-ff",
+      "rationale": "m-u-ff = muff.",
+      "decodableWithin": "PH-floss"
+    },
+    {
+      "id": "ph-fl-007",
+      "skillId": "PH-floss",
+      "itemType": "decode_choice",
+      "difficulty": 2,
+      "stem": "Tap the word you hear.",
+      "audioText": "cliff",
+      "choices": [
+        {
+          "id": "a",
+          "label": "cliff"
+        },
+        {
+          "id": "b",
+          "label": "stiff"
+        },
+        {
+          "id": "c",
+          "label": "sniff"
+        }
+      ],
+      "correctChoiceId": "a",
+      "missedConceptOnFail": "floss-ff",
+      "rationale": "c-l-i-ff = cliff.",
+      "decodableWithin": "PH-floss"
+    },
+    {
+      "id": "ph-fl-008",
+      "skillId": "PH-floss",
+      "itemType": "decode_choice",
+      "difficulty": 2,
+      "stem": "Tap the word you hear.",
+      "audioText": "stiff",
+      "choices": [
+        {
+          "id": "a",
+          "label": "cliff"
+        },
+        {
+          "id": "b",
+          "label": "stiff"
+        },
+        {
+          "id": "c",
+          "label": "staff"
+        }
+      ],
+      "correctChoiceId": "b",
+      "missedConceptOnFail": "floss-ff",
+      "rationale": "s-t-i-ff = stiff.",
+      "decodableWithin": "PH-floss"
+    },
+    {
+      "id": "ph-fl-009",
+      "skillId": "PH-floss",
+      "itemType": "decode_choice",
+      "difficulty": 2,
+      "stem": "Tap the word you hear.",
+      "audioText": "staff",
+      "choices": [
+        {
+          "id": "a",
+          "label": "stiff"
+        },
+        {
+          "id": "b",
+          "label": "gruff"
+        },
+        {
+          "id": "c",
+          "label": "staff"
+        }
+      ],
+      "correctChoiceId": "c",
+      "missedConceptOnFail": "floss-ff",
+      "rationale": "s-t-a-ff = staff.",
+      "decodableWithin": "PH-floss"
+    },
+    {
+      "id": "ph-fl-010",
+      "skillId": "PH-floss",
+      "itemType": "decode_choice",
+      "difficulty": 3,
+      "stem": "Tap the word you hear.",
+      "audioText": "sniff",
+      "choices": [
+        {
+          "id": "a",
+          "label": "sniff"
+        },
+        {
+          "id": "b",
+          "label": "stiff"
+        },
+        {
+          "id": "c",
+          "label": "cliff"
+        }
+      ],
+      "correctChoiceId": "a",
+      "missedConceptOnFail": "floss-ff",
+      "rationale": "s-n-i-ff = sniff.",
+      "decodableWithin": "PH-floss"
+    },
+    {
+      "id": "ph-fl-011",
+      "skillId": "PH-floss",
+      "itemType": "decode_choice",
+      "difficulty": 3,
+      "stem": "Tap the word you hear.",
+      "audioText": "gruff",
+      "choices": [
+        {
+          "id": "a",
+          "label": "staff"
+        },
+        {
+          "id": "b",
+          "label": "gruff"
+        },
+        {
+          "id": "c",
+          "label": "puff"
+        }
+      ],
+      "correctChoiceId": "b",
+      "missedConceptOnFail": "floss-ff",
+      "rationale": "g-r-u-ff = gruff.",
+      "decodableWithin": "PH-floss"
+    },
+    {
+      "id": "ph-fl-012",
+      "skillId": "PH-floss",
+      "itemType": "decode_choice",
+      "difficulty": 3,
+      "stem": "Tap the word you hear.",
+      "audioText": "doff",
+      "choices": [
+        {
+          "id": "a",
+          "label": "off"
+        },
+        {
+          "id": "b",
+          "label": "puff"
+        },
+        {
+          "id": "c",
+          "label": "doff"
+        }
+      ],
+      "correctChoiceId": "c",
+      "missedConceptOnFail": "floss-ff",
+      "rationale": "d-o-ff = doff.",
+      "decodableWithin": "PH-floss"
+    },
+    {
+      "id": "ph-fl-013",
+      "skillId": "PH-floss",
+      "itemType": "decode_choice",
+      "difficulty": 1,
+      "stem": "Tap the word you hear.",
+      "audioText": "bell",
+      "choices": [
+        {
+          "id": "a",
+          "label": "bell"
+        },
+        {
+          "id": "b",
+          "label": "tell"
+        },
+        {
+          "id": "c",
+          "label": "fell"
+        }
+      ],
+      "correctChoiceId": "a",
+      "missedConceptOnFail": "floss-ll",
+      "rationale": "b-e-ll = bell.",
+      "decodableWithin": "PH-floss"
+    },
+    {
+      "id": "ph-fl-014",
+      "skillId": "PH-floss",
+      "itemType": "decode_choice",
+      "difficulty": 1,
+      "stem": "Tap the word you hear.",
+      "audioText": "tell",
+      "choices": [
+        {
+          "id": "a",
+          "label": "bell"
+        },
+        {
+          "id": "b",
+          "label": "tell"
+        },
+        {
+          "id": "c",
+          "label": "sell"
+        }
+      ],
+      "correctChoiceId": "b",
+      "missedConceptOnFail": "floss-ll",
+      "rationale": "t-e-ll = tell.",
+      "decodableWithin": "PH-floss"
+    },
+    {
+      "id": "ph-fl-015",
+      "skillId": "PH-floss",
+      "itemType": "decode_choice",
+      "difficulty": 1,
+      "stem": "Tap the word you hear.",
+      "audioText": "sell",
+      "choices": [
+        {
+          "id": "a",
+          "label": "well"
+        },
+        {
+          "id": "b",
+          "label": "fell"
+        },
+        {
+          "id": "c",
+          "label": "sell"
+        }
+      ],
+      "correctChoiceId": "c",
+      "missedConceptOnFail": "floss-ll",
+      "rationale": "s-e-ll = sell.",
+      "decodableWithin": "PH-floss"
+    },
+    {
+      "id": "ph-fl-016",
+      "skillId": "PH-floss",
+      "itemType": "decode_choice",
+      "difficulty": 1,
+      "stem": "Tap the word you hear.",
+      "audioText": "well",
+      "choices": [
+        {
+          "id": "a",
+          "label": "well"
+        },
+        {
+          "id": "b",
+          "label": "bell"
+        },
+        {
+          "id": "c",
+          "label": "yell"
+        }
+      ],
+      "correctChoiceId": "a",
+      "missedConceptOnFail": "floss-ll",
+      "rationale": "w-e-ll = well.",
+      "decodableWithin": "PH-floss"
+    },
+    {
+      "id": "ph-fl-017",
+      "skillId": "PH-floss",
+      "itemType": "decode_choice",
+      "difficulty": 1,
+      "stem": "Tap the word you hear.",
+      "audioText": "fell",
+      "choices": [
+        {
+          "id": "a",
+          "label": "sell"
+        },
+        {
+          "id": "b",
+          "label": "fell"
+        },
+        {
+          "id": "c",
+          "label": "tell"
+        }
+      ],
+      "correctChoiceId": "b",
+      "missedConceptOnFail": "floss-ll",
+      "rationale": "f-e-ll = fell.",
+      "decodableWithin": "PH-floss"
+    },
+    {
+      "id": "ph-fl-018",
+      "skillId": "PH-floss",
+      "itemType": "decode_choice",
+      "difficulty": 2,
+      "stem": "Tap the word you hear.",
+      "audioText": "yell",
+      "choices": [
+        {
+          "id": "a",
+          "label": "well"
+        },
+        {
+          "id": "b",
+          "label": "bell"
+        },
+        {
+          "id": "c",
+          "label": "yell"
+        }
+      ],
+      "correctChoiceId": "c",
+      "missedConceptOnFail": "floss-ll",
+      "rationale": "y-e-ll = yell.",
+      "decodableWithin": "PH-floss"
+    },
+    {
+      "id": "ph-fl-019",
+      "skillId": "PH-floss",
+      "itemType": "decode_choice",
+      "difficulty": 1,
+      "stem": "Tap the word you hear.",
+      "audioText": "doll",
+      "choices": [
+        {
+          "id": "a",
+          "label": "doll"
+        },
+        {
+          "id": "b",
+          "label": "dull"
+        },
+        {
+          "id": "c",
+          "label": "bell"
+        }
+      ],
+      "correctChoiceId": "a",
+      "missedConceptOnFail": "floss-ll",
+      "rationale": "d-o-ll = doll.",
+      "decodableWithin": "PH-floss"
+    },
+    {
+      "id": "ph-fl-020",
+      "skillId": "PH-floss",
+      "itemType": "decode_choice",
+      "difficulty": 1,
+      "stem": "Tap the word you hear.",
+      "audioText": "hill",
+      "choices": [
+        {
+          "id": "a",
+          "label": "fill"
+        },
+        {
+          "id": "b",
+          "label": "hill"
+        },
+        {
+          "id": "c",
+          "label": "bill"
+        }
+      ],
+      "correctChoiceId": "b",
+      "missedConceptOnFail": "floss-ll",
+      "rationale": "h-i-ll = hill.",
+      "decodableWithin": "PH-floss"
+    },
+    {
+      "id": "ph-fl-021",
+      "skillId": "PH-floss",
+      "itemType": "decode_choice",
+      "difficulty": 1,
+      "stem": "Tap the word you hear.",
+      "audioText": "will",
+      "choices": [
+        {
+          "id": "a",
+          "label": "hill"
+        },
+        {
+          "id": "b",
+          "label": "fill"
+        },
+        {
+          "id": "c",
+          "label": "will"
+        }
+      ],
+      "correctChoiceId": "c",
+      "missedConceptOnFail": "floss-ll",
+      "rationale": "w-i-ll = will.",
+      "decodableWithin": "PH-floss"
+    },
+    {
+      "id": "ph-fl-022",
+      "skillId": "PH-floss",
+      "itemType": "decode_choice",
+      "difficulty": 1,
+      "stem": "Tap the word you hear.",
+      "audioText": "fill",
+      "choices": [
+        {
+          "id": "a",
+          "label": "fill"
+        },
+        {
+          "id": "b",
+          "label": "hill"
+        },
+        {
+          "id": "c",
+          "label": "bill"
+        }
+      ],
+      "correctChoiceId": "a",
+      "missedConceptOnFail": "floss-ll",
+      "rationale": "f-i-ll = fill.",
+      "decodableWithin": "PH-floss"
+    },
+    {
+      "id": "ph-fl-023",
+      "skillId": "PH-floss",
+      "itemType": "decode_choice",
+      "difficulty": 2,
+      "stem": "Tap the word you hear.",
+      "audioText": "bill",
+      "choices": [
+        {
+          "id": "a",
+          "label": "fill"
+        },
+        {
+          "id": "b",
+          "label": "bill"
+        },
+        {
+          "id": "c",
+          "label": "pill"
+        }
+      ],
+      "correctChoiceId": "b",
+      "missedConceptOnFail": "floss-ll",
+      "rationale": "b-i-ll = bill.",
+      "decodableWithin": "PH-floss"
+    },
+    {
+      "id": "ph-fl-024",
+      "skillId": "PH-floss",
+      "itemType": "decode_choice",
+      "difficulty": 2,
+      "stem": "Tap the word you hear.",
+      "audioText": "kill",
+      "choices": [
+        {
+          "id": "a",
+          "label": "bill"
+        },
+        {
+          "id": "b",
+          "label": "mill"
+        },
+        {
+          "id": "c",
+          "label": "kill"
+        }
+      ],
+      "correctChoiceId": "c",
+      "missedConceptOnFail": "floss-ll",
+      "rationale": "k-i-ll = kill.",
+      "decodableWithin": "PH-floss"
+    },
+    {
+      "id": "ph-fl-025",
+      "skillId": "PH-floss",
+      "itemType": "decode_choice",
+      "difficulty": 2,
+      "stem": "Tap the word you hear.",
+      "audioText": "mill",
+      "choices": [
+        {
+          "id": "a",
+          "label": "mill"
+        },
+        {
+          "id": "b",
+          "label": "pill"
+        },
+        {
+          "id": "c",
+          "label": "bill"
+        }
+      ],
+      "correctChoiceId": "a",
+      "missedConceptOnFail": "floss-ll",
+      "rationale": "m-i-ll = mill.",
+      "decodableWithin": "PH-floss"
+    },
+    {
+      "id": "ph-fl-026",
+      "skillId": "PH-floss",
+      "itemType": "decode_choice",
+      "difficulty": 2,
+      "stem": "Tap the word you hear.",
+      "audioText": "pill",
+      "choices": [
+        {
+          "id": "a",
+          "label": "mill"
+        },
+        {
+          "id": "b",
+          "label": "pill"
+        },
+        {
+          "id": "c",
+          "label": "fill"
+        }
+      ],
+      "correctChoiceId": "b",
+      "missedConceptOnFail": "floss-ll",
+      "rationale": "p-i-ll = pill.",
+      "decodableWithin": "PH-floss"
+    },
+    {
+      "id": "ph-fl-027",
+      "skillId": "PH-floss",
+      "itemType": "decode_choice",
+      "difficulty": 2,
+      "stem": "Tap the word you hear.",
+      "audioText": "gull",
+      "choices": [
+        {
+          "id": "a",
+          "label": "dull"
+        },
+        {
+          "id": "b",
+          "label": "hull"
+        },
+        {
+          "id": "c",
+          "label": "gull"
+        }
+      ],
+      "correctChoiceId": "c",
+      "missedConceptOnFail": "floss-ll",
+      "rationale": "g-u-ll = gull.",
+      "decodableWithin": "PH-floss"
+    },
+    {
+      "id": "ph-fl-028",
+      "skillId": "PH-floss",
+      "itemType": "decode_choice",
+      "difficulty": 2,
+      "stem": "Tap the word you hear.",
+      "audioText": "dull",
+      "choices": [
+        {
+          "id": "a",
+          "label": "dull"
+        },
+        {
+          "id": "b",
+          "label": "gull"
+        },
+        {
+          "id": "c",
+          "label": "doll"
+        }
+      ],
+      "correctChoiceId": "a",
+      "missedConceptOnFail": "floss-ll",
+      "rationale": "d-u-ll = dull.",
+      "decodableWithin": "PH-floss"
+    },
+    {
+      "id": "ph-fl-029",
+      "skillId": "PH-floss",
+      "itemType": "decode_choice",
+      "difficulty": 3,
+      "stem": "Tap the word you hear.",
+      "audioText": "hull",
+      "choices": [
+        {
+          "id": "a",
+          "label": "gull"
+        },
+        {
+          "id": "b",
+          "label": "hull"
+        },
+        {
+          "id": "c",
+          "label": "dull"
+        }
+      ],
+      "correctChoiceId": "b",
+      "missedConceptOnFail": "floss-ll",
+      "rationale": "h-u-ll = hull.",
+      "decodableWithin": "PH-floss"
+    },
+    {
+      "id": "ph-fl-030",
+      "skillId": "PH-floss",
+      "itemType": "decode_choice",
+      "difficulty": 3,
+      "stem": "Tap the word you hear.",
+      "audioText": "gill",
+      "choices": [
+        {
+          "id": "a",
+          "label": "hill"
+        },
+        {
+          "id": "b",
+          "label": "mill"
+        },
+        {
+          "id": "c",
+          "label": "gill"
+        }
+      ],
+      "correctChoiceId": "c",
+      "missedConceptOnFail": "floss-ll",
+      "rationale": "g-i-ll = gill.",
+      "decodableWithin": "PH-floss"
+    },
+    {
+      "id": "ph-fl-031",
+      "skillId": "PH-floss",
+      "itemType": "decode_choice",
+      "difficulty": 1,
+      "stem": "Tap the word you hear.",
+      "audioText": "miss",
+      "choices": [
+        {
+          "id": "a",
+          "label": "miss"
+        },
+        {
+          "id": "b",
+          "label": "kiss"
+        },
+        {
+          "id": "c",
+          "label": "hiss"
+        }
+      ],
+      "correctChoiceId": "a",
+      "missedConceptOnFail": "floss-ss",
+      "rationale": "m-i-ss = miss.",
+      "decodableWithin": "PH-floss"
+    },
+    {
+      "id": "ph-fl-032",
+      "skillId": "PH-floss",
+      "itemType": "decode_choice",
+      "difficulty": 1,
+      "stem": "Tap the word you hear.",
+      "audioText": "kiss",
+      "choices": [
+        {
+          "id": "a",
+          "label": "miss"
+        },
+        {
+          "id": "b",
+          "label": "kiss"
+        },
+        {
+          "id": "c",
+          "label": "hiss"
+        }
+      ],
+      "correctChoiceId": "b",
+      "missedConceptOnFail": "floss-ss",
+      "rationale": "k-i-ss = kiss.",
+      "decodableWithin": "PH-floss"
+    },
+    {
+      "id": "ph-fl-033",
+      "skillId": "PH-floss",
+      "itemType": "decode_choice",
+      "difficulty": 2,
+      "stem": "Tap the word you hear.",
+      "audioText": "hiss",
+      "choices": [
+        {
+          "id": "a",
+          "label": "miss"
+        },
+        {
+          "id": "b",
+          "label": "kiss"
+        },
+        {
+          "id": "c",
+          "label": "hiss"
+        }
+      ],
+      "correctChoiceId": "c",
+      "missedConceptOnFail": "floss-ss",
+      "rationale": "h-i-ss = hiss.",
+      "decodableWithin": "PH-floss"
+    },
+    {
+      "id": "ph-fl-034",
+      "skillId": "PH-floss",
+      "itemType": "decode_choice",
+      "difficulty": 1,
+      "stem": "Tap the word you hear.",
+      "audioText": "boss",
+      "choices": [
+        {
+          "id": "a",
+          "label": "boss"
+        },
+        {
+          "id": "b",
+          "label": "loss"
+        },
+        {
+          "id": "c",
+          "label": "moss"
+        }
+      ],
+      "correctChoiceId": "a",
+      "missedConceptOnFail": "floss-ss",
+      "rationale": "b-o-ss = boss.",
+      "decodableWithin": "PH-floss"
+    },
+    {
+      "id": "ph-fl-035",
+      "skillId": "PH-floss",
+      "itemType": "decode_choice",
+      "difficulty": 2,
+      "stem": "Tap the word you hear.",
+      "audioText": "loss",
+      "choices": [
+        {
+          "id": "a",
+          "label": "boss"
+        },
+        {
+          "id": "b",
+          "label": "loss"
+        },
+        {
+          "id": "c",
+          "label": "moss"
+        }
+      ],
+      "correctChoiceId": "b",
+      "missedConceptOnFail": "floss-ss",
+      "rationale": "l-o-ss = loss.",
+      "decodableWithin": "PH-floss"
+    },
+    {
+      "id": "ph-fl-036",
+      "skillId": "PH-floss",
+      "itemType": "decode_choice",
+      "difficulty": 2,
+      "stem": "Tap the word you hear.",
+      "audioText": "moss",
+      "choices": [
+        {
+          "id": "a",
+          "label": "boss"
+        },
+        {
+          "id": "b",
+          "label": "toss"
+        },
+        {
+          "id": "c",
+          "label": "moss"
+        }
+      ],
+      "correctChoiceId": "c",
+      "missedConceptOnFail": "floss-ss",
+      "rationale": "m-o-ss = moss.",
+      "decodableWithin": "PH-floss"
+    },
+    {
+      "id": "ph-fl-037",
+      "skillId": "PH-floss",
+      "itemType": "decode_choice",
+      "difficulty": 2,
+      "stem": "Tap the word you hear.",
+      "audioText": "toss",
+      "choices": [
+        {
+          "id": "a",
+          "label": "toss"
+        },
+        {
+          "id": "b",
+          "label": "loss"
+        },
+        {
+          "id": "c",
+          "label": "moss"
+        }
+      ],
+      "correctChoiceId": "a",
+      "missedConceptOnFail": "floss-ss",
+      "rationale": "t-o-ss = toss.",
+      "decodableWithin": "PH-floss"
+    },
+    {
+      "id": "ph-fl-038",
+      "skillId": "PH-floss",
+      "itemType": "decode_choice",
+      "difficulty": 2,
+      "stem": "Tap the word you hear.",
+      "audioText": "mass",
+      "choices": [
+        {
+          "id": "a",
+          "label": "mess"
+        },
+        {
+          "id": "b",
+          "label": "mass"
+        },
+        {
+          "id": "c",
+          "label": "miss"
+        }
+      ],
+      "correctChoiceId": "b",
+      "missedConceptOnFail": "floss-ss",
+      "rationale": "m-a-ss = mass.",
+      "decodableWithin": "PH-floss"
+    },
+    {
+      "id": "ph-fl-039",
+      "skillId": "PH-floss",
+      "itemType": "decode_choice",
+      "difficulty": 1,
+      "stem": "Tap the word you hear.",
+      "audioText": "less",
+      "choices": [
+        {
+          "id": "a",
+          "label": "mess"
+        },
+        {
+          "id": "b",
+          "label": "loss"
+        },
+        {
+          "id": "c",
+          "label": "less"
+        }
+      ],
+      "correctChoiceId": "c",
+      "missedConceptOnFail": "floss-ss",
+      "rationale": "l-e-ss = less.",
+      "decodableWithin": "PH-floss"
+    },
+    {
+      "id": "ph-fl-040",
+      "skillId": "PH-floss",
+      "itemType": "decode_choice",
+      "difficulty": 1,
+      "stem": "Tap the word you hear.",
+      "audioText": "mess",
+      "choices": [
+        {
+          "id": "a",
+          "label": "mess"
+        },
+        {
+          "id": "b",
+          "label": "less"
+        },
+        {
+          "id": "c",
+          "label": "mass"
+        }
+      ],
+      "correctChoiceId": "a",
+      "missedConceptOnFail": "floss-ss",
+      "rationale": "m-e-ss = mess.",
+      "decodableWithin": "PH-floss"
+    },
+    {
+      "id": "ph-fl-041",
+      "skillId": "PH-floss",
+      "itemType": "decode_choice",
+      "difficulty": 1,
+      "stem": "Tap the word you hear.",
+      "audioText": "pass",
+      "choices": [
+        {
+          "id": "a",
+          "label": "mass"
+        },
+        {
+          "id": "b",
+          "label": "pass"
+        },
+        {
+          "id": "c",
+          "label": "fuss"
+        }
+      ],
+      "correctChoiceId": "b",
+      "missedConceptOnFail": "floss-ss",
+      "rationale": "p-a-ss = pass.",
+      "decodableWithin": "PH-floss"
+    },
+    {
+      "id": "ph-fl-042",
+      "skillId": "PH-floss",
+      "itemType": "decode_choice",
+      "difficulty": 2,
+      "stem": "Tap the word you hear.",
+      "audioText": "fuss",
+      "choices": [
+        {
+          "id": "a",
+          "label": "muss"
+        },
+        {
+          "id": "b",
+          "label": "mass"
+        },
+        {
+          "id": "c",
+          "label": "fuss"
+        }
+      ],
+      "correctChoiceId": "c",
+      "missedConceptOnFail": "floss-ss",
+      "rationale": "f-u-ss = fuss.",
+      "decodableWithin": "PH-floss"
+    },
+    {
+      "id": "ph-fl-043",
+      "skillId": "PH-floss",
+      "itemType": "decode_choice",
+      "difficulty": 3,
+      "stem": "Tap the word you hear.",
+      "audioText": "muss",
+      "choices": [
+        {
+          "id": "a",
+          "label": "muss"
+        },
+        {
+          "id": "b",
+          "label": "fuss"
+        },
+        {
+          "id": "c",
+          "label": "mass"
+        }
+      ],
+      "correctChoiceId": "a",
+      "missedConceptOnFail": "floss-ss",
+      "rationale": "m-u-ss = muss.",
+      "decodableWithin": "PH-floss"
+    },
+    {
+      "id": "ph-fl-044",
+      "skillId": "PH-floss",
+      "itemType": "decode_choice",
+      "difficulty": 2,
+      "stem": "Tap the word you hear.",
+      "audioText": "class",
+      "choices": [
+        {
+          "id": "a",
+          "label": "glass"
+        },
+        {
+          "id": "b",
+          "label": "class"
+        },
+        {
+          "id": "c",
+          "label": "grass"
+        }
+      ],
+      "correctChoiceId": "b",
+      "missedConceptOnFail": "floss-ss",
+      "rationale": "c-l-a-ss = class.",
+      "decodableWithin": "PH-floss"
+    },
+    {
+      "id": "ph-fl-045",
+      "skillId": "PH-floss",
+      "itemType": "decode_choice",
+      "difficulty": 2,
+      "stem": "Tap the word you hear.",
+      "audioText": "grass",
+      "choices": [
+        {
+          "id": "a",
+          "label": "glass"
+        },
+        {
+          "id": "b",
+          "label": "brass"
+        },
+        {
+          "id": "c",
+          "label": "grass"
+        }
+      ],
+      "correctChoiceId": "c",
+      "missedConceptOnFail": "floss-ss",
+      "rationale": "g-r-a-ss = grass.",
+      "decodableWithin": "PH-floss"
+    },
+    {
+      "id": "ph-fl-046",
+      "skillId": "PH-floss",
+      "itemType": "decode_choice",
+      "difficulty": 2,
+      "stem": "Tap the word you hear.",
+      "audioText": "dress",
+      "choices": [
+        {
+          "id": "a",
+          "label": "dress"
+        },
+        {
+          "id": "b",
+          "label": "press"
+        },
+        {
+          "id": "c",
+          "label": "bless"
+        }
+      ],
+      "correctChoiceId": "a",
+      "missedConceptOnFail": "floss-ss",
+      "rationale": "d-r-e-ss = dress.",
+      "decodableWithin": "PH-floss"
+    },
+    {
+      "id": "ph-fl-047",
+      "skillId": "PH-floss",
+      "itemType": "decode_choice",
+      "difficulty": 3,
+      "stem": "Tap the word you hear.",
+      "audioText": "press",
+      "choices": [
+        {
+          "id": "a",
+          "label": "dress"
+        },
+        {
+          "id": "b",
+          "label": "press"
+        },
+        {
+          "id": "c",
+          "label": "bless"
+        }
+      ],
+      "correctChoiceId": "b",
+      "missedConceptOnFail": "floss-ss",
+      "rationale": "p-r-e-ss = press.",
+      "decodableWithin": "PH-floss"
+    },
+    {
+      "id": "ph-fl-048",
+      "skillId": "PH-floss",
+      "itemType": "decode_choice",
+      "difficulty": 2,
+      "stem": "Tap the word you hear.",
+      "audioText": "cross",
+      "choices": [
+        {
+          "id": "a",
+          "label": "floss"
+        },
+        {
+          "id": "b",
+          "label": "gloss"
+        },
+        {
+          "id": "c",
+          "label": "cross"
+        }
+      ],
+      "correctChoiceId": "c",
+      "missedConceptOnFail": "floss-ss",
+      "rationale": "c-r-o-ss = cross.",
+      "decodableWithin": "PH-floss"
+    },
+    {
+      "id": "ph-fl-049",
+      "skillId": "PH-floss",
+      "itemType": "decode_choice",
+      "difficulty": 3,
+      "stem": "Tap the word you hear.",
+      "audioText": "floss",
+      "choices": [
+        {
+          "id": "a",
+          "label": "floss"
+        },
+        {
+          "id": "b",
+          "label": "cross"
+        },
+        {
+          "id": "c",
+          "label": "gloss"
+        }
+      ],
+      "correctChoiceId": "a",
+      "missedConceptOnFail": "floss-ss",
+      "rationale": "f-l-o-ss = floss.",
+      "decodableWithin": "PH-floss"
+    },
+    {
+      "id": "ph-fl-050",
+      "skillId": "PH-floss",
+      "itemType": "decode_choice",
+      "difficulty": 2,
+      "stem": "Tap the word you hear.",
+      "audioText": "glass",
+      "choices": [
+        {
+          "id": "a",
+          "label": "class"
+        },
+        {
+          "id": "b",
+          "label": "glass"
+        },
+        {
+          "id": "c",
+          "label": "grass"
+        }
+      ],
+      "correctChoiceId": "b",
+      "missedConceptOnFail": "floss-ss",
+      "rationale": "g-l-a-ss = glass.",
+      "decodableWithin": "PH-floss"
+    },
+    {
+      "id": "ph-fl-051",
+      "skillId": "PH-floss",
+      "itemType": "decode_choice",
+      "difficulty": 3,
+      "stem": "Tap the word you hear.",
+      "audioText": "bless",
+      "choices": [
+        {
+          "id": "a",
+          "label": "dress"
+        },
+        {
+          "id": "b",
+          "label": "press"
+        },
+        {
+          "id": "c",
+          "label": "bless"
+        }
+      ],
+      "correctChoiceId": "c",
+      "missedConceptOnFail": "floss-ss",
+      "rationale": "b-l-e-ss = bless.",
+      "decodableWithin": "PH-floss"
+    },
+    {
+      "id": "ph-fl-052",
+      "skillId": "PH-floss",
+      "itemType": "decode_choice",
+      "difficulty": 3,
+      "stem": "Tap the word you hear.",
+      "audioText": "brass",
+      "choices": [
+        {
+          "id": "a",
+          "label": "brass"
+        },
+        {
+          "id": "b",
+          "label": "grass"
+        },
+        {
+          "id": "c",
+          "label": "class"
+        }
+      ],
+      "correctChoiceId": "a",
+      "missedConceptOnFail": "floss-ss",
+      "rationale": "b-r-a-ss = brass.",
+      "decodableWithin": "PH-floss"
+    },
+    {
+      "id": "ph-fl-053",
+      "skillId": "PH-floss",
+      "itemType": "decode_choice",
+      "difficulty": 3,
+      "stem": "Tap the word you hear.",
+      "audioText": "gloss",
+      "choices": [
+        {
+          "id": "a",
+          "label": "cross"
+        },
+        {
+          "id": "b",
+          "label": "gloss"
+        },
+        {
+          "id": "c",
+          "label": "floss"
+        }
+      ],
+      "correctChoiceId": "b",
+      "missedConceptOnFail": "floss-ss",
+      "rationale": "g-l-o-ss = gloss.",
+      "decodableWithin": "PH-floss"
+    },
+    {
+      "id": "ph-fl-054",
+      "skillId": "PH-floss",
+      "itemType": "decode_choice",
+      "difficulty": 1,
+      "stem": "Tap the word you hear.",
+      "audioText": "buzz",
+      "choices": [
+        {
+          "id": "a",
+          "label": "fuzz"
+        },
+        {
+          "id": "b",
+          "label": "jazz"
+        },
+        {
+          "id": "c",
+          "label": "buzz"
+        }
+      ],
+      "correctChoiceId": "c",
+      "missedConceptOnFail": "floss-zz",
+      "rationale": "b-u-zz = buzz.",
+      "decodableWithin": "PH-floss"
+    },
+    {
+      "id": "ph-fl-055",
+      "skillId": "PH-floss",
+      "itemType": "decode_choice",
+      "difficulty": 2,
+      "stem": "Tap the word you hear.",
+      "audioText": "fizz",
+      "choices": [
+        {
+          "id": "a",
+          "label": "fizz"
+        },
+        {
+          "id": "b",
+          "label": "buzz"
+        },
+        {
+          "id": "c",
+          "label": "fuzz"
+        }
+      ],
+      "correctChoiceId": "a",
+      "missedConceptOnFail": "floss-zz",
+      "rationale": "f-i-zz = fizz.",
+      "decodableWithin": "PH-floss"
+    },
+    {
+      "id": "ph-fl-056",
+      "skillId": "PH-floss",
+      "itemType": "decode_choice",
+      "difficulty": 2,
+      "stem": "Tap the word you hear.",
+      "audioText": "jazz",
+      "choices": [
+        {
+          "id": "a",
+          "label": "buzz"
+        },
+        {
+          "id": "b",
+          "label": "jazz"
+        },
+        {
+          "id": "c",
+          "label": "razz"
+        }
+      ],
+      "correctChoiceId": "b",
+      "missedConceptOnFail": "floss-zz",
+      "rationale": "j-a-zz = jazz.",
+      "decodableWithin": "PH-floss"
+    },
+    {
+      "id": "ph-fl-057",
+      "skillId": "PH-floss",
+      "itemType": "decode_choice",
+      "difficulty": 2,
+      "stem": "Tap the word you hear.",
+      "audioText": "fuzz",
+      "choices": [
+        {
+          "id": "a",
+          "label": "buzz"
+        },
+        {
+          "id": "b",
+          "label": "fizz"
+        },
+        {
+          "id": "c",
+          "label": "fuzz"
+        }
+      ],
+      "correctChoiceId": "c",
+      "missedConceptOnFail": "floss-zz",
+      "rationale": "f-u-zz = fuzz.",
+      "decodableWithin": "PH-floss"
+    },
+    {
+      "id": "ph-fl-058",
+      "skillId": "PH-floss",
+      "itemType": "decode_choice",
+      "difficulty": 3,
+      "stem": "Tap the word you hear.",
+      "audioText": "razz",
+      "choices": [
+        {
+          "id": "a",
+          "label": "razz"
+        },
+        {
+          "id": "b",
+          "label": "jazz"
+        },
+        {
+          "id": "c",
+          "label": "fizz"
+        }
+      ],
+      "correctChoiceId": "a",
+      "missedConceptOnFail": "floss-zz",
+      "rationale": "r-a-zz = razz.",
+      "decodableWithin": "PH-floss"
+    }
+  ],
+  "lessons": {
+    "PH-floss": {
+      "iCanStatement": "I can read words that end in ff, ll, ss and zz.",
+      "explanation": "When a short word ends in the sound /f/, /l/, /s/ or /z/ right after a short vowel, it is usually written with TWO letters: ff, ll, ss, zz. They still make just one sound — bell says /bel/, miss says /mis/.",
+      "workedExamples": [
+        {
+          "text": "bell",
+          "note": "b · e · ll → bell (ll = one /l/ sound)"
+        },
+        {
+          "text": "miss",
+          "note": "m · i · ss → miss"
+        }
+      ]
+    }
+  }
+}
