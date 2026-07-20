@@ -157,6 +157,28 @@
           "itemPool": "spelling-L08-r-controlled",
           "encodePairId": "PH-r-controlled",
           "mastery": { "window": 12, "accuracyToPass": 0.85, "minItems": 8 }
+        },
+        {
+          "id": "PH-diphthongs",
+          "strand": "phonics",
+          "objective": "Decode diphthongs oi/oy, ou/ow, aw/au and short-oo.",
+          "iCanStatement": "I can read words with oi, oy, ou, ow, aw, au and short oo.",
+          "prereqs": ["PH-r-controlled"],
+          "itemType": "decode_choice",
+          "itemPool": "phonics-L09-diphthongs",
+          "encodePairId": "SP-diphthongs",
+          "mastery": { "window": 12, "accuracyToPass": 0.85, "minItems": 8 }
+        },
+        {
+          "id": "SP-diphthongs",
+          "strand": "spelling",
+          "objective": "Spell diphthong and short-oo words, choosing the right team.",
+          "iCanStatement": "I can spell words with oi, oy, ou, ow, aw, au and short oo.",
+          "prereqs": ["PH-diphthongs"],
+          "itemType": "build_word",
+          "itemPool": "spelling-L09-diphthongs",
+          "encodePairId": "PH-diphthongs",
+          "mastery": { "window": 12, "accuracyToPass": 0.85, "minItems": 8 }
         }
       ]
     }

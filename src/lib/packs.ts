@@ -15,6 +15,8 @@ import phonicsVt from '../data/packs/phonics-L07-vowel-teams.json'
 import spellingVt from '../data/packs/spelling-L07-vowel-teams.json'
 import phonicsRc from '../data/packs/phonics-L08-r-controlled.json'
 import spellingRc from '../data/packs/spelling-L08-r-controlled.json'
+import phonicsDi from '../data/packs/phonics-L09-diphthongs.json'
+import spellingDi from '../data/packs/spelling-L09-diphthongs.json'
 
 const PACKS: ContentPack[] = [
   phonicsCvc as ContentPack,
@@ -30,7 +32,9 @@ const PACKS: ContentPack[] = [
   phonicsVt as ContentPack,
   spellingVt as ContentPack,
   phonicsRc as ContentPack,
-  spellingRc as ContentPack
+  spellingRc as ContentPack,
+  phonicsDi as ContentPack,
+  spellingDi as ContentPack
 ]
 
 export const SKILLS: SkillDef[] =
