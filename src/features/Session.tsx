@@ -1,9 +1,10 @@
 import { useEffect, useRef, useState } from 'react'
-import type { Child, PackItem, Attempt, SkillProgress, Difficulty, SkillDef, Certificate } from '../types'
+import type { Child, PackItem, Attempt, SkillProgress, Difficulty, SkillDef, Certificate, Review } from '../types'
 import type { ScoreResult } from '../lib/scoring'
-import { addAttempt, getAttempts, getProgress, putProgress, putCertificate } from '../store'
+import { addAttempt, getAttempts, getProgress, putProgress, putCertificate, getReviews, putReview } from '../store'
 import { SKILLS, getSkill, getLesson, pickItem } from '../lib/packs'
 import { rollingAccuracy, itemsAnswered, nextDifficulty, skillMastered, encodeUnlocked, struggling } from '../lib/engine'
+import { scheduleFirst, onReviewPass, onReviewFail, dueReviews } from '../lib/srs'
 import { McqItem } from './items/McqItem'
 import { TileItem } from './items/TileItem'
 import { LessonView } from './LessonView'
@@ -29,6 +30,9 @@ export function Session(props: { child: Child; onExit: () => void }) {
   const lessonShownRef = useRef<Set<string>>(new Set())
   const startRef = useRef<number>(Date.now())
   const countRef = useRef(0)
+  const reviewsRef = useRef<Review[]>([])       // spaced-repetition schedule (§7)
+  const dueQueueRef = useRef<string[]>([])       // skillIds due for review this session (cap 4)
+  const reviewingRef = useRef<string | null>(null) // skillId currently being reviewed, else null
   const [phase, setPhase] = useState<Phase>('loading')
   const [item, setItem] = useState<PackItem | null>(null)
   const [answered, setAnswered] = useState<ScoreResult | null>(null)
@@ -41,6 +45,8 @@ export function Session(props: { child: Child; onExit: () => void }) {
       attemptsRef.current = await getAttempts(props.child.id)
       const prog = await getProgress(props.child.id)
       for (const p of prog) diffRef.current.set(p.skillId, p.difficulty)
+      reviewsRef.current = await getReviews(props.child.id)
+      dueQueueRef.current = dueReviews(reviewsRef.current, Date.now()).map(r => r.skillId)
       advance(true)
     })()
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -48,8 +54,8 @@ export function Session(props: { child: Child; onExit: () => void }) {
 
   const diffFor = (id: string): Difficulty => diffRef.current.get(id) ?? 1
 
-  function loadItem(skill: SkillDef) {
-    const it = pickItem(skill.id, diffFor(skill.id), seenRef.current)
+  function loadItem(skill: SkillDef, forceDiff?: Difficulty) {
+    const it = pickItem(skill.id, forceDiff ?? diffFor(skill.id), seenRef.current)
     if (!it) { setPhase('summary'); return }
     seenRef.current.add(it.id)
     if (import.meta.env.DEV) (window as unknown as { __item?: PackItem }).__item = it
@@ -59,6 +65,13 @@ export function Session(props: { child: Child; onExit: () => void }) {
   // Choose next skill (interleave eligible), then serve lesson-on-struggle or an item.
   function advance(initial = false) {
     if (!initial && countRef.current >= SESSION_LEN) { setPhase('summary'); return }
+    // Due spaced-repetition reviews first (§7): easier items on already-mastered skills.
+    const dueSkillId = dueQueueRef.current.shift()
+    if (dueSkillId) {
+      const rs = getSkill(dueSkillId)
+      if (rs) { reviewingRef.current = dueSkillId; loadItem(rs, 1); return }
+    }
+    reviewingRef.current = null
     const elig = eligibleSkills(attemptsRef.current)
     if (!elig.length) { setPhase('summary'); return }
     const skill = elig[countRef.current % elig.length]
@@ -94,9 +107,21 @@ export function Session(props: { child: Child; onExit: () => void }) {
     await putProgress(props.child.id, sp)
 
     countRef.current += 1; setCount(countRef.current)
-    if (!wasMastered && nowMastered) {
-      const c: Certificate = { skillId: skill.id, iCanStatement: skill.iCanStatement, awardedAt: Date.now() }
+    const now = Date.now()
+    if (reviewingRef.current === skill.id) {
+      // This was a spaced-repetition review: advance on pass, demote on fail (§7).
+      const rev = reviewsRef.current.find(x => x.skillId === skill.id)
+      if (rev) {
+        const upd = r.correct ? onReviewPass(rev, now) : onReviewFail(rev, now)
+        reviewsRef.current = reviewsRef.current.map(x => x.skillId === skill.id ? upd : x)
+        await putReview(props.child.id, upd)
+      }
+    } else if (!wasMastered && nowMastered) {
+      const c: Certificate = { skillId: skill.id, iCanStatement: skill.iCanStatement, awardedAt: now }
       await putCertificate(props.child.id, c); setCert(c)
+      const rev = scheduleFirst(skill.id, now)   // schedule spaced review on new mastery
+      reviewsRef.current = [...reviewsRef.current.filter(x => x.skillId !== skill.id), rev]
+      await putReview(props.child.id, rev)
     }
     setAnswered(r)
   }

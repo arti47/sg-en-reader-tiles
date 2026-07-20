@@ -1,19 +1,26 @@
 // IndexedDB persistence (CLAUDE.md §11). No deps.
-import type { Child, Attempt, SkillProgress, Certificate } from './types'
-const DB = 'sg-reader'; const VER = 2
+import type { Child, Attempt, SkillProgress, Certificate, Review } from './types'
+const DB = 'sg-reader'; const VER = 3
 
 function open(): Promise<IDBDatabase> {
   return new Promise((res, rej) => {
     const r = indexedDB.open(DB, VER)
-    r.onupgradeneeded = () => {
+    r.onupgradeneeded = (e) => {
       const db = r.result
+      const oldV = e.oldVersion
       if (!db.objectStoreNames.contains('children')) db.createObjectStore('children', { keyPath: 'id' })
-      // v1 keyed attempts by ts (collision risk); v2 rekeys by uuid + childId index.
-      if (db.objectStoreNames.contains('attempts')) db.deleteObjectStore('attempts')
-      const at = db.createObjectStore('attempts', { keyPath: 'id' })
-      at.createIndex('childId', 'childId', { unique: false })
-      if (!db.objectStoreNames.contains('progress')) db.createObjectStore('progress', { keyPath: 'key' })
-      if (!db.objectStoreNames.contains('certificates')) db.createObjectStore('certificates', { keyPath: 'key' })
+      if (oldV < 2) {
+        // v1 keyed attempts by ts (collision risk); v2 rekeys by uuid + childId index.
+        if (db.objectStoreNames.contains('attempts')) db.deleteObjectStore('attempts')
+        const at = db.createObjectStore('attempts', { keyPath: 'id' })
+        at.createIndex('childId', 'childId', { unique: false })
+        if (!db.objectStoreNames.contains('progress')) db.createObjectStore('progress', { keyPath: 'key' })
+        if (!db.objectStoreNames.contains('certificates')) db.createObjectStore('certificates', { keyPath: 'key' })
+      }
+      if (oldV < 3) {
+        // v3 adds spaced-repetition review scheduling (§7).
+        if (!db.objectStoreNames.contains('reviews')) db.createObjectStore('reviews', { keyPath: 'key' })
+      }
     }
     r.onsuccess = () => res(r.result)
     r.onerror = () => rej(r.error)
@@ -49,3 +56,10 @@ export const getCertificates = (childId: string) =>
     .then(rows => rows.filter(r => r.key.startsWith(childId + '::')))
 export const putCertificate = (childId: string, c: Certificate) =>
   req('certificates', 'readwrite', s => s.put({ ...c, key: pKey(childId, c.skillId) }))
+
+// Reviews (spaced repetition) — keyed "childId::skillId"
+export const getReviews = (childId: string) =>
+  req<Array<Review & { key: string }>>('reviews', 'readonly', s => s.getAll())
+    .then(rows => rows.filter(r => r.key.startsWith(childId + '::')))
+export const putReview = (childId: string, rv: Review) =>
+  req('reviews', 'readwrite', s => s.put({ ...rv, key: pKey(childId, rv.skillId) }))

@@ -84,3 +84,9 @@ export interface SkillProgress {
   masteredAt?: number
 }
 export interface Certificate { skillId: string; iCanStatement: string; awardedAt: number }
+export interface Review {
+  skillId: string
+  due: number                    // next review timestamp
+  stage: number                  // 0,1,2 → +2d,+7d,+21d; graduates after the last
+  status: 'scheduled' | 'graduated'
+}

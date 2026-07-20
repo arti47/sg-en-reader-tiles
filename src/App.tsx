@@ -6,9 +6,12 @@ import { AddStudent } from './features/AddStudent'
 import { Session } from './features/Session'
 import { Placement } from './features/Placement'
 import { initPWA } from './pwa'
+import * as srs from './lib/srs'
+
+if (import.meta.env.DEV) (window as unknown as { __srs?: typeof srs }).__srs = srs
 
 type View = 'pick' | 'add' | 'placement' | 'session'
-const APP_VERSION = '0.2.12'
+const APP_VERSION = '0.2.13'
 
 export default function App() {
   const [children, setChildren] = useState<Child[]>([])
