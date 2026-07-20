@@ -447,7 +447,7 @@ type PackItem = {
 **18.3 Content Pack Ledger (mandatory).** A **T-numbered checkbox ledger** lists every content pack the app needs, grouped by strand and mapped to roadmap phases. Preamble for any AI resuming the project: work top-to-bottom within the current phase; author the pack; run §6b lint; deliver to owner for review (§12.5); **tick the box only after owner sign-off, in the same change, with a changelog row. An unticked box = content not approved; NEVER build/ship UI against an unticked pack.**
 
 - [ ] T01 phonics-L01-letter-sounds (+ phoneme audio manifest)
-- [ ] T02 phonics-L02-cvc-short-vowels
+- [x] T02 phonics-L02-cvc-short-vowels *(owner-approved 2026-07-20; 60 items, lint-clean)*
 - [ ] T03 phonics-L03-digraphs (sh ch th ck)
 - [ ] T04 phonics-L04-blends
 - [ ] T05 phonics-L05-floss-doubling
@@ -456,14 +456,14 @@ type PackItem = {
 - [ ] T08 phonics-L08-r-controlled
 - [ ] T09 phonics-L09-diphthongs
 - [ ] T10 phonics-L10-two-syllable
-- [ ] T11 spelling packs mirroring T01–T10 (encode items + dictation sentences)
+- [ ] T11 spelling packs mirroring T01–T10 (encode items + dictation sentences) *(CVC slice `spelling-L02-cvc-short-vowels` owner-approved 2026-07-20, 60 items; remaining levels + dictation pending)*
 - [ ] T12 high-frequency word sets (threaded)
-- [ ] T13 lessons for all phonics/spelling skills
+- [ ] T13 lessons for all phonics/spelling skills *(CVC decode + spell lessons owner-approved 2026-07-20; remaining skills pending)*
 - [ ] T14 grammar starter track (articles, SVA-simple, tenses-basic)
 - [ ] T15 vocab starter track
 - [ ] T16+ PSLE Paper-2 packs (M3; enumerate when reached)
 
-> **Ledger status (2026-07-20).** T02 (`phonics-L02-cvc-short-vowels`, decode), the CVC slice of T11 (`spelling-L02-cvc-short-vowels`, encode), and the CVC lessons of T13 are **authored, wired, and passing the automated §6b build-lint** (`npm run lint:packs`; **60 items each** — the quality CVC well maxed out — decodability-checked against the CVC envelope, en-SG, all missedConcepts tagged to the word's short vowel, correct-choice position varied a/b/c). Boxes stay **unticked** pending only **owner sign-off** (§12.5) — the last gate. Per §18.3 these are the first UI shipped against packs; treat as provisional until signed off. Phoneme audio (T01) deferred: TTS-only this pass, `audio.phoneme()` stubbed.
+> **Ledger status (2026-07-20).** T02 (`phonics-L02-cvc-short-vowels`, decode), the CVC slice of T11 (`spelling-L02-cvc-short-vowels`, encode), and the CVC lessons of T13 are **authored, wired, and passing the automated §6b build-lint** (`npm run lint:packs`; **60 items each** — the quality CVC well maxed out — decodability-checked against the CVC envelope, en-SG, all missedConcepts tagged to the word's short vowel, correct-choice position varied a/b/c). **Owner-approved 2026-07-20 (§12.5)** — T02 ticked; the CVC slices of T11/T13 approved (their boxes stay open only because those T-numbers span all phonics levels, not yet authored). These are the first packs signed off and shipped to UI. Phoneme audio (T01) deferred: TTS-only this pass, `audio.phoneme()` stubbed.
 
 **18.4 Per-feature spec format (every roadmap item).** **Objective** (pedagogical rule/behaviour, exact numbers) · **Target** (file · module · function) · **Behaviour/UI** · **Schema** (new fields: name/type/default/location, §11 updated) · **Acceptance** (how to confirm in a browser).
 
