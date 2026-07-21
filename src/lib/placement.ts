@@ -13,6 +13,10 @@ export const decodeLadder: SkillDef[] =
 
 export const PER_SKILL = 2
 export const MAX_ITEMS = 15
+// A warm-up should feel like a few gentle items, not stop after 2 when the child misses the
+// first pair (CVC is the floor, so the staircase has nowhere down). Once the entry level is
+// decided, top up with achievable items to this minimum, ending on an easy one (§7).
+export const MIN_WARMUP = 6
 
 export interface PlaceResult { skillId: string; correct: boolean }
 

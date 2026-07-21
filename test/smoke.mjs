@@ -46,6 +46,7 @@ try {
     // Warm-up placement runs first (quiet decode items, auto-advance on tap). Drive it
     // until the child picker appears. Gate on a fresh screen (enabled tile) so
     // window.__item is never read ahead of the rendered item (same race as the session).
+    let placeCount = 0
     for (let step = 0; step < 30; step++) {
       const kind = await page.waitForFunction(() => {
         if (/Who's reading\?/.test(document.body.innerText)) return 'pick'
@@ -55,7 +56,11 @@ try {
       const it = await page.evaluate(() => window.__item || null)
       const pick = WRONG ? it.choices.find(c => c.id !== it.correctChoiceId) : it.choices.find(c => c.id === it.correctChoiceId)
       await page.locator('button.tile', { hasText: lbl(pick.label) }).first().click()
+      placeCount++
     }
+    // Warm-up must not stop abruptly: at least MIN_WARMUP (6) items even when the child
+    // misses the first pair (the reported "ends after two steps" bug).
+    if (placeCount < 6) fail(`placement ended after ${placeCount} items (expected ≥6) @ WRONG=${WRONG}`)
     const readDb = () => page.evaluate(() => new Promise(res => {
       const o = indexedDB.open('sg-reader')
       o.onsuccess = () => {

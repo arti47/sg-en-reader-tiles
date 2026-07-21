@@ -2,30 +2,54 @@ import { useEffect, useRef, useState } from 'react'
 import type { Child, PackItem, SkillProgress } from '../types'
 import type { ScoreResult } from '../lib/scoring'
 import { pickItem, getSkill } from '../lib/packs'
-import { nextPlacement, priorSkillIds, MAX_ITEMS, type PlaceResult } from '../lib/placement'
+import { nextPlacement, priorSkillIds, decodeLadder, MAX_ITEMS, MIN_WARMUP, type PlaceResult } from '../lib/placement'
 import { addChild, putProgress } from '../store'
 import { McqItem } from './items/McqItem'
 
-// Warm-up placement walk (§7). Framed as a game, no right/wrong feedback, ends on
-// an achievable item. Sets the child's entry skill and marks lower skills mastered.
+// Warm-up placement walk (§7). Framed as a game, no right/wrong feedback. The staircase finds
+// the entry level; once decided, we top up with achievable items (from a level the child has
+// already cleared) so the warm-up always runs at least MIN_WARMUP items and ends on an easy
+// one — never an abrupt 2-item stop. Padding items don't affect the placement decision.
 export function Placement(props: { child: Child; onDone: () => void }) {
   const results = useRef<PlaceResult[]>([])
   const seen = useRef<Set<string>>(new Set())
+  const entryRef = useRef<string | null>(null) // decided entry level (null until the staircase finishes)
+  const padRef = useRef(false)                  // is the current item warm-up padding (not scored)?
+  const shownRef = useRef(0)                     // total items shown so far
   const [item, setItem] = useState<PackItem | null>(null)
   const [serve, setServe] = useState(0)
   const [count, setCount] = useState(0)
   const [busy, setBusy] = useState(false)
+  const started = useRef(false)
 
-  useEffect(() => { advance() }, []) // eslint-disable-line react-hooks/exhaustive-deps
+  // Guard against React StrictMode double-invoking the mount effect (which would advance
+  // twice, discard the first item, and skew the warm-up count).
+  useEffect(() => { if (started.current) return; started.current = true; advance() }, []) // eslint-disable-line react-hooks/exhaustive-deps
+
+  function show(skillId: string, padding: boolean) {
+    const it = pickItem(skillId, 1, seen.current) // easiest items for a low-pressure warm-up
+    if (!it) { void finish(entryRef.current ?? skillId); return }
+    seen.current.add(it.id)
+    padRef.current = padding
+    shownRef.current += 1
+    if (import.meta.env.DEV) (window as unknown as { __item?: PackItem }).__item = it
+    setItem(it); setServe(s => s + 1); setCount(shownRef.current)
+  }
 
   function advance() {
-    const step = nextPlacement(results.current)
-    if (step.done) { void finish(step.entrySkillId!); return }
-    const it = pickItem(step.skillId!, 1, seen.current) // easiest items for a low-pressure warm-up
-    if (!it) { void finish(step.skillId!); return }
-    seen.current.add(it.id)
-    if (import.meta.env.DEV) (window as unknown as { __item?: PackItem }).__item = it
-    setItem(it); setServe(s => s + 1); setCount(c => c + 1)
+    // Still finding the level.
+    if (!entryRef.current) {
+      const step = nextPlacement(results.current)
+      if (!step.done) { show(step.skillId!, false); return }
+      entryRef.current = step.entrySkillId!
+    }
+    // Level decided → gentle warm-up padding to the minimum, ending on an achievable item.
+    if (shownRef.current < MIN_WARMUP) {
+      const idx = decodeLadder.findIndex(s => s.id === entryRef.current)
+      const padSkill = decodeLadder[Math.max(0, idx - 1)].id // a level already cleared (or the floor)
+      show(padSkill, true); return
+    }
+    void finish(entryRef.current)
   }
 
   async function finish(entrySkillId: string) {
@@ -46,7 +70,7 @@ export function Placement(props: { child: Child; onDone: () => void }) {
 
   function onAnswer(r: ScoreResult) {
     if (!item || busy) return
-    results.current = [...results.current, { skillId: item.skillId, correct: r.correct }]
+    if (!padRef.current) results.current = [...results.current, { skillId: item.skillId, correct: r.correct }]
     advance()
   }
 
@@ -55,7 +79,7 @@ export function Placement(props: { child: Child; onDone: () => void }) {
   return (
     <div className="stack">
       <div className="lesson-badge">🎧 Warm-up</div>
-      <p className="note">Let's hear a few words. Just tap the one you hear — no worries if you're not sure!</p>
+      <p className="note">Let's hear a few words. Tap 🔊 to hear each one, then tap the word — no worries if you're not sure!</p>
       <div className="dots" aria-label={`Warm-up ${count} of about ${MAX_ITEMS}`}>
         {Array.from({ length: MAX_ITEMS }).map((_, i) => (
           <span key={i} className={'dot' + (i < count ? ' on' : '')} />
