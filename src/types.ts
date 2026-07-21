@@ -73,11 +73,13 @@ export interface SkillDef {
 }
 
 // ---- Persistence (§11) ----
+export type DifficultyFlag = 'decoding' | 'fluency' | 'vocab' | 'comprehension' | 'dyslexia'
 export interface Child {
   id: string
   name: string
   pLevel: 1 | 2 | 3 | 4 | 5 | 6
   entrySkillId?: string
+  difficultyFlags?: DifficultyFlag[]   // optional, captured at add-time (§14) — teacher context
   createdAt: number
 }
 export interface Attempt {

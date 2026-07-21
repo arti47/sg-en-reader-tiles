@@ -116,11 +116,15 @@ try {
           for (const g of item.graphemes) await page.locator('button.tile:not([disabled])', { hasText: lbl(g) }).first().click()
           await page.getByRole('button', { name: 'Check' }).click()
         } else {
-          const pick = (answerWrong && item.itemType === 'decode_choice')
-            ? item.choices.find(c => c.id !== item.correctChoiceId).id : item.correctChoiceId
+          const wrong = answerWrong && item.itemType === 'decode_choice'
+          const pick = wrong ? item.choices.find(c => c.id !== item.correctChoiceId).id : item.correctChoiceId
           // Click by choice index — letter-sound tiles carry a keyword sublabel so exact-text match won't hit.
-          const idx = item.choices.findIndex(c => c.id === pick)
-          await page.locator('button.tile').nth(idx).click()
+          await page.locator('button.tile').nth(item.choices.findIndex(c => c.id === pick)).click()
+          if (wrong) {
+            // Error correction (§8): after a wrong answer the child must tap the highlighted correct
+            // choice before the item completes (onAnswer/Continue is deferred until then).
+            await page.locator('button.tile').nth(item.choices.findIndex(c => c.id === item.correctChoiceId)).click()
+          }
         }
         await page.getByRole('button', { name: 'Continue' }).click()
       }
@@ -345,6 +349,16 @@ try {
     const editCorrect = m3.edit.choices.find(c => c.id === m3.edit.correctChoiceId).label
     await editBox.locator('button.tile', { hasText: new RegExp('^' + editCorrect.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + '$') }).first().click()
     if (!/Yes!/.test(await editBox.innerText())) fail('m3 editing: correct choice should score right')
+    // Error correction (§8): build a WRONG spelling, then rebuild the revealed model → "Good fixing!".
+    const esc = s => s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')
+    const spellBox = mp3.locator('[data-testid="m3-spell"]')
+    const sg = m3.spell.graphemes
+    const order = [...sg]; [order[0], order[1]] = [order[1], order[0]] // swap first two → wrong, same length
+    for (const g of order) await spellBox.locator('button.tile:not([disabled])', { hasText: new RegExp('^' + esc(g) + '$') }).first().click()
+    await spellBox.getByRole('button', { name: 'Check' }).click()
+    await spellBox.locator('.model-word').waitFor({ timeout: 6000 }).catch(() => fail('m3 spell: correction should reveal the model word'))
+    for (const g of sg) await spellBox.locator('button.tile:not([disabled])', { hasText: new RegExp('^' + esc(g) + '$') }).first().click()
+    if (!/Good fixing/.test(await spellBox.innerText())) fail('m3 spell: rebuilding the model should complete the correction')
     if (await mp3.evaluate(() => document.documentElement.scrollWidth > window.innerWidth + 1)) fail('m3 demo: horizontal overflow at 390px')
     if (e3.length) fail('m3 demo console errors: ' + e3.slice(0, 3))
     await m3ctx.close()

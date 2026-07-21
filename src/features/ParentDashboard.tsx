@@ -150,6 +150,9 @@ export function ParentDashboard(props: { children: Child[]; onExit: () => void; 
             <span className={'status-dot ' + dot(c.readiness.status)} aria-label={c.readiness.status}>● {c.readiness.status}</span>
           </div>
           <p className="note">School: P{c.child.pLevel} · Reading: {c.entryLabel}</p>
+          {c.child.difficultyFlags?.length ? (
+            <div className="chips">{c.child.difficultyFlags.map(f => <span key={f} className="chip">{f}</span>)}</div>
+          ) : null}
 
           <div className="stat-row">
             <div className="stat"><b>{c.readiness.growth.mastered}</b><span>skills mastered</span></div>
