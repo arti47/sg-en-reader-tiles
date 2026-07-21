@@ -235,6 +235,13 @@ export function ParentDashboard(props: { children: Child[]; onExit: () => void; 
                 <button className="btn small" aria-label="Test voice" onClick={() => testVoice(voices[cur]?.voiceURI)}>🔊 Test</button>
                 {tstat && <span aria-live="polite" style={{ fontSize: 13, opacity: 0.8 }}>{tstat}</span>}
               </div>
+              {/^[▶✓]/.test(tstat) && (
+                <p style={{ fontSize: 12, opacity: 0.75, margin: '4px 0 0' }}>
+                  Reads as speaking but silent? On iPhone/iPad the spoken voice follows the
+                  <b> ring/silent switch</b> — turn silent mode off and raise the ringer volume.
+                  (Letter-sound clips use a different channel, so they play regardless.)
+                </p>
+              )}
             </div>
           )
         })()}
