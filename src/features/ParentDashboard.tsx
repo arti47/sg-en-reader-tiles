@@ -3,6 +3,7 @@ import type { Child, Attempt, SkillProgress, Certificate, Aggregate, Usage, Sett
 import { getAttempts, getProgress, getCertificates, getAggregates, getUsage, getSettings, putSettings, exportAll, importAll } from '../store'
 import { SKILLS, getSkill } from '../lib/packs'
 import { computeReadiness, type Readiness } from '../lib/readiness'
+import { achievements, type Achievement } from '../lib/gamify'
 import { setRate } from '../lib/audio'
 
 // Parent dashboard (§10, §11, §14). PIN-gated, growth-framed, parent-only. Per-child readiness
@@ -12,6 +13,7 @@ type Gate = 'loading' | 'enter' | 'create1' | 'create2' | 'open'
 interface CardData {
   child: Child; readiness: Readiness; usage?: Usage
   certs: Certificate[]; weeks: { week: string; items: number; correct: number }[]; entryLabel: string
+  badges: Achievement[]
 }
 
 const pct = (n: number) => `${Math.round(n * 100)}%`
@@ -28,7 +30,7 @@ function buildCard(child: Child, attempts: Attempt[], progress: SkillProgress[],
   const weeks = [...byWeek.entries()].sort((a, b) => a[0] < b[0] ? -1 : 1).slice(-8).map(([week, v]) => ({ week, ...v }))
   const entry = child.entrySkillId ? getSkill(child.entrySkillId) : undefined
   const entryLabel = entry ? entry.iCanStatement : 'Not placed yet'
-  return { child, readiness, usage, certs: certs.slice(-3).reverse(), weeks, entryLabel }
+  return { child, readiness, usage, certs: certs.slice(-3).reverse(), weeks, entryLabel, badges: achievements(attempts, certs, usage) }
 }
 
 export function ParentDashboard(props: { children: Child[]; onExit: () => void; onReset: (c: Child) => void }) {
@@ -155,6 +157,13 @@ export function ParentDashboard(props: { children: Child[]; onExit: () => void; 
               <ul>{c.certs.map(ce => <li key={ce.skillId + ce.awardedAt}>🏆 {ce.iCanStatement}</li>)}</ul>
             </div>
           )}
+
+          <div className="badges" aria-label={`Badges: ${c.badges.filter(b => b.earned).length} of ${c.badges.length}`}>
+            {c.badges.map(b => (
+              <span key={b.id} className={'badge' + (b.earned ? ' on' : '')} title={b.label}>{b.icon}</span>
+            ))}
+            <span className="note tiny">{c.badges.filter(b => b.earned).length}/{c.badges.length} badges</span>
+          </div>
 
           <p className="note tiny">{c.readiness.band} — a rough early guide, not a grade. Focus on the growth above.</p>
           <button className="btn small ghost" onClick={() => props.onReset(c.child)}>Reset {c.child.name}</button>

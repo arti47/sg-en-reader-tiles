@@ -184,6 +184,7 @@ try {
     await dp.waitForFunction(() => /Parent area/.test(document.body.innerText) && /skills mastered/.test(document.body.innerText), { timeout: 6000 })
       .catch(() => fail('dashboard: card did not render after PIN'))
     if (!/Dash/.test(await dp.evaluate(() => document.body.innerText))) fail('dashboard: child card missing')
+    if (!/badges/.test(await dp.evaluate(() => document.body.innerText))) fail('M4 gamify: dashboard should show achievement badges')
     const dOverflow = await dp.evaluate(() => document.documentElement.scrollWidth > window.innerWidth + 1)
     if (dOverflow) fail('dashboard: horizontal overflow at 390px')
     const [dl] = await Promise.all([
@@ -328,6 +329,10 @@ try {
     const g = window.__gamify
     if (g.xp([{ correct: true }, { correct: false }, { correct: true }], [{}, {}]) !== 2 * 10 + 2 * 50) return 'gamify xp'
     if (g.level(0) !== 1 || g.level(1000) < g.level(100)) return 'gamify level'
+    const none = g.achievements([], [])
+    if (none.length !== 6 || none.some(a => a.earned)) return 'achievements: none earned at zero'
+    const some = g.achievements([{ correct: true }], [{}])
+    if (!some.find(a => a.id === 'first-cert').earned || !some.find(a => a.id === 'getting-started').earned) return 'achievements: first-cert/getting-started'
     return 'ok'
   })
 

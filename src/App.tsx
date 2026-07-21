@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import type { Child } from './types'
 import { getChildren, addChild, removeChild, resetChild, getSettings, getAttempts, getCertificates } from './store'
 import * as store from './store'
@@ -26,7 +26,7 @@ if (import.meta.env.DEV) {
 const m3demo = import.meta.env.DEV && typeof location !== 'undefined' && location.hash === '#m3demo'
 
 type View = 'pick' | 'add' | 'placement' | 'session' | 'dashboard'
-const APP_VERSION = '0.2.20'
+const APP_VERSION = '0.2.21'
 
 export default function App() {
   const [children, setChildren] = useState<Child[]>([])
@@ -44,6 +44,9 @@ export default function App() {
   useEffect(() => { initPWA((r) => setReload(() => r)) }, [])
   // Apply the saved font choice app-wide (§14 dyslexia font, default Lexend).
   useEffect(() => { void getSettings().then(s => { document.documentElement.dataset.font = s.font ?? 'lexend' }) }, [])
+  // A11y: move focus to the screen on each view change so screen readers announce it (§18.12).
+  const mainRef = useRef<HTMLElement>(null)
+  useEffect(() => { mainRef.current?.focus() }, [view])
 
   async function save(c: Child) {
     await addChild(c); setActive(c); setView('placement') // run the warm-up placement next
@@ -66,7 +69,7 @@ export default function App() {
           <button className="btn small" onClick={reload}>Refresh</button>
         </div>
       )}
-      <main className="screen">
+      <main className="screen" ref={mainRef} tabIndex={-1}>
         {m3demo && <M3Demo />}
         {!m3demo && view === 'pick' && (
           <ChildPicker children={children}

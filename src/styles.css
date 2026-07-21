@@ -165,6 +165,10 @@ h1 { font-size: 1.8rem; font-weight: 700; margin: 8px 0 0; }
 .certs-list li { font-size: .9rem; }
 .note.tiny { font-size: .78rem; color: #93a29f; }
 
+.badges { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; }
+.badge { font-size: 1.4rem; filter: grayscale(1); opacity: .35; }
+.badge.on { filter: none; opacity: 1; }
+.screen:focus { outline: none; }
 .set-row { display: flex; justify-content: space-between; align-items: center; gap: 10px; }
 .set-row > span:first-child { font-weight: 600; }
 
