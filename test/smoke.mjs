@@ -50,9 +50,11 @@ try {
     for (let step = 0; step < 30; step++) {
       const kind = await page.waitForFunction(() => {
         if (/Who's reading\?/.test(document.body.innerText)) return 'pick'
+        if ([...document.querySelectorAll('button')].some(b => b.textContent.trim() === "Let's read")) return 'done'
         return document.querySelector('button.tile:not([disabled])') ? 'item' : null
       }, { timeout: 8000 }).then(h => h.jsonValue())
       if (kind === 'pick') break
+      if (kind === 'done') { await page.evaluate(() => [...document.querySelectorAll('button')].find(b => b.textContent.trim() === "Let's read")?.click()); continue }
       const it = await page.evaluate(() => window.__item || null)
       const pick = WRONG ? it.choices.find(c => c.id !== it.correctChoiceId) : it.choices.find(c => c.id === it.correctChoiceId)
       await page.locator('button.tile', { hasText: lbl(pick.label) }).first().click()
@@ -143,9 +145,11 @@ try {
     for (let i = 0; i < 30; i++) {
       const kind = await mp.waitForFunction(() => {
         if (/Who's reading\?/.test(document.body.innerText)) return 'pick'
+        if ([...document.querySelectorAll('button')].some(b => b.textContent.trim() === "Let's read")) return 'done'
         return document.querySelector('button.tile:not([disabled])') ? 'item' : null
       }, { timeout: 8000 }).then(h => h.jsonValue())
       if (kind === 'pick') break
+      if (kind === 'done') { await mp.evaluate(() => [...document.querySelectorAll('button')].find(b => b.textContent.trim() === "Let's read")?.click()); continue }
       await mp.locator('button.tile:not([disabled])').first().click()
     }
     // Force the wider OpenDyslexic font to catch layout overflow (§18.5).
@@ -178,9 +182,11 @@ try {
     for (let i = 0; i < 30; i++) {
       const kind = await dp.waitForFunction(() => {
         if (/Who's reading\?/.test(document.body.innerText)) return 'pick'
+        if ([...document.querySelectorAll('button')].some(b => b.textContent.trim() === "Let's read")) return 'done'
         return document.querySelector('button.tile:not([disabled])') ? 'item' : null
       }, { timeout: 8000 }).then(h => h.jsonValue())
       if (kind === 'pick') break
+      if (kind === 'done') { await dp.evaluate(() => [...document.querySelectorAll('button')].find(b => b.textContent.trim() === "Let's read")?.click()); continue }
       await dp.locator('button.tile:not([disabled])').first().click()
     }
     // M4: picker card shows the gamification level badge.

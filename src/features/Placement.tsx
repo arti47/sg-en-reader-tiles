@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from 'react'
 import type { Child, PackItem, SkillProgress } from '../types'
 import type { ScoreResult } from '../lib/scoring'
 import { pickItem, getSkill } from '../lib/packs'
-import { nextPlacement, priorSkillIds, decodeLadder, MAX_ITEMS, MIN_WARMUP, type PlaceResult } from '../lib/placement'
+import { nextPlacement, priorSkillIds, decodeLadder, MIN_WARMUP, type PlaceResult } from '../lib/placement'
 import { addChild, putProgress } from '../store'
 import { McqItem } from './items/McqItem'
 
@@ -18,8 +18,8 @@ export function Placement(props: { child: Child; onDone: () => void }) {
   const shownRef = useRef(0)                     // total items shown so far
   const [item, setItem] = useState<PackItem | null>(null)
   const [serve, setServe] = useState(0)
-  const [count, setCount] = useState(0)
   const [busy, setBusy] = useState(false)
+  const [done, setDone] = useState(false)
   const started = useRef(false)
 
   // Guard against React StrictMode double-invoking the mount effect (which would advance
@@ -33,7 +33,7 @@ export function Placement(props: { child: Child; onDone: () => void }) {
     padRef.current = padding
     shownRef.current += 1
     if (import.meta.env.DEV) (window as unknown as { __item?: PackItem }).__item = it
-    setItem(it); setServe(s => s + 1); setCount(shownRef.current)
+    setItem(it); setServe(s => s + 1)
   }
 
   function advance() {
@@ -65,7 +65,7 @@ export function Placement(props: { child: Child; onDone: () => void }) {
       }
       await putProgress(props.child.id, p)
     }
-    props.onDone()
+    setDone(true) // gentle end card instead of snapping back to the picker
   }
 
   function onAnswer(r: ScoreResult) {
@@ -74,17 +74,23 @@ export function Placement(props: { child: Child; onDone: () => void }) {
     advance()
   }
 
+  if (done) {
+    return (
+      <div className="stack center">
+        <div className="cert">🌟</div>
+        <h1>Nice warm-up, {props.child.name}!</h1>
+        <p className="note">You're all set. Tap below to start reading.</p>
+        <button className="btn" onClick={props.onDone}>Let's read</button>
+      </div>
+    )
+  }
+
   if (!item) return <div className="stack center"><p className="note">Getting ready…</p></div>
 
   return (
     <div className="stack">
       <div className="lesson-badge">🎧 Warm-up</div>
       <p className="note">Let's hear a few words. Tap 🔊 to hear each one, then tap the word — no worries if you're not sure!</p>
-      <div className="dots" aria-label={`Warm-up ${count} of about ${MAX_ITEMS}`}>
-        {Array.from({ length: MAX_ITEMS }).map((_, i) => (
-          <span key={i} className={'dot' + (i < count ? ' on' : '')} />
-        ))}
-      </div>
       <McqItem key={serve} item={item} quiet onAnswer={onAnswer} />
     </div>
   )
