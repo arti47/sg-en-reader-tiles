@@ -10,6 +10,7 @@ export function ChildPicker(props: {
   onRemove: (c: Child) => void
   onReset: (c: Child) => void
   onParent: () => void
+  onTrophies: (c: Child) => void
 }) {
   const [editing, setEditing] = useState(false)
   const [confirm, setConfirm] = useState<{ id: string; action: 'remove' | 'reset' } | null>(null)
@@ -35,8 +36,12 @@ export function ChildPicker(props: {
               <span className="avatar-sub">P{c.pLevel}{props.xpByChild ? ` · ⭐ Lvl ${level(props.xpByChild[c.id] ?? 0)}` : ''}</span>
 
               {!editing && (
-                <button className="btn small" onClick={() => props.onPick(c)}
-                  aria-label={`Play with ${c.name}`}>Play</button>
+                <div className="stack" style={{ gap: 6 }}>
+                  <button className="btn small" onClick={() => props.onPick(c)}
+                    aria-label={`Play with ${c.name}`}>Play</button>
+                  <button className="btn small ghost" onClick={() => props.onTrophies(c)}
+                    aria-label={`${c.name}'s trophies`}>🏆 Trophies</button>
+                </div>
               )}
 
               {editing && !conf && (

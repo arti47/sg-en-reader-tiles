@@ -7,6 +7,7 @@ import { ChildPicker } from './features/ChildPicker'
 import { AddStudent } from './features/AddStudent'
 import { Session } from './features/Session'
 import { Placement } from './features/Placement'
+import { Trophies } from './features/Trophies'
 import { ParentDashboard } from './features/ParentDashboard'
 import { M3Demo } from './features/M3Demo'
 import { initPWA } from './pwa'
@@ -26,7 +27,7 @@ if (import.meta.env.DEV) {
 }
 const m3demo = import.meta.env.DEV && typeof location !== 'undefined' && location.hash === '#m3demo'
 
-type View = 'pick' | 'add' | 'placement' | 'session' | 'dashboard'
+type View = 'pick' | 'add' | 'placement' | 'session' | 'dashboard' | 'trophies'
 const APP_VERSION = __APP_VERSION__ // from package.json (§18.6), never hand-edited
 
 export default function App() {
@@ -79,11 +80,17 @@ export default function App() {
             onAdd={() => setView('add')}
             onRemove={removeStudent}
             onReset={resetStudent}
+            onTrophies={(c) => { setActive(c); setView('trophies') }}
             onParent={() => setView('dashboard')} />
         )}
         {view === 'add' && <AddStudent onSave={save} onCancel={() => setView('pick')} />}
         {view === 'placement' && active && <Placement child={active} onDone={placementDone} />}
-        {view === 'session' && active && <Session child={active} onExit={() => { void refreshChildren(); setView('pick') }} />}
+        {view === 'trophies' && active && <Trophies child={active} onExit={() => { void refreshChildren(); setView('pick') }} />}
+        {view === 'session' && active && (
+          <Session child={active}
+            onExit={() => { void refreshChildren(); setView('pick') }}
+            onTrophies={() => setView('trophies')} />
+        )}
         {view === 'dashboard' && (
           <ParentDashboard children={children} onExit={() => setView('pick')} onReset={resetStudent} />
         )}

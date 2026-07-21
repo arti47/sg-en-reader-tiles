@@ -132,7 +132,7 @@ try {
     // retention and awards the certificate. #2 (minItems 12) means this spans several sessions.
     const SESSIONS = WRONG ? 1 : 8
     for (let s = 0; s < SESSIONS; s++) {
-      await page.getByRole('button', { name: /Test/ }).click()
+      await page.getByRole('button', { name: /Play with Test/ }).click()
       await playSession(WRONG)
       db = await readDb()
       if (!WRONG && (db.reviews || []).some(r => r.status === 'scheduled')) break
@@ -151,9 +151,20 @@ try {
           t.oncomplete = () => res()
         }
       }))
-      await page.getByRole('button', { name: /Test/ }).click()
+      await page.getByRole('button', { name: /Play with Test/ }).click()
       await playSession(false)
+      // Session-summary highlights (§14): the confirmation minted a certificate, so the summary
+      // must surface a "New this session!" award block (child sees achievements immediately).
+      const summaryText = await page.evaluate(() => document.body.innerText)
+      if (!/New this session/.test(summaryText)) fail('summary: should highlight new awards after earning a certificate')
       db = await readDb()
+      // Child-facing trophy room, reached from the summary → shows badges + the earned certificate.
+      await page.getByRole('button', { name: /My trophies/ }).click()
+      await page.waitForFunction(() => /trophies/i.test(document.body.innerText), { timeout: 6000 })
+      const troText = await page.evaluate(() => document.body.innerText)
+      if (!/My badges/.test(troText)) fail('trophies: badges section missing')
+      if (!/My certificates/.test(troText) || !/I can/.test(troText)) fail('trophies: earned certificate missing')
+      if (await page.evaluate(() => document.documentElement.scrollWidth > window.innerWidth + 1)) fail('trophies: horizontal overflow at 390px')
     }
     results.push({ WRONG, errors, overflow, lessons, db, firstSkill })
     await ctx.close()

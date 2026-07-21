@@ -214,11 +214,12 @@ export function ParentDashboard(props: { children: Child[]; onExit: () => void; 
         <div className="set-row">
           <span>Voice speed</span>
           <div className="row" style={{ gap: 6, alignItems: 'center' }}>
-            <button className="btn small ghost" aria-label="Slower voice" onClick={() => updateSettings({ ttsRate: clamp(Number(((settings?.ttsRate ?? 0.9) - 0.1).toFixed(2)), 0.5, 1.3) })}>−</button>
+            <button className="btn small ghost" aria-label="Slower voice" onClick={() => updateSettings({ ttsRate: clamp(Number(((settings?.ttsRate ?? 0.9) - 0.2).toFixed(2)), 0.4, 1.6) })}>−</button>
             <span aria-live="polite">{(settings?.ttsRate ?? 0.9).toFixed(1)}×</span>
-            <button className="btn small ghost" aria-label="Faster voice" onClick={() => updateSettings({ ttsRate: clamp(Number(((settings?.ttsRate ?? 0.9) + 0.1).toFixed(2)), 0.5, 1.3) })}>+</button>
+            <button className="btn small ghost" aria-label="Faster voice" onClick={() => updateSettings({ ttsRate: clamp(Number(((settings?.ttsRate ?? 0.9) + 0.2).toFixed(2)), 0.4, 1.6) })}>+</button>
           </div>
         </div>
+        <p className="note tiny">On iPhone/iPad the built-in voice only partly changes speed — the setting applies from the next session.</p>
         {voices.length > 0 && (() => {
           const cur = Math.max(0, voices.findIndex(v => v.voiceURI === settings?.voiceURI))
           const step = (d: number) => {

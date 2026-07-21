@@ -172,6 +172,22 @@ h1 { font-size: 1.8rem; font-weight: 700; margin: 8px 0 0; }
 .badges { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; }
 .badge { font-size: 1.4rem; filter: grayscale(1); opacity: .35; }
 .badge.on { filter: none; opacity: 1; }
+
+/* Child-facing trophy room + session-summary highlights (§14) */
+.trophy-level { display: flex; flex-direction: column; gap: 6px; padding: 12px 16px; background: var(--teal-soft); border-radius: var(--radius); }
+.trophy-lvl { font-size: 1.4rem; font-weight: 700; color: var(--teal); }
+.xp-bar { height: 16px; background: #fff; border-radius: 999px; overflow: hidden; border: 2px solid var(--teal); }
+.xp-fill { height: 100%; background: var(--amber); border-radius: 999px; transition: width .3s ease; }
+.badges.big { gap: 12px; }
+.badge-card { display: flex; flex-direction: column; align-items: center; gap: 4px; width: 92px; padding: 12px 6px;
+  background: #fff; border: 3px solid var(--teal-soft); border-radius: 14px; text-align: center; opacity: .5; }
+.badge-card.on { opacity: 1; border-color: var(--amber); box-shadow: 0 3px 0 var(--amber); }
+.badge-icon { font-size: 2.2rem; }
+.trophy-cert { display: flex; align-items: center; gap: 12px; padding: 12px 16px;
+  background: var(--ok-soft); border: 3px solid var(--ok); border-radius: var(--radius); }
+.trophy-cert-icon { font-size: 2rem; }
+.new-awards { width: 100%; padding: 12px 16px; background: var(--ok-soft); border-radius: var(--radius); display: flex; flex-direction: column; gap: 6px; }
+.award-row { display: flex; align-items: center; gap: 8px; font-weight: 600; text-align: left; }
 .screen:focus { outline: none; }
 .set-row { display: flex; justify-content: space-between; align-items: center; gap: 10px 12px; flex-wrap: wrap; }
 .set-row > span:first-child { font-weight: 600; }

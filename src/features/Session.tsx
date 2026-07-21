@@ -3,7 +3,7 @@ import type { Child, PackItem, Attempt, SkillProgress, Difficulty, SkillDef, Cer
 import type { ScoreResult } from '../lib/scoring'
 import { addAttempt, getAttempts, getProgress, putProgress, putCertificate, getCertificates, getReviews, putReview, bumpAggregate, getUsage, putUsage, getSettings } from '../store'
 import { setRate, setVoice } from '../lib/audio'
-import { XP_PER_CORRECT, XP_PER_CERT } from '../lib/gamify'
+import { XP_PER_CORRECT, XP_PER_CERT, achievements, type Achievement } from '../lib/gamify'
 import { SKILLS, getSkill, getLesson, pickItem } from '../lib/packs'
 import { rollingAccuracy, itemsAnswered, nextDifficulty, isMastered, patternMastered, struggling, eligibleSkills, patternDecodeSkill, interleavedReviewSkill, threadedSkill } from '../lib/engine'
 import { scheduleFirst, onReviewPass, onReviewFail, dueReviews } from '../lib/srs'
@@ -19,7 +19,7 @@ const LESSON_MAX = 2      // re-teach at most twice per skill per session (§8 #
 const REFIRE_AFTER = 3    // …and only re-fire after ≥3 further attempts, if still struggling
 type Phase = 'loading' | 'item' | 'lesson' | 'cert' | 'summary'
 
-export function Session(props: { child: Child; onExit: () => void }) {
+export function Session(props: { child: Child; onExit: () => void; onTrophies: () => void }) {
   const attemptsRef = useRef<Attempt[]>([])
   const diffRef = useRef<Map<string, Difficulty>>(new Map())
   const seenRef = useRef<Set<string>>(new Set())
@@ -34,6 +34,9 @@ export function Session(props: { child: Child; onExit: () => void }) {
   const reviewingRef = useRef<string | null>(null) // skillId currently being reviewed, else null
   const lenRef = useRef(DEFAULT_SESSION_LEN)     // session length (from settings)
   const xpGainRef = useRef(0)                    // XP earned this session (§14 gamification)
+  const startBadgesRef = useRef<Set<string>>(new Set()) // badge ids already earned at session start (§14 highlights)
+  const usageRef = useRef<import('../types').Usage | undefined>(undefined)
+  const sessionCertsRef = useRef<Certificate[]>([]) // certificates minted THIS session (shown on the summary)
   const [phase, setPhase] = useState<Phase>('loading')
   const [item, setItem] = useState<PackItem | null>(null)
   const [answered, setAnswered] = useState<ScoreResult | null>(null)
@@ -60,12 +63,17 @@ export function Session(props: { child: Child; onExit: () => void }) {
       for (const c of await getCertificates(props.child.id)) certsRef.current.add(c.skillId)
       dueQueueRef.current = dueReviews(reviewsRef.current, Date.now()).map(r => r.skillId)
       await countSession()
+      usageRef.current = await getUsage(props.child.id)
+      // Baseline of already-earned badges so the summary can highlight ones earned THIS session.
+      startBadgesRef.current = new Set(achievements(attemptsRef.current, certsAsArray(), usageRef.current).filter(b => b.earned).map(b => b.id))
       advance(true)
     })()
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
   const diffFor = (id: string): Difficulty => diffRef.current.get(id) ?? 1
+  // Certificates as an array (length is all gamify.achievements needs) for badge computation.
+  const certsAsArray = (): Certificate[] => [...certsRef.current].map(id => ({ skillId: id, iCanStatement: '', awardedAt: 0 }))
 
   // Fidelity mechanic (§14): count this session toward the weekly target; roll the streak
   // when a new ISO week starts (consecutive week → +1, gap → reset to 1).
@@ -165,6 +173,7 @@ export function Session(props: { child: Child; onExit: () => void }) {
           patternMastered(attemptsRef.current, patternSkill, masteredRef.current)) {
         const c: Certificate = { skillId: patternSkill.id, iCanStatement: patternSkill.iCanStatement, awardedAt: now }
         await putCertificate(props.child.id, c); certsRef.current.add(patternSkill.id); setCert(c)
+        sessionCertsRef.current = [...sessionCertsRef.current, c]
         xpGainRef.current += XP_PER_CERT
       }
     } else if (!wasPatternDone && patternMastered(attemptsRef.current, patternSkill, masteredRef.current)) {
@@ -186,13 +195,30 @@ export function Session(props: { child: Child; onExit: () => void }) {
 
   if (phase === 'summary') {
     const mastered = SKILLS.filter(s => isMastered(attemptsRef.current, s, masteredRef.current))
+    const newBadges: Achievement[] = achievements(attemptsRef.current, certsAsArray(), usageRef.current)
+      .filter(b => b.earned && !startBadgesRef.current.has(b.id))
+    const gotSomething = sessionCertsRef.current.length > 0 || newBadges.length > 0
     return (
       <div className="stack center">
         <div className="cert">🌟</div>
         <h1>Great session, {props.child.name}!</h1>
         <p className="stem">+{xpGainRef.current} XP</p>
         <p className="note">{count} activities done{mastered.length ? ` · ${mastered.length} skill${mastered.length > 1 ? 's' : ''} mastered` : ''}.</p>
-        <button className="btn" onClick={props.onExit}>Done</button>
+        {gotSomething && (
+          <div className="new-awards" aria-live="polite">
+            <b>New this session!</b>
+            {sessionCertsRef.current.map(c => (
+              <div key={c.skillId} className="award-row">🏆 <span>{c.iCanStatement}</span></div>
+            ))}
+            {newBadges.map(b => (
+              <div key={b.id} className="award-row">{b.icon} <span>{b.label}</span></div>
+            ))}
+          </div>
+        )}
+        <div className="row" style={{ gap: 8 }}>
+          <button className="btn ghost" onClick={props.onTrophies}>🏆 My trophies</button>
+          <button className="btn" onClick={props.onExit}>Done</button>
+        </div>
       </div>
     )
   }
