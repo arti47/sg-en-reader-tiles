@@ -11,8 +11,10 @@ export type ItemType =
   | 'passage_question'  // short passage + question (MCQ only)
   | 'visual_text'       // described poster/advert + question (MCQ)
   | 'grammar_cloze'     // passage with blanks + a lettered word bank, each used once
+  | 'editing_mcq'       // sentence with one error → pick the correction (MCQ, no keyboard)
+  | 'synthesis_mcq'     // pick the correctly combined/rewritten sentence (MCQ)
 
-export type Strand = 'phonics' | 'spelling' | 'grammar' | 'vocab' | 'comprehension' | 'cloze'
+export type Strand = 'phonics' | 'spelling' | 'grammar' | 'vocab' | 'comprehension' | 'cloze' | 'sentence'
 export type Difficulty = 1 | 2 | 3
 
 export interface Choice { id: string; label: string }

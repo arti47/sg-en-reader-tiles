@@ -82,7 +82,7 @@ for (const { f, pack } of packs) {
     if (it.phonemeId && !phonemes[it.phonemeId]) err(f, it.id, `phonemeId "${it.phonemeId}" not in phonemes.json`)
 
     // (1)(2) answer keys
-    const mcqTypes = ['grammar_mcq', 'decode_choice', 'vocab_mcq', 'vocab_cloze_mcq', 'passage_question', 'visual_text']
+    const mcqTypes = ['grammar_mcq', 'decode_choice', 'vocab_mcq', 'vocab_cloze_mcq', 'passage_question', 'visual_text', 'editing_mcq', 'synthesis_mcq']
     if (mcqTypes.includes(it.itemType)) {
       const ids = (it.choices ?? []).map(c => c.id)
       if (ids.length < 2) err(f, it.id, 'MCQ needs ≥2 choices')

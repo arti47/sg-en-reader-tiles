@@ -289,6 +289,26 @@
           "itemType": "grammar_cloze",
           "itemPool": "cloze-L01-grammar",
           "mastery": { "window": 12, "accuracyToPass": 0.8, "minItems": 8 }
+        },
+        {
+          "id": "SM-editing",
+          "strand": "sentence",
+          "objective": "Find and correct the wrong word in a sentence (editing).",
+          "iCanStatement": "I can find and fix the wrong word in a sentence.",
+          "prereqs": ["CL-grammar-cloze"],
+          "itemType": "editing_mcq",
+          "itemPool": "sm-L01-editing",
+          "mastery": { "window": 12, "accuracyToPass": 0.8, "minItems": 8 }
+        },
+        {
+          "id": "SM-synthesis",
+          "strand": "sentence",
+          "objective": "Combine or rewrite sentences (synthesis & transformation).",
+          "iCanStatement": "I can join or rewrite sentences without changing the meaning.",
+          "prereqs": ["SM-editing"],
+          "itemType": "synthesis_mcq",
+          "itemPool": "sm-L02-synthesis",
+          "mastery": { "window": 12, "accuracyToPass": 0.8, "minItems": 8 }
         }
       ]
     }

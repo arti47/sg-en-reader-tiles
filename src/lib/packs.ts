@@ -27,6 +27,8 @@ import grSva from '../data/packs/grammar-L02-sva.json'
 import vocSyn from '../data/packs/vocab-L01-synonyms.json'
 import comp1 from '../data/packs/comp-L01.json'
 import cloze1 from '../data/packs/cloze-L01-grammar.json'
+import smEdit from '../data/packs/sm-L01-editing.json'
+import smSyn from '../data/packs/sm-L02-synthesis.json'
 
 const PACKS: ContentPack[] = [
   phonicsLs as ContentPack,
@@ -54,7 +56,9 @@ const PACKS: ContentPack[] = [
   grSva as ContentPack,
   vocSyn as ContentPack,
   comp1 as ContentPack,
-  cloze1 as ContentPack
+  cloze1 as ContentPack,
+  smEdit as ContentPack,
+  smSyn as ContentPack
 ]
 
 // Runtime skill graph. Skills flagged `enabled: false` (authored but inert — e.g. T01

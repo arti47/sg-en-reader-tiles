@@ -253,6 +253,11 @@ try {
       await dictBox.getByRole('button', { name: label }).click()
     }
     if (!/Yes!/.test(await dictBox.innerText())) fail('m3 dictation: correctly built sentence should score right')
+    // Editing (T17): pick the correction; MCQ, exact-match scoring.
+    const editBox = mp3.locator('[data-testid="m3-edit"]')
+    const editCorrect = m3.edit.choices.find(c => c.id === m3.edit.correctChoiceId).label
+    await editBox.locator('button.tile', { hasText: new RegExp('^' + editCorrect.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + '$') }).first().click()
+    if (!/Yes!/.test(await editBox.innerText())) fail('m3 editing: correct choice should score right')
     if (await mp3.evaluate(() => document.documentElement.scrollWidth > window.innerWidth + 1)) fail('m3 demo: horizontal overflow at 390px')
     if (e3.length) fail('m3 demo console errors: ' + e3.slice(0, 3))
     await m3ctx.close()
@@ -328,6 +333,8 @@ try {
     if (e.eligibleSkills([]).map(s => s.id).includes('GR-articles')) return 'M3: grammar must be gated behind decoding'
     const decoded = [...arr('PH-two-syllable', 8, true), ...arr('SP-two-syllable', 8, true)]
     if (!e.eligibleSkills(decoded).map(s => s.id).includes('GR-articles')) return 'M3: grammar should unlock after the two-syllable pattern'
+    // T17 sentence manipulation gated deep behind grammar/cloze — never eligible up front.
+    if (e.eligibleSkills([]).map(s => s.id).includes('SM-editing')) return 'T17: editing must be gated behind grammar/cloze'
     // T12 — HF sight words are threaded (every 4th item), never in the eligible rotation.
     if (e.eligibleSkills([]).map(s => s.id).includes('HF-words')) return 'T12: HF must be threaded, not eligible'
     if (e.threadedSkill(0) || e.threadedSkill(3)) return 'T12: no HF thread off-cadence'
