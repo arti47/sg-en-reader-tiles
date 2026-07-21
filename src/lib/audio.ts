@@ -1,4 +1,5 @@
-// Offline audio service (CLAUDE.md §6c). TTS-only this pass; phoneme() stubbed.
+// Offline audio service (CLAUDE.md §6c). TTS via speak(); isolated phonemes via
+// phoneme() (bundled public/phonemes/*.m4a clips, resolved through the manifest).
 let rate = 0.9
 export function setRate(r: number) { rate = r }
 

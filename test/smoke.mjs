@@ -325,10 +325,12 @@ try {
     if (e.interleavedReviewSkill([], 5, new Set())) return 'A5 none when nothing mastered'
     let fires = 0; for (let n = 1; n <= 16; n++) if (e.interleavedReviewSkill([], n, new Set([PH]))) fires++
     if (fires !== 3) return 'A5 cadence should fire 3× per 16 items'
-    // T01 inert: PH-letter-sounds is authored but disabled → absent from the runtime graph,
-    // and CVC's prereq on it is stripped so the ladder still starts at CVC.
-    if (gs('PH-letter-sounds')) return 'T01 should be inert (disabled) until phoneme clips ship'
-    if (gs(PH).prereqs.length !== 0) return 'T01 disabled → CVC prereq should be stripped'
+    // T01 active: phoneme clips shipped → PH-letter-sounds is enabled, present in the runtime
+    // graph as the decode floor (prereqs []), and CVC now depends on it. (Placement ladder is
+    // unchanged — letter-sounds has no encode partner, so it isn't a dual-gated rung.)
+    if (!gs('PH-letter-sounds')) return 'T01 should be active (phoneme clips shipped)'
+    if (gs('PH-letter-sounds').prereqs.length !== 0) return 'T01 letter-sounds should be the floor (no prereqs)'
+    if (!gs(PH).prereqs.includes('PH-letter-sounds')) return 'T01 active → CVC should depend on letter-sounds'
     // M3 gating (§5) — grammar unlocks only after the decode ladder (PH-two-syllable pattern).
     if (e.eligibleSkills([]).map(s => s.id).includes('GR-articles')) return 'M3: grammar must be gated behind decoding'
     const decoded = [...arr('PH-two-syllable', 8, true), ...arr('SP-two-syllable', 8, true)]

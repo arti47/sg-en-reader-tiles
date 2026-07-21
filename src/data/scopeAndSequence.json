@@ -12,7 +12,6 @@
           "prereqs": [],
           "itemType": "decode_choice",
           "itemPool": "phonics-L01-letter-sounds",
-          "enabled": false,
           "mastery": { "window": 12, "accuracyToPass": 0.85, "minItems": 8 }
         },
         {
