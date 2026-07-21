@@ -115,8 +115,9 @@ try {
         } else {
           const pick = (answerWrong && item.itemType === 'decode_choice')
             ? item.choices.find(c => c.id !== item.correctChoiceId).id : item.correctChoiceId
-          const label = item.choices.find(c => c.id === pick).label
-          await page.locator('button.tile', { hasText: lbl(label) }).first().click()
+          // Click by choice index — letter-sound tiles carry a keyword sublabel so exact-text match won't hit.
+          const idx = item.choices.findIndex(c => c.id === pick)
+          await page.locator('button.tile').nth(idx).click()
         }
         await page.getByRole('button', { name: 'Continue' }).click()
       }
@@ -373,25 +374,30 @@ try {
     if (e.interleavedReviewSkill([], 5, new Set())) return 'A5 none when nothing mastered'
     let fires = 0; for (let n = 1; n <= 16; n++) if (e.interleavedReviewSkill([], n, new Set([PH]))) fires++
     if (fires !== 3) return 'A5 cadence should fire 3× per 16 items'
-    // T01 active: phoneme clips shipped → PH-letter-sounds is enabled, present in the runtime
-    // graph as the decode floor (prereqs []), and CVC now depends on it. (Placement ladder is
-    // unchanged — letter-sounds has no encode partner, so it isn't a dual-gated rung.)
+    // T01: PH-letter-sounds is active + now THREADED (woven in every 4th item, not a hard gate),
+    // and no longer a prereq of CVC — so a struggling reader starts on real CVC words (visual
+    // scaffold) instead of being walled behind audio-only isolated sounds.
     if (!gs('PH-letter-sounds')) return 'T01 should be active (phoneme clips shipped)'
-    if (gs('PH-letter-sounds').prereqs.length !== 0) return 'T01 letter-sounds should be the floor (no prereqs)'
-    if (!gs(PH).prereqs.includes('PH-letter-sounds')) return 'T01 active → CVC should depend on letter-sounds'
+    if (!gs('PH-letter-sounds').threaded) return 'T01 letter-sounds should be threaded now'
+    if (gs('PH-letter-sounds').prereqs.length !== 0) return 'T01 letter-sounds should have no prereqs'
+    if (gs(PH).prereqs.length !== 0) return 'T01: CVC should be the ladder floor (letter-sounds no longer gates it)'
+    if (e.eligibleSkills([]).map(s => s.id).includes('PH-letter-sounds')) return 'T01: threaded letter-sounds must not be in the eligible rotation'
+    if (e.eligibleSkills([]).map(s => s.id).includes('PH-cvc-short-vowels') === false) return 'T01: CVC should be eligible up front (it is the floor)'
     // M3 gating (§5) — grammar unlocks only after the decode ladder (PH-two-syllable pattern).
     if (e.eligibleSkills([]).map(s => s.id).includes('GR-articles')) return 'M3: grammar must be gated behind decoding'
     const decoded = [...arr('PH-two-syllable', 12, true), ...arr('SP-two-syllable', 12, true)]
     if (!e.eligibleSkills(decoded).map(s => s.id).includes('GR-articles')) return 'M3: grammar should unlock after the two-syllable pattern'
     // T17 sentence manipulation gated deep behind grammar/cloze — never eligible up front.
     if (e.eligibleSkills([]).map(s => s.id).includes('SM-editing')) return 'T17: editing must be gated behind grammar/cloze'
-    // T12 — HF sight words are threaded (every 4th item), never in the eligible rotation.
+    // T12/T01 — sight words + letter-sounds are threaded (every 4th item, rotating), never eligible.
     if (e.eligibleSkills([]).map(s => s.id).includes('HF-words')) return 'T12: HF must be threaded, not eligible'
-    if (e.threadedSkill(0) || e.threadedSkill(3)) return 'T12: no HF thread off-cadence'
-    const th = e.threadedSkill(4)
-    if (!th || th.id !== 'HF-words') return 'T12: every 4th item should thread HF'
-    let hf = 0; for (let n = 1; n <= 16; n++) if (e.threadedSkill(n)) hf++
-    if (hf !== 4) return 'T12: HF should thread 4× per 16 items'
+    if (e.threadedSkill(0) || e.threadedSkill(3)) return 'threaded: none off-cadence'
+    // Two threaded skills now (letter-sounds first in scope, then HF) → they rotate every 4th item.
+    if (e.threadedSkill(4)?.id !== 'HF-words') return 'threaded: 4th item should be HF (2nd threaded)'
+    if (e.threadedSkill(8)?.id !== 'PH-letter-sounds') return 'threaded: 8th item should be letter-sounds (1st threaded)'
+    let threads = 0, sawHF = false, sawLS = false
+    for (let n = 1; n <= 16; n++) { const t = e.threadedSkill(n); if (t) { threads++; sawHF ||= t.id === 'HF-words'; sawLS ||= t.id === 'PH-letter-sounds' } }
+    if (threads !== 4 || !sawHF || !sawLS) return 'threaded: 4 fires per 16, both HF and letter-sounds appear'
     return 'ok'
   })
 

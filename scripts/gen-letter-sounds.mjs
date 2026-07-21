@@ -40,6 +40,10 @@ const ROWS = [
 ]
 
 const letters = 'abcdefghijklmnopqrstuvwxyz'
+// Keyword anchor per letter (OG scaffold): every choice shows its letter AND a keyword word,
+// turning pure auditory discrimination into a sound→keyword→letter match a struggling reader
+// can hold onto. Sourced from ROWS (covers all 23 letters that ever appear as a choice).
+const KW = Object.fromEntries(ROWS.map(([, letter, keyword]) => [letter, keyword]))
 let items = []
 for (const [ph, letter, keyword, distractors] of ROWS) {
   // Two items per sound (variety, §6d): d1 with 2 distractors, d2 with 3.
@@ -49,7 +53,7 @@ for (const [ph, letter, keyword, distractors] of ROWS) {
     // vary correct position deterministically
     const pos = (letters.indexOf(letter) + n) % labels.length
     ;[labels[0], labels[pos]] = [labels[pos], labels[0]]
-    const choices = labels.map((l, i) => ({ id: 'abcd'[i], label: l }))
+    const choices = labels.map((l, i) => ({ id: 'abcd'[i], label: l, keyword: KW[l] }))
     const correctChoiceId = choices.find(c => c.label === letter).id
     items.push({
       id: `ls-${letter}-${n}`,
@@ -77,9 +81,15 @@ const pack = {
     'PH-letter-sounds': {
       iCanStatement: 'I can hear the sound each letter makes.',
       explanation: "Every letter makes a sound. Tap the speaker to hear a sound, then find the letter that makes it. Remember to say the sound, not the letter's name — 'mmm', not 'em'.",
+      // Several examples (a vowel + common consonants); LessonView shows a rotating subset so
+      // the child doesn't always see the same two words (§8, reported).
       workedExamples: [
         { text: 'man', note: "m makes the first sound in man — /mmm/." },
-        { text: 'ant', note: 'a makes the first sound in ant — /a/.' }
+        { text: 'sun', note: 's makes the first sound in sun — /sss/.' },
+        { text: 'ant', note: 'a makes the first sound in ant — /a/.' },
+        { text: 'top', note: 't makes the first sound in top — /t/.' },
+        { text: 'pig', note: 'p makes the first sound in pig — /p/.' },
+        { text: 'egg', note: 'e makes the first sound in egg — /e/.' }
       ]
     }
   }

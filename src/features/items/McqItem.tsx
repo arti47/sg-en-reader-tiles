@@ -38,7 +38,11 @@ export function McqItem(props: { item: PackItem; quiet?: boolean; onAnswer: (r: 
             else if (c.id === picked) cls += ' wrong'
           }
           return (
-            <button key={c.id} className={cls} disabled={!!picked} onClick={() => choose(c.id)}>{c.label}</button>
+            <button key={c.id} className={cls} disabled={!!picked} onClick={() => choose(c.id)}>
+              {c.keyword
+                ? <span className="tile-anchor"><span className="tile-letter">{c.label}</span><span className="tile-kw">{c.keyword}</span></span>
+                : c.label}
+            </button>
           )
         })}
       </div>

@@ -16,15 +16,18 @@
       "choices": [
         {
           "id": "a",
-          "label": "e"
+          "label": "e",
+          "keyword": "egg"
         },
         {
           "id": "b",
-          "label": "a"
+          "label": "a",
+          "keyword": "ant"
         },
         {
           "id": "c",
-          "label": "o"
+          "label": "o",
+          "keyword": "orange"
         }
       ],
       "correctChoiceId": "b",
@@ -42,19 +45,23 @@
       "choices": [
         {
           "id": "a",
-          "label": "o"
+          "label": "o",
+          "keyword": "orange"
         },
         {
           "id": "b",
-          "label": "e"
+          "label": "e",
+          "keyword": "egg"
         },
         {
           "id": "c",
-          "label": "a"
+          "label": "a",
+          "keyword": "ant"
         },
         {
           "id": "d",
-          "label": "i"
+          "label": "i",
+          "keyword": "ink"
         }
       ],
       "correctChoiceId": "c",
@@ -72,15 +79,18 @@
       "choices": [
         {
           "id": "a",
-          "label": "i"
+          "label": "i",
+          "keyword": "ink"
         },
         {
           "id": "b",
-          "label": "a"
+          "label": "a",
+          "keyword": "ant"
         },
         {
           "id": "c",
-          "label": "e"
+          "label": "e",
+          "keyword": "egg"
         }
       ],
       "correctChoiceId": "c",
@@ -98,19 +108,23 @@
       "choices": [
         {
           "id": "a",
-          "label": "i"
+          "label": "i",
+          "keyword": "ink"
         },
         {
           "id": "b",
-          "label": "a"
+          "label": "a",
+          "keyword": "ant"
         },
         {
           "id": "c",
-          "label": "e"
+          "label": "e",
+          "keyword": "egg"
         },
         {
           "id": "d",
-          "label": "u"
+          "label": "u",
+          "keyword": "umbrella"
         }
       ],
       "correctChoiceId": "c",
@@ -128,15 +142,18 @@
       "choices": [
         {
           "id": "a",
-          "label": "i"
+          "label": "i",
+          "keyword": "ink"
         },
         {
           "id": "b",
-          "label": "e"
+          "label": "e",
+          "keyword": "egg"
         },
         {
           "id": "c",
-          "label": "a"
+          "label": "a",
+          "keyword": "ant"
         }
       ],
       "correctChoiceId": "a",
@@ -154,19 +171,23 @@
       "choices": [
         {
           "id": "a",
-          "label": "a"
+          "label": "a",
+          "keyword": "ant"
         },
         {
           "id": "b",
-          "label": "e"
+          "label": "e",
+          "keyword": "egg"
         },
         {
           "id": "c",
-          "label": "i"
+          "label": "i",
+          "keyword": "ink"
         },
         {
           "id": "d",
-          "label": "o"
+          "label": "o",
+          "keyword": "orange"
         }
       ],
       "correctChoiceId": "c",
@@ -184,15 +205,18 @@
       "choices": [
         {
           "id": "a",
-          "label": "o"
+          "label": "o",
+          "keyword": "orange"
         },
         {
           "id": "b",
-          "label": "a"
+          "label": "a",
+          "keyword": "ant"
         },
         {
           "id": "c",
-          "label": "u"
+          "label": "u",
+          "keyword": "umbrella"
         }
       ],
       "correctChoiceId": "a",
@@ -210,19 +234,23 @@
       "choices": [
         {
           "id": "a",
-          "label": "o"
+          "label": "o",
+          "keyword": "orange"
         },
         {
           "id": "b",
-          "label": "a"
+          "label": "a",
+          "keyword": "ant"
         },
         {
           "id": "c",
-          "label": "u"
+          "label": "u",
+          "keyword": "umbrella"
         },
         {
           "id": "d",
-          "label": "e"
+          "label": "e",
+          "keyword": "egg"
         }
       ],
       "correctChoiceId": "a",
@@ -240,15 +268,18 @@
       "choices": [
         {
           "id": "a",
-          "label": "u"
+          "label": "u",
+          "keyword": "umbrella"
         },
         {
           "id": "b",
-          "label": "o"
+          "label": "o",
+          "keyword": "orange"
         },
         {
           "id": "c",
-          "label": "a"
+          "label": "a",
+          "keyword": "ant"
         }
       ],
       "correctChoiceId": "a",
@@ -266,19 +297,23 @@
       "choices": [
         {
           "id": "a",
-          "label": "a"
+          "label": "a",
+          "keyword": "ant"
         },
         {
           "id": "b",
-          "label": "o"
+          "label": "o",
+          "keyword": "orange"
         },
         {
           "id": "c",
-          "label": "u"
+          "label": "u",
+          "keyword": "umbrella"
         },
         {
           "id": "d",
-          "label": "e"
+          "label": "e",
+          "keyword": "egg"
         }
       ],
       "correctChoiceId": "c",
@@ -296,15 +331,18 @@
       "choices": [
         {
           "id": "a",
-          "label": "p"
+          "label": "p",
+          "keyword": "pig"
         },
         {
           "id": "b",
-          "label": "d"
+          "label": "d",
+          "keyword": "dog"
         },
         {
           "id": "c",
-          "label": "b"
+          "label": "b",
+          "keyword": "bat"
         }
       ],
       "correctChoiceId": "c",
@@ -322,19 +360,23 @@
       "choices": [
         {
           "id": "a",
-          "label": "h"
+          "label": "h",
+          "keyword": "hat"
         },
         {
           "id": "b",
-          "label": "d"
+          "label": "d",
+          "keyword": "dog"
         },
         {
           "id": "c",
-          "label": "p"
+          "label": "p",
+          "keyword": "pig"
         },
         {
           "id": "d",
-          "label": "b"
+          "label": "b",
+          "keyword": "bat"
         }
       ],
       "correctChoiceId": "d",
@@ -352,15 +394,18 @@
       "choices": [
         {
           "id": "a",
-          "label": "b"
+          "label": "b",
+          "keyword": "bat"
         },
         {
           "id": "b",
-          "label": "d"
+          "label": "d",
+          "keyword": "dog"
         },
         {
           "id": "c",
-          "label": "p"
+          "label": "p",
+          "keyword": "pig"
         }
       ],
       "correctChoiceId": "b",
@@ -378,19 +423,23 @@
       "choices": [
         {
           "id": "a",
-          "label": "b"
+          "label": "b",
+          "keyword": "bat"
         },
         {
           "id": "b",
-          "label": "d"
+          "label": "d",
+          "keyword": "dog"
         },
         {
           "id": "c",
-          "label": "p"
+          "label": "p",
+          "keyword": "pig"
         },
         {
           "id": "d",
-          "label": "g"
+          "label": "g",
+          "keyword": "goat"
         }
       ],
       "correctChoiceId": "b",
@@ -408,15 +457,18 @@
       "choices": [
         {
           "id": "a",
-          "label": "f"
+          "label": "f",
+          "keyword": "fan"
         },
         {
           "id": "b",
-          "label": "t"
+          "label": "t",
+          "keyword": "tap"
         },
         {
           "id": "c",
-          "label": "l"
+          "label": "l",
+          "keyword": "leg"
         }
       ],
       "correctChoiceId": "a",
@@ -434,19 +486,23 @@
       "choices": [
         {
           "id": "a",
-          "label": "s"
+          "label": "s",
+          "keyword": "sun"
         },
         {
           "id": "b",
-          "label": "t"
+          "label": "t",
+          "keyword": "tap"
         },
         {
           "id": "c",
-          "label": "l"
+          "label": "l",
+          "keyword": "leg"
         },
         {
           "id": "d",
-          "label": "f"
+          "label": "f",
+          "keyword": "fan"
         }
       ],
       "correctChoiceId": "d",
@@ -464,15 +520,18 @@
       "choices": [
         {
           "id": "a",
-          "label": "d"
+          "label": "d",
+          "keyword": "dog"
         },
         {
           "id": "b",
-          "label": "g"
+          "label": "g",
+          "keyword": "goat"
         },
         {
           "id": "c",
-          "label": "p"
+          "label": "p",
+          "keyword": "pig"
         }
       ],
       "correctChoiceId": "b",
@@ -490,19 +549,23 @@
       "choices": [
         {
           "id": "a",
-          "label": "g"
+          "label": "g",
+          "keyword": "goat"
         },
         {
           "id": "b",
-          "label": "d"
+          "label": "d",
+          "keyword": "dog"
         },
         {
           "id": "c",
-          "label": "p"
+          "label": "p",
+          "keyword": "pig"
         },
         {
           "id": "d",
-          "label": "b"
+          "label": "b",
+          "keyword": "bat"
         }
       ],
       "correctChoiceId": "a",
@@ -520,15 +583,18 @@
       "choices": [
         {
           "id": "a",
-          "label": "m"
+          "label": "m",
+          "keyword": "man"
         },
         {
           "id": "b",
-          "label": "n"
+          "label": "n",
+          "keyword": "net"
         },
         {
           "id": "c",
-          "label": "h"
+          "label": "h",
+          "keyword": "hat"
         }
       ],
       "correctChoiceId": "c",
@@ -546,19 +612,23 @@
       "choices": [
         {
           "id": "a",
-          "label": "n"
+          "label": "n",
+          "keyword": "net"
         },
         {
           "id": "b",
-          "label": "h"
+          "label": "h",
+          "keyword": "hat"
         },
         {
           "id": "c",
-          "label": "m"
+          "label": "m",
+          "keyword": "man"
         },
         {
           "id": "d",
-          "label": "k"
+          "label": "k",
+          "keyword": "kite"
         }
       ],
       "correctChoiceId": "b",
@@ -576,15 +646,18 @@
       "choices": [
         {
           "id": "a",
-          "label": "y"
+          "label": "y",
+          "keyword": "yak"
         },
         {
           "id": "b",
-          "label": "j"
+          "label": "j",
+          "keyword": "jam"
         },
         {
           "id": "c",
-          "label": "l"
+          "label": "l",
+          "keyword": "leg"
         }
       ],
       "correctChoiceId": "b",
@@ -602,19 +675,23 @@
       "choices": [
         {
           "id": "a",
-          "label": "z"
+          "label": "z",
+          "keyword": "zip"
         },
         {
           "id": "b",
-          "label": "y"
+          "label": "y",
+          "keyword": "yak"
         },
         {
           "id": "c",
-          "label": "l"
+          "label": "l",
+          "keyword": "leg"
         },
         {
           "id": "d",
-          "label": "j"
+          "label": "j",
+          "keyword": "jam"
         }
       ],
       "correctChoiceId": "d",
@@ -632,15 +709,18 @@
       "choices": [
         {
           "id": "a",
-          "label": "l"
+          "label": "l",
+          "keyword": "leg"
         },
         {
           "id": "b",
-          "label": "t"
+          "label": "t",
+          "keyword": "tap"
         },
         {
           "id": "c",
-          "label": "k"
+          "label": "k",
+          "keyword": "kite"
         }
       ],
       "correctChoiceId": "c",
@@ -658,19 +738,23 @@
       "choices": [
         {
           "id": "a",
-          "label": "k"
+          "label": "k",
+          "keyword": "kite"
         },
         {
           "id": "b",
-          "label": "t"
+          "label": "t",
+          "keyword": "tap"
         },
         {
           "id": "c",
-          "label": "l"
+          "label": "l",
+          "keyword": "leg"
         },
         {
           "id": "d",
-          "label": "f"
+          "label": "f",
+          "keyword": "fan"
         }
       ],
       "correctChoiceId": "a",
@@ -688,15 +772,18 @@
       "choices": [
         {
           "id": "a",
-          "label": "l"
+          "label": "l",
+          "keyword": "leg"
         },
         {
           "id": "b",
-          "label": "r"
+          "label": "r",
+          "keyword": "rat"
         },
         {
           "id": "c",
-          "label": "t"
+          "label": "t",
+          "keyword": "tap"
         }
       ],
       "correctChoiceId": "a",
@@ -714,19 +801,23 @@
       "choices": [
         {
           "id": "a",
-          "label": "r"
+          "label": "r",
+          "keyword": "rat"
         },
         {
           "id": "b",
-          "label": "l"
+          "label": "l",
+          "keyword": "leg"
         },
         {
           "id": "c",
-          "label": "t"
+          "label": "t",
+          "keyword": "tap"
         },
         {
           "id": "d",
-          "label": "f"
+          "label": "f",
+          "keyword": "fan"
         }
       ],
       "correctChoiceId": "b",
@@ -744,15 +835,18 @@
       "choices": [
         {
           "id": "a",
-          "label": "n"
+          "label": "n",
+          "keyword": "net"
         },
         {
           "id": "b",
-          "label": "m"
+          "label": "m",
+          "keyword": "man"
         },
         {
           "id": "c",
-          "label": "w"
+          "label": "w",
+          "keyword": "web"
         }
       ],
       "correctChoiceId": "b",
@@ -770,19 +864,23 @@
       "choices": [
         {
           "id": "a",
-          "label": "w"
+          "label": "w",
+          "keyword": "web"
         },
         {
           "id": "b",
-          "label": "n"
+          "label": "n",
+          "keyword": "net"
         },
         {
           "id": "c",
-          "label": "m"
+          "label": "m",
+          "keyword": "man"
         },
         {
           "id": "d",
-          "label": "r"
+          "label": "r",
+          "keyword": "rat"
         }
       ],
       "correctChoiceId": "c",
@@ -800,15 +898,18 @@
       "choices": [
         {
           "id": "a",
-          "label": "h"
+          "label": "h",
+          "keyword": "hat"
         },
         {
           "id": "b",
-          "label": "m"
+          "label": "m",
+          "keyword": "man"
         },
         {
           "id": "c",
-          "label": "n"
+          "label": "n",
+          "keyword": "net"
         }
       ],
       "correctChoiceId": "c",
@@ -826,19 +927,23 @@
       "choices": [
         {
           "id": "a",
-          "label": "r"
+          "label": "r",
+          "keyword": "rat"
         },
         {
           "id": "b",
-          "label": "m"
+          "label": "m",
+          "keyword": "man"
         },
         {
           "id": "c",
-          "label": "h"
+          "label": "h",
+          "keyword": "hat"
         },
         {
           "id": "d",
-          "label": "n"
+          "label": "n",
+          "keyword": "net"
         }
       ],
       "correctChoiceId": "d",
@@ -856,15 +961,18 @@
       "choices": [
         {
           "id": "a",
-          "label": "b"
+          "label": "b",
+          "keyword": "bat"
         },
         {
           "id": "b",
-          "label": "p"
+          "label": "p",
+          "keyword": "pig"
         },
         {
           "id": "c",
-          "label": "d"
+          "label": "d",
+          "keyword": "dog"
         }
       ],
       "correctChoiceId": "b",
@@ -882,19 +990,23 @@
       "choices": [
         {
           "id": "a",
-          "label": "b"
+          "label": "b",
+          "keyword": "bat"
         },
         {
           "id": "b",
-          "label": "p"
+          "label": "p",
+          "keyword": "pig"
         },
         {
           "id": "c",
-          "label": "d"
+          "label": "d",
+          "keyword": "dog"
         },
         {
           "id": "d",
-          "label": "r"
+          "label": "r",
+          "keyword": "rat"
         }
       ],
       "correctChoiceId": "b",
@@ -912,15 +1024,18 @@
       "choices": [
         {
           "id": "a",
-          "label": "r"
+          "label": "r",
+          "keyword": "rat"
         },
         {
           "id": "b",
-          "label": "n"
+          "label": "n",
+          "keyword": "net"
         },
         {
           "id": "c",
-          "label": "l"
+          "label": "l",
+          "keyword": "leg"
         }
       ],
       "correctChoiceId": "a",
@@ -938,19 +1053,23 @@
       "choices": [
         {
           "id": "a",
-          "label": "w"
+          "label": "w",
+          "keyword": "web"
         },
         {
           "id": "b",
-          "label": "n"
+          "label": "n",
+          "keyword": "net"
         },
         {
           "id": "c",
-          "label": "l"
+          "label": "l",
+          "keyword": "leg"
         },
         {
           "id": "d",
-          "label": "r"
+          "label": "r",
+          "keyword": "rat"
         }
       ],
       "correctChoiceId": "d",
@@ -968,15 +1087,18 @@
       "choices": [
         {
           "id": "a",
-          "label": "f"
+          "label": "f",
+          "keyword": "fan"
         },
         {
           "id": "b",
-          "label": "s"
+          "label": "s",
+          "keyword": "sun"
         },
         {
           "id": "c",
-          "label": "t"
+          "label": "t",
+          "keyword": "tap"
         }
       ],
       "correctChoiceId": "b",
@@ -994,19 +1116,23 @@
       "choices": [
         {
           "id": "a",
-          "label": "s"
+          "label": "s",
+          "keyword": "sun"
         },
         {
           "id": "b",
-          "label": "f"
+          "label": "f",
+          "keyword": "fan"
         },
         {
           "id": "c",
-          "label": "t"
+          "label": "t",
+          "keyword": "tap"
         },
         {
           "id": "d",
-          "label": "l"
+          "label": "l",
+          "keyword": "leg"
         }
       ],
       "correctChoiceId": "a",
@@ -1024,15 +1150,18 @@
       "choices": [
         {
           "id": "a",
-          "label": "f"
+          "label": "f",
+          "keyword": "fan"
         },
         {
           "id": "b",
-          "label": "k"
+          "label": "k",
+          "keyword": "kite"
         },
         {
           "id": "c",
-          "label": "t"
+          "label": "t",
+          "keyword": "tap"
         }
       ],
       "correctChoiceId": "c",
@@ -1050,19 +1179,23 @@
       "choices": [
         {
           "id": "a",
-          "label": "k"
+          "label": "k",
+          "keyword": "kite"
         },
         {
           "id": "b",
-          "label": "t"
+          "label": "t",
+          "keyword": "tap"
         },
         {
           "id": "c",
-          "label": "f"
+          "label": "f",
+          "keyword": "fan"
         },
         {
           "id": "d",
-          "label": "l"
+          "label": "l",
+          "keyword": "leg"
         }
       ],
       "correctChoiceId": "b",
@@ -1080,15 +1213,18 @@
       "choices": [
         {
           "id": "a",
-          "label": "w"
+          "label": "w",
+          "keyword": "web"
         },
         {
           "id": "b",
-          "label": "v"
+          "label": "v",
+          "keyword": "van"
         },
         {
           "id": "c",
-          "label": "y"
+          "label": "y",
+          "keyword": "yak"
         }
       ],
       "correctChoiceId": "b",
@@ -1106,19 +1242,23 @@
       "choices": [
         {
           "id": "a",
-          "label": "r"
+          "label": "r",
+          "keyword": "rat"
         },
         {
           "id": "b",
-          "label": "w"
+          "label": "w",
+          "keyword": "web"
         },
         {
           "id": "c",
-          "label": "y"
+          "label": "y",
+          "keyword": "yak"
         },
         {
           "id": "d",
-          "label": "v"
+          "label": "v",
+          "keyword": "van"
         }
       ],
       "correctChoiceId": "d",
@@ -1136,15 +1276,18 @@
       "choices": [
         {
           "id": "a",
-          "label": "v"
+          "label": "v",
+          "keyword": "van"
         },
         {
           "id": "b",
-          "label": "m"
+          "label": "m",
+          "keyword": "man"
         },
         {
           "id": "c",
-          "label": "w"
+          "label": "w",
+          "keyword": "web"
         }
       ],
       "correctChoiceId": "c",
@@ -1162,19 +1305,23 @@
       "choices": [
         {
           "id": "a",
-          "label": "w"
+          "label": "w",
+          "keyword": "web"
         },
         {
           "id": "b",
-          "label": "m"
+          "label": "m",
+          "keyword": "man"
         },
         {
           "id": "c",
-          "label": "v"
+          "label": "v",
+          "keyword": "van"
         },
         {
           "id": "d",
-          "label": "r"
+          "label": "r",
+          "keyword": "rat"
         }
       ],
       "correctChoiceId": "a",
@@ -1192,15 +1339,18 @@
       "choices": [
         {
           "id": "a",
-          "label": "v"
+          "label": "v",
+          "keyword": "van"
         },
         {
           "id": "b",
-          "label": "y"
+          "label": "y",
+          "keyword": "yak"
         },
         {
           "id": "c",
-          "label": "w"
+          "label": "w",
+          "keyword": "web"
         }
       ],
       "correctChoiceId": "b",
@@ -1218,19 +1368,23 @@
       "choices": [
         {
           "id": "a",
-          "label": "w"
+          "label": "w",
+          "keyword": "web"
         },
         {
           "id": "b",
-          "label": "v"
+          "label": "v",
+          "keyword": "van"
         },
         {
           "id": "c",
-          "label": "y"
+          "label": "y",
+          "keyword": "yak"
         },
         {
           "id": "d",
-          "label": "j"
+          "label": "j",
+          "keyword": "jam"
         }
       ],
       "correctChoiceId": "c",
@@ -1248,15 +1402,18 @@
       "choices": [
         {
           "id": "a",
-          "label": "l"
+          "label": "l",
+          "keyword": "leg"
         },
         {
           "id": "b",
-          "label": "v"
+          "label": "v",
+          "keyword": "van"
         },
         {
           "id": "c",
-          "label": "z"
+          "label": "z",
+          "keyword": "zip"
         }
       ],
       "correctChoiceId": "c",
@@ -1274,19 +1431,23 @@
       "choices": [
         {
           "id": "a",
-          "label": "r"
+          "label": "r",
+          "keyword": "rat"
         },
         {
           "id": "b",
-          "label": "v"
+          "label": "v",
+          "keyword": "van"
         },
         {
           "id": "c",
-          "label": "l"
+          "label": "l",
+          "keyword": "leg"
         },
         {
           "id": "d",
-          "label": "z"
+          "label": "z",
+          "keyword": "zip"
         }
       ],
       "correctChoiceId": "d",
@@ -1305,8 +1466,24 @@
           "note": "m makes the first sound in man — /mmm/."
         },
         {
+          "text": "sun",
+          "note": "s makes the first sound in sun — /sss/."
+        },
+        {
           "text": "ant",
           "note": "a makes the first sound in ant — /a/."
+        },
+        {
+          "text": "top",
+          "note": "t makes the first sound in top — /t/."
+        },
+        {
+          "text": "pig",
+          "note": "p makes the first sound in pig — /p/."
+        },
+        {
+          "text": "egg",
+          "note": "e makes the first sound in egg — /e/."
         }
       ]
     }

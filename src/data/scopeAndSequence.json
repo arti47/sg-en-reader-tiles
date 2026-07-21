@@ -10,6 +10,7 @@
           "objective": "Hear and identify the sound each single letter makes.",
           "iCanStatement": "I can hear the sound each letter makes.",
           "prereqs": [],
+          "threaded": true,
           "itemType": "decode_choice",
           "itemPool": "phonics-L01-letter-sounds",
           "mastery": {
@@ -23,9 +24,7 @@
           "strand": "phonics",
           "objective": "Decode CVC words with short vowels.",
           "iCanStatement": "I can read short-vowel words.",
-          "prereqs": [
-            "PH-letter-sounds"
-          ],
+          "prereqs": [],
           "itemType": "decode_choice",
           "itemPool": "phonics-L02-cvc-short-vowels",
           "encodePairId": "SP-cvc-short-vowels",

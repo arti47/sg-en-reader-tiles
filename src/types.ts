@@ -17,7 +17,7 @@ export type ItemType =
 export type Strand = 'phonics' | 'spelling' | 'grammar' | 'vocab' | 'comprehension' | 'cloze' | 'sentence'
 export type Difficulty = 1 | 2 | 3
 
-export interface Choice { id: string; label: string }
+export interface Choice { id: string; label: string; keyword?: string } // keyword = optional scaffold anchor (e.g. letter 'a' → "ant")
 
 export interface PackItem {
   id: string
