@@ -1,10 +1,15 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 import { VitePWA } from 'vite-plugin-pwa'
+import pkg from './package.json'
+
+// Single source of truth for the visible version (§13, §18.6): package.json.
+const version = pkg.version
 
 // Repo name → GitHub Pages base path.
 export default defineConfig({
   base: '/sg-en-reader-tiles/',
+  define: { __APP_VERSION__: JSON.stringify(version) },
   plugins: [
     react(),
     VitePWA({
