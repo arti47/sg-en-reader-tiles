@@ -233,6 +233,16 @@
           "itemType": "dictation",
           "itemPool": "dictation-L02-cvc",
           "mastery": { "window": 12, "accuracyToPass": 0.85, "minItems": 8 }
+        },
+        {
+          "id": "SP-digraph-dictation",
+          "strand": "spelling",
+          "objective": "Spell short decodable sentences with sh, ch, th, ck from dictation.",
+          "iCanStatement": "I can spell short sentences with sh, ch, th and ck.",
+          "prereqs": ["SP-cvc-dictation"],
+          "itemType": "dictation",
+          "itemPool": "dictation-L03-digraphs",
+          "mastery": { "window": 12, "accuracyToPass": 0.85, "minItems": 8 }
         }
       ]
     },
@@ -261,6 +271,16 @@
           "mastery": { "window": 12, "accuracyToPass": 0.8, "minItems": 8 }
         },
         {
+          "id": "GR-tenses-basic",
+          "strand": "grammar",
+          "objective": "Choose the correct tense (past, present, continuous, future).",
+          "iCanStatement": "I can choose the right tense for when something happens.",
+          "prereqs": ["GR-sva-simple"],
+          "itemType": "grammar_mcq",
+          "itemPool": "grammar-L03-tenses",
+          "mastery": { "window": 12, "accuracyToPass": 0.8, "minItems": 8 }
+        },
+        {
           "id": "VOC-synonyms",
           "strand": "vocab",
           "objective": "Choose the closest synonym in context.",
@@ -268,6 +288,26 @@
           "prereqs": ["PH-two-syllable"],
           "itemType": "vocab_mcq",
           "itemPool": "vocab-L01-synonyms",
+          "mastery": { "window": 12, "accuracyToPass": 0.8, "minItems": 8 }
+        },
+        {
+          "id": "VOC-antonyms",
+          "strand": "vocab",
+          "objective": "Choose the word that means the opposite.",
+          "iCanStatement": "I can choose a word that means the opposite.",
+          "prereqs": ["VOC-synonyms"],
+          "itemType": "vocab_mcq",
+          "itemPool": "vocab-L02-antonyms",
+          "mastery": { "window": 12, "accuracyToPass": 0.8, "minItems": 8 }
+        },
+        {
+          "id": "VOC-context",
+          "strand": "vocab",
+          "objective": "Work out a word's meaning from context clues.",
+          "iCanStatement": "I can work out what a hard word means from the sentence.",
+          "prereqs": ["VOC-antonyms"],
+          "itemType": "vocab_mcq",
+          "itemPool": "vocab-L03-context",
           "mastery": { "window": 12, "accuracyToPass": 0.8, "minItems": 8 }
         },
         {
@@ -281,6 +321,16 @@
           "mastery": { "window": 12, "accuracyToPass": 0.8, "minItems": 8 }
         },
         {
+          "id": "CM-inference",
+          "strand": "comprehension",
+          "objective": "Answer inferential and evaluative questions on a short passage.",
+          "iCanStatement": "I can work out answers that the passage does not say directly.",
+          "prereqs": ["CM-comprehension"],
+          "itemType": "passage_question",
+          "itemPool": "comp-L02",
+          "mastery": { "window": 12, "accuracyToPass": 0.8, "minItems": 8 }
+        },
+        {
           "id": "CL-grammar-cloze",
           "strand": "cloze",
           "objective": "Complete a grammar cloze from a word bank.",
@@ -288,6 +338,16 @@
           "prereqs": ["GR-sva-simple"],
           "itemType": "grammar_cloze",
           "itemPool": "cloze-L01-grammar",
+          "mastery": { "window": 12, "accuracyToPass": 0.8, "minItems": 8 }
+        },
+        {
+          "id": "CL-vocab-cloze",
+          "strand": "cloze",
+          "objective": "Complete a vocabulary cloze from a word bank.",
+          "iCanStatement": "I can choose the right word to fill each blank in a passage.",
+          "prereqs": ["CL-grammar-cloze"],
+          "itemType": "grammar_cloze",
+          "itemPool": "cloze-L02-vocab",
           "mastery": { "window": 12, "accuracyToPass": 0.8, "minItems": 8 }
         },
         {

@@ -22,11 +22,17 @@ import phonics2s from '../data/packs/phonics-L10-two-syllable.json'
 import spelling2s from '../data/packs/spelling-L10-two-syllable.json'
 import phonicsHf from '../data/packs/phonics-L12-hf.json'
 import dictationCvc from '../data/packs/dictation-L02-cvc.json'
+import dictationDig from '../data/packs/dictation-L03-digraphs.json'
 import grArticles from '../data/packs/grammar-L01-articles.json'
 import grSva from '../data/packs/grammar-L02-sva.json'
+import grTenses from '../data/packs/grammar-L03-tenses.json'
 import vocSyn from '../data/packs/vocab-L01-synonyms.json'
+import vocAnt from '../data/packs/vocab-L02-antonyms.json'
+import vocCtx from '../data/packs/vocab-L03-context.json'
 import comp1 from '../data/packs/comp-L01.json'
+import comp2 from '../data/packs/comp-L02.json'
 import cloze1 from '../data/packs/cloze-L01-grammar.json'
+import cloze2 from '../data/packs/cloze-L02-vocab.json'
 import smEdit from '../data/packs/sm-L01-editing.json'
 import smSyn from '../data/packs/sm-L02-synthesis.json'
 
@@ -52,11 +58,17 @@ const PACKS: ContentPack[] = [
   spelling2s as ContentPack,
   phonicsHf as ContentPack,
   dictationCvc as ContentPack,
+  dictationDig as ContentPack,
   grArticles as ContentPack,
   grSva as ContentPack,
+  grTenses as ContentPack,
   vocSyn as ContentPack,
+  vocAnt as ContentPack,
+  vocCtx as ContentPack,
   comp1 as ContentPack,
+  comp2 as ContentPack,
   cloze1 as ContentPack,
+  cloze2 as ContentPack,
   smEdit as ContentPack,
   smSyn as ContentPack
 ]
