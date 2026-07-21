@@ -143,8 +143,12 @@ try {
       if (kind === 'pick') break
       await mp.locator('button.tile:not([disabled])').first().click()
     }
+    // Force the wider OpenDyslexic font to catch layout overflow (§18.5).
+    await mp.evaluate(() => { document.documentElement.dataset.font = 'dyslexic' })
     await mp.getByRole('button', { name: 'Manage' }).click()
+    if (await mp.evaluate(() => document.documentElement.scrollWidth > window.innerWidth + 1)) fail('manage: horizontal overflow (dyslexic font)')
     await mp.getByRole('button', { name: 'Remove', exact: true }).click() // open confirm
+    if (await mp.evaluate(() => document.documentElement.scrollWidth > window.innerWidth + 1)) fail('manage confirm: horizontal overflow (dyslexic font)')
     await mp.getByRole('button', { name: 'Remove', exact: true }).click() // confirm
     await mp.waitForFunction(() => !/Mgr/.test(document.body.innerText), { timeout: 6000 })
       .catch(() => fail('manage: remove student did not delete the profile'))
@@ -196,6 +200,7 @@ try {
     await dp.getByRole('button', { name: 'OpenDyslexic' }).click()
     await dp.waitForFunction(() => document.documentElement.dataset.font === 'dyslexic', { timeout: 6000 })
       .catch(() => fail('M4 font: toggle should set data-font=dyslexic'))
+    if (await dp.evaluate(() => document.documentElement.scrollWidth > window.innerWidth + 1)) fail('dashboard settings: horizontal overflow (dyslexic font)')
     await dp.reload({ waitUntil: 'networkidle' })
     await dp.waitForFunction(() => document.documentElement.dataset.font === 'dyslexic', { timeout: 6000 })
       .catch(() => fail('M4 font: choice should persist across reload'))

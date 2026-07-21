@@ -86,7 +86,7 @@ h1 { font-size: 1.8rem; font-weight: 700; margin: 8px 0 0; }
   background: var(--teal); color: var(--paper);
   border: none; border-radius: 14px; cursor: pointer; flex: 1;
 }
-.btn.small { min-height: 40px; flex: 0; }
+.btn.small { min-height: 40px; flex: 0 1 auto; min-width: 0; padding: 0 14px; font-size: .98rem; }
 .btn.ghost { background: #fff; color: var(--ink); border: 3px solid var(--teal-soft); }
 .btn.danger { background: var(--no); color: var(--paper); }
 .btn:disabled { opacity: .4; }
@@ -169,8 +169,9 @@ h1 { font-size: 1.8rem; font-weight: 700; margin: 8px 0 0; }
 .badge { font-size: 1.4rem; filter: grayscale(1); opacity: .35; }
 .badge.on { filter: none; opacity: 1; }
 .screen:focus { outline: none; }
-.set-row { display: flex; justify-content: space-between; align-items: center; gap: 10px; }
+.set-row { display: flex; justify-content: space-between; align-items: center; gap: 10px 12px; flex-wrap: wrap; }
 .set-row > span:first-child { font-weight: 600; }
+.set-row .row { flex-wrap: wrap; justify-content: flex-end; }
 
 /* M3 comprehension / cloze */
 .passage {

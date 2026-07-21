@@ -40,7 +40,7 @@ export function ChildPicker(props: {
               )}
 
               {editing && !conf && (
-                <div className="row" style={{ gap: 6 }}>
+                <div className="stack" style={{ gap: 6 }}>
                   <button className="btn small ghost" onClick={() => setConfirm({ id: c.id, action: 'reset' })}>Reset</button>
                   <button className="btn small danger" onClick={() => setConfirm({ id: c.id, action: 'remove' })}>Remove</button>
                 </div>
@@ -49,13 +49,11 @@ export function ChildPicker(props: {
               {editing && conf && (
                 <div className="stack" style={{ gap: 6 }}>
                   <span className="note">{conf === 'remove' ? `Remove ${c.name} and all progress?` : `Reset ${c.name}'s progress?`}</span>
-                  <div className="row" style={{ gap: 6 }}>
-                    <button className="btn small ghost" onClick={() => setConfirm(null)}>Cancel</button>
-                    <button className={'btn small' + (conf === 'remove' ? ' danger' : '')}
-                      onClick={() => { setConfirm(null); setEditing(false); if (conf === 'remove') props.onRemove(c); else props.onReset(c) }}>
-                      {conf === 'remove' ? 'Remove' : 'Reset'}
-                    </button>
-                  </div>
+                  <button className={'btn small' + (conf === 'remove' ? ' danger' : '')}
+                    onClick={() => { setConfirm(null); setEditing(false); if (conf === 'remove') props.onRemove(c); else props.onReset(c) }}>
+                    {conf === 'remove' ? 'Remove' : 'Reset'}
+                  </button>
+                  <button className="btn small ghost" onClick={() => setConfirm(null)}>Cancel</button>
                 </div>
               )}
             </div>

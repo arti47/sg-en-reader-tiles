@@ -26,7 +26,7 @@ if (import.meta.env.DEV) {
 const m3demo = import.meta.env.DEV && typeof location !== 'undefined' && location.hash === '#m3demo'
 
 type View = 'pick' | 'add' | 'placement' | 'session' | 'dashboard'
-const APP_VERSION = '0.2.21'
+const APP_VERSION = '0.2.22'
 
 export default function App() {
   const [children, setChildren] = useState<Child[]>([])
