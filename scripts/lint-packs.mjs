@@ -46,6 +46,21 @@ function decodable(word, env) {
   return { ok: true }
 }
 
+// Canonical grapheme segmentation (greedy longest-match) → the tile chunking encode items
+// must use, so digraphs/teams/doubles are single tiles (OG chunking, §13). Null if undecodable.
+function segment(word, env) {
+  const cfg = decode[env]; if (!cfg) return null
+  const w = word.toLowerCase().replace(/[^a-z]/g, '')
+  const gs = [...cfg.graphemes].sort((a, b) => b.length - a.length)
+  const out = []; let i = 0
+  while (i < w.length) {
+    const g = gs.find(g => w.startsWith(g, i))
+    if (!g) return null
+    out.push(g); i += g.length
+  }
+  return out
+}
+
 const allItemIds = new Map() // id → file
 const skillItemCount = new Map()
 
@@ -74,6 +89,9 @@ for (const { f, pack } of packs) {
       if (new Set(ids).size !== ids.length) err(f, it.id, 'duplicate choice ids')
       if (!it.correctChoiceId) err(f, it.id, 'missing correctChoiceId')
       else if (!ids.includes(it.correctChoiceId)) err(f, it.id, `correctChoiceId "${it.correctChoiceId}" not among choices`)
+      // distractors must be distinct from each other and the key (no accidental second-correct)
+      const labels = (it.choices ?? []).map(c => (c.label ?? '').toLowerCase())
+      if (new Set(labels).size !== labels.length) err(f, it.id, `duplicate choice labels ${JSON.stringify(it.choices.map(c => c.label))}`)
     } else if (it.itemType === 'grammar_cloze') {
       const bank = it.wordBank ?? []
       if (bank.length < 2) err(f, it.id, 'grammar_cloze needs a word bank (≥2 words)')
@@ -85,6 +103,12 @@ for (const { f, pack } of packs) {
     } else if (it.itemType === 'build_word' || it.itemType === 'spell_tiles') {
       if (!Array.isArray(it.graphemes) || !it.graphemes.length) err(f, it.id, 'missing graphemes')
       else if (it.displayWord && it.graphemes.join('') !== it.displayWord) err(f, it.id, `graphemes ${JSON.stringify(it.graphemes)} != displayWord "${it.displayWord}"`)
+      // graphemes must be the canonical greedy chunking (single-tile digraphs/teams/doubles, §13)
+      else if (it.displayWord && it.decodableWithin) {
+        const canon = segment(it.displayWord, it.decodableWithin)
+        if (canon && canon.join('|') !== it.graphemes.join('|'))
+          err(f, it.id, `graphemes ${JSON.stringify(it.graphemes)} not canonical for "${it.displayWord}" (expected ${JSON.stringify(canon)})`)
+      }
     }
 
     // (3) en-SG on all human-facing text
