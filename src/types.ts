@@ -4,6 +4,7 @@ export type ItemType =
   | 'decode_choice'   // read word → pick correct spelling/meaning (MCQ, TTS prompt)
   | 'build_word'      // hear word → assemble grapheme tiles (encode)
   | 'spell_tiles'     // tray-based encode (same renderer as build_word)
+  | 'dictation'      // hear a short decodable sentence → build it word-by-word from tiles (§6)
   // ---- M3 PSLE Paper-2 (MCQ + word-bank; free-text types deferred, §2/§6) ----
   | 'vocab_mcq'         // sentence; pick best-meaning / closest synonym (MCQ)
   | 'vocab_cloze_mcq'   // short passage with a blank; MCQ options
@@ -27,6 +28,7 @@ export interface PackItem {
   displayWord?: string           // target word (encode items)
   graphemes?: string[]           // tile segmentation, e.g. "ship" → ["sh","i","p"]
   distractorGraphemes?: string[] // confusable tiles added to tray
+  words?: { text: string; graphemes: string[]; distractorGraphemes?: string[] }[] // dictation: per-word tiles
   passage?: string               // context shown above the question (comprehension/cloze)
   choices?: Choice[]
   correctChoiceId?: string

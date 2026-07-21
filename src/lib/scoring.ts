@@ -16,6 +16,17 @@ export function scoreCloze(item: PackItem, answers: Record<string, string>): Sco
   return ok ? { correct: true } : { correct: false, missedConcept: item.missedConceptOnFail }
 }
 
+// Dictation: every word's tile sequence must match its authored graphemes (§12).
+export function scoreDictation(item: PackItem, words: string[][]): ScoreResult {
+  const target = item.words ?? []
+  const correct = words.length === target.length &&
+    target.every((w, i) => {
+      const a = words[i] ?? []
+      return a.length === w.graphemes.length && a.every((g, j) => g === w.graphemes[j])
+    })
+  return correct ? { correct: true } : { correct: false, missedConcept: item.missedConceptOnFail }
+}
+
 // Encode (build_word/spell_tiles): grapheme sequence must match exactly (§12).
 // On any mismatch the item's authored missedConceptOnFail tag is emitted (per-grapheme
 // concept mapping isn't authored in the pack, so scoring stays at item granularity).

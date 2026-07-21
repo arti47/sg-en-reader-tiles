@@ -109,6 +109,18 @@ for (const { f, pack } of packs) {
         if (canon && canon.join('|') !== it.graphemes.join('|'))
           err(f, it.id, `graphemes ${JSON.stringify(it.graphemes)} not canonical for "${it.displayWord}" (expected ${JSON.stringify(canon)})`)
       }
+    } else if (it.itemType === 'dictation') {
+      // each word: graphemes present, join === text, canonical greedy chunking (§13)
+      if (!Array.isArray(it.words) || it.words.length < 2) err(f, it.id, 'dictation needs ≥2 words')
+      for (const w of it.words ?? []) {
+        if (!Array.isArray(w.graphemes) || !w.graphemes.length) { err(f, it.id, `word "${w.text}" missing graphemes`); continue }
+        if (w.graphemes.join('') !== w.text) err(f, it.id, `word graphemes ${JSON.stringify(w.graphemes)} != "${w.text}"`)
+        else if (it.decodableWithin) {
+          const canon = segment(w.text, it.decodableWithin)
+          if (canon && canon.join('|') !== w.graphemes.join('|'))
+            err(f, it.id, `word "${w.text}" graphemes not canonical (expected ${JSON.stringify(canon)})`)
+        }
+      }
     }
 
     // (3) en-SG on all human-facing text
@@ -118,7 +130,9 @@ for (const { f, pack } of packs) {
     if (skill.strand === 'phonics' || skill.strand === 'spelling') {
       const env = it.decodableWithin
       if (!env) err(f, it.id, 'missing decodableWithin')
-      else {
+      else if (it.itemType === 'dictation') {
+        for (const w of it.words ?? []) { const r = decodable(w.text, env); if (!r.ok) err(f, it.id, r.why) }
+      } else {
         const words = []
         if (it.displayWord) words.push(it.displayWord)
         if (it.audioText) words.push(it.audioText)

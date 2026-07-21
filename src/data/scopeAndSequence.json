@@ -222,6 +222,16 @@
           "itemType": "decode_choice",
           "itemPool": "phonics-L12-hf",
           "mastery": { "window": 12, "accuracyToPass": 0.85, "minItems": 8 }
+        },
+        {
+          "id": "SP-cvc-dictation",
+          "strand": "spelling",
+          "objective": "Spell short decodable sentences from dictation (word by word).",
+          "iCanStatement": "I can spell short sentences I hear.",
+          "prereqs": ["SP-two-syllable"],
+          "itemType": "dictation",
+          "itemPool": "dictation-L02-cvc",
+          "mastery": { "window": 12, "accuracyToPass": 0.85, "minItems": 8 }
         }
       ]
     },

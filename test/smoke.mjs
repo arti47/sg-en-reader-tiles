@@ -243,6 +243,16 @@ try {
     const correct = m3.comp.choices.find(c => c.id === m3.comp.correctChoiceId).label
     await compBox.locator('button.tile', { hasText: new RegExp('^' + correct.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + '$') }).first().click()
     if (!/Yes!/.test(await compBox.innerText())) fail('m3 comprehension: correct choice should score right')
+    // Dictation (T11): build each word from its correct tiles, then Next word / Check.
+    const dictBox = mp3.locator('[data-testid="m3-dict"]')
+    for (let w = 0; w < m3.dict.words.length; w++) {
+      for (const g of m3.dict.words[w].graphemes) {
+        await dictBox.locator('button.tile', { hasText: new RegExp('^' + g.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + '$') }).first().click()
+      }
+      const label = w < m3.dict.words.length - 1 ? 'Next word' : 'Check'
+      await dictBox.getByRole('button', { name: label }).click()
+    }
+    if (!/Yes!/.test(await dictBox.innerText())) fail('m3 dictation: correctly built sentence should score right')
     if (await mp3.evaluate(() => document.documentElement.scrollWidth > window.innerWidth + 1)) fail('m3 demo: horizontal overflow at 390px')
     if (e3.length) fail('m3 demo console errors: ' + e3.slice(0, 3))
     await m3ctx.close()
@@ -341,6 +351,11 @@ try {
     if (sc.scoreCloze(cloze, { '1': 'to', '2': 'to' }).correct) return 'scoreCloze: wrong blank should fail'
     const mcq = { correctChoiceId: 'b', missedConceptOnFail: 'synonym' }
     if (!sc.scoreMcq(mcq, 'b').correct || sc.scoreMcq(mcq, 'a').correct) return 'scoreMcq'
+    // T11 dictation scoring: every word's tiles must match; any wrong word fails.
+    const dict = { words: [{ text: 'a', graphemes: ['a'] }, { text: 'cat', graphemes: ['c', 'a', 't'] }], missedConceptOnFail: 'sentence-dictation' }
+    if (!sc.scoreDictation(dict, [['a'], ['c', 'a', 't']]).correct) return 'scoreDictation: all-correct should pass'
+    if (sc.scoreDictation(dict, [['a'], ['c', 'o', 't']]).correct) return 'scoreDictation: wrong word should fail'
+    if (sc.scoreDictation(dict, [['a']]).correct) return 'scoreDictation: missing word should fail'
     // M4 gamification: XP = 10/correct + 50/cert; level ≥1 and non-decreasing.
     const g = window.__gamify
     if (g.xp([{ correct: true }, { correct: false }, { correct: true }], [{}, {}]) !== 2 * 10 + 2 * 50) return 'gamify xp'

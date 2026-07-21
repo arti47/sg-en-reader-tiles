@@ -110,6 +110,10 @@ h1 { font-size: 1.8rem; font-weight: 700; margin: 8px 0 0; }
 
 /* Encode word-building slots (grapheme tiles land here) */
 .slots { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; }
+.dict-sentence { display: flex; flex-wrap: wrap; gap: 14px; align-items: center; justify-content: center; }
+.dict-word { display: inline-flex; gap: 4px; align-items: center; }
+.dict-word.done { font-size: 1.6rem; font-weight: 700; color: var(--ink); opacity: 0.75; }
+.dict-word.current { gap: 6px; }
 .slot {
   min-width: 56px; min-height: 64px; padding: 0 8px;
   display: grid; place-items: center; font-size: 1.7rem; font-weight: 700;

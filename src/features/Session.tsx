@@ -11,6 +11,7 @@ import { isoWeek, isConsecutiveWeek } from '../lib/aggregate'
 import { McqItem } from './items/McqItem'
 import { TileItem } from './items/TileItem'
 import { ClozeItem } from './items/ClozeItem'
+import { DictationItem } from './items/DictationItem'
 import { LessonView } from './LessonView'
 
 const DEFAULT_SESSION_LEN = 16
@@ -190,6 +191,7 @@ export function Session(props: { child: Child; onExit: () => void }) {
   if (phase === 'item' && item) {
     const isTile = item.itemType === 'build_word' || item.itemType === 'spell_tiles'
     const isCloze = item.itemType === 'grammar_cloze'
+    const isDictation = item.itemType === 'dictation'
     return (
       <div className="stack">
         <div className="row" style={{ justifyContent: 'space-between', alignItems: 'center' }}>
@@ -197,8 +199,9 @@ export function Session(props: { child: Child; onExit: () => void }) {
           <span className="note">{Math.min(count + 1, lenRef.current)}/{lenRef.current}</span>
         </div>
         {isTile ? <TileItem key={serve} item={item} onAnswer={onAnswer} />
-          : isCloze ? <ClozeItem key={serve} item={item} onAnswer={onAnswer} />
-            : <McqItem key={serve} item={item} onAnswer={onAnswer} />}
+          : isDictation ? <DictationItem key={serve} item={item} onAnswer={onAnswer} />
+            : isCloze ? <ClozeItem key={serve} item={item} onAnswer={onAnswer} />
+              : <McqItem key={serve} item={item} onAnswer={onAnswer} />}
         {answered && <button className="btn" onClick={onContinue}>Continue</button>}
       </div>
     )
