@@ -4,7 +4,7 @@ import { getAttempts, getProgress, getCertificates, getAggregates, getUsage, get
 import { SKILLS, getSkill } from '../lib/packs'
 import { computeReadiness, type Readiness } from '../lib/readiness'
 import { achievements, type Achievement } from '../lib/gamify'
-import { setRate } from '../lib/audio'
+import { setRate, setVoice, speak, listVoices, onVoicesReady } from '../lib/audio'
 
 // Parent dashboard (§10, §11, §14). PIN-gated, growth-framed, parent-only. Per-child readiness
 // + action plan + weekly usage/streak + trend chart; global export/import backup.
@@ -39,9 +39,17 @@ export function ParentDashboard(props: { children: Child[]; onExit: () => void; 
   const [candidate, setCandidate] = useState('')
   const [error, setError] = useState(false)
   const [cards, setCards] = useState<CardData[]>([])
+  const [voices, setVoices] = useState<{ voiceURI: string; name: string; lang: string }[]>([])
 
   useEffect(() => {
     void getSettings().then(s => { setSettings(s); setGate(s.pin ? 'enter' : 'create1') })
+  }, [])
+
+  // Load the device's installed English voices for the picker (async on many browsers).
+  useEffect(() => {
+    const refresh = () => setVoices(listVoices().map(v => ({ voiceURI: v.voiceURI, name: v.name, lang: v.lang })))
+    refresh()
+    return onVoicesReady(refresh)
   }, [])
 
   async function loadCards() {
@@ -73,6 +81,7 @@ export function ParentDashboard(props: { children: Child[]; onExit: () => void; 
     setSettings(next); await putSettings(next)
     if (patch.font) document.documentElement.dataset.font = patch.font
     if (patch.ttsRate) setRate(patch.ttsRate)
+    if ('voiceURI' in patch) setVoice(patch.voiceURI)
   }
   const clamp = (n: number, lo: number, hi: number) => Math.min(hi, Math.max(lo, n))
 
@@ -187,6 +196,24 @@ export function ParentDashboard(props: { children: Child[]; onExit: () => void; 
             <button className="btn small ghost" aria-label="Faster voice" onClick={() => updateSettings({ ttsRate: clamp(Number(((settings?.ttsRate ?? 0.9) + 0.1).toFixed(2)), 0.5, 1.3) })}>+</button>
           </div>
         </div>
+        {voices.length > 0 && (() => {
+          const cur = Math.max(0, voices.findIndex(v => v.voiceURI === settings?.voiceURI))
+          const step = (d: number) => {
+            const next = voices[(cur + d + voices.length) % voices.length]
+            void updateSettings({ voiceURI: next.voiceURI })
+          }
+          return (
+            <div className="set-row">
+              <span>Voice</span>
+              <div className="row" style={{ gap: 6, alignItems: 'center' }}>
+                <button className="btn small ghost" aria-label="Previous voice" onClick={() => step(-1)}>◀</button>
+                <span aria-live="polite" style={{ minWidth: 96, textAlign: 'center' }}>{voices[cur]?.name ?? 'Default'}</span>
+                <button className="btn small ghost" aria-label="Next voice" onClick={() => step(1)}>▶</button>
+                <button className="btn small" aria-label="Test voice" onClick={() => { setVoice(voices[cur]?.voiceURI); speak('Hello, let us read together.') }}>🔊 Test</button>
+              </div>
+            </div>
+          )
+        })()}
         <div className="set-row">
           <span>Session length</span>
           <div className="row" style={{ gap: 6, alignItems: 'center' }}>

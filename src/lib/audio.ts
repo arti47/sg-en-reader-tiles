@@ -3,16 +3,44 @@
 let rate = 0.9
 export function setRate(r: number) { rate = r }
 
+// Selected TTS voice (by voiceURI, chosen in parent Settings). Null → auto: first en-GB.
+let voiceURI: string | null = null
+export function setVoice(uri: string | null | undefined) { voiceURI = uri ?? null }
+
+// English voices installed on the device, for the Settings voice picker. getVoices() is
+// often empty until the async `voiceschanged` fires, so callers should also listen (below).
+export function listVoices(): SpeechSynthesisVoice[] {
+  try {
+    const synth = window.speechSynthesis
+    if (!synth) return []
+    return synth.getVoices().filter(v => /^en/i.test(v.lang))
+  } catch { return [] }
+}
+
+// Register a callback for when the voice list becomes available/changes. Returns an
+// unsubscribe fn. Fires once immediately if voices are already loaded.
+export function onVoicesReady(cb: () => void): () => void {
+  try {
+    const synth = window.speechSynthesis
+    if (!synth) return () => {}
+    if (synth.getVoices().length) cb()
+    synth.addEventListener('voiceschanged', cb)
+    return () => synth.removeEventListener('voiceschanged', cb)
+  } catch { return () => {} }
+}
+
 export function speak(text: string) {
   try {
     const synth = window.speechSynthesis
     if (!synth) return
     synth.cancel()
     const u = new SpeechSynthesisUtterance(text)
-    u.lang = 'en-GB'
     u.rate = rate
-    const gb = synth.getVoices().find(v => /en-GB/i.test(v.lang))
-    if (gb) u.voice = gb
+    const voices = synth.getVoices()
+    // Prefer the chosen voice; else the first en-GB; else leave the platform default.
+    const chosen = (voiceURI && voices.find(v => v.voiceURI === voiceURI))
+      || voices.find(v => /en-GB/i.test(v.lang))
+    if (chosen) { u.voice = chosen; u.lang = chosen.lang } else u.lang = 'en-GB'
     synth.speak(u)
   } catch { /* no TTS available — silent */ }
 }

@@ -108,7 +108,7 @@ export interface Aggregate { childId: string; week: string; skillId: string; ite
 // Usage/fidelity mechanic (§14) — sessions toward a weekly target + streak.
 export interface Usage { childId: string; weeklySessionTarget: number; sessionsThisWeek: number; weekKey: string; streakWeeks: number; lastSessionTs: number }
 // Global settings (§11).
-export interface Settings { pin?: string; ttsRate: number; englishVariant: 'en-SG'; sessionLength: number; font?: 'lexend' | 'dyslexic' }
+export interface Settings { pin?: string; ttsRate: number; englishVariant: 'en-SG'; sessionLength: number; font?: 'lexend' | 'dyslexic'; voiceURI?: string }
 export interface Review {
   skillId: string
   due: number                    // next review timestamp

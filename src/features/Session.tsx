@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from 'react'
 import type { Child, PackItem, Attempt, SkillProgress, Difficulty, SkillDef, Certificate, Review } from '../types'
 import type { ScoreResult } from '../lib/scoring'
 import { addAttempt, getAttempts, getProgress, putProgress, putCertificate, getReviews, putReview, bumpAggregate, getUsage, putUsage, getSettings } from '../store'
-import { setRate } from '../lib/audio'
+import { setRate, setVoice } from '../lib/audio'
 import { XP_PER_CORRECT, XP_PER_CERT } from '../lib/gamify'
 import { SKILLS, getSkill, getLesson, pickItem } from '../lib/packs'
 import { rollingAccuracy, itemsAnswered, nextDifficulty, isMastered, patternMastered, struggling, eligibleSkills, patternDecodeSkill, interleavedReviewSkill, threadedSkill } from '../lib/engine'
@@ -42,6 +42,7 @@ export function Session(props: { child: Child; onExit: () => void }) {
       const settings = await getSettings()
       lenRef.current = settings.sessionLength || DEFAULT_SESSION_LEN
       setRate(settings.ttsRate)
+      setVoice(settings.voiceURI)
       attemptsRef.current = await getAttempts(props.child.id)
       const prog = await getProgress(props.child.id)
       for (const p of prog) {

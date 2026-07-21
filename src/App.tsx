@@ -10,6 +10,7 @@ import { Placement } from './features/Placement'
 import { ParentDashboard } from './features/ParentDashboard'
 import { M3Demo } from './features/M3Demo'
 import { initPWA } from './pwa'
+import { setVoice } from './lib/audio'
 import * as srs from './lib/srs'
 import * as engine from './lib/engine'
 import * as readiness from './lib/readiness'
@@ -42,8 +43,8 @@ export default function App() {
   }
   useEffect(() => { void refreshChildren() }, [])
   useEffect(() => { initPWA((r) => setReload(() => r)) }, [])
-  // Apply the saved font choice app-wide (§14 dyslexia font, default Lexend).
-  useEffect(() => { void getSettings().then(s => { document.documentElement.dataset.font = s.font ?? 'lexend' }) }, [])
+  // Apply saved font (§14 dyslexia font, default Lexend) + chosen TTS voice app-wide.
+  useEffect(() => { void getSettings().then(s => { document.documentElement.dataset.font = s.font ?? 'lexend'; setVoice(s.voiceURI) }) }, [])
   // A11y: move focus to the screen on each view change so screen readers announce it (§18.12).
   const mainRef = useRef<HTMLElement>(null)
   useEffect(() => { mainRef.current?.focus() }, [view])
