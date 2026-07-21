@@ -130,14 +130,14 @@ export function ParentDashboard(props: { children: Child[]; onExit: () => void; 
 
   if (gate === 'loading') return <div className="stack center"><p className="note">Loading…</p></div>
   if (gate !== 'open') {
-    const title = gate === 'enter' ? 'Enter parent PIN' : gate === 'create1' ? 'Create a parent PIN' : 'Re-enter to confirm'
+    const title = gate === 'enter' ? 'Enter teacher PIN' : gate === 'create1' ? 'Create a teacher PIN' : 'Re-enter to confirm'
     return <PinPadGate title={title} error={error} onComplete={onPin} onCancel={props.onExit} />
   }
 
   return (
     <div className="stack">
       <div className="row" style={{ justifyContent: 'space-between', alignItems: 'center' }}>
-        <h1>Parent area</h1>
+        <h1>Teacher area</h1>
         <button className="link" onClick={props.onExit}>Done</button>
       </div>
 

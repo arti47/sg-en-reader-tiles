@@ -69,7 +69,7 @@ export function ChildPicker(props: {
       </div>
 
       {!editing && (
-        <button className="link" onClick={props.onParent} aria-label="Open the parent area">🔒 Parent area</button>
+        <button className="link" onClick={props.onParent} aria-label="Open the teacher area">🔒 Teacher area</button>
       )}
     </div>
   )

@@ -191,12 +191,12 @@ try {
     }
     // M4: picker card shows the gamification level badge.
     if (!/Lvl/.test(await dp.evaluate(() => document.body.innerText))) fail('M4 gamify: picker should show a level badge')
-    await dp.getByRole('button', { name: /parent area/i }).click()
-    await dp.waitForFunction(() => /Create a parent PIN/.test(document.body.innerText), { timeout: 6000 })
+    await dp.getByRole('button', { name: /teacher area/i }).click()
+    await dp.waitForFunction(() => /Create a teacher PIN/.test(document.body.innerText), { timeout: 6000 })
     for (const d of ['1', '2', '3', '4']) await dp.getByRole('button', { name: d, exact: true }).click()
     await dp.waitForFunction(() => /Re-enter to confirm/.test(document.body.innerText), { timeout: 6000 })
     for (const d of ['1', '2', '3', '4']) await dp.getByRole('button', { name: d, exact: true }).click()
-    await dp.waitForFunction(() => /Parent area/.test(document.body.innerText) && /skills mastered/.test(document.body.innerText), { timeout: 6000 })
+    await dp.waitForFunction(() => /Teacher area/.test(document.body.innerText) && /skills mastered/.test(document.body.innerText), { timeout: 6000 })
       .catch(() => fail('dashboard: card did not render after PIN'))
     if (!/Dash/.test(await dp.evaluate(() => document.body.innerText))) fail('dashboard: child card missing')
     if (!/badges/.test(await dp.evaluate(() => document.body.innerText))) fail('M4 gamify: dashboard should show achievement badges')
