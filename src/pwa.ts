@@ -5,4 +5,9 @@ export function initPWA(onUpdate: (reload: () => void) => void) {
     onNeedRefresh() { onUpdate(() => updateSW(true)) },
     onOfflineReady() { /* precached; runs offline */ }
   })
+  // Cache pre-warm / update check when the app is foregrounded (§13). Never auto-reloads;
+  // a waiting SW still surfaces via the toast above.
+  document.addEventListener('visibilitychange', () => {
+    if (!document.hidden) void navigator.serviceWorker?.getRegistration().then(r => r?.update()).catch(() => {})
+  })
 }

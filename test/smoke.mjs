@@ -159,6 +159,9 @@ try {
     dp.on('console', m => { if (m.type() === 'error') dErrors.push(m.text()) })
     dp.on('pageerror', e => dErrors.push('pageerror: ' + e.message))
     await dp.goto(BASE, { waitUntil: 'networkidle' })
+    // M4: boot applies the default font (Lexend) via data-font on the root.
+    await dp.waitForFunction(() => document.documentElement.dataset.font === 'lexend', { timeout: 6000 })
+      .catch(() => fail('M4 font: boot should set data-font=lexend'))
     await dp.getByText('Add student').click()
     await dp.locator('input').fill('Dash')
     await dp.getByRole('button', { name: 'P2', exact: true }).click()
@@ -171,6 +174,8 @@ try {
       if (kind === 'pick') break
       await dp.locator('button.tile:not([disabled])').first().click()
     }
+    // M4: picker card shows the gamification level badge.
+    if (!/Lvl/.test(await dp.evaluate(() => document.body.innerText))) fail('M4 gamify: picker should show a level badge')
     await dp.getByRole('button', { name: /parent area/i }).click()
     await dp.waitForFunction(() => /Create a parent PIN/.test(document.body.innerText), { timeout: 6000 })
     for (const d of ['1', '2', '3', '4']) await dp.getByRole('button', { name: d, exact: true }).click()
@@ -186,6 +191,13 @@ try {
       dp.getByRole('button', { name: 'Export backup' }).click()
     ])
     if (!dl) fail('dashboard: export backup did not download')
+    // M4: font toggle applies immediately and persists across a reload.
+    await dp.getByRole('button', { name: 'OpenDyslexic' }).click()
+    await dp.waitForFunction(() => document.documentElement.dataset.font === 'dyslexic', { timeout: 6000 })
+      .catch(() => fail('M4 font: toggle should set data-font=dyslexic'))
+    await dp.reload({ waitUntil: 'networkidle' })
+    await dp.waitForFunction(() => document.documentElement.dataset.font === 'dyslexic', { timeout: 6000 })
+      .catch(() => fail('M4 font: choice should persist across reload'))
     if (dErrors.length) fail('dashboard console errors: ' + dErrors.slice(0, 3))
     await dctx.close()
   }
@@ -312,6 +324,10 @@ try {
     if (sc.scoreCloze(cloze, { '1': 'to', '2': 'to' }).correct) return 'scoreCloze: wrong blank should fail'
     const mcq = { correctChoiceId: 'b', missedConceptOnFail: 'synonym' }
     if (!sc.scoreMcq(mcq, 'b').correct || sc.scoreMcq(mcq, 'a').correct) return 'scoreMcq'
+    // M4 gamification: XP = 10/correct + 50/cert; level ≥1 and non-decreasing.
+    const g = window.__gamify
+    if (g.xp([{ correct: true }, { correct: false }, { correct: true }], [{}, {}]) !== 2 * 10 + 2 * 50) return 'gamify xp'
+    if (g.level(0) !== 1 || g.level(1000) < g.level(100)) return 'gamify level'
     return 'ok'
   })
 
@@ -350,6 +366,6 @@ try {
   if (bad.db.progress.some(p => p.skillId === 'SP-cvc-short-vowels')) fail('dual gate: encode must stay locked when decode <70%')
   if (bad.db.certs.length) fail('struggle path: no certificate should be awarded')
 
-  console.log('PASS — placement→session, mastery+certs+review-scheduled, struggle→lesson, dual-gate lockout, SRS math, remove-student, M2 dashboard, M3 strands (gating+cloze/MCQ renderers+scoring), zero errors, no overflow')
+  console.log('PASS — placement→session, mastery/dual-gate/SRS, M2 dashboard, M3 strands, M4 polish (font toggle+persist, XP/level, settings), zero errors, no overflow')
   stop(); process.exit(0)
 } catch (e) { fail((e.stack || e.message || String(e)).split('\n').slice(0, 4).join(' | ')) }

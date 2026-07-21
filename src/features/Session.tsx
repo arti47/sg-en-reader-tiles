@@ -1,7 +1,9 @@
 import { useEffect, useRef, useState } from 'react'
 import type { Child, PackItem, Attempt, SkillProgress, Difficulty, SkillDef, Certificate, Review } from '../types'
 import type { ScoreResult } from '../lib/scoring'
-import { addAttempt, getAttempts, getProgress, putProgress, putCertificate, getReviews, putReview, bumpAggregate, getUsage, putUsage } from '../store'
+import { addAttempt, getAttempts, getProgress, putProgress, putCertificate, getReviews, putReview, bumpAggregate, getUsage, putUsage, getSettings } from '../store'
+import { setRate } from '../lib/audio'
+import { XP_PER_CORRECT, XP_PER_CERT } from '../lib/gamify'
 import { SKILLS, getSkill, getLesson, pickItem } from '../lib/packs'
 import { rollingAccuracy, itemsAnswered, nextDifficulty, isMastered, patternMastered, struggling, eligibleSkills, patternDecodeSkill, interleavedReviewSkill } from '../lib/engine'
 import { scheduleFirst, onReviewPass, onReviewFail, dueReviews } from '../lib/srs'
@@ -11,7 +13,7 @@ import { TileItem } from './items/TileItem'
 import { ClozeItem } from './items/ClozeItem'
 import { LessonView } from './LessonView'
 
-const SESSION_LEN = 16
+const DEFAULT_SESSION_LEN = 16
 type Phase = 'loading' | 'item' | 'lesson' | 'cert' | 'summary'
 
 export function Session(props: { child: Child; onExit: () => void }) {
@@ -25,6 +27,8 @@ export function Session(props: { child: Child; onExit: () => void }) {
   const reviewsRef = useRef<Review[]>([])       // spaced-repetition schedule (§7)
   const dueQueueRef = useRef<string[]>([])       // skillIds due for review this session (cap 4)
   const reviewingRef = useRef<string | null>(null) // skillId currently being reviewed, else null
+  const lenRef = useRef(DEFAULT_SESSION_LEN)     // session length (from settings)
+  const xpGainRef = useRef(0)                    // XP earned this session (§14 gamification)
   const [phase, setPhase] = useState<Phase>('loading')
   const [item, setItem] = useState<PackItem | null>(null)
   const [answered, setAnswered] = useState<ScoreResult | null>(null)
@@ -34,6 +38,9 @@ export function Session(props: { child: Child; onExit: () => void }) {
 
   useEffect(() => {
     void (async () => {
+      const settings = await getSettings()
+      lenRef.current = settings.sessionLength || DEFAULT_SESSION_LEN
+      setRate(settings.ttsRate)
       attemptsRef.current = await getAttempts(props.child.id)
       const prog = await getProgress(props.child.id)
       for (const p of prog) {
@@ -71,7 +78,7 @@ export function Session(props: { child: Child; onExit: () => void }) {
 
   // Choose next skill (interleave eligible), then serve lesson-on-struggle or an item.
   function advance(initial = false) {
-    if (!initial && countRef.current >= SESSION_LEN) { setPhase('summary'); return }
+    if (!initial && countRef.current >= lenRef.current) { setPhase('summary'); return }
     // Due spaced-repetition reviews first (§7): easier items on already-mastered skills.
     const dueSkillId = dueQueueRef.current.shift()
     if (dueSkillId) {
@@ -122,6 +129,7 @@ export function Session(props: { child: Child; onExit: () => void }) {
     await bumpAggregate(props.child.id, skill.id, isoWeek(a.ts), r.correct, a.latencyMs / 60000)
 
     countRef.current += 1; setCount(countRef.current)
+    if (r.correct) xpGainRef.current += XP_PER_CORRECT
     const now = Date.now()
     if (reviewingRef.current === skill.id) {
       // This was a spaced-repetition review: advance on pass, demote on fail (§7).
@@ -135,6 +143,7 @@ export function Session(props: { child: Child; onExit: () => void }) {
       // Dual gate cleared (decode AND encode): award ONE pattern certificate + schedule its review (§7).
       const c: Certificate = { skillId: patternSkill.id, iCanStatement: patternSkill.iCanStatement, awardedAt: now }
       await putCertificate(props.child.id, c); setCert(c)
+      xpGainRef.current += XP_PER_CERT
       const rev = scheduleFirst(patternSkill.id, now)
       reviewsRef.current = [...reviewsRef.current.filter(x => x.skillId !== patternSkill.id), rev]
       await putReview(props.child.id, rev)
@@ -155,6 +164,7 @@ export function Session(props: { child: Child; onExit: () => void }) {
       <div className="stack center">
         <div className="cert">🌟</div>
         <h1>Great session, {props.child.name}!</h1>
+        <p className="stem">+{xpGainRef.current} XP</p>
         <p className="note">{count} activities done{mastered.length ? ` · ${mastered.length} skill${mastered.length > 1 ? 's' : ''} mastered` : ''}.</p>
         <button className="btn" onClick={props.onExit}>Done</button>
       </div>
@@ -184,7 +194,7 @@ export function Session(props: { child: Child; onExit: () => void }) {
       <div className="stack">
         <div className="row" style={{ justifyContent: 'space-between', alignItems: 'center' }}>
           <button className="link" onClick={props.onExit}>← Back</button>
-          <span className="note">{Math.min(count + 1, SESSION_LEN)}/{SESSION_LEN}</span>
+          <span className="note">{Math.min(count + 1, lenRef.current)}/{lenRef.current}</span>
         </div>
         {isTile ? <TileItem key={serve} item={item} onAnswer={onAnswer} />
           : isCloze ? <ClozeItem key={serve} item={item} onAnswer={onAnswer} />

@@ -3,6 +3,7 @@ import type { Child, Attempt, SkillProgress, Certificate, Aggregate, Usage, Sett
 import { getAttempts, getProgress, getCertificates, getAggregates, getUsage, getSettings, putSettings, exportAll, importAll } from '../store'
 import { SKILLS, getSkill } from '../lib/packs'
 import { computeReadiness, type Readiness } from '../lib/readiness'
+import { setRate } from '../lib/audio'
 
 // Parent dashboard (§10, §11, §14). PIN-gated, growth-framed, parent-only. Per-child readiness
 // + action plan + weekly usage/streak + trend chart; global export/import backup.
@@ -64,6 +65,14 @@ export function ParentDashboard(props: { children: Child[]; onExit: () => void; 
       } else { setError(true); setCandidate(''); setGate('create1') }
     }
   }
+
+  async function updateSettings(patch: Partial<Settings>) {
+    const next: Settings = { ...(settings ?? { ttsRate: 0.9, englishVariant: 'en-SG', sessionLength: 16 }), ...patch }
+    setSettings(next); await putSettings(next)
+    if (patch.font) document.documentElement.dataset.font = patch.font
+    if (patch.ttsRate) setRate(patch.ttsRate)
+  }
+  const clamp = (n: number, lo: number, hi: number) => Math.min(hi, Math.max(lo, n))
 
   function download() {
     void exportAll().then(data => {
@@ -151,6 +160,33 @@ export function ParentDashboard(props: { children: Child[]; onExit: () => void; 
           <button className="btn small ghost" onClick={() => props.onReset(c.child)}>Reset {c.child.name}</button>
         </div>
       ))}
+
+      <div className="dash-card">
+        <b>Settings</b>
+        <div className="set-row">
+          <span>Font</span>
+          <div className="row" style={{ gap: 6 }}>
+            <button className={'btn small' + ((settings?.font ?? 'lexend') === 'lexend' ? '' : ' ghost')} onClick={() => updateSettings({ font: 'lexend' })}>Lexend</button>
+            <button className={'btn small' + (settings?.font === 'dyslexic' ? '' : ' ghost')} onClick={() => updateSettings({ font: 'dyslexic' })}>OpenDyslexic</button>
+          </div>
+        </div>
+        <div className="set-row">
+          <span>Voice speed</span>
+          <div className="row" style={{ gap: 6, alignItems: 'center' }}>
+            <button className="btn small ghost" aria-label="Slower voice" onClick={() => updateSettings({ ttsRate: clamp(Number(((settings?.ttsRate ?? 0.9) - 0.1).toFixed(2)), 0.5, 1.3) })}>−</button>
+            <span aria-live="polite">{(settings?.ttsRate ?? 0.9).toFixed(1)}×</span>
+            <button className="btn small ghost" aria-label="Faster voice" onClick={() => updateSettings({ ttsRate: clamp(Number(((settings?.ttsRate ?? 0.9) + 0.1).toFixed(2)), 0.5, 1.3) })}>+</button>
+          </div>
+        </div>
+        <div className="set-row">
+          <span>Session length</span>
+          <div className="row" style={{ gap: 6, alignItems: 'center' }}>
+            <button className="btn small ghost" aria-label="Shorter session" onClick={() => updateSettings({ sessionLength: clamp((settings?.sessionLength ?? 16) - 2, 8, 24) })}>−</button>
+            <span aria-live="polite">{settings?.sessionLength ?? 16}</span>
+            <button className="btn small ghost" aria-label="Longer session" onClick={() => updateSettings({ sessionLength: clamp((settings?.sessionLength ?? 16) + 2, 8, 24) })}>+</button>
+          </div>
+        </div>
+      </div>
 
       <div className="dash-card">
         <b>Backup</b>

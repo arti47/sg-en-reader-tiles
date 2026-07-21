@@ -1,8 +1,10 @@
 import { useState } from 'react'
 import type { Child } from '../types'
+import { level } from '../lib/gamify'
 
 export function ChildPicker(props: {
   children: Child[]
+  xpByChild?: Record<string, number>
   onPick: (c: Child) => void
   onAdd: () => void
   onRemove: (c: Child) => void
@@ -30,7 +32,7 @@ export function ChildPicker(props: {
             <div key={c.id} className="avatar">
               <span className="avatar-letter">{c.name.charAt(0).toUpperCase()}</span>
               <span className="avatar-name">{c.name}</span>
-              <span className="avatar-sub">P{c.pLevel}</span>
+              <span className="avatar-sub">P{c.pLevel}{props.xpByChild ? ` · ⭐ Lvl ${level(props.xpByChild[c.id] ?? 0)}` : ''}</span>
 
               {!editing && (
                 <button className="btn small" onClick={() => props.onPick(c)}
