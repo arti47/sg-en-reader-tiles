@@ -36,6 +36,7 @@ export interface PackItem {
   correctChoiceId?: string
   wordBank?: string[]            // grammar_cloze: lettered bank, each used once
   blanks?: { id: string; acceptable: string[] }[] // grammar_cloze: per-blank accepted answers
+  heart?: string                 // "heart word" irregular part to remember (HF sight words, §5 heart-word method)
   missedConceptOnFail: string    // error-taxonomy enum
   rationale: string
   decodableWithin?: string       // skillId envelope (§6a)

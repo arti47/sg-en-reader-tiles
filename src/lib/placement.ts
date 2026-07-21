@@ -23,23 +23,24 @@ export const MIN_WARMUP = 6
 
 export interface PlaceResult { skillId: string; correct: boolean }
 
-// The lowest ladder skill not yet passed (needs more items, or failed here).
-function lowestUnpassed(results: PlaceResult[]): string {
+// The lowest ladder skill not yet passed (needs more items, or failed here). `perSkill` = how
+// many correct-in-a-row a rung requires (raised for weaker readers via difficulty flags, §1).
+function lowestUnpassed(results: PlaceResult[], perSkill = PER_SKILL): string {
   for (const s of decodeLadder) {
     const r = results.filter(x => x.skillId === s.id)
-    if (r.length < PER_SKILL || r.filter(x => x.correct).length < PER_SKILL) return s.id
+    if (r.length < perSkill || r.filter(x => x.correct).length < perSkill) return s.id
   }
   return decodeLadder[decodeLadder.length - 1].id
 }
 
 // Given the results so far, decide the next step: draw another item from `skillId`,
 // or finish and place the child at `entrySkillId`.
-export function nextPlacement(results: PlaceResult[]): { done: boolean; skillId?: string; entrySkillId?: string } {
-  if (results.length >= MAX_ITEMS) return { done: true, entrySkillId: lowestUnpassed(results) }
+export function nextPlacement(results: PlaceResult[], perSkill = PER_SKILL): { done: boolean; skillId?: string; entrySkillId?: string } {
+  if (results.length >= MAX_ITEMS) return { done: true, entrySkillId: lowestUnpassed(results, perSkill) }
   for (const s of decodeLadder) {
     const r = results.filter(x => x.skillId === s.id)
-    if (r.length < PER_SKILL) return { done: false, skillId: s.id }
-    if (r.filter(x => x.correct).length < PER_SKILL) return { done: true, entrySkillId: s.id }
+    if (r.length < perSkill) return { done: false, skillId: s.id }
+    if (r.filter(x => x.correct).length < perSkill) return { done: true, entrySkillId: s.id }
   }
   return { done: true, entrySkillId: decodeLadder[decodeLadder.length - 1].id }
 }

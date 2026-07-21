@@ -76,6 +76,15 @@
     "graphemes": ["igh","oi","oy","ou","aw","au","ar","or","er","ir","ur","ai","ay","ee","ea","oa","ow","oo","ew","ue","bb","cc","dd","ff","gg","ll","mm","nn","pp","rr","ss","tt","zz","sh","ch","th","ck","b","c","d","f","g","h","j","k","l","m","n","p","qu","r","s","t","v","w","x","y","z","a","e","i","o","u"],
     "highFrequency": []
   },
+  "PH-suffixes": {
+    "_note": "Inflectional suffixes decompose into already-taught tiles (-s=s, -ed=e·d, -ing=i·n·g, y→i), so the grapheme set equals the two-syllable envelope.",
+    "graphemes": ["igh","oi","oy","ou","aw","au","ar","or","er","ir","ur","ai","ay","ee","ea","oa","ow","oo","ew","ue","bb","cc","dd","ff","gg","ll","mm","nn","pp","rr","ss","tt","zz","sh","ch","th","ck","b","c","d","f","g","h","j","k","l","m","n","p","qu","r","s","t","v","w","x","y","z","a","e","i","o","u"],
+    "highFrequency": []
+  },
+  "SP-suffixes": {
+    "graphemes": ["igh","oi","oy","ou","aw","au","ar","or","er","ir","ur","ai","ay","ee","ea","oa","ow","oo","ew","ue","bb","cc","dd","ff","gg","ll","mm","nn","pp","rr","ss","tt","zz","sh","ch","th","ck","b","c","d","f","g","h","j","k","l","m","n","p","qu","r","s","t","v","w","x","y","z","a","e","i","o","u"],
+    "highFrequency": []
+  },
   "HF-words": {
     "_note": "Sight/tricky words are not fully decodable — passed via the highFrequency list, not grapheme segmentation (graphemes empty).",
     "graphemes": [],

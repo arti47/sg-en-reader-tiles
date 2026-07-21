@@ -28,6 +28,7 @@
         }
       ],
       "correctChoiceId": "a",
+      "heart": "e (says /uh/)",
       "missedConceptOnFail": "sight-word",
       "rationale": "\"the\" is a tricky word we learn by heart.",
       "decodableWithin": "HF-words"
@@ -54,6 +55,7 @@
         }
       ],
       "correctChoiceId": "b",
+      "heart": "a (says /o/)",
       "missedConceptOnFail": "sight-word",
       "rationale": "\"was\" is a tricky word we learn by heart.",
       "decodableWithin": "HF-words"
@@ -80,6 +82,7 @@
         }
       ],
       "correctChoiceId": "c",
+      "heart": "f (says /v/)",
       "missedConceptOnFail": "sight-word",
       "rationale": "\"of\" is a tricky word we learn by heart.",
       "decodableWithin": "HF-words"
@@ -106,6 +109,7 @@
         }
       ],
       "correctChoiceId": "a",
+      "heart": "o (says /oo/)",
       "missedConceptOnFail": "sight-word",
       "rationale": "\"to\" is a tricky word we learn by heart.",
       "decodableWithin": "HF-words"
@@ -132,6 +136,7 @@
         }
       ],
       "correctChoiceId": "b",
+      "heart": "o (says /oo/)",
       "missedConceptOnFail": "sight-word",
       "rationale": "\"do\" is a tricky word we learn by heart.",
       "decodableWithin": "HF-words"
@@ -158,6 +163,7 @@
         }
       ],
       "correctChoiceId": "c",
+      "heart": "ou",
       "missedConceptOnFail": "sight-word",
       "rationale": "\"you\" is a tricky word we learn by heart.",
       "decodableWithin": "HF-words"
@@ -184,6 +190,7 @@
         }
       ],
       "correctChoiceId": "a",
+      "heart": "our",
       "missedConceptOnFail": "sight-word",
       "rationale": "\"your\" is a tricky word we learn by heart.",
       "decodableWithin": "HF-words"
@@ -210,6 +217,7 @@
         }
       ],
       "correctChoiceId": "b",
+      "heart": "re",
       "missedConceptOnFail": "sight-word",
       "rationale": "\"are\" is a tricky word we learn by heart.",
       "decodableWithin": "HF-words"
@@ -236,6 +244,7 @@
         }
       ],
       "correctChoiceId": "c",
+      "heart": "ey (says /ay/)",
       "missedConceptOnFail": "sight-word",
       "rationale": "\"they\" is a tricky word we learn by heart.",
       "decodableWithin": "HF-words"
@@ -262,6 +271,7 @@
         }
       ],
       "correctChoiceId": "a",
+      "heart": "ei",
       "missedConceptOnFail": "sight-word",
       "rationale": "\"their\" is a tricky word we learn by heart.",
       "decodableWithin": "HF-words"
@@ -288,6 +298,7 @@
         }
       ],
       "correctChoiceId": "b",
+      "heart": "ere",
       "missedConceptOnFail": "sight-word",
       "rationale": "\"there\" is a tricky word we learn by heart.",
       "decodableWithin": "HF-words"
@@ -314,6 +325,7 @@
         }
       ],
       "correctChoiceId": "c",
+      "heart": "wh",
       "missedConceptOnFail": "sight-word",
       "rationale": "\"where\" is a tricky word we learn by heart.",
       "decodableWithin": "HF-words"
@@ -340,6 +352,7 @@
         }
       ],
       "correctChoiceId": "a",
+      "heart": "ere",
       "missedConceptOnFail": "sight-word",
       "rationale": "\"were\" is a tricky word we learn by heart.",
       "decodableWithin": "HF-words"
@@ -366,6 +379,7 @@
         }
       ],
       "correctChoiceId": "b",
+      "heart": "ere",
       "missedConceptOnFail": "sight-word",
       "rationale": "\"here\" is a tricky word we learn by heart.",
       "decodableWithin": "HF-words"
@@ -392,6 +406,7 @@
         }
       ],
       "correctChoiceId": "c",
+      "heart": "o (says /w/)",
       "missedConceptOnFail": "sight-word",
       "rationale": "\"one\" is a tricky word we learn by heart.",
       "decodableWithin": "HF-words"
@@ -418,6 +433,7 @@
         }
       ],
       "correctChoiceId": "a",
+      "heart": "o (says /w/)",
       "missedConceptOnFail": "sight-word",
       "rationale": "\"once\" is a tricky word we learn by heart.",
       "decodableWithin": "HF-words"
@@ -444,6 +460,7 @@
         }
       ],
       "correctChoiceId": "b",
+      "heart": "o (says /u/)",
       "missedConceptOnFail": "sight-word",
       "rationale": "\"come\" is a tricky word we learn by heart.",
       "decodableWithin": "HF-words"
@@ -470,6 +487,7 @@
         }
       ],
       "correctChoiceId": "c",
+      "heart": "o (says /u/)",
       "missedConceptOnFail": "sight-word",
       "rationale": "\"some\" is a tricky word we learn by heart.",
       "decodableWithin": "HF-words"
@@ -496,6 +514,7 @@
         }
       ],
       "correctChoiceId": "a",
+      "heart": "l (silent)",
       "missedConceptOnFail": "sight-word",
       "rationale": "\"could\" is a tricky word we learn by heart.",
       "decodableWithin": "HF-words"
@@ -522,6 +541,7 @@
         }
       ],
       "correctChoiceId": "b",
+      "heart": "l (silent)",
       "missedConceptOnFail": "sight-word",
       "rationale": "\"would\" is a tricky word we learn by heart.",
       "decodableWithin": "HF-words"
@@ -548,6 +568,7 @@
         }
       ],
       "correctChoiceId": "c",
+      "heart": "l (silent)",
       "missedConceptOnFail": "sight-word",
       "rationale": "\"should\" is a tricky word we learn by heart.",
       "decodableWithin": "HF-words"
@@ -574,6 +595,7 @@
         }
       ],
       "correctChoiceId": "a",
+      "heart": "wh (says /h/)",
       "missedConceptOnFail": "sight-word",
       "rationale": "\"who\" is a tricky word we learn by heart.",
       "decodableWithin": "HF-words"
@@ -600,6 +622,7 @@
         }
       ],
       "correctChoiceId": "b",
+      "heart": "wh",
       "missedConceptOnFail": "sight-word",
       "rationale": "\"what\" is a tricky word we learn by heart.",
       "decodableWithin": "HF-words"
@@ -626,6 +649,7 @@
         }
       ],
       "correctChoiceId": "c",
+      "heart": "a (says /o/)",
       "missedConceptOnFail": "sight-word",
       "rationale": "\"want\" is a tricky word we learn by heart.",
       "decodableWithin": "HF-words"
@@ -652,6 +676,7 @@
         }
       ],
       "correctChoiceId": "a",
+      "heart": "ai (says /e/)",
       "missedConceptOnFail": "sight-word",
       "rationale": "\"said\" is a tricky word we learn by heart.",
       "decodableWithin": "HF-words"
@@ -678,6 +703,7 @@
         }
       ],
       "correctChoiceId": "b",
+      "heart": "au",
       "missedConceptOnFail": "sight-word",
       "rationale": "\"because\" is a tricky word we learn by heart.",
       "decodableWithin": "HF-words"
@@ -704,6 +730,7 @@
         }
       ],
       "correctChoiceId": "c",
+      "heart": "eo",
       "missedConceptOnFail": "sight-word",
       "rationale": "\"people\" is a tricky word we learn by heart.",
       "decodableWithin": "HF-words"
@@ -730,6 +757,7 @@
         }
       ],
       "correctChoiceId": "a",
+      "heart": "ie (says /e/)",
       "missedConceptOnFail": "sight-word",
       "rationale": "\"friend\" is a tricky word we learn by heart.",
       "decodableWithin": "HF-words"
@@ -756,6 +784,7 @@
         }
       ],
       "correctChoiceId": "b",
+      "heart": "ch (says /k/)",
       "missedConceptOnFail": "sight-word",
       "rationale": "\"school\" is a tricky word we learn by heart.",
       "decodableWithin": "HF-words"
@@ -808,6 +837,7 @@
         }
       ],
       "correctChoiceId": "a",
+      "heart": "oe (says /u/)",
       "missedConceptOnFail": "sight-word",
       "rationale": "\"does\" is a tricky word we learn by heart.",
       "decodableWithin": "HF-words"
@@ -834,6 +864,7 @@
         }
       ],
       "correctChoiceId": "b",
+      "heart": "o (says /u/)",
       "missedConceptOnFail": "sight-word",
       "rationale": "\"done\" is a tricky word we learn by heart.",
       "decodableWithin": "HF-words"
@@ -860,6 +891,7 @@
         }
       ],
       "correctChoiceId": "c",
+      "heart": "i (short)",
       "missedConceptOnFail": "sight-word",
       "rationale": "\"give\" is a tricky word we learn by heart.",
       "decodableWithin": "HF-words"
@@ -886,6 +918,7 @@
         }
       ],
       "correctChoiceId": "a",
+      "heart": "a (short)",
       "missedConceptOnFail": "sight-word",
       "rationale": "\"have\" is a tricky word we learn by heart.",
       "decodableWithin": "HF-words"
@@ -912,6 +945,7 @@
         }
       ],
       "correctChoiceId": "b",
+      "heart": "i (short)",
       "missedConceptOnFail": "sight-word",
       "rationale": "\"live\" is a tricky word we learn by heart.",
       "decodableWithin": "HF-words"
@@ -938,6 +972,7 @@
         }
       ],
       "correctChoiceId": "c",
+      "heart": "o (says /u/)",
       "missedConceptOnFail": "sight-word",
       "rationale": "\"love\" is a tricky word we learn by heart.",
       "decodableWithin": "HF-words"
@@ -964,6 +999,7 @@
         }
       ],
       "correctChoiceId": "a",
+      "heart": "u (says /oo/)",
       "missedConceptOnFail": "sight-word",
       "rationale": "\"put\" is a tricky word we learn by heart.",
       "decodableWithin": "HF-words"
@@ -990,6 +1026,7 @@
         }
       ],
       "correctChoiceId": "b",
+      "heart": "u (says /oo/)",
       "missedConceptOnFail": "sight-word",
       "rationale": "\"pull\" is a tricky word we learn by heart.",
       "decodableWithin": "HF-words"
@@ -1016,6 +1053,7 @@
         }
       ],
       "correctChoiceId": "c",
+      "heart": "u (says /oo/)",
       "missedConceptOnFail": "sight-word",
       "rationale": "\"full\" is a tricky word we learn by heart.",
       "decodableWithin": "HF-words"
@@ -1042,6 +1080,7 @@
         }
       ],
       "correctChoiceId": "a",
+      "heart": "u (says /oo/)",
       "missedConceptOnFail": "sight-word",
       "rationale": "\"push\" is a tricky word we learn by heart.",
       "decodableWithin": "HF-words"
@@ -1068,6 +1107,7 @@
         }
       ],
       "correctChoiceId": "b",
+      "heart": "su (says /sh/)",
       "missedConceptOnFail": "sight-word",
       "rationale": "\"sure\" is a tricky word we learn by heart.",
       "decodableWithin": "HF-words"
@@ -1094,6 +1134,7 @@
         }
       ],
       "correctChoiceId": "c",
+      "heart": "w (silent)",
       "missedConceptOnFail": "sight-word",
       "rationale": "\"two\" is a tricky word we learn by heart.",
       "decodableWithin": "HF-words"
@@ -1120,6 +1161,7 @@
         }
       ],
       "correctChoiceId": "a",
+      "heart": "ou",
       "missedConceptOnFail": "sight-word",
       "rationale": "\"four\" is a tricky word we learn by heart.",
       "decodableWithin": "HF-words"
@@ -1146,6 +1188,7 @@
         }
       ],
       "correctChoiceId": "b",
+      "heart": "a (says /e/)",
       "missedConceptOnFail": "sight-word",
       "rationale": "\"any\" is a tricky word we learn by heart.",
       "decodableWithin": "HF-words"
@@ -1172,6 +1215,7 @@
         }
       ],
       "correctChoiceId": "c",
+      "heart": "a (says /e/)",
       "missedConceptOnFail": "sight-word",
       "rationale": "\"many\" is a tricky word we learn by heart.",
       "decodableWithin": "HF-words"
@@ -1198,6 +1242,7 @@
         }
       ],
       "correctChoiceId": "a",
+      "heart": "ai (says /e/)",
       "missedConceptOnFail": "sight-word",
       "rationale": "\"again\" is a tricky word we learn by heart.",
       "decodableWithin": "HF-words"
@@ -1224,6 +1269,7 @@
         }
       ],
       "correctChoiceId": "b",
+      "heart": "ea (says /ay/)",
       "missedConceptOnFail": "sight-word",
       "rationale": "\"great\" is a tricky word we learn by heart.",
       "decodableWithin": "HF-words"
@@ -1250,6 +1296,7 @@
         }
       ],
       "correctChoiceId": "c",
+      "heart": "uy (says /y/)",
       "missedConceptOnFail": "sight-word",
       "rationale": "\"buy\" is a tricky word we learn by heart.",
       "decodableWithin": "HF-words"
@@ -1276,6 +1323,7 @@
         }
       ],
       "correctChoiceId": "a",
+      "heart": "u (says /i/)",
       "missedConceptOnFail": "sight-word",
       "rationale": "\"busy\" is a tricky word we learn by heart.",
       "decodableWithin": "HF-words"
@@ -1302,6 +1350,7 @@
         }
       ],
       "correctChoiceId": "b",
+      "heart": "ui (says /i/)",
       "missedConceptOnFail": "sight-word",
       "rationale": "\"build\" is a tricky word we learn by heart.",
       "decodableWithin": "HF-words"
@@ -1328,6 +1377,7 @@
         }
       ],
       "correctChoiceId": "c",
+      "heart": "or (says /er/)",
       "missedConceptOnFail": "sight-word",
       "rationale": "\"work\" is a tricky word we learn by heart.",
       "decodableWithin": "HF-words"
@@ -1354,6 +1404,7 @@
         }
       ],
       "correctChoiceId": "a",
+      "heart": "or (says /er/)",
       "missedConceptOnFail": "sight-word",
       "rationale": "\"word\" is a tricky word we learn by heart.",
       "decodableWithin": "HF-words"
@@ -1380,6 +1431,7 @@
         }
       ],
       "correctChoiceId": "b",
+      "heart": "or (says /er/)",
       "missedConceptOnFail": "sight-word",
       "rationale": "\"world\" is a tricky word we learn by heart.",
       "decodableWithin": "HF-words"
@@ -1406,6 +1458,7 @@
         }
       ],
       "correctChoiceId": "c",
+      "heart": "ear (says /er/)",
       "missedConceptOnFail": "sight-word",
       "rationale": "\"learn\" is a tricky word we learn by heart.",
       "decodableWithin": "HF-words"
@@ -1432,6 +1485,7 @@
         }
       ],
       "correctChoiceId": "a",
+      "heart": "eye shape",
       "missedConceptOnFail": "sight-word",
       "rationale": "\"eye\" is a tricky word we learn by heart.",
       "decodableWithin": "HF-words"
@@ -1439,16 +1493,16 @@
   ],
   "lessons": {
     "HF-words": {
-      "iCanStatement": "I can read tricky high-frequency words by heart.",
-      "explanation": "Some words don't follow the usual rules, so we can't always sound them out — we learn them by sight. Words like the, was, said, you, come and one turn up all the time, so knowing them by heart makes reading much faster. Look at the whole word and remember its shape.",
+      "iCanStatement": "I can read tricky high-frequency words, remembering just the heart part.",
+      "explanation": "Some words don't fully follow the rules, but MOST of the letters still do. These are 'heart words': sound out the regular letters as usual, and learn only the one tricky part 'by heart'. In said, the 's' and 'd' behave — only 'ai' is tricky (it says /e/). In come, 'c-m' behave — only the 'o' is tricky (it says /u/). Knowing these fast makes reading much smoother.",
       "workedExamples": [
         {
           "text": "said",
-          "note": "Looks like it should be \"sed\" — but we just remember: said."
+          "note": "s + ai + d — only 'ai' is the heart part (it says /e/)."
         },
         {
-          "text": "one",
-          "note": "Sounds like \"wun\" — a tricky word to know by heart."
+          "text": "come",
+          "note": "c + o + m + e — the heart part is 'o', which says /u/."
         }
       ]
     }

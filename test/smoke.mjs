@@ -427,6 +427,21 @@ try {
     // #7 — encode must not unlock on a tiny lucky streak; needs ≥6 real decode items at ≥70%.
     if (e.encodeUnlocked(arr(PH, 3, true), dec)) return '#7 encode must not unlock on <6 items'
     if (!e.encodeUnlocked(arr(PH, 6, true), dec)) return '#7 encode should unlock at 6 items ≥70%'
+    // #2 fluency loop: a mastered pattern read ACCURATELY but SLOWLY (median latency > maxMs) is
+    // served for automaticity reps on cadence; a fast one, or off-cadence, is not.
+    const slow = arr(PH, 12, true).map(a => ({ ...a, latencyMs: 9000 }))
+    if (e.fluencySkill(slow, 6, 7000)?.id !== PH) return '#2 fluency: slow mastered skill should be served on cadence'
+    if (e.fluencySkill(slow, 3, 7000)) return '#2 fluency: nothing off-cadence'
+    if (e.fluencySkill(arr(PH, 12, true), 6, 7000)) return '#2 fluency: a fast mastered skill should not be served'
+    if (e.fluencySkill(slow, 6, 7000, undefined, 6) && e.fluencySkill(slow, 5, 7000)) return '#2 fluency: respects the every param'
+    // #1 support: difficulty flags tune pacing (dyslexia = more conservative); no flags = defaults.
+    const sp = window.__support
+    if (sp) {
+      const def = sp.support(), dys = sp.support(['dyslexia']), flu = sp.support(['fluency'])
+      if (def.interleaveEvery !== 5 || def.placementPerSkill !== 3 || def.promoteStreak !== 3 || def.guidedItems !== 3) return '#1 support: no-flags must equal defaults'
+      if (!(dys.placementPerSkill > def.placementPerSkill && dys.promoteStreak > def.promoteStreak && dys.interleaveEvery < def.interleaveEvery)) return '#1 support: dyslexia should be more conservative'
+      if (!(flu.fluencyMaxMs < def.fluencyMaxMs)) return '#1 support: fluency flag should lower the fluency threshold'
+    }
     // #4 — earlier re-teach: <0.6 over ≥5 items, or 2 same-concept misses, triggers a lesson.
     const mc = (concept) => ({ id: String(k++), childId: 'c', skillId: PH, itemId: 'i', correct: false, difficulty: 1, missedConcept: concept, latencyMs: 1, ts: k })
     if (!e.struggling([...arr(PH, 2, true), mk(PH, false), mk(PH, false), mk(PH, false)], dec)) return '#4 struggle: <0.6 over ≥5 should trigger'

@@ -99,6 +99,8 @@ h1 { font-size: 1.8rem; font-weight: 700; margin: 8px 0 0; }
 .feedback { padding: 14px 16px; border-radius: 14px; font-weight: 600; }
 .feedback.ok { background: var(--ok-soft); color: #1c5a39; }
 .feedback.no { background: var(--no-soft); color: #7a3d16; }
+.feedback.tip { background: #eaf2ff; color: #234b8a; font-weight: 700; }
+.heart-note { margin: 0; color: #8a5a00; background: #fff5e0; padding: 8px 12px; border-radius: 12px; font-size: 0.92rem; }
 
 .dots { display: flex; flex-wrap: wrap; gap: 8px; }
 .dot { width: 14px; height: 14px; border-radius: 50%; background: var(--teal-soft); }

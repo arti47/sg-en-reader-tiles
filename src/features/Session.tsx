@@ -5,7 +5,8 @@ import { addAttempt, getAttempts, getProgress, putProgress, putCertificate, getC
 import { setRate, setVoice } from '../lib/audio'
 import { XP_PER_CORRECT, XP_PER_CERT, achievements, type Achievement } from '../lib/gamify'
 import { SKILLS, getSkill, getLesson, pickItem } from '../lib/packs'
-import { rollingAccuracy, itemsAnswered, nextDifficulty, isMastered, patternMastered, struggling, eligibleSkills, patternDecodeSkill, interleavedReviewSkill, threadedSkill } from '../lib/engine'
+import { rollingAccuracy, itemsAnswered, nextDifficulty, isMastered, patternMastered, struggling, eligibleSkills, patternDecodeSkill, interleavedReviewSkill, threadedSkill, fluencySkill } from '../lib/engine'
+import { support } from '../lib/support'
 import { scheduleFirst, onReviewPass, onReviewFail, dueReviews } from '../lib/srs'
 import { isoWeek, isConsecutiveWeek } from '../lib/aggregate'
 import { McqItem } from './items/McqItem'
@@ -17,7 +18,6 @@ import { LessonView } from './LessonView'
 const DEFAULT_SESSION_LEN = 16
 const LESSON_MAX = 2      // re-teach at most twice per skill per session (§8 #4)
 const REFIRE_AFTER = 3    // …and only re-fire after ≥3 further attempts, if still struggling
-const GUIDED_ITEMS = 3    // forced easier (difficulty-1) items right after a lesson (§8 guided practice)
 type Phase = 'loading' | 'item' | 'lesson' | 'cert' | 'summary'
 
 export function Session(props: { child: Child; onExit: () => void; onTrophies: () => void }) {
@@ -46,6 +46,8 @@ export function Session(props: { child: Child; onExit: () => void; onTrophies: (
   const [count, setCount] = useState(0)
   const [serve, setServe] = useState(0) // bumps every item served → forces renderer remount (fresh internal state)
   const startedRef = useRef(false)
+  const sup = support(props.child.difficultyFlags) // §1 difficulty-flag personalisation (default = unchanged)
+  const GUIDED_ITEMS = sup.guidedItems
 
   useEffect(() => {
     if (startedRef.current) return // guard React StrictMode double-invoke (would race two advance()s, e.g. dropping a due review)
@@ -124,8 +126,11 @@ export function Session(props: { child: Child; onExit: () => void; onTrophies: (
       const threaded = threadedSkill(countRef.current)
       if (threaded) { loadItem(threaded); return }
       // Cumulative interleave (§7): every Nth item, slip in a quick review of a mastered skill.
-      const review = interleavedReviewSkill(attemptsRef.current, countRef.current, masteredRef.current)
+      const review = interleavedReviewSkill(attemptsRef.current, countRef.current, masteredRef.current, sup.interleaveEvery)
       if (review) { loadItem(review, 1); return } // normal attempt (not an SRS review)
+      // Fluency loop (§7): a mastered pattern read accurately but SLOWLY gets a quick speed rep.
+      const fl = fluencySkill(attemptsRef.current, countRef.current, sup.fluencyMaxMs, masteredRef.current, sup.fluencyEvery)
+      if (fl) { loadItem(fl, 1); return }
     }
     const elig = eligibleSkills(attemptsRef.current, masteredRef.current)
     if (!elig.length) { setPhase('summary'); return }
@@ -165,7 +170,7 @@ export function Session(props: { child: Child; onExit: () => void; onTrophies: (
     attemptsRef.current = [...attemptsRef.current, a]
     await addAttempt(a)
 
-    const nd = nextDifficulty(attemptsRef.current, skill.id, diffFor(skill.id))
+    const nd = nextDifficulty(attemptsRef.current, skill.id, diffFor(skill.id), sup.promoteStreak)
     diffRef.current.set(skill.id, nd)
     // Use placement-aware mastery so an interleaved review of a placement-mastered skill
     // (which has few/no attempts) never downgrades its persisted 'mastered' status (§7 A1).

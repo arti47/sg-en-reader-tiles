@@ -3,6 +3,7 @@ import type { Child, PackItem, SkillProgress } from '../types'
 import type { ScoreResult } from '../lib/scoring'
 import { pickItem, getSkill } from '../lib/packs'
 import { nextPlacement, priorSkillIds, decodeLadder, MIN_WARMUP, type PlaceResult } from '../lib/placement'
+import { support } from '../lib/support'
 import { addChild, putProgress } from '../store'
 import { McqItem } from './items/McqItem'
 
@@ -21,6 +22,7 @@ export function Placement(props: { child: Child; onDone: () => void }) {
   const [busy, setBusy] = useState(false)
   const [done, setDone] = useState(false)
   const started = useRef(false)
+  const perSkill = support(props.child.difficultyFlags).placementPerSkill // §1: conservative for weaker readers
 
   // Guard against React StrictMode double-invoking the mount effect (which would advance
   // twice, discard the first item, and skew the warm-up count).
@@ -39,7 +41,7 @@ export function Placement(props: { child: Child; onDone: () => void }) {
   function advance() {
     // Still finding the level.
     if (!entryRef.current) {
-      const step = nextPlacement(results.current)
+      const step = nextPlacement(results.current, perSkill)
       if (!step.done) { show(step.skillId!, false); return }
       entryRef.current = step.entrySkillId!
     }

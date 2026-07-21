@@ -1,0 +1,1049 @@
+{
+  "packId": "spelling-L11-suffixes",
+  "strand": "spelling",
+  "skillIds": [
+    "SP-suffixes"
+  ],
+  "version": 1,
+  "items": [
+    {
+      "id": "sp-sf-001",
+      "skillId": "SP-suffixes",
+      "itemType": "build_word",
+      "difficulty": 1,
+      "stem": "Build the word you hear.",
+      "displayWord": "jumps",
+      "audioText": "jumps",
+      "graphemes": [
+        "j",
+        "u",
+        "m",
+        "p",
+        "s"
+      ],
+      "distractorGraphemes": [
+        "bb",
+        "tt"
+      ],
+      "missedConceptOnFail": "suffix-add",
+      "rationale": "jumps = j-u-m-p-s.",
+      "decodableWithin": "SP-suffixes"
+    },
+    {
+      "id": "sp-sf-002",
+      "skillId": "SP-suffixes",
+      "itemType": "build_word",
+      "difficulty": 2,
+      "stem": "Build the word you hear.",
+      "displayWord": "jumping",
+      "audioText": "jumping",
+      "graphemes": [
+        "j",
+        "u",
+        "m",
+        "p",
+        "i",
+        "n",
+        "g"
+      ],
+      "distractorGraphemes": [
+        "bb",
+        "tt",
+        "nn"
+      ],
+      "missedConceptOnFail": "suffix-add",
+      "rationale": "jumping = j-u-m-p-i-n-g.",
+      "decodableWithin": "SP-suffixes"
+    },
+    {
+      "id": "sp-sf-003",
+      "skillId": "SP-suffixes",
+      "itemType": "build_word",
+      "difficulty": 2,
+      "stem": "Build the word you hear.",
+      "displayWord": "jumped",
+      "audioText": "jumped",
+      "graphemes": [
+        "j",
+        "u",
+        "m",
+        "p",
+        "e",
+        "d"
+      ],
+      "distractorGraphemes": [
+        "bb",
+        "tt",
+        "nn"
+      ],
+      "missedConceptOnFail": "suffix-add",
+      "rationale": "jumped = j-u-m-p-e-d.",
+      "decodableWithin": "SP-suffixes"
+    },
+    {
+      "id": "sp-sf-004",
+      "skillId": "SP-suffixes",
+      "itemType": "build_word",
+      "difficulty": 1,
+      "stem": "Build the word you hear.",
+      "displayWord": "helps",
+      "audioText": "helps",
+      "graphemes": [
+        "h",
+        "e",
+        "l",
+        "p",
+        "s"
+      ],
+      "distractorGraphemes": [
+        "bb",
+        "tt"
+      ],
+      "missedConceptOnFail": "suffix-add",
+      "rationale": "helps = h-e-l-p-s.",
+      "decodableWithin": "SP-suffixes"
+    },
+    {
+      "id": "sp-sf-005",
+      "skillId": "SP-suffixes",
+      "itemType": "build_word",
+      "difficulty": 2,
+      "stem": "Build the word you hear.",
+      "displayWord": "helping",
+      "audioText": "helping",
+      "graphemes": [
+        "h",
+        "e",
+        "l",
+        "p",
+        "i",
+        "n",
+        "g"
+      ],
+      "distractorGraphemes": [
+        "bb",
+        "tt",
+        "nn"
+      ],
+      "missedConceptOnFail": "suffix-add",
+      "rationale": "helping = h-e-l-p-i-n-g.",
+      "decodableWithin": "SP-suffixes"
+    },
+    {
+      "id": "sp-sf-006",
+      "skillId": "SP-suffixes",
+      "itemType": "build_word",
+      "difficulty": 2,
+      "stem": "Build the word you hear.",
+      "displayWord": "helped",
+      "audioText": "helped",
+      "graphemes": [
+        "h",
+        "e",
+        "l",
+        "p",
+        "e",
+        "d"
+      ],
+      "distractorGraphemes": [
+        "bb",
+        "tt",
+        "nn"
+      ],
+      "missedConceptOnFail": "suffix-add",
+      "rationale": "helped = h-e-l-p-e-d.",
+      "decodableWithin": "SP-suffixes"
+    },
+    {
+      "id": "sp-sf-007",
+      "skillId": "SP-suffixes",
+      "itemType": "build_word",
+      "difficulty": 1,
+      "stem": "Build the word you hear.",
+      "displayWord": "picks",
+      "audioText": "picks",
+      "graphemes": [
+        "p",
+        "i",
+        "ck",
+        "s"
+      ],
+      "distractorGraphemes": [
+        "bb",
+        "tt"
+      ],
+      "missedConceptOnFail": "suffix-add",
+      "rationale": "picks = p-i-ck-s.",
+      "decodableWithin": "SP-suffixes"
+    },
+    {
+      "id": "sp-sf-008",
+      "skillId": "SP-suffixes",
+      "itemType": "build_word",
+      "difficulty": 2,
+      "stem": "Build the word you hear.",
+      "displayWord": "picking",
+      "audioText": "picking",
+      "graphemes": [
+        "p",
+        "i",
+        "ck",
+        "i",
+        "n",
+        "g"
+      ],
+      "distractorGraphemes": [
+        "bb",
+        "tt",
+        "nn"
+      ],
+      "missedConceptOnFail": "suffix-add",
+      "rationale": "picking = p-i-ck-i-n-g.",
+      "decodableWithin": "SP-suffixes"
+    },
+    {
+      "id": "sp-sf-009",
+      "skillId": "SP-suffixes",
+      "itemType": "build_word",
+      "difficulty": 2,
+      "stem": "Build the word you hear.",
+      "displayWord": "picked",
+      "audioText": "picked",
+      "graphemes": [
+        "p",
+        "i",
+        "ck",
+        "e",
+        "d"
+      ],
+      "distractorGraphemes": [
+        "bb",
+        "tt",
+        "nn"
+      ],
+      "missedConceptOnFail": "suffix-add",
+      "rationale": "picked = p-i-ck-e-d.",
+      "decodableWithin": "SP-suffixes"
+    },
+    {
+      "id": "sp-sf-010",
+      "skillId": "SP-suffixes",
+      "itemType": "build_word",
+      "difficulty": 2,
+      "stem": "Build the word you hear.",
+      "displayWord": "wished",
+      "audioText": "wished",
+      "graphemes": [
+        "w",
+        "i",
+        "sh",
+        "e",
+        "d"
+      ],
+      "distractorGraphemes": [
+        "bb",
+        "tt",
+        "nn"
+      ],
+      "missedConceptOnFail": "suffix-add",
+      "rationale": "wished = w-i-sh-e-d.",
+      "decodableWithin": "SP-suffixes"
+    },
+    {
+      "id": "sp-sf-011",
+      "skillId": "SP-suffixes",
+      "itemType": "build_word",
+      "difficulty": 2,
+      "stem": "Build the word you hear.",
+      "displayWord": "wishing",
+      "audioText": "wishing",
+      "graphemes": [
+        "w",
+        "i",
+        "sh",
+        "i",
+        "n",
+        "g"
+      ],
+      "distractorGraphemes": [
+        "bb",
+        "tt",
+        "nn"
+      ],
+      "missedConceptOnFail": "suffix-add",
+      "rationale": "wishing = w-i-sh-i-n-g.",
+      "decodableWithin": "SP-suffixes"
+    },
+    {
+      "id": "sp-sf-012",
+      "skillId": "SP-suffixes",
+      "itemType": "build_word",
+      "difficulty": 2,
+      "stem": "Build the word you hear.",
+      "displayWord": "fishing",
+      "audioText": "fishing",
+      "graphemes": [
+        "f",
+        "i",
+        "sh",
+        "i",
+        "n",
+        "g"
+      ],
+      "distractorGraphemes": [
+        "bb",
+        "tt",
+        "nn"
+      ],
+      "missedConceptOnFail": "suffix-add",
+      "rationale": "fishing = f-i-sh-i-n-g.",
+      "decodableWithin": "SP-suffixes"
+    },
+    {
+      "id": "sp-sf-013",
+      "skillId": "SP-suffixes",
+      "itemType": "build_word",
+      "difficulty": 2,
+      "stem": "Build the word you hear.",
+      "displayWord": "hunted",
+      "audioText": "hunted",
+      "graphemes": [
+        "h",
+        "u",
+        "n",
+        "t",
+        "e",
+        "d"
+      ],
+      "distractorGraphemes": [
+        "bb",
+        "tt",
+        "nn"
+      ],
+      "missedConceptOnFail": "suffix-add",
+      "rationale": "hunted = h-u-n-t-e-d.",
+      "decodableWithin": "SP-suffixes"
+    },
+    {
+      "id": "sp-sf-014",
+      "skillId": "SP-suffixes",
+      "itemType": "build_word",
+      "difficulty": 2,
+      "stem": "Build the word you hear.",
+      "displayWord": "hunting",
+      "audioText": "hunting",
+      "graphemes": [
+        "h",
+        "u",
+        "n",
+        "t",
+        "i",
+        "n",
+        "g"
+      ],
+      "distractorGraphemes": [
+        "bb",
+        "tt",
+        "nn"
+      ],
+      "missedConceptOnFail": "suffix-add",
+      "rationale": "hunting = h-u-n-t-i-n-g.",
+      "decodableWithin": "SP-suffixes"
+    },
+    {
+      "id": "sp-sf-015",
+      "skillId": "SP-suffixes",
+      "itemType": "build_word",
+      "difficulty": 2,
+      "stem": "Build the word you hear.",
+      "displayWord": "boxes",
+      "audioText": "boxes",
+      "graphemes": [
+        "b",
+        "o",
+        "x",
+        "e",
+        "s"
+      ],
+      "distractorGraphemes": [
+        "bb",
+        "tt",
+        "nn"
+      ],
+      "missedConceptOnFail": "suffix-add",
+      "rationale": "boxes = b-o-x-e-s.",
+      "decodableWithin": "SP-suffixes"
+    },
+    {
+      "id": "sp-sf-016",
+      "skillId": "SP-suffixes",
+      "itemType": "build_word",
+      "difficulty": 2,
+      "stem": "Build the word you hear.",
+      "displayWord": "melted",
+      "audioText": "melted",
+      "graphemes": [
+        "m",
+        "e",
+        "l",
+        "t",
+        "e",
+        "d"
+      ],
+      "distractorGraphemes": [
+        "bb",
+        "tt",
+        "nn"
+      ],
+      "missedConceptOnFail": "suffix-add",
+      "rationale": "melted = m-e-l-t-e-d.",
+      "decodableWithin": "SP-suffixes"
+    },
+    {
+      "id": "sp-sf-017",
+      "skillId": "SP-suffixes",
+      "itemType": "build_word",
+      "difficulty": 1,
+      "stem": "Build the word you hear.",
+      "displayWord": "hops",
+      "audioText": "hops",
+      "graphemes": [
+        "h",
+        "o",
+        "p",
+        "s"
+      ],
+      "distractorGraphemes": [
+        "bb",
+        "tt"
+      ],
+      "missedConceptOnFail": "suffix-double",
+      "rationale": "hops = h-o-p-s.",
+      "decodableWithin": "SP-suffixes"
+    },
+    {
+      "id": "sp-sf-018",
+      "skillId": "SP-suffixes",
+      "itemType": "build_word",
+      "difficulty": 2,
+      "stem": "Build the word you hear.",
+      "displayWord": "hopping",
+      "audioText": "hopping",
+      "graphemes": [
+        "h",
+        "o",
+        "pp",
+        "i",
+        "n",
+        "g"
+      ],
+      "distractorGraphemes": [
+        "bb",
+        "tt",
+        "nn"
+      ],
+      "missedConceptOnFail": "suffix-double",
+      "rationale": "hopping = h-o-pp-i-n-g.",
+      "decodableWithin": "SP-suffixes"
+    },
+    {
+      "id": "sp-sf-019",
+      "skillId": "SP-suffixes",
+      "itemType": "build_word",
+      "difficulty": 2,
+      "stem": "Build the word you hear.",
+      "displayWord": "hopped",
+      "audioText": "hopped",
+      "graphemes": [
+        "h",
+        "o",
+        "pp",
+        "e",
+        "d"
+      ],
+      "distractorGraphemes": [
+        "bb",
+        "tt",
+        "nn"
+      ],
+      "missedConceptOnFail": "suffix-double",
+      "rationale": "hopped = h-o-pp-e-d.",
+      "decodableWithin": "SP-suffixes"
+    },
+    {
+      "id": "sp-sf-020",
+      "skillId": "SP-suffixes",
+      "itemType": "build_word",
+      "difficulty": 2,
+      "stem": "Build the word you hear.",
+      "displayWord": "running",
+      "audioText": "running",
+      "graphemes": [
+        "r",
+        "u",
+        "nn",
+        "i",
+        "n",
+        "g"
+      ],
+      "distractorGraphemes": [
+        "bb",
+        "tt",
+        "pp"
+      ],
+      "missedConceptOnFail": "suffix-double",
+      "rationale": "running = r-u-nn-i-n-g.",
+      "decodableWithin": "SP-suffixes"
+    },
+    {
+      "id": "sp-sf-021",
+      "skillId": "SP-suffixes",
+      "itemType": "build_word",
+      "difficulty": 3,
+      "stem": "Build the word you hear.",
+      "displayWord": "stopped",
+      "audioText": "stopped",
+      "graphemes": [
+        "s",
+        "t",
+        "o",
+        "pp",
+        "e",
+        "d"
+      ],
+      "distractorGraphemes": [
+        "bb",
+        "tt",
+        "nn",
+        "dd"
+      ],
+      "missedConceptOnFail": "suffix-double",
+      "rationale": "stopped = s-t-o-pp-e-d.",
+      "decodableWithin": "SP-suffixes"
+    },
+    {
+      "id": "sp-sf-022",
+      "skillId": "SP-suffixes",
+      "itemType": "build_word",
+      "difficulty": 3,
+      "stem": "Build the word you hear.",
+      "displayWord": "stopping",
+      "audioText": "stopping",
+      "graphemes": [
+        "s",
+        "t",
+        "o",
+        "pp",
+        "i",
+        "n",
+        "g"
+      ],
+      "distractorGraphemes": [
+        "bb",
+        "tt",
+        "nn",
+        "dd"
+      ],
+      "missedConceptOnFail": "suffix-double",
+      "rationale": "stopping = s-t-o-pp-i-n-g.",
+      "decodableWithin": "SP-suffixes"
+    },
+    {
+      "id": "sp-sf-023",
+      "skillId": "SP-suffixes",
+      "itemType": "build_word",
+      "difficulty": 2,
+      "stem": "Build the word you hear.",
+      "displayWord": "sitting",
+      "audioText": "sitting",
+      "graphemes": [
+        "s",
+        "i",
+        "tt",
+        "i",
+        "n",
+        "g"
+      ],
+      "distractorGraphemes": [
+        "bb",
+        "nn",
+        "pp"
+      ],
+      "missedConceptOnFail": "suffix-double",
+      "rationale": "sitting = s-i-tt-i-n-g.",
+      "decodableWithin": "SP-suffixes"
+    },
+    {
+      "id": "sp-sf-024",
+      "skillId": "SP-suffixes",
+      "itemType": "build_word",
+      "difficulty": 3,
+      "stem": "Build the word you hear.",
+      "displayWord": "hugged",
+      "audioText": "hugged",
+      "graphemes": [
+        "h",
+        "u",
+        "gg",
+        "e",
+        "d"
+      ],
+      "distractorGraphemes": [
+        "bb",
+        "tt",
+        "nn",
+        "pp"
+      ],
+      "missedConceptOnFail": "suffix-double",
+      "rationale": "hugged = h-u-gg-e-d.",
+      "decodableWithin": "SP-suffixes"
+    },
+    {
+      "id": "sp-sf-025",
+      "skillId": "SP-suffixes",
+      "itemType": "build_word",
+      "difficulty": 3,
+      "stem": "Build the word you hear.",
+      "displayWord": "shopping",
+      "audioText": "shopping",
+      "graphemes": [
+        "sh",
+        "o",
+        "pp",
+        "i",
+        "n",
+        "g"
+      ],
+      "distractorGraphemes": [
+        "bb",
+        "tt",
+        "nn",
+        "dd"
+      ],
+      "missedConceptOnFail": "suffix-double",
+      "rationale": "shopping = sh-o-pp-i-n-g.",
+      "decodableWithin": "SP-suffixes"
+    },
+    {
+      "id": "sp-sf-026",
+      "skillId": "SP-suffixes",
+      "itemType": "build_word",
+      "difficulty": 3,
+      "stem": "Build the word you hear.",
+      "displayWord": "bedding",
+      "audioText": "bedding",
+      "graphemes": [
+        "b",
+        "e",
+        "dd",
+        "i",
+        "n",
+        "g"
+      ],
+      "distractorGraphemes": [
+        "bb",
+        "tt",
+        "nn",
+        "pp"
+      ],
+      "missedConceptOnFail": "suffix-double",
+      "rationale": "bedding = b-e-dd-i-n-g.",
+      "decodableWithin": "SP-suffixes"
+    },
+    {
+      "id": "sp-sf-027",
+      "skillId": "SP-suffixes",
+      "itemType": "build_word",
+      "difficulty": 2,
+      "stem": "Build the word you hear.",
+      "displayWord": "tapped",
+      "audioText": "tapped",
+      "graphemes": [
+        "t",
+        "a",
+        "pp",
+        "e",
+        "d"
+      ],
+      "distractorGraphemes": [
+        "bb",
+        "tt",
+        "nn"
+      ],
+      "missedConceptOnFail": "suffix-double",
+      "rationale": "tapped = t-a-pp-e-d.",
+      "decodableWithin": "SP-suffixes"
+    },
+    {
+      "id": "sp-sf-028",
+      "skillId": "SP-suffixes",
+      "itemType": "build_word",
+      "difficulty": 3,
+      "stem": "Build the word you hear.",
+      "displayWord": "hoping",
+      "audioText": "hoping",
+      "graphemes": [
+        "h",
+        "o",
+        "p",
+        "i",
+        "n",
+        "g"
+      ],
+      "distractorGraphemes": [
+        "bb",
+        "tt",
+        "nn",
+        "pp"
+      ],
+      "missedConceptOnFail": "suffix-drop-e",
+      "rationale": "hoping = h-o-p-i-n-g.",
+      "decodableWithin": "SP-suffixes"
+    },
+    {
+      "id": "sp-sf-029",
+      "skillId": "SP-suffixes",
+      "itemType": "build_word",
+      "difficulty": 2,
+      "stem": "Build the word you hear.",
+      "displayWord": "hoped",
+      "audioText": "hoped",
+      "graphemes": [
+        "h",
+        "o",
+        "p",
+        "e",
+        "d"
+      ],
+      "distractorGraphemes": [
+        "bb",
+        "tt",
+        "nn"
+      ],
+      "missedConceptOnFail": "suffix-drop-e",
+      "rationale": "hoped = h-o-p-e-d.",
+      "decodableWithin": "SP-suffixes"
+    },
+    {
+      "id": "sp-sf-030",
+      "skillId": "SP-suffixes",
+      "itemType": "build_word",
+      "difficulty": 3,
+      "stem": "Build the word you hear.",
+      "displayWord": "baking",
+      "audioText": "baking",
+      "graphemes": [
+        "b",
+        "a",
+        "k",
+        "i",
+        "n",
+        "g"
+      ],
+      "distractorGraphemes": [
+        "bb",
+        "tt",
+        "nn",
+        "pp"
+      ],
+      "missedConceptOnFail": "suffix-drop-e",
+      "rationale": "baking = b-a-k-i-n-g.",
+      "decodableWithin": "SP-suffixes"
+    },
+    {
+      "id": "sp-sf-031",
+      "skillId": "SP-suffixes",
+      "itemType": "build_word",
+      "difficulty": 2,
+      "stem": "Build the word you hear.",
+      "displayWord": "baked",
+      "audioText": "baked",
+      "graphemes": [
+        "b",
+        "a",
+        "k",
+        "e",
+        "d"
+      ],
+      "distractorGraphemes": [
+        "bb",
+        "tt",
+        "nn"
+      ],
+      "missedConceptOnFail": "suffix-drop-e",
+      "rationale": "baked = b-a-k-e-d.",
+      "decodableWithin": "SP-suffixes"
+    },
+    {
+      "id": "sp-sf-032",
+      "skillId": "SP-suffixes",
+      "itemType": "build_word",
+      "difficulty": 3,
+      "stem": "Build the word you hear.",
+      "displayWord": "riding",
+      "audioText": "riding",
+      "graphemes": [
+        "r",
+        "i",
+        "d",
+        "i",
+        "n",
+        "g"
+      ],
+      "distractorGraphemes": [
+        "bb",
+        "tt",
+        "nn",
+        "pp"
+      ],
+      "missedConceptOnFail": "suffix-drop-e",
+      "rationale": "riding = r-i-d-i-n-g.",
+      "decodableWithin": "SP-suffixes"
+    },
+    {
+      "id": "sp-sf-033",
+      "skillId": "SP-suffixes",
+      "itemType": "build_word",
+      "difficulty": 2,
+      "stem": "Build the word you hear.",
+      "displayWord": "making",
+      "audioText": "making",
+      "graphemes": [
+        "m",
+        "a",
+        "k",
+        "i",
+        "n",
+        "g"
+      ],
+      "distractorGraphemes": [
+        "bb",
+        "tt",
+        "nn"
+      ],
+      "missedConceptOnFail": "suffix-drop-e",
+      "rationale": "making = m-a-k-i-n-g.",
+      "decodableWithin": "SP-suffixes"
+    },
+    {
+      "id": "sp-sf-034",
+      "skillId": "SP-suffixes",
+      "itemType": "build_word",
+      "difficulty": 2,
+      "stem": "Build the word you hear.",
+      "displayWord": "used",
+      "audioText": "used",
+      "graphemes": [
+        "u",
+        "s",
+        "e",
+        "d"
+      ],
+      "distractorGraphemes": [
+        "bb",
+        "tt",
+        "nn"
+      ],
+      "missedConceptOnFail": "suffix-drop-e",
+      "rationale": "used = u-s-e-d.",
+      "decodableWithin": "SP-suffixes"
+    },
+    {
+      "id": "sp-sf-035",
+      "skillId": "SP-suffixes",
+      "itemType": "build_word",
+      "difficulty": 3,
+      "stem": "Build the word you hear.",
+      "displayWord": "smiled",
+      "audioText": "smiled",
+      "graphemes": [
+        "s",
+        "m",
+        "i",
+        "l",
+        "e",
+        "d"
+      ],
+      "distractorGraphemes": [
+        "bb",
+        "tt",
+        "nn",
+        "pp"
+      ],
+      "missedConceptOnFail": "suffix-drop-e",
+      "rationale": "smiled = s-m-i-l-e-d.",
+      "decodableWithin": "SP-suffixes"
+    },
+    {
+      "id": "sp-sf-036",
+      "skillId": "SP-suffixes",
+      "itemType": "build_word",
+      "difficulty": 3,
+      "stem": "Build the word you hear.",
+      "displayWord": "shining",
+      "audioText": "shining",
+      "graphemes": [
+        "sh",
+        "i",
+        "n",
+        "i",
+        "n",
+        "g"
+      ],
+      "distractorGraphemes": [
+        "bb",
+        "tt",
+        "nn",
+        "pp"
+      ],
+      "missedConceptOnFail": "suffix-drop-e",
+      "rationale": "shining = sh-i-n-i-n-g.",
+      "decodableWithin": "SP-suffixes"
+    },
+    {
+      "id": "sp-sf-037",
+      "skillId": "SP-suffixes",
+      "itemType": "build_word",
+      "difficulty": 3,
+      "stem": "Build the word you hear.",
+      "displayWord": "cried",
+      "audioText": "cried",
+      "graphemes": [
+        "c",
+        "r",
+        "i",
+        "e",
+        "d"
+      ],
+      "distractorGraphemes": [
+        "bb",
+        "tt",
+        "nn",
+        "pp"
+      ],
+      "missedConceptOnFail": "suffix-change-y",
+      "rationale": "cried = c-r-i-e-d.",
+      "decodableWithin": "SP-suffixes"
+    },
+    {
+      "id": "sp-sf-038",
+      "skillId": "SP-suffixes",
+      "itemType": "build_word",
+      "difficulty": 3,
+      "stem": "Build the word you hear.",
+      "displayWord": "tried",
+      "audioText": "tried",
+      "graphemes": [
+        "t",
+        "r",
+        "i",
+        "e",
+        "d"
+      ],
+      "distractorGraphemes": [
+        "bb",
+        "tt",
+        "nn",
+        "pp"
+      ],
+      "missedConceptOnFail": "suffix-change-y",
+      "rationale": "tried = t-r-i-e-d.",
+      "decodableWithin": "SP-suffixes"
+    },
+    {
+      "id": "sp-sf-039",
+      "skillId": "SP-suffixes",
+      "itemType": "build_word",
+      "difficulty": 3,
+      "stem": "Build the word you hear.",
+      "displayWord": "dried",
+      "audioText": "dried",
+      "graphemes": [
+        "d",
+        "r",
+        "i",
+        "e",
+        "d"
+      ],
+      "distractorGraphemes": [
+        "bb",
+        "tt",
+        "nn",
+        "pp"
+      ],
+      "missedConceptOnFail": "suffix-change-y",
+      "rationale": "dried = d-r-i-e-d.",
+      "decodableWithin": "SP-suffixes"
+    },
+    {
+      "id": "sp-sf-040",
+      "skillId": "SP-suffixes",
+      "itemType": "build_word",
+      "difficulty": 3,
+      "stem": "Build the word you hear.",
+      "displayWord": "fried",
+      "audioText": "fried",
+      "graphemes": [
+        "f",
+        "r",
+        "i",
+        "e",
+        "d"
+      ],
+      "distractorGraphemes": [
+        "bb",
+        "tt",
+        "nn",
+        "pp"
+      ],
+      "missedConceptOnFail": "suffix-change-y",
+      "rationale": "fried = f-r-i-e-d.",
+      "decodableWithin": "SP-suffixes"
+    },
+    {
+      "id": "sp-sf-041",
+      "skillId": "SP-suffixes",
+      "itemType": "build_word",
+      "difficulty": 3,
+      "stem": "Build the word you hear.",
+      "displayWord": "spied",
+      "audioText": "spied",
+      "graphemes": [
+        "s",
+        "p",
+        "i",
+        "e",
+        "d"
+      ],
+      "distractorGraphemes": [
+        "bb",
+        "tt",
+        "nn",
+        "pp"
+      ],
+      "missedConceptOnFail": "suffix-change-y",
+      "rationale": "spied = s-p-i-e-d.",
+      "decodableWithin": "SP-suffixes"
+    }
+  ],
+  "lessons": {
+    "SP-suffixes": {
+      "iCanStatement": "I can add -s, -ing and -ed using the spelling rules.",
+      "explanation": "Three rules for adding -ing or -ed. 1) Just add it when the base ends in two consonants: jump → jumped. 2) DOUBLE the last letter after one short vowel: hop → hopping, run → running. 3) DROP the silent e before the ending: hope → hoping, bake → baked. A base ending in y changes to i: cry → cried.",
+      "workedExamples": [
+        {
+          "text": "hopping",
+          "note": "hop + p + ing — double the p (short o)"
+        },
+        {
+          "text": "hoping",
+          "note": "hope − e + ing — drop the e (long o)"
+        },
+        {
+          "text": "cried",
+          "note": "cry → i + ed → cried"
+        }
+      ]
+    }
+  }
+}

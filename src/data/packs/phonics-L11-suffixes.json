@@ -1,0 +1,1092 @@
+{
+  "packId": "phonics-L11-suffixes",
+  "strand": "phonics",
+  "skillIds": [
+    "PH-suffixes"
+  ],
+  "version": 1,
+  "items": [
+    {
+      "id": "ph-sf-001",
+      "skillId": "PH-suffixes",
+      "itemType": "decode_choice",
+      "difficulty": 1,
+      "stem": "Tap the word you hear.",
+      "audioText": "jumps",
+      "choices": [
+        {
+          "id": "a",
+          "label": "jumps"
+        },
+        {
+          "id": "b",
+          "label": "helps"
+        },
+        {
+          "id": "c",
+          "label": "jumped"
+        }
+      ],
+      "correctChoiceId": "a",
+      "missedConceptOnFail": "suffix-add",
+      "rationale": "jumps — read the base word, then the ending.",
+      "decodableWithin": "PH-suffixes"
+    },
+    {
+      "id": "ph-sf-002",
+      "skillId": "PH-suffixes",
+      "itemType": "decode_choice",
+      "difficulty": 2,
+      "stem": "Tap the word you hear.",
+      "audioText": "jumping",
+      "choices": [
+        {
+          "id": "a",
+          "label": "helping"
+        },
+        {
+          "id": "b",
+          "label": "jumping"
+        },
+        {
+          "id": "c",
+          "label": "jumped"
+        }
+      ],
+      "correctChoiceId": "b",
+      "missedConceptOnFail": "suffix-add",
+      "rationale": "jumping — read the base word, then the ending.",
+      "decodableWithin": "PH-suffixes"
+    },
+    {
+      "id": "ph-sf-003",
+      "skillId": "PH-suffixes",
+      "itemType": "decode_choice",
+      "difficulty": 2,
+      "stem": "Tap the word you hear.",
+      "audioText": "jumped",
+      "choices": [
+        {
+          "id": "a",
+          "label": "helped"
+        },
+        {
+          "id": "b",
+          "label": "jumping"
+        },
+        {
+          "id": "c",
+          "label": "jumped"
+        }
+      ],
+      "correctChoiceId": "c",
+      "missedConceptOnFail": "suffix-add",
+      "rationale": "jumped — read the base word, then the ending.",
+      "decodableWithin": "PH-suffixes"
+    },
+    {
+      "id": "ph-sf-004",
+      "skillId": "PH-suffixes",
+      "itemType": "decode_choice",
+      "difficulty": 1,
+      "stem": "Tap the word you hear.",
+      "audioText": "helps",
+      "choices": [
+        {
+          "id": "a",
+          "label": "helps"
+        },
+        {
+          "id": "b",
+          "label": "jumps"
+        },
+        {
+          "id": "c",
+          "label": "helped"
+        }
+      ],
+      "correctChoiceId": "a",
+      "missedConceptOnFail": "suffix-add",
+      "rationale": "helps — read the base word, then the ending.",
+      "decodableWithin": "PH-suffixes"
+    },
+    {
+      "id": "ph-sf-005",
+      "skillId": "PH-suffixes",
+      "itemType": "decode_choice",
+      "difficulty": 2,
+      "stem": "Tap the word you hear.",
+      "audioText": "helping",
+      "choices": [
+        {
+          "id": "a",
+          "label": "jumping"
+        },
+        {
+          "id": "b",
+          "label": "helping"
+        },
+        {
+          "id": "c",
+          "label": "helped"
+        }
+      ],
+      "correctChoiceId": "b",
+      "missedConceptOnFail": "suffix-add",
+      "rationale": "helping — read the base word, then the ending.",
+      "decodableWithin": "PH-suffixes"
+    },
+    {
+      "id": "ph-sf-006",
+      "skillId": "PH-suffixes",
+      "itemType": "decode_choice",
+      "difficulty": 2,
+      "stem": "Tap the word you hear.",
+      "audioText": "helped",
+      "choices": [
+        {
+          "id": "a",
+          "label": "jumped"
+        },
+        {
+          "id": "b",
+          "label": "helping"
+        },
+        {
+          "id": "c",
+          "label": "helped"
+        }
+      ],
+      "correctChoiceId": "c",
+      "missedConceptOnFail": "suffix-add",
+      "rationale": "helped — read the base word, then the ending.",
+      "decodableWithin": "PH-suffixes"
+    },
+    {
+      "id": "ph-sf-007",
+      "skillId": "PH-suffixes",
+      "itemType": "decode_choice",
+      "difficulty": 1,
+      "stem": "Tap the word you hear.",
+      "audioText": "picks",
+      "choices": [
+        {
+          "id": "a",
+          "label": "picks"
+        },
+        {
+          "id": "b",
+          "label": "licks"
+        },
+        {
+          "id": "c",
+          "label": "picked"
+        }
+      ],
+      "correctChoiceId": "a",
+      "missedConceptOnFail": "suffix-add",
+      "rationale": "picks — read the base word, then the ending.",
+      "decodableWithin": "PH-suffixes"
+    },
+    {
+      "id": "ph-sf-008",
+      "skillId": "PH-suffixes",
+      "itemType": "decode_choice",
+      "difficulty": 2,
+      "stem": "Tap the word you hear.",
+      "audioText": "picking",
+      "choices": [
+        {
+          "id": "a",
+          "label": "kicking"
+        },
+        {
+          "id": "b",
+          "label": "picking"
+        },
+        {
+          "id": "c",
+          "label": "picked"
+        }
+      ],
+      "correctChoiceId": "b",
+      "missedConceptOnFail": "suffix-add",
+      "rationale": "picking — read the base word, then the ending.",
+      "decodableWithin": "PH-suffixes"
+    },
+    {
+      "id": "ph-sf-009",
+      "skillId": "PH-suffixes",
+      "itemType": "decode_choice",
+      "difficulty": 2,
+      "stem": "Tap the word you hear.",
+      "audioText": "picked",
+      "choices": [
+        {
+          "id": "a",
+          "label": "kicked"
+        },
+        {
+          "id": "b",
+          "label": "picking"
+        },
+        {
+          "id": "c",
+          "label": "picked"
+        }
+      ],
+      "correctChoiceId": "c",
+      "missedConceptOnFail": "suffix-add",
+      "rationale": "picked — read the base word, then the ending.",
+      "decodableWithin": "PH-suffixes"
+    },
+    {
+      "id": "ph-sf-010",
+      "skillId": "PH-suffixes",
+      "itemType": "decode_choice",
+      "difficulty": 2,
+      "stem": "Tap the word you hear.",
+      "audioText": "wished",
+      "choices": [
+        {
+          "id": "a",
+          "label": "wished"
+        },
+        {
+          "id": "b",
+          "label": "fished"
+        },
+        {
+          "id": "c",
+          "label": "wishing"
+        }
+      ],
+      "correctChoiceId": "a",
+      "missedConceptOnFail": "suffix-add",
+      "rationale": "wished — read the base word, then the ending.",
+      "decodableWithin": "PH-suffixes"
+    },
+    {
+      "id": "ph-sf-011",
+      "skillId": "PH-suffixes",
+      "itemType": "decode_choice",
+      "difficulty": 2,
+      "stem": "Tap the word you hear.",
+      "audioText": "wishing",
+      "choices": [
+        {
+          "id": "a",
+          "label": "fishing"
+        },
+        {
+          "id": "b",
+          "label": "wishing"
+        },
+        {
+          "id": "c",
+          "label": "wished"
+        }
+      ],
+      "correctChoiceId": "b",
+      "missedConceptOnFail": "suffix-add",
+      "rationale": "wishing — read the base word, then the ending.",
+      "decodableWithin": "PH-suffixes"
+    },
+    {
+      "id": "ph-sf-012",
+      "skillId": "PH-suffixes",
+      "itemType": "decode_choice",
+      "difficulty": 2,
+      "stem": "Tap the word you hear.",
+      "audioText": "fishing",
+      "choices": [
+        {
+          "id": "a",
+          "label": "wishing"
+        },
+        {
+          "id": "b",
+          "label": "fished"
+        },
+        {
+          "id": "c",
+          "label": "fishing"
+        }
+      ],
+      "correctChoiceId": "c",
+      "missedConceptOnFail": "suffix-add",
+      "rationale": "fishing — read the base word, then the ending.",
+      "decodableWithin": "PH-suffixes"
+    },
+    {
+      "id": "ph-sf-013",
+      "skillId": "PH-suffixes",
+      "itemType": "decode_choice",
+      "difficulty": 2,
+      "stem": "Tap the word you hear.",
+      "audioText": "hunted",
+      "choices": [
+        {
+          "id": "a",
+          "label": "hunted"
+        },
+        {
+          "id": "b",
+          "label": "hunting"
+        },
+        {
+          "id": "c",
+          "label": "hunts"
+        }
+      ],
+      "correctChoiceId": "a",
+      "missedConceptOnFail": "suffix-add",
+      "rationale": "hunted — read the base word, then the ending.",
+      "decodableWithin": "PH-suffixes"
+    },
+    {
+      "id": "ph-sf-014",
+      "skillId": "PH-suffixes",
+      "itemType": "decode_choice",
+      "difficulty": 2,
+      "stem": "Tap the word you hear.",
+      "audioText": "hunting",
+      "choices": [
+        {
+          "id": "a",
+          "label": "hunted"
+        },
+        {
+          "id": "b",
+          "label": "hunting"
+        },
+        {
+          "id": "c",
+          "label": "hunts"
+        }
+      ],
+      "correctChoiceId": "b",
+      "missedConceptOnFail": "suffix-add",
+      "rationale": "hunting — read the base word, then the ending.",
+      "decodableWithin": "PH-suffixes"
+    },
+    {
+      "id": "ph-sf-015",
+      "skillId": "PH-suffixes",
+      "itemType": "decode_choice",
+      "difficulty": 2,
+      "stem": "Tap the word you hear.",
+      "audioText": "boxes",
+      "choices": [
+        {
+          "id": "a",
+          "label": "foxes"
+        },
+        {
+          "id": "b",
+          "label": "boxed"
+        },
+        {
+          "id": "c",
+          "label": "boxes"
+        }
+      ],
+      "correctChoiceId": "c",
+      "missedConceptOnFail": "suffix-add",
+      "rationale": "boxes — read the base word, then the ending.",
+      "decodableWithin": "PH-suffixes"
+    },
+    {
+      "id": "ph-sf-016",
+      "skillId": "PH-suffixes",
+      "itemType": "decode_choice",
+      "difficulty": 2,
+      "stem": "Tap the word you hear.",
+      "audioText": "melted",
+      "choices": [
+        {
+          "id": "a",
+          "label": "melted"
+        },
+        {
+          "id": "b",
+          "label": "melting"
+        },
+        {
+          "id": "c",
+          "label": "melts"
+        }
+      ],
+      "correctChoiceId": "a",
+      "missedConceptOnFail": "suffix-add",
+      "rationale": "melted — read the base word, then the ending.",
+      "decodableWithin": "PH-suffixes"
+    },
+    {
+      "id": "ph-sf-017",
+      "skillId": "PH-suffixes",
+      "itemType": "decode_choice",
+      "difficulty": 1,
+      "stem": "Tap the word you hear.",
+      "audioText": "hops",
+      "choices": [
+        {
+          "id": "a",
+          "label": "hopped"
+        },
+        {
+          "id": "b",
+          "label": "hops"
+        },
+        {
+          "id": "c",
+          "label": "hopping"
+        }
+      ],
+      "correctChoiceId": "b",
+      "missedConceptOnFail": "suffix-double",
+      "rationale": "hops — read the base word, then the ending.",
+      "decodableWithin": "PH-suffixes"
+    },
+    {
+      "id": "ph-sf-018",
+      "skillId": "PH-suffixes",
+      "itemType": "decode_choice",
+      "difficulty": 2,
+      "stem": "Tap the word you hear.",
+      "audioText": "hopping",
+      "choices": [
+        {
+          "id": "a",
+          "label": "hopped"
+        },
+        {
+          "id": "b",
+          "label": "hops"
+        },
+        {
+          "id": "c",
+          "label": "hopping"
+        }
+      ],
+      "correctChoiceId": "c",
+      "missedConceptOnFail": "suffix-double",
+      "rationale": "hopping — read the base word, then the ending.",
+      "decodableWithin": "PH-suffixes"
+    },
+    {
+      "id": "ph-sf-019",
+      "skillId": "PH-suffixes",
+      "itemType": "decode_choice",
+      "difficulty": 2,
+      "stem": "Tap the word you hear.",
+      "audioText": "hopped",
+      "choices": [
+        {
+          "id": "a",
+          "label": "hopped"
+        },
+        {
+          "id": "b",
+          "label": "hopping"
+        },
+        {
+          "id": "c",
+          "label": "hops"
+        }
+      ],
+      "correctChoiceId": "a",
+      "missedConceptOnFail": "suffix-double",
+      "rationale": "hopped — read the base word, then the ending.",
+      "decodableWithin": "PH-suffixes"
+    },
+    {
+      "id": "ph-sf-020",
+      "skillId": "PH-suffixes",
+      "itemType": "decode_choice",
+      "difficulty": 2,
+      "stem": "Tap the word you hear.",
+      "audioText": "running",
+      "choices": [
+        {
+          "id": "a",
+          "label": "runs"
+        },
+        {
+          "id": "b",
+          "label": "running"
+        },
+        {
+          "id": "c",
+          "label": "rubbing"
+        }
+      ],
+      "correctChoiceId": "b",
+      "missedConceptOnFail": "suffix-double",
+      "rationale": "running — read the base word, then the ending.",
+      "decodableWithin": "PH-suffixes"
+    },
+    {
+      "id": "ph-sf-021",
+      "skillId": "PH-suffixes",
+      "itemType": "decode_choice",
+      "difficulty": 3,
+      "stem": "Tap the word you hear.",
+      "audioText": "stopped",
+      "choices": [
+        {
+          "id": "a",
+          "label": "stopping"
+        },
+        {
+          "id": "b",
+          "label": "stops"
+        },
+        {
+          "id": "c",
+          "label": "stopped"
+        }
+      ],
+      "correctChoiceId": "c",
+      "missedConceptOnFail": "suffix-double",
+      "rationale": "stopped — read the base word, then the ending.",
+      "decodableWithin": "PH-suffixes"
+    },
+    {
+      "id": "ph-sf-022",
+      "skillId": "PH-suffixes",
+      "itemType": "decode_choice",
+      "difficulty": 3,
+      "stem": "Tap the word you hear.",
+      "audioText": "stopping",
+      "choices": [
+        {
+          "id": "a",
+          "label": "stopping"
+        },
+        {
+          "id": "b",
+          "label": "stopped"
+        },
+        {
+          "id": "c",
+          "label": "stops"
+        }
+      ],
+      "correctChoiceId": "a",
+      "missedConceptOnFail": "suffix-double",
+      "rationale": "stopping — read the base word, then the ending.",
+      "decodableWithin": "PH-suffixes"
+    },
+    {
+      "id": "ph-sf-023",
+      "skillId": "PH-suffixes",
+      "itemType": "decode_choice",
+      "difficulty": 2,
+      "stem": "Tap the word you hear.",
+      "audioText": "sitting",
+      "choices": [
+        {
+          "id": "a",
+          "label": "sits"
+        },
+        {
+          "id": "b",
+          "label": "sitting"
+        },
+        {
+          "id": "c",
+          "label": "sipping"
+        }
+      ],
+      "correctChoiceId": "b",
+      "missedConceptOnFail": "suffix-double",
+      "rationale": "sitting — read the base word, then the ending.",
+      "decodableWithin": "PH-suffixes"
+    },
+    {
+      "id": "ph-sf-024",
+      "skillId": "PH-suffixes",
+      "itemType": "decode_choice",
+      "difficulty": 3,
+      "stem": "Tap the word you hear.",
+      "audioText": "hugged",
+      "choices": [
+        {
+          "id": "a",
+          "label": "hugging"
+        },
+        {
+          "id": "b",
+          "label": "hugs"
+        },
+        {
+          "id": "c",
+          "label": "hugged"
+        }
+      ],
+      "correctChoiceId": "c",
+      "missedConceptOnFail": "suffix-double",
+      "rationale": "hugged — read the base word, then the ending.",
+      "decodableWithin": "PH-suffixes"
+    },
+    {
+      "id": "ph-sf-025",
+      "skillId": "PH-suffixes",
+      "itemType": "decode_choice",
+      "difficulty": 3,
+      "stem": "Tap the word you hear.",
+      "audioText": "shopping",
+      "choices": [
+        {
+          "id": "a",
+          "label": "shopping"
+        },
+        {
+          "id": "b",
+          "label": "shopped"
+        },
+        {
+          "id": "c",
+          "label": "shops"
+        }
+      ],
+      "correctChoiceId": "a",
+      "missedConceptOnFail": "suffix-double",
+      "rationale": "shopping — read the base word, then the ending.",
+      "decodableWithin": "PH-suffixes"
+    },
+    {
+      "id": "ph-sf-026",
+      "skillId": "PH-suffixes",
+      "itemType": "decode_choice",
+      "difficulty": 3,
+      "stem": "Tap the word you hear.",
+      "audioText": "bedding",
+      "choices": [
+        {
+          "id": "a",
+          "label": "begging"
+        },
+        {
+          "id": "b",
+          "label": "bedding"
+        },
+        {
+          "id": "c",
+          "label": "beds"
+        }
+      ],
+      "correctChoiceId": "b",
+      "missedConceptOnFail": "suffix-double",
+      "rationale": "bedding — read the base word, then the ending.",
+      "decodableWithin": "PH-suffixes"
+    },
+    {
+      "id": "ph-sf-027",
+      "skillId": "PH-suffixes",
+      "itemType": "decode_choice",
+      "difficulty": 2,
+      "stem": "Tap the word you hear.",
+      "audioText": "tapped",
+      "choices": [
+        {
+          "id": "a",
+          "label": "tapping"
+        },
+        {
+          "id": "b",
+          "label": "taps"
+        },
+        {
+          "id": "c",
+          "label": "tapped"
+        }
+      ],
+      "correctChoiceId": "c",
+      "missedConceptOnFail": "suffix-double",
+      "rationale": "tapped — read the base word, then the ending.",
+      "decodableWithin": "PH-suffixes"
+    },
+    {
+      "id": "ph-sf-028",
+      "skillId": "PH-suffixes",
+      "itemType": "decode_choice",
+      "difficulty": 3,
+      "stem": "Tap the word you hear.",
+      "audioText": "hoping",
+      "choices": [
+        {
+          "id": "a",
+          "label": "hoping"
+        },
+        {
+          "id": "b",
+          "label": "hoped"
+        },
+        {
+          "id": "c",
+          "label": "hopes"
+        }
+      ],
+      "correctChoiceId": "a",
+      "missedConceptOnFail": "suffix-drop-e",
+      "rationale": "hoping — read the base word, then the ending.",
+      "decodableWithin": "PH-suffixes"
+    },
+    {
+      "id": "ph-sf-029",
+      "skillId": "PH-suffixes",
+      "itemType": "decode_choice",
+      "difficulty": 2,
+      "stem": "Tap the word you hear.",
+      "audioText": "hoped",
+      "choices": [
+        {
+          "id": "a",
+          "label": "hoping"
+        },
+        {
+          "id": "b",
+          "label": "hoped"
+        },
+        {
+          "id": "c",
+          "label": "hopes"
+        }
+      ],
+      "correctChoiceId": "b",
+      "missedConceptOnFail": "suffix-drop-e",
+      "rationale": "hoped — read the base word, then the ending.",
+      "decodableWithin": "PH-suffixes"
+    },
+    {
+      "id": "ph-sf-030",
+      "skillId": "PH-suffixes",
+      "itemType": "decode_choice",
+      "difficulty": 3,
+      "stem": "Tap the word you hear.",
+      "audioText": "baking",
+      "choices": [
+        {
+          "id": "a",
+          "label": "baked"
+        },
+        {
+          "id": "b",
+          "label": "bakes"
+        },
+        {
+          "id": "c",
+          "label": "baking"
+        }
+      ],
+      "correctChoiceId": "c",
+      "missedConceptOnFail": "suffix-drop-e",
+      "rationale": "baking — read the base word, then the ending.",
+      "decodableWithin": "PH-suffixes"
+    },
+    {
+      "id": "ph-sf-031",
+      "skillId": "PH-suffixes",
+      "itemType": "decode_choice",
+      "difficulty": 2,
+      "stem": "Tap the word you hear.",
+      "audioText": "baked",
+      "choices": [
+        {
+          "id": "a",
+          "label": "baked"
+        },
+        {
+          "id": "b",
+          "label": "baking"
+        },
+        {
+          "id": "c",
+          "label": "bakes"
+        }
+      ],
+      "correctChoiceId": "a",
+      "missedConceptOnFail": "suffix-drop-e",
+      "rationale": "baked — read the base word, then the ending.",
+      "decodableWithin": "PH-suffixes"
+    },
+    {
+      "id": "ph-sf-032",
+      "skillId": "PH-suffixes",
+      "itemType": "decode_choice",
+      "difficulty": 3,
+      "stem": "Tap the word you hear.",
+      "audioText": "riding",
+      "choices": [
+        {
+          "id": "a",
+          "label": "rides"
+        },
+        {
+          "id": "b",
+          "label": "riding"
+        },
+        {
+          "id": "c",
+          "label": "hiding"
+        }
+      ],
+      "correctChoiceId": "b",
+      "missedConceptOnFail": "suffix-drop-e",
+      "rationale": "riding — read the base word, then the ending.",
+      "decodableWithin": "PH-suffixes"
+    },
+    {
+      "id": "ph-sf-033",
+      "skillId": "PH-suffixes",
+      "itemType": "decode_choice",
+      "difficulty": 2,
+      "stem": "Tap the word you hear.",
+      "audioText": "making",
+      "choices": [
+        {
+          "id": "a",
+          "label": "makes"
+        },
+        {
+          "id": "b",
+          "label": "baking"
+        },
+        {
+          "id": "c",
+          "label": "making"
+        }
+      ],
+      "correctChoiceId": "c",
+      "missedConceptOnFail": "suffix-drop-e",
+      "rationale": "making — read the base word, then the ending.",
+      "decodableWithin": "PH-suffixes"
+    },
+    {
+      "id": "ph-sf-034",
+      "skillId": "PH-suffixes",
+      "itemType": "decode_choice",
+      "difficulty": 2,
+      "stem": "Tap the word you hear.",
+      "audioText": "used",
+      "choices": [
+        {
+          "id": "a",
+          "label": "used"
+        },
+        {
+          "id": "b",
+          "label": "using"
+        },
+        {
+          "id": "c",
+          "label": "uses"
+        }
+      ],
+      "correctChoiceId": "a",
+      "missedConceptOnFail": "suffix-drop-e",
+      "rationale": "used — read the base word, then the ending.",
+      "decodableWithin": "PH-suffixes"
+    },
+    {
+      "id": "ph-sf-035",
+      "skillId": "PH-suffixes",
+      "itemType": "decode_choice",
+      "difficulty": 3,
+      "stem": "Tap the word you hear.",
+      "audioText": "smiled",
+      "choices": [
+        {
+          "id": "a",
+          "label": "smiling"
+        },
+        {
+          "id": "b",
+          "label": "smiled"
+        },
+        {
+          "id": "c",
+          "label": "smiles"
+        }
+      ],
+      "correctChoiceId": "b",
+      "missedConceptOnFail": "suffix-drop-e",
+      "rationale": "smiled — read the base word, then the ending.",
+      "decodableWithin": "PH-suffixes"
+    },
+    {
+      "id": "ph-sf-036",
+      "skillId": "PH-suffixes",
+      "itemType": "decode_choice",
+      "difficulty": 3,
+      "stem": "Tap the word you hear.",
+      "audioText": "shining",
+      "choices": [
+        {
+          "id": "a",
+          "label": "shined"
+        },
+        {
+          "id": "b",
+          "label": "shines"
+        },
+        {
+          "id": "c",
+          "label": "shining"
+        }
+      ],
+      "correctChoiceId": "c",
+      "missedConceptOnFail": "suffix-drop-e",
+      "rationale": "shining — read the base word, then the ending.",
+      "decodableWithin": "PH-suffixes"
+    },
+    {
+      "id": "ph-sf-037",
+      "skillId": "PH-suffixes",
+      "itemType": "decode_choice",
+      "difficulty": 3,
+      "stem": "Tap the word you hear.",
+      "audioText": "cried",
+      "choices": [
+        {
+          "id": "a",
+          "label": "cried"
+        },
+        {
+          "id": "b",
+          "label": "tried"
+        },
+        {
+          "id": "c",
+          "label": "cries"
+        }
+      ],
+      "correctChoiceId": "a",
+      "missedConceptOnFail": "suffix-change-y",
+      "rationale": "cried — read the base word, then the ending.",
+      "decodableWithin": "PH-suffixes"
+    },
+    {
+      "id": "ph-sf-038",
+      "skillId": "PH-suffixes",
+      "itemType": "decode_choice",
+      "difficulty": 3,
+      "stem": "Tap the word you hear.",
+      "audioText": "tried",
+      "choices": [
+        {
+          "id": "a",
+          "label": "cried"
+        },
+        {
+          "id": "b",
+          "label": "tried"
+        },
+        {
+          "id": "c",
+          "label": "tries"
+        }
+      ],
+      "correctChoiceId": "b",
+      "missedConceptOnFail": "suffix-change-y",
+      "rationale": "tried — read the base word, then the ending.",
+      "decodableWithin": "PH-suffixes"
+    },
+    {
+      "id": "ph-sf-039",
+      "skillId": "PH-suffixes",
+      "itemType": "decode_choice",
+      "difficulty": 3,
+      "stem": "Tap the word you hear.",
+      "audioText": "dried",
+      "choices": [
+        {
+          "id": "a",
+          "label": "fried"
+        },
+        {
+          "id": "b",
+          "label": "dries"
+        },
+        {
+          "id": "c",
+          "label": "dried"
+        }
+      ],
+      "correctChoiceId": "c",
+      "missedConceptOnFail": "suffix-change-y",
+      "rationale": "dried — read the base word, then the ending.",
+      "decodableWithin": "PH-suffixes"
+    },
+    {
+      "id": "ph-sf-040",
+      "skillId": "PH-suffixes",
+      "itemType": "decode_choice",
+      "difficulty": 3,
+      "stem": "Tap the word you hear.",
+      "audioText": "fried",
+      "choices": [
+        {
+          "id": "a",
+          "label": "fried"
+        },
+        {
+          "id": "b",
+          "label": "dried"
+        },
+        {
+          "id": "c",
+          "label": "fries"
+        }
+      ],
+      "correctChoiceId": "a",
+      "missedConceptOnFail": "suffix-change-y",
+      "rationale": "fried — read the base word, then the ending.",
+      "decodableWithin": "PH-suffixes"
+    },
+    {
+      "id": "ph-sf-041",
+      "skillId": "PH-suffixes",
+      "itemType": "decode_choice",
+      "difficulty": 3,
+      "stem": "Tap the word you hear.",
+      "audioText": "spied",
+      "choices": [
+        {
+          "id": "a",
+          "label": "tried"
+        },
+        {
+          "id": "b",
+          "label": "spied"
+        },
+        {
+          "id": "c",
+          "label": "spies"
+        }
+      ],
+      "correctChoiceId": "b",
+      "missedConceptOnFail": "suffix-change-y",
+      "rationale": "spied — read the base word, then the ending.",
+      "decodableWithin": "PH-suffixes"
+    }
+  ],
+  "lessons": {
+    "PH-suffixes": {
+      "iCanStatement": "I can read words with -s, -ing and -ed endings.",
+      "explanation": "Long words often have a base word plus an ending: jump + ed = jumped, help + ing = helping. To read them, find the base word first, then read the ending. -ed can sound like /d/ (played), /t/ (jumped) or /id/ (hunted) — all spelt e-d. Read the chunk you know, then add the ending.",
+      "workedExamples": [
+        {
+          "text": "jumped",
+          "note": "jump + ed → jumped"
+        },
+        {
+          "text": "helping",
+          "note": "help + ing → helping"
+        }
+      ]
+    }
+  }
+}

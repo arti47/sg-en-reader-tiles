@@ -20,6 +20,8 @@ import phonicsDi from '../data/packs/phonics-L09-diphthongs.json'
 import spellingDi from '../data/packs/spelling-L09-diphthongs.json'
 import phonics2s from '../data/packs/phonics-L10-two-syllable.json'
 import spelling2s from '../data/packs/spelling-L10-two-syllable.json'
+import phonicsSf from '../data/packs/phonics-L11-suffixes.json'
+import spellingSf from '../data/packs/spelling-L11-suffixes.json'
 import phonicsHf from '../data/packs/phonics-L12-hf.json'
 import dictationCvc from '../data/packs/dictation-L02-cvc.json'
 import dictationDig from '../data/packs/dictation-L03-digraphs.json'
@@ -56,6 +58,8 @@ const PACKS: ContentPack[] = [
   spellingDi as ContentPack,
   phonics2s as ContentPack,
   spelling2s as ContentPack,
+  phonicsSf as ContentPack,
+  spellingSf as ContentPack,
   phonicsHf as ContentPack,
   dictationCvc as ContentPack,
   dictationDig as ContentPack,

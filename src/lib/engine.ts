@@ -15,14 +15,15 @@ export function rollingAccuracy(attempts: Attempt[], skill: SkillDef): number {
 export const itemsAnswered = (attempts: Attempt[], skillId: string) =>
   bySkill(attempts, skillId).length
 
-// Difficulty 1–3: every unbroken streak of 3 correct → +1 (cap 3); 2 wrong in last 4 → −1
-// (floor 1). Counting the trailing streak (not just "last 3 all correct") resets after each
-// promotion, so a run of corrects climbs 1→2→3 over 6 items, not 4 (§7).
-export function nextDifficulty(attempts: Attempt[], skillId: string, current: Difficulty): Difficulty {
+// Difficulty 1–3: every unbroken streak of `promoteStreak` correct → +1 (cap 3); 2 wrong in
+// last 4 → −1 (floor 1). Counting the trailing streak (not just "last N all correct") resets
+// after each promotion, so a run of corrects climbs 1→2→3 (§7). `promoteStreak` defaults to 3;
+// a slower value (from a child's difficulty flags, §1) escalates difficulty more gently.
+export function nextDifficulty(attempts: Attempt[], skillId: string, current: Difficulty, promoteStreak = 3): Difficulty {
   const s = bySkill(attempts, skillId)
   let streak = 0
   for (let i = s.length - 1; i >= 0 && s[i].correct; i--) streak++
-  if (streak > 0 && streak % 3 === 0) return Math.min(3, current + 1) as Difficulty
+  if (streak > 0 && streak % promoteStreak === 0) return Math.min(3, current + 1) as Difficulty
   if (s.slice(-4).filter(a => !a.correct).length >= 2) return Math.max(1, current - 1) as Difficulty
   return current
 }
@@ -81,11 +82,32 @@ export function eligibleSkills(attempts: Attempt[], pre?: Set<string>): SkillDef
 // already-mastered skill. ~18% of a 16-item session. Returns the skill to review, else
 // undefined. Rotates through the mastered set so reviews spread across skills.
 export const INTERLEAVE_EVERY = 5
-export function interleavedReviewSkill(attempts: Attempt[], count: number, pre?: Set<string>): SkillDef | undefined {
-  if (count <= 0 || count % INTERLEAVE_EVERY !== 0) return undefined
+export function interleavedReviewSkill(attempts: Attempt[], count: number, pre?: Set<string>, every = INTERLEAVE_EVERY): SkillDef | undefined {
+  if (count <= 0 || count % every !== 0) return undefined
   const mastered = SKILLS.filter(s => isMastered(attempts, s, pre))
   if (!mastered.length) return undefined
-  return mastered[Math.floor(count / INTERLEAVE_EVERY) % mastered.length]
+  return mastered[Math.floor(count / every) % mastered.length]
+}
+
+// Fluency / automaticity loop (§7 — the defining dyslexia bottleneck). A pattern read
+// ACCURATELY but SLOWLY still needs speed practice, so every FLUENCY_EVERY-th item serves a
+// quick (difficulty-1) rep of the mastered decode skill whose recent-correct median response
+// time is worst and over `maxMs`. Non-punitive: no visible timer; latency only picks WHICH
+// mastered skill to revisit. Returns undefined off-cadence or when nothing is slow.
+export const FLUENCY_EVERY = 6
+export function medianLatency(attempts: Attempt[], skillId: string, n = 8): number | null {
+  const lat = bySkill(attempts, skillId).filter(a => a.correct).slice(-n).map(a => a.latencyMs).sort((x, y) => x - y)
+  if (lat.length < 4) return null
+  return lat[Math.floor(lat.length / 2)]
+}
+export function fluencySkill(attempts: Attempt[], count: number, maxMs: number, pre?: Set<string>, every = FLUENCY_EVERY): SkillDef | undefined {
+  if (count <= 0 || count % every !== 0) return undefined
+  const slow = SKILLS
+    .filter(s => s.strand === 'phonics' && !s.threaded && isMastered(attempts, s, pre))
+    .map(s => ({ s, m: medianLatency(attempts, s.id) }))
+    .filter(x => x.m !== null && x.m > maxMs)
+    .sort((a, b) => (b.m as number) - (a.m as number))
+  return slow[0]?.s
 }
 
 // High-frequency sight words threaded throughout every session (§5/§6d). Every

@@ -18,12 +18,13 @@ import * as readiness from './lib/readiness'
 import * as aggregate from './lib/aggregate'
 import * as scoring from './lib/scoring'
 import * as gamify from './lib/gamify'
+import * as support from './lib/support'
 import { getSkill } from './lib/packs'
 
 if (import.meta.env.DEV) {
   const w = window as unknown as Record<string, unknown>
   w.__srs = srs; w.__engine = engine; w.__getSkill = getSkill
-  w.__store = store; w.__readiness = readiness; w.__aggregate = aggregate; w.__scoring = scoring; w.__gamify = gamify
+  w.__store = store; w.__readiness = readiness; w.__aggregate = aggregate; w.__scoring = scoring; w.__gamify = gamify; w.__support = support
 }
 const m3demo = import.meta.env.DEV && typeof location !== 'undefined' && location.hash === '#m3demo'
 

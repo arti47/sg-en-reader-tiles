@@ -53,6 +53,9 @@ export function McqItem(props: { item: PackItem; quiet?: boolean; onAnswer: (r: 
       )}
       {item.passage && <p className="passage">{item.passage}</p>}
       <p className="stem">{item.stem}</p>
+      {item.heart && !props.quiet && (
+        <p className="heart-note">💛 Heart word — the tricky part to remember by heart is <b>{item.heart}</b>.</p>
+      )}
       <div className="tile-grid">
         {(item.choices ?? []).map(c => {
           const isCorrect = c.id === item.correctChoiceId

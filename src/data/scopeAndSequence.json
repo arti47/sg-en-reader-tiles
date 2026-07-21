@@ -324,6 +324,40 @@
           }
         },
         {
+          "id": "PH-suffixes",
+          "strand": "phonics",
+          "objective": "Read words with -s, -ing and -ed endings (inflectional suffixes).",
+          "iCanStatement": "I can read words with -s, -ing and -ed endings.",
+          "prereqs": [
+            "PH-two-syllable"
+          ],
+          "itemType": "decode_choice",
+          "itemPool": "phonics-L11-suffixes",
+          "encodePairId": "SP-suffixes",
+          "mastery": {
+            "window": 12,
+            "accuracyToPass": 0.85,
+            "minItems": 12
+          }
+        },
+        {
+          "id": "SP-suffixes",
+          "strand": "spelling",
+          "objective": "Spell words with -s, -ing and -ed using the doubling / drop-e / change-y rules.",
+          "iCanStatement": "I can add -s, -ing and -ed using the spelling rules.",
+          "prereqs": [
+            "PH-suffixes"
+          ],
+          "itemType": "build_word",
+          "itemPool": "spelling-L11-suffixes",
+          "encodePairId": "PH-suffixes",
+          "mastery": {
+            "window": 12,
+            "accuracyToPass": 0.85,
+            "minItems": 12
+          }
+        },
+        {
           "id": "HF-words",
           "strand": "phonics",
           "objective": "Recognise high-frequency tricky (sight) words by heart.",
