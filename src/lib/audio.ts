@@ -33,7 +33,10 @@ export function speak(text: string) {
   try {
     const synth = window.speechSynthesis
     if (!synth) return
-    synth.cancel()
+    // iOS Safari drops a speak() that immediately follows cancel() when nothing is
+    // queued, so only cancel to interrupt an in-flight utterance; resume if paused.
+    if (synth.speaking || synth.pending) synth.cancel()
+    if (synth.paused) synth.resume()
     const u = new SpeechSynthesisUtterance(text)
     u.rate = rate
     const voices = synth.getVoices()
