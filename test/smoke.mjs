@@ -328,6 +328,13 @@ try {
     if (e.eligibleSkills([]).map(s => s.id).includes('GR-articles')) return 'M3: grammar must be gated behind decoding'
     const decoded = [...arr('PH-two-syllable', 8, true), ...arr('SP-two-syllable', 8, true)]
     if (!e.eligibleSkills(decoded).map(s => s.id).includes('GR-articles')) return 'M3: grammar should unlock after the two-syllable pattern'
+    // T12 — HF sight words are threaded (every 4th item), never in the eligible rotation.
+    if (e.eligibleSkills([]).map(s => s.id).includes('HF-words')) return 'T12: HF must be threaded, not eligible'
+    if (e.threadedSkill(0) || e.threadedSkill(3)) return 'T12: no HF thread off-cadence'
+    const th = e.threadedSkill(4)
+    if (!th || th.id !== 'HF-words') return 'T12: every 4th item should thread HF'
+    let hf = 0; for (let n = 1; n <= 16; n++) if (e.threadedSkill(n)) hf++
+    if (hf !== 4) return 'T12: HF should thread 4× per 16 items'
     return 'ok'
   })
 

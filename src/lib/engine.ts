@@ -63,6 +63,7 @@ export function patternDecodeSkill(skill: SkillDef): SkillDef {
 // advancement (§7). `pre` = skills already mastered at placement (no attempts of their own).
 export function eligibleSkills(attempts: Attempt[], pre?: Set<string>): SkillDef[] {
   return SKILLS.filter(s => {
+    if (s.threaded) return false // threaded skills (HF sight words) are woven in separately (§5/§6d)
     if (isMastered(attempts, s, pre)) return false
     return s.prereqs.every(p => {
       const preSkill = getSkill(p); if (!preSkill) return false
@@ -80,6 +81,17 @@ export function interleavedReviewSkill(attempts: Attempt[], count: number, pre?:
   const mastered = SKILLS.filter(s => isMastered(attempts, s, pre))
   if (!mastered.length) return undefined
   return mastered[Math.floor(count / INTERLEAVE_EVERY) % mastered.length]
+}
+
+// High-frequency sight words threaded throughout every session (§5/§6d). Every
+// THREAD_EVERY-th item serves a `threaded` skill (rotating if several), regardless of
+// the child's level — so tricky words are learnt from the start, not gated at the end.
+export const THREAD_EVERY = 4
+export function threadedSkill(count: number): SkillDef | undefined {
+  if (count <= 0 || count % THREAD_EVERY !== 0) return undefined
+  const t = SKILLS.filter(s => s.threaded && s.enabled !== false)
+  if (!t.length) return undefined
+  return t[Math.floor(count / THREAD_EVERY) % t.length]
 }
 
 // Struggle: accuracy < 0.5 over ≥6 items, or 3 same-concept misses.

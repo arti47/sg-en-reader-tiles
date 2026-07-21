@@ -218,7 +218,8 @@
           "strand": "phonics",
           "objective": "Recognise high-frequency tricky (sight) words by heart.",
           "iCanStatement": "I can read tricky high-frequency words by heart.",
-          "prereqs": ["PH-two-syllable"],
+          "prereqs": [],
+          "threaded": true,
           "itemType": "decode_choice",
           "itemPool": "phonics-L12-hf",
           "mastery": { "window": 12, "accuracyToPass": 0.85, "minItems": 8 }

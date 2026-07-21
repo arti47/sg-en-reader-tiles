@@ -5,7 +5,7 @@ import { addAttempt, getAttempts, getProgress, putProgress, putCertificate, getR
 import { setRate } from '../lib/audio'
 import { XP_PER_CORRECT, XP_PER_CERT } from '../lib/gamify'
 import { SKILLS, getSkill, getLesson, pickItem } from '../lib/packs'
-import { rollingAccuracy, itemsAnswered, nextDifficulty, isMastered, patternMastered, struggling, eligibleSkills, patternDecodeSkill, interleavedReviewSkill } from '../lib/engine'
+import { rollingAccuracy, itemsAnswered, nextDifficulty, isMastered, patternMastered, struggling, eligibleSkills, patternDecodeSkill, interleavedReviewSkill, threadedSkill } from '../lib/engine'
 import { scheduleFirst, onReviewPass, onReviewFail, dueReviews } from '../lib/srs'
 import { isoWeek, isConsecutiveWeek } from '../lib/aggregate'
 import { McqItem } from './items/McqItem'
@@ -87,6 +87,9 @@ export function Session(props: { child: Child; onExit: () => void }) {
       if (rs) { reviewingRef.current = dueSkillId; loadItem(rs, 1); return }
     }
     reviewingRef.current = null
+    // High-frequency sight words threaded throughout (§5/§6d): every Nth item, regardless of level.
+    const threaded = threadedSkill(countRef.current)
+    if (threaded) { loadItem(threaded); return }
     // Cumulative interleave (§7): every Nth item, slip in a quick review of a mastered skill.
     const review = interleavedReviewSkill(attemptsRef.current, countRef.current, masteredRef.current)
     if (review) { loadItem(review, 1); return } // normal attempt (not an SRS review)

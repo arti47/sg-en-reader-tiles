@@ -66,6 +66,7 @@ export interface SkillDef {
   encodePairId?: string          // dual-gate partner (phonics ↔ spelling)
   enabled?: boolean              // false = authored but inert (e.g. T01 pending phoneme audio); default enabled
   ladder?: boolean               // reserved: reading-level rung marker
+  threaded?: boolean             // served on a cadence throughout every session (e.g. HF sight words, §5/§6d), not via the eligible rotation
   mastery: { window: number; accuracyToPass: number; minItems: number }
 }
 
