@@ -202,6 +202,52 @@ try {
     await mctx.close()
   }
 
+  // Picker card overflow (reported): on a wider phone the cards get narrow enough for 3 columns,
+  // and the per-card Play + 🏆 Trophies buttons spilled PAST the card (still inside the viewport, so
+  // a document-overflow check misses it). Add two students, then assert every action button's box
+  // stays within its card's box — under the wide OpenDyslexic font, at a 430px viewport.
+  {
+    const octx = await browser.newContext({ viewport: { width: 430, height: 900 } })
+    const op = await octx.newPage(); op.setDefaultTimeout(6000)
+    await op.goto(BASE, { waitUntil: 'networkidle' })
+    for (const nm of ['Alexandra', 'Tom']) {
+      await op.getByText('Add student').click()
+      await op.locator('input').fill(nm)
+      await op.getByRole('button', { name: 'P1', exact: true }).click()
+      await op.getByRole('button', { name: 'Save' }).click()
+      for (let i = 0; i < 30; i++) {
+        const kind = await op.waitForFunction(() => {
+          if (/Who's reading\?/.test(document.body.innerText)) return 'pick'
+          if ([...document.querySelectorAll('button')].some(b => b.textContent.trim() === "Let's read")) return 'done'
+          return document.querySelector('button.tile:not([disabled])') ? 'item' : null
+        }, { timeout: 8000 }).then(h => h.jsonValue())
+        if (kind === 'pick') break
+        if (kind === 'done') { await op.evaluate(() => [...document.querySelectorAll('button')].find(b => b.textContent.trim() === "Let's read")?.click()); continue }
+        await op.locator('button.tile:not([disabled])').first().click()
+      }
+    }
+    await op.evaluate(() => { document.documentElement.dataset.font = 'dyslexic' })
+    // A button must not exceed the card's inner CONTENT box (past the padding into/over the border).
+    // getBoundingClientRect of the card is the border-box, so derive the content edges from padding
+    // + border — a button wider than the content area is the reported spill (a border-box check would
+    // miss a spill that stays within the padding cushion, as this one does at 430px).
+    const spill = await op.evaluate(() => {
+      for (const card of document.querySelectorAll('.avatar')) {
+        const cr = card.getBoundingClientRect(); const cs = getComputedStyle(card)
+        const cl = cr.left + parseFloat(cs.borderLeftWidth) + parseFloat(cs.paddingLeft)
+        const crr = cr.right - parseFloat(cs.borderRightWidth) - parseFloat(cs.paddingRight)
+        for (const btn of card.querySelectorAll('.btn')) {
+          const br = btn.getBoundingClientRect()
+          if (br.right > crr + 1.5 || br.left < cl - 1.5)
+            return { card: card.textContent.replace(/\s+/g, ' ').trim().slice(0, 16), btn: btn.textContent.trim(), btnW: Math.round(br.width), contentW: Math.round(crr - cl) }
+        }
+      }
+      return null
+    })
+    if (spill) fail('picker: an action button exceeds its card content box — ' + JSON.stringify(spill))
+    await octx.close()
+  }
+
   // M2 parent dashboard: add a child, open Parent area, create a PIN, see a growth card. Export works.
   {
     const dctx = await browser.newContext({ viewport: { width: 390, height: 800 } })
