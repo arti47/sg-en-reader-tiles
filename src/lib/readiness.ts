@@ -5,12 +5,25 @@
 import type { Attempt, Aggregate } from '../types'
 
 export type Status = 'On-Target' | 'Some-Risk' | 'High-Risk'
+export type FluencyBand = 'quick' | 'developing' | 'effortful' | 'n/a'
 export interface Readiness {
   status: Status
   band: string
   coverage: number
   growth: { mastered: number; recentAccuracy: number; weeksActive: number }
+  fluency: { medianMs: number | null; band: FluencyBand; effortfulButAccurate: boolean }
   action: { text: string; tags: string[] }
+}
+
+// Automaticity signal (§7 — the defining dyslexia bottleneck). NON-GATING: median response time
+// on recent CORRECT answers, reported for the teacher only, never a child-facing timer. The
+// "effortful but accurate" case (high accuracy, slow) is the classic dyslexia signature.
+function fluency(attempts: Attempt[], acc: number, n = 30): Readiness['fluency'] {
+  const lat = attempts.slice(-n).filter(a => a.correct).map(a => a.latencyMs).sort((x, y) => x - y)
+  if (lat.length < 5) return { medianMs: null, band: 'n/a', effortfulButAccurate: false }
+  const medianMs = lat[Math.floor(lat.length / 2)]
+  const band: FluencyBand = medianMs < 3500 ? 'quick' : medianMs < 7000 ? 'developing' : 'effortful'
+  return { medianMs, band, effortfulButAccurate: band === 'effortful' && acc >= 0.85 }
 }
 
 const humanize = (tag: string) => tag.replace(/-/g, ' ')
@@ -48,11 +61,14 @@ export function computeReadiness(
   const al = Math.min(8, Math.max(1, Math.round(8 - score * 7)))
   const band = `AL${al} (early estimate)`
 
+  const fl = fluency(attempts, acc)
+
   let text: string
   if (tags.length) text = `Practise ${humanize(tags[0])} — a few short sessions this week.`
   else if (mastered === 0) text = 'Warm up with the letter sounds and short words.'
+  else if (fl.effortfulButAccurate) text = 'Accurate but still effortful — keep practising the same skills to build reading speed.'
   else if (status === 'On-Target') text = 'On track — keep the weekly sessions going.'
   else text = 'Keep practising the current skill — short, regular sessions help most.'
 
-  return { status, band, coverage, growth: { mastered, recentAccuracy: acc, weeksActive }, action: { text, tags } }
+  return { status, band, coverage, growth: { mastered, recentAccuracy: acc, weeksActive }, fluency: fl, action: { text, tags } }
 }

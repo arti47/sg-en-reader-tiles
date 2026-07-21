@@ -11,7 +11,10 @@ import { SKILLS, getSkill } from './packs'
 export const decodeLadder: SkillDef[] =
   SKILLS.filter(s => s.strand === 'phonics' && s.itemType === 'decode_choice' && !!s.encodePairId)
 
-export const PER_SKILL = 2
+// 3 items/level (was 2): two lucky 3-choice guesses (1/9) could fluke a level and OVER-place a
+// struggling reader above their true instructional level; 3/3 drops that to ~1/27 and, capped at
+// MAX_ITEMS, keeps placement conservative (start low, confirm foundations — §7).
+export const PER_SKILL = 3
 export const MAX_ITEMS = 15
 // A warm-up should feel like a few gentle items, not stop after 2 when the child misses the
 // first pair (CVC is the floor, so the staircase has nowhere down). Once the entry level is

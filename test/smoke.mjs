@@ -79,6 +79,7 @@ try {
     // Drive one full session's item loop to the summary. `answerWrong` picks wrong decode
     // answers (struggle path). Closes over page/errors/lbl/lessons/firstSkill.
     async function playSession(answerWrong) {
+      let afterLesson = false
       for (let step = 0; step < 90; step++) {
         // Wait for a settled screen: an end/lesson/cert screen, OR a FRESH interactive
         // item (an enabled tile present and no "Continue" yet). This rules out acting on
@@ -103,10 +104,12 @@ try {
 
         if (kind === 'summary') return
         if (kind === 'cert') { await page.getByRole('button', { name: 'Keep going' }).click(); continue }
-        if (kind === 'lesson') { lessons++; await page.getByRole('button', { name: "Let's try" }).click(); continue }
+        if (kind === 'lesson') { lessons++; afterLesson = true; await page.getByRole('button', { name: "Let's try" }).click(); continue }
 
         const item = await page.evaluate(() => window.__item || null)
         if (!firstSkill) firstSkill = item.skillId
+        // #4 — the item right after a lesson is a guided-practice item at difficulty 1.
+        if (afterLesson) { if (item.difficulty !== 1) fail(`#4: post-lesson guided item should be difficulty 1, got ${item.difficulty}`); afterLesson = false }
         if (item.graphemes) {
           // Click an ENABLED matching tile each time (words with a repeated grapheme, e.g. p·o·p,
           // reuse the same label — .first() alone would re-target the now-disabled first tile).
@@ -472,6 +475,14 @@ try {
     if (!sc.scoreDictation(dict, [['a'], ['c', 'a', 't']]).correct) return 'scoreDictation: all-correct should pass'
     if (sc.scoreDictation(dict, [['a'], ['c', 'o', 't']]).correct) return 'scoreDictation: wrong word should fail'
     if (sc.scoreDictation(dict, [['a']]).correct) return 'scoreDictation: missing word should fail'
+    // #1 grapheme-level error analysis: a same-length substitution names the EXPECTED grapheme's
+    // concept (digraph swap, vowel confusion, b/d reversal → consonant-b); an omission (length
+    // mismatch, e.g. a dropped silent-e) falls back to the item's authored tag.
+    if (sc.scoreTiles({ graphemes: ['sh', 'i', 'p'], missedConceptOnFail: 'x' }, ['ch', 'i', 'p']).missedConcept !== 'digraph-sh') return '#1 tiles: digraph substitution → digraph-sh'
+    if (sc.scoreTiles({ graphemes: ['c', 'a', 't'], missedConceptOnFail: 'x' }, ['c', 'o', 't']).missedConcept !== 'vowel-short-a') return '#1 tiles: vowel substitution → vowel-short-a'
+    if (sc.scoreTiles({ graphemes: ['b', 'a', 't'], missedConceptOnFail: 'x' }, ['d', 'a', 't']).missedConcept !== 'consonant-b') return '#1 tiles: b/d reversal → consonant-b'
+    if (sc.scoreTiles({ graphemes: ['c', 'a', 'k', 'e'], missedConceptOnFail: 'silent-e-a' }, ['c', 'a', 'k']).missedConcept !== 'silent-e-a') return '#1 tiles: omission → item tag'
+    if (sc.scoreDictation({ words: [{ text: 'ship', graphemes: ['sh', 'i', 'p'] }], missedConceptOnFail: 'y' }, [['ch', 'i', 'p']]).missedConcept !== 'digraph-sh') return '#1 dictation: substitution → grapheme concept'
     // M4 gamification: XP = 10/correct + 50/cert; level ≥1 and non-decreasing.
     const g = window.__gamify
     if (g.xp([{ correct: true }, { correct: false }, { correct: true }], [{}, {}]) !== 2 * 10 + 2 * 50) return 'gamify xp'

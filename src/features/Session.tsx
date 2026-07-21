@@ -17,6 +17,7 @@ import { LessonView } from './LessonView'
 const DEFAULT_SESSION_LEN = 16
 const LESSON_MAX = 2      // re-teach at most twice per skill per session (§8 #4)
 const REFIRE_AFTER = 3    // …and only re-fire after ≥3 further attempts, if still struggling
+const GUIDED_ITEMS = 3    // forced easier (difficulty-1) items right after a lesson (§8 guided practice)
 type Phase = 'loading' | 'item' | 'lesson' | 'cert' | 'summary'
 
 export function Session(props: { child: Child; onExit: () => void; onTrophies: () => void }) {
@@ -25,6 +26,7 @@ export function Session(props: { child: Child; onExit: () => void; onTrophies: (
   const seenRef = useRef<Set<string>>(new Set())
   const lessonCountRef = useRef<Map<string, number>>(new Map())   // lessons shown per skill this session (§8, cap LESSON_MAX)
   const lessonAtRef = useRef<Map<string, number>>(new Map())      // itemsAnswered(skill) when its last lesson fired (re-fire gate)
+  const guidedRef = useRef<{ id: string; left: number } | null>(null) // post-lesson guided-practice block (§8)
   const certsRef = useRef<Set<string>>(new Set())                 // skillIds already certified (retention-confirmed, §7)
   const masteredRef = useRef<Set<string>>(new Set()) // skills mastered at placement (§7)
   const startRef = useRef<number>(Date.now())
@@ -97,6 +99,15 @@ export function Session(props: { child: Child; onExit: () => void; onTrophies: (
   // Choose next skill (interleave eligible), then serve lesson-on-struggle or an item.
   function advance(initial = false) {
     if (!initial && countRef.current >= lenRef.current) { setPhase('summary'); return }
+    // Guided practice after a lesson (§8): a short block of easier (difficulty-1) items on the
+    // just-taught skill before returning to normal rotation, so a child who just failed isn't
+    // dropped straight back into a harder item.
+    if (guidedRef.current && guidedRef.current.left > 0) {
+      const gs = getSkill(guidedRef.current.id)
+      guidedRef.current.left -= 1
+      if (guidedRef.current.left <= 0) guidedRef.current = null
+      if (gs) { reviewingRef.current = null; loadItem(gs, 1); return }
+    }
     // Due spaced-repetition reviews first (§7): easier items on already-mastered skills.
     const dueSkillId = dueQueueRef.current.shift()
     if (dueSkillId) {
@@ -236,7 +247,7 @@ export function Session(props: { child: Child; onExit: () => void; onTrophies: (
 
   if (phase === 'lesson' && item) {
     const lesson = getLesson(item.skillId)
-    if (lesson) return <LessonView lesson={lesson} onContinue={() => loadItem(getSkill(item.skillId)!)} />
+    if (lesson) return <LessonView lesson={lesson} onContinue={() => { guidedRef.current = { id: item.skillId, left: GUIDED_ITEMS }; advance() }} />
   }
 
   if (phase === 'item' && item) {

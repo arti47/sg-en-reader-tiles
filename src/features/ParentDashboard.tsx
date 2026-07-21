@@ -161,6 +161,12 @@ export function ParentDashboard(props: { children: Child[]; onExit: () => void; 
             {c.usage ? `${c.usage.sessionsThisWeek} of ${c.usage.weeklySessionTarget} sessions this week` : '0 sessions this week'}
             {c.usage && c.usage.streakWeeks > 1 ? ` · ${c.usage.streakWeeks}-week streak 🔥` : ''}
           </p>
+          {c.readiness.fluency.band !== 'n/a' && (
+            <p className="note">
+              Reading speed: {c.readiness.fluency.band === 'quick' ? '⚡ quick' : c.readiness.fluency.band === 'developing' ? '🕒 building' : '🐢 effortful'}
+              {c.readiness.fluency.effortfulButAccurate ? ' — accurate but slow; practise for automaticity.' : ''}
+            </p>
+          )}
 
           {c.weeks.length > 0 && (
             <div className="chart" aria-label="Weekly activity">
