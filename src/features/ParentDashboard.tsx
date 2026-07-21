@@ -4,7 +4,7 @@ import { getAttempts, getProgress, getCertificates, getAggregates, getUsage, get
 import { SKILLS, getSkill } from '../lib/packs'
 import { computeReadiness, type Readiness } from '../lib/readiness'
 import { achievements, type Achievement } from '../lib/gamify'
-import { setRate, setVoice, speak, listVoices, onVoicesReady } from '../lib/audio'
+import { setRate, setVoice, listVoices, onVoicesReady } from '../lib/audio'
 
 // Parent dashboard (§10, §11, §14). PIN-gated, growth-framed, parent-only. Per-child readiness
 // + action plan + weekly usage/streak + trend chart; global export/import backup.
@@ -40,6 +40,29 @@ export function ParentDashboard(props: { children: Child[]; onExit: () => void; 
   const [error, setError] = useState(false)
   const [cards, setCards] = useState<CardData[]>([])
   const [voices, setVoices] = useState<{ voiceURI: string; name: string; lang: string }[]>([])
+  const [tstat, setTstat] = useState('')
+
+  // Self-diagnosing TTS test: speaks synchronously in the click gesture and surfaces the
+  // engine's own start/end/error events, so a silent device tells us *why* (not-allowed,
+  // interrupted, synthesis-failed) instead of failing invisibly.
+  function testVoice(voiceURI?: string) {
+    try {
+      const synth = window.speechSynthesis
+      if (!synth) { setTstat('no speechSynthesis on this device'); return }
+      if (synth.speaking || synth.pending) synth.cancel()
+      if (synth.paused) synth.resume()
+      const u = new SpeechSynthesisUtterance('Hello! Let us read together.')
+      const v = synth.getVoices().find(x => x.voiceURI === voiceURI)
+      if (v) { u.voice = v; u.lang = v.lang }
+      u.rate = settings?.ttsRate ?? 0.9
+      u.onstart = () => setTstat('▶ speaking…')
+      u.onend = () => setTstat('✓ finished')
+      u.onerror = e => setTstat('✗ ' + (e.error || 'error'))
+      setVoice(voiceURI)
+      synth.speak(u)
+      setTstat('sent (' + synth.getVoices().length + ' voices)…')
+    } catch (err) { setTstat('✗ ' + String(err)) }
+  }
 
   useEffect(() => {
     void getSettings().then(s => { setSettings(s); setGate(s.pin ? 'enter' : 'create1') })
@@ -209,7 +232,8 @@ export function ParentDashboard(props: { children: Child[]; onExit: () => void; 
                 <button className="btn small ghost" aria-label="Previous voice" onClick={() => step(-1)}>◀</button>
                 <span aria-live="polite" style={{ minWidth: 96, textAlign: 'center' }}>{voices[cur]?.name ?? 'Default'}</span>
                 <button className="btn small ghost" aria-label="Next voice" onClick={() => step(1)}>▶</button>
-                <button className="btn small" aria-label="Test voice" onClick={() => { setVoice(voices[cur]?.voiceURI); speak('Hello, let us read together.') }}>🔊 Test</button>
+                <button className="btn small" aria-label="Test voice" onClick={() => testVoice(voices[cur]?.voiceURI)}>🔊 Test</button>
+                {tstat && <span aria-live="polite" style={{ fontSize: 13, opacity: 0.8 }}>{tstat}</span>}
               </div>
             </div>
           )
