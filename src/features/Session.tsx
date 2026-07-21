@@ -115,12 +115,18 @@ export function Session(props: { child: Child; onExit: () => void; onTrophies: (
       if (rs) { reviewingRef.current = dueSkillId; loadItem(rs, 1); return }
     }
     reviewingRef.current = null
-    // High-frequency sight words threaded throughout (§5/§6d): every Nth item, regardless of level.
-    const threaded = threadedSkill(countRef.current)
-    if (threaded) { loadItem(threaded); return }
-    // Cumulative interleave (§7): every Nth item, slip in a quick review of a mastered skill.
-    const review = interleavedReviewSkill(attemptsRef.current, countRef.current, masteredRef.current)
-    if (review) { loadItem(review, 1); return } // normal attempt (not an SRS review)
+    // Massed practice first (§7): threading (sight words / letter-sounds) and interleaved review
+    // only kick in once the child has acquired their first pattern — a raw beginner gets an
+    // undiluted focus on the current skill; a placement-credited child is already past this.
+    const hasMastery = masteredRef.current.size > 0 || SKILLS.some(s => isMastered(attemptsRef.current, s, masteredRef.current))
+    if (hasMastery) {
+      // High-frequency sight words threaded throughout (§5/§6d): every Nth item, regardless of level.
+      const threaded = threadedSkill(countRef.current)
+      if (threaded) { loadItem(threaded); return }
+      // Cumulative interleave (§7): every Nth item, slip in a quick review of a mastered skill.
+      const review = interleavedReviewSkill(attemptsRef.current, countRef.current, masteredRef.current)
+      if (review) { loadItem(review, 1); return } // normal attempt (not an SRS review)
+    }
     const elig = eligibleSkills(attemptsRef.current, masteredRef.current)
     if (!elig.length) { setPhase('summary'); return }
     const skill = elig[countRef.current % elig.length]
@@ -135,6 +141,13 @@ export function Session(props: { child: Child; onExit: () => void; onTrophies: (
       lessonAtRef.current.set(skill.id, itemsAnswered(attemptsRef.current, skill.id))
       setItem({ skillId: skill.id } as PackItem) // carries skill id for lesson lookup
       setAnswered(null); setPhase('lesson'); return
+    }
+    // Down-shift (§8): if re-teaching is exhausted (LESSON_MAX reached) and the child is STILL
+    // struggling, drop to an easier prerequisite for supported practice instead of hammering the
+    // too-hard skill. The floor (CVC, no prereqs) has nowhere down and just continues.
+    if (struggling(attemptsRef.current, skill) && shown >= LESSON_MAX) {
+      const prereq = skill.prereqs.map(p => getSkill(p)).find(p => p && !p.threaded)
+      if (prereq) { loadItem(prereq, 1); return }
     }
     loadItem(skill)
   }
@@ -170,17 +183,23 @@ export function Session(props: { child: Child; onExit: () => void; onTrophies: (
     countRef.current += 1; setCount(countRef.current)
     if (r.correct) xpGainRef.current += XP_PER_CORRECT
     const now = Date.now()
+    // The channels whose retention a pattern's certificate depends on: decode AND encode (§7 #2).
+    const channelIds = patternSkill.encodePairId ? [patternSkill.id, patternSkill.encodePairId] : [patternSkill.id]
     if (reviewingRef.current === skill.id) {
-      // This was a spaced-repetition review: advance on pass, demote on fail (§7).
+      // Spaced-repetition review: advance on pass; on FAIL, demote to a short re-practice block —
+      // easier (difficulty-1) items on the forgotten skill NOW, not just a re-test in 2 days (§7 #1).
       const rev = reviewsRef.current.find(x => x.skillId === skill.id)
       if (rev) {
         const upd = r.correct ? onReviewPass(rev, now) : onReviewFail(rev, now)
         reviewsRef.current = reviewsRef.current.map(x => x.skillId === skill.id ? upd : x)
         await putReview(props.child.id, upd)
       }
-      // Retention = mastery (§7 #1): the FIRST spaced-review pass CONFIRMS the pattern and awards
-      // its certificate (withheld at acquisition). Retention proven, not just same-session accuracy.
-      if (r.correct && !certsRef.current.has(patternSkill.id) &&
+      if (!r.correct) guidedRef.current = { id: skill.id, left: GUIDED_ITEMS } // immediate re-practice
+      // Retention = mastery (§7 #1/#2): the certificate (withheld at acquisition) is minted only once
+      // BOTH channels have retained (each review stage ≥ 1 = ≥2 review items across the pattern), so
+      // spelling retention is verified too, not just decoding.
+      const bothRetained = channelIds.every(id => (reviewsRef.current.find(x => x.skillId === id)?.stage ?? 0) >= 1)
+      if (r.correct && bothRetained && !certsRef.current.has(patternSkill.id) &&
           patternMastered(attemptsRef.current, patternSkill, masteredRef.current)) {
         const c: Certificate = { skillId: patternSkill.id, iCanStatement: patternSkill.iCanStatement, awardedAt: now }
         await putCertificate(props.child.id, c); certsRef.current.add(patternSkill.id); setCert(c)
@@ -188,11 +207,13 @@ export function Session(props: { child: Child; onExit: () => void; onTrophies: (
         xpGainRef.current += XP_PER_CERT
       }
     } else if (!wasPatternDone && patternMastered(attemptsRef.current, patternSkill, masteredRef.current)) {
-      // Dual gate cleared (decode AND encode) → PROVISIONAL mastery: advance now (keeps momentum),
-      // but WITHHOLD the certificate until the +2d review confirms retention (§7 #1). Schedule it.
-      const rev = scheduleFirst(patternSkill.id, now)
-      reviewsRef.current = [...reviewsRef.current.filter(x => x.skillId !== patternSkill.id), rev]
-      await putReview(props.child.id, rev)
+      // Dual gate cleared → PROVISIONAL mastery: advance now (keeps momentum), but WITHHOLD the
+      // certificate until BOTH channels' +2d reviews confirm retention (§7 #1/#2). Schedule both.
+      for (const sid of channelIds) {
+        const rev = scheduleFirst(sid, now)
+        reviewsRef.current = [...reviewsRef.current.filter(x => x.skillId !== sid), rev]
+        await putReview(props.child.id, rev)
+      }
     }
     setAnswered(r)
   }

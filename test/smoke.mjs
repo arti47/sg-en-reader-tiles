@@ -410,6 +410,9 @@ try {
     // encode entry becomes eligible, placement.ts). Without placement + attempts it stays locked.
     if (e.encodeUnlocked([], dec)) return '#3 encodeUnlocked: no attempts/placement → locked'
     if (!e.encodeUnlocked([], dec, new Set([PH]))) return '#3 encodeUnlocked: placement decoder → unlocked'
+    // #7 — encode must not unlock on a tiny lucky streak; needs ≥6 real decode items at ≥70%.
+    if (e.encodeUnlocked(arr(PH, 3, true), dec)) return '#7 encode must not unlock on <6 items'
+    if (!e.encodeUnlocked(arr(PH, 6, true), dec)) return '#7 encode should unlock at 6 items ≥70%'
     // #4 — earlier re-teach: <0.6 over ≥5 items, or 2 same-concept misses, triggers a lesson.
     const mc = (concept) => ({ id: String(k++), childId: 'c', skillId: PH, itemId: 'i', correct: false, difficulty: 1, missedConcept: concept, latencyMs: 1, ts: k })
     if (!e.struggling([...arr(PH, 2, true), mk(PH, false), mk(PH, false), mk(PH, false)], dec)) return '#4 struggle: <0.6 over ≥5 should trigger'

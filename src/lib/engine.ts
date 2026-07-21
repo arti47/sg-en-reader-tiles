@@ -47,11 +47,14 @@ export function patternMastered(attempts: Attempt[], skill: SkillDef, pre?: Set<
   return !!pair && isMastered(attempts, pair, pre)
 }
 
-// Encode unlocks once its decode partner reaches ~70% (guided overlap). A placement-confirmed
-// decoder (in `pre`) has ≥70% by definition — needed so a high placement's held-back encode
-// entry (§7 spelling-confirmation, placement.ts) becomes eligible despite having no attempts.
+// Encode unlocks once its decode partner is reasonably solid — ~70% over at least ENCODE_UNLOCK_MIN
+// real items (so a 3/3 fluke doesn't open spelling prematurely, §7 #7). A placement-confirmed
+// decoder (in `pre`) has demonstrated reading and unlocks immediately, so a high placement's
+// held-back encode entry (§7 spelling-confirmation, placement.ts) is eligible with no attempts.
+export const ENCODE_UNLOCK_MIN = 6
 export function encodeUnlocked(attempts: Attempt[], decodeSkill: SkillDef, pre?: Set<string>): boolean {
-  return (pre?.has(decodeSkill.id) ?? false) || rollingAccuracy(attempts, decodeSkill) >= 0.7
+  if (pre?.has(decodeSkill.id)) return true
+  return itemsAnswered(attempts, decodeSkill.id) >= ENCODE_UNLOCK_MIN && rollingAccuracy(attempts, decodeSkill) >= 0.7
 }
 
 // The decode skill that identifies a pattern (a spelling skill's pattern is its decode partner).

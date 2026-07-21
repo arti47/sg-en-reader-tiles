@@ -59,11 +59,14 @@ export function priorSkillIds(entrySkillId: string): string[] {
   const idx = decodeLadder.findIndex(s => s.id === entrySkillId)
   if (idx <= 0) return []
   const priors = decodeLadder.slice(0, idx)
-  const heldEncode = priors[priors.length - 1].encodePairId // spelling of the highest read rung — earned in-session
+  // Hold back the TOP TWO read rungs' spelling (§7 #3): a decode-only placement must not credit
+  // spelling it never observed, and in dyslexia decode ≫ encode is common, so two rungs of
+  // encode are earned in-session before advancing (only the top one is far too little).
+  const heldEncode = new Set([priors[priors.length - 1]?.encodePairId, priors[priors.length - 2]?.encodePairId].filter(Boolean))
   const ids: string[] = []
   for (const s of priors) {
     ids.push(s.id)
-    if (s.encodePairId && s.encodePairId !== heldEncode) ids.push(s.encodePairId)
+    if (s.encodePairId && !heldEncode.has(s.encodePairId)) ids.push(s.encodePairId)
   }
   for (const s of priors) for (const p of s.prereqs) {
     const pre = getSkill(p)

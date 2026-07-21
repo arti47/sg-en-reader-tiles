@@ -19,7 +19,9 @@ export interface Readiness {
 // on recent CORRECT answers, reported for the teacher only, never a child-facing timer. The
 // "effortful but accurate" case (high accuracy, slow) is the classic dyslexia signature.
 function fluency(attempts: Attempt[], acc: number, n = 30): Readiness['fluency'] {
-  const lat = attempts.slice(-n).filter(a => a.correct).map(a => a.latencyMs).sort((x, y) => x - y)
+  // Reading fluency = DECODING speed: exclude the inherently slower encode/dictation (SP-*) items
+  // so tile-building time doesn't mislabel a child "effortful" (§7 #6).
+  const lat = attempts.filter(a => a.correct && !a.skillId.startsWith('SP-')).slice(-n).map(a => a.latencyMs).sort((x, y) => x - y)
   if (lat.length < 5) return { medianMs: null, band: 'n/a', effortfulButAccurate: false }
   const medianMs = lat[Math.floor(lat.length / 2)]
   const band: FluencyBand = medianMs < 3500 ? 'quick' : medianMs < 7000 ? 'developing' : 'effortful'
