@@ -75,12 +75,10 @@ try {
         t.oncomplete = () => res(out)
       }
     }))
-    // With ~18% cumulative interleave (§7 A5), a full dual pattern can span more than one
-    // 16-item session, so the mastery path re-enters sessions until a certificate lands.
-    const SESSIONS = WRONG ? 1 : 6
     let db = null
-    for (let s = 0; s < SESSIONS; s++) {
-      await page.getByRole('button', { name: /Test/ }).click()
+    // Drive one full session's item loop to the summary. `answerWrong` picks wrong decode
+    // answers (struggle path). Closes over page/errors/lbl/lessons/firstSkill.
+    async function playSession(answerWrong) {
       for (let step = 0; step < 90; step++) {
         // Wait for a settled screen: an end/lesson/cert screen, OR a FRESH interactive
         // item (an enabled tile present and no "Continue" yet). This rules out acting on
@@ -100,10 +98,10 @@ try {
             tiles: document.querySelectorAll('button.tile').length,
             freshTiles: document.querySelectorAll('button.tile:not([disabled])').length
           }))
-          fail(`stall @ WRONG=${WRONG} session=${s} step=${step}: body="${body.slice(0, 90)}" ${JSON.stringify(state)} errors=${JSON.stringify(errors)}`)
+          fail(`stall @ WRONG=${WRONG} step=${step}: body="${body.slice(0, 90)}" ${JSON.stringify(state)} errors=${JSON.stringify(errors)}`)
         })
 
-        if (kind === 'summary') break
+        if (kind === 'summary') return
         if (kind === 'cert') { await page.getByRole('button', { name: 'Keep going' }).click(); continue }
         if (kind === 'lesson') { lessons++; await page.getByRole('button', { name: "Let's try" }).click(); continue }
 
@@ -115,19 +113,47 @@ try {
           for (const g of item.graphemes) await page.locator('button.tile:not([disabled])', { hasText: lbl(g) }).first().click()
           await page.getByRole('button', { name: 'Check' }).click()
         } else {
-          const pick = (WRONG && item.itemType === 'decode_choice')
+          const pick = (answerWrong && item.itemType === 'decode_choice')
             ? item.choices.find(c => c.id !== item.correctChoiceId).id : item.correctChoiceId
           const label = item.choices.find(c => c.id === pick).label
           await page.locator('button.tile', { hasText: lbl(label) }).first().click()
         }
         await page.getByRole('button', { name: 'Continue' }).click()
       }
+    }
+    const returnToPicker = async () => {
+      await page.getByRole('button', { name: 'Done' }).click()
+      await page.waitForFunction(() => /Who's reading\?/.test(document.body.innerText), { timeout: 6000 })
+    }
+    // §7 #1 retention gate: the certificate is WITHHELD at acquisition and minted only on the
+    // first +2d review pass. So the mastery path (a) plays sessions until a pattern is
+    // provisionally mastered (a review is scheduled), asserting NO certificate yet, then
+    // (b) backdates that review and plays one more session — passing the due review confirms
+    // retention and awards the certificate. #2 (minItems 12) means this spans several sessions.
+    const SESSIONS = WRONG ? 1 : 8
+    for (let s = 0; s < SESSIONS; s++) {
+      await page.getByRole('button', { name: /Test/ }).click()
+      await playSession(WRONG)
       db = await readDb()
-      if (!WRONG && db.certs.length >= 1) break
-      if (s < SESSIONS - 1) {
-        await page.getByRole('button', { name: 'Done' }).click()
-        await page.waitForFunction(() => /Who's reading\?/.test(document.body.innerText), { timeout: 6000 })
-      }
+      if (!WRONG && (db.reviews || []).some(r => r.status === 'scheduled')) break
+      if (s < SESSIONS - 1) await returnToPicker()
+    }
+    if (!WRONG) {
+      if (!(db.reviews || []).some(r => r.status === 'scheduled')) fail('mastery path: no pattern provisionally mastered (no review scheduled)')
+      if (db.certs.length) fail('§7 #1: certificate must NOT be awarded at acquisition (only on the +2d review pass)')
+      await returnToPicker()
+      // Backdate the scheduled reviews so they are due, then confirm on the next session.
+      await page.evaluate(() => new Promise(res => {
+        const o = indexedDB.open('sg-reader')
+        o.onsuccess = () => {
+          const t = o.result.transaction('reviews', 'readwrite'); const st = t.objectStore('reviews')
+          st.getAll().onsuccess = e => { for (const rv of e.target.result) { rv.due = Date.now() - 1000; st.put(rv) } }
+          t.oncomplete = () => res()
+        }
+      }))
+      await page.getByRole('button', { name: /Test/ }).click()
+      await playSession(false)
+      db = await readDb()
     }
     results.push({ WRONG, errors, overflow, lessons, db, firstSkill })
     await ctx.close()
@@ -297,17 +323,19 @@ try {
     const arr = (id, n, ok = true) => Array.from({ length: n }, () => mk(id, ok))
     const PH = 'PH-cvc-short-vowels', SP = 'SP-cvc-short-vowels'
     const dec = gs(PH)
+    // #2 — foundational decode/encode need 12 items (overlearning): 8 must NOT master.
+    if (e.skillMastered(arr(PH, 8, true), dec)) return '#2 minItems: 8 items must not master (raised to 12)'
     // A2 — a pattern needs BOTH decode and encode; decode alone must not pass.
-    const decodeOnly = arr(PH, 8, true)
+    const decodeOnly = arr(PH, 12, true)
     if (!e.skillMastered(decodeOnly, dec)) return 'A2 decode should master'
     if (e.patternMastered(decodeOnly, dec)) return 'A2 pattern must NOT pass on decode alone'
-    if (!e.patternMastered([...decodeOnly, ...arr(SP, 8, true)], dec)) return 'A2 pattern should pass with both'
+    if (!e.patternMastered([...decodeOnly, ...arr(SP, 12, true)], dec)) return 'A2 pattern should pass with both'
     // A2 advancement gate — with only CVC decode mastered, the next decode skill (digraphs) must
     // NOT be eligible (its encode partner is); it unlocks only once the whole CVC pattern is done.
     const decElig = e.eligibleSkills(decodeOnly).map(s => s.id)
     if (decElig.includes('PH-digraphs')) return 'A2 advancement: digraphs unlocked on decode alone'
     if (!decElig.includes(SP)) return 'A2 encode partner should be eligible at ≥70% decode'
-    if (!e.eligibleSkills([...decodeOnly, ...arr(SP, 8, true)]).map(s => s.id).includes('PH-digraphs')) return 'A2 advancement: digraphs should unlock after full pattern'
+    if (!e.eligibleSkills([...decodeOnly, ...arr(SP, 12, true)]).map(s => s.id).includes('PH-digraphs')) return 'A2 advancement: digraphs should unlock after full pattern'
     // A1 — placement-mastered skills count without attempts.
     if (e.isMastered([], dec)) return 'A1 unmastered without attempts'
     if (!e.isMastered([], dec, new Set([PH]))) return 'A1 placement-mastered should count'
@@ -317,6 +345,15 @@ try {
     if (e.nextDifficulty(arr(PH, 4, true), PH, 2) !== 2) return 'A3 streak4 → hold'
     if (e.nextDifficulty(arr(PH, 6, true), PH, 2) !== 3) return 'A3 streak6 → +1'
     if (e.nextDifficulty([...arr(PH, 2, true), mk(PH, false), mk(PH, false)], PH, 3) !== 2) return 'A3 two wrong → −1'
+    // #3 — a placement-confirmed decoder unlocks its encode partner with no attempts (held-back
+    // encode entry becomes eligible, placement.ts). Without placement + attempts it stays locked.
+    if (e.encodeUnlocked([], dec)) return '#3 encodeUnlocked: no attempts/placement → locked'
+    if (!e.encodeUnlocked([], dec, new Set([PH]))) return '#3 encodeUnlocked: placement decoder → unlocked'
+    // #4 — earlier re-teach: <0.6 over ≥5 items, or 2 same-concept misses, triggers a lesson.
+    const mc = (concept) => ({ id: String(k++), childId: 'c', skillId: PH, itemId: 'i', correct: false, difficulty: 1, missedConcept: concept, latencyMs: 1, ts: k })
+    if (!e.struggling([...arr(PH, 2, true), mk(PH, false), mk(PH, false), mk(PH, false)], dec)) return '#4 struggle: <0.6 over ≥5 should trigger'
+    if (!e.struggling([mc('vowel-short-a'), mc('vowel-short-a')], dec)) return '#4 struggle: 2 same-concept misses should trigger'
+    if (e.struggling([...arr(PH, 4, true), mk(PH, false)], dec)) return '#4 struggle: 4/5 (0.8) should not trigger'
     // A5 — every 5th item interleaves a mastered-skill review (~18% of 16); none off-cadence or when nothing mastered.
     if (e.interleavedReviewSkill([], 0, new Set([PH]))) return 'A5 no interleave at count 0'
     if (e.interleavedReviewSkill([], 3, new Set([PH]))) return 'A5 no interleave off-cadence'
@@ -333,7 +370,7 @@ try {
     if (!gs(PH).prereqs.includes('PH-letter-sounds')) return 'T01 active → CVC should depend on letter-sounds'
     // M3 gating (§5) — grammar unlocks only after the decode ladder (PH-two-syllable pattern).
     if (e.eligibleSkills([]).map(s => s.id).includes('GR-articles')) return 'M3: grammar must be gated behind decoding'
-    const decoded = [...arr('PH-two-syllable', 8, true), ...arr('SP-two-syllable', 8, true)]
+    const decoded = [...arr('PH-two-syllable', 12, true), ...arr('SP-two-syllable', 12, true)]
     if (!e.eligibleSkills(decoded).map(s => s.id).includes('GR-articles')) return 'M3: grammar should unlock after the two-syllable pattern'
     // T17 sentence manipulation gated deep behind grammar/cloze — never eligible up front.
     if (e.eligibleSkills([]).map(s => s.id).includes('SM-editing')) return 'T17: editing must be gated behind grammar/cloze'
@@ -397,16 +434,20 @@ try {
   // Answering placement correctly places the child above CVC (CVC marked mastered by
   // placement), then the session masters the entry skill and certifies. Assert ≥1
   // certificate and that placement marked CVC decode mastered.
-  if (good.db.certs.length < 1) fail(`expected ≥1 certificate on mastery path, got ${good.db.certs.length}`)
+  if (good.db.certs.length < 1) fail(`expected ≥1 certificate on mastery path (after confirmation review), got ${good.db.certs.length}`)
   const cvc = good.db.progress.find(p => p.skillId === 'PH-cvc-short-vowels')
   if (!cvc || cvc.status !== 'mastered') fail('placement: CVC decode should be marked mastered')
   // A1 — the session must honour placement: it should NOT re-serve the CVC skill placement
   // already mastered, i.e. it starts at the entry skill above it.
   if (good.firstSkill === 'PH-cvc-short-vowels') fail('A1: session ignored placement — re-served mastered CVC')
   if (!good.firstSkill) fail('A1: no session item was served on the good path')
-  // Mastering a skill in-session schedules its first spaced review (+2d, stage 0).
-  const sched = (good.db.reviews || []).find(r => r.stage === 0 && r.status === 'scheduled')
-  if (!sched) fail('SRS: mastering a skill should schedule a review')
+  // #3 — a high placement holds back the top rung's SPELLING: the child must earn it in-session,
+  // so the first served skill is that encode (SP-*) skill, not a decode one.
+  if (!/^SP-/.test(good.firstSkill)) fail(`#3: high placement should serve the held-back encode skill first, got ${good.firstSkill}`)
+  // SRS: a spaced review exists after mastery, and passing it (the confirmation session)
+  // advanced it past stage 0 — proving the retention gate minted the cert on the review pass.
+  if (!(good.db.reviews || []).some(r => r.status === 'scheduled')) fail('SRS: mastering a skill should schedule a review')
+  if (!(good.db.reviews || []).some(r => r.stage >= 1)) fail('§7 #1: the confirmation review pass should advance the review past stage 0')
   // M2: sessions write weekly aggregates + a usage/streak row.
   if (!(good.db.aggregates || []).length) fail('M2: session should write weekly aggregates')
   const agg0 = good.db.aggregates[0]

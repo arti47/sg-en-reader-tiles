@@ -47,9 +47,11 @@ export function patternMastered(attempts: Attempt[], skill: SkillDef, pre?: Set<
   return !!pair && isMastered(attempts, pair, pre)
 }
 
-// Encode unlocks once its decode partner reaches ~70% (guided overlap).
-export function encodeUnlocked(attempts: Attempt[], decodeSkill: SkillDef): boolean {
-  return rollingAccuracy(attempts, decodeSkill) >= 0.7
+// Encode unlocks once its decode partner reaches ~70% (guided overlap). A placement-confirmed
+// decoder (in `pre`) has ≥70% by definition — needed so a high placement's held-back encode
+// entry (§7 spelling-confirmation, placement.ts) becomes eligible despite having no attempts.
+export function encodeUnlocked(attempts: Attempt[], decodeSkill: SkillDef, pre?: Set<string>): boolean {
+  return (pre?.has(decodeSkill.id) ?? false) || rollingAccuracy(attempts, decodeSkill) >= 0.7
 }
 
 // The decode skill that identifies a pattern (a spelling skill's pattern is its decode partner).
@@ -67,7 +69,7 @@ export function eligibleSkills(attempts: Attempt[], pre?: Set<string>): SkillDef
     if (isMastered(attempts, s, pre)) return false
     return s.prereqs.every(p => {
       const preSkill = getSkill(p); if (!preSkill) return false
-      return s.encodePairId === p ? encodeUnlocked(attempts, preSkill) : patternMastered(attempts, preSkill, pre)
+      return s.encodePairId === p ? encodeUnlocked(attempts, preSkill, pre) : patternMastered(attempts, preSkill, pre)
     })
   })
 }
@@ -94,12 +96,14 @@ export function threadedSkill(count: number): SkillDef | undefined {
   return t[Math.floor(count / THREAD_EVERY) % t.length]
 }
 
-// Struggle: accuracy < 0.5 over ≥6 items, or 3 same-concept misses.
+// Struggle: re-teach EARLY to minimise error exposure (OG, §7). Fires on accuracy < 0.6
+// over ≥5 items, or 2 same-concept misses in the recent window (was <0.5/≥6 and 3 misses —
+// too late for a struggling reader who has already failed half a block).
 export function struggling(attempts: Attempt[], skill: SkillDef): boolean {
   const s = bySkill(attempts, skill.id)
-  if (s.length >= 6 && rollingAccuracy(attempts, skill) < 0.5) return true
+  if (s.length >= 5 && rollingAccuracy(attempts, skill) < 0.6) return true
   const misses = s.filter(a => !a.correct).slice(-5)
   const counts = new Map<string, number>()
   for (const m of misses) if (m.missedConcept) counts.set(m.missedConcept, (counts.get(m.missedConcept) ?? 0) + 1)
-  return [...counts.values()].some(c => c >= 3)
+  return [...counts.values()].some(c => c >= 2)
 }

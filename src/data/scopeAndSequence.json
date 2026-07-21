@@ -12,205 +12,317 @@
           "prereqs": [],
           "itemType": "decode_choice",
           "itemPool": "phonics-L01-letter-sounds",
-          "mastery": { "window": 12, "accuracyToPass": 0.85, "minItems": 8 }
+          "mastery": {
+            "window": 12,
+            "accuracyToPass": 0.85,
+            "minItems": 12
+          }
         },
         {
           "id": "PH-cvc-short-vowels",
           "strand": "phonics",
           "objective": "Decode CVC words with short vowels.",
           "iCanStatement": "I can read short-vowel words.",
-          "prereqs": ["PH-letter-sounds"],
+          "prereqs": [
+            "PH-letter-sounds"
+          ],
           "itemType": "decode_choice",
           "itemPool": "phonics-L02-cvc-short-vowels",
           "encodePairId": "SP-cvc-short-vowels",
-          "mastery": { "window": 12, "accuracyToPass": 0.85, "minItems": 8 }
+          "mastery": {
+            "window": 12,
+            "accuracyToPass": 0.85,
+            "minItems": 12
+          }
         },
         {
           "id": "SP-cvc-short-vowels",
           "strand": "spelling",
           "objective": "Spell CVC words with short vowels from tiles.",
           "iCanStatement": "I can spell short-vowel words.",
-          "prereqs": ["PH-cvc-short-vowels"],
+          "prereqs": [
+            "PH-cvc-short-vowels"
+          ],
           "itemType": "build_word",
           "itemPool": "spelling-L02-cvc-short-vowels",
           "encodePairId": "PH-cvc-short-vowels",
-          "mastery": { "window": 12, "accuracyToPass": 0.85, "minItems": 8 }
+          "mastery": {
+            "window": 12,
+            "accuracyToPass": 0.85,
+            "minItems": 12
+          }
         },
         {
           "id": "PH-digraphs",
           "strand": "phonics",
           "objective": "Decode words with consonant digraphs sh, ch, th, ck.",
           "iCanStatement": "I can read words with sh, ch, th and ck.",
-          "prereqs": ["PH-cvc-short-vowels"],
+          "prereqs": [
+            "PH-cvc-short-vowels"
+          ],
           "itemType": "decode_choice",
           "itemPool": "phonics-L03-digraphs",
           "encodePairId": "SP-digraphs",
-          "mastery": { "window": 12, "accuracyToPass": 0.85, "minItems": 8 }
+          "mastery": {
+            "window": 12,
+            "accuracyToPass": 0.85,
+            "minItems": 12
+          }
         },
         {
           "id": "SP-digraphs",
           "strand": "spelling",
           "objective": "Spell words with consonant digraphs sh, ch, th, ck from tiles.",
           "iCanStatement": "I can spell words with sh, ch, th and ck.",
-          "prereqs": ["PH-digraphs"],
+          "prereqs": [
+            "PH-digraphs"
+          ],
           "itemType": "build_word",
           "itemPool": "spelling-L03-digraphs",
           "encodePairId": "PH-digraphs",
-          "mastery": { "window": 12, "accuracyToPass": 0.85, "minItems": 8 }
+          "mastery": {
+            "window": 12,
+            "accuracyToPass": 0.85,
+            "minItems": 12
+          }
         },
         {
           "id": "PH-blends",
           "strand": "phonics",
           "objective": "Decode words with initial and final consonant blends.",
           "iCanStatement": "I can read words with consonant blends.",
-          "prereqs": ["PH-digraphs"],
+          "prereqs": [
+            "PH-digraphs"
+          ],
           "itemType": "decode_choice",
           "itemPool": "phonics-L04-blends",
           "encodePairId": "SP-blends",
-          "mastery": { "window": 12, "accuracyToPass": 0.85, "minItems": 8 }
+          "mastery": {
+            "window": 12,
+            "accuracyToPass": 0.85,
+            "minItems": 12
+          }
         },
         {
           "id": "SP-blends",
           "strand": "spelling",
           "objective": "Spell words with initial and final consonant blends from tiles.",
           "iCanStatement": "I can spell words with consonant blends.",
-          "prereqs": ["PH-blends"],
+          "prereqs": [
+            "PH-blends"
+          ],
           "itemType": "build_word",
           "itemPool": "spelling-L04-blends",
           "encodePairId": "PH-blends",
-          "mastery": { "window": 12, "accuracyToPass": 0.85, "minItems": 8 }
+          "mastery": {
+            "window": 12,
+            "accuracyToPass": 0.85,
+            "minItems": 12
+          }
         },
         {
           "id": "PH-floss",
           "strand": "phonics",
           "objective": "Decode words ending in doubled ff, ll, ss, zz (FLOSS rule).",
           "iCanStatement": "I can read words that end in ff, ll, ss and zz.",
-          "prereqs": ["PH-blends"],
+          "prereqs": [
+            "PH-blends"
+          ],
           "itemType": "decode_choice",
           "itemPool": "phonics-L05-floss",
           "encodePairId": "SP-floss",
-          "mastery": { "window": 12, "accuracyToPass": 0.85, "minItems": 8 }
+          "mastery": {
+            "window": 12,
+            "accuracyToPass": 0.85,
+            "minItems": 12
+          }
         },
         {
           "id": "SP-floss",
           "strand": "spelling",
           "objective": "Spell FLOSS words, doubling final f, l, s, z after a short vowel.",
           "iCanStatement": "I can spell words that end in ff, ll, ss and zz.",
-          "prereqs": ["PH-floss"],
+          "prereqs": [
+            "PH-floss"
+          ],
           "itemType": "build_word",
           "itemPool": "spelling-L05-floss",
           "encodePairId": "PH-floss",
-          "mastery": { "window": 12, "accuracyToPass": 0.85, "minItems": 8 }
+          "mastery": {
+            "window": 12,
+            "accuracyToPass": 0.85,
+            "minItems": 12
+          }
         },
         {
           "id": "PH-silent-e",
           "strand": "phonics",
           "objective": "Decode silent-e (magic-e) long-vowel words: a_e, i_e, o_e, u_e.",
           "iCanStatement": "I can read words with a bossy silent e.",
-          "prereqs": ["PH-floss"],
+          "prereqs": [
+            "PH-floss"
+          ],
           "itemType": "decode_choice",
           "itemPool": "phonics-L06-silent-e",
           "encodePairId": "SP-silent-e",
-          "mastery": { "window": 12, "accuracyToPass": 0.85, "minItems": 8 }
+          "mastery": {
+            "window": 12,
+            "accuracyToPass": 0.85,
+            "minItems": 12
+          }
         },
         {
           "id": "SP-silent-e",
           "strand": "spelling",
           "objective": "Spell silent-e words, adding the magic e that makes the vowel long.",
           "iCanStatement": "I can spell words with a bossy silent e.",
-          "prereqs": ["PH-silent-e"],
+          "prereqs": [
+            "PH-silent-e"
+          ],
           "itemType": "build_word",
           "itemPool": "spelling-L06-silent-e",
           "encodePairId": "PH-silent-e",
-          "mastery": { "window": 12, "accuracyToPass": 0.85, "minItems": 8 }
+          "mastery": {
+            "window": 12,
+            "accuracyToPass": 0.85,
+            "minItems": 12
+          }
         },
         {
           "id": "PH-vowel-teams",
           "strand": "phonics",
           "objective": "Decode vowel-team long vowels: ai/ay, ee/ea, oa/ow, oo, ew/ue, igh.",
           "iCanStatement": "I can read words where two letters make one long vowel.",
-          "prereqs": ["PH-silent-e"],
+          "prereqs": [
+            "PH-silent-e"
+          ],
           "itemType": "decode_choice",
           "itemPool": "phonics-L07-vowel-teams",
           "encodePairId": "SP-vowel-teams",
-          "mastery": { "window": 12, "accuracyToPass": 0.85, "minItems": 8 }
+          "mastery": {
+            "window": 12,
+            "accuracyToPass": 0.85,
+            "minItems": 12
+          }
         },
         {
           "id": "SP-vowel-teams",
           "strand": "spelling",
           "objective": "Spell vowel-team words, choosing the right team for the long vowel.",
           "iCanStatement": "I can spell words where two letters make one long vowel.",
-          "prereqs": ["PH-vowel-teams"],
+          "prereqs": [
+            "PH-vowel-teams"
+          ],
           "itemType": "build_word",
           "itemPool": "spelling-L07-vowel-teams",
           "encodePairId": "PH-vowel-teams",
-          "mastery": { "window": 12, "accuracyToPass": 0.85, "minItems": 8 }
+          "mastery": {
+            "window": 12,
+            "accuracyToPass": 0.85,
+            "minItems": 12
+          }
         },
         {
           "id": "PH-r-controlled",
           "strand": "phonics",
           "objective": "Decode r-controlled vowels: ar, or, er, ir, ur (bossy r).",
           "iCanStatement": "I can read words with a bossy r (ar, or, er, ir, ur).",
-          "prereqs": ["PH-vowel-teams"],
+          "prereqs": [
+            "PH-vowel-teams"
+          ],
           "itemType": "decode_choice",
           "itemPool": "phonics-L08-r-controlled",
           "encodePairId": "SP-r-controlled",
-          "mastery": { "window": 12, "accuracyToPass": 0.85, "minItems": 8 }
+          "mastery": {
+            "window": 12,
+            "accuracyToPass": 0.85,
+            "minItems": 12
+          }
         },
         {
           "id": "SP-r-controlled",
           "strand": "spelling",
           "objective": "Spell r-controlled vowel words (ar, or, er, ir, ur).",
           "iCanStatement": "I can spell words with a bossy r.",
-          "prereqs": ["PH-r-controlled"],
+          "prereqs": [
+            "PH-r-controlled"
+          ],
           "itemType": "build_word",
           "itemPool": "spelling-L08-r-controlled",
           "encodePairId": "PH-r-controlled",
-          "mastery": { "window": 12, "accuracyToPass": 0.85, "minItems": 8 }
+          "mastery": {
+            "window": 12,
+            "accuracyToPass": 0.85,
+            "minItems": 12
+          }
         },
         {
           "id": "PH-diphthongs",
           "strand": "phonics",
           "objective": "Decode diphthongs oi/oy, ou/ow, aw/au and short-oo.",
           "iCanStatement": "I can read words with oi, oy, ou, ow, aw, au and short oo.",
-          "prereqs": ["PH-r-controlled"],
+          "prereqs": [
+            "PH-r-controlled"
+          ],
           "itemType": "decode_choice",
           "itemPool": "phonics-L09-diphthongs",
           "encodePairId": "SP-diphthongs",
-          "mastery": { "window": 12, "accuracyToPass": 0.85, "minItems": 8 }
+          "mastery": {
+            "window": 12,
+            "accuracyToPass": 0.85,
+            "minItems": 12
+          }
         },
         {
           "id": "SP-diphthongs",
           "strand": "spelling",
           "objective": "Spell diphthong and short-oo words, choosing the right team.",
           "iCanStatement": "I can spell words with oi, oy, ou, ow, aw, au and short oo.",
-          "prereqs": ["PH-diphthongs"],
+          "prereqs": [
+            "PH-diphthongs"
+          ],
           "itemType": "build_word",
           "itemPool": "spelling-L09-diphthongs",
           "encodePairId": "PH-diphthongs",
-          "mastery": { "window": 12, "accuracyToPass": 0.85, "minItems": 8 }
+          "mastery": {
+            "window": 12,
+            "accuracyToPass": 0.85,
+            "minItems": 12
+          }
         },
         {
           "id": "PH-two-syllable",
           "strand": "phonics",
           "objective": "Decode two-syllable words (compound, closed VCCV, medial doubles).",
           "iCanStatement": "I can read two-syllable words by breaking them into chunks.",
-          "prereqs": ["PH-diphthongs"],
+          "prereqs": [
+            "PH-diphthongs"
+          ],
           "itemType": "decode_choice",
           "itemPool": "phonics-L10-two-syllable",
           "encodePairId": "SP-two-syllable",
-          "mastery": { "window": 12, "accuracyToPass": 0.85, "minItems": 8 }
+          "mastery": {
+            "window": 12,
+            "accuracyToPass": 0.85,
+            "minItems": 12
+          }
         },
         {
           "id": "SP-two-syllable",
           "strand": "spelling",
           "objective": "Spell two-syllable words, chunk by chunk (incl. medial doubles).",
           "iCanStatement": "I can spell two-syllable words chunk by chunk.",
-          "prereqs": ["PH-two-syllable"],
+          "prereqs": [
+            "PH-two-syllable"
+          ],
           "itemType": "build_word",
           "itemPool": "spelling-L10-two-syllable",
           "encodePairId": "PH-two-syllable",
-          "mastery": { "window": 12, "accuracyToPass": 0.85, "minItems": 8 }
+          "mastery": {
+            "window": 12,
+            "accuracyToPass": 0.85,
+            "minItems": 12
+          }
         },
         {
           "id": "HF-words",
@@ -221,27 +333,43 @@
           "threaded": true,
           "itemType": "decode_choice",
           "itemPool": "phonics-L12-hf",
-          "mastery": { "window": 12, "accuracyToPass": 0.85, "minItems": 8 }
+          "mastery": {
+            "window": 12,
+            "accuracyToPass": 0.85,
+            "minItems": 12
+          }
         },
         {
           "id": "SP-cvc-dictation",
           "strand": "spelling",
           "objective": "Spell short decodable sentences from dictation (word by word).",
           "iCanStatement": "I can spell short sentences I hear.",
-          "prereqs": ["SP-two-syllable"],
+          "prereqs": [
+            "SP-two-syllable"
+          ],
           "itemType": "dictation",
           "itemPool": "dictation-L02-cvc",
-          "mastery": { "window": 12, "accuracyToPass": 0.85, "minItems": 8 }
+          "mastery": {
+            "window": 12,
+            "accuracyToPass": 0.85,
+            "minItems": 12
+          }
         },
         {
           "id": "SP-digraph-dictation",
           "strand": "spelling",
           "objective": "Spell short decodable sentences with sh, ch, th, ck from dictation.",
           "iCanStatement": "I can spell short sentences with sh, ch, th and ck.",
-          "prereqs": ["SP-cvc-dictation"],
+          "prereqs": [
+            "SP-cvc-dictation"
+          ],
           "itemType": "dictation",
           "itemPool": "dictation-L03-digraphs",
-          "mastery": { "window": 12, "accuracyToPass": 0.85, "minItems": 8 }
+          "mastery": {
+            "window": 12,
+            "accuracyToPass": 0.85,
+            "minItems": 12
+          }
         }
       ]
     },
@@ -254,120 +382,192 @@
           "strand": "grammar",
           "objective": "Choose a / an / the correctly.",
           "iCanStatement": "I can use a, an and the correctly.",
-          "prereqs": ["PH-two-syllable"],
+          "prereqs": [
+            "PH-two-syllable"
+          ],
           "itemType": "grammar_mcq",
           "itemPool": "grammar-L01-articles",
-          "mastery": { "window": 12, "accuracyToPass": 0.8, "minItems": 8 }
+          "mastery": {
+            "window": 12,
+            "accuracyToPass": 0.8,
+            "minItems": 8
+          }
         },
         {
           "id": "GR-sva-simple",
           "strand": "grammar",
           "objective": "Make the verb agree with a simple subject.",
           "iCanStatement": "I can make the verb agree with the subject.",
-          "prereqs": ["GR-articles"],
+          "prereqs": [
+            "GR-articles"
+          ],
           "itemType": "grammar_mcq",
           "itemPool": "grammar-L02-sva",
-          "mastery": { "window": 12, "accuracyToPass": 0.8, "minItems": 8 }
+          "mastery": {
+            "window": 12,
+            "accuracyToPass": 0.8,
+            "minItems": 8
+          }
         },
         {
           "id": "GR-tenses-basic",
           "strand": "grammar",
           "objective": "Choose the correct tense (past, present, continuous, future).",
           "iCanStatement": "I can choose the right tense for when something happens.",
-          "prereqs": ["GR-sva-simple"],
+          "prereqs": [
+            "GR-sva-simple"
+          ],
           "itemType": "grammar_mcq",
           "itemPool": "grammar-L03-tenses",
-          "mastery": { "window": 12, "accuracyToPass": 0.8, "minItems": 8 }
+          "mastery": {
+            "window": 12,
+            "accuracyToPass": 0.8,
+            "minItems": 8
+          }
         },
         {
           "id": "VOC-synonyms",
           "strand": "vocab",
           "objective": "Choose the closest synonym in context.",
           "iCanStatement": "I can choose a word that means almost the same.",
-          "prereqs": ["PH-two-syllable"],
+          "prereqs": [
+            "PH-two-syllable"
+          ],
           "itemType": "vocab_mcq",
           "itemPool": "vocab-L01-synonyms",
-          "mastery": { "window": 12, "accuracyToPass": 0.8, "minItems": 8 }
+          "mastery": {
+            "window": 12,
+            "accuracyToPass": 0.8,
+            "minItems": 8
+          }
         },
         {
           "id": "VOC-antonyms",
           "strand": "vocab",
           "objective": "Choose the word that means the opposite.",
           "iCanStatement": "I can choose a word that means the opposite.",
-          "prereqs": ["VOC-synonyms"],
+          "prereqs": [
+            "VOC-synonyms"
+          ],
           "itemType": "vocab_mcq",
           "itemPool": "vocab-L02-antonyms",
-          "mastery": { "window": 12, "accuracyToPass": 0.8, "minItems": 8 }
+          "mastery": {
+            "window": 12,
+            "accuracyToPass": 0.8,
+            "minItems": 8
+          }
         },
         {
           "id": "VOC-context",
           "strand": "vocab",
           "objective": "Work out a word's meaning from context clues.",
           "iCanStatement": "I can work out what a hard word means from the sentence.",
-          "prereqs": ["VOC-antonyms"],
+          "prereqs": [
+            "VOC-antonyms"
+          ],
           "itemType": "vocab_mcq",
           "itemPool": "vocab-L03-context",
-          "mastery": { "window": 12, "accuracyToPass": 0.8, "minItems": 8 }
+          "mastery": {
+            "window": 12,
+            "accuracyToPass": 0.8,
+            "minItems": 8
+          }
         },
         {
           "id": "CM-comprehension",
           "strand": "comprehension",
           "objective": "Answer literal and inferential questions on a short passage.",
           "iCanStatement": "I can answer questions about a passage.",
-          "prereqs": ["VOC-synonyms"],
+          "prereqs": [
+            "VOC-synonyms"
+          ],
           "itemType": "passage_question",
           "itemPool": "comp-L01",
-          "mastery": { "window": 12, "accuracyToPass": 0.8, "minItems": 8 }
+          "mastery": {
+            "window": 12,
+            "accuracyToPass": 0.8,
+            "minItems": 8
+          }
         },
         {
           "id": "CM-inference",
           "strand": "comprehension",
           "objective": "Answer inferential and evaluative questions on a short passage.",
           "iCanStatement": "I can work out answers that the passage does not say directly.",
-          "prereqs": ["CM-comprehension"],
+          "prereqs": [
+            "CM-comprehension"
+          ],
           "itemType": "passage_question",
           "itemPool": "comp-L02",
-          "mastery": { "window": 12, "accuracyToPass": 0.8, "minItems": 8 }
+          "mastery": {
+            "window": 12,
+            "accuracyToPass": 0.8,
+            "minItems": 8
+          }
         },
         {
           "id": "CL-grammar-cloze",
           "strand": "cloze",
           "objective": "Complete a grammar cloze from a word bank.",
           "iCanStatement": "I can choose the right joining word for each blank.",
-          "prereqs": ["GR-sva-simple"],
+          "prereqs": [
+            "GR-sva-simple"
+          ],
           "itemType": "grammar_cloze",
           "itemPool": "cloze-L01-grammar",
-          "mastery": { "window": 12, "accuracyToPass": 0.8, "minItems": 8 }
+          "mastery": {
+            "window": 12,
+            "accuracyToPass": 0.8,
+            "minItems": 8
+          }
         },
         {
           "id": "CL-vocab-cloze",
           "strand": "cloze",
           "objective": "Complete a vocabulary cloze from a word bank.",
           "iCanStatement": "I can choose the right word to fill each blank in a passage.",
-          "prereqs": ["CL-grammar-cloze"],
+          "prereqs": [
+            "CL-grammar-cloze"
+          ],
           "itemType": "grammar_cloze",
           "itemPool": "cloze-L02-vocab",
-          "mastery": { "window": 12, "accuracyToPass": 0.8, "minItems": 8 }
+          "mastery": {
+            "window": 12,
+            "accuracyToPass": 0.8,
+            "minItems": 8
+          }
         },
         {
           "id": "SM-editing",
           "strand": "sentence",
           "objective": "Find and correct the wrong word in a sentence (editing).",
           "iCanStatement": "I can find and fix the wrong word in a sentence.",
-          "prereqs": ["CL-grammar-cloze"],
+          "prereqs": [
+            "CL-grammar-cloze"
+          ],
           "itemType": "editing_mcq",
           "itemPool": "sm-L01-editing",
-          "mastery": { "window": 12, "accuracyToPass": 0.8, "minItems": 8 }
+          "mastery": {
+            "window": 12,
+            "accuracyToPass": 0.8,
+            "minItems": 8
+          }
         },
         {
           "id": "SM-synthesis",
           "strand": "sentence",
           "objective": "Combine or rewrite sentences (synthesis & transformation).",
           "iCanStatement": "I can join or rewrite sentences without changing the meaning.",
-          "prereqs": ["SM-editing"],
+          "prereqs": [
+            "SM-editing"
+          ],
           "itemType": "synthesis_mcq",
           "itemPool": "sm-L02-synthesis",
-          "mastery": { "window": 12, "accuracyToPass": 0.8, "minItems": 8 }
+          "mastery": {
+            "window": 12,
+            "accuracyToPass": 0.8,
+            "minItems": 8
+          }
         }
       ]
     }

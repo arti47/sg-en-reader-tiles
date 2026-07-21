@@ -41,16 +41,27 @@ export function nextPlacement(results: PlaceResult[]): { done: boolean; skillId?
   return { done: true, entrySkillId: decodeLadder[decodeLadder.length - 1].id }
 }
 
-// Skills to mark mastered on placement: every ladder skill BELOW the entry level, plus
-// their encode partners (the child already reads/spells those), plus any non-ladder
-// foundation skill those rungs depend on (e.g. letter-sounds under CVC) so a high placement
-// doesn't leave the foundation unmastered and blocking. Disabled foundations resolve to
-// undefined via getSkill and are skipped.
+// Skills to mark mastered on placement: every ladder skill BELOW the entry level (the child
+// demonstrably READS those), plus any non-ladder foundation skill those rungs depend on
+// (e.g. letter-sounds under CVC) so a high placement doesn't leave the foundation blocking.
+//
+// Spelling lags decoding in dyslexia, so placement must NOT hand out spelling for free (§7 #3).
+// The reading placement only tests decoding, so we credit the encode partners of the LOWER
+// rungs (well below instructional level) but HOLD BACK the encode partner of the highest read
+// rung — the child must earn that spelling in-session before the decode entry unlocks (its
+// prereq is that rung's full decode+encode pattern). encodeUnlocked() treats the credited
+// decoder as ≥70%, so the held-back encode skill is immediately eligible. Disabled foundations
+// resolve to undefined via getSkill and are skipped.
 export function priorSkillIds(entrySkillId: string): string[] {
   const idx = decodeLadder.findIndex(s => s.id === entrySkillId)
   if (idx <= 0) return []
   const priors = decodeLadder.slice(0, idx)
-  const ids = priors.flatMap(s => s.encodePairId ? [s.id, s.encodePairId] : [s.id])
+  const heldEncode = priors[priors.length - 1].encodePairId // spelling of the highest read rung — earned in-session
+  const ids: string[] = []
+  for (const s of priors) {
+    ids.push(s.id)
+    if (s.encodePairId && s.encodePairId !== heldEncode) ids.push(s.encodePairId)
+  }
   for (const s of priors) for (const p of s.prereqs) {
     const pre = getSkill(p)
     if (pre && !decodeLadder.includes(pre) && !ids.includes(p)) ids.push(p)

@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react'
 import type { Child, PackItem, Attempt, SkillProgress, Difficulty, SkillDef, Certificate, Review } from '../types'
 import type { ScoreResult } from '../lib/scoring'
-import { addAttempt, getAttempts, getProgress, putProgress, putCertificate, getReviews, putReview, bumpAggregate, getUsage, putUsage, getSettings } from '../store'
+import { addAttempt, getAttempts, getProgress, putProgress, putCertificate, getCertificates, getReviews, putReview, bumpAggregate, getUsage, putUsage, getSettings } from '../store'
 import { setRate, setVoice } from '../lib/audio'
 import { XP_PER_CORRECT, XP_PER_CERT } from '../lib/gamify'
 import { SKILLS, getSkill, getLesson, pickItem } from '../lib/packs'
@@ -15,13 +15,17 @@ import { DictationItem } from './items/DictationItem'
 import { LessonView } from './LessonView'
 
 const DEFAULT_SESSION_LEN = 16
+const LESSON_MAX = 2      // re-teach at most twice per skill per session (§8 #4)
+const REFIRE_AFTER = 3    // …and only re-fire after ≥3 further attempts, if still struggling
 type Phase = 'loading' | 'item' | 'lesson' | 'cert' | 'summary'
 
 export function Session(props: { child: Child; onExit: () => void }) {
   const attemptsRef = useRef<Attempt[]>([])
   const diffRef = useRef<Map<string, Difficulty>>(new Map())
   const seenRef = useRef<Set<string>>(new Set())
-  const lessonShownRef = useRef<Set<string>>(new Set())
+  const lessonCountRef = useRef<Map<string, number>>(new Map())   // lessons shown per skill this session (§8, cap LESSON_MAX)
+  const lessonAtRef = useRef<Map<string, number>>(new Map())      // itemsAnswered(skill) when its last lesson fired (re-fire gate)
+  const certsRef = useRef<Set<string>>(new Set())                 // skillIds already certified (retention-confirmed, §7)
   const masteredRef = useRef<Set<string>>(new Set()) // skills mastered at placement (§7)
   const startRef = useRef<number>(Date.now())
   const countRef = useRef(0)
@@ -36,8 +40,11 @@ export function Session(props: { child: Child; onExit: () => void }) {
   const [cert, setCert] = useState<Certificate | null>(null)
   const [count, setCount] = useState(0)
   const [serve, setServe] = useState(0) // bumps every item served → forces renderer remount (fresh internal state)
+  const startedRef = useRef(false)
 
   useEffect(() => {
+    if (startedRef.current) return // guard React StrictMode double-invoke (would race two advance()s, e.g. dropping a due review)
+    startedRef.current = true
     void (async () => {
       const settings = await getSettings()
       lenRef.current = settings.sessionLength || DEFAULT_SESSION_LEN
@@ -50,6 +57,7 @@ export function Session(props: { child: Child; onExit: () => void }) {
         if (p.status === 'mastered') masteredRef.current.add(p.skillId) // seed placement mastery
       }
       reviewsRef.current = await getReviews(props.child.id)
+      for (const c of await getCertificates(props.child.id)) certsRef.current.add(c.skillId)
       dueQueueRef.current = dueReviews(reviewsRef.current, Date.now()).map(r => r.skillId)
       await countSession()
       advance(true)
@@ -97,8 +105,15 @@ export function Session(props: { child: Child; onExit: () => void }) {
     const elig = eligibleSkills(attemptsRef.current, masteredRef.current)
     if (!elig.length) { setPhase('summary'); return }
     const skill = elig[countRef.current % elig.length]
-    if (struggling(attemptsRef.current, skill) && !lessonShownRef.current.has(skill.id) && getLesson(skill.id)) {
-      lessonShownRef.current.add(skill.id)
+    // Re-teach on struggle (§8): up to LESSON_MAX times per skill/session, re-firing only after
+    // ≥REFIRE_AFTER further attempts if still struggling (so a child still failing gets a 2nd
+    // explicit lesson, not just one — but the lesson doesn't repeat every item).
+    const shown = lessonCountRef.current.get(skill.id) ?? 0
+    const answeredSince = itemsAnswered(attemptsRef.current, skill.id) - (lessonAtRef.current.get(skill.id) ?? -Infinity)
+    if (struggling(attemptsRef.current, skill) && getLesson(skill.id) &&
+        shown < LESSON_MAX && (shown === 0 || answeredSince >= REFIRE_AFTER)) {
+      lessonCountRef.current.set(skill.id, shown + 1)
+      lessonAtRef.current.set(skill.id, itemsAnswered(attemptsRef.current, skill.id))
       setItem({ skillId: skill.id } as PackItem) // carries skill id for lesson lookup
       setAnswered(null); setPhase('lesson'); return
     }
@@ -144,11 +159,17 @@ export function Session(props: { child: Child; onExit: () => void }) {
         reviewsRef.current = reviewsRef.current.map(x => x.skillId === skill.id ? upd : x)
         await putReview(props.child.id, upd)
       }
+      // Retention = mastery (§7 #1): the FIRST spaced-review pass CONFIRMS the pattern and awards
+      // its certificate (withheld at acquisition). Retention proven, not just same-session accuracy.
+      if (r.correct && !certsRef.current.has(patternSkill.id) &&
+          patternMastered(attemptsRef.current, patternSkill, masteredRef.current)) {
+        const c: Certificate = { skillId: patternSkill.id, iCanStatement: patternSkill.iCanStatement, awardedAt: now }
+        await putCertificate(props.child.id, c); certsRef.current.add(patternSkill.id); setCert(c)
+        xpGainRef.current += XP_PER_CERT
+      }
     } else if (!wasPatternDone && patternMastered(attemptsRef.current, patternSkill, masteredRef.current)) {
-      // Dual gate cleared (decode AND encode): award ONE pattern certificate + schedule its review (§7).
-      const c: Certificate = { skillId: patternSkill.id, iCanStatement: patternSkill.iCanStatement, awardedAt: now }
-      await putCertificate(props.child.id, c); setCert(c)
-      xpGainRef.current += XP_PER_CERT
+      // Dual gate cleared (decode AND encode) → PROVISIONAL mastery: advance now (keeps momentum),
+      // but WITHHOLD the certificate until the +2d review confirms retention (§7 #1). Schedule it.
       const rev = scheduleFirst(patternSkill.id, now)
       reviewsRef.current = [...reviewsRef.current.filter(x => x.skillId !== patternSkill.id), rev]
       await putReview(props.child.id, rev)
