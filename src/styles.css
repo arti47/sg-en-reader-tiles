@@ -163,4 +163,19 @@ h1 { font-size: 1.8rem; font-weight: 700; margin: 8px 0 0; }
 .certs-list li { font-size: .9rem; }
 .note.tiny { font-size: .78rem; color: #93a29f; }
 
+/* M3 comprehension / cloze */
+.passage {
+  background: #fff; border: 3px solid var(--teal-soft); border-radius: 14px;
+  padding: 14px 16px; font-size: 1.15rem; line-height: 1.6; margin: 0;
+}
+.word-tile { font-size: 1.15rem; min-height: 60px; }
+.cloze-slot {
+  display: inline-flex; align-items: center; gap: 6px; min-height: 56px; padding: 0 14px;
+  font-size: 1.2rem; font-weight: 700;
+}
+.cloze-slot .slot-num {
+  font-size: .7rem; background: var(--teal); color: var(--paper);
+  border-radius: 50%; width: 20px; height: 20px; display: grid; place-items: center;
+}
+
 @media (prefers-reduced-motion: reduce) { * { transition: none !important; } }

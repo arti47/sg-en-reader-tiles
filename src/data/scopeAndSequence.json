@@ -224,6 +224,62 @@
           "mastery": { "window": 12, "accuracyToPass": 0.85, "minItems": 8 }
         }
       ]
+    },
+    {
+      "id": "P3",
+      "name": "PSLE Paper-2 foundations",
+      "skills": [
+        {
+          "id": "GR-articles",
+          "strand": "grammar",
+          "objective": "Choose a / an / the correctly.",
+          "iCanStatement": "I can use a, an and the correctly.",
+          "prereqs": ["PH-two-syllable"],
+          "itemType": "grammar_mcq",
+          "itemPool": "grammar-L01-articles",
+          "mastery": { "window": 12, "accuracyToPass": 0.8, "minItems": 8 }
+        },
+        {
+          "id": "GR-sva-simple",
+          "strand": "grammar",
+          "objective": "Make the verb agree with a simple subject.",
+          "iCanStatement": "I can make the verb agree with the subject.",
+          "prereqs": ["GR-articles"],
+          "itemType": "grammar_mcq",
+          "itemPool": "grammar-L02-sva",
+          "mastery": { "window": 12, "accuracyToPass": 0.8, "minItems": 8 }
+        },
+        {
+          "id": "VOC-synonyms",
+          "strand": "vocab",
+          "objective": "Choose the closest synonym in context.",
+          "iCanStatement": "I can choose a word that means almost the same.",
+          "prereqs": ["PH-two-syllable"],
+          "itemType": "vocab_mcq",
+          "itemPool": "vocab-L01-synonyms",
+          "mastery": { "window": 12, "accuracyToPass": 0.8, "minItems": 8 }
+        },
+        {
+          "id": "CM-comprehension",
+          "strand": "comprehension",
+          "objective": "Answer literal and inferential questions on a short passage.",
+          "iCanStatement": "I can answer questions about a passage.",
+          "prereqs": ["VOC-synonyms"],
+          "itemType": "passage_question",
+          "itemPool": "comp-L01",
+          "mastery": { "window": 12, "accuracyToPass": 0.8, "minItems": 8 }
+        },
+        {
+          "id": "CL-grammar-cloze",
+          "strand": "cloze",
+          "objective": "Complete a grammar cloze from a word bank.",
+          "iCanStatement": "I can choose the right joining word for each blank.",
+          "prereqs": ["GR-sva-simple"],
+          "itemType": "grammar_cloze",
+          "itemPool": "cloze-L01-grammar",
+          "mastery": { "window": 12, "accuracyToPass": 0.8, "minItems": 8 }
+        }
+      ]
     }
   ]
 }

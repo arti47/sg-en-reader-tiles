@@ -8,6 +8,14 @@ export function scoreMcq(item: PackItem, choiceId: string): ScoreResult {
   return { correct, missedConcept: correct ? undefined : item.missedConceptOnFail }
 }
 
+// grammar_cloze: every blank's assigned word must be in its authored acceptable[] list (§12).
+export function scoreCloze(item: PackItem, answers: Record<string, string>): ScoreResult {
+  const blanks = item.blanks ?? []
+  const ok = blanks.length > 0 && blanks.every(b =>
+    (b.acceptable ?? []).map(x => x.toLowerCase()).includes((answers[b.id] ?? '').trim().toLowerCase()))
+  return ok ? { correct: true } : { correct: false, missedConcept: item.missedConceptOnFail }
+}
+
 // Encode (build_word/spell_tiles): grapheme sequence must match exactly (§12).
 // On any mismatch the item's authored missedConceptOnFail tag is emitted (per-grapheme
 // concept mapping isn't authored in the pack, so scoring stays at item granularity).

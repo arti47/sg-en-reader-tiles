@@ -1,0 +1,28 @@
+{
+  "packId": "grammar-L02-sva",
+  "strand": "grammar",
+  "skillIds": ["GR-sva-simple"],
+  "version": 1,
+  "items": [
+    { "id": "gr-sva-1", "skillId": "GR-sva-simple", "itemType": "grammar_mcq", "difficulty": 1, "stem": "The children ___ playing at the void deck.", "choices": [{ "id": "a", "label": "is" }, { "id": "b", "label": "are" }], "correctChoiceId": "b", "missedConceptOnFail": "sva-plural", "rationale": "'children' is plural, so use 'are'." },
+    { "id": "gr-sva-2", "skillId": "GR-sva-simple", "itemType": "grammar_mcq", "difficulty": 1, "stem": "My brother ___ to school by MRT.", "choices": [{ "id": "a", "label": "go" }, { "id": "b", "label": "goes" }], "correctChoiceId": "b", "missedConceptOnFail": "sva-singular", "rationale": "'brother' is singular, so the verb takes -s: goes." },
+    { "id": "gr-sva-3", "skillId": "GR-sva-simple", "itemType": "grammar_mcq", "difficulty": 1, "stem": "Kavitha and Siti ___ good friends.", "choices": [{ "id": "a", "label": "is" }, { "id": "b", "label": "are" }], "correctChoiceId": "b", "missedConceptOnFail": "sva-plural", "rationale": "Two people joined by 'and' are plural, so use 'are'." },
+    { "id": "gr-sva-4", "skillId": "GR-sva-simple", "itemType": "grammar_mcq", "difficulty": 2, "stem": "The dog next door ___ loudly every night.", "choices": [{ "id": "a", "label": "bark" }, { "id": "b", "label": "barks" }], "correctChoiceId": "b", "missedConceptOnFail": "sva-singular", "rationale": "'dog' is singular, so the verb takes -s: barks." },
+    { "id": "gr-sva-5", "skillId": "GR-sva-simple", "itemType": "grammar_mcq", "difficulty": 3, "stem": "Neither the teacher nor the pupils ___ aware of the change.", "choices": [{ "id": "a", "label": "was" }, { "id": "b", "label": "were" }], "correctChoiceId": "b", "missedConceptOnFail": "sva-neither-nor", "rationale": "In 'neither...nor...', the verb agrees with the nearer noun ('pupils', plural) → were." },
+    { "id": "gr-sva-6", "skillId": "GR-sva-simple", "itemType": "grammar_mcq", "difficulty": 3, "stem": "Each of the boys ___ a water bottle.", "choices": [{ "id": "a", "label": "have" }, { "id": "b", "label": "has" }], "correctChoiceId": "b", "missedConceptOnFail": "sva-singular", "rationale": "'Each' is singular, so use 'has'." },
+    { "id": "gr-sva-7", "skillId": "GR-sva-simple", "itemType": "grammar_mcq", "difficulty": 2, "stem": "She ___ her homework every evening.", "choices": [{ "id": "a", "label": "do" }, { "id": "b", "label": "does" }], "correctChoiceId": "b", "missedConceptOnFail": "sva-singular", "rationale": "'She' is singular, so use 'does'." },
+    { "id": "gr-sva-8", "skillId": "GR-sva-simple", "itemType": "grammar_mcq", "difficulty": 2, "stem": "There ___ many people at the wet market.", "choices": [{ "id": "a", "label": "is" }, { "id": "b", "label": "are" }], "correctChoiceId": "b", "missedConceptOnFail": "sva-plural", "rationale": "'many people' is plural, so use 'are'." },
+    { "id": "gr-sva-9", "skillId": "GR-sva-simple", "itemType": "grammar_mcq", "difficulty": 3, "stem": "The books on the shelf ___ dusty.", "choices": [{ "id": "a", "label": "is" }, { "id": "b", "label": "are" }], "correctChoiceId": "b", "missedConceptOnFail": "sva-plural", "rationale": "The subject is 'books' (plural), not 'shelf', so use 'are'." },
+    { "id": "gr-sva-10", "skillId": "GR-sva-simple", "itemType": "grammar_mcq", "difficulty": 1, "stem": "The baby ___ when it is hungry.", "choices": [{ "id": "a", "label": "cry" }, { "id": "b", "label": "cries" }], "correctChoiceId": "b", "missedConceptOnFail": "sva-singular", "rationale": "'baby' is singular, so the verb takes -es: cries." }
+  ],
+  "lessons": {
+    "GR-sva-simple": {
+      "iCanStatement": "I can make the verb agree with the subject.",
+      "explanation": "A singular subject takes a verb with -s (the dog barks); a plural subject takes a verb without -s (the dogs bark). Watch out: with 'neither...nor...', the verb agrees with the noun nearer to it.",
+      "workedExamples": [
+        { "text": "The boy runs.", "note": "One boy (singular) → runs." },
+        { "text": "The boys run.", "note": "More than one (plural) → run." }
+      ]
+    }
+  }
+}

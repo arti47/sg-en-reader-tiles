@@ -1,0 +1,28 @@
+{
+  "packId": "cloze-L01-grammar",
+  "strand": "cloze",
+  "skillIds": ["CL-grammar-cloze"],
+  "version": 1,
+  "items": [
+    { "id": "cl-1", "skillId": "CL-grammar-cloze", "itemType": "grammar_cloze", "difficulty": 1, "passage": "Wei Ming went ___ the hawker centre ___ he was hungry.", "stem": "Put the right word in each blank. Each word is used once.", "wordBank": ["to", "because", "although", "at"], "blanks": [{ "id": "1", "acceptable": ["to"] }, { "id": "2", "acceptable": ["because"] }], "missedConceptOnFail": "connector", "rationale": "'to' shows direction; 'because' gives the reason." },
+    { "id": "cl-2", "skillId": "CL-grammar-cloze", "itemType": "grammar_cloze", "difficulty": 2, "passage": "Siti stayed at home ___ she was sick, ___ she still finished her homework.", "stem": "Put the right word in each blank. Each word is used once.", "wordBank": ["because", "but", "or", "so"], "blanks": [{ "id": "1", "acceptable": ["because"] }, { "id": "2", "acceptable": ["but"] }], "missedConceptOnFail": "connector", "rationale": "'because' gives the reason; 'but' shows a contrast." },
+    { "id": "cl-3", "skillId": "CL-grammar-cloze", "itemType": "grammar_cloze", "difficulty": 1, "passage": "The cat sat ___ the sofa ___ waited for its food.", "stem": "Put the right word in each blank. Each word is used once.", "wordBank": ["on", "and", "under", "but"], "blanks": [{ "id": "1", "acceptable": ["on"] }, { "id": "2", "acceptable": ["and"] }], "missedConceptOnFail": "preposition", "rationale": "'on' tells where; 'and' joins the two actions." },
+    { "id": "cl-4", "skillId": "CL-grammar-cloze", "itemType": "grammar_cloze", "difficulty": 2, "passage": "We waited ___ the bus stop ___ it started to rain.", "stem": "Put the right word in each blank. Each word is used once.", "wordBank": ["at", "when", "to", "because"], "blanks": [{ "id": "1", "acceptable": ["at"] }, { "id": "2", "acceptable": ["when"] }], "missedConceptOnFail": "connector", "rationale": "'at' shows the place; 'when' shows the time something happened." },
+    { "id": "cl-5", "skillId": "CL-grammar-cloze", "itemType": "grammar_cloze", "difficulty": 2, "passage": "Kavitha likes durians ___ her brother ___ not.", "stem": "Put the right word in each blank. Each word is used once.", "wordBank": ["but", "does", "and", "is"], "blanks": [{ "id": "1", "acceptable": ["but"] }, { "id": "2", "acceptable": ["does"] }], "missedConceptOnFail": "connector", "rationale": "'but' shows the contrast; 'does' completes 'does not'." },
+    { "id": "cl-6", "skillId": "CL-grammar-cloze", "itemType": "grammar_cloze", "difficulty": 1, "passage": "Put your shoes ___ the rack ___ come inside.", "stem": "Put the right word in each blank. Each word is used once.", "wordBank": ["on", "and", "in", "but"], "blanks": [{ "id": "1", "acceptable": ["on"] }, { "id": "2", "acceptable": ["and"] }], "missedConceptOnFail": "preposition", "rationale": "'on' tells where to put the shoes; 'and' joins the two instructions." },
+    { "id": "cl-7", "skillId": "CL-grammar-cloze", "itemType": "grammar_cloze", "difficulty": 3, "passage": "___ it was raining, the boys ___ played football at the field.", "stem": "Put the right word in each blank. Each word is used once.", "wordBank": ["Although", "still", "Because", "never"], "blanks": [{ "id": "1", "acceptable": ["Although"] }, { "id": "2", "acceptable": ["still"] }], "missedConceptOnFail": "connector", "rationale": "'Although' shows a contrast; 'still' means they played in spite of the rain." },
+    { "id": "cl-8", "skillId": "CL-grammar-cloze", "itemType": "grammar_cloze", "difficulty": 3, "passage": "You may have an ice cream ___ a fruit, ___ not both.", "stem": "Put the right word in each blank. Each word is used once.", "wordBank": ["or", "but", "and", "so"], "blanks": [{ "id": "1", "acceptable": ["or"] }, { "id": "2", "acceptable": ["but"] }], "missedConceptOnFail": "connector", "rationale": "'or' gives a choice; 'but' adds the limit that you cannot have both." },
+    { "id": "cl-9", "skillId": "CL-grammar-cloze", "itemType": "grammar_cloze", "difficulty": 2, "passage": "The library is ___ the second floor, ___ the lift is out of order today.", "stem": "Put the right word in each blank. Each word is used once.", "wordBank": ["on", "but", "at", "and"], "blanks": [{ "id": "1", "acceptable": ["on"] }, { "id": "2", "acceptable": ["but"] }], "missedConceptOnFail": "preposition", "rationale": "'on' is used for floors; 'but' shows the contrast about the lift." },
+    { "id": "cl-10", "skillId": "CL-grammar-cloze", "itemType": "grammar_cloze", "difficulty": 1, "passage": "Ravi woke up early ___ he could catch the first bus ___ school.", "stem": "Put the right word in each blank. Each word is used once.", "wordBank": ["so", "to", "but", "at"], "blanks": [{ "id": "1", "acceptable": ["so"] }, { "id": "2", "acceptable": ["to"] }], "missedConceptOnFail": "connector", "rationale": "'so' shows the purpose; 'to' shows where the bus goes." }
+  ],
+  "lessons": {
+    "CL-grammar-cloze": {
+      "iCanStatement": "I can choose the right joining word for each blank.",
+      "explanation": "Read the whole sentence first. Little words like 'and', 'but', 'because', 'so', 'to', 'on' show how ideas link — reason, contrast, place or choice. Each word in the bank is used once, so match the easy ones first.",
+      "workedExamples": [
+        { "text": "I ran because I was late.", "note": "'because' gives the reason." },
+        { "text": "It was hot but I felt fine.", "note": "'but' shows a contrast between two ideas." }
+      ]
+    }
+  }
+}

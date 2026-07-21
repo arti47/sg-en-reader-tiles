@@ -7,21 +7,24 @@ import { AddStudent } from './features/AddStudent'
 import { Session } from './features/Session'
 import { Placement } from './features/Placement'
 import { ParentDashboard } from './features/ParentDashboard'
+import { M3Demo } from './features/M3Demo'
 import { initPWA } from './pwa'
 import * as srs from './lib/srs'
 import * as engine from './lib/engine'
 import * as readiness from './lib/readiness'
 import * as aggregate from './lib/aggregate'
+import * as scoring from './lib/scoring'
 import { getSkill } from './lib/packs'
 
 if (import.meta.env.DEV) {
   const w = window as unknown as Record<string, unknown>
   w.__srs = srs; w.__engine = engine; w.__getSkill = getSkill
-  w.__store = store; w.__readiness = readiness; w.__aggregate = aggregate
+  w.__store = store; w.__readiness = readiness; w.__aggregate = aggregate; w.__scoring = scoring
 }
+const m3demo = import.meta.env.DEV && typeof location !== 'undefined' && location.hash === '#m3demo'
 
 type View = 'pick' | 'add' | 'placement' | 'session' | 'dashboard'
-const APP_VERSION = '0.2.18'
+const APP_VERSION = '0.2.19'
 
 export default function App() {
   const [children, setChildren] = useState<Child[]>([])
@@ -54,7 +57,8 @@ export default function App() {
         </div>
       )}
       <main className="screen">
-        {view === 'pick' && (
+        {m3demo && <M3Demo />}
+        {!m3demo && view === 'pick' && (
           <ChildPicker children={children}
             onPick={(c) => { setActive(c); setView('session') }}
             onAdd={() => setView('add')}

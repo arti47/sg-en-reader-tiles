@@ -28,6 +28,7 @@ export function McqItem(props: { item: PackItem; quiet?: boolean; onAnswer: (r: 
           <button className="btn ghost" onClick={playPrompt} aria-label={item.phonemeId ? 'Hear the sound again' : 'Hear the word again'}>🔊 {item.phonemeId ? 'Hear the sound' : 'Hear it'}</button>
         </div>
       )}
+      {item.passage && <p className="passage">{item.passage}</p>}
       <p className="stem">{item.stem}</p>
       <div className="tile-grid">
         {(item.choices ?? []).map(c => {

@@ -190,6 +190,35 @@ try {
     await dctx.close()
   }
 
+  // M3 renderers (grammar_cloze + passage_question) via the DEV #m3demo route.
+  {
+    const m3ctx = await browser.newContext({ viewport: { width: 390, height: 800 } })
+    const mp3 = await m3ctx.newPage(); mp3.setDefaultTimeout(6000)
+    const e3 = []
+    mp3.on('console', m => { if (m.type() === 'error') e3.push(m.text()) })
+    mp3.on('pageerror', e => e3.push('pageerror: ' + e.message))
+    await mp3.goto(BASE + '#m3demo', { waitUntil: 'networkidle' })
+    await mp3.waitForFunction(() => !!window.__m3, { timeout: 6000 }).catch(() => fail('m3 demo did not load'))
+    const m3 = await mp3.evaluate(() => window.__m3)
+    // Fill the grammar cloze: for each blank (in order) tap the bank word it accepts, then Check.
+    const clozeBox = mp3.locator('[data-testid="m3-cloze"]')
+    for (const b of m3.cloze.blanks) {
+      const word = b.acceptable[0]
+      await clozeBox.locator('button.word-tile', { hasText: new RegExp('^' + word + '$') }).first().click()
+    }
+    await clozeBox.getByRole('button', { name: 'Check' }).click()
+    await clozeBox.locator('[aria-live="polite"]').waitFor({ timeout: 6000 })
+    if (!/Yes!/.test(await clozeBox.innerText())) fail('m3 cloze: correct answers should score right')
+    // Answer the comprehension MCQ correctly.
+    const compBox = mp3.locator('[data-testid="m3-comp"]')
+    const correct = m3.comp.choices.find(c => c.id === m3.comp.correctChoiceId).label
+    await compBox.locator('button.tile', { hasText: new RegExp('^' + correct.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + '$') }).first().click()
+    if (!/Yes!/.test(await compBox.innerText())) fail('m3 comprehension: correct choice should score right')
+    if (await mp3.evaluate(() => document.documentElement.scrollWidth > window.innerWidth + 1)) fail('m3 demo: horizontal overflow at 390px')
+    if (e3.length) fail('m3 demo console errors: ' + e3.slice(0, 3))
+    await m3ctx.close()
+  }
+
   // SRS pure-function invariants (§7): +2/+7/+21d schedule, pass advances, fail demotes, due filter+cap.
   const srsPage = await browser.newPage()
   await srsPage.goto(BASE, { waitUntil: 'networkidle' })
@@ -256,6 +285,10 @@ try {
     // and CVC's prereq on it is stripped so the ladder still starts at CVC.
     if (gs('PH-letter-sounds')) return 'T01 should be inert (disabled) until phoneme clips ship'
     if (gs(PH).prereqs.length !== 0) return 'T01 disabled → CVC prereq should be stripped'
+    // M3 gating (§5) — grammar unlocks only after the decode ladder (PH-two-syllable pattern).
+    if (e.eligibleSkills([]).map(s => s.id).includes('GR-articles')) return 'M3: grammar must be gated behind decoding'
+    const decoded = [...arr('PH-two-syllable', 8, true), ...arr('SP-two-syllable', 8, true)]
+    if (!e.eligibleSkills(decoded).map(s => s.id).includes('GR-articles')) return 'M3: grammar should unlock after the two-syllable pattern'
     return 'ok'
   })
 
@@ -272,6 +305,13 @@ try {
     const after = await store.exportAll()
     const count = d => Object.fromEntries(Object.entries(d.stores).map(([k, v]) => [k, v.length]))
     if (JSON.stringify(count(before)) !== JSON.stringify(count(after))) return 'export/import round-trip changed row counts'
+    // M3 deterministic scoring: grammar_cloze word-bank + MCQ.
+    const sc = window.__scoring
+    const cloze = { blanks: [{ id: '1', acceptable: ['to'] }, { id: '2', acceptable: ['because'] }], missedConceptOnFail: 'connector' }
+    if (!sc.scoreCloze(cloze, { '1': 'to', '2': 'because' }).correct) return 'scoreCloze: all-correct should pass'
+    if (sc.scoreCloze(cloze, { '1': 'to', '2': 'to' }).correct) return 'scoreCloze: wrong blank should fail'
+    const mcq = { correctChoiceId: 'b', missedConceptOnFail: 'synonym' }
+    if (!sc.scoreMcq(mcq, 'b').correct || sc.scoreMcq(mcq, 'a').correct) return 'scoreMcq'
     return 'ok'
   })
 
@@ -310,6 +350,6 @@ try {
   if (bad.db.progress.some(p => p.skillId === 'SP-cvc-short-vowels')) fail('dual gate: encode must stay locked when decode <70%')
   if (bad.db.certs.length) fail('struggle path: no certificate should be awarded')
 
-  console.log('PASS — placement→session, mastery+certs+review-scheduled, struggle→lesson, dual-gate lockout, SRS math, remove-student, M2 dashboard (PIN+readiness+aggregates+usage+export/import), zero errors, no overflow')
+  console.log('PASS — placement→session, mastery+certs+review-scheduled, struggle→lesson, dual-gate lockout, SRS math, remove-student, M2 dashboard, M3 strands (gating+cloze/MCQ renderers+scoring), zero errors, no overflow')
   stop(); process.exit(0)
 } catch (e) { fail((e.stack || e.message || String(e)).split('\n').slice(0, 4).join(' | ')) }

@@ -8,6 +8,7 @@ import { scheduleFirst, onReviewPass, onReviewFail, dueReviews } from '../lib/sr
 import { isoWeek, isConsecutiveWeek } from '../lib/aggregate'
 import { McqItem } from './items/McqItem'
 import { TileItem } from './items/TileItem'
+import { ClozeItem } from './items/ClozeItem'
 import { LessonView } from './LessonView'
 
 const SESSION_LEN = 16
@@ -178,15 +179,16 @@ export function Session(props: { child: Child; onExit: () => void }) {
 
   if (phase === 'item' && item) {
     const isTile = item.itemType === 'build_word' || item.itemType === 'spell_tiles'
+    const isCloze = item.itemType === 'grammar_cloze'
     return (
       <div className="stack">
         <div className="row" style={{ justifyContent: 'space-between', alignItems: 'center' }}>
           <button className="link" onClick={props.onExit}>← Back</button>
           <span className="note">{Math.min(count + 1, SESSION_LEN)}/{SESSION_LEN}</span>
         </div>
-        {isTile
-          ? <TileItem key={serve} item={item} onAnswer={onAnswer} />
-          : <McqItem key={serve} item={item} onAnswer={onAnswer} />}
+        {isTile ? <TileItem key={serve} item={item} onAnswer={onAnswer} />
+          : isCloze ? <ClozeItem key={serve} item={item} onAnswer={onAnswer} />
+            : <McqItem key={serve} item={item} onAnswer={onAnswer} />}
         {answered && <button className="btn" onClick={onContinue}>Continue</button>}
       </div>
     )

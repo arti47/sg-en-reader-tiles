@@ -1,0 +1,28 @@
+{
+  "packId": "vocab-L01-synonyms",
+  "strand": "vocab",
+  "skillIds": ["VOC-synonyms"],
+  "version": 1,
+  "items": [
+    { "id": "voc-syn-1", "skillId": "VOC-synonyms", "itemType": "vocab_mcq", "difficulty": 1, "stem": "The hawker was very busy. 'Busy' means almost the same as ___.", "choices": [{ "id": "a", "label": "occupied" }, { "id": "b", "label": "lazy" }, { "id": "c", "label": "empty" }], "correctChoiceId": "a", "missedConceptOnFail": "synonym", "rationale": "'Busy' and 'occupied' both mean having a lot to do." },
+    { "id": "voc-syn-2", "skillId": "VOC-synonyms", "itemType": "vocab_mcq", "difficulty": 1, "stem": "The boy felt happy on his birthday. 'Happy' means almost the same as ___.", "choices": [{ "id": "a", "label": "glad" }, { "id": "b", "label": "sad" }, { "id": "c", "label": "angry" }], "correctChoiceId": "a", "missedConceptOnFail": "synonym", "rationale": "'Happy' and 'glad' both mean pleased." },
+    { "id": "voc-syn-3", "skillId": "VOC-synonyms", "itemType": "vocab_mcq", "difficulty": 1, "stem": "The MRT was crowded in the morning. 'Crowded' means almost the same as ___.", "choices": [{ "id": "a", "label": "packed" }, { "id": "b", "label": "empty" }, { "id": "c", "label": "clean" }], "correctChoiceId": "a", "missedConceptOnFail": "synonym", "rationale": "'Crowded' and 'packed' both mean full of people." },
+    { "id": "voc-syn-4", "skillId": "VOC-synonyms", "itemType": "vocab_mcq", "difficulty": 2, "stem": "She spoke softly so as not to wake the baby. 'Softly' means almost the same as ___.", "choices": [{ "id": "a", "label": "quietly" }, { "id": "b", "label": "loudly" }, { "id": "c", "label": "quickly" }], "correctChoiceId": "a", "missedConceptOnFail": "synonym", "rationale": "'Softly' and 'quietly' both mean without much noise." },
+    { "id": "voc-syn-5", "skillId": "VOC-synonyms", "itemType": "vocab_mcq", "difficulty": 2, "stem": "The test was difficult. 'Difficult' means almost the same as ___.", "choices": [{ "id": "a", "label": "hard" }, { "id": "b", "label": "easy" }, { "id": "c", "label": "short" }], "correctChoiceId": "a", "missedConceptOnFail": "synonym", "rationale": "'Difficult' and 'hard' both mean not easy." },
+    { "id": "voc-syn-6", "skillId": "VOC-synonyms", "itemType": "vocab_mcq", "difficulty": 2, "stem": "The firefighter was brave. 'Brave' means almost the same as ___.", "choices": [{ "id": "a", "label": "fearless" }, { "id": "b", "label": "scared" }, { "id": "c", "label": "tired" }], "correctChoiceId": "a", "missedConceptOnFail": "synonym", "rationale": "'Brave' and 'fearless' both mean not afraid." },
+    { "id": "voc-syn-7", "skillId": "VOC-synonyms", "itemType": "vocab_mcq", "difficulty": 3, "stem": "The old man walked slowly along the corridor. 'Slowly' means almost the same as ___.", "choices": [{ "id": "a", "label": "unhurriedly" }, { "id": "b", "label": "quickly" }, { "id": "c", "label": "loudly" }], "correctChoiceId": "a", "missedConceptOnFail": "synonym", "rationale": "'Slowly' and 'unhurriedly' both mean at a low speed." },
+    { "id": "voc-syn-8", "skillId": "VOC-synonyms", "itemType": "vocab_mcq", "difficulty": 2, "stem": "Her room was very tidy. 'Tidy' means almost the same as ___.", "choices": [{ "id": "a", "label": "neat" }, { "id": "b", "label": "messy" }, { "id": "c", "label": "dark" }], "correctChoiceId": "a", "missedConceptOnFail": "synonym", "rationale": "'Tidy' and 'neat' both mean well arranged." },
+    { "id": "voc-syn-9", "skillId": "VOC-synonyms", "itemType": "vocab_mcq", "difficulty": 1, "stem": "The laksa was tasty. 'Tasty' means almost the same as ___.", "choices": [{ "id": "a", "label": "delicious" }, { "id": "b", "label": "bland" }, { "id": "c", "label": "cold" }], "correctChoiceId": "a", "missedConceptOnFail": "synonym", "rationale": "'Tasty' and 'delicious' both mean full of flavour." },
+    { "id": "voc-syn-10", "skillId": "VOC-synonyms", "itemType": "vocab_mcq", "difficulty": 3, "stem": "The teacher was pleased with the class. 'Pleased' means almost the same as ___.", "choices": [{ "id": "a", "label": "satisfied" }, { "id": "b", "label": "upset" }, { "id": "c", "label": "bored" }], "correctChoiceId": "a", "missedConceptOnFail": "synonym", "rationale": "'Pleased' and 'satisfied' both mean happy with something." }
+  ],
+  "lessons": {
+    "VOC-synonyms": {
+      "iCanStatement": "I can choose a word that means almost the same.",
+      "explanation": "A synonym is a word with a similar meaning. Read the whole sentence, then pick the choice that could replace the word without changing what it means.",
+      "workedExamples": [
+        { "text": "big → large", "note": "'big' and 'large' mean about the same size." },
+        { "text": "start → begin", "note": "You can swap 'start' for 'begin'." }
+      ]
+    }
+  }
+}

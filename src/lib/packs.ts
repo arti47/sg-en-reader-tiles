@@ -21,6 +21,11 @@ import spellingDi from '../data/packs/spelling-L09-diphthongs.json'
 import phonics2s from '../data/packs/phonics-L10-two-syllable.json'
 import spelling2s from '../data/packs/spelling-L10-two-syllable.json'
 import phonicsHf from '../data/packs/phonics-L12-hf.json'
+import grArticles from '../data/packs/grammar-L01-articles.json'
+import grSva from '../data/packs/grammar-L02-sva.json'
+import vocSyn from '../data/packs/vocab-L01-synonyms.json'
+import comp1 from '../data/packs/comp-L01.json'
+import cloze1 from '../data/packs/cloze-L01-grammar.json'
 
 const PACKS: ContentPack[] = [
   phonicsLs as ContentPack,
@@ -42,7 +47,12 @@ const PACKS: ContentPack[] = [
   spellingDi as ContentPack,
   phonics2s as ContentPack,
   spelling2s as ContentPack,
-  phonicsHf as ContentPack
+  phonicsHf as ContentPack,
+  grArticles as ContentPack,
+  grSva as ContentPack,
+  vocSyn as ContentPack,
+  comp1 as ContentPack,
+  cloze1 as ContentPack
 ]
 
 // Runtime skill graph. Skills flagged `enabled: false` (authored but inert — e.g. T01

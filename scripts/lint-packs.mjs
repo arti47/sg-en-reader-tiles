@@ -67,13 +67,21 @@ for (const { f, pack } of packs) {
     if (it.phonemeId && !phonemes[it.phonemeId]) err(f, it.id, `phonemeId "${it.phonemeId}" not in phonemes.json`)
 
     // (1)(2) answer keys
-    const mcqTypes = ['grammar_mcq', 'decode_choice', 'vocab_mcq']
+    const mcqTypes = ['grammar_mcq', 'decode_choice', 'vocab_mcq', 'vocab_cloze_mcq', 'passage_question', 'visual_text']
     if (mcqTypes.includes(it.itemType)) {
       const ids = (it.choices ?? []).map(c => c.id)
       if (ids.length < 2) err(f, it.id, 'MCQ needs ≥2 choices')
       if (new Set(ids).size !== ids.length) err(f, it.id, 'duplicate choice ids')
       if (!it.correctChoiceId) err(f, it.id, 'missing correctChoiceId')
       else if (!ids.includes(it.correctChoiceId)) err(f, it.id, `correctChoiceId "${it.correctChoiceId}" not among choices`)
+    } else if (it.itemType === 'grammar_cloze') {
+      const bank = it.wordBank ?? []
+      if (bank.length < 2) err(f, it.id, 'grammar_cloze needs a word bank (≥2 words)')
+      if (!(it.blanks ?? []).length) err(f, it.id, 'grammar_cloze needs blanks')
+      for (const b of it.blanks ?? []) {
+        if (!(b.acceptable ?? []).length) err(f, it.id, `blank ${b.id} has no acceptable answers`)
+        for (const acc of b.acceptable ?? []) if (!bank.includes(acc)) err(f, it.id, `blank ${b.id} accepts "${acc}" which is not in the word bank`)
+      }
     } else if (it.itemType === 'build_word' || it.itemType === 'spell_tiles') {
       if (!Array.isArray(it.graphemes) || !it.graphemes.length) err(f, it.id, 'missing graphemes')
       else if (it.displayWord && it.graphemes.join('') !== it.displayWord) err(f, it.id, `graphemes ${JSON.stringify(it.graphemes)} != displayWord "${it.displayWord}"`)

@@ -1,0 +1,28 @@
+{
+  "packId": "grammar-L01-articles",
+  "strand": "grammar",
+  "skillIds": ["GR-articles"],
+  "version": 1,
+  "items": [
+    { "id": "gr-art-1", "skillId": "GR-articles", "itemType": "grammar_mcq", "difficulty": 1, "stem": "Siti saw ___ owl in the tree at the park.", "choices": [{ "id": "a", "label": "a" }, { "id": "b", "label": "an" }, { "id": "c", "label": "the" }], "correctChoiceId": "b", "missedConceptOnFail": "article-a-vs-an", "rationale": "Use 'an' before a vowel sound: an owl." },
+    { "id": "gr-art-2", "skillId": "GR-articles", "itemType": "grammar_mcq", "difficulty": 1, "stem": "Wei Ming ate ___ apple during recess.", "choices": [{ "id": "a", "label": "a" }, { "id": "b", "label": "an" }, { "id": "c", "label": "the" }], "correctChoiceId": "b", "missedConceptOnFail": "article-a-vs-an", "rationale": "'apple' starts with a vowel sound, so use 'an'." },
+    { "id": "gr-art-3", "skillId": "GR-articles", "itemType": "grammar_mcq", "difficulty": 1, "stem": "We took ___ bus to the shopping centre.", "choices": [{ "id": "a", "label": "a" }, { "id": "b", "label": "an" }, { "id": "c", "label": "the" }], "correctChoiceId": "a", "missedConceptOnFail": "article-a-vs-an", "rationale": "'bus' starts with a consonant sound, so use 'a'." },
+    { "id": "gr-art-4", "skillId": "GR-articles", "itemType": "grammar_mcq", "difficulty": 2, "stem": "Mr Tan is ___ honest man.", "choices": [{ "id": "a", "label": "a" }, { "id": "b", "label": "an" }, { "id": "c", "label": "the" }], "correctChoiceId": "b", "missedConceptOnFail": "article-a-vs-an", "rationale": "The 'h' in 'honest' is silent, so it sounds like a vowel: an honest man." },
+    { "id": "gr-art-5", "skillId": "GR-articles", "itemType": "grammar_mcq", "difficulty": 2, "stem": "She opened ___ umbrella when it rained.", "choices": [{ "id": "a", "label": "a" }, { "id": "b", "label": "an" }, { "id": "c", "label": "the" }], "correctChoiceId": "b", "missedConceptOnFail": "article-a-vs-an", "rationale": "'umbrella' starts with a vowel sound, so use 'an'." },
+    { "id": "gr-art-6", "skillId": "GR-articles", "itemType": "grammar_mcq", "difficulty": 2, "stem": "He is ___ university student.", "choices": [{ "id": "a", "label": "a" }, { "id": "b", "label": "an" }, { "id": "c", "label": "the" }], "correctChoiceId": "a", "missedConceptOnFail": "article-a-vs-an", "rationale": "'university' starts with a 'yoo' sound, which is a consonant sound, so use 'a'." },
+    { "id": "gr-art-7", "skillId": "GR-articles", "itemType": "grammar_mcq", "difficulty": 1, "stem": "Please pass me ___ salt on the table.", "choices": [{ "id": "a", "label": "a" }, { "id": "b", "label": "an" }, { "id": "c", "label": "the" }], "correctChoiceId": "c", "missedConceptOnFail": "article-the", "rationale": "Use 'the' for a specific thing both people know about — the salt on the table." },
+    { "id": "gr-art-8", "skillId": "GR-articles", "itemType": "grammar_mcq", "difficulty": 2, "stem": "The class visited ___ Science Centre last week.", "choices": [{ "id": "a", "label": "a" }, { "id": "b", "label": "an" }, { "id": "c", "label": "the" }], "correctChoiceId": "c", "missedConceptOnFail": "article-the", "rationale": "Use 'the' for one particular, well-known place — the Science Centre." },
+    { "id": "gr-art-9", "skillId": "GR-articles", "itemType": "grammar_mcq", "difficulty": 3, "stem": "Kavitha wants to be ___ engineer when she grows up.", "choices": [{ "id": "a", "label": "a" }, { "id": "b", "label": "an" }, { "id": "c", "label": "the" }], "correctChoiceId": "b", "missedConceptOnFail": "article-a-vs-an", "rationale": "'engineer' starts with a vowel sound, so use 'an'." },
+    { "id": "gr-art-10", "skillId": "GR-articles", "itemType": "grammar_mcq", "difficulty": 3, "stem": "There was ___ long queue at the hawker stall.", "choices": [{ "id": "a", "label": "a" }, { "id": "b", "label": "an" }, { "id": "c", "label": "the" }], "correctChoiceId": "a", "missedConceptOnFail": "article-a-vs-an", "rationale": "'long' starts with a consonant sound, so use 'a'." }
+  ],
+  "lessons": {
+    "GR-articles": {
+      "iCanStatement": "I can use a, an and the correctly.",
+      "explanation": "Use 'a' before a consonant sound (a bus) and 'an' before a vowel sound (an owl). It's about the SOUND, not the letter — 'an honest man' (silent h), 'a university' (yoo sound). Use 'the' for a specific thing we already know.",
+      "workedExamples": [
+        { "text": "an egg", "note": "'egg' starts with a vowel sound → an." },
+        { "text": "a car", "note": "'car' starts with a consonant sound → a." }
+      ]
+    }
+  }
+}

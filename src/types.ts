@@ -4,8 +4,14 @@ export type ItemType =
   | 'decode_choice'   // read word → pick correct spelling/meaning (MCQ, TTS prompt)
   | 'build_word'      // hear word → assemble grapheme tiles (encode)
   | 'spell_tiles'     // tray-based encode (same renderer as build_word)
+  // ---- M3 PSLE Paper-2 (MCQ + word-bank; free-text types deferred, §2/§6) ----
+  | 'vocab_mcq'         // sentence; pick best-meaning / closest synonym (MCQ)
+  | 'vocab_cloze_mcq'   // short passage with a blank; MCQ options
+  | 'passage_question'  // short passage + question (MCQ only)
+  | 'visual_text'       // described poster/advert + question (MCQ)
+  | 'grammar_cloze'     // passage with blanks + a lettered word bank, each used once
 
-export type Strand = 'phonics' | 'spelling' | 'grammar' | 'vocab'
+export type Strand = 'phonics' | 'spelling' | 'grammar' | 'vocab' | 'comprehension' | 'cloze'
 export type Difficulty = 1 | 2 | 3
 
 export interface Choice { id: string; label: string }
@@ -21,8 +27,11 @@ export interface PackItem {
   displayWord?: string           // target word (encode items)
   graphemes?: string[]           // tile segmentation, e.g. "ship" → ["sh","i","p"]
   distractorGraphemes?: string[] // confusable tiles added to tray
+  passage?: string               // context shown above the question (comprehension/cloze)
   choices?: Choice[]
   correctChoiceId?: string
+  wordBank?: string[]            // grammar_cloze: lettered bank, each used once
+  blanks?: { id: string; acceptable: string[] }[] // grammar_cloze: per-blank accepted answers
   missedConceptOnFail: string    // error-taxonomy enum
   rationale: string
   decodableWithin?: string       // skillId envelope (§6a)
