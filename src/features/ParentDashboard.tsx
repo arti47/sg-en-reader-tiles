@@ -229,9 +229,9 @@ export function ParentDashboard(props: { children: Child[]; onExit: () => void; 
             <div className="set-row">
               <span>Voice</span>
               <div className="row" style={{ gap: 6, alignItems: 'center' }}>
-                <button className="btn small ghost" aria-label="Previous voice" onClick={() => step(-1)}>◀</button>
+                {voices.length > 1 && <button className="btn small ghost" aria-label="Previous voice" onClick={() => step(-1)}>◀</button>}
                 <span aria-live="polite" style={{ minWidth: 96, textAlign: 'center' }}>{voices[cur]?.name ?? 'Default'}</span>
-                <button className="btn small ghost" aria-label="Next voice" onClick={() => step(1)}>▶</button>
+                {voices.length > 1 && <button className="btn small ghost" aria-label="Next voice" onClick={() => step(1)}>▶</button>}
                 <button className="btn small" aria-label="Test voice" onClick={() => testVoice(voices[cur]?.voiceURI)}>🔊 Test</button>
                 {tstat && <span aria-live="polite" style={{ fontSize: 13, opacity: 0.8 }}>{tstat}</span>}
               </div>

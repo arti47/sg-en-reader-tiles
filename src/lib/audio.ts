@@ -7,13 +7,13 @@ export function setRate(r: number) { rate = r }
 let voiceURI: string | null = null
 export function setVoice(uri: string | null | undefined) { voiceURI = uri ?? null }
 
-// English voices installed on the device, for the Settings voice picker. getVoices() is
+// Voices offered in the Settings picker: Samantha only (owner choice). getVoices() is
 // often empty until the async `voiceschanged` fires, so callers should also listen (below).
 export function listVoices(): SpeechSynthesisVoice[] {
   try {
     const synth = window.speechSynthesis
     if (!synth) return []
-    return synth.getVoices().filter(v => /^en/i.test(v.lang))
+    return synth.getVoices().filter(v => /samantha/i.test(v.name))
   } catch { return [] }
 }
 
@@ -40,8 +40,9 @@ export function speak(text: string) {
     const u = new SpeechSynthesisUtterance(text)
     u.rate = rate
     const voices = synth.getVoices()
-    // Prefer the chosen voice; else the first en-GB; else leave the platform default.
+    // Prefer the chosen voice; else Samantha (owner default); else first en-GB; else platform default.
     const chosen = (voiceURI && voices.find(v => v.voiceURI === voiceURI))
+      || voices.find(v => /samantha/i.test(v.name))
       || voices.find(v => /en-GB/i.test(v.lang))
     if (chosen) { u.voice = chosen; u.lang = chosen.lang } else u.lang = 'en-GB'
     synth.speak(u)
