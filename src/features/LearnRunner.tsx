@@ -42,6 +42,10 @@ export function LearnRunner(props: { child: Child; onExit: () => void }) {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
+  // A11y (§18.12): move focus to the screen on each Learn sub-phase so screen readers announce
+  // the new step (map → rule → read → spell → done), mirroring App's per-view focus.
+  useEffect(() => { (document.querySelector('main.screen') as HTMLElement | null)?.focus() }, [phase])
+
   // Landing screen: compute every pattern's status + the next target (needs-review first, §19.3).
   async function openMap() {
     const rows = await getLearn(props.child.id)
@@ -133,7 +137,7 @@ export function LearnRunner(props: { child: Child; onExit: () => void }) {
   }
 
   if (phase === 'done') return (
-    <div className="stack center">
+    <div className="stack center" aria-live="polite">
       <div className="cert">🌟</div>
       <h1>You learned it!</h1>
       <p className="stem">{patternRef.current!.iCanStatement}</p>

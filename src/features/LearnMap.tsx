@@ -25,8 +25,8 @@ export function LearnMap(props: {
         <span className="lesson-badge">📘 Learn</span>
       </div>
       <h1>{props.name}'s learning map</h1>
-      <p className="note">{learned} of {props.rows.length} patterns learned. {props.hasTarget ? 'Keep going!' : 'You\'ve learned every pattern! 🎉'}</p>
-      <ul className="learn-map">
+      <p className="note" role="status">{learned} of {props.rows.length} patterns learned. {props.hasTarget ? 'Keep going!' : 'You\'ve learned every pattern! 🎉'}</p>
+      <ul className="learn-map" aria-label="Your patterns and their status">
         {props.rows.map(r => {
           const m = META[r.status]
           return (
