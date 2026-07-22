@@ -136,12 +136,14 @@ try {
     }
     // M5 (§19.6): drive ONE Learn unit to completion (intro→read→spellIntro→spell→learned),
     // then click Done back to the picker. Learn always answers correctly (participation-based).
+    let sawSoundCard = false
     async function walkLearn() {
-      for (let step = 0; step < 50; step++) {
+      for (let step = 0; step < 80; step++) {
         const kind = await page.waitForFunction(() => {
           const t = document.body.innerText
           if (/You learned it!/.test(t)) return 'done'
           if ([...document.querySelectorAll('button')].some(b => b.textContent.trim() === 'Start learning')) return 'map'
+          if (document.querySelector('.sound-card')) return 'sound' // M5.1 phoneme intro (§19.13)
           if (/Let's learn this/.test(t)) return 'lesson'
           const hasContinue = [...document.querySelectorAll('button')].some(b => b.textContent.trim() === 'Continue')
           const freshTile = document.querySelector('button.tile:not([disabled])')
@@ -149,6 +151,7 @@ try {
         }, { timeout: 8000 }).then(h => h.jsonValue())
         if (kind === 'done') { await page.getByRole('button', { name: 'Done', exact: true }).click(); return }
         if (kind === 'map') { await page.getByRole('button', { name: 'Start learning' }).click(); continue }
+        if (kind === 'sound') { sawSoundCard = true; await page.getByRole('button', { name: /Next sound|Let's read/ }).click(); continue }
         if (kind === 'lesson') { await page.getByRole('button', { name: "Let's try" }).click(); continue }
         const it = await page.evaluate(() => window.__item || null)
         if (it.graphemes) {
@@ -217,7 +220,7 @@ try {
       if (!cvc || cvc.needsReview) fail('M5 P3: re-learning a needs-review pattern should clear the flag')
       if (!cvc.learned) fail('M5 P3: the re-learned pattern should stay learned')
     }
-    results.push({ WRONG, errors, overflow, lessons, db, firstSkill })
+    results.push({ WRONG, errors, overflow, lessons, db, firstSkill, sawSoundCard })
     await ctx.close()
   }
 
@@ -673,6 +676,8 @@ try {
   if (!(good.db.learn || []).some(r => r.learned)) fail('M5: Learn should have marked a pattern learned')
   if (bad.db.progress.some(p => p.skillId === 'SP-cvc-short-vowels')) fail('dual gate: encode must stay locked when decode <70%')
   if (bad.db.certs.length) fail('struggle path: no certificate should be awarded')
+  // M5.1 (§19.13): the CVC Learn unit (struggle-path frontier) opens with phoneme sound-intro cards.
+  if (!bad.sawSoundCard) fail('M5.1: CVC Learn unit should show phoneme sound-intro cards before reading')
 
   console.log('PASS — placement→session, mastery/dual-gate/SRS, M2 dashboard, M3 strands, M4 polish (font toggle+persist, XP/level, settings), zero errors, no overflow')
   stop(); process.exit(0)

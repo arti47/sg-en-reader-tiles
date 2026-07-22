@@ -6,7 +6,7 @@ import { xp as calcXp, level, toNextLevel, achievements, type Achievement } from
 // Child-facing trophy room (§14). Celebratory, growth-only: level + XP bar, earned
 // certificates ("I can…" statements), and the achievement badges (earned/locked). No
 // readiness/AL band here — that stays parent-only.
-export function Trophies(props: { child: Child; onExit: () => void }) {
+export function Trophies(props: { child: Child; onExit: () => void; onSoundWall: () => void }) {
   const [loading, setLoading] = useState(true)
   const [totalXp, setTotalXp] = useState(0)
   const [certs, setCerts] = useState<Certificate[]>([])
@@ -34,7 +34,10 @@ export function Trophies(props: { child: Child; onExit: () => void }) {
     <div className="stack">
       <div className="row" style={{ justifyContent: 'space-between', alignItems: 'center' }}>
         <h1>{props.child.name}'s trophies</h1>
-        <button className="link" onClick={props.onExit}>Done</button>
+        <div className="row" style={{ gap: 8 }}>
+          <button className="btn ghost small" onClick={props.onSoundWall}>🔊 Sound wall</button>
+          <button className="link" onClick={props.onExit}>Done</button>
+        </div>
       </div>
 
       <div className="trophy-level">

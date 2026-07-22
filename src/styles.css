@@ -101,6 +101,16 @@ h1 { font-size: 1.8rem; font-weight: 700; margin: 8px 0 0; }
 .feedback.no { background: var(--no-soft); color: #7a3d16; }
 .feedback.tip { background: #eaf2ff; color: #234b8a; font-weight: 700; }
 .heart-note { margin: 0; color: #8a5a00; background: #fff5e0; padding: 8px 12px; border-radius: 12px; font-size: 0.92rem; }
+/* Phoneme sound-intro card (§19.13) + Sound wall */
+.sound-card { display: flex; flex-direction: column; align-items: center; gap: 12px; text-align: center;
+  background: #fffaf0; border: 3px solid var(--amber); border-radius: var(--radius); padding: 24px 20px; }
+.sound-grapheme { font-size: 3.4rem; font-weight: 800; color: var(--teal); letter-spacing: 0.04em; }
+.sound-wall { display: grid; grid-template-columns: repeat(auto-fill, minmax(96px, 1fr)); gap: 10px; }
+.sw-tile { display: flex; flex-direction: column; align-items: center; gap: 2px; padding: 12px 6px; cursor: pointer;
+  background: #fff; border: 3px solid var(--teal-soft); border-radius: 14px; font: inherit; }
+.sw-grapheme { font-size: 1.6rem; font-weight: 800; color: var(--teal); }
+.sw-kw { font-size: .78rem; color: #5b6f6c; }
+
 .learn-map { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 6px; }
 .lm-row { display: flex; align-items: center; gap: 10px; padding: 8px 12px; border-radius: 12px; background: #f3efe6; }
 .lm-icon { width: 1.5em; text-align: center; }

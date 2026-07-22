@@ -9,6 +9,7 @@ import { Session } from './features/Session'
 import { LearnRunner } from './features/LearnRunner'
 import { Placement } from './features/Placement'
 import { Trophies } from './features/Trophies'
+import { SoundWall } from './features/SoundWall'
 import { ParentDashboard } from './features/ParentDashboard'
 import { M3Demo } from './features/M3Demo'
 import { initPWA } from './pwa'
@@ -31,12 +32,13 @@ if (import.meta.env.DEV) {
 }
 const m3demo = import.meta.env.DEV && typeof location !== 'undefined' && location.hash === '#m3demo'
 
-type View = 'pick' | 'add' | 'placement' | 'session' | 'learn' | 'dashboard' | 'trophies'
+type View = 'pick' | 'add' | 'placement' | 'session' | 'learn' | 'dashboard' | 'trophies' | 'soundwall'
 const APP_VERSION = __APP_VERSION__ // from package.json (§18.6), never hand-edited
 
 export default function App() {
   const [children, setChildren] = useState<Child[]>([])
   const [view, setView] = useState<View>('pick')
+  const [swReturn, setSwReturn] = useState<View>('learn') // where the Sound wall returns to
   const [active, setActive] = useState<Child | null>(null)
   const [reload, setReload] = useState<null | (() => void)>(null)
   const [xpByChild, setXpByChild] = useState<Record<string, number>>({})
@@ -90,9 +92,10 @@ export default function App() {
         )}
         {view === 'add' && <AddStudent onSave={save} onCancel={() => setView('pick')} />}
         {view === 'placement' && active && <Placement child={active} onDone={placementDone} />}
-        {view === 'trophies' && active && <Trophies child={active} onExit={() => { void refreshChildren(); setView('pick') }} />}
+        {view === 'trophies' && active && <Trophies child={active} onExit={() => { void refreshChildren(); setView('pick') }} onSoundWall={() => { setSwReturn('trophies'); setView('soundwall') }} />}
+        {view === 'soundwall' && active && <SoundWall child={active} onExit={() => setView(swReturn)} />}
         {view === 'learn' && active && (
-          <LearnRunner child={active} onExit={() => { void refreshChildren(); setView('pick') }} />
+          <LearnRunner child={active} onExit={() => { void refreshChildren(); setView('pick') }} onSoundWall={() => { setSwReturn('learn'); setView('soundwall') }} />
         )}
         {view === 'session' && active && (
           <Session child={active}

@@ -3,7 +3,8 @@ import type { Child, PackItem, SkillDef, PatternStatus } from '../types'
 import { pickItem, getSkill, getLesson } from '../lib/packs'
 import { nextToLearn, PATTERNS, learnedSet, needsReviewSet, patternStatus } from '../lib/learn'
 import { getLearn, setLearned, clearReview, getProgress, getSettings } from '../store'
-import { setRate, setVoice } from '../lib/audio'
+import { setRate, setVoice, phoneme, speak } from '../lib/audio'
+import { newSoundsFor, newSpellingsFor, type Sound } from '../lib/sounds'
 import { McqItem } from './items/McqItem'
 import { TileItem } from './items/TileItem'
 import { LessonView } from './LessonView'
@@ -18,12 +19,17 @@ type MapRow = { id: string; label: string; status: PatternStatus }
 // lives in Test. Target = the first needs-review pattern (re-teach first), else the frontier.
 const READ_N = 3
 const SPELL_N = 3
-type Phase = 'loading' | 'map' | 'intro' | 'read' | 'spellIntro' | 'spell' | 'done'
+type Phase = 'loading' | 'map' | 'sound' | 'intro' | 'read' | 'spellIntro' | 'spell' | 'done'
+// A sound-intro card (§19.13): a NEW sound met for the first time, or a NEW spelling of a sound
+// the child already knows ("same sound, new way to spell it").
+type SoundCard = { kind: 'new' | 'spelling'; sound: Sound; graphemes: string[] }
 
-export function LearnRunner(props: { child: Child; onExit: () => void }) {
+export function LearnRunner(props: { child: Child; onExit: () => void; onSoundWall: () => void }) {
   const patternRef = useRef<SkillDef | null>(null)  // the next target (needs-review first, else frontier)
   const encodeRef = useRef<SkillDef | null>(null)
   const seenRef = useRef<Set<string>>(new Set())
+  const soundsRef = useRef<SoundCard[]>([])         // this pattern's sound-intro cards (§19.13)
+  const [soundIdx, setSoundIdx] = useState(0)
   const stepRef = useRef(0)
   const startedRef = useRef(false)
   const [phase, setPhase] = useState<Phase>('loading')
@@ -46,6 +52,9 @@ export function LearnRunner(props: { child: Child; onExit: () => void }) {
   // the new step (map → rule → read → spell → done), mirroring App's per-view focus.
   useEffect(() => { (document.querySelector('main.screen') as HTMLElement | null)?.focus() }, [phase])
 
+  // Auto-play the phoneme clip when a sound-intro card appears (§19.13.2).
+  useEffect(() => { if (phase === 'sound') { const c = soundsRef.current[soundIdx]; if (c) phoneme(c.sound.id) } }, [phase, soundIdx])
+
   // Landing screen: compute every pattern's status + the next target (needs-review first, §19.3).
   async function openMap() {
     const rows = await getLearn(props.child.id)
@@ -60,13 +69,23 @@ export function LearnRunner(props: { child: Child; onExit: () => void }) {
     setPhase('map')
   }
 
-  // Begin the target pattern's unit (read+spell taught together).
+  // Begin the target pattern's unit. §19.13: FIRST teach the pattern's new sound(s) (and any new
+  // spelling of an already-known sound), then the read+spell flow.
   function startUnit() {
     const target = patternRef.current
     if (!target) { setPhase('map'); return }
     encodeRef.current = target.encodePairId ? getSkill(target.encodePairId) ?? null : null
     seenRef.current = new Set(); stepRef.current = 0
-    setPhase('intro')
+    const graphemesAt = (s: Sound) => s.spellings.filter(sp => sp.pattern === target.id).map(sp => sp.grapheme)
+    soundsRef.current = [
+      ...newSoundsFor(target.id).map(s => ({ kind: 'new' as const, sound: s, graphemes: graphemesAt(s) })),
+      ...newSpellingsFor(target.id).map(x => ({ kind: 'spelling' as const, sound: x.sound, graphemes: x.graphemes }))
+    ]
+    if (soundsRef.current.length) { setSoundIdx(0); setPhase('sound') } else setPhase('intro')
+  }
+  function nextSound() {
+    if (soundIdx + 1 >= soundsRef.current.length) setPhase('intro')
+    else setSoundIdx(i => i + 1)
   }
 
   function loadPractice(skillId: string, next: Phase) {
@@ -106,8 +125,37 @@ export function LearnRunner(props: { child: Child; onExit: () => void }) {
 
   if (phase === 'map') return (
     <LearnMap name={props.child.name} rows={mapRows} hasTarget={!!patternRef.current}
-      onStart={startUnit} onExit={props.onExit} />
+      onStart={startUnit} onExit={props.onExit} onSoundWall={props.onSoundWall} />
   )
+
+  if (phase === 'sound') {
+    const c = soundsRef.current[soundIdx]
+    if (!c) return null
+    const play = () => phoneme(c.sound.id)
+    const last = soundIdx + 1 >= soundsRef.current.length
+    return (
+      <div className="stack">
+        <div className="row" style={{ justifyContent: 'space-between', alignItems: 'center' }}>
+          <button className="link" onClick={props.onExit}>← Back</button>
+          <span className="lesson-badge">🔊 Sound {soundIdx + 1} of {soundsRef.current.length}</span>
+        </div>
+        <div className="sound-card">
+          <div className="sound-grapheme">{c.graphemes.length ? c.graphemes.join(' · ') : c.sound.id}</div>
+          <button className="btn" onClick={play} aria-label="Hear the sound">🔊 Hear the sound</button>
+          {c.kind === 'new' ? (
+            <>
+              <p className="stem">as in <button className="link" onClick={() => speak(c.sound.keyword)}>{c.sound.keyword} 🔊</button></p>
+              <p className="note">{c.sound.articulation}</p>
+              <p className="note">Now say it with me — tap 🔊 and copy the sound.</p>
+            </>
+          ) : (
+            <p className="stem">You already know this sound (as in <b>{c.sound.keyword}</b>). Here's another way to spell it: <b>{c.graphemes.join(', ')}</b>.</p>
+          )}
+        </div>
+        <button className="btn" onClick={nextSound}>{last ? "Let's read" : 'Next sound'}</button>
+      </div>
+    )
+  }
 
   if (phase === 'intro') {
     const lesson = getLesson(patternRef.current!.id)

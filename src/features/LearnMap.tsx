@@ -16,6 +16,7 @@ export function LearnMap(props: {
   hasTarget: boolean
   onStart: () => void
   onExit: () => void
+  onSoundWall: () => void
 }) {
   const learned = props.rows.filter(r => r.status === 'learned' || r.status === 'mastered').length
   return (
@@ -41,6 +42,7 @@ export function LearnMap(props: {
       {props.hasTarget
         ? <button className="btn" onClick={props.onStart}>Start learning</button>
         : <button className="btn" onClick={props.onExit}>Done</button>}
+      <button className="btn ghost" onClick={props.onSoundWall}>🔊 Sound wall</button>
     </div>
   )
 }
