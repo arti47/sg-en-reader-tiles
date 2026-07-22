@@ -20,6 +20,21 @@
           }
         },
         {
+          "id": "PA-digraphs",
+          "strand": "pa",
+          "objective": "Hear that a digraph (sh, ch, th, ck) makes one sound; blend and count sounds.",
+          "iCanStatement": "I can hear that two letters can make one sound.",
+          "prereqs": [],
+          "itemType": "pa_blend",
+          "itemPool": "pa-digraphs",
+          "enabled": false,
+          "mastery": {
+            "window": 12,
+            "accuracyToPass": 0.85,
+            "minItems": 12
+          }
+        },
+        {
           "id": "PH-letter-sounds",
           "strand": "phonics",
           "objective": "Hear and identify the sound each single letter makes.",
@@ -733,7 +748,7 @@
           "objective": "Spell short decodable sentences from dictation (word by word).",
           "iCanStatement": "I can spell short sentences I hear.",
           "prereqs": [
-            "SP-two-syllable"
+            "SP-cvc-4"
           ],
           "itemType": "dictation",
           "itemPool": "dictation-L02-cvc",
@@ -749,6 +764,7 @@
           "objective": "Spell short decodable sentences with sh, ch, th, ck from dictation.",
           "iCanStatement": "I can spell short sentences with sh, ch, th and ck.",
           "prereqs": [
+            "SP-digraphs",
             "SP-cvc-dictation"
           ],
           "itemType": "dictation",
@@ -765,6 +781,7 @@
           "objective": "Spell short decodable sentences with consonant blends from dictation.",
           "iCanStatement": "I can spell short sentences with blends.",
           "prereqs": [
+            "SP-blends",
             "SP-digraph-dictation"
           ],
           "itemType": "dictation",
@@ -781,6 +798,7 @@
           "objective": "Spell short decodable sentences with FLOSS words from dictation.",
           "iCanStatement": "I can spell short sentences with ff, ll, ss and zz.",
           "prereqs": [
+            "SP-floss",
             "SP-blend-dictation"
           ],
           "itemType": "dictation",
@@ -797,6 +815,7 @@
           "objective": "Spell short decodable sentences with magic-e words from dictation.",
           "iCanStatement": "I can spell short sentences with a bossy silent e.",
           "prereqs": [
+            "SP-silent-e",
             "SP-floss-dictation"
           ],
           "itemType": "dictation",
@@ -813,6 +832,7 @@
           "objective": "Spell short decodable sentences with vowel-team words from dictation.",
           "iCanStatement": "I can spell short sentences with vowel teams.",
           "prereqs": [
+            "SP-vowel-teams-b",
             "SP-silente-dictation"
           ],
           "itemType": "dictation",
@@ -829,6 +849,7 @@
           "objective": "Spell short decodable sentences with bossy-r words from dictation.",
           "iCanStatement": "I can spell short sentences with bossy r.",
           "prereqs": [
+            "SP-r-controlled-b",
             "SP-vowelteam-dictation"
           ],
           "itemType": "dictation",
@@ -845,6 +866,7 @@
           "objective": "Spell short decodable sentences with diphthong words from dictation.",
           "iCanStatement": "I can spell short sentences with oi, oy, ou, ow, aw and au.",
           "prereqs": [
+            "SP-diphthongs-b",
             "SP-rcontrolled-dictation"
           ],
           "itemType": "dictation",
@@ -861,6 +883,7 @@
           "objective": "Spell short decodable two-syllable sentences from dictation.",
           "iCanStatement": "I can spell short two-syllable sentences.",
           "prereqs": [
+            "SP-two-syllable",
             "SP-diphthong-dictation"
           ],
           "itemType": "dictation",

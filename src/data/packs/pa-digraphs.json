@@ -1,528 +1,318 @@
 {
-  "packId": "pa-cvc",
+  "packId": "pa-digraphs",
   "strand": "pa",
   "skillIds": [
-    "PA-cvc"
+    "PA-digraphs"
   ],
   "version": 1,
   "items": [
     {
-      "id": "pa-cbl-001",
-      "skillId": "PA-cvc",
+      "id": "pa-dbl-001",
+      "skillId": "PA-digraphs",
       "itemType": "pa_blend",
       "difficulty": 1,
       "stem": "Listen to the sounds. Which word is it?",
-      "audioText": "sat",
+      "audioText": "ship",
       "phonemeSeq": [
-        "s",
-        "a",
-        "t"
-      ],
-      "choices": [
-        {
-          "id": "a",
-          "label": "sat"
-        },
-        {
-          "id": "b",
-          "label": "sit"
-        },
-        {
-          "id": "c",
-          "label": "sap"
-        }
-      ],
-      "correctChoiceId": "a",
-      "missedConceptOnFail": "phoneme-blend",
-      "rationale": "s-a-t blends to sat."
-    },
-    {
-      "id": "pa-cbl-002",
-      "skillId": "PA-cvc",
-      "itemType": "pa_blend",
-      "difficulty": 2,
-      "stem": "Listen to the sounds. Which word is it?",
-      "audioText": "pin",
-      "phonemeSeq": [
-        "p",
+        "sh",
         "i",
-        "n"
-      ],
-      "choices": [
-        {
-          "id": "a",
-          "label": "pan"
-        },
-        {
-          "id": "b",
-          "label": "pin"
-        },
-        {
-          "id": "c",
-          "label": "pit"
-        }
-      ],
-      "correctChoiceId": "b",
-      "missedConceptOnFail": "phoneme-blend",
-      "rationale": "p-i-n blends to pin."
-    },
-    {
-      "id": "pa-cbl-003",
-      "skillId": "PA-cvc",
-      "itemType": "pa_blend",
-      "difficulty": 1,
-      "stem": "Listen to the sounds. Which word is it?",
-      "audioText": "tap",
-      "phonemeSeq": [
-        "t",
-        "a",
         "p"
       ],
       "choices": [
         {
           "id": "a",
-          "label": "tip"
+          "label": "ship"
         },
         {
           "id": "b",
-          "label": "top"
+          "label": "shop"
         },
         {
           "id": "c",
-          "label": "tap"
-        }
-      ],
-      "correctChoiceId": "c",
-      "missedConceptOnFail": "phoneme-blend",
-      "rationale": "t-a-p blends to tap."
-    },
-    {
-      "id": "pa-cbl-004",
-      "skillId": "PA-cvc",
-      "itemType": "pa_blend",
-      "difficulty": 2,
-      "stem": "Listen to the sounds. Which word is it?",
-      "audioText": "nap",
-      "phonemeSeq": [
-        "n",
-        "a",
-        "p"
-      ],
-      "choices": [
-        {
-          "id": "a",
-          "label": "nap"
-        },
-        {
-          "id": "b",
-          "label": "map"
-        },
-        {
-          "id": "c",
-          "label": "nip"
+          "label": "shed"
         }
       ],
       "correctChoiceId": "a",
       "missedConceptOnFail": "phoneme-blend",
-      "rationale": "n-a-p blends to nap."
+      "rationale": "sh-i-p blends to ship."
     },
     {
-      "id": "pa-cbl-005",
-      "skillId": "PA-cvc",
+      "id": "pa-dbl-002",
+      "skillId": "PA-digraphs",
       "itemType": "pa_blend",
-      "difficulty": 1,
+      "difficulty": 2,
       "stem": "Listen to the sounds. Which word is it?",
-      "audioText": "hen",
+      "audioText": "shop",
       "phonemeSeq": [
-        "h",
-        "e",
-        "n"
+        "sh",
+        "o",
+        "p"
       ],
       "choices": [
         {
           "id": "a",
-          "label": "hot"
+          "label": "ship"
         },
         {
           "id": "b",
-          "label": "hen"
+          "label": "shop"
         },
         {
           "id": "c",
-          "label": "hat"
+          "label": "chop"
         }
       ],
       "correctChoiceId": "b",
       "missedConceptOnFail": "phoneme-blend",
-      "rationale": "h-e-n blends to hen."
+      "rationale": "sh-o-p blends to shop."
     },
     {
-      "id": "pa-cbl-006",
-      "skillId": "PA-cvc",
+      "id": "pa-dbl-003",
+      "skillId": "PA-digraphs",
       "itemType": "pa_blend",
-      "difficulty": 2,
+      "difficulty": 1,
       "stem": "Listen to the sounds. Which word is it?",
-      "audioText": "red",
+      "audioText": "shed",
       "phonemeSeq": [
-        "r",
+        "sh",
         "e",
         "d"
       ],
       "choices": [
         {
           "id": "a",
-          "label": "rid"
+          "label": "shop"
         },
         {
           "id": "b",
-          "label": "bed"
+          "label": "ship"
         },
         {
           "id": "c",
-          "label": "red"
+          "label": "shed"
         }
       ],
       "correctChoiceId": "c",
       "missedConceptOnFail": "phoneme-blend",
-      "rationale": "r-e-d blends to red."
+      "rationale": "sh-e-d blends to shed."
     },
     {
-      "id": "pa-cbl-007",
-      "skillId": "PA-cvc",
+      "id": "pa-dbl-004",
+      "skillId": "PA-digraphs",
       "itemType": "pa_blend",
-      "difficulty": 1,
+      "difficulty": 2,
       "stem": "Listen to the sounds. Which word is it?",
-      "audioText": "dog",
+      "audioText": "shut",
       "phonemeSeq": [
-        "d",
-        "o",
-        "g"
+        "sh",
+        "u",
+        "t"
       ],
       "choices": [
         {
           "id": "a",
-          "label": "dog"
+          "label": "shut"
         },
         {
           "id": "b",
-          "label": "dig"
+          "label": "shot"
         },
         {
           "id": "c",
-          "label": "bog"
+          "label": "shop"
         }
       ],
       "correctChoiceId": "a",
       "missedConceptOnFail": "phoneme-blend",
-      "rationale": "d-o-g blends to dog."
+      "rationale": "sh-u-t blends to shut."
     },
     {
-      "id": "pa-cbl-008",
-      "skillId": "PA-cvc",
+      "id": "pa-dbl-005",
+      "skillId": "PA-digraphs",
       "itemType": "pa_blend",
-      "difficulty": 2,
+      "difficulty": 1,
       "stem": "Listen to the sounds. Which word is it?",
-      "audioText": "sun",
+      "audioText": "chin",
       "phonemeSeq": [
-        "s",
-        "u",
+        "ch",
+        "i",
         "n"
       ],
       "choices": [
         {
           "id": "a",
-          "label": "sit"
+          "label": "chip"
         },
         {
           "id": "b",
-          "label": "sun"
+          "label": "chin"
         },
         {
           "id": "c",
-          "label": "bun"
+          "label": "chat"
         }
       ],
       "correctChoiceId": "b",
       "missedConceptOnFail": "phoneme-blend",
-      "rationale": "s-u-n blends to sun."
+      "rationale": "ch-i-n blends to chin."
     },
     {
-      "id": "pa-cbl-009",
-      "skillId": "PA-cvc",
+      "id": "pa-dbl-006",
+      "skillId": "PA-digraphs",
       "itemType": "pa_blend",
-      "difficulty": 1,
+      "difficulty": 2,
       "stem": "Listen to the sounds. Which word is it?",
-      "audioText": "bug",
+      "audioText": "chip",
       "phonemeSeq": [
-        "b",
-        "u",
-        "g"
+        "ch",
+        "i",
+        "p"
       ],
       "choices": [
         {
           "id": "a",
-          "label": "big"
+          "label": "chin"
         },
         {
           "id": "b",
-          "label": "bag"
+          "label": "ship"
         },
         {
           "id": "c",
-          "label": "bug"
+          "label": "chip"
         }
       ],
       "correctChoiceId": "c",
       "missedConceptOnFail": "phoneme-blend",
-      "rationale": "b-u-g blends to bug."
+      "rationale": "ch-i-p blends to chip."
     },
     {
-      "id": "pa-cbl-010",
-      "skillId": "PA-cvc",
+      "id": "pa-dbl-007",
+      "skillId": "PA-digraphs",
+      "itemType": "pa_blend",
+      "difficulty": 1,
+      "stem": "Listen to the sounds. Which word is it?",
+      "audioText": "chop",
+      "phonemeSeq": [
+        "ch",
+        "o",
+        "p"
+      ],
+      "choices": [
+        {
+          "id": "a",
+          "label": "chop"
+        },
+        {
+          "id": "b",
+          "label": "chip"
+        },
+        {
+          "id": "c",
+          "label": "shop"
+        }
+      ],
+      "correctChoiceId": "a",
+      "missedConceptOnFail": "phoneme-blend",
+      "rationale": "ch-o-p blends to chop."
+    },
+    {
+      "id": "pa-dbl-008",
+      "skillId": "PA-digraphs",
       "itemType": "pa_blend",
       "difficulty": 2,
       "stem": "Listen to the sounds. Which word is it?",
-      "audioText": "mat",
+      "audioText": "chat",
       "phonemeSeq": [
-        "m",
+        "ch",
         "a",
         "t"
       ],
       "choices": [
         {
           "id": "a",
-          "label": "mat"
+          "label": "chin"
         },
         {
           "id": "b",
-          "label": "met"
+          "label": "chat"
         },
         {
           "id": "c",
-          "label": "mad"
+          "label": "chip"
         }
       ],
-      "correctChoiceId": "a",
+      "correctChoiceId": "b",
       "missedConceptOnFail": "phoneme-blend",
-      "rationale": "m-a-t blends to mat."
+      "rationale": "ch-a-t blends to chat."
     },
     {
-      "id": "pa-cbl-011",
-      "skillId": "PA-cvc",
+      "id": "pa-dbl-009",
+      "skillId": "PA-digraphs",
       "itemType": "pa_blend",
       "difficulty": 1,
       "stem": "Listen to the sounds. Which word is it?",
-      "audioText": "jam",
+      "audioText": "thin",
       "phonemeSeq": [
-        "j",
+        "th-unvoiced",
+        "i",
+        "n"
+      ],
+      "choices": [
+        {
+          "id": "a",
+          "label": "chin"
+        },
+        {
+          "id": "b",
+          "label": "shin"
+        },
+        {
+          "id": "c",
+          "label": "thin"
+        }
+      ],
+      "correctChoiceId": "c",
+      "missedConceptOnFail": "phoneme-blend",
+      "rationale": "th-unvoiced-i-n blends to thin."
+    },
+    {
+      "id": "pa-dbl-010",
+      "skillId": "PA-digraphs",
+      "itemType": "pa_blend",
+      "difficulty": 2,
+      "stem": "Listen to the sounds. Which word is it?",
+      "audioText": "bath",
+      "phonemeSeq": [
+        "b",
         "a",
-        "m"
+        "th-unvoiced"
       ],
       "choices": [
         {
           "id": "a",
-          "label": "jet"
+          "label": "bath"
         },
         {
           "id": "b",
-          "label": "jam"
+          "label": "bash"
         },
         {
           "id": "c",
-          "label": "ham"
+          "label": "back"
         }
       ],
-      "correctChoiceId": "b",
+      "correctChoiceId": "a",
       "missedConceptOnFail": "phoneme-blend",
-      "rationale": "j-a-m blends to jam."
+      "rationale": "b-a-th-unvoiced blends to bath."
     },
     {
-      "id": "pa-cbl-012",
-      "skillId": "PA-cvc",
-      "itemType": "pa_blend",
-      "difficulty": 2,
-      "stem": "Listen to the sounds. Which word is it?",
-      "audioText": "web",
-      "phonemeSeq": [
-        "w",
-        "e",
-        "b"
-      ],
-      "choices": [
-        {
-          "id": "a",
-          "label": "wet"
-        },
-        {
-          "id": "b",
-          "label": "wig"
-        },
-        {
-          "id": "c",
-          "label": "web"
-        }
-      ],
-      "correctChoiceId": "c",
-      "missedConceptOnFail": "phoneme-blend",
-      "rationale": "w-e-b blends to web."
-    },
-    {
-      "id": "pa-cct-001",
-      "skillId": "PA-cvc",
+      "id": "pa-dct-001",
+      "skillId": "PA-digraphs",
       "itemType": "pa_count",
       "difficulty": 1,
       "stem": "How many sounds do you hear?",
-      "audioText": "at",
-      "choices": [
-        {
-          "id": "a",
-          "label": "2"
-        },
-        {
-          "id": "b",
-          "label": "3"
-        },
-        {
-          "id": "c",
-          "label": "4"
-        }
-      ],
-      "correctChoiceId": "a",
-      "missedConceptOnFail": "phoneme-count",
-      "rationale": "at has 2 sounds: a-t."
-    },
-    {
-      "id": "pa-cct-002",
-      "skillId": "PA-cvc",
-      "itemType": "pa_count",
-      "difficulty": 2,
-      "stem": "How many sounds do you hear?",
-      "audioText": "up",
-      "choices": [
-        {
-          "id": "a",
-          "label": "2"
-        },
-        {
-          "id": "b",
-          "label": "3"
-        },
-        {
-          "id": "c",
-          "label": "4"
-        }
-      ],
-      "correctChoiceId": "a",
-      "missedConceptOnFail": "phoneme-count",
-      "rationale": "up has 2 sounds: u-p."
-    },
-    {
-      "id": "pa-cct-003",
-      "skillId": "PA-cvc",
-      "itemType": "pa_count",
-      "difficulty": 1,
-      "stem": "How many sounds do you hear?",
-      "audioText": "in",
-      "choices": [
-        {
-          "id": "a",
-          "label": "2"
-        },
-        {
-          "id": "b",
-          "label": "3"
-        },
-        {
-          "id": "c",
-          "label": "4"
-        }
-      ],
-      "correctChoiceId": "a",
-      "missedConceptOnFail": "phoneme-count",
-      "rationale": "in has 2 sounds: i-n."
-    },
-    {
-      "id": "pa-cct-004",
-      "skillId": "PA-cvc",
-      "itemType": "pa_count",
-      "difficulty": 2,
-      "stem": "How many sounds do you hear?",
-      "audioText": "am",
-      "choices": [
-        {
-          "id": "a",
-          "label": "2"
-        },
-        {
-          "id": "b",
-          "label": "3"
-        },
-        {
-          "id": "c",
-          "label": "4"
-        }
-      ],
-      "correctChoiceId": "a",
-      "missedConceptOnFail": "phoneme-count",
-      "rationale": "am has 2 sounds: a-m."
-    },
-    {
-      "id": "pa-cct-005",
-      "skillId": "PA-cvc",
-      "itemType": "pa_count",
-      "difficulty": 1,
-      "stem": "How many sounds do you hear?",
-      "audioText": "on",
-      "choices": [
-        {
-          "id": "a",
-          "label": "2"
-        },
-        {
-          "id": "b",
-          "label": "3"
-        },
-        {
-          "id": "c",
-          "label": "4"
-        }
-      ],
-      "correctChoiceId": "a",
-      "missedConceptOnFail": "phoneme-count",
-      "rationale": "on has 2 sounds: o-n."
-    },
-    {
-      "id": "pa-cct-006",
-      "skillId": "PA-cvc",
-      "itemType": "pa_count",
-      "difficulty": 2,
-      "stem": "How many sounds do you hear?",
-      "audioText": "it",
-      "choices": [
-        {
-          "id": "a",
-          "label": "2"
-        },
-        {
-          "id": "b",
-          "label": "3"
-        },
-        {
-          "id": "c",
-          "label": "4"
-        }
-      ],
-      "correctChoiceId": "a",
-      "missedConceptOnFail": "phoneme-count",
-      "rationale": "it has 2 sounds: i-t."
-    },
-    {
-      "id": "pa-cct-007",
-      "skillId": "PA-cvc",
-      "itemType": "pa_count",
-      "difficulty": 1,
-      "stem": "How many sounds do you hear?",
-      "audioText": "kit",
+      "audioText": "ship",
       "choices": [
         {
           "id": "a",
@@ -539,15 +329,15 @@
       ],
       "correctChoiceId": "b",
       "missedConceptOnFail": "phoneme-count",
-      "rationale": "kit has 3 sounds: k-i-t."
+      "rationale": "ship has 3 sounds: sh-i-p."
     },
     {
-      "id": "pa-cct-008",
-      "skillId": "PA-cvc",
+      "id": "pa-dct-002",
+      "skillId": "PA-digraphs",
       "itemType": "pa_count",
       "difficulty": 2,
       "stem": "How many sounds do you hear?",
-      "audioText": "sat",
+      "audioText": "chin",
       "choices": [
         {
           "id": "a",
@@ -564,15 +354,15 @@
       ],
       "correctChoiceId": "b",
       "missedConceptOnFail": "phoneme-count",
-      "rationale": "sat has 3 sounds: s-a-t."
+      "rationale": "chin has 3 sounds: ch-i-n."
     },
     {
-      "id": "pa-cct-009",
-      "skillId": "PA-cvc",
+      "id": "pa-dct-003",
+      "skillId": "PA-digraphs",
       "itemType": "pa_count",
       "difficulty": 1,
       "stem": "How many sounds do you hear?",
-      "audioText": "dog",
+      "audioText": "bath",
       "choices": [
         {
           "id": "a",
@@ -589,15 +379,15 @@
       ],
       "correctChoiceId": "b",
       "missedConceptOnFail": "phoneme-count",
-      "rationale": "dog has 3 sounds: d-o-g."
+      "rationale": "bath has 3 sounds: b-a-th."
     },
     {
-      "id": "pa-cct-010",
-      "skillId": "PA-cvc",
+      "id": "pa-dct-004",
+      "skillId": "PA-digraphs",
       "itemType": "pa_count",
       "difficulty": 2,
       "stem": "How many sounds do you hear?",
-      "audioText": "bun",
+      "audioText": "chop",
       "choices": [
         {
           "id": "a",
@@ -614,15 +404,15 @@
       ],
       "correctChoiceId": "b",
       "missedConceptOnFail": "phoneme-count",
-      "rationale": "bun has 3 sounds: b-u-n."
+      "rationale": "chop has 3 sounds: ch-o-p."
     },
     {
-      "id": "pa-cct-011",
-      "skillId": "PA-cvc",
+      "id": "pa-dct-005",
+      "skillId": "PA-digraphs",
       "itemType": "pa_count",
       "difficulty": 1,
       "stem": "How many sounds do you hear?",
-      "audioText": "red",
+      "audioText": "duck",
       "choices": [
         {
           "id": "a",
@@ -639,15 +429,15 @@
       ],
       "correctChoiceId": "b",
       "missedConceptOnFail": "phoneme-count",
-      "rationale": "red has 3 sounds: r-e-d."
+      "rationale": "duck has 3 sounds: d-u-ck."
     },
     {
-      "id": "pa-cct-012",
-      "skillId": "PA-cvc",
+      "id": "pa-dct-006",
+      "skillId": "PA-digraphs",
       "itemType": "pa_count",
       "difficulty": 2,
       "stem": "How many sounds do you hear?",
-      "audioText": "mop",
+      "audioText": "fish",
       "choices": [
         {
           "id": "a",
@@ -664,15 +454,15 @@
       ],
       "correctChoiceId": "b",
       "missedConceptOnFail": "phoneme-count",
-      "rationale": "mop has 3 sounds: m-o-p."
+      "rationale": "fish has 3 sounds: f-i-sh."
     },
     {
-      "id": "pa-cct-013",
-      "skillId": "PA-cvc",
+      "id": "pa-dct-007",
+      "skillId": "PA-digraphs",
       "itemType": "pa_count",
       "difficulty": 1,
       "stem": "How many sounds do you hear?",
-      "audioText": "lamp",
+      "audioText": "rich",
       "choices": [
         {
           "id": "a",
@@ -687,17 +477,17 @@
           "label": "4"
         }
       ],
-      "correctChoiceId": "c",
+      "correctChoiceId": "b",
       "missedConceptOnFail": "phoneme-count",
-      "rationale": "lamp has 4 sounds: l-a-m-p."
+      "rationale": "rich has 3 sounds: r-i-ch."
     },
     {
-      "id": "pa-cct-014",
-      "skillId": "PA-cvc",
+      "id": "pa-dct-008",
+      "skillId": "PA-digraphs",
       "itemType": "pa_count",
       "difficulty": 2,
       "stem": "How many sounds do you hear?",
-      "audioText": "hand",
+      "audioText": "moth",
       "choices": [
         {
           "id": "a",
@@ -712,17 +502,17 @@
           "label": "4"
         }
       ],
-      "correctChoiceId": "c",
+      "correctChoiceId": "b",
       "missedConceptOnFail": "phoneme-count",
-      "rationale": "hand has 4 sounds: h-a-n-d."
+      "rationale": "moth has 3 sounds: m-o-th."
     },
     {
-      "id": "pa-cct-015",
-      "skillId": "PA-cvc",
+      "id": "pa-dct-009",
+      "skillId": "PA-digraphs",
       "itemType": "pa_count",
       "difficulty": 1,
       "stem": "How many sounds do you hear?",
-      "audioText": "tent",
+      "audioText": "sock",
       "choices": [
         {
           "id": "a",
@@ -737,17 +527,17 @@
           "label": "4"
         }
       ],
-      "correctChoiceId": "c",
+      "correctChoiceId": "b",
       "missedConceptOnFail": "phoneme-count",
-      "rationale": "tent has 4 sounds: t-e-n-t."
+      "rationale": "sock has 3 sounds: s-o-ck."
     },
     {
-      "id": "pa-cct-016",
-      "skillId": "PA-cvc",
+      "id": "pa-dct-010",
+      "skillId": "PA-digraphs",
       "itemType": "pa_count",
       "difficulty": 2,
       "stem": "How many sounds do you hear?",
-      "audioText": "milk",
+      "audioText": "such",
       "choices": [
         {
           "id": "a",
@@ -762,17 +552,17 @@
           "label": "4"
         }
       ],
-      "correctChoiceId": "c",
+      "correctChoiceId": "b",
       "missedConceptOnFail": "phoneme-count",
-      "rationale": "milk has 4 sounds: m-i-l-k."
+      "rationale": "such has 3 sounds: s-u-ch."
     },
     {
-      "id": "pa-cct-017",
-      "skillId": "PA-cvc",
+      "id": "pa-dct-011",
+      "skillId": "PA-digraphs",
       "itemType": "pa_count",
       "difficulty": 1,
       "stem": "How many sounds do you hear?",
-      "audioText": "jump",
+      "audioText": "chest",
       "choices": [
         {
           "id": "a",
@@ -789,15 +579,15 @@
       ],
       "correctChoiceId": "c",
       "missedConceptOnFail": "phoneme-count",
-      "rationale": "jump has 4 sounds: j-u-m-p."
+      "rationale": "chest has 4 sounds: ch-e-s-t."
     },
     {
-      "id": "pa-cct-018",
-      "skillId": "PA-cvc",
+      "id": "pa-dct-012",
+      "skillId": "PA-digraphs",
       "itemType": "pa_count",
       "difficulty": 2,
       "stem": "How many sounds do you hear?",
-      "audioText": "fast",
+      "audioText": "shift",
       "choices": [
         {
           "id": "a",
@@ -814,21 +604,71 @@
       ],
       "correctChoiceId": "c",
       "missedConceptOnFail": "phoneme-count",
-      "rationale": "fast has 4 sounds: f-a-s-t."
+      "rationale": "shift has 4 sounds: sh-i-f-t."
+    },
+    {
+      "id": "pa-dct-013",
+      "skillId": "PA-digraphs",
+      "itemType": "pa_count",
+      "difficulty": 1,
+      "stem": "How many sounds do you hear?",
+      "audioText": "bench",
+      "choices": [
+        {
+          "id": "a",
+          "label": "2"
+        },
+        {
+          "id": "b",
+          "label": "3"
+        },
+        {
+          "id": "c",
+          "label": "4"
+        }
+      ],
+      "correctChoiceId": "c",
+      "missedConceptOnFail": "phoneme-count",
+      "rationale": "bench has 4 sounds: b-e-n-ch."
+    },
+    {
+      "id": "pa-dct-014",
+      "skillId": "PA-digraphs",
+      "itemType": "pa_count",
+      "difficulty": 2,
+      "stem": "How many sounds do you hear?",
+      "audioText": "thump",
+      "choices": [
+        {
+          "id": "a",
+          "label": "2"
+        },
+        {
+          "id": "b",
+          "label": "3"
+        },
+        {
+          "id": "c",
+          "label": "4"
+        }
+      ],
+      "correctChoiceId": "c",
+      "missedConceptOnFail": "phoneme-count",
+      "rationale": "thump has 4 sounds: th-unvoiced-u-m-p."
     }
   ],
   "lessons": {
-    "PA-cvc": {
-      "iCanStatement": "I can hear and blend the sounds in a word.",
-      "explanation": "Every word is made of small sounds. If you hear the sounds one at a time — /s/ /a/ /t/ — you can blend them together to say the word: sat. You can also count the sounds you hear.",
+    "PA-digraphs": {
+      "iCanStatement": "I can hear that two letters can make one sound.",
+      "explanation": "Some sounds are written with TWO letters — sh, ch, th, ck — but they still make just ONE sound. \"ship\" has three sounds: /sh/ /i/ /p/, not four. Listen for the sound, not the letters.",
       "workedExamples": [
         {
-          "text": "sat",
-          "note": "/s/ /a/ /t/ → sat (3 sounds)"
+          "text": "ship",
+          "note": "/sh/ /i/ /p/ → ship (3 sounds)"
         },
         {
-          "text": "up",
-          "note": "/u/ /p/ → up (2 sounds)"
+          "text": "duck",
+          "note": "/d/ /u/ /ck/ → duck (3 sounds)"
         }
       ]
     }

@@ -640,7 +640,12 @@ try {
     return 'ok'
   })
 
+  // §18.11: every enabled scope skill's pack must be wired at runtime (unimported pack → pickItem
+  // returns nothing → session aborts). Captured while srsPage is still open.
+  const unwired = await srsPage.evaluate(() => window.__unwiredSkills || ['<missing hook>'])
+
   await browser.close()
+  if (unwired.length) fail('pack wiring: enabled skills with no runtime items (unimported pack?): ' + unwired.join(', '))
   if (srsCheck !== 'ok') fail('SRS invariant: ' + srsCheck)
   if (engineCheck !== 'ok') fail('engine invariant: ' + engineCheck)
   if (m2Check !== 'ok') fail('M2 invariant: ' + m2Check)

@@ -34,9 +34,24 @@ import phonics2s from '../data/packs/phonics-L10-two-syllable.json'
 import spelling2s from '../data/packs/spelling-L10-two-syllable.json'
 import phonicsSf from '../data/packs/phonics-L11-suffixes.json'
 import spellingSf from '../data/packs/spelling-L11-suffixes.json'
+import phonicsPf from '../data/packs/phonics-L12-prefixes.json'
+import spellingPf from '../data/packs/spelling-L12-prefixes.json'
+import phonicsCle from '../data/packs/phonics-L13-c-le.json'
+import spellingCle from '../data/packs/spelling-L13-c-le.json'
+import phonicsNg from '../data/packs/phonics-L14-ng.json'
+import spellingNg from '../data/packs/spelling-L14-ng.json'
+import phonicsRvt from '../data/packs/phonics-L15-r-vowel-teams.json'
+import spellingRvt from '../data/packs/spelling-L15-r-vowel-teams.json'
 import phonicsHf from '../data/packs/phonics-L12-hf.json'
 import dictationCvc from '../data/packs/dictation-L02-cvc.json'
 import dictationDig from '../data/packs/dictation-L03-digraphs.json'
+import dictationBl from '../data/packs/dictation-L04-blends.json'
+import dictationFl from '../data/packs/dictation-L05-floss.json'
+import dictationSe from '../data/packs/dictation-L06-silent-e.json'
+import dictationVt from '../data/packs/dictation-L07-vowel-teams.json'
+import dictationRc from '../data/packs/dictation-L08-r-controlled.json'
+import dictationDi from '../data/packs/dictation-L09-diphthongs.json'
+import dictation2s from '../data/packs/dictation-L10-two-syllable.json'
 import grArticles from '../data/packs/grammar-L01-articles.json'
 import grSva from '../data/packs/grammar-L02-sva.json'
 import grTenses from '../data/packs/grammar-L03-tenses.json'
@@ -92,9 +107,24 @@ const PACKS: ContentPack[] = [
   spelling2s as ContentPack,
   phonicsSf as ContentPack,
   spellingSf as ContentPack,
+  phonicsPf as ContentPack,
+  spellingPf as ContentPack,
+  phonicsCle as ContentPack,
+  spellingCle as ContentPack,
+  phonicsNg as ContentPack,
+  spellingNg as ContentPack,
+  phonicsRvt as ContentPack,
+  spellingRvt as ContentPack,
   phonicsHf as ContentPack,
   dictationCvc as ContentPack,
   dictationDig as ContentPack,
+  dictationBl as ContentPack,
+  dictationFl as ContentPack,
+  dictationSe as ContentPack,
+  dictationVt as ContentPack,
+  dictationRc as ContentPack,
+  dictationDi as ContentPack,
+  dictation2s as ContentPack,
   grArticles as ContentPack,
   grSva as ContentPack,
   grTenses as ContentPack,
