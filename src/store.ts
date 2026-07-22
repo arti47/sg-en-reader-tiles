@@ -141,7 +141,7 @@ export const putUsage = (u: Usage) => req('usage', 'readwrite', s => s.put(u))
 // Settings (single row keyed "app")
 export const getSettings = () =>
   req<(Settings & { key: string }) | undefined>('settings', 'readonly', s => s.get('app'))
-    .then(r => r ?? { key: 'app', ttsRate: 0.9, englishVariant: 'en-SG' as const, sessionLength: 16 })
+    .then(r => r ?? { key: 'app', ttsRate: 0.4, englishVariant: 'en-SG' as const, sessionLength: 16 })
 export const putSettings = (st: Settings) => req('settings', 'readwrite', s => s.put({ ...st, key: 'app' }))
 
 // Export / import (§11) — device-bound storage safety net. Full-DB JSON round-trip.

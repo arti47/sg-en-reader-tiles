@@ -1,6 +1,6 @@
 // Offline audio service (CLAUDE.md §6c). TTS via speak(); isolated phonemes via
 // phoneme() (bundled public/phonemes/*.m4a clips, resolved through the manifest).
-let rate = 0.9
+let rate = 0.4
 export function setRate(r: number) { rate = r }
 
 // Selected TTS voice (by voiceURI, chosen in parent Settings). Null → auto: first en-GB.

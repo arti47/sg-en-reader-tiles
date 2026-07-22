@@ -67,7 +67,7 @@ export function ParentDashboard(props: { children: Child[]; onExit: () => void; 
       const u = new SpeechSynthesisUtterance('Hello! Let us read together.')
       const v = synth.getVoices().find(x => x.voiceURI === voiceURI)
       if (v) { u.voice = v; u.lang = v.lang }
-      u.rate = settings?.ttsRate ?? 0.9
+      u.rate = settings?.ttsRate ?? 0.4
       u.onstart = () => setTstat('▶ speaking…')
       u.onend = () => setTstat('✓ finished')
       u.onerror = e => setTstat('✗ ' + (e.error || 'error'))
@@ -106,14 +106,14 @@ export function ParentDashboard(props: { children: Child[]; onExit: () => void; 
       setCandidate(pin); setError(false); setGate('create2')
     } else if (gate === 'create2') {
       if (pin === candidate) {
-        const next: Settings = { ...(settings ?? { ttsRate: 0.9, englishVariant: 'en-SG', sessionLength: 16 }), pin }
+        const next: Settings = { ...(settings ?? { ttsRate: 0.4, englishVariant: 'en-SG', sessionLength: 16 }), pin }
         await putSettings(next); setSettings(next); setGate('open')
       } else { setError(true); setCandidate(''); setGate('create1') }
     }
   }
 
   async function updateSettings(patch: Partial<Settings>) {
-    const next: Settings = { ...(settings ?? { ttsRate: 0.9, englishVariant: 'en-SG', sessionLength: 16 }), ...patch }
+    const next: Settings = { ...(settings ?? { ttsRate: 0.4, englishVariant: 'en-SG', sessionLength: 16 }), ...patch }
     setSettings(next); await putSettings(next)
     if (patch.font) document.documentElement.dataset.font = patch.font
     if (patch.ttsRate) setRate(patch.ttsRate)
@@ -274,9 +274,9 @@ export function ParentDashboard(props: { children: Child[]; onExit: () => void; 
         <div className="set-row">
           <span>Voice speed</span>
           <div className="row" style={{ gap: 6, alignItems: 'center' }}>
-            <button className="btn small ghost" aria-label="Slower voice" onClick={() => updateSettings({ ttsRate: clamp(Number(((settings?.ttsRate ?? 0.9) - 0.2).toFixed(2)), 0.4, 1.6) })}>−</button>
-            <span aria-live="polite">{(settings?.ttsRate ?? 0.9).toFixed(1)}×</span>
-            <button className="btn small ghost" aria-label="Faster voice" onClick={() => updateSettings({ ttsRate: clamp(Number(((settings?.ttsRate ?? 0.9) + 0.2).toFixed(2)), 0.4, 1.6) })}>+</button>
+            <button className="btn small ghost" aria-label="Slower voice" onClick={() => updateSettings({ ttsRate: clamp(Number(((settings?.ttsRate ?? 0.4) - 0.2).toFixed(2)), 0.4, 1.6) })}>−</button>
+            <span aria-live="polite">{(settings?.ttsRate ?? 0.4).toFixed(1)}×</span>
+            <button className="btn small ghost" aria-label="Faster voice" onClick={() => updateSettings({ ttsRate: clamp(Number(((settings?.ttsRate ?? 0.4) + 0.2).toFixed(2)), 0.4, 1.6) })}>+</button>
           </div>
         </div>
         <p className="note tiny">On iPhone/iPad the built-in voice only partly changes speed — the setting applies from the next session.</p>
