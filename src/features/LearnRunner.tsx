@@ -1,13 +1,15 @@
 import { useEffect, useRef, useState } from 'react'
-import type { Child, PackItem, SkillDef } from '../types'
+import type { Child, PackItem, SkillDef, PatternStatus } from '../types'
 import { pickItem, getSkill, getLesson } from '../lib/packs'
-import { nextToLearn, PATTERNS, learnedSet, needsReviewSet } from '../lib/learn'
-import { getLearn, setLearned, clearReview } from '../store'
+import { nextToLearn, PATTERNS, learnedSet, needsReviewSet, patternStatus } from '../lib/learn'
+import { getLearn, setLearned, clearReview, getProgress, getSettings } from '../store'
 import { setRate, setVoice } from '../lib/audio'
-import { getSettings } from '../store'
 import { McqItem } from './items/McqItem'
 import { TileItem } from './items/TileItem'
 import { LessonView } from './LessonView'
+import { LearnMap } from './LearnMap'
+
+type MapRow = { id: string; label: string; status: PatternStatus }
 
 // M5 Learn mode (§19.6). A linear, low-pressure teaching walk. One unit = one pattern taught
 // read+spell together: decode rule → a few read items → encode rule → a few spell items →
@@ -16,10 +18,10 @@ import { LessonView } from './LessonView'
 // lives in Test. Target = the first needs-review pattern (re-teach first), else the frontier.
 const READ_N = 3
 const SPELL_N = 3
-type Phase = 'loading' | 'alldone' | 'intro' | 'read' | 'spellIntro' | 'spell' | 'done'
+type Phase = 'loading' | 'map' | 'intro' | 'read' | 'spellIntro' | 'spell' | 'done'
 
 export function LearnRunner(props: { child: Child; onExit: () => void }) {
-  const patternRef = useRef<SkillDef | null>(null)
+  const patternRef = useRef<SkillDef | null>(null)  // the next target (needs-review first, else frontier)
   const encodeRef = useRef<SkillDef | null>(null)
   const seenRef = useRef<Set<string>>(new Set())
   const stepRef = useRef(0)
@@ -28,24 +30,36 @@ export function LearnRunner(props: { child: Child; onExit: () => void }) {
   const [item, setItem] = useState<PackItem | null>(null)
   const [answered, setAnswered] = useState(false)
   const [serve, setServe] = useState(0)
+  const [mapRows, setMapRows] = useState<MapRow[]>([])
 
   useEffect(() => {
     if (startedRef.current) return
     startedRef.current = true
     void (async () => {
       const s = await getSettings(); setRate(s.ttsRate); setVoice(s.voiceURI)
-      await begin()
+      await openMap()
     })()
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
-  // Choose the next pattern to teach and start its unit (or finish if all learned).
-  async function begin() {
+  // Landing screen: compute every pattern's status + the next target (needs-review first, §19.3).
+  async function openMap() {
     const rows = await getLearn(props.child.id)
+    const prog = await getProgress(props.child.id)
+    const masteredSkills = new Set(prog.filter(p => p.status === 'mastered').map(p => p.skillId))
     const learned = learnedSet(rows); const needs = needsReviewSet(rows)
-    const target = PATTERNS.find(p => needs.has(p.id)) ?? nextToLearn(learned)
-    if (!target) { setPhase('alldone'); return }
-    patternRef.current = target
+    patternRef.current = PATTERNS.find(p => needs.has(p.id)) ?? nextToLearn(learned) ?? null
+    setMapRows(PATTERNS.map(p => {
+      const mastered = masteredSkills.has(p.id) && (!p.encodePairId || masteredSkills.has(p.encodePairId))
+      return { id: p.id, label: p.iCanStatement.replace(/^I can /, ''), status: patternStatus(p.id, rows, mastered) }
+    }))
+    setPhase('map')
+  }
+
+  // Begin the target pattern's unit (read+spell taught together).
+  function startUnit() {
+    const target = patternRef.current
+    if (!target) { setPhase('map'); return }
     encodeRef.current = target.encodePairId ? getSkill(target.encodePairId) ?? null : null
     seenRef.current = new Set(); stepRef.current = 0
     setPhase('intro')
@@ -86,13 +100,9 @@ export function LearnRunner(props: { child: Child; onExit: () => void }) {
 
   if (phase === 'loading') return <div className="stack center"><p className="note">Getting ready…</p></div>
 
-  if (phase === 'alldone') return (
-    <div className="stack center">
-      <div className="cert">🎉</div>
-      <h1>You've learned everything!</h1>
-      <p className="note">Great work, {props.child.name}. Try them all in Test.</p>
-      <button className="btn" onClick={props.onExit}>Done</button>
-    </div>
+  if (phase === 'map') return (
+    <LearnMap name={props.child.name} rows={mapRows} hasTarget={!!patternRef.current}
+      onStart={startUnit} onExit={props.onExit} />
   )
 
   if (phase === 'intro') {
@@ -129,7 +139,7 @@ export function LearnRunner(props: { child: Child; onExit: () => void }) {
       <p className="stem">{patternRef.current!.iCanStatement}</p>
       <p className="note">Now try it in Test — or learn the next one.</p>
       <div className="row" style={{ gap: 8 }}>
-        <button className="btn" onClick={() => { void begin() }}>Learn the next one</button>
+        <button className="btn" onClick={() => { void openMap() }}>Learn the next one</button>
         <button className="btn ghost" onClick={props.onExit}>Done</button>
       </div>
     </div>

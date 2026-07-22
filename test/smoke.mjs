@@ -140,13 +140,15 @@ try {
       for (let step = 0; step < 50; step++) {
         const kind = await page.waitForFunction(() => {
           const t = document.body.innerText
-          if (/You learned it!/.test(t) || /learned everything/.test(t)) return 'done'
+          if (/You learned it!/.test(t)) return 'done'
+          if ([...document.querySelectorAll('button')].some(b => b.textContent.trim() === 'Start learning')) return 'map'
           if (/Let's learn this/.test(t)) return 'lesson'
           const hasContinue = [...document.querySelectorAll('button')].some(b => b.textContent.trim() === 'Continue')
           const freshTile = document.querySelector('button.tile:not([disabled])')
           return (freshTile && !hasContinue) ? 'item' : null
         }, { timeout: 8000 }).then(h => h.jsonValue())
         if (kind === 'done') { await page.getByRole('button', { name: 'Done', exact: true }).click(); return }
+        if (kind === 'map') { await page.getByRole('button', { name: 'Start learning' }).click(); continue }
         if (kind === 'lesson') { await page.getByRole('button', { name: "Let's try" }).click(); continue }
         const it = await page.evaluate(() => window.__item || null)
         if (it.graphemes) {
@@ -201,6 +203,19 @@ try {
       if (!/My badges/.test(troText)) fail('trophies: badges section missing')
       if (!/My certificates/.test(troText) || !/I can/.test(troText)) fail('trophies: earned certificate missing')
       if (await page.evaluate(() => document.documentElement.scrollWidth > window.innerWidth + 1)) fail('trophies: horizontal overflow at 390px')
+    } else {
+      // M5 Phase 3 needs-review loop (§19.3): Test flagged the struggled pattern → Learn resurfaces
+      // it (target = the needs-review pattern) and re-learning CLEARS the flag.
+      db = await readDb()
+      if (!(db.learn || []).some(r => r.patternId === 'PH-cvc-short-vowels' && r.needsReview)) fail('M5 P3: Test struggle should flag the pattern needs-review')
+      await page.getByRole('button', { name: 'Done' }).click() // summary → picker
+      await page.waitForFunction(() => /Who's reading\?/.test(document.body.innerText), { timeout: 6000 })
+      await page.getByRole('button', { name: 'Learn with Test' }).click()
+      await walkLearn() // map targets the needs-review pattern → re-teach → clears the flag
+      db = await readDb()
+      const cvc = (db.learn || []).find(r => r.patternId === 'PH-cvc-short-vowels')
+      if (!cvc || cvc.needsReview) fail('M5 P3: re-learning a needs-review pattern should clear the flag')
+      if (!cvc.learned) fail('M5 P3: the re-learned pattern should stay learned')
     }
     results.push({ WRONG, errors, overflow, lessons, db, firstSkill })
     await ctx.close()
@@ -639,7 +654,6 @@ try {
   const usage0 = (good.db.usage || [])[0]
   if (!(usage0 && usage0.sessionsThisWeek >= 1 && usage0.weeklySessionTarget === 4)) fail('M2: usage/session-count row')
   const bad = results.find(r => r.WRONG)
-  if (!(bad.db.learn || []).some(r => r.patternId === 'PH-cvc-short-vowels' && r.needsReview)) fail('M5 struggle: Test should flag the pattern needs-review')
   // M5 (§19.7): teaching moved to Learn — Test fires NO lessons; and the child LEARNED a pattern
   // in Learn before Test could assess it.
   if (good.lessons !== 0) fail('M5: Test must not teach (no lessons should fire in Test mode)')
