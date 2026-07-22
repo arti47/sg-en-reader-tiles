@@ -1,0 +1,458 @@
+{
+  "packId": "reading-L08-two-syllable",
+  "strand": "reading",
+  "skillIds": [
+    "RD-twosyllable-sentences"
+  ],
+  "version": 1,
+  "items": [
+    {
+      "id": "rd-2s-001",
+      "skillId": "RD-twosyllable-sentences",
+      "itemType": "passage_question",
+      "difficulty": 1,
+      "passage": "The rabbit sat in the sunset.",
+      "audioText": "The rabbit sat in the sunset.",
+      "stem": "When did the rabbit sit?",
+      "choices": [
+        {
+          "id": "a",
+          "label": "in the sunset"
+        },
+        {
+          "id": "b",
+          "label": "at the picnic"
+        },
+        {
+          "id": "c",
+          "label": "in the basket"
+        }
+      ],
+      "correctChoiceId": "a",
+      "missedConceptOnFail": "comprehension-literal",
+      "rationale": "in the sunset.",
+      "decodableWithin": "PH-two-syllable"
+    },
+    {
+      "id": "rd-2s-002",
+      "skillId": "RD-twosyllable-sentences",
+      "itemType": "passage_question",
+      "difficulty": 2,
+      "passage": "The kitten hid in a basket.",
+      "audioText": "The kitten hid in a basket.",
+      "stem": "Where did the kitten hide?",
+      "choices": [
+        {
+          "id": "a",
+          "label": "in the wagon"
+        },
+        {
+          "id": "b",
+          "label": "in a basket"
+        },
+        {
+          "id": "c",
+          "label": "on the napkin"
+        }
+      ],
+      "correctChoiceId": "b",
+      "missedConceptOnFail": "comprehension-literal",
+      "rationale": "in a basket.",
+      "decodableWithin": "PH-two-syllable"
+    },
+    {
+      "id": "rd-2s-003",
+      "skillId": "RD-twosyllable-sentences",
+      "itemType": "passage_question",
+      "difficulty": 2,
+      "passage": "We had a picnic on the hilltop.",
+      "audioText": "We had a picnic on the hilltop.",
+      "stem": "Where was the picnic?",
+      "choices": [
+        {
+          "id": "a",
+          "label": "in the basket"
+        },
+        {
+          "id": "b",
+          "label": "by the sunset"
+        },
+        {
+          "id": "c",
+          "label": "on the hilltop"
+        }
+      ],
+      "correctChoiceId": "c",
+      "missedConceptOnFail": "comprehension-literal",
+      "rationale": "on the hilltop.",
+      "decodableWithin": "PH-two-syllable"
+    },
+    {
+      "id": "rd-2s-004",
+      "skillId": "RD-twosyllable-sentences",
+      "itemType": "passage_question",
+      "difficulty": 2,
+      "passage": "The muffin is on the napkin.",
+      "audioText": "The muffin is on the napkin.",
+      "stem": "Where is the muffin?",
+      "choices": [
+        {
+          "id": "a",
+          "label": "on the napkin"
+        },
+        {
+          "id": "b",
+          "label": "in the basket"
+        },
+        {
+          "id": "c",
+          "label": "on the wagon"
+        }
+      ],
+      "correctChoiceId": "a",
+      "missedConceptOnFail": "comprehension-literal",
+      "rationale": "on the napkin.",
+      "decodableWithin": "PH-two-syllable"
+    },
+    {
+      "id": "rd-2s-005",
+      "skillId": "RD-twosyllable-sentences",
+      "itemType": "passage_question",
+      "difficulty": 2,
+      "passage": "A rabbit and a kitten ran.",
+      "audioText": "A rabbit and a kitten ran.",
+      "stem": "Who ran?",
+      "choices": [
+        {
+          "id": "a",
+          "label": "a robin and a puppet"
+        },
+        {
+          "id": "b",
+          "label": "a rabbit and a kitten"
+        },
+        {
+          "id": "c",
+          "label": "a goblin and a bandit"
+        }
+      ],
+      "correctChoiceId": "b",
+      "missedConceptOnFail": "comprehension-literal",
+      "rationale": "a rabbit and a kitten.",
+      "decodableWithin": "PH-two-syllable"
+    },
+    {
+      "id": "rd-2s-006",
+      "skillId": "RD-twosyllable-sentences",
+      "itemType": "passage_question",
+      "difficulty": 2,
+      "passage": "The robin sat on the mailbox.",
+      "audioText": "The robin sat on the mailbox.",
+      "stem": "Where did the robin sit?",
+      "choices": [
+        {
+          "id": "a",
+          "label": "in the basket"
+        },
+        {
+          "id": "b",
+          "label": "on the hilltop"
+        },
+        {
+          "id": "c",
+          "label": "on the mailbox"
+        }
+      ],
+      "correctChoiceId": "c",
+      "missedConceptOnFail": "comprehension-literal",
+      "rationale": "on the mailbox.",
+      "decodableWithin": "PH-two-syllable"
+    },
+    {
+      "id": "rd-2s-007",
+      "skillId": "RD-twosyllable-sentences",
+      "itemType": "passage_question",
+      "difficulty": 2,
+      "passage": "The magnet is in the pocket.",
+      "audioText": "The magnet is in the pocket.",
+      "stem": "Where is the magnet?",
+      "choices": [
+        {
+          "id": "a",
+          "label": "in the pocket"
+        },
+        {
+          "id": "b",
+          "label": "in the basket"
+        },
+        {
+          "id": "c",
+          "label": "on the napkin"
+        }
+      ],
+      "correctChoiceId": "a",
+      "missedConceptOnFail": "comprehension-literal",
+      "rationale": "in the pocket.",
+      "decodableWithin": "PH-two-syllable"
+    },
+    {
+      "id": "rd-2s-008",
+      "skillId": "RD-twosyllable-sentences",
+      "itemType": "passage_question",
+      "difficulty": 2,
+      "passage": "We put the picnic in the wagon.",
+      "audioText": "We put the picnic in the wagon.",
+      "stem": "Where did we put the picnic?",
+      "choices": [
+        {
+          "id": "a",
+          "label": "on the hilltop"
+        },
+        {
+          "id": "b",
+          "label": "in the wagon"
+        },
+        {
+          "id": "c",
+          "label": "in the pocket"
+        }
+      ],
+      "correctChoiceId": "b",
+      "missedConceptOnFail": "comprehension-literal",
+      "rationale": "in the wagon.",
+      "decodableWithin": "PH-two-syllable"
+    },
+    {
+      "id": "rd-2s-009",
+      "skillId": "RD-twosyllable-sentences",
+      "itemType": "passage_question",
+      "difficulty": 2,
+      "passage": "The puppet sat on the shelf.",
+      "audioText": "The puppet sat on the shelf.",
+      "stem": "Where did the puppet sit?",
+      "choices": [
+        {
+          "id": "a",
+          "label": "in the basket"
+        },
+        {
+          "id": "b",
+          "label": "on the wagon"
+        },
+        {
+          "id": "c",
+          "label": "on the shelf"
+        }
+      ],
+      "correctChoiceId": "c",
+      "missedConceptOnFail": "comprehension-literal",
+      "rationale": "on the shelf.",
+      "decodableWithin": "PH-two-syllable"
+    },
+    {
+      "id": "rd-2s-010",
+      "skillId": "RD-twosyllable-sentences",
+      "itemType": "passage_question",
+      "difficulty": 3,
+      "passage": "The rabbit had a carrot at sunset.",
+      "audioText": "The rabbit had a carrot at sunset.",
+      "stem": "What did the rabbit have?",
+      "choices": [
+        {
+          "id": "a",
+          "label": "a carrot"
+        },
+        {
+          "id": "b",
+          "label": "a muffin"
+        },
+        {
+          "id": "c",
+          "label": "a napkin"
+        }
+      ],
+      "correctChoiceId": "a",
+      "missedConceptOnFail": "comprehension-literal",
+      "rationale": "a carrot.",
+      "decodableWithin": "PH-two-syllable"
+    },
+    {
+      "id": "rd-2s-011",
+      "skillId": "RD-twosyllable-sentences",
+      "itemType": "passage_question",
+      "difficulty": 2,
+      "passage": "The kitten and the puppy nap.",
+      "audioText": "The kitten and the puppy nap.",
+      "stem": "What do the kitten and puppy do?",
+      "choices": [
+        {
+          "id": "a",
+          "label": "run"
+        },
+        {
+          "id": "b",
+          "label": "nap"
+        },
+        {
+          "id": "c",
+          "label": "swim"
+        }
+      ],
+      "correctChoiceId": "b",
+      "missedConceptOnFail": "comprehension-literal",
+      "rationale": "nap.",
+      "decodableWithin": "PH-two-syllable"
+    },
+    {
+      "id": "rd-2s-012",
+      "skillId": "RD-twosyllable-sentences",
+      "itemType": "passage_question",
+      "difficulty": 3,
+      "passage": "A robin sat on the chimney.",
+      "audioText": "A robin sat on the chimney.",
+      "stem": "Where did the robin sit?",
+      "choices": [
+        {
+          "id": "a",
+          "label": "in the basket"
+        },
+        {
+          "id": "b",
+          "label": "on the hilltop"
+        },
+        {
+          "id": "c",
+          "label": "on the chimney"
+        }
+      ],
+      "correctChoiceId": "c",
+      "missedConceptOnFail": "comprehension-literal",
+      "rationale": "on the chimney.",
+      "decodableWithin": "PH-two-syllable"
+    },
+    {
+      "id": "rd-2s-013",
+      "skillId": "RD-twosyllable-sentences",
+      "itemType": "passage_question",
+      "difficulty": 3,
+      "passage": "We had a picnic and a sunset.",
+      "audioText": "We had a picnic and a sunset.",
+      "stem": "What did we have?",
+      "choices": [
+        {
+          "id": "a",
+          "label": "a picnic and a sunset"
+        },
+        {
+          "id": "b",
+          "label": "a muffin and a magnet"
+        },
+        {
+          "id": "c",
+          "label": "a wagon and a basket"
+        }
+      ],
+      "correctChoiceId": "a",
+      "missedConceptOnFail": "comprehension-literal",
+      "rationale": "a picnic and a sunset.",
+      "decodableWithin": "PH-two-syllable"
+    },
+    {
+      "id": "rd-2s-014",
+      "skillId": "RD-twosyllable-sentences",
+      "itemType": "passage_question",
+      "difficulty": 3,
+      "passage": "The bandit hid in the tunnel.",
+      "audioText": "The bandit hid in the tunnel.",
+      "stem": "Where did the bandit hide?",
+      "choices": [
+        {
+          "id": "a",
+          "label": "on the hilltop"
+        },
+        {
+          "id": "b",
+          "label": "in the tunnel"
+        },
+        {
+          "id": "c",
+          "label": "in the wagon"
+        }
+      ],
+      "correctChoiceId": "b",
+      "missedConceptOnFail": "comprehension-literal",
+      "rationale": "in the tunnel.",
+      "decodableWithin": "PH-two-syllable"
+    },
+    {
+      "id": "rd-2s-015",
+      "skillId": "RD-twosyllable-sentences",
+      "itemType": "passage_question",
+      "difficulty": 3,
+      "passage": "The muffin and the carrot are on the napkin.",
+      "audioText": "The muffin and the carrot are on the napkin.",
+      "stem": "What is on the napkin?",
+      "choices": [
+        {
+          "id": "a",
+          "label": "the magnet and the pocket"
+        },
+        {
+          "id": "b",
+          "label": "the puppet and the basket"
+        },
+        {
+          "id": "c",
+          "label": "the muffin and the carrot"
+        }
+      ],
+      "correctChoiceId": "c",
+      "missedConceptOnFail": "comprehension-literal",
+      "rationale": "the muffin and the carrot.",
+      "decodableWithin": "PH-two-syllable"
+    },
+    {
+      "id": "rd-2s-016",
+      "skillId": "RD-twosyllable-sentences",
+      "itemType": "passage_question",
+      "difficulty": 3,
+      "passage": "The kitten sat in the sunset on the hilltop.",
+      "audioText": "The kitten sat in the sunset on the hilltop.",
+      "stem": "Where did the kitten sit?",
+      "choices": [
+        {
+          "id": "a",
+          "label": "on the hilltop"
+        },
+        {
+          "id": "b",
+          "label": "in the tunnel"
+        },
+        {
+          "id": "c",
+          "label": "in the basket"
+        }
+      ],
+      "correctChoiceId": "a",
+      "missedConceptOnFail": "comprehension-literal",
+      "rationale": "on the hilltop.",
+      "decodableWithin": "PH-two-syllable"
+    }
+  ],
+  "lessons": {
+    "RD-twosyllable-sentences": {
+      "iCanStatement": "I can read sentences with two-syllable words and say what they mean.",
+      "explanation": "Longer words split into two chunks (syllables): sun-set, nap-kin, rab-bit. Read each chunk, blend them into the word, then think about what the whole sentence means.",
+      "workedExamples": [
+        {
+          "text": "The rabbit sat at sunset.",
+          "note": "rab-bit, sun-set — read each chunk."
+        },
+        {
+          "text": "The kitten hid in a basket.",
+          "note": "kit-ten, bas-ket."
+        }
+      ]
+    }
+  }
+}

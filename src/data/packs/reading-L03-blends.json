@@ -1,0 +1,512 @@
+{
+  "packId": "reading-L03-blends",
+  "strand": "reading",
+  "skillIds": [
+    "RD-blend-sentences"
+  ],
+  "version": 1,
+  "items": [
+    {
+      "id": "rd-bl-001",
+      "skillId": "RD-blend-sentences",
+      "itemType": "passage_question",
+      "difficulty": 1,
+      "passage": "The frog can swim and spin.",
+      "audioText": "The frog can swim and spin.",
+      "stem": "What can the frog do?",
+      "choices": [
+        {
+          "id": "a",
+          "label": "swim and spin"
+        },
+        {
+          "id": "b",
+          "label": "hop and stop"
+        },
+        {
+          "id": "c",
+          "label": "run and grab"
+        }
+      ],
+      "correctChoiceId": "a",
+      "missedConceptOnFail": "comprehension-literal",
+      "rationale": "swim and spin.",
+      "decodableWithin": "PH-blends"
+    },
+    {
+      "id": "rd-bl-002",
+      "skillId": "RD-blend-sentences",
+      "itemType": "passage_question",
+      "difficulty": 1,
+      "passage": "Stan had a big red truck.",
+      "audioText": "Stan had a big red truck.",
+      "stem": "What colour is the truck?",
+      "choices": [
+        {
+          "id": "a",
+          "label": "tan"
+        },
+        {
+          "id": "b",
+          "label": "red"
+        },
+        {
+          "id": "c",
+          "label": "black"
+        }
+      ],
+      "correctChoiceId": "b",
+      "missedConceptOnFail": "comprehension-literal",
+      "rationale": "red.",
+      "decodableWithin": "PH-blends"
+    },
+    {
+      "id": "rd-bl-003",
+      "skillId": "RD-blend-sentences",
+      "itemType": "passage_question",
+      "difficulty": 1,
+      "passage": "The twin got a snack.",
+      "audioText": "The twin got a snack.",
+      "stem": "What did the twin get?",
+      "choices": [
+        {
+          "id": "a",
+          "label": "a drum"
+        },
+        {
+          "id": "b",
+          "label": "a flag"
+        },
+        {
+          "id": "c",
+          "label": "a snack"
+        }
+      ],
+      "correctChoiceId": "c",
+      "missedConceptOnFail": "comprehension-literal",
+      "rationale": "a snack.",
+      "decodableWithin": "PH-blends"
+    },
+    {
+      "id": "rd-bl-004",
+      "skillId": "RD-blend-sentences",
+      "itemType": "passage_question",
+      "difficulty": 1,
+      "passage": "A crab sat on a rock.",
+      "audioText": "A crab sat on a rock.",
+      "stem": "Where did the crab sit?",
+      "choices": [
+        {
+          "id": "a",
+          "label": "on a rock"
+        },
+        {
+          "id": "b",
+          "label": "in the pond"
+        },
+        {
+          "id": "c",
+          "label": "on the sled"
+        }
+      ],
+      "correctChoiceId": "a",
+      "missedConceptOnFail": "comprehension-literal",
+      "rationale": "on a rock.",
+      "decodableWithin": "PH-blends"
+    },
+    {
+      "id": "rd-bl-005",
+      "skillId": "RD-blend-sentences",
+      "itemType": "passage_question",
+      "difficulty": 2,
+      "passage": "Fred can clap and grin.",
+      "audioText": "Fred can clap and grin.",
+      "stem": "What can Fred do?",
+      "choices": [
+        {
+          "id": "a",
+          "label": "stop and spin"
+        },
+        {
+          "id": "b",
+          "label": "clap and grin"
+        },
+        {
+          "id": "c",
+          "label": "trip and drop"
+        }
+      ],
+      "correctChoiceId": "b",
+      "missedConceptOnFail": "comprehension-literal",
+      "rationale": "clap and grin.",
+      "decodableWithin": "PH-blends"
+    },
+    {
+      "id": "rd-bl-006",
+      "skillId": "RD-blend-sentences",
+      "itemType": "passage_question",
+      "difficulty": 2,
+      "passage": "Brad put the brick on the truck.",
+      "audioText": "Brad put the brick on the truck.",
+      "stem": "What did Brad put on the truck?",
+      "choices": [
+        {
+          "id": "a",
+          "label": "the flag"
+        },
+        {
+          "id": "b",
+          "label": "the drum"
+        },
+        {
+          "id": "c",
+          "label": "the brick"
+        }
+      ],
+      "correctChoiceId": "c",
+      "missedConceptOnFail": "comprehension-literal",
+      "rationale": "the brick.",
+      "decodableWithin": "PH-blends"
+    },
+    {
+      "id": "rd-bl-007",
+      "skillId": "RD-blend-sentences",
+      "itemType": "passage_question",
+      "difficulty": 2,
+      "passage": "The black cat sat on the step.",
+      "audioText": "The black cat sat on the step.",
+      "stem": "Where did the cat sit?",
+      "choices": [
+        {
+          "id": "a",
+          "label": "on the step"
+        },
+        {
+          "id": "b",
+          "label": "in the chest"
+        },
+        {
+          "id": "c",
+          "label": "on the sled"
+        }
+      ],
+      "correctChoiceId": "a",
+      "missedConceptOnFail": "comprehension-literal",
+      "rationale": "on the step.",
+      "decodableWithin": "PH-blends"
+    },
+    {
+      "id": "rd-bl-008",
+      "skillId": "RD-blend-sentences",
+      "itemType": "passage_question",
+      "difficulty": 2,
+      "passage": "Glen had a plum for lunch.",
+      "audioText": "Glen had a plum for lunch.",
+      "stem": "What did Glen have for lunch?",
+      "choices": [
+        {
+          "id": "a",
+          "label": "a snack"
+        },
+        {
+          "id": "b",
+          "label": "a plum"
+        },
+        {
+          "id": "c",
+          "label": "a chip"
+        }
+      ],
+      "correctChoiceId": "b",
+      "missedConceptOnFail": "comprehension-literal",
+      "rationale": "a plum.",
+      "decodableWithin": "PH-blends"
+    },
+    {
+      "id": "rd-bl-009",
+      "skillId": "RD-blend-sentences",
+      "itemType": "passage_question",
+      "difficulty": 2,
+      "passage": "The clock is on the shelf.",
+      "audioText": "The clock is on the shelf.",
+      "stem": "Where is the clock?",
+      "choices": [
+        {
+          "id": "a",
+          "label": "on the sled"
+        },
+        {
+          "id": "b",
+          "label": "in the chest"
+        },
+        {
+          "id": "c",
+          "label": "on the shelf"
+        }
+      ],
+      "correctChoiceId": "c",
+      "missedConceptOnFail": "comprehension-literal",
+      "rationale": "on the shelf.",
+      "decodableWithin": "PH-blends"
+    },
+    {
+      "id": "rd-bl-010",
+      "skillId": "RD-blend-sentences",
+      "itemType": "passage_question",
+      "difficulty": 1,
+      "passage": "Spot the dog ran fast.",
+      "audioText": "Spot the dog ran fast.",
+      "stem": "Who ran fast?",
+      "choices": [
+        {
+          "id": "a",
+          "label": "Spot the dog"
+        },
+        {
+          "id": "b",
+          "label": "the black cat"
+        },
+        {
+          "id": "c",
+          "label": "the twin"
+        }
+      ],
+      "correctChoiceId": "a",
+      "missedConceptOnFail": "comprehension-literal",
+      "rationale": "Spot the dog.",
+      "decodableWithin": "PH-blends"
+    },
+    {
+      "id": "rd-bl-011",
+      "skillId": "RD-blend-sentences",
+      "itemType": "passage_question",
+      "difficulty": 2,
+      "passage": "The kids swim in the pond.",
+      "audioText": "The kids swim in the pond.",
+      "stem": "Where do the kids swim?",
+      "choices": [
+        {
+          "id": "a",
+          "label": "in the mud"
+        },
+        {
+          "id": "b",
+          "label": "in the pond"
+        },
+        {
+          "id": "c",
+          "label": "on the ship"
+        }
+      ],
+      "correctChoiceId": "b",
+      "missedConceptOnFail": "comprehension-literal",
+      "rationale": "in the pond.",
+      "decodableWithin": "PH-blends"
+    },
+    {
+      "id": "rd-bl-012",
+      "skillId": "RD-blend-sentences",
+      "itemType": "passage_question",
+      "difficulty": 3,
+      "passage": "Fran got a flag and a drum.",
+      "audioText": "Fran got a flag and a drum.",
+      "stem": "What did Fran get?",
+      "choices": [
+        {
+          "id": "a",
+          "label": "a brick and a truck"
+        },
+        {
+          "id": "b",
+          "label": "a plum and a snack"
+        },
+        {
+          "id": "c",
+          "label": "a flag and a drum"
+        }
+      ],
+      "correctChoiceId": "c",
+      "missedConceptOnFail": "comprehension-literal",
+      "rationale": "a flag and a drum.",
+      "decodableWithin": "PH-blends"
+    },
+    {
+      "id": "rd-bl-013",
+      "skillId": "RD-blend-sentences",
+      "itemType": "passage_question",
+      "difficulty": 2,
+      "passage": "The frog sat on a log in the sun.",
+      "audioText": "The frog sat on a log in the sun.",
+      "stem": "Where did the frog sit?",
+      "choices": [
+        {
+          "id": "a",
+          "label": "on a log"
+        },
+        {
+          "id": "b",
+          "label": "on the step"
+        },
+        {
+          "id": "c",
+          "label": "in the chest"
+        }
+      ],
+      "correctChoiceId": "a",
+      "missedConceptOnFail": "comprehension-literal",
+      "rationale": "on a log.",
+      "decodableWithin": "PH-blends"
+    },
+    {
+      "id": "rd-bl-014",
+      "skillId": "RD-blend-sentences",
+      "itemType": "passage_question",
+      "difficulty": 3,
+      "passage": "The truck got stuck in the mud.",
+      "audioText": "The truck got stuck in the mud.",
+      "stem": "Where did the truck get stuck?",
+      "choices": [
+        {
+          "id": "a",
+          "label": "on the step"
+        },
+        {
+          "id": "b",
+          "label": "in the mud"
+        },
+        {
+          "id": "c",
+          "label": "at the shop"
+        }
+      ],
+      "correctChoiceId": "b",
+      "missedConceptOnFail": "comprehension-literal",
+      "rationale": "in the mud.",
+      "decodableWithin": "PH-blends"
+    },
+    {
+      "id": "rd-bl-015",
+      "skillId": "RD-blend-sentences",
+      "itemType": "passage_question",
+      "difficulty": 2,
+      "passage": "Trish had a fresh snack.",
+      "audioText": "Trish had a fresh snack.",
+      "stem": "What did Trish have?",
+      "choices": [
+        {
+          "id": "a",
+          "label": "a red flag"
+        },
+        {
+          "id": "b",
+          "label": "a big drum"
+        },
+        {
+          "id": "c",
+          "label": "a fresh snack"
+        }
+      ],
+      "correctChoiceId": "c",
+      "missedConceptOnFail": "comprehension-literal",
+      "rationale": "a fresh snack.",
+      "decodableWithin": "PH-blends"
+    },
+    {
+      "id": "rd-bl-016",
+      "skillId": "RD-blend-sentences",
+      "itemType": "passage_question",
+      "difficulty": 3,
+      "passage": "Glen ran to catch the bus.",
+      "audioText": "Glen ran to catch the bus.",
+      "stem": "Why did Glen run?",
+      "choices": [
+        {
+          "id": "a",
+          "label": "to catch the bus"
+        },
+        {
+          "id": "b",
+          "label": "to grab a snack"
+        },
+        {
+          "id": "c",
+          "label": "to swim"
+        }
+      ],
+      "correctChoiceId": "a",
+      "missedConceptOnFail": "comprehension-literal",
+      "rationale": "to catch the bus.",
+      "decodableWithin": "PH-blends"
+    },
+    {
+      "id": "rd-bl-017",
+      "skillId": "RD-blend-sentences",
+      "itemType": "passage_question",
+      "difficulty": 2,
+      "passage": "The drum is on the desk.",
+      "audioText": "The drum is on the desk.",
+      "stem": "Where is the drum?",
+      "choices": [
+        {
+          "id": "a",
+          "label": "on the step"
+        },
+        {
+          "id": "b",
+          "label": "on the desk"
+        },
+        {
+          "id": "c",
+          "label": "in the chest"
+        }
+      ],
+      "correctChoiceId": "b",
+      "missedConceptOnFail": "comprehension-literal",
+      "rationale": "on the desk.",
+      "decodableWithin": "PH-blends"
+    },
+    {
+      "id": "rd-bl-018",
+      "skillId": "RD-blend-sentences",
+      "itemType": "passage_question",
+      "difficulty": 3,
+      "passage": "Brad and Fran swim fast.",
+      "audioText": "Brad and Fran swim fast.",
+      "stem": "Who can swim fast?",
+      "choices": [
+        {
+          "id": "a",
+          "label": "the black cat"
+        },
+        {
+          "id": "b",
+          "label": "the frog"
+        },
+        {
+          "id": "c",
+          "label": "Brad and Fran"
+        }
+      ],
+      "correctChoiceId": "c",
+      "missedConceptOnFail": "comprehension-literal",
+      "rationale": "Brad and Fran.",
+      "decodableWithin": "PH-blends"
+    }
+  ],
+  "lessons": {
+    "RD-blend-sentences": {
+      "iCanStatement": "I can read sentences with blends and say what they mean.",
+      "explanation": "These sentences have blend words — two consonants you say quickly together, like st in stop, fr in frog, and nd in sand. Read each sound in order, blend them, then think about what the sentence means.",
+      "workedExamples": [
+        {
+          "text": "The frog can swim.",
+          "note": "fr blends together — frog."
+        },
+        {
+          "text": "The truck got stuck.",
+          "note": "tr and ck — truck; st — stuck."
+        }
+      ]
+    }
+  }
+}

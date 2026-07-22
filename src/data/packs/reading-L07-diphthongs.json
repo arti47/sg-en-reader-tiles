@@ -1,0 +1,458 @@
+{
+  "packId": "reading-L07-diphthongs",
+  "strand": "reading",
+  "skillIds": [
+    "RD-diphthong-sentences"
+  ],
+  "version": 1,
+  "items": [
+    {
+      "id": "rd-di-001",
+      "skillId": "RD-diphthong-sentences",
+      "itemType": "passage_question",
+      "difficulty": 1,
+      "passage": "The boy found a coin.",
+      "audioText": "The boy found a coin.",
+      "stem": "What did the boy find?",
+      "choices": [
+        {
+          "id": "a",
+          "label": "a coin"
+        },
+        {
+          "id": "b",
+          "label": "a toy"
+        },
+        {
+          "id": "c",
+          "label": "an owl"
+        }
+      ],
+      "correctChoiceId": "a",
+      "missedConceptOnFail": "comprehension-literal",
+      "rationale": "a coin.",
+      "decodableWithin": "PH-diphthongs"
+    },
+    {
+      "id": "rd-di-002",
+      "skillId": "RD-diphthong-sentences",
+      "itemType": "passage_question",
+      "difficulty": 2,
+      "passage": "The cow is out now.",
+      "audioText": "The cow is out now.",
+      "stem": "Where is the cow?",
+      "choices": [
+        {
+          "id": "a",
+          "label": "in the town"
+        },
+        {
+          "id": "b",
+          "label": "out now"
+        },
+        {
+          "id": "c",
+          "label": "by the pond"
+        }
+      ],
+      "correctChoiceId": "b",
+      "missedConceptOnFail": "comprehension-literal",
+      "rationale": "out now.",
+      "decodableWithin": "PH-diphthongs"
+    },
+    {
+      "id": "rd-di-003",
+      "skillId": "RD-diphthong-sentences",
+      "itemType": "passage_question",
+      "difficulty": 1,
+      "passage": "Roy has a new toy.",
+      "audioText": "Roy has a new toy.",
+      "stem": "What does Roy have?",
+      "choices": [
+        {
+          "id": "a",
+          "label": "a gold coin"
+        },
+        {
+          "id": "b",
+          "label": "a brown owl"
+        },
+        {
+          "id": "c",
+          "label": "a new toy"
+        }
+      ],
+      "correctChoiceId": "c",
+      "missedConceptOnFail": "comprehension-literal",
+      "rationale": "a new toy.",
+      "decodableWithin": "PH-diphthongs"
+    },
+    {
+      "id": "rd-di-004",
+      "skillId": "RD-diphthong-sentences",
+      "itemType": "passage_question",
+      "difficulty": 2,
+      "passage": "The owl sat on the bough.",
+      "audioText": "The owl sat on the bough.",
+      "stem": "Where did the owl sit?",
+      "choices": [
+        {
+          "id": "a",
+          "label": "on the bough"
+        },
+        {
+          "id": "b",
+          "label": "in the town"
+        },
+        {
+          "id": "c",
+          "label": "by the coin"
+        }
+      ],
+      "correctChoiceId": "a",
+      "missedConceptOnFail": "comprehension-literal",
+      "rationale": "on the bough.",
+      "decodableWithin": "PH-diphthongs"
+    },
+    {
+      "id": "rd-di-005",
+      "skillId": "RD-diphthong-sentences",
+      "itemType": "passage_question",
+      "difficulty": 2,
+      "passage": "The dog has a sore paw.",
+      "audioText": "The dog has a sore paw.",
+      "stem": "What is sore?",
+      "choices": [
+        {
+          "id": "a",
+          "label": "the jaw"
+        },
+        {
+          "id": "b",
+          "label": "the paw"
+        },
+        {
+          "id": "c",
+          "label": "the claw"
+        }
+      ],
+      "correctChoiceId": "b",
+      "missedConceptOnFail": "comprehension-literal",
+      "rationale": "the paw.",
+      "decodableWithin": "PH-diphthongs"
+    },
+    {
+      "id": "rd-di-006",
+      "skillId": "RD-diphthong-sentences",
+      "itemType": "passage_question",
+      "difficulty": 2,
+      "passage": "We saw a brown cow.",
+      "audioText": "We saw a brown cow.",
+      "stem": "What did we see?",
+      "choices": [
+        {
+          "id": "a",
+          "label": "a small owl"
+        },
+        {
+          "id": "b",
+          "label": "a round coin"
+        },
+        {
+          "id": "c",
+          "label": "a brown cow"
+        }
+      ],
+      "correctChoiceId": "c",
+      "missedConceptOnFail": "comprehension-literal",
+      "rationale": "a brown cow.",
+      "decodableWithin": "PH-diphthongs"
+    },
+    {
+      "id": "rd-di-007",
+      "skillId": "RD-diphthong-sentences",
+      "itemType": "passage_question",
+      "difficulty": 2,
+      "passage": "The boy sat down in the town.",
+      "audioText": "The boy sat down in the town.",
+      "stem": "Where did the boy sit down?",
+      "choices": [
+        {
+          "id": "a",
+          "label": "in the town"
+        },
+        {
+          "id": "b",
+          "label": "on the bough"
+        },
+        {
+          "id": "c",
+          "label": "by the pond"
+        }
+      ],
+      "correctChoiceId": "a",
+      "missedConceptOnFail": "comprehension-literal",
+      "rationale": "in the town.",
+      "decodableWithin": "PH-diphthongs"
+    },
+    {
+      "id": "rd-di-008",
+      "skillId": "RD-diphthong-sentences",
+      "itemType": "passage_question",
+      "difficulty": 2,
+      "passage": "Joy found a round coin.",
+      "audioText": "Joy found a round coin.",
+      "stem": "What did Joy find?",
+      "choices": [
+        {
+          "id": "a",
+          "label": "a brown toy"
+        },
+        {
+          "id": "b",
+          "label": "a round coin"
+        },
+        {
+          "id": "c",
+          "label": "a loud owl"
+        }
+      ],
+      "correctChoiceId": "b",
+      "missedConceptOnFail": "comprehension-literal",
+      "rationale": "a round coin.",
+      "decodableWithin": "PH-diphthongs"
+    },
+    {
+      "id": "rd-di-009",
+      "skillId": "RD-diphthong-sentences",
+      "itemType": "passage_question",
+      "difficulty": 2,
+      "passage": "The cat has sharp claws.",
+      "audioText": "The cat has sharp claws.",
+      "stem": "What does the cat have?",
+      "choices": [
+        {
+          "id": "a",
+          "label": "a sore paw"
+        },
+        {
+          "id": "b",
+          "label": "a new toy"
+        },
+        {
+          "id": "c",
+          "label": "sharp claws"
+        }
+      ],
+      "correctChoiceId": "c",
+      "missedConceptOnFail": "comprehension-literal",
+      "rationale": "sharp claws.",
+      "decodableWithin": "PH-diphthongs"
+    },
+    {
+      "id": "rd-di-010",
+      "skillId": "RD-diphthong-sentences",
+      "itemType": "passage_question",
+      "difficulty": 3,
+      "passage": "The crowd was very loud.",
+      "audioText": "The crowd was very loud.",
+      "stem": "How was the crowd?",
+      "choices": [
+        {
+          "id": "a",
+          "label": "very loud"
+        },
+        {
+          "id": "b",
+          "label": "very small"
+        },
+        {
+          "id": "c",
+          "label": "very round"
+        }
+      ],
+      "correctChoiceId": "a",
+      "missedConceptOnFail": "comprehension-literal",
+      "rationale": "very loud.",
+      "decodableWithin": "PH-diphthongs"
+    },
+    {
+      "id": "rd-di-011",
+      "skillId": "RD-diphthong-sentences",
+      "itemType": "passage_question",
+      "difficulty": 3,
+      "passage": "Troy spoils his toy.",
+      "audioText": "Troy spoils his toy.",
+      "stem": "What does Troy spoil?",
+      "choices": [
+        {
+          "id": "a",
+          "label": "his coin"
+        },
+        {
+          "id": "b",
+          "label": "his toy"
+        },
+        {
+          "id": "c",
+          "label": "his crown"
+        }
+      ],
+      "correctChoiceId": "b",
+      "missedConceptOnFail": "comprehension-literal",
+      "rationale": "his toy.",
+      "decodableWithin": "PH-diphthongs"
+    },
+    {
+      "id": "rd-di-012",
+      "skillId": "RD-diphthong-sentences",
+      "itemType": "passage_question",
+      "difficulty": 3,
+      "passage": "The owl flew down to the ground.",
+      "audioText": "The owl flew down to the ground.",
+      "stem": "Where did the owl fly?",
+      "choices": [
+        {
+          "id": "a",
+          "label": "up to the cloud"
+        },
+        {
+          "id": "b",
+          "label": "out of town"
+        },
+        {
+          "id": "c",
+          "label": "down to the ground"
+        }
+      ],
+      "correctChoiceId": "c",
+      "missedConceptOnFail": "comprehension-literal",
+      "rationale": "down to the ground.",
+      "decodableWithin": "PH-diphthongs"
+    },
+    {
+      "id": "rd-di-013",
+      "skillId": "RD-diphthong-sentences",
+      "itemType": "passage_question",
+      "difficulty": 2,
+      "passage": "Paul saw a hawk.",
+      "audioText": "Paul saw a hawk.",
+      "stem": "What did Paul see?",
+      "choices": [
+        {
+          "id": "a",
+          "label": "a hawk"
+        },
+        {
+          "id": "b",
+          "label": "an owl"
+        },
+        {
+          "id": "c",
+          "label": "a cow"
+        }
+      ],
+      "correctChoiceId": "a",
+      "missedConceptOnFail": "comprehension-literal",
+      "rationale": "a hawk.",
+      "decodableWithin": "PH-diphthongs"
+    },
+    {
+      "id": "rd-di-014",
+      "skillId": "RD-diphthong-sentences",
+      "itemType": "passage_question",
+      "difficulty": 2,
+      "passage": "The king has a gold crown.",
+      "audioText": "The king has a gold crown.",
+      "stem": "What does the king have?",
+      "choices": [
+        {
+          "id": "a",
+          "label": "a round coin"
+        },
+        {
+          "id": "b",
+          "label": "a gold crown"
+        },
+        {
+          "id": "c",
+          "label": "a new toy"
+        }
+      ],
+      "correctChoiceId": "b",
+      "missedConceptOnFail": "comprehension-literal",
+      "rationale": "a gold crown.",
+      "decodableWithin": "PH-diphthongs"
+    },
+    {
+      "id": "rd-di-015",
+      "skillId": "RD-diphthong-sentences",
+      "itemType": "passage_question",
+      "difficulty": 3,
+      "passage": "The boy shouts out loud.",
+      "audioText": "The boy shouts out loud.",
+      "stem": "How does the boy shout?",
+      "choices": [
+        {
+          "id": "a",
+          "label": "very soft"
+        },
+        {
+          "id": "b",
+          "label": "not at all"
+        },
+        {
+          "id": "c",
+          "label": "out loud"
+        }
+      ],
+      "correctChoiceId": "c",
+      "missedConceptOnFail": "comprehension-literal",
+      "rationale": "out loud.",
+      "decodableWithin": "PH-diphthongs"
+    },
+    {
+      "id": "rd-di-016",
+      "skillId": "RD-diphthong-sentences",
+      "itemType": "passage_question",
+      "difficulty": 3,
+      "passage": "A brown owl hoots at night.",
+      "audioText": "A brown owl hoots at night.",
+      "stem": "When does the owl hoot?",
+      "choices": [
+        {
+          "id": "a",
+          "label": "at night"
+        },
+        {
+          "id": "b",
+          "label": "at noon"
+        },
+        {
+          "id": "c",
+          "label": "in the town"
+        }
+      ],
+      "correctChoiceId": "a",
+      "missedConceptOnFail": "comprehension-literal",
+      "rationale": "at night.",
+      "decodableWithin": "PH-diphthongs"
+    }
+  ],
+  "lessons": {
+    "RD-diphthong-sentences": {
+      "iCanStatement": "I can read sentences with oi, oy, ou, ow, aw words and say what they mean.",
+      "explanation": "Some vowel teams glide from one sound to another: oi/oy (coin, boy), ou/ow (out, cow), aw/au (paw, haul). Read the team as one gliding sound, then think about what the sentence means.",
+      "workedExamples": [
+        {
+          "text": "The boy found a coin.",
+          "note": "oy in boy, ou in found, oi in coin."
+        },
+        {
+          "text": "The cow is out now.",
+          "note": "ow in cow and now, ou in out."
+        }
+      ]
+    }
+  }
+}

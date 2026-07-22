@@ -435,6 +435,66 @@
             "accuracyToPass": 0.8,
             "minItems": 8
           }
+        },
+        {
+          "id": "RD-blend-sentences",
+          "strand": "reading",
+          "objective": "Read decodable sentences with consonant blends (T19).",
+          "iCanStatement": "I can read sentences with blends and say what they mean.",
+          "prereqs": [ "PH-blends" ],
+          "itemType": "passage_question",
+          "itemPool": "reading-L03-blends",
+          "mastery": { "window": 12, "accuracyToPass": 0.8, "minItems": 8 }
+        },
+        {
+          "id": "RD-silente-sentences",
+          "strand": "reading",
+          "objective": "Read decodable sentences with magic-e (silent-e) words (T19).",
+          "iCanStatement": "I can read sentences with magic-e words and say what they mean.",
+          "prereqs": [ "PH-silent-e" ],
+          "itemType": "passage_question",
+          "itemPool": "reading-L04-silent-e",
+          "mastery": { "window": 12, "accuracyToPass": 0.8, "minItems": 8 }
+        },
+        {
+          "id": "RD-vowelteam-sentences",
+          "strand": "reading",
+          "objective": "Read decodable sentences with vowel-team words (T19).",
+          "iCanStatement": "I can read sentences with vowel-team words and say what they mean.",
+          "prereqs": [ "PH-vowel-teams" ],
+          "itemType": "passage_question",
+          "itemPool": "reading-L05-vowel-teams",
+          "mastery": { "window": 12, "accuracyToPass": 0.8, "minItems": 8 }
+        },
+        {
+          "id": "RD-rcontrolled-sentences",
+          "strand": "reading",
+          "objective": "Read decodable sentences with r-controlled (bossy-r) words (T19).",
+          "iCanStatement": "I can read sentences with bossy-r words and say what they mean.",
+          "prereqs": [ "PH-r-controlled" ],
+          "itemType": "passage_question",
+          "itemPool": "reading-L06-r-controlled",
+          "mastery": { "window": 12, "accuracyToPass": 0.8, "minItems": 8 }
+        },
+        {
+          "id": "RD-diphthong-sentences",
+          "strand": "reading",
+          "objective": "Read decodable sentences with diphthong words (oi/oy/ou/ow/aw/au) (T19).",
+          "iCanStatement": "I can read sentences with oi, oy, ou, ow and aw words and say what they mean.",
+          "prereqs": [ "PH-diphthongs" ],
+          "itemType": "passage_question",
+          "itemPool": "reading-L07-diphthongs",
+          "mastery": { "window": 12, "accuracyToPass": 0.8, "minItems": 8 }
+        },
+        {
+          "id": "RD-twosyllable-sentences",
+          "strand": "reading",
+          "objective": "Read decodable sentences with two-syllable words (T19).",
+          "iCanStatement": "I can read sentences with two-syllable words and say what they mean.",
+          "prereqs": [ "PH-two-syllable" ],
+          "itemType": "passage_question",
+          "itemPool": "reading-L08-two-syllable",
+          "mastery": { "window": 12, "accuracyToPass": 0.8, "minItems": 8 }
         }
       ]
     },

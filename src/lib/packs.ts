@@ -39,6 +39,12 @@ import smEdit from '../data/packs/sm-L01-editing.json'
 import smSyn from '../data/packs/sm-L02-synthesis.json'
 import reading1 from '../data/packs/reading-L01-cvc.json'
 import reading2 from '../data/packs/reading-L02-digraphs.json'
+import reading3 from '../data/packs/reading-L03-blends.json'
+import reading4 from '../data/packs/reading-L04-silent-e.json'
+import reading5 from '../data/packs/reading-L05-vowel-teams.json'
+import reading6 from '../data/packs/reading-L06-r-controlled.json'
+import reading7 from '../data/packs/reading-L07-diphthongs.json'
+import reading8 from '../data/packs/reading-L08-two-syllable.json'
 
 const PACKS: ContentPack[] = [
   phonicsLs as ContentPack,
@@ -78,7 +84,13 @@ const PACKS: ContentPack[] = [
   smEdit as ContentPack,
   smSyn as ContentPack,
   reading1 as ContentPack,
-  reading2 as ContentPack
+  reading2 as ContentPack,
+  reading3 as ContentPack,
+  reading4 as ContentPack,
+  reading5 as ContentPack,
+  reading6 as ContentPack,
+  reading7 as ContentPack,
+  reading8 as ContentPack
 ]
 
 // Runtime skill graph. Skills flagged `enabled: false` (authored but inert — e.g. T01

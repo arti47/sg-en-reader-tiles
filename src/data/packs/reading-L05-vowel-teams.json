@@ -1,0 +1,458 @@
+{
+  "packId": "reading-L05-vowel-teams",
+  "strand": "reading",
+  "skillIds": [
+    "RD-vowelteam-sentences"
+  ],
+  "version": 1,
+  "items": [
+    {
+      "id": "rd-vt-001",
+      "skillId": "RD-vowelteam-sentences",
+      "itemType": "passage_question",
+      "difficulty": 1,
+      "passage": "The boat is on the sea.",
+      "audioText": "The boat is on the sea.",
+      "stem": "Where is the boat?",
+      "choices": [
+        {
+          "id": "a",
+          "label": "on the sea"
+        },
+        {
+          "id": "b",
+          "label": "in the rain"
+        },
+        {
+          "id": "c",
+          "label": "on the road"
+        }
+      ],
+      "correctChoiceId": "a",
+      "missedConceptOnFail": "comprehension-literal",
+      "rationale": "on the sea.",
+      "decodableWithin": "PH-vowel-teams"
+    },
+    {
+      "id": "rd-vt-002",
+      "skillId": "RD-vowelteam-sentences",
+      "itemType": "passage_question",
+      "difficulty": 1,
+      "passage": "Jean had a green bean.",
+      "audioText": "Jean had a green bean.",
+      "stem": "What did Jean have?",
+      "choices": [
+        {
+          "id": "a",
+          "label": "a red boat"
+        },
+        {
+          "id": "b",
+          "label": "a green bean"
+        },
+        {
+          "id": "c",
+          "label": "a wet coat"
+        }
+      ],
+      "correctChoiceId": "b",
+      "missedConceptOnFail": "comprehension-literal",
+      "rationale": "a green bean.",
+      "decodableWithin": "PH-vowel-teams"
+    },
+    {
+      "id": "rd-vt-003",
+      "skillId": "RD-vowelteam-sentences",
+      "itemType": "passage_question",
+      "difficulty": 2,
+      "passage": "The rain fell on the road.",
+      "audioText": "The rain fell on the road.",
+      "stem": "Where did the rain fall?",
+      "choices": [
+        {
+          "id": "a",
+          "label": "on the boat"
+        },
+        {
+          "id": "b",
+          "label": "in the seat"
+        },
+        {
+          "id": "c",
+          "label": "on the road"
+        }
+      ],
+      "correctChoiceId": "c",
+      "missedConceptOnFail": "comprehension-literal",
+      "rationale": "on the road.",
+      "decodableWithin": "PH-vowel-teams"
+    },
+    {
+      "id": "rd-vt-004",
+      "skillId": "RD-vowelteam-sentences",
+      "itemType": "passage_question",
+      "difficulty": 2,
+      "passage": "Dean can see the moon.",
+      "audioText": "Dean can see the moon.",
+      "stem": "What can Dean see?",
+      "choices": [
+        {
+          "id": "a",
+          "label": "the moon"
+        },
+        {
+          "id": "b",
+          "label": "the rain"
+        },
+        {
+          "id": "c",
+          "label": "the boat"
+        }
+      ],
+      "correctChoiceId": "a",
+      "missedConceptOnFail": "comprehension-literal",
+      "rationale": "the moon.",
+      "decodableWithin": "PH-vowel-teams"
+    },
+    {
+      "id": "rd-vt-005",
+      "skillId": "RD-vowelteam-sentences",
+      "itemType": "passage_question",
+      "difficulty": 2,
+      "passage": "The goat ate the leaf.",
+      "audioText": "The goat ate the leaf.",
+      "stem": "What did the goat eat?",
+      "choices": [
+        {
+          "id": "a",
+          "label": "the bean"
+        },
+        {
+          "id": "b",
+          "label": "the leaf"
+        },
+        {
+          "id": "c",
+          "label": "the seed"
+        }
+      ],
+      "correctChoiceId": "b",
+      "missedConceptOnFail": "comprehension-literal",
+      "rationale": "the leaf.",
+      "decodableWithin": "PH-vowel-teams"
+    },
+    {
+      "id": "rd-vt-006",
+      "skillId": "RD-vowelteam-sentences",
+      "itemType": "passage_question",
+      "difficulty": 2,
+      "passage": "Joan put on her coat.",
+      "audioText": "Joan put on her coat.",
+      "stem": "What did Joan put on?",
+      "choices": [
+        {
+          "id": "a",
+          "label": "her boat"
+        },
+        {
+          "id": "b",
+          "label": "her seat"
+        },
+        {
+          "id": "c",
+          "label": "her coat"
+        }
+      ],
+      "correctChoiceId": "c",
+      "missedConceptOnFail": "comprehension-literal",
+      "rationale": "her coat.",
+      "decodableWithin": "PH-vowel-teams"
+    },
+    {
+      "id": "rd-vt-007",
+      "skillId": "RD-vowelteam-sentences",
+      "itemType": "passage_question",
+      "difficulty": 1,
+      "passage": "The bee sat on the leaf.",
+      "audioText": "The bee sat on the leaf.",
+      "stem": "Where did the bee sit?",
+      "choices": [
+        {
+          "id": "a",
+          "label": "on the leaf"
+        },
+        {
+          "id": "b",
+          "label": "on the road"
+        },
+        {
+          "id": "c",
+          "label": "in the rain"
+        }
+      ],
+      "correctChoiceId": "a",
+      "missedConceptOnFail": "comprehension-literal",
+      "rationale": "on the leaf.",
+      "decodableWithin": "PH-vowel-teams"
+    },
+    {
+      "id": "rd-vt-008",
+      "skillId": "RD-vowelteam-sentences",
+      "itemType": "passage_question",
+      "difficulty": 3,
+      "passage": "Sea foam is on the beach.",
+      "audioText": "Sea foam is on the beach.",
+      "stem": "Where is the sea foam?",
+      "choices": [
+        {
+          "id": "a",
+          "label": "on the road"
+        },
+        {
+          "id": "b",
+          "label": "on the beach"
+        },
+        {
+          "id": "c",
+          "label": "in the boat"
+        }
+      ],
+      "correctChoiceId": "b",
+      "missedConceptOnFail": "comprehension-literal",
+      "rationale": "on the beach.",
+      "decodableWithin": "PH-vowel-teams"
+    },
+    {
+      "id": "rd-vt-009",
+      "skillId": "RD-vowelteam-sentences",
+      "itemType": "passage_question",
+      "difficulty": 2,
+      "passage": "The team ran in the rain.",
+      "audioText": "The team ran in the rain.",
+      "stem": "When did the team run?",
+      "choices": [
+        {
+          "id": "a",
+          "label": "in the sun"
+        },
+        {
+          "id": "b",
+          "label": "on the road"
+        },
+        {
+          "id": "c",
+          "label": "in the rain"
+        }
+      ],
+      "correctChoiceId": "c",
+      "missedConceptOnFail": "comprehension-literal",
+      "rationale": "in the rain.",
+      "decodableWithin": "PH-vowel-teams"
+    },
+    {
+      "id": "rd-vt-010",
+      "skillId": "RD-vowelteam-sentences",
+      "itemType": "passage_question",
+      "difficulty": 3,
+      "passage": "Neil keeps his seeds in a jar.",
+      "audioText": "Neil keeps his seeds in a jar.",
+      "stem": "Where does Neil keep his seeds?",
+      "choices": [
+        {
+          "id": "a",
+          "label": "in a jar"
+        },
+        {
+          "id": "b",
+          "label": "in a boat"
+        },
+        {
+          "id": "c",
+          "label": "on the road"
+        }
+      ],
+      "correctChoiceId": "a",
+      "missedConceptOnFail": "comprehension-literal",
+      "rationale": "in a jar.",
+      "decodableWithin": "PH-vowel-teams"
+    },
+    {
+      "id": "rd-vt-011",
+      "skillId": "RD-vowelteam-sentences",
+      "itemType": "passage_question",
+      "difficulty": 2,
+      "passage": "The train is on the track.",
+      "audioText": "The train is on the track.",
+      "stem": "Where is the train?",
+      "choices": [
+        {
+          "id": "a",
+          "label": "on the sea"
+        },
+        {
+          "id": "b",
+          "label": "on the track"
+        },
+        {
+          "id": "c",
+          "label": "in the rain"
+        }
+      ],
+      "correctChoiceId": "b",
+      "missedConceptOnFail": "comprehension-literal",
+      "rationale": "on the track.",
+      "decodableWithin": "PH-vowel-teams"
+    },
+    {
+      "id": "rd-vt-012",
+      "skillId": "RD-vowelteam-sentences",
+      "itemType": "passage_question",
+      "difficulty": 3,
+      "passage": "Jean sailed the boat to sea.",
+      "audioText": "Jean sailed the boat to sea.",
+      "stem": "Where did Jean sail the boat?",
+      "choices": [
+        {
+          "id": "a",
+          "label": "to the road"
+        },
+        {
+          "id": "b",
+          "label": "to the beach"
+        },
+        {
+          "id": "c",
+          "label": "to sea"
+        }
+      ],
+      "correctChoiceId": "c",
+      "missedConceptOnFail": "comprehension-literal",
+      "rationale": "to sea.",
+      "decodableWithin": "PH-vowel-teams"
+    },
+    {
+      "id": "rd-vt-013",
+      "skillId": "RD-vowelteam-sentences",
+      "itemType": "passage_question",
+      "difficulty": 2,
+      "passage": "The moon is high in the sky.",
+      "audioText": "The moon is high in the sky.",
+      "stem": "Where is the moon?",
+      "choices": [
+        {
+          "id": "a",
+          "label": "high in the sky"
+        },
+        {
+          "id": "b",
+          "label": "on the sea"
+        },
+        {
+          "id": "c",
+          "label": "on the road"
+        }
+      ],
+      "correctChoiceId": "a",
+      "missedConceptOnFail": "comprehension-literal",
+      "rationale": "high in the sky.",
+      "decodableWithin": "PH-vowel-teams"
+    },
+    {
+      "id": "rd-vt-014",
+      "skillId": "RD-vowelteam-sentences",
+      "itemType": "passage_question",
+      "difficulty": 2,
+      "passage": "Dean ate meat and beans.",
+      "audioText": "Dean ate meat and beans.",
+      "stem": "What did Dean eat?",
+      "choices": [
+        {
+          "id": "a",
+          "label": "a green leaf"
+        },
+        {
+          "id": "b",
+          "label": "meat and beans"
+        },
+        {
+          "id": "c",
+          "label": "sea foam"
+        }
+      ],
+      "correctChoiceId": "b",
+      "missedConceptOnFail": "comprehension-literal",
+      "rationale": "meat and beans.",
+      "decodableWithin": "PH-vowel-teams"
+    },
+    {
+      "id": "rd-vt-015",
+      "skillId": "RD-vowelteam-sentences",
+      "itemType": "passage_question",
+      "difficulty": 2,
+      "passage": "The goat and the sheep eat hay.",
+      "audioText": "The goat and the sheep eat hay.",
+      "stem": "What do the goat and sheep eat?",
+      "choices": [
+        {
+          "id": "a",
+          "label": "beans"
+        },
+        {
+          "id": "b",
+          "label": "seeds"
+        },
+        {
+          "id": "c",
+          "label": "hay"
+        }
+      ],
+      "correctChoiceId": "c",
+      "missedConceptOnFail": "comprehension-literal",
+      "rationale": "hay.",
+      "decodableWithin": "PH-vowel-teams"
+    },
+    {
+      "id": "rd-vt-016",
+      "skillId": "RD-vowelteam-sentences",
+      "itemType": "passage_question",
+      "difficulty": 3,
+      "passage": "Rain and sleet fell all day.",
+      "audioText": "Rain and sleet fell all day.",
+      "stem": "What fell all day?",
+      "choices": [
+        {
+          "id": "a",
+          "label": "rain and sleet"
+        },
+        {
+          "id": "b",
+          "label": "sea foam"
+        },
+        {
+          "id": "c",
+          "label": "green leaves"
+        }
+      ],
+      "correctChoiceId": "a",
+      "missedConceptOnFail": "comprehension-literal",
+      "rationale": "rain and sleet.",
+      "decodableWithin": "PH-vowel-teams"
+    }
+  ],
+  "lessons": {
+    "RD-vowelteam-sentences": {
+      "iCanStatement": "I can read sentences with vowel-team words and say what they mean.",
+      "explanation": "Vowel teams are two vowels that make one sound: ai (rain), ee (feet), oa (boat), ea (leaf). Read the team as one sound, blend the word, then think about what the sentence means.",
+      "workedExamples": [
+        {
+          "text": "The boat is on the sea.",
+          "note": "oa in boat, ea in sea."
+        },
+        {
+          "text": "Jean had a green bean.",
+          "note": "ea in Jean and bean, ee in green."
+        }
+      ]
+    }
+  }
+}

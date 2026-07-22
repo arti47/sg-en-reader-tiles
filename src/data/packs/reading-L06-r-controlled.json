@@ -1,0 +1,458 @@
+{
+  "packId": "reading-L06-r-controlled",
+  "strand": "reading",
+  "skillIds": [
+    "RD-rcontrolled-sentences"
+  ],
+  "version": 1,
+  "items": [
+    {
+      "id": "rd-rc-001",
+      "skillId": "RD-rcontrolled-sentences",
+      "itemType": "passage_question",
+      "difficulty": 1,
+      "passage": "The car is far away.",
+      "audioText": "The car is far away.",
+      "stem": "How far is the car?",
+      "choices": [
+        {
+          "id": "a",
+          "label": "far away"
+        },
+        {
+          "id": "b",
+          "label": "near the door"
+        },
+        {
+          "id": "c",
+          "label": "in the barn"
+        }
+      ],
+      "correctChoiceId": "a",
+      "missedConceptOnFail": "comprehension-literal",
+      "rationale": "far away.",
+      "decodableWithin": "PH-r-controlled"
+    },
+    {
+      "id": "rd-rc-002",
+      "skillId": "RD-rcontrolled-sentences",
+      "itemType": "passage_question",
+      "difficulty": 2,
+      "passage": "The bird sat on the perch.",
+      "audioText": "The bird sat on the perch.",
+      "stem": "Where did the bird sit?",
+      "choices": [
+        {
+          "id": "a",
+          "label": "in the barn"
+        },
+        {
+          "id": "b",
+          "label": "on the perch"
+        },
+        {
+          "id": "c",
+          "label": "by the door"
+        }
+      ],
+      "correctChoiceId": "b",
+      "missedConceptOnFail": "comprehension-literal",
+      "rationale": "on the perch.",
+      "decodableWithin": "PH-r-controlled"
+    },
+    {
+      "id": "rd-rc-003",
+      "skillId": "RD-rcontrolled-sentences",
+      "itemType": "passage_question",
+      "difficulty": 2,
+      "passage": "Bart put corn in the cart.",
+      "audioText": "Bart put corn in the cart.",
+      "stem": "What did Bart put in the cart?",
+      "choices": [
+        {
+          "id": "a",
+          "label": "a fork"
+        },
+        {
+          "id": "b",
+          "label": "a card"
+        },
+        {
+          "id": "c",
+          "label": "corn"
+        }
+      ],
+      "correctChoiceId": "c",
+      "missedConceptOnFail": "comprehension-literal",
+      "rationale": "corn.",
+      "decodableWithin": "PH-r-controlled"
+    },
+    {
+      "id": "rd-rc-004",
+      "skillId": "RD-rcontrolled-sentences",
+      "itemType": "passage_question",
+      "difficulty": 2,
+      "passage": "Her shirt is dark green.",
+      "audioText": "Her shirt is dark green.",
+      "stem": "What colour is her shirt?",
+      "choices": [
+        {
+          "id": "a",
+          "label": "dark green"
+        },
+        {
+          "id": "b",
+          "label": "red"
+        },
+        {
+          "id": "c",
+          "label": "purple"
+        }
+      ],
+      "correctChoiceId": "a",
+      "missedConceptOnFail": "comprehension-literal",
+      "rationale": "dark green.",
+      "decodableWithin": "PH-r-controlled"
+    },
+    {
+      "id": "rd-rc-005",
+      "skillId": "RD-rcontrolled-sentences",
+      "itemType": "passage_question",
+      "difficulty": 1,
+      "passage": "The horse is in the barn.",
+      "audioText": "The horse is in the barn.",
+      "stem": "Where is the horse?",
+      "choices": [
+        {
+          "id": "a",
+          "label": "in the car"
+        },
+        {
+          "id": "b",
+          "label": "in the barn"
+        },
+        {
+          "id": "c",
+          "label": "by the fork"
+        }
+      ],
+      "correctChoiceId": "b",
+      "missedConceptOnFail": "comprehension-literal",
+      "rationale": "in the barn.",
+      "decodableWithin": "PH-r-controlled"
+    },
+    {
+      "id": "rd-rc-006",
+      "skillId": "RD-rcontrolled-sentences",
+      "itemType": "passage_question",
+      "difficulty": 3,
+      "passage": "Kurt got a burn on his arm.",
+      "audioText": "Kurt got a burn on his arm.",
+      "stem": "Where did Kurt get a burn?",
+      "choices": [
+        {
+          "id": "a",
+          "label": "on his card"
+        },
+        {
+          "id": "b",
+          "label": "on his fork"
+        },
+        {
+          "id": "c",
+          "label": "on his arm"
+        }
+      ],
+      "correctChoiceId": "c",
+      "missedConceptOnFail": "comprehension-literal",
+      "rationale": "on his arm.",
+      "decodableWithin": "PH-r-controlled"
+    },
+    {
+      "id": "rd-rc-007",
+      "skillId": "RD-rcontrolled-sentences",
+      "itemType": "passage_question",
+      "difficulty": 2,
+      "passage": "The girl has a red card.",
+      "audioText": "The girl has a red card.",
+      "stem": "What does the girl have?",
+      "choices": [
+        {
+          "id": "a",
+          "label": "a red card"
+        },
+        {
+          "id": "b",
+          "label": "a green fork"
+        },
+        {
+          "id": "c",
+          "label": "a dark shirt"
+        }
+      ],
+      "correctChoiceId": "a",
+      "missedConceptOnFail": "comprehension-literal",
+      "rationale": "a red card.",
+      "decodableWithin": "PH-r-controlled"
+    },
+    {
+      "id": "rd-rc-008",
+      "skillId": "RD-rcontrolled-sentences",
+      "itemType": "passage_question",
+      "difficulty": 3,
+      "passage": "A shark swam near the surf.",
+      "audioText": "A shark swam near the surf.",
+      "stem": "Where did the shark swim?",
+      "choices": [
+        {
+          "id": "a",
+          "label": "in the barn"
+        },
+        {
+          "id": "b",
+          "label": "near the surf"
+        },
+        {
+          "id": "c",
+          "label": "by the car"
+        }
+      ],
+      "correctChoiceId": "b",
+      "missedConceptOnFail": "comprehension-literal",
+      "rationale": "near the surf.",
+      "decodableWithin": "PH-r-controlled"
+    },
+    {
+      "id": "rd-rc-009",
+      "skillId": "RD-rcontrolled-sentences",
+      "itemType": "passage_question",
+      "difficulty": 2,
+      "passage": "The farmer feeds the horse.",
+      "audioText": "The farmer feeds the horse.",
+      "stem": "What does the farmer feed?",
+      "choices": [
+        {
+          "id": "a",
+          "label": "the shark"
+        },
+        {
+          "id": "b",
+          "label": "the bird"
+        },
+        {
+          "id": "c",
+          "label": "the horse"
+        }
+      ],
+      "correctChoiceId": "c",
+      "missedConceptOnFail": "comprehension-literal",
+      "rationale": "the horse.",
+      "decodableWithin": "PH-r-controlled"
+    },
+    {
+      "id": "rd-rc-010",
+      "skillId": "RD-rcontrolled-sentences",
+      "itemType": "passage_question",
+      "difficulty": 3,
+      "passage": "Turn the car at the corner.",
+      "audioText": "Turn the car at the corner.",
+      "stem": "Where do you turn the car?",
+      "choices": [
+        {
+          "id": "a",
+          "label": "at the corner"
+        },
+        {
+          "id": "b",
+          "label": "in the barn"
+        },
+        {
+          "id": "c",
+          "label": "by the surf"
+        }
+      ],
+      "correctChoiceId": "a",
+      "missedConceptOnFail": "comprehension-literal",
+      "rationale": "at the corner.",
+      "decodableWithin": "PH-r-controlled"
+    },
+    {
+      "id": "rd-rc-011",
+      "skillId": "RD-rcontrolled-sentences",
+      "itemType": "passage_question",
+      "difficulty": 1,
+      "passage": "The fork is on the cart.",
+      "audioText": "The fork is on the cart.",
+      "stem": "Where is the fork?",
+      "choices": [
+        {
+          "id": "a",
+          "label": "in the barn"
+        },
+        {
+          "id": "b",
+          "label": "on the cart"
+        },
+        {
+          "id": "c",
+          "label": "by the door"
+        }
+      ],
+      "correctChoiceId": "b",
+      "missedConceptOnFail": "comprehension-literal",
+      "rationale": "on the cart.",
+      "decodableWithin": "PH-r-controlled"
+    },
+    {
+      "id": "rd-rc-012",
+      "skillId": "RD-rcontrolled-sentences",
+      "itemType": "passage_question",
+      "difficulty": 2,
+      "passage": "Her purse is in the car.",
+      "audioText": "Her purse is in the car.",
+      "stem": "Where is her purse?",
+      "choices": [
+        {
+          "id": "a",
+          "label": "in the barn"
+        },
+        {
+          "id": "b",
+          "label": "on the perch"
+        },
+        {
+          "id": "c",
+          "label": "in the car"
+        }
+      ],
+      "correctChoiceId": "c",
+      "missedConceptOnFail": "comprehension-literal",
+      "rationale": "in the car.",
+      "decodableWithin": "PH-r-controlled"
+    },
+    {
+      "id": "rd-rc-013",
+      "skillId": "RD-rcontrolled-sentences",
+      "itemType": "passage_question",
+      "difficulty": 3,
+      "passage": "The bird chirps in the morning.",
+      "audioText": "The bird chirps in the morning.",
+      "stem": "When does the bird chirp?",
+      "choices": [
+        {
+          "id": "a",
+          "label": "in the morning"
+        },
+        {
+          "id": "b",
+          "label": "in the dark"
+        },
+        {
+          "id": "c",
+          "label": "at the corner"
+        }
+      ],
+      "correctChoiceId": "a",
+      "missedConceptOnFail": "comprehension-literal",
+      "rationale": "in the morning.",
+      "decodableWithin": "PH-r-controlled"
+    },
+    {
+      "id": "rd-rc-014",
+      "skillId": "RD-rcontrolled-sentences",
+      "itemType": "passage_question",
+      "difficulty": 2,
+      "passage": "Mark has a short black cord.",
+      "audioText": "Mark has a short black cord.",
+      "stem": "What does Mark have?",
+      "choices": [
+        {
+          "id": "a",
+          "label": "a red card"
+        },
+        {
+          "id": "b",
+          "label": "a short black cord"
+        },
+        {
+          "id": "c",
+          "label": "a green fork"
+        }
+      ],
+      "correctChoiceId": "b",
+      "missedConceptOnFail": "comprehension-literal",
+      "rationale": "a short black cord.",
+      "decodableWithin": "PH-r-controlled"
+    },
+    {
+      "id": "rd-rc-015",
+      "skillId": "RD-rcontrolled-sentences",
+      "itemType": "passage_question",
+      "difficulty": 3,
+      "passage": "The horse ran far past the barn.",
+      "audioText": "The horse ran far past the barn.",
+      "stem": "Where did the horse run?",
+      "choices": [
+        {
+          "id": "a",
+          "label": "to the corner"
+        },
+        {
+          "id": "b",
+          "label": "near the surf"
+        },
+        {
+          "id": "c",
+          "label": "far past the barn"
+        }
+      ],
+      "correctChoiceId": "c",
+      "missedConceptOnFail": "comprehension-literal",
+      "rationale": "far past the barn.",
+      "decodableWithin": "PH-r-controlled"
+    },
+    {
+      "id": "rd-rc-016",
+      "skillId": "RD-rcontrolled-sentences",
+      "itemType": "passage_question",
+      "difficulty": 2,
+      "passage": "The nurse gave Bart a jar.",
+      "audioText": "The nurse gave Bart a jar.",
+      "stem": "What did the nurse give Bart?",
+      "choices": [
+        {
+          "id": "a",
+          "label": "a jar"
+        },
+        {
+          "id": "b",
+          "label": "a card"
+        },
+        {
+          "id": "c",
+          "label": "a fork"
+        }
+      ],
+      "correctChoiceId": "a",
+      "missedConceptOnFail": "comprehension-literal",
+      "rationale": "a jar.",
+      "decodableWithin": "PH-r-controlled"
+    }
+  ],
+  "lessons": {
+    "RD-rcontrolled-sentences": {
+      "iCanStatement": "I can read sentences with bossy-r words and say what they mean.",
+      "explanation": "When r follows a vowel it changes its sound: ar (car), or (fork), er/ir/ur (her, bird, turn). Read the vowel and r as one chunk, then think about what the sentence means.",
+      "workedExamples": [
+        {
+          "text": "The car is far.",
+          "note": "ar in car and far."
+        },
+        {
+          "text": "The bird is on the perch.",
+          "note": "ir in bird, er in perch."
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,485 @@
+{
+  "packId": "reading-L04-silent-e",
+  "strand": "reading",
+  "skillIds": [
+    "RD-silente-sentences"
+  ],
+  "version": 1,
+  "items": [
+    {
+      "id": "rd-se-001",
+      "skillId": "RD-silente-sentences",
+      "itemType": "passage_question",
+      "difficulty": 1,
+      "passage": "Jake rode his bike home.",
+      "audioText": "Jake rode his bike home.",
+      "stem": "Where did Jake ride his bike?",
+      "choices": [
+        {
+          "id": "a",
+          "label": "home"
+        },
+        {
+          "id": "b",
+          "label": "to the lake"
+        },
+        {
+          "id": "c",
+          "label": "to the cave"
+        }
+      ],
+      "correctChoiceId": "a",
+      "missedConceptOnFail": "comprehension-literal",
+      "rationale": "home.",
+      "decodableWithin": "PH-silent-e"
+    },
+    {
+      "id": "rd-se-002",
+      "skillId": "RD-silente-sentences",
+      "itemType": "passage_question",
+      "difficulty": 1,
+      "passage": "Kate had a big cake.",
+      "audioText": "Kate had a big cake.",
+      "stem": "What did Kate have?",
+      "choices": [
+        {
+          "id": "a",
+          "label": "a red bike"
+        },
+        {
+          "id": "b",
+          "label": "a big cake"
+        },
+        {
+          "id": "c",
+          "label": "a cute mule"
+        }
+      ],
+      "correctChoiceId": "b",
+      "missedConceptOnFail": "comprehension-literal",
+      "rationale": "a big cake.",
+      "decodableWithin": "PH-silent-e"
+    },
+    {
+      "id": "rd-se-003",
+      "skillId": "RD-silente-sentences",
+      "itemType": "passage_question",
+      "difficulty": 2,
+      "passage": "The mole hid in the hole.",
+      "audioText": "The mole hid in the hole.",
+      "stem": "Where did the mole hide?",
+      "choices": [
+        {
+          "id": "a",
+          "label": "on the gate"
+        },
+        {
+          "id": "b",
+          "label": "in the cave"
+        },
+        {
+          "id": "c",
+          "label": "in the hole"
+        }
+      ],
+      "correctChoiceId": "c",
+      "missedConceptOnFail": "comprehension-literal",
+      "rationale": "in the hole.",
+      "decodableWithin": "PH-silent-e"
+    },
+    {
+      "id": "rd-se-004",
+      "skillId": "RD-silente-sentences",
+      "itemType": "passage_question",
+      "difficulty": 2,
+      "passage": "Pete ate five grapes.",
+      "audioText": "Pete ate five grapes.",
+      "stem": "How many grapes did Pete eat?",
+      "choices": [
+        {
+          "id": "a",
+          "label": "five"
+        },
+        {
+          "id": "b",
+          "label": "nine"
+        },
+        {
+          "id": "c",
+          "label": "ten"
+        }
+      ],
+      "correctChoiceId": "a",
+      "missedConceptOnFail": "comprehension-literal",
+      "rationale": "five.",
+      "decodableWithin": "PH-silent-e"
+    },
+    {
+      "id": "rd-se-005",
+      "skillId": "RD-silente-sentences",
+      "itemType": "passage_question",
+      "difficulty": 2,
+      "passage": "Dave came home late.",
+      "audioText": "Dave came home late.",
+      "stem": "When did Dave come home?",
+      "choices": [
+        {
+          "id": "a",
+          "label": "at nine"
+        },
+        {
+          "id": "b",
+          "label": "late"
+        },
+        {
+          "id": "c",
+          "label": "in time"
+        }
+      ],
+      "correctChoiceId": "b",
+      "missedConceptOnFail": "comprehension-literal",
+      "rationale": "late.",
+      "decodableWithin": "PH-silent-e"
+    },
+    {
+      "id": "rd-se-006",
+      "skillId": "RD-silente-sentences",
+      "itemType": "passage_question",
+      "difficulty": 2,
+      "passage": "The cute mule ran to the gate.",
+      "audioText": "The cute mule ran to the gate.",
+      "stem": "Where did the mule run?",
+      "choices": [
+        {
+          "id": "a",
+          "label": "to the cave"
+        },
+        {
+          "id": "b",
+          "label": "to the lake"
+        },
+        {
+          "id": "c",
+          "label": "to the gate"
+        }
+      ],
+      "correctChoiceId": "c",
+      "missedConceptOnFail": "comprehension-literal",
+      "rationale": "to the gate.",
+      "decodableWithin": "PH-silent-e"
+    },
+    {
+      "id": "rd-se-007",
+      "skillId": "RD-silente-sentences",
+      "itemType": "passage_question",
+      "difficulty": 2,
+      "passage": "Mike gave Jane a rose.",
+      "audioText": "Mike gave Jane a rose.",
+      "stem": "What did Mike give Jane?",
+      "choices": [
+        {
+          "id": "a",
+          "label": "a rose"
+        },
+        {
+          "id": "b",
+          "label": "a bike"
+        },
+        {
+          "id": "c",
+          "label": "a cake"
+        }
+      ],
+      "correctChoiceId": "a",
+      "missedConceptOnFail": "comprehension-literal",
+      "rationale": "a rose.",
+      "decodableWithin": "PH-silent-e"
+    },
+    {
+      "id": "rd-se-008",
+      "skillId": "RD-silente-sentences",
+      "itemType": "passage_question",
+      "difficulty": 1,
+      "passage": "The bike is by the gate.",
+      "audioText": "The bike is by the gate.",
+      "stem": "Where is the bike?",
+      "choices": [
+        {
+          "id": "a",
+          "label": "in the cave"
+        },
+        {
+          "id": "b",
+          "label": "by the gate"
+        },
+        {
+          "id": "c",
+          "label": "on the lake"
+        }
+      ],
+      "correctChoiceId": "b",
+      "missedConceptOnFail": "comprehension-literal",
+      "rationale": "by the gate.",
+      "decodableWithin": "PH-silent-e"
+    },
+    {
+      "id": "rd-se-009",
+      "skillId": "RD-silente-sentences",
+      "itemType": "passage_question",
+      "difficulty": 2,
+      "passage": "Jane had nine limes.",
+      "audioText": "Jane had nine limes.",
+      "stem": "How many limes did Jane have?",
+      "choices": [
+        {
+          "id": "a",
+          "label": "five"
+        },
+        {
+          "id": "b",
+          "label": "ten"
+        },
+        {
+          "id": "c",
+          "label": "nine"
+        }
+      ],
+      "correctChoiceId": "c",
+      "missedConceptOnFail": "comprehension-literal",
+      "rationale": "nine.",
+      "decodableWithin": "PH-silent-e"
+    },
+    {
+      "id": "rd-se-010",
+      "skillId": "RD-silente-sentences",
+      "itemType": "passage_question",
+      "difficulty": 3,
+      "passage": "The snake hid in the cave.",
+      "audioText": "The snake hid in the cave.",
+      "stem": "Where did the snake hide?",
+      "choices": [
+        {
+          "id": "a",
+          "label": "in the cave"
+        },
+        {
+          "id": "b",
+          "label": "in the hole"
+        },
+        {
+          "id": "c",
+          "label": "by the gate"
+        }
+      ],
+      "correctChoiceId": "a",
+      "missedConceptOnFail": "comprehension-literal",
+      "rationale": "in the cave.",
+      "decodableWithin": "PH-silent-e"
+    },
+    {
+      "id": "rd-se-011",
+      "skillId": "RD-silente-sentences",
+      "itemType": "passage_question",
+      "difficulty": 3,
+      "passage": "Steve rode home in time.",
+      "audioText": "Steve rode home in time.",
+      "stem": "Did Steve get home in time?",
+      "choices": [
+        {
+          "id": "a",
+          "label": "no, he was late"
+        },
+        {
+          "id": "b",
+          "label": "yes, in time"
+        },
+        {
+          "id": "c",
+          "label": "he did not ride"
+        }
+      ],
+      "correctChoiceId": "b",
+      "missedConceptOnFail": "comprehension-literal",
+      "rationale": "yes, in time.",
+      "decodableWithin": "PH-silent-e"
+    },
+    {
+      "id": "rd-se-012",
+      "skillId": "RD-silente-sentences",
+      "itemType": "passage_question",
+      "difficulty": 2,
+      "passage": "The plane came home late.",
+      "audioText": "The plane came home late.",
+      "stem": "When did the plane come home?",
+      "choices": [
+        {
+          "id": "a",
+          "label": "at five"
+        },
+        {
+          "id": "b",
+          "label": "on time"
+        },
+        {
+          "id": "c",
+          "label": "late"
+        }
+      ],
+      "correctChoiceId": "c",
+      "missedConceptOnFail": "comprehension-literal",
+      "rationale": "late.",
+      "decodableWithin": "PH-silent-e"
+    },
+    {
+      "id": "rd-se-013",
+      "skillId": "RD-silente-sentences",
+      "itemType": "passage_question",
+      "difficulty": 2,
+      "passage": "Kate and Jake bake a cake.",
+      "audioText": "Kate and Jake bake a cake.",
+      "stem": "What did Kate and Jake bake?",
+      "choices": [
+        {
+          "id": "a",
+          "label": "a cake"
+        },
+        {
+          "id": "b",
+          "label": "a lime pie"
+        },
+        {
+          "id": "c",
+          "label": "a rose"
+        }
+      ],
+      "correctChoiceId": "a",
+      "missedConceptOnFail": "comprehension-literal",
+      "rationale": "a cake.",
+      "decodableWithin": "PH-silent-e"
+    },
+    {
+      "id": "rd-se-014",
+      "skillId": "RD-silente-sentences",
+      "itemType": "passage_question",
+      "difficulty": 2,
+      "passage": "The cube is on the plate.",
+      "audioText": "The cube is on the plate.",
+      "stem": "Where is the cube?",
+      "choices": [
+        {
+          "id": "a",
+          "label": "in the cave"
+        },
+        {
+          "id": "b",
+          "label": "on the plate"
+        },
+        {
+          "id": "c",
+          "label": "by the gate"
+        }
+      ],
+      "correctChoiceId": "b",
+      "missedConceptOnFail": "comprehension-literal",
+      "rationale": "on the plate.",
+      "decodableWithin": "PH-silent-e"
+    },
+    {
+      "id": "rd-se-015",
+      "skillId": "RD-silente-sentences",
+      "itemType": "passage_question",
+      "difficulty": 3,
+      "passage": "Dave gave the mule some hay.",
+      "audioText": "Dave gave the mule some hay.",
+      "stem": "Who did Dave give the hay to?",
+      "choices": [
+        {
+          "id": "a",
+          "label": "the snake"
+        },
+        {
+          "id": "b",
+          "label": "the mole"
+        },
+        {
+          "id": "c",
+          "label": "the mule"
+        }
+      ],
+      "correctChoiceId": "c",
+      "missedConceptOnFail": "comprehension-literal",
+      "rationale": "the mule.",
+      "decodableWithin": "PH-silent-e"
+    },
+    {
+      "id": "rd-se-016",
+      "skillId": "RD-silente-sentences",
+      "itemType": "passage_question",
+      "difficulty": 3,
+      "passage": "Mike will race his bike.",
+      "audioText": "Mike will race his bike.",
+      "stem": "What will Mike race?",
+      "choices": [
+        {
+          "id": "a",
+          "label": "his bike"
+        },
+        {
+          "id": "b",
+          "label": "a plane"
+        },
+        {
+          "id": "c",
+          "label": "a mule"
+        }
+      ],
+      "correctChoiceId": "a",
+      "missedConceptOnFail": "comprehension-literal",
+      "rationale": "his bike.",
+      "decodableWithin": "PH-silent-e"
+    },
+    {
+      "id": "rd-se-017",
+      "skillId": "RD-silente-sentences",
+      "itemType": "passage_question",
+      "difficulty": 1,
+      "passage": "The rose is by the lake.",
+      "audioText": "The rose is by the lake.",
+      "stem": "Where is the rose?",
+      "choices": [
+        {
+          "id": "a",
+          "label": "in the cave"
+        },
+        {
+          "id": "b",
+          "label": "by the lake"
+        },
+        {
+          "id": "c",
+          "label": "on the gate"
+        }
+      ],
+      "correctChoiceId": "b",
+      "missedConceptOnFail": "comprehension-literal",
+      "rationale": "by the lake.",
+      "decodableWithin": "PH-silent-e"
+    }
+  ],
+  "lessons": {
+    "RD-silente-sentences": {
+      "iCanStatement": "I can read sentences with magic-e words and say what they mean.",
+      "explanation": "Magic-e words have a silent e at the end that makes the vowel say its name: cake, bike, home, cube. Read the word with the long vowel sound, then think about what the whole sentence means.",
+      "workedExamples": [
+        {
+          "text": "Jake rode his bike home.",
+          "note": "bike, home — the e makes the vowel long."
+        },
+        {
+          "text": "Kate had a big cake.",
+          "note": "cake — a says its name."
+        }
+      ]
+    }
+  }
+}
