@@ -38,6 +38,7 @@ import cloze2 from '../data/packs/cloze-L02-vocab.json'
 import smEdit from '../data/packs/sm-L01-editing.json'
 import smSyn from '../data/packs/sm-L02-synthesis.json'
 import reading1 from '../data/packs/reading-L01-cvc.json'
+import reading2 from '../data/packs/reading-L02-digraphs.json'
 
 const PACKS: ContentPack[] = [
   phonicsLs as ContentPack,
@@ -76,7 +77,8 @@ const PACKS: ContentPack[] = [
   cloze2 as ContentPack,
   smEdit as ContentPack,
   smSyn as ContentPack,
-  reading1 as ContentPack
+  reading1 as ContentPack,
+  reading2 as ContentPack
 ]
 
 // Runtime skill graph. Skills flagged `enabled: false` (authored but inert — e.g. T01

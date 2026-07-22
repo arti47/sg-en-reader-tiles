@@ -478,6 +478,9 @@ try {
     // eligible once CVC read+spell is mastered.
     if (e.eligibleSkills([]).map(s => s.id).includes('RD-cvc-sentences')) return 'T19: reading must be gated behind the CVC pattern'
     if (!e.eligibleSkills([...decodeOnly, ...arr(SP, 12, true)]).map(s => s.id).includes('RD-cvc-sentences')) return 'T19: reading should unlock after the CVC pattern'
+    // T19 digraph-level reading gated behind the DIGRAPH pattern.
+    if (e.eligibleSkills([]).map(s => s.id).includes('RD-digraph-sentences')) return 'T19: digraph reading must be gated behind the digraph pattern'
+    if (!e.eligibleSkills([...arr('PH-digraphs', 12, true), ...arr('SP-digraphs', 12, true)]).map(s => s.id).includes('RD-digraph-sentences')) return 'T19: digraph reading should unlock after the digraph pattern'
     // T17 sentence manipulation gated deep behind grammar/cloze — never eligible up front.
     if (e.eligibleSkills([]).map(s => s.id).includes('SM-editing')) return 'T17: editing must be gated behind grammar/cloze'
     // T12/T01 — sight words + letter-sounds are threaded (every 4th item, rotating), never eligible.

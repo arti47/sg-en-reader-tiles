@@ -419,6 +419,22 @@
             "accuracyToPass": 0.8,
             "minItems": 8
           }
+        },
+        {
+          "id": "RD-digraph-sentences",
+          "strand": "reading",
+          "objective": "Read decodable sentences with sh, ch, th, ck and answer a literal question (T19).",
+          "iCanStatement": "I can read sentences with sh, ch, th and ck and say what they mean.",
+          "prereqs": [
+            "PH-digraphs"
+          ],
+          "itemType": "passage_question",
+          "itemPool": "reading-L02-digraphs",
+          "mastery": {
+            "window": 12,
+            "accuracyToPass": 0.8,
+            "minItems": 8
+          }
         }
       ]
     },

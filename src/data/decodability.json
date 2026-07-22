@@ -90,6 +90,11 @@
     "graphemes": ["b","c","d","f","g","h","j","k","l","m","n","p","qu","r","s","t","v","w","x","y","z","a","e","i","o","u"],
     "highFrequency": ["the","to","of","a"]
   },
+  "RD-digraphs": {
+    "_note": "Connected-text reading (T19), digraph level: CVC + sh/ch/th/ck (blends decompose into single consonants). Sentences/answers segment into these graphemes.",
+    "graphemes": ["sh","ch","th","ck","b","c","d","f","g","h","j","k","l","m","n","p","qu","r","s","t","v","w","x","y","z","a","e","i","o","u"],
+    "highFrequency": ["the","to","of","a","for"]
+  },
   "HF-words": {
     "_note": "Sight/tricky words are not fully decodable — passed via the highFrequency list, not grapheme segmentation (graphemes empty).",
     "graphemes": [],
