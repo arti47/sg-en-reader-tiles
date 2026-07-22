@@ -1,0 +1,16 @@
+# Netlify deploy config (§13). The app also deploys to GitHub Pages via Actions; vite.config.ts
+# auto-picks base '/' here (NETLIFY=true) vs '/sg-en-reader-tiles/' on Pages, so the same repo
+# serves correctly from either host.
+[build]
+  command = "npm run build"
+  publish = "dist"
+
+[build.environment]
+  NODE_VERSION = "20"
+
+# SPA fallback: serve index.html for any path Netlify doesn't find as a real file (existing
+# assets, sw.js, and precached files are served directly and take precedence over this rule).
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
