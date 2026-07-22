@@ -34,6 +34,7 @@ export function Session(props: { child: Child; onExit: () => void; onTrophies: (
   const reviewsRef = useRef<Review[]>([])       // spaced-repetition schedule (§7)
   const dueQueueRef = useRef<string[]>([])       // skillIds due for review this session (cap 4)
   const reviewingRef = useRef<string | null>(null) // skillId currently being reviewed, else null
+  const reviewServedRef = useRef(0)              // interleave+fluency items served this session (density cap)
   const lenRef = useRef(DEFAULT_SESSION_LEN)     // session length (from settings)
   const xpGainRef = useRef(0)                    // XP earned this session (§14 gamification)
   const startBadgesRef = useRef<Set<string>>(new Set()) // badge ids already earned at session start (§14 highlights)
@@ -125,12 +126,18 @@ export function Session(props: { child: Child; onExit: () => void; onTrophies: (
       // High-frequency sight words threaded throughout (§5/§6d): every Nth item, regardless of level.
       const threaded = threadedSkill(countRef.current)
       if (threaded) { loadItem(threaded); return }
-      // Cumulative interleave (§7): every Nth item, slip in a quick review of a mastered skill.
-      const review = interleavedReviewSkill(attemptsRef.current, countRef.current, masteredRef.current, sup.interleaveEvery)
-      if (review) { loadItem(review, 1); return } // normal attempt (not an SRS review)
-      // Fluency loop (§7): a mastered pattern read accurately but SLOWLY gets a quick speed rep.
-      const fl = fluencySkill(attemptsRef.current, countRef.current, sup.fluencyMaxMs, masteredRef.current, sup.fluencyEvery)
-      if (fl) { loadItem(fl, 1); return }
+      // Cumulative interleave + fluency share a per-session cap so acquisition keeps the majority
+      // of items (≤ ⌈len/3⌉ combined) even when several patterns are mastered and slow — otherwise
+      // stacked review cadences could crowd out new learning for a max-support child (audit). Due
+      // SRS reviews and the HF thread are exempt (retention-critical / core content).
+      if (reviewServedRef.current < Math.ceil(lenRef.current / 3)) {
+        // Cumulative interleave (§7): every Nth item, slip in a quick review of a mastered skill.
+        const review = interleavedReviewSkill(attemptsRef.current, countRef.current, masteredRef.current, sup.interleaveEvery)
+        if (review) { reviewServedRef.current += 1; loadItem(review, 1); return } // normal attempt (not an SRS review)
+        // Fluency loop (§7): a mastered pattern read accurately but SLOWLY gets a quick speed rep.
+        const fl = fluencySkill(attemptsRef.current, countRef.current, sup.fluencyMaxMs, masteredRef.current, sup.fluencyEvery)
+        if (fl) { reviewServedRef.current += 1; loadItem(fl, 1); return }
+      }
     }
     const elig = eligibleSkills(attemptsRef.current, masteredRef.current)
     if (!elig.length) { setPhase('summary'); return }

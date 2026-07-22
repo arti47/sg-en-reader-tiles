@@ -1296,7 +1296,7 @@
         }
       ],
       "correctChoiceId": "c",
-      "heart": "uy (says /y/)",
+      "heart": "uy (says /igh/)",
       "missedConceptOnFail": "sight-word",
       "rationale": "\"buy\" is a tricky word we learn by heart.",
       "decodableWithin": "HF-words"
@@ -1485,7 +1485,6 @@
         }
       ],
       "correctChoiceId": "a",
-      "heart": "eye shape",
       "missedConceptOnFail": "sight-word",
       "rationale": "\"eye\" is a tricky word we learn by heart.",
       "decodableWithin": "HF-words"

@@ -85,6 +85,11 @@
     "graphemes": ["igh","oi","oy","ou","aw","au","ar","or","er","ir","ur","ai","ay","ee","ea","oa","ow","oo","ew","ue","bb","cc","dd","ff","gg","ll","mm","nn","pp","rr","ss","tt","zz","sh","ch","th","ck","b","c","d","f","g","h","j","k","l","m","n","p","qu","r","s","t","v","w","x","y","z","a","e","i","o","u"],
     "highFrequency": []
   },
+  "RD-cvc": {
+    "_note": "Connected-text reading (T19): CVC words + a few decodable function words. Sentences/answers must segment into these single-letter graphemes.",
+    "graphemes": ["b","c","d","f","g","h","j","k","l","m","n","p","qu","r","s","t","v","w","x","y","z","a","e","i","o","u"],
+    "highFrequency": ["the","to","of","a"]
+  },
   "HF-words": {
     "_note": "Sight/tricky words are not fully decodable — passed via the highFrequency list, not grapheme segmentation (graphemes empty).",
     "graphemes": [],

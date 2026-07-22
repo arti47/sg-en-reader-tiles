@@ -14,7 +14,7 @@ export type ItemType =
   | 'editing_mcq'       // sentence with one error → pick the correction (MCQ, no keyboard)
   | 'synthesis_mcq'     // pick the correctly combined/rewritten sentence (MCQ)
 
-export type Strand = 'phonics' | 'spelling' | 'grammar' | 'vocab' | 'comprehension' | 'cloze' | 'sentence'
+export type Strand = 'phonics' | 'spelling' | 'grammar' | 'vocab' | 'comprehension' | 'cloze' | 'sentence' | 'reading'
 export type Difficulty = 1 | 2 | 3
 
 export interface Choice { id: string; label: string; keyword?: string } // keyword = optional scaffold anchor (e.g. letter 'a' → "ant")

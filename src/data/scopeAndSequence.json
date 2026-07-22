@@ -403,6 +403,22 @@
             "accuracyToPass": 0.85,
             "minItems": 12
           }
+        },
+        {
+          "id": "RD-cvc-sentences",
+          "strand": "reading",
+          "objective": "Read short decodable CVC sentences and answer a literal question (word→text bridge, T19).",
+          "iCanStatement": "I can read a short sentence and say what it means.",
+          "prereqs": [
+            "PH-cvc-short-vowels"
+          ],
+          "itemType": "passage_question",
+          "itemPool": "reading-L01-cvc",
+          "mastery": {
+            "window": 12,
+            "accuracyToPass": 0.8,
+            "minItems": 8
+          }
         }
       ]
     },

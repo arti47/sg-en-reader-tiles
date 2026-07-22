@@ -60,14 +60,14 @@ const WORDS = [
   ['many', 2, ['any', 'man'], 'a (says /e/)'],
   ['again', 3, ['against', 'gain'], 'ai (says /e/)'],
   ['great', 3, ['greet', 'treat'], 'ea (says /ay/)'],
-  ['buy', 2, ['bye', 'boy'], 'uy (says /y/)'],
+  ['buy', 2, ['bye', 'boy'], 'uy (says /igh/)'],
   ['busy', 3, ['bury', 'bus'], 'u (says /i/)'],
   ['build', 3, ['built', 'bird'], 'ui (says /i/)'],
   ['work', 2, ['word', 'world'], 'or (says /er/)'],
   ['word', 2, ['work', 'world'], 'or (says /er/)'],
   ['world', 3, ['word', 'work'], 'or (says /er/)'],
   ['learn', 3, ['earn', 'lean'], 'ear (says /er/)'],
-  ['eye', 2, ['eyes', 'aye'], 'eye shape'],
+  ['eye', 2, ['eyes', 'aye']],
 ]
 
 const num = i => String(i + 1).padStart(3, '0')

@@ -52,6 +52,10 @@ export function McqItem(props: { item: PackItem; quiet?: boolean; onAnswer: (r: 
         </div>
       )}
       {item.passage && <p className="passage">{item.passage}</p>}
+      {/* Connected-text reading (T19): a 🔊 support to hear the sentence read (passage + audioText, non-decode_choice). */}
+      {item.passage && item.audioText && !isAudio && !props.quiet && (
+        <div className="row"><button className="btn ghost" onClick={() => speak(item.audioText ?? '')} aria-label="Hear the sentence">🔊 Hear the sentence</button></div>
+      )}
       <p className="stem">{item.stem}</p>
       {item.heart && !props.quiet && (
         <p className="heart-note">💛 Heart word — the tricky part to remember by heart is <b>{item.heart}</b>.</p>

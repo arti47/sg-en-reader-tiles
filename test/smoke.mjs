@@ -474,6 +474,10 @@ try {
     if (e.eligibleSkills([]).map(s => s.id).includes('GR-articles')) return 'M3: grammar must be gated behind decoding'
     const decoded = [...arr('PH-two-syllable', 12, true), ...arr('SP-two-syllable', 12, true)]
     if (!e.eligibleSkills(decoded).map(s => s.id).includes('GR-articles')) return 'M3: grammar should unlock after the two-syllable pattern'
+    // T19 connected-text reading (word→text bridge) gated behind the CVC pattern — not up front,
+    // eligible once CVC read+spell is mastered.
+    if (e.eligibleSkills([]).map(s => s.id).includes('RD-cvc-sentences')) return 'T19: reading must be gated behind the CVC pattern'
+    if (!e.eligibleSkills([...decodeOnly, ...arr(SP, 12, true)]).map(s => s.id).includes('RD-cvc-sentences')) return 'T19: reading should unlock after the CVC pattern'
     // T17 sentence manipulation gated deep behind grammar/cloze — never eligible up front.
     if (e.eligibleSkills([]).map(s => s.id).includes('SM-editing')) return 'T17: editing must be gated behind grammar/cloze'
     // T12/T01 — sight words + letter-sounds are threaded (every 4th item, rotating), never eligible.

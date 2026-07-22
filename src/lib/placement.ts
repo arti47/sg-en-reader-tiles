@@ -73,5 +73,12 @@ export function priorSkillIds(entrySkillId: string): string[] {
     const pre = getSkill(p)
     if (pre && !decodeLadder.includes(pre) && !ids.includes(p)) ids.push(p)
   }
+  // Connected-text reading rungs (T19) whose gating decode pattern is already read → credit them
+  // too: a child who placed above a level can already read that level's decodable sentences, so
+  // don't re-teach them (and don't dilute the eligible rotation). Lower rungs stay in-session.
+  for (const s of SKILLS) {
+    if (s.strand !== 'reading') continue
+    if (s.prereqs.length && s.prereqs.every(p => ids.includes(p))) ids.push(s.id)
+  }
   return ids
 }

@@ -139,6 +139,15 @@ for (const { f, pack } of packs) {
         for (const c of it.choices ?? []) words.push(c.label)
         for (const w of words) { const r = decodable(w, env); if (!r.ok) err(f, it.id, r.why) }
       }
+    } else if (skill.strand === 'reading') {
+      // Connected-text reading (T19): the PASSAGE + answer CHOICES must be decodable within the
+      // envelope (the question stem is comprehension scaffolding — read-aloud supported, not linted).
+      const env = it.decodableWithin
+      if (!env) err(f, it.id, 'missing decodableWithin')
+      else {
+        const toks = [...(it.passage ?? '').split(/\s+/), ...(it.choices ?? []).flatMap(c => (c.label ?? '').split(/\s+/))]
+        for (const tok of toks) { const w = tok.replace(/[^a-zA-Z]/g, ''); if (!w) continue; const r = decodable(w, env); if (!r.ok) err(f, it.id, r.why) }
+      }
     }
   }
 }

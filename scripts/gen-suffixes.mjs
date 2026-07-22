@@ -57,6 +57,25 @@ const WORDS = [
   ['dried', ['d','r','i','e','d'], 3, 'y', ['fried','dries']],
   ['fried', ['f','r','i','e','d'], 3, 'y', ['dried','fries']],
   ['spied', ['s','p','i','e','d'], 3, 'y', ['tried','spies']],
+  // more just-add
+  ['kicks', ['k','i','ck','s'], 1, 'a', ['licks','kicked']],
+  ['kicked', ['k','i','ck','e','d'], 2, 'a', ['licked','kicking']],
+  ['licking', ['l','i','ck','i','n','g'], 2, 'a', ['kicking','licked']],
+  ['dusts', ['d','u','s','t','s'], 2, 'a', ['lists','dusted']],
+  ['lifted', ['l','i','f','t','e','d'], 2, 'a', ['lifting','lifts']],
+  ['sending', ['s','e','n','d','i','n','g'], 2, 'a', ['sends','sent']],
+  ['camping', ['c','a','m','p','i','n','g'], 2, 'a', ['camps','camped']],
+  ['hands', ['h','a','n','d','s'], 1, 'a', ['bands','lands']],
+  // more doubling
+  ['getting', ['g','e','tt','i','n','g'], 2, 'd', ['gets','setting']],
+  ['winning', ['w','i','nn','i','n','g'], 3, 'd', ['wins','pinning']],
+  ['batted', ['b','a','tt','e','d'], 3, 'd', ['batting','bats']],
+  ['digging', ['d','i','gg','i','n','g'], 3, 'd', ['digs','rigging']],
+  ['rubbing', ['r','u','bb','i','n','g'], 3, 'd', ['rubs','running']],
+  // more drop-e / change-y (encode-only)
+  ['named', ['n','a','m','e','d'], 2, 'e', ['naming','names']],
+  ['liked', ['l','i','k','e','d'], 2, 'e', ['liking','likes']],
+  ['cries', ['c','r','i','e','s'], 3, 'y', ['tries','cried']],
 ]
 
 const CONCEPT = { a: 'suffix-add', d: 'suffix-double', e: 'suffix-drop-e', y: 'suffix-change-y' }
@@ -64,7 +83,11 @@ const POOL = ['bb','tt','nn','pp','dd','gg','ck','sh','ch','th','a','e','i','o',
 const encodeDistractors = (g, d) => POOL.filter(x => !g.includes(x)).slice(0, d + 1)
 const num = i => String(i + 1).padStart(3, '0')
 
-const decode = WORDS.map(([w, , d, ty, dd], i) => {
+// DECODE only carries the phonically-transparent rules (just-add, doubling) — you can blend the
+// letters straight through (jumped, hopping). The drop-e ('hoping') and change-y ('cried') words
+// hide the base vowel's value, so they'd mislead a sound-it-out reader; they live in ENCODE only,
+// where they're taught as spelling rules (§ decode phonic-purity).
+const decode = WORDS.filter(([, , , ty]) => ty === 'a' || ty === 'd').map(([w, , d, ty, dd], i) => {
   const pos = i % 3, others = [dd[0], dd[1]]
   const choices = [0, 1, 2].map(p => ({ id: 'abc'[p], label: p === pos ? w : others[p < pos ? p : p - 1] }))
   return { id: `ph-sf-${num(i)}`, skillId: 'PH-suffixes', itemType: 'decode_choice', difficulty: d,
