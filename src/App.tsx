@@ -85,8 +85,6 @@ export default function App() {
             onPick={(c) => { setActive(c); setView('session') }}
             onLearn={(c) => { setActive(c); setView('learn') }}
             onAdd={() => setView('add')}
-            onRemove={removeStudent}
-            onReset={resetStudent}
             onTrophies={(c) => { setActive(c); setView('trophies') }}
             onParent={() => setView('dashboard')} />
         )}
@@ -104,7 +102,7 @@ export default function App() {
             onLearn={() => setView('learn')} />
         )}
         {view === 'dashboard' && (
-          <ParentDashboard children={children} onExit={() => setView('pick')} onReset={resetStudent} />
+          <ParentDashboard children={children} onExit={() => setView('pick')} onReset={resetStudent} onRemove={removeStudent} />
         )}
       </main>
       <footer className="ver">v{APP_VERSION}</footer>

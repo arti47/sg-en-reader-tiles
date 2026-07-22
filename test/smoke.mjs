@@ -224,37 +224,6 @@ try {
     await ctx.close()
   }
 
-  // Manage students: add one, run placement, then remove it and assert it's gone.
-  {
-    const mctx = await browser.newContext({ viewport: { width: 390, height: 800 } })
-    const mp = await mctx.newPage(); mp.setDefaultTimeout(6000)
-    await mp.goto(BASE, { waitUntil: 'networkidle' })
-    await mp.getByText('Add student').click()
-    await mp.locator('input').fill('Mgr')
-    await mp.getByRole('button', { name: 'P1', exact: true }).click()
-    await mp.getByRole('button', { name: 'Save' }).click()
-    for (let i = 0; i < 30; i++) {
-      const kind = await mp.waitForFunction(() => {
-        if (/Who's reading\?/.test(document.body.innerText)) return 'pick'
-        if ([...document.querySelectorAll('button')].some(b => b.textContent.trim() === "Let's read")) return 'done'
-        return document.querySelector('button.tile:not([disabled])') ? 'item' : null
-      }, { timeout: 8000 }).then(h => h.jsonValue())
-      if (kind === 'pick') break
-      if (kind === 'done') { await mp.evaluate(() => [...document.querySelectorAll('button')].find(b => b.textContent.trim() === "Let's read")?.click()); continue }
-      await mp.locator('button.tile:not([disabled])').first().click()
-    }
-    // Force the wider OpenDyslexic font to catch layout overflow (§18.5).
-    await mp.evaluate(() => { document.documentElement.dataset.font = 'dyslexic' })
-    await mp.getByRole('button', { name: 'Manage' }).click()
-    if (await mp.evaluate(() => document.documentElement.scrollWidth > window.innerWidth + 1)) fail('manage: horizontal overflow (dyslexic font)')
-    await mp.getByRole('button', { name: 'Remove', exact: true }).click() // open confirm
-    if (await mp.evaluate(() => document.documentElement.scrollWidth > window.innerWidth + 1)) fail('manage confirm: horizontal overflow (dyslexic font)')
-    await mp.getByRole('button', { name: 'Remove', exact: true }).click() // confirm
-    await mp.waitForFunction(() => !/Mgr/.test(document.body.innerText), { timeout: 6000 })
-      .catch(() => fail('manage: remove student did not delete the profile'))
-    await mctx.close()
-  }
-
   // Picker card overflow (reported): on a wider phone the cards get narrow enough for 3 columns,
   // and the per-card Play + 🏆 Trophies buttons spilled PAST the card (still inside the viewport, so
   // a document-overflow check misses it). Add two students, then assert every action button's box
@@ -328,6 +297,8 @@ try {
     }
     // M4: picker card shows the gamification level badge.
     if (!/Lvl/.test(await dp.evaluate(() => document.body.innerText))) fail('M4 gamify: picker should show a level badge')
+    // Student management moved OFF the home screen (§14): no "Manage" button on the picker.
+    if (await dp.getByRole('button', { name: 'Manage' }).count()) fail('picker: Manage should be removed from the home screen')
     await dp.getByRole('button', { name: /teacher area/i }).click()
     await dp.waitForFunction(() => /Create a teacher PIN/.test(document.body.innerText), { timeout: 6000 })
     for (const d of ['1', '2', '3', '4']) await dp.getByRole('button', { name: d, exact: true }).click()
@@ -351,6 +322,12 @@ try {
       dp.getByRole('button', { name: 'Export backup' }).click()
     ])
     if (!dl) fail('dashboard: export backup did not download')
+    // Remove student now lives in the Teacher area (§14): two-tap inline confirm, then the card
+    // disappears. (The Settings/Backup cards remain, so the font checks below still run.)
+    await dp.getByRole('button', { name: 'Remove Dash' }).click()  // reveal confirm
+    await dp.getByRole('button', { name: 'Remove', exact: true }).click() // confirm
+    await dp.waitForFunction(() => !/skills mastered/.test(document.body.innerText), { timeout: 6000 })
+      .catch(() => fail('teacher area: remove student did not delete the card'))
     // M4: font toggle applies immediately and persists across a reload.
     await dp.getByRole('button', { name: 'OpenDyslexic' }).click()
     await dp.waitForFunction(() => document.documentElement.dataset.font === 'dyslexic', { timeout: 6000 })

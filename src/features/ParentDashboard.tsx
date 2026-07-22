@@ -35,7 +35,7 @@ function buildCard(child: Child, attempts: Attempt[], progress: SkillProgress[],
     learnedCount: learnedSet(learn).size, masteredPatterns, totalPatterns: PATTERNS.length }
 }
 
-export function ParentDashboard(props: { children: Child[]; onExit: () => void; onReset: (c: Child) => void }) {
+export function ParentDashboard(props: { children: Child[]; onExit: () => void; onReset: (c: Child) => void; onRemove: (c: Child) => void | Promise<void> }) {
   const [gate, setGate] = useState<Gate>('loading')
   const [settings, setSettings] = useState<Settings | null>(null)
   const [candidate, setCandidate] = useState('')
@@ -45,6 +45,15 @@ export function ParentDashboard(props: { children: Child[]; onExit: () => void; 
   const [tstat, setTstat] = useState('')
   const [gran, setGran] = useState<Granularity>('week')      // trend-chart granularity
   const [pickId, setPickId] = useState<string>('all')         // selected student in the dropdown ('all' = show every card)
+  const [confirmRemove, setConfirmRemove] = useState<string | null>(null) // childId pending remove confirm
+
+  // Remove a student + all their data (§14). Two-tap inline confirm (no native dialog, §18.12);
+  // drop the card locally so the dashboard updates immediately.
+  async function removeStudent(child: Child) {
+    setConfirmRemove(null)
+    await props.onRemove(child)
+    setCards(prev => prev.filter(x => x.child.id !== child.id))
+  }
 
   // Self-diagnosing TTS test: speaks synchronously in the click gesture and surfaces the
   // engine's own start/end/error events, so a silent device tells us *why* (not-allowed,
@@ -236,7 +245,20 @@ export function ParentDashboard(props: { children: Child[]; onExit: () => void; 
           </div>
 
           <p className="note tiny">{c.readiness.band} — a rough early guide, not a grade. Focus on the growth above.</p>
-          <button className="btn small ghost" onClick={() => props.onReset(c.child)}>Reset {c.child.name}</button>
+          {confirmRemove === c.child.id ? (
+            <div className="stack" style={{ gap: 6 }}>
+              <span className="note">Remove {c.child.name} and all their progress? This cannot be undone.</span>
+              <div className="row" style={{ gap: 6 }}>
+                <button className="btn small danger" onClick={() => void removeStudent(c.child)}>Remove</button>
+                <button className="btn small ghost" onClick={() => setConfirmRemove(null)}>Cancel</button>
+              </div>
+            </div>
+          ) : (
+            <div className="row" style={{ gap: 6 }}>
+              <button className="btn small ghost" onClick={() => props.onReset(c.child)}>Reset {c.child.name}</button>
+              <button className="btn small danger" onClick={() => setConfirmRemove(c.child.id)}>Remove {c.child.name}</button>
+            </div>
+          )}
         </div>
       ))}
 
