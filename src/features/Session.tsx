@@ -41,6 +41,7 @@ export function Session(props: { child: Child; onExit: () => void; onTrophies: (
   const usageRef = useRef<import('../types').Usage | undefined>(undefined)
   const sessionCertsRef = useRef<Certificate[]>([]) // certificates minted THIS session (shown on the summary)
   const flaggedPatternRef = useRef<SkillDef | null>(null) // a pattern struggled this session → offer Learn on the summary (§19.7)
+  const struggledRef = useRef<Set<string>>(new Set()) // skills flagged struggling this session → drop from focus (audit #3)
   const [phase, setPhase] = useState<Phase>('loading')
   const [item, setItem] = useState<PackItem | null>(null)
   const [answered, setAnswered] = useState<ScoreResult | null>(null)
@@ -154,7 +155,12 @@ export function Session(props: { child: Child; onExit: () => void; onTrophies: (
     // the held-back spelling rungs); round-robining all of them would stall mastery of any single
     // one. Focusing on a small frontier keeps acquisition brisk (and matches §7's massed-practice
     // intent). At a low placement few skills are eligible, so this is a no-op there.
-    const focus = elig.slice(0, FOCUS_WIDTH)
+    // Audit #3: once a skill has been flagged struggling this session, drop it from the focus set
+    // so it doesn't re-trip struggle every rotation and fill the session with prereq down-shifts.
+    // Its re-teaching now happens in Learn (it's flagged needs-review). Keep it only if nothing else
+    // is eligible (don't starve the session).
+    const active = elig.filter(s => !struggledRef.current.has(s.id))
+    const focus = (active.length ? active : elig).slice(0, FOCUS_WIDTH)
     const skill = focus[countRef.current % focus.length]
     // Struggle → FLAG for re-teaching, don't teach (§19.7): teaching lives in Learn. Mark the
     // pattern needs-review so Learn resurfaces it, then drop to an easier prerequisite for
@@ -163,6 +169,7 @@ export function Session(props: { child: Child; onExit: () => void; onTrophies: (
       const pat = patternDecodeSkill(skill)
       void flagReview(props.child.id, pat.id)
       flaggedPatternRef.current = pat // surface a "learn it" route on the session summary (§19.7)
+      struggledRef.current.add(skill.id) // don't keep re-serving this struggled skill (audit #3)
       const prereq = skill.prereqs.map(p => getSkill(p)).find(p => p && !p.threaded)
       if (prereq) { loadItem(prereq, 1, true); return } // down-shift = supported rep, not assessment
     }

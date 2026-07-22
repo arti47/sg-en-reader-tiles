@@ -147,6 +147,7 @@ try {
     // M5 (§19.6): drive ONE Learn unit to completion (intro→read→spellIntro→spell→learned),
     // then click Done back to the picker. Learn always answers correctly (participation-based).
     let sawSoundCard = false
+    let sawPA = false // §3 audit: CVC Learn units open with a phonemic-awareness warm-up (pa_blend/pa_count)
     async function walkLearn() {
       for (let step = 0; step < 80; step++) {
         const kind = await page.waitForFunction(() => {
@@ -164,6 +165,7 @@ try {
         if (kind === 'sound') { sawSoundCard = true; await page.getByRole('button', { name: /Next sound|Let's read/ }).click(); continue }
         if (kind === 'lesson') { await page.getByRole('button', { name: "Let's try" }).click(); continue }
         const it = await page.evaluate(() => window.__item || null)
+        if (/^pa_/.test(it.itemType || '')) sawPA = true // phonemic-awareness warm-up item (§3)
         if (it.graphemes) {
           for (const g of it.graphemes) await page.locator('button.tile:not([disabled])', { hasText: lbl(g) }).first().click()
           await page.getByRole('button', { name: 'Check' }).click()
@@ -230,7 +232,7 @@ try {
       if (!cvc || cvc.needsReview) fail('M5 P3: re-learning a needs-review pattern should clear the flag')
       if (!cvc.learned) fail('M5 P3: the re-learned pattern should stay learned')
     }
-    results.push({ WRONG, errors, overflow, lessons, db, firstSkill, sawSoundCard })
+    results.push({ WRONG, errors, overflow, lessons, db, firstSkill, sawSoundCard, sawPA })
     await ctx.close()
   }
 
@@ -681,6 +683,8 @@ try {
   if (bad.db.certs.length) fail('struggle path: no certificate should be awarded')
   // M5.1 (§19.13): the CVC Learn unit (struggle-path frontier) opens with phoneme sound-intro cards.
   if (!bad.sawSoundCard) fail('M5.1: CVC Learn unit should show phoneme sound-intro cards before reading')
+  // §3 audit: the CVC Learn unit opens with a phonemic-awareness (oral blend/count) warm-up.
+  if (!bad.sawPA) fail('§3: CVC Learn unit should show a phonemic-awareness warm-up (pa_blend/pa_count)')
 
   console.log('PASS — placement→session, mastery/dual-gate/SRS, M2 dashboard, M3 strands, M4 polish (font toggle+persist, XP/level, settings), zero errors, no overflow')
   stop(); process.exit(0)

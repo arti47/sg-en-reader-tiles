@@ -13,8 +13,11 @@ export type ItemType =
   | 'grammar_cloze'     // passage with blanks + a lettered word bank, each used once
   | 'editing_mcq'       // sentence with one error → pick the correction (MCQ, no keyboard)
   | 'synthesis_mcq'     // pick the correctly combined/rewritten sentence (MCQ)
+  // ---- Phonemic awareness (oral, audio-only, MCQ; Learn-only, §3) ----
+  | 'pa_blend'          // hear separated phonemes in sequence → pick the blended word
+  | 'pa_count'          // hear a word → pick how many sounds it has
 
-export type Strand = 'phonics' | 'spelling' | 'grammar' | 'vocab' | 'comprehension' | 'cloze' | 'sentence' | 'reading'
+export type Strand = 'phonics' | 'spelling' | 'grammar' | 'vocab' | 'comprehension' | 'cloze' | 'sentence' | 'reading' | 'pa'
 export type Difficulty = 1 | 2 | 3
 
 export interface Choice { id: string; label: string; keyword?: string } // keyword = optional scaffold anchor (e.g. letter 'a' → "ant")
@@ -27,6 +30,7 @@ export interface PackItem {
   stem: string
   audioText?: string             // what TTS speaks (defaults to displayWord)
   phonemeId?: string             // isolated-phoneme clip id (§6c) — prompt plays audio.phoneme(), not TTS
+  phonemeSeq?: string[]          // pa_blend: phoneme clip ids played in sequence (hear the sounds → blend)
   displayWord?: string           // target word (encode items)
   graphemes?: string[]           // tile segmentation, e.g. "ship" → ["sh","i","p"]
   distractorGraphemes?: string[] // confusable tiles added to tray

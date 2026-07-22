@@ -330,6 +330,160 @@
       "missedConceptOnFail": "vowel-short-i",
       "rationale": "nip = n-i-p.",
       "decodableWithin": "SP-cvc-1"
+    },
+    {
+      "id": "sp-c1-016",
+      "skillId": "SP-cvc-1",
+      "itemType": "build_word",
+      "difficulty": 1,
+      "stem": "Build the word you hear.",
+      "displayWord": "naps",
+      "audioText": "naps",
+      "graphemes": [
+        "n",
+        "a",
+        "p",
+        "s"
+      ],
+      "distractorGraphemes": [
+        "t",
+        "i"
+      ],
+      "missedConceptOnFail": "vowel-short-a",
+      "rationale": "naps = n-a-p-s.",
+      "decodableWithin": "SP-cvc-1"
+    },
+    {
+      "id": "sp-c1-017",
+      "skillId": "SP-cvc-1",
+      "itemType": "build_word",
+      "difficulty": 2,
+      "stem": "Build the word you hear.",
+      "displayWord": "pins",
+      "audioText": "pins",
+      "graphemes": [
+        "p",
+        "i",
+        "n",
+        "s"
+      ],
+      "distractorGraphemes": [
+        "a",
+        "t"
+      ],
+      "missedConceptOnFail": "vowel-short-i",
+      "rationale": "pins = p-i-n-s.",
+      "decodableWithin": "SP-cvc-1"
+    },
+    {
+      "id": "sp-c1-018",
+      "skillId": "SP-cvc-1",
+      "itemType": "build_word",
+      "difficulty": 3,
+      "stem": "Build the word you hear.",
+      "displayWord": "taps",
+      "audioText": "taps",
+      "graphemes": [
+        "t",
+        "a",
+        "p",
+        "s"
+      ],
+      "distractorGraphemes": [
+        "i",
+        "n"
+      ],
+      "missedConceptOnFail": "vowel-short-a",
+      "rationale": "taps = t-a-p-s.",
+      "decodableWithin": "SP-cvc-1"
+    },
+    {
+      "id": "sp-c1-019",
+      "skillId": "SP-cvc-1",
+      "itemType": "build_word",
+      "difficulty": 1,
+      "stem": "Build the word you hear.",
+      "displayWord": "tips",
+      "audioText": "tips",
+      "graphemes": [
+        "t",
+        "i",
+        "p",
+        "s"
+      ],
+      "distractorGraphemes": [
+        "a",
+        "n"
+      ],
+      "missedConceptOnFail": "vowel-short-i",
+      "rationale": "tips = t-i-p-s.",
+      "decodableWithin": "SP-cvc-1"
+    },
+    {
+      "id": "sp-c1-020",
+      "skillId": "SP-cvc-1",
+      "itemType": "build_word",
+      "difficulty": 2,
+      "stem": "Build the word you hear.",
+      "displayWord": "pans",
+      "audioText": "pans",
+      "graphemes": [
+        "p",
+        "a",
+        "n",
+        "s"
+      ],
+      "distractorGraphemes": [
+        "t",
+        "i"
+      ],
+      "missedConceptOnFail": "vowel-short-a",
+      "rationale": "pans = p-a-n-s.",
+      "decodableWithin": "SP-cvc-1"
+    },
+    {
+      "id": "sp-c1-021",
+      "skillId": "SP-cvc-1",
+      "itemType": "build_word",
+      "difficulty": 3,
+      "stem": "Build the word you hear.",
+      "displayWord": "tans",
+      "audioText": "tans",
+      "graphemes": [
+        "t",
+        "a",
+        "n",
+        "s"
+      ],
+      "distractorGraphemes": [
+        "p",
+        "i"
+      ],
+      "missedConceptOnFail": "vowel-short-a",
+      "rationale": "tans = t-a-n-s.",
+      "decodableWithin": "SP-cvc-1"
+    },
+    {
+      "id": "sp-c1-022",
+      "skillId": "SP-cvc-1",
+      "itemType": "build_word",
+      "difficulty": 1,
+      "stem": "Build the word you hear.",
+      "displayWord": "sips",
+      "audioText": "sips",
+      "graphemes": [
+        "s",
+        "i",
+        "p",
+        "s"
+      ],
+      "distractorGraphemes": [
+        "a",
+        "t"
+      ],
+      "missedConceptOnFail": "vowel-short-i",
+      "rationale": "sips = s-i-p-s.",
+      "decodableWithin": "SP-cvc-1"
     }
   ],
   "lessons": {

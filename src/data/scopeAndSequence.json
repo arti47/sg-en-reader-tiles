@@ -5,6 +5,21 @@
       "name": "Primary 1",
       "skills": [
         {
+          "id": "PA-cvc",
+          "strand": "pa",
+          "objective": "Hear, blend and count the sounds in CVC words (phonemic awareness).",
+          "iCanStatement": "I can hear and blend the sounds in a word.",
+          "prereqs": [],
+          "itemType": "pa_blend",
+          "itemPool": "pa-cvc",
+          "enabled": false,
+          "mastery": {
+            "window": 12,
+            "accuracyToPass": 0.85,
+            "minItems": 12
+          }
+        },
+        {
           "id": "PH-letter-sounds",
           "strand": "phonics",
           "objective": "Hear and identify the sound each single letter makes.",
@@ -859,7 +874,7 @@
         {
           "id": "RD-cvc-sentences",
           "strand": "reading",
-          "objective": "Read short decodable CVC sentences and answer a literal question (word→text bridge, T19).",
+          "objective": "Read short decodable CVC sentences and answer a literal question (word\u2192text bridge, T19).",
           "iCanStatement": "I can read a short sentence and say what it means.",
           "prereqs": [
             "PH-cvc-4"

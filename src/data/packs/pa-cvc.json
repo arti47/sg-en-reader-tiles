@@ -1,0 +1,836 @@
+{
+  "packId": "pa-cvc",
+  "strand": "pa",
+  "skillIds": [
+    "PA-cvc"
+  ],
+  "version": 1,
+  "items": [
+    {
+      "id": "pa-bl-001",
+      "skillId": "PA-cvc",
+      "itemType": "pa_blend",
+      "difficulty": 1,
+      "stem": "Listen to the sounds. Which word is it?",
+      "audioText": "sat",
+      "phonemeSeq": [
+        "s",
+        "a",
+        "t"
+      ],
+      "choices": [
+        {
+          "id": "a",
+          "label": "sat"
+        },
+        {
+          "id": "b",
+          "label": "sit"
+        },
+        {
+          "id": "c",
+          "label": "sap"
+        }
+      ],
+      "correctChoiceId": "a",
+      "missedConceptOnFail": "phoneme-blend",
+      "rationale": "s-a-t blends to sat."
+    },
+    {
+      "id": "pa-bl-002",
+      "skillId": "PA-cvc",
+      "itemType": "pa_blend",
+      "difficulty": 2,
+      "stem": "Listen to the sounds. Which word is it?",
+      "audioText": "pin",
+      "phonemeSeq": [
+        "p",
+        "i",
+        "n"
+      ],
+      "choices": [
+        {
+          "id": "a",
+          "label": "pan"
+        },
+        {
+          "id": "b",
+          "label": "pin"
+        },
+        {
+          "id": "c",
+          "label": "pit"
+        }
+      ],
+      "correctChoiceId": "b",
+      "missedConceptOnFail": "phoneme-blend",
+      "rationale": "p-i-n blends to pin."
+    },
+    {
+      "id": "pa-bl-003",
+      "skillId": "PA-cvc",
+      "itemType": "pa_blend",
+      "difficulty": 1,
+      "stem": "Listen to the sounds. Which word is it?",
+      "audioText": "tap",
+      "phonemeSeq": [
+        "t",
+        "a",
+        "p"
+      ],
+      "choices": [
+        {
+          "id": "a",
+          "label": "tip"
+        },
+        {
+          "id": "b",
+          "label": "top"
+        },
+        {
+          "id": "c",
+          "label": "tap"
+        }
+      ],
+      "correctChoiceId": "c",
+      "missedConceptOnFail": "phoneme-blend",
+      "rationale": "t-a-p blends to tap."
+    },
+    {
+      "id": "pa-bl-004",
+      "skillId": "PA-cvc",
+      "itemType": "pa_blend",
+      "difficulty": 2,
+      "stem": "Listen to the sounds. Which word is it?",
+      "audioText": "nap",
+      "phonemeSeq": [
+        "n",
+        "a",
+        "p"
+      ],
+      "choices": [
+        {
+          "id": "a",
+          "label": "nap"
+        },
+        {
+          "id": "b",
+          "label": "map"
+        },
+        {
+          "id": "c",
+          "label": "nip"
+        }
+      ],
+      "correctChoiceId": "a",
+      "missedConceptOnFail": "phoneme-blend",
+      "rationale": "n-a-p blends to nap."
+    },
+    {
+      "id": "pa-bl-005",
+      "skillId": "PA-cvc",
+      "itemType": "pa_blend",
+      "difficulty": 1,
+      "stem": "Listen to the sounds. Which word is it?",
+      "audioText": "hen",
+      "phonemeSeq": [
+        "h",
+        "e",
+        "n"
+      ],
+      "choices": [
+        {
+          "id": "a",
+          "label": "hot"
+        },
+        {
+          "id": "b",
+          "label": "hen"
+        },
+        {
+          "id": "c",
+          "label": "hat"
+        }
+      ],
+      "correctChoiceId": "b",
+      "missedConceptOnFail": "phoneme-blend",
+      "rationale": "h-e-n blends to hen."
+    },
+    {
+      "id": "pa-bl-006",
+      "skillId": "PA-cvc",
+      "itemType": "pa_blend",
+      "difficulty": 2,
+      "stem": "Listen to the sounds. Which word is it?",
+      "audioText": "red",
+      "phonemeSeq": [
+        "r",
+        "e",
+        "d"
+      ],
+      "choices": [
+        {
+          "id": "a",
+          "label": "rid"
+        },
+        {
+          "id": "b",
+          "label": "bed"
+        },
+        {
+          "id": "c",
+          "label": "red"
+        }
+      ],
+      "correctChoiceId": "c",
+      "missedConceptOnFail": "phoneme-blend",
+      "rationale": "r-e-d blends to red."
+    },
+    {
+      "id": "pa-bl-007",
+      "skillId": "PA-cvc",
+      "itemType": "pa_blend",
+      "difficulty": 1,
+      "stem": "Listen to the sounds. Which word is it?",
+      "audioText": "dog",
+      "phonemeSeq": [
+        "d",
+        "o",
+        "g"
+      ],
+      "choices": [
+        {
+          "id": "a",
+          "label": "dog"
+        },
+        {
+          "id": "b",
+          "label": "dig"
+        },
+        {
+          "id": "c",
+          "label": "bog"
+        }
+      ],
+      "correctChoiceId": "a",
+      "missedConceptOnFail": "phoneme-blend",
+      "rationale": "d-o-g blends to dog."
+    },
+    {
+      "id": "pa-bl-008",
+      "skillId": "PA-cvc",
+      "itemType": "pa_blend",
+      "difficulty": 2,
+      "stem": "Listen to the sounds. Which word is it?",
+      "audioText": "sun",
+      "phonemeSeq": [
+        "s",
+        "u",
+        "n"
+      ],
+      "choices": [
+        {
+          "id": "a",
+          "label": "sit"
+        },
+        {
+          "id": "b",
+          "label": "sun"
+        },
+        {
+          "id": "c",
+          "label": "bun"
+        }
+      ],
+      "correctChoiceId": "b",
+      "missedConceptOnFail": "phoneme-blend",
+      "rationale": "s-u-n blends to sun."
+    },
+    {
+      "id": "pa-bl-009",
+      "skillId": "PA-cvc",
+      "itemType": "pa_blend",
+      "difficulty": 1,
+      "stem": "Listen to the sounds. Which word is it?",
+      "audioText": "bug",
+      "phonemeSeq": [
+        "b",
+        "u",
+        "g"
+      ],
+      "choices": [
+        {
+          "id": "a",
+          "label": "big"
+        },
+        {
+          "id": "b",
+          "label": "bag"
+        },
+        {
+          "id": "c",
+          "label": "bug"
+        }
+      ],
+      "correctChoiceId": "c",
+      "missedConceptOnFail": "phoneme-blend",
+      "rationale": "b-u-g blends to bug."
+    },
+    {
+      "id": "pa-bl-010",
+      "skillId": "PA-cvc",
+      "itemType": "pa_blend",
+      "difficulty": 2,
+      "stem": "Listen to the sounds. Which word is it?",
+      "audioText": "mat",
+      "phonemeSeq": [
+        "m",
+        "a",
+        "t"
+      ],
+      "choices": [
+        {
+          "id": "a",
+          "label": "mat"
+        },
+        {
+          "id": "b",
+          "label": "met"
+        },
+        {
+          "id": "c",
+          "label": "mad"
+        }
+      ],
+      "correctChoiceId": "a",
+      "missedConceptOnFail": "phoneme-blend",
+      "rationale": "m-a-t blends to mat."
+    },
+    {
+      "id": "pa-bl-011",
+      "skillId": "PA-cvc",
+      "itemType": "pa_blend",
+      "difficulty": 1,
+      "stem": "Listen to the sounds. Which word is it?",
+      "audioText": "jam",
+      "phonemeSeq": [
+        "j",
+        "a",
+        "m"
+      ],
+      "choices": [
+        {
+          "id": "a",
+          "label": "jet"
+        },
+        {
+          "id": "b",
+          "label": "jam"
+        },
+        {
+          "id": "c",
+          "label": "ham"
+        }
+      ],
+      "correctChoiceId": "b",
+      "missedConceptOnFail": "phoneme-blend",
+      "rationale": "j-a-m blends to jam."
+    },
+    {
+      "id": "pa-bl-012",
+      "skillId": "PA-cvc",
+      "itemType": "pa_blend",
+      "difficulty": 2,
+      "stem": "Listen to the sounds. Which word is it?",
+      "audioText": "web",
+      "phonemeSeq": [
+        "w",
+        "e",
+        "b"
+      ],
+      "choices": [
+        {
+          "id": "a",
+          "label": "wet"
+        },
+        {
+          "id": "b",
+          "label": "wig"
+        },
+        {
+          "id": "c",
+          "label": "web"
+        }
+      ],
+      "correctChoiceId": "c",
+      "missedConceptOnFail": "phoneme-blend",
+      "rationale": "w-e-b blends to web."
+    },
+    {
+      "id": "pa-ct-001",
+      "skillId": "PA-cvc",
+      "itemType": "pa_count",
+      "difficulty": 1,
+      "stem": "How many sounds do you hear?",
+      "audioText": "at",
+      "choices": [
+        {
+          "id": "a",
+          "label": "2"
+        },
+        {
+          "id": "b",
+          "label": "3"
+        },
+        {
+          "id": "c",
+          "label": "4"
+        }
+      ],
+      "correctChoiceId": "a",
+      "missedConceptOnFail": "phoneme-count",
+      "rationale": "at has 2 sounds: a-t."
+    },
+    {
+      "id": "pa-ct-002",
+      "skillId": "PA-cvc",
+      "itemType": "pa_count",
+      "difficulty": 2,
+      "stem": "How many sounds do you hear?",
+      "audioText": "up",
+      "choices": [
+        {
+          "id": "a",
+          "label": "2"
+        },
+        {
+          "id": "b",
+          "label": "3"
+        },
+        {
+          "id": "c",
+          "label": "4"
+        }
+      ],
+      "correctChoiceId": "a",
+      "missedConceptOnFail": "phoneme-count",
+      "rationale": "up has 2 sounds: u-p."
+    },
+    {
+      "id": "pa-ct-003",
+      "skillId": "PA-cvc",
+      "itemType": "pa_count",
+      "difficulty": 1,
+      "stem": "How many sounds do you hear?",
+      "audioText": "in",
+      "choices": [
+        {
+          "id": "a",
+          "label": "2"
+        },
+        {
+          "id": "b",
+          "label": "3"
+        },
+        {
+          "id": "c",
+          "label": "4"
+        }
+      ],
+      "correctChoiceId": "a",
+      "missedConceptOnFail": "phoneme-count",
+      "rationale": "in has 2 sounds: i-n."
+    },
+    {
+      "id": "pa-ct-004",
+      "skillId": "PA-cvc",
+      "itemType": "pa_count",
+      "difficulty": 2,
+      "stem": "How many sounds do you hear?",
+      "audioText": "am",
+      "choices": [
+        {
+          "id": "a",
+          "label": "2"
+        },
+        {
+          "id": "b",
+          "label": "3"
+        },
+        {
+          "id": "c",
+          "label": "4"
+        }
+      ],
+      "correctChoiceId": "a",
+      "missedConceptOnFail": "phoneme-count",
+      "rationale": "am has 2 sounds: a-m."
+    },
+    {
+      "id": "pa-ct-005",
+      "skillId": "PA-cvc",
+      "itemType": "pa_count",
+      "difficulty": 1,
+      "stem": "How many sounds do you hear?",
+      "audioText": "on",
+      "choices": [
+        {
+          "id": "a",
+          "label": "2"
+        },
+        {
+          "id": "b",
+          "label": "3"
+        },
+        {
+          "id": "c",
+          "label": "4"
+        }
+      ],
+      "correctChoiceId": "a",
+      "missedConceptOnFail": "phoneme-count",
+      "rationale": "on has 2 sounds: o-n."
+    },
+    {
+      "id": "pa-ct-006",
+      "skillId": "PA-cvc",
+      "itemType": "pa_count",
+      "difficulty": 2,
+      "stem": "How many sounds do you hear?",
+      "audioText": "it",
+      "choices": [
+        {
+          "id": "a",
+          "label": "2"
+        },
+        {
+          "id": "b",
+          "label": "3"
+        },
+        {
+          "id": "c",
+          "label": "4"
+        }
+      ],
+      "correctChoiceId": "a",
+      "missedConceptOnFail": "phoneme-count",
+      "rationale": "it has 2 sounds: i-t."
+    },
+    {
+      "id": "pa-ct-007",
+      "skillId": "PA-cvc",
+      "itemType": "pa_count",
+      "difficulty": 1,
+      "stem": "How many sounds do you hear?",
+      "audioText": "kit",
+      "choices": [
+        {
+          "id": "a",
+          "label": "2"
+        },
+        {
+          "id": "b",
+          "label": "3"
+        },
+        {
+          "id": "c",
+          "label": "4"
+        }
+      ],
+      "correctChoiceId": "b",
+      "missedConceptOnFail": "phoneme-count",
+      "rationale": "kit has 3 sounds: k-i-t."
+    },
+    {
+      "id": "pa-ct-008",
+      "skillId": "PA-cvc",
+      "itemType": "pa_count",
+      "difficulty": 2,
+      "stem": "How many sounds do you hear?",
+      "audioText": "sat",
+      "choices": [
+        {
+          "id": "a",
+          "label": "2"
+        },
+        {
+          "id": "b",
+          "label": "3"
+        },
+        {
+          "id": "c",
+          "label": "4"
+        }
+      ],
+      "correctChoiceId": "b",
+      "missedConceptOnFail": "phoneme-count",
+      "rationale": "sat has 3 sounds: s-a-t."
+    },
+    {
+      "id": "pa-ct-009",
+      "skillId": "PA-cvc",
+      "itemType": "pa_count",
+      "difficulty": 1,
+      "stem": "How many sounds do you hear?",
+      "audioText": "dog",
+      "choices": [
+        {
+          "id": "a",
+          "label": "2"
+        },
+        {
+          "id": "b",
+          "label": "3"
+        },
+        {
+          "id": "c",
+          "label": "4"
+        }
+      ],
+      "correctChoiceId": "b",
+      "missedConceptOnFail": "phoneme-count",
+      "rationale": "dog has 3 sounds: d-o-g."
+    },
+    {
+      "id": "pa-ct-010",
+      "skillId": "PA-cvc",
+      "itemType": "pa_count",
+      "difficulty": 2,
+      "stem": "How many sounds do you hear?",
+      "audioText": "bun",
+      "choices": [
+        {
+          "id": "a",
+          "label": "2"
+        },
+        {
+          "id": "b",
+          "label": "3"
+        },
+        {
+          "id": "c",
+          "label": "4"
+        }
+      ],
+      "correctChoiceId": "b",
+      "missedConceptOnFail": "phoneme-count",
+      "rationale": "bun has 3 sounds: b-u-n."
+    },
+    {
+      "id": "pa-ct-011",
+      "skillId": "PA-cvc",
+      "itemType": "pa_count",
+      "difficulty": 1,
+      "stem": "How many sounds do you hear?",
+      "audioText": "red",
+      "choices": [
+        {
+          "id": "a",
+          "label": "2"
+        },
+        {
+          "id": "b",
+          "label": "3"
+        },
+        {
+          "id": "c",
+          "label": "4"
+        }
+      ],
+      "correctChoiceId": "b",
+      "missedConceptOnFail": "phoneme-count",
+      "rationale": "red has 3 sounds: r-e-d."
+    },
+    {
+      "id": "pa-ct-012",
+      "skillId": "PA-cvc",
+      "itemType": "pa_count",
+      "difficulty": 2,
+      "stem": "How many sounds do you hear?",
+      "audioText": "mop",
+      "choices": [
+        {
+          "id": "a",
+          "label": "2"
+        },
+        {
+          "id": "b",
+          "label": "3"
+        },
+        {
+          "id": "c",
+          "label": "4"
+        }
+      ],
+      "correctChoiceId": "b",
+      "missedConceptOnFail": "phoneme-count",
+      "rationale": "mop has 3 sounds: m-o-p."
+    },
+    {
+      "id": "pa-ct-013",
+      "skillId": "PA-cvc",
+      "itemType": "pa_count",
+      "difficulty": 1,
+      "stem": "How many sounds do you hear?",
+      "audioText": "lamp",
+      "choices": [
+        {
+          "id": "a",
+          "label": "2"
+        },
+        {
+          "id": "b",
+          "label": "3"
+        },
+        {
+          "id": "c",
+          "label": "4"
+        }
+      ],
+      "correctChoiceId": "c",
+      "missedConceptOnFail": "phoneme-count",
+      "rationale": "lamp has 4 sounds: l-a-m-p."
+    },
+    {
+      "id": "pa-ct-014",
+      "skillId": "PA-cvc",
+      "itemType": "pa_count",
+      "difficulty": 2,
+      "stem": "How many sounds do you hear?",
+      "audioText": "hand",
+      "choices": [
+        {
+          "id": "a",
+          "label": "2"
+        },
+        {
+          "id": "b",
+          "label": "3"
+        },
+        {
+          "id": "c",
+          "label": "4"
+        }
+      ],
+      "correctChoiceId": "c",
+      "missedConceptOnFail": "phoneme-count",
+      "rationale": "hand has 4 sounds: h-a-n-d."
+    },
+    {
+      "id": "pa-ct-015",
+      "skillId": "PA-cvc",
+      "itemType": "pa_count",
+      "difficulty": 1,
+      "stem": "How many sounds do you hear?",
+      "audioText": "tent",
+      "choices": [
+        {
+          "id": "a",
+          "label": "2"
+        },
+        {
+          "id": "b",
+          "label": "3"
+        },
+        {
+          "id": "c",
+          "label": "4"
+        }
+      ],
+      "correctChoiceId": "c",
+      "missedConceptOnFail": "phoneme-count",
+      "rationale": "tent has 4 sounds: t-e-n-t."
+    },
+    {
+      "id": "pa-ct-016",
+      "skillId": "PA-cvc",
+      "itemType": "pa_count",
+      "difficulty": 2,
+      "stem": "How many sounds do you hear?",
+      "audioText": "milk",
+      "choices": [
+        {
+          "id": "a",
+          "label": "2"
+        },
+        {
+          "id": "b",
+          "label": "3"
+        },
+        {
+          "id": "c",
+          "label": "4"
+        }
+      ],
+      "correctChoiceId": "c",
+      "missedConceptOnFail": "phoneme-count",
+      "rationale": "milk has 4 sounds: m-i-l-k."
+    },
+    {
+      "id": "pa-ct-017",
+      "skillId": "PA-cvc",
+      "itemType": "pa_count",
+      "difficulty": 1,
+      "stem": "How many sounds do you hear?",
+      "audioText": "jump",
+      "choices": [
+        {
+          "id": "a",
+          "label": "2"
+        },
+        {
+          "id": "b",
+          "label": "3"
+        },
+        {
+          "id": "c",
+          "label": "4"
+        }
+      ],
+      "correctChoiceId": "c",
+      "missedConceptOnFail": "phoneme-count",
+      "rationale": "jump has 4 sounds: j-u-m-p."
+    },
+    {
+      "id": "pa-ct-018",
+      "skillId": "PA-cvc",
+      "itemType": "pa_count",
+      "difficulty": 2,
+      "stem": "How many sounds do you hear?",
+      "audioText": "fast",
+      "choices": [
+        {
+          "id": "a",
+          "label": "2"
+        },
+        {
+          "id": "b",
+          "label": "3"
+        },
+        {
+          "id": "c",
+          "label": "4"
+        }
+      ],
+      "correctChoiceId": "c",
+      "missedConceptOnFail": "phoneme-count",
+      "rationale": "fast has 4 sounds: f-a-s-t."
+    }
+  ],
+  "lessons": {
+    "PA-cvc": {
+      "iCanStatement": "I can hear and blend the sounds in a word.",
+      "explanation": "Every word is made of small sounds. If you hear the sounds one at a time — /s/ /a/ /t/ — you can blend them together to say the word: sat. You can also count the sounds you hear.",
+      "workedExamples": [
+        {
+          "text": "sat",
+          "note": "/s/ /a/ /t/ → sat (3 sounds)"
+        },
+        {
+          "text": "up",
+          "note": "/u/ /p/ → up (2 sounds)"
+        }
+      ]
+    }
+  }
+}

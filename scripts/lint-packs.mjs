@@ -81,8 +81,11 @@ for (const { f, pack } of packs) {
     // phoneme prompt (§6c) must resolve to a manifested clip
     if (it.phonemeId && !phonemes[it.phonemeId]) err(f, it.id, `phonemeId "${it.phonemeId}" not in phonemes.json`)
 
+    // pa_blend prompt (§3): every phoneme in the sequence must resolve to a manifested clip
+    if (it.itemType === 'pa_blend') for (const pid of it.phonemeSeq ?? []) if (!phonemes[pid]) err(f, it.id, `phonemeSeq id "${pid}" not in phonemes.json`)
+
     // (1)(2) answer keys
-    const mcqTypes = ['grammar_mcq', 'decode_choice', 'vocab_mcq', 'vocab_cloze_mcq', 'passage_question', 'visual_text', 'editing_mcq', 'synthesis_mcq']
+    const mcqTypes = ['grammar_mcq', 'decode_choice', 'vocab_mcq', 'vocab_cloze_mcq', 'passage_question', 'visual_text', 'editing_mcq', 'synthesis_mcq', 'pa_blend', 'pa_count']
     if (mcqTypes.includes(it.itemType)) {
       const ids = (it.choices ?? []).map(c => c.id)
       if (ids.length < 2) err(f, it.id, 'MCQ needs ≥2 choices')

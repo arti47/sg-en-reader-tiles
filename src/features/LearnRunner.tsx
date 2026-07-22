@@ -5,6 +5,7 @@ import { nextToLearn, PATTERNS, learnedSet, needsReviewSet, patternStatus } from
 import { getLearn, setLearned, clearReview, getProgress, getSettings } from '../store'
 import { setRate, setVoice, phoneme, speak } from '../lib/audio'
 import { newSoundsFor, newSpellingsFor, type Sound } from '../lib/sounds'
+import { paItemsFor } from '../lib/pa'
 import { McqItem } from './items/McqItem'
 import { TileItem } from './items/TileItem'
 import { LessonView } from './LessonView'
@@ -25,7 +26,11 @@ const SPELL_N = 4
 // previously-learned pattern before teaching the new one, so prior patterns are revisited during
 // Learn (not only via Test's interleave). Skipped when nothing has been learned yet.
 const REVIEW_N = 1
-type Phase = 'loading' | 'map' | 'review' | 'sound' | 'intro' | 'read' | 'spellIntro' | 'spell' | 'done'
+// Phonemic awareness (§3 audit): the CVC sub-units OPEN with a couple of oral blend/segment items
+// (hear the sounds → blend; count the sounds) — the upstream skill a weak/dyslexic reader needs
+// before grapheme work. Learn-only, participation-based; pulled from lib/pa (not a Test skill).
+const PA_N = 2
+type Phase = 'loading' | 'map' | 'pa' | 'review' | 'sound' | 'intro' | 'read' | 'spellIntro' | 'spell' | 'done'
 // A sound-intro card (§19.13): a NEW sound met for the first time, or a NEW spelling of a sound
 // the child already knows ("same sound, new way to spell it").
 type SoundCard = { kind: 'new' | 'spelling'; sound: Sound; graphemes: string[] }
@@ -35,6 +40,8 @@ export function LearnRunner(props: { child: Child; onExit: () => void; onSoundWa
   const encodeRef = useRef<SkillDef | null>(null)
   const reviewSkillRef = useRef<SkillDef | null>(null) // a prior learned pattern to warm up on (§3 cumulative)
   const learnedRef = useRef<Set<string>>(new Set())    // patterns learned so far (source for the review pick)
+  const paPoolRef = useRef<PackItem[]>([])             // this unit's phonemic-awareness warm-up items (§3)
+  const paIdxRef = useRef(0)
   const seenRef = useRef<Set<string>>(new Set())
   const soundsRef = useRef<SoundCard[]>([])         // this pattern's sound-intro cards (§19.13)
   const [soundIdx, setSoundIdx] = useState(0)
@@ -87,8 +94,25 @@ export function LearnRunner(props: { child: Child; onExit: () => void; onSoundWa
     seenRef.current = new Set(); stepRef.current = 0
     const priors = PATTERNS.filter(p => learnedRef.current.has(p.id) && p.id !== target.id)
     reviewSkillRef.current = priors.length ? priors[Math.floor(Math.random() * priors.length)] : null
+    // §3 audit: open a CVC unit with a phonemic-awareness warm-up (oral blend/segment) before
+    // any grapheme work. Shuffle the PA pool and take PA_N.
+    paPoolRef.current = [...paItemsFor(target.id)].sort(() => Math.random() - 0.5).slice(0, PA_N)
+    paIdxRef.current = 0
+    if (paPoolRef.current.length) loadPA()
+    else startReviewOrSounds()
+  }
+  // After the PA warm-up: a cumulative review of a prior pattern (if any), else the sound-intro.
+  function startReviewOrSounds() {
     if (reviewSkillRef.current) loadPractice(reviewSkillRef.current.id, 'review')
     else startSounds()
+  }
+  // Serve the current phonemic-awareness item (§3). PA items come straight from lib/pa (not a Test
+  // skill), so they load directly rather than via pickItem.
+  function loadPA() {
+    const it = paPoolRef.current[paIdxRef.current]
+    if (!it) { startReviewOrSounds(); return }
+    if (import.meta.env.DEV) (window as unknown as { __item?: PackItem }).__item = it
+    setItem(it); setAnswered(false); setServe(s => s + 1); setPhase('pa')
   }
   // Build the pattern's sound-intro cards (§19.13) then enter the read+spell flow.
   function startSounds() {
@@ -120,6 +144,12 @@ export function LearnRunner(props: { child: Child; onExit: () => void; onSoundWa
   }
   // Called by Continue after an answered practice item, or when a pool is empty.
   function advanceAfterPractice(current: Phase) {
+    if (current === 'pa') {
+      paIdxRef.current += 1
+      if (paIdxRef.current >= paPoolRef.current.length) { startReviewOrSounds(); return }
+      loadPA()
+      return
+    }
     if (current === 'review') {
       stepRef.current += 1
       if (stepRef.current >= REVIEW_N) { stepRef.current = 0; startSounds(); return }
@@ -191,9 +221,9 @@ export function LearnRunner(props: { child: Child; onExit: () => void; onSoundWa
     return <div className="stack center"><button className="btn" onClick={beginSpell}>Start spelling</button></div>
   }
 
-  if ((phase === 'review' || phase === 'read' || phase === 'spell') && item) {
+  if ((phase === 'pa' || phase === 'review' || phase === 'read' || phase === 'spell') && item) {
     const isTile = phase === 'spell'
-    const badge = phase === 'review' ? '🔁 quick review' : isTile ? 'spell it' : 'read it'
+    const badge = phase === 'pa' ? '🎧 listen to the sounds' : phase === 'review' ? '🔁 quick review' : isTile ? 'spell it' : 'read it'
     return (
       <div className="stack">
         <div className="row" style={{ justifyContent: 'space-between', alignItems: 'center' }}>

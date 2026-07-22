@@ -362,7 +362,7 @@
         },
         {
           "id": "c",
-          "label": "sat"
+          "label": "naps"
         }
       ],
       "correctChoiceId": "b",
@@ -380,11 +380,11 @@
       "choices": [
         {
           "id": "a",
-          "label": "sat"
+          "label": "naps"
         },
         {
           "id": "b",
-          "label": "sap"
+          "label": "pins"
         },
         {
           "id": "c",
@@ -394,6 +394,188 @@
       "correctChoiceId": "c",
       "missedConceptOnFail": "vowel-short-i",
       "rationale": "n-i-p = nip.",
+      "decodableWithin": "PH-cvc-1"
+    },
+    {
+      "id": "ph-c1-016",
+      "skillId": "PH-cvc-1",
+      "itemType": "decode_choice",
+      "difficulty": 1,
+      "stem": "Tap the word you hear.",
+      "audioText": "naps",
+      "choices": [
+        {
+          "id": "a",
+          "label": "naps"
+        },
+        {
+          "id": "b",
+          "label": "pins"
+        },
+        {
+          "id": "c",
+          "label": "taps"
+        }
+      ],
+      "correctChoiceId": "a",
+      "missedConceptOnFail": "vowel-short-a",
+      "rationale": "n-a-p-s = naps.",
+      "decodableWithin": "PH-cvc-1"
+    },
+    {
+      "id": "ph-c1-017",
+      "skillId": "PH-cvc-1",
+      "itemType": "decode_choice",
+      "difficulty": 2,
+      "stem": "Tap the word you hear.",
+      "audioText": "pins",
+      "choices": [
+        {
+          "id": "a",
+          "label": "taps"
+        },
+        {
+          "id": "b",
+          "label": "pins"
+        },
+        {
+          "id": "c",
+          "label": "tips"
+        }
+      ],
+      "correctChoiceId": "b",
+      "missedConceptOnFail": "vowel-short-i",
+      "rationale": "p-i-n-s = pins.",
+      "decodableWithin": "PH-cvc-1"
+    },
+    {
+      "id": "ph-c1-018",
+      "skillId": "PH-cvc-1",
+      "itemType": "decode_choice",
+      "difficulty": 3,
+      "stem": "Tap the word you hear.",
+      "audioText": "taps",
+      "choices": [
+        {
+          "id": "a",
+          "label": "tips"
+        },
+        {
+          "id": "b",
+          "label": "pans"
+        },
+        {
+          "id": "c",
+          "label": "taps"
+        }
+      ],
+      "correctChoiceId": "c",
+      "missedConceptOnFail": "vowel-short-a",
+      "rationale": "t-a-p-s = taps.",
+      "decodableWithin": "PH-cvc-1"
+    },
+    {
+      "id": "ph-c1-019",
+      "skillId": "PH-cvc-1",
+      "itemType": "decode_choice",
+      "difficulty": 1,
+      "stem": "Tap the word you hear.",
+      "audioText": "tips",
+      "choices": [
+        {
+          "id": "a",
+          "label": "tips"
+        },
+        {
+          "id": "b",
+          "label": "pans"
+        },
+        {
+          "id": "c",
+          "label": "tans"
+        }
+      ],
+      "correctChoiceId": "a",
+      "missedConceptOnFail": "vowel-short-i",
+      "rationale": "t-i-p-s = tips.",
+      "decodableWithin": "PH-cvc-1"
+    },
+    {
+      "id": "ph-c1-020",
+      "skillId": "PH-cvc-1",
+      "itemType": "decode_choice",
+      "difficulty": 2,
+      "stem": "Tap the word you hear.",
+      "audioText": "pans",
+      "choices": [
+        {
+          "id": "a",
+          "label": "tans"
+        },
+        {
+          "id": "b",
+          "label": "pans"
+        },
+        {
+          "id": "c",
+          "label": "sips"
+        }
+      ],
+      "correctChoiceId": "b",
+      "missedConceptOnFail": "vowel-short-a",
+      "rationale": "p-a-n-s = pans.",
+      "decodableWithin": "PH-cvc-1"
+    },
+    {
+      "id": "ph-c1-021",
+      "skillId": "PH-cvc-1",
+      "itemType": "decode_choice",
+      "difficulty": 3,
+      "stem": "Tap the word you hear.",
+      "audioText": "tans",
+      "choices": [
+        {
+          "id": "a",
+          "label": "sips"
+        },
+        {
+          "id": "b",
+          "label": "sat"
+        },
+        {
+          "id": "c",
+          "label": "tans"
+        }
+      ],
+      "correctChoiceId": "c",
+      "missedConceptOnFail": "vowel-short-a",
+      "rationale": "t-a-n-s = tans.",
+      "decodableWithin": "PH-cvc-1"
+    },
+    {
+      "id": "ph-c1-022",
+      "skillId": "PH-cvc-1",
+      "itemType": "decode_choice",
+      "difficulty": 1,
+      "stem": "Tap the word you hear.",
+      "audioText": "sips",
+      "choices": [
+        {
+          "id": "a",
+          "label": "sips"
+        },
+        {
+          "id": "b",
+          "label": "sat"
+        },
+        {
+          "id": "c",
+          "label": "sap"
+        }
+      ],
+      "correctChoiceId": "a",
+      "missedConceptOnFail": "vowel-short-i",
+      "rationale": "s-i-p-s = sips.",
       "decodableWithin": "PH-cvc-1"
     }
   ],

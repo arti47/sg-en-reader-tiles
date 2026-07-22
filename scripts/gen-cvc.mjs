@@ -11,7 +11,7 @@ const dir = join(dirname(fileURLToPath(import.meta.url)), '..', 'src', 'data', '
 // Curated CVC words per set — each decodable using only the letters taught at/ before its set.
 const SETS = [
   { id: 'cvc-1', pfx: 'c1', file: 'L02a-cvc-1', letters: ['s','a','t','p','i','n'],
-    words: ['sat','sap','tap','tan','nap','pan','pat','sit','sip','sin','tip','tin','pit','pin','nip'],
+    words: ['sat','sap','tap','tan','nap','pan','pat','sit','sip','sin','tip','tin','pit','pin','nip','naps','pins','taps','tips','pans','tans','sips'],
     ph: { iCanStatement: 'I can read short words with s, a, t, p, i, n.',
       explanation: "Learn six sounds: s, a, t, p, i, n. Say each sound, then blend them together to read a word: s-a-t → sat, p-i-n → pin. Read left to right, sound by sound.",
       workedExamples: [ { text: 'sat', note: 's · a · t → sat' }, { text: 'pin', note: 'p · i · n → pin' } ] },

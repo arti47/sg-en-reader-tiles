@@ -64,3 +64,24 @@ export function phoneme(id: string) {
     void a.play().catch(() => { /* clip missing/blocked — silent until recorded */ })
   } catch { /* no audio available — silent */ }
 }
+
+// Play a sequence of phoneme clips in order with a gap between them (phonemic-awareness
+// blending, §3): the child hears /s/ … /a/ … /t/ and blends to "sat". Chains on each clip's
+// 'ended' event; falls back to a fixed cadence if a clip is missing/unplayable.
+export function phonemeSeq(ids: string[], gapMs = 450) {
+  if (typeof Audio === 'undefined' || !ids.length) return
+  let i = 0
+  const playNext = () => {
+    if (i >= ids.length) return
+    const id = ids[i++]
+    const file = (manifest as Record<string, string>)[id]
+    if (!file) { setTimeout(playNext, gapMs); return }
+    let a = clips.get(id)
+    if (!a) { a = new Audio(import.meta.env.BASE_URL + 'phonemes/' + file); clips.set(id, a) }
+    const onEnd = () => { a!.removeEventListener('ended', onEnd); setTimeout(playNext, gapMs) }
+    a.addEventListener('ended', onEnd)
+    a.currentTime = 0
+    void a.play().catch(() => { a!.removeEventListener('ended', onEnd); setTimeout(playNext, gapMs) })
+  }
+  playNext()
+}

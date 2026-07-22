@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react'
 import type { PackItem } from '../../types'
 import { scoreMcq, type ScoreResult } from '../../lib/scoring'
-import { speak, phoneme } from '../../lib/audio'
+import { speak, phoneme, phonemeSeq } from '../../lib/audio'
 
 // grammar_mcq / decode_choice: tap a choice. decode_choice plays its prompt — an isolated
 // phoneme clip (letter-sounds, T01) when `phonemeId` is set, else the spoken word via TTS.
@@ -17,10 +17,26 @@ export function McqItem(props: { item: PackItem; quiet?: boolean; onAnswer: (r: 
   const [correcting, setCorrecting] = useState(false)
   const [corrected, setCorrected] = useState(false)
   const firstRef = useRef<{ r: ScoreResult; id: string } | null>(null)
-  const isAudio = item.itemType === 'decode_choice'
-  const playPrompt = () => { if (item.phonemeId) phoneme(item.phonemeId); else speak(item.audioText ?? '') }
+  // Phonemic-awareness (§3): pa_blend plays a phoneme SEQUENCE to blend; pa_count plays the whole
+  // word to segment. Both are audio-prompted like decode_choice.
+  const isBlend = item.itemType === 'pa_blend'
+  const isCount = item.itemType === 'pa_count'
+  const isAudio = item.itemType === 'decode_choice' || isBlend || isCount
+  const playPrompt = () => {
+    if (isBlend) phonemeSeq(item.phonemeSeq ?? [])
+    else if (item.phonemeId) phoneme(item.phonemeId)
+    else speak(item.audioText ?? '')
+  }
+  const audioLabel = isBlend ? 'Hear the sounds' : item.phonemeId ? 'Hear the sound' : 'Hear it'
   const correct = item.choices?.find(c => c.id === item.correctChoiceId)
-  const modelCorrect = () => { if (item.phonemeId) phoneme(item.phonemeId); else speak(correct?.label ?? '') }
+  // Model the correct answer: for pa_blend voice the blended WORD; for pa_count/decode replay the
+  // prompt; else speak the correct choice label.
+  const modelCorrect = () => {
+    if (isBlend) speak(item.audioText ?? correct?.label ?? '')
+    else if (isCount) playPrompt()
+    else if (item.phonemeId) phoneme(item.phonemeId)
+    else speak(correct?.label ?? '')
+  }
 
   useEffect(() => { if (isAudio) playPrompt() }, [item.id])
 
@@ -48,7 +64,7 @@ export function McqItem(props: { item: PackItem; quiet?: boolean; onAnswer: (r: 
     <div className="stack">
       {isAudio && (
         <div className="row">
-          <button className="btn ghost" onClick={playPrompt} aria-label={item.phonemeId ? 'Hear the sound again' : 'Hear the word again'}>🔊 {item.phonemeId ? 'Hear the sound' : 'Hear it'}</button>
+          <button className="btn ghost" onClick={playPrompt} aria-label={audioLabel + ' again'}>🔊 {audioLabel}</button>
         </div>
       )}
       {item.passage && <p className="passage">{item.passage}</p>}
