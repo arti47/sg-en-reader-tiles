@@ -396,6 +396,8 @@ type PackItem = {
 
 **M4 — Polish. ✅ CORE MET (2026-07-20).** Self-hosted dyslexia font (Lexend default + OpenDyslexic opt-in, `data-font`); parent Settings (font, voice **speed + voice picker**, session length) persisted + applied; gamification (`gamify.ts` — XP/level badge on picker, "+N XP" on summary, **six achievement badges** on the dashboard); background cache pre-warm on `visibilitychange`; a11y (labelled steppers, aria-live, focus-to-screen on view change). **Genuinely deferred:** threshold tuning against real use (needs the family's live data), daily-quest gamification, and `ui.ts` shared modal/toast primitives (no functional gap — dialogs are already non-native).
 
+**M5 — Learn/Test dual-mode (structured learning path). ☐ PLANNED — owner-approved design 2026-07-22.** Split the app into two per-child modes: **Learn** (a linear, explicit, low-pressure teaching walk through the phonics/spelling scope & sequence) and **Test** (the current adaptive assessment engine, now gated to only assess what's been learned). The two are linked bidirectionally. **Full spec in §19.** *Accept:* a child works a pattern in Learn (read+spell taught together) → it unlocks in Test → Test confirms mastery or flags it back to Learn for re-teaching; placement still sets the Learn frontier; teaching lives in Learn (Test stops teaching). Build in the §19.9 phase order.
+
 **Phase 2/3** per §13 once the family is using it and wants durability / audio / oral.
 
 ---
@@ -449,6 +451,7 @@ type PackItem = {
 
 | Date | Change | Why | Verification | Cache |
 |---|---|---|---|---|
+| 2026-07-22 | **Spec added — §19 Learn/Test dual-mode (M5), owner-approved design.** Full, self-contained spec for a new dual-mode structure: **Learn** (linear, explicit, low-pressure teaching walk through the phonics/spelling scope & sequence — one pattern/unit, read+spell taught together, participation-based "learned") + **Test** (the existing adaptive engine, now gated to only assess *learned* patterns, with teaching removed). Bidirectional linkage/status model (not-started→learning→learned→mastered/needs-review), DB v6 `learn` store, engine `eligibleSkills` learned-gate + `nextToLearn` frontier, placement sets the frontier, `LearnRunner`/`LearnMap` screens, 4-phase build order, invariants-to-preserve, and file list — written so any agent can pick up M5. Roadmap M5 added (§15). **Design-only; no code yet.** | Owner: "add the whole roadmap to CLAUDE.md, comprehensive for any agent to pick up" | doc-only; `npm run build` green | v0.2.59 (no code change) |
 | 2026-07-22 | **Explicit-first teaching — lessons now precede practice (audit).** Audit finding: §3 says "lessons state the rule BEFORE practice," but the runtime only fired a lesson on *struggle* — new patterns were met cold and the rule was taught only after failing (discovery-first, the opposite of OG explicit instruction). Fix (`Session.advance`): on a skill's FIRST exposure (`itemsAnswered===0`, not placement-credited, has a lesson) the lesson fires up front, then the existing lesson→guided(we-do)→normal(you-do) flow gives gradual release. New per-skill `introRef` (fires once/child-session, never consumes the struggle re-teach budget); reactive struggle→lesson still fires afterwards. Placement-credited + already-started skills skip it. | Audit: implementation contradicted §3's explicit-first principle | `npm test` PASS ×3 (adds a guard that the all-correct mastery path still sees a lesson — the proactive intro — despite never struggling); `npm run build` green | v0.2.59 |
 | 2026-07-22 | **Dashboard trend — Daily/Weekly/Monthly/Yearly toggle + student dropdown.** Requested. **Granularity toggle:** new pure `aggregate.summarise(aggregates, daily, gran, cap)` buckets activity by day/week/month/year (oldest→newest, capped); the dashboard trend chart gains a segmented Daily/Weekly/Monthly/Yearly control (`gran` state, default weekly). Weekly/monthly/yearly roll up the existing weekly aggregates (full history); **daily** reads a NEW per-day store. **Schema DB v4→v5:** added a `daily` object store (`childId::YYYY-MM-DD` per-day totals), oldVersion-guarded additive migration; `store.bumpDaily`/`getDaily`, `aggregate.isoDay`, exported in `exportAll`/`importAll`, wiped by `clearChildData`; `Session` writes it per answer alongside the weekly rollup. **Student dropdown:** when >1 child, a `<select>` filters the dashboard to one student (or "All"). Bar labels come from `summarise` (day/week → date, month → "Jul 26", year → "2026"). | Owner: "Daily also… and select students from a dropdown" | `npm test` PASS ×3 (adds `summarise` day/week/month unit checks + a dashboard toggle walk; export schemaVersion→5); `npm run build` green | v0.2.58 |
 | 2026-07-22 | **Dashboard chart label — friendly week date (reported "what is W30?").** The weekly-activity bars were labelled with the raw ISO-week suffix (`weekKey.slice(-3)` → `W30`), which is cryptic for a teacher. Added `aggregate.weekMonday(key)` + `aggregate.weekLabel(key)` (the Monday of that ISO week, formatted en-GB → e.g. `21 Jul`); `ParentDashboard` now renders `weekLabel(w.week)`. CSS: `.bar-lbl` `white-space:nowrap`, `.bar-wrap` min-width 28→36px so the date fits. | Reported: the "W30" chart label is unclear | `npm test` PASS; `npm run build` green | v0.2.57 |
@@ -584,4 +587,94 @@ Adding/moving a module: update this table **and** the SW app-shell list, bump `C
 
 ---
 
-*End of CLAUDE.md. Build M0→M1→M2→M3→M4. Keep the P1–P6 scope-and-sequence sacred; all content en-SG, static, decodability-linted, fully offline; deterministic scoring only; make the parent dashboard honest and growth-framed.*
+## 19. Learn / Test Dual-Mode — Structured Learning Path (SPEC — owner-approved 2026-07-22, NOT yet built)
+
+> **For the AI agent picking this up:** this is a full, self-contained spec for milestone **M5**. Read it top to bottom. It builds *on top of* the existing engine (§7), lessons (§8), placement (§7), scope & sequence (§5), and item renderers (§6) — reuse them, do not rebuild them. Every design choice below was decided with the owner; do not re-litigate them. Build in the §19.9 phase order, each phase a separate commit with `npm test` + `npm run build` green and a CLAUDE.md changelog row (per §18).
+
+### 19.1 Why (rationale)
+Today the single adaptive session (`Session.tsx`) both **teaches** (lessons fire on first exposure + on struggle) and **assesses** (mastery, SRS, readiness) in one blended loop. The owner wants these split into two deliberate, child-selectable modes so the *teaching* is explicit, systematic and unhurried (the OG ideal for dyslexia) and the *assessment* is clean:
+- **Learn mode** — a structured, linear, low-pressure path that **teaches** each phonics/spelling pattern (read + spell together). No adaptive difficulty, no mastery pressure, no timing. This becomes the app's explicit-instruction spine.
+- **Test mode** — the existing adaptive engine, unchanged in its assessment behaviour, but now **gated to only assess patterns that have been learned** and **no longer does any teaching itself**.
+
+This makes the app's implicit blended model into an explicit **teach → assess → re-teach** loop.
+
+### 19.2 The two modes (decided)
+| | **Learn** (new) | **Test** (existing engine, trimmed) |
+|---|---|---|
+| Purpose | Explicit teaching | Adaptive assessment |
+| Order | **Linear** — one pattern at a time in fixed scope order | Adaptive rotation over *learned* patterns |
+| Pressure | None — no scoring gate, no timing, no difficulty ramp | Full engine (difficulty 1–3, mastery, SRS, readiness) |
+| Unit | **One whole pattern, read + spell together** | Individual items |
+| Teaching | Owns ALL teaching (intro lesson + guided practice + re-teach) | **None** — teaching removed |
+| "Done" signal | **Participation** — completing the unit's steps marks the pattern **learned** | Mastery (existing dual-gate + retention) |
+| Gating | A pattern can only be learned once its prereq pattern is learned | Only *learned* patterns are eligible |
+
+### 19.3 Pattern status model + the linkage loop (decided)
+A **pattern** = a phonics **decode** skill + its **encode** pair (`encodePairId`); identify a pattern by its **decode skill id** (e.g. `PH-cvc-short-vowels`). Threaded skills (`PH-letter-sounds`, `HF-words`) are NOT patterns — leave them threaded/always-available as today.
+
+Per (child, pattern) status, in order:
+1. **not-started** — never taught.
+2. **learning** — Learn unit in progress (transient).
+3. **learned** — Learn unit completed (or placement-credited). **Unlocks the pattern in Test.**
+4. **mastered** — Test confirmed mastery (existing dual-gate + retention → certificate). Shown green in the Learn map.
+5. **needs-review** — Test detected struggle on a learned pattern → flagged so **Learn resurfaces it** for re-teaching. Cleared when the child re-completes its Learn unit; Test then re-confirms.
+
+**The loop:** Learn *learned* → eligible in Test · Test *mastery* → mastered badge in Learn · Test *struggle* → needs-review → Learn re-teaches → learned again → Test re-confirms.
+
+### 19.4 Data model (DB v6)
+Add ONE store (additive, oldVersion-guarded migration; bump `SCHEMA_VERSION` 5→6; add to `ALL_STORES` for export/import; wipe in `clearChildData`):
+```
+learn:{childId}  →  rows keyed "childId::patternId"
+  { patternId:string; learned:boolean; needsReview:boolean; learnedAt?:number; flaggedAt?:number }
+```
+- `mastered` is NOT stored here — derive it from the existing `progress` store (`status:'mastered'`) / `certificates`, so there is one source of truth for mastery.
+- Store helpers in `store.ts`: `getLearn(childId)`, `putLearn(childId, row)`, `setLearned(childId, patternId)`, `flagReview(childId, patternId)`, `clearReview(childId, patternId)`.
+
+### 19.5 Engine / gating changes (`engine.ts`, `placement.ts`)
+- **Gate Test by learned:** `eligibleSkills(attempts, pre, learnedPatterns)` — a decode/encode skill is eligible only if its pattern (`patternDecodeSkill(s).id`) ∈ `learnedPatterns` (threaded skills stay exempt). This is the single most important change: **Test never serves an unlearned pattern.**
+- **Learn frontier:** add `nextToLearn(learnedPatterns)` → the first pattern in scope order whose prereq pattern is learned (or has no prereq) and that is not itself learned. Drives Learn's linear order. Reuse `decodeLadder` (placement.ts) + the scope prereqs.
+- **Placement marks learned:** `placement.priorSkillIds` already credits sub-frontier patterns as `mastered`; also mark those patterns **learned** (they're known). The held-back top-2 **encode** rungs (§7 #3) → their patterns are **decode-known but spelling-untaught**, so treat them as **not learned** → they become the first real Learn units (Learn teaches the spelling; the read half can be a quick review).
+
+### 19.6 Learn mode UX — `LearnRunner` (new `src/features/LearnRunner.tsx`)
+Linear walk. On entry, pick the target pattern = the first **needs-review** pattern (re-teach takes priority), else `nextToLearn`. One **unit** = one pattern, taught read+spell together:
+1. **Intro / rule** — the pattern's decode `getLesson(decodeSkillId)` (rule + worked examples; `LessonView`, audio-first). *I-do.*
+2. **Read practice** — a few `decode_choice` items at difficulty 1 (reuse `McqItem` + the §8 immediate error-correction). **No score kept, no pass bar** — purely practice; the child just does them. *we-do → you-do.*
+3. **Spell rule + practice** — the encode `getLesson(encodeSkillId)` then a few `build_word` items d1 (reuse `TileItem` + correction). *we-do → you-do.*
+4. **Mark learned** — `setLearned(child, patternId)` + `clearReview` (both decode & encode now unlock in Test). Celebrate ("You learned **sh, ch, th, ck**! Try it in Test.").
+5. **Continue** — offer "Learn the next one" (→ next `nextToLearn`) or "Done".
+
+Rules: participation-based (finishing the steps = learned; no accuracy gate — the per-item error-correction guarantees correct final production). No difficulty ramp, no timing, no SRS. Item counts per step are small/fixed (e.g. 3–4). Reuse existing pools via `pickItem(skillId, 1, seen)`.
+
+### 19.7 Test mode changes (`Session.tsx`)
+- **Remove teaching:** delete the first-exposure intro-lesson branch (the `introRef` block, §3 explicit-first — that teaching now lives in Learn) and the struggle→`LessonView` branch. Keep the post-lesson **guided block** mechanism only insofar as it's reused by the down-shift; otherwise the lesson phase is gone from Test.
+- **Struggle → flag, don't teach:** when `struggling(...)` on a learned pattern, call `flagReview(child, patternId)` (sets needs-review) and keep going; optionally end the session early with a gentle "Let's practise **X** in Learn." **Keep the per-item immediate error-correction** (reveal + reproduce correct — that's answer integrity, not a lesson) and the §7 #5 down-shift.
+- **Gate eligibility:** load the child's `learned` set on mount; pass it to `eligibleSkills`. If nothing is learned yet, Test shows "Learn a pattern first" and routes to Learn.
+- Everything else (difficulty, mastery dual-gate + retention, SRS, interleave, massed-first, fluency, readiness, aggregates/daily) is **unchanged**.
+
+### 19.8 Placement interaction (`Placement.tsx`, `App.tsx`)
+- Placement still runs once for a new child (warm-up staircase, §7). On finish it marks sub-frontier patterns **learned** + **mastered** (as today) and holds back the top-2 encode rungs (not learned). The child then lands on the **child picker**; from there they choose **Learn** (starts at their frontier) or **Test** (only their placement-learned patterns are available until they Learn more).
+
+### 19.9 Build phases (each a separate commit; keep `npm test`/`build` green)
+1. **Status + gating layer (no new screens).** DB v6 `learn` store + helpers; `eligibleSkills` gated by learned; `nextToLearn`; placement marks learned; **remove Test's intro-lesson + struggle-lesson**, wire struggle→`flagReview`. Smoke: Test serves nothing when nothing learned; serves a pattern once it's marked learned; struggle sets needs-review.
+2. **Learn mode.** `LearnRunner` (the §19.6 unit flow); `ChildPicker` gains **📘 Learn** + **🎮 Test** per child (rename "Play"→"Test"); `App` route `learn`. Smoke: a Learn unit walks intro→read→spell→learned, and the pattern then becomes Test-eligible.
+3. **Loop + map.** Learn resurfaces needs-review patterns first; a **Learn map** screen (read-only: every pattern's status not-started/learning/learned/mastered/needs-review); dashboard reflects learned vs mastered counts. Smoke: Test struggle → needs-review → Learn targets it → re-learn clears it.
+4. **Docs + polish.** Update §5/§7/§14 cross-refs, module table, and this spec's checkboxes; a11y pass on the new screens; CACHE_VERSION bump.
+
+### 19.10 Invariants to preserve (don't regress)
+- All existing engine behaviour (dual-gate, retention certs, SRS +2/+7/+21, massed-first, interleave/fluency review cap, difficulty 1–3, grapheme-level errors, immediate error-correction, down-shift, readiness, aggregates/daily) stays intact — Learn/Test only changes *what is eligible* and *where teaching lives*.
+- Fully offline, deterministic scoring, decodability-linted content, en-SG, dyslexia-first UI, no native dialogs (a `<select>` is fine), no timing pressure.
+- One source of truth for mastery (progress/certificates), for "learned" (the new `learn` store), and for scope order (`scopeAndSequence.json`).
+- Placement stays short/low-pressure and sets both modes' frontier.
+
+### 19.11 Files (add / change)
+- **Add:** `src/features/LearnRunner.tsx` (unit flow), `src/features/LearnMap.tsx` (status map), `src/lib/learn.ts` (pure: `nextToLearn`, status derivation — keep pure + unit-tested).
+- **Change:** `src/store.ts` (DB v6 `learn` store + helpers, export/import, clearChildData), `src/lib/engine.ts` (`eligibleSkills` learned-gate; `nextToLearn` may live in `learn.ts`), `src/lib/placement.ts` (mark learned), `src/features/Session.tsx` (remove teaching, struggle→flag, gate by learned), `src/features/ChildPicker.tsx` (Learn/Test buttons), `src/App.tsx` (routes + load learned set), `src/features/ParentDashboard.tsx` (learned vs mastered), `test/smoke.mjs` (phase guards), `src/types.ts` (`LearnState`), `styles.css`.
+
+### 19.12 Open sub-decisions (safe to decide at build time, owner delegated)
+- Exact item counts per Learn step (suggest 3–4 read + 3–4 spell).
+- Whether a Learn unit for a *decode-known, spelling-held-back* pattern shows a short read review or jumps to spelling (suggest a 2-item read warm-up then spelling).
+- M3 strands (grammar/vocab/cloze/comprehension) stay **Test-only** for now — Learn covers phonics + spelling patterns only (owner scope). A later M6 could extend Learn to M3.
+
+---
+
+*End of CLAUDE.md. Build M0→M1→M2→M3→M4, then M5 (§19 Learn/Test dual-mode). Keep the P1–P6 scope-and-sequence sacred; all content en-SG, static, decodability-linted, fully offline; deterministic scoring only; make the parent dashboard honest and growth-framed.*
