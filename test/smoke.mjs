@@ -91,7 +91,7 @@ try {
           if (/Certificate earned!/.test(t)) return 'cert'
           if (/Let's learn this/.test(t)) return 'lesson'
           const hasContinue = [...document.querySelectorAll('button')].some(b => b.textContent.trim() === 'Continue')
-          const freshTile = document.querySelector('button.tile:not([disabled])')
+          const freshTile = document.querySelector('button.tile:not([disabled]), button.word-tile:not([disabled])')
           return (freshTile && !hasContinue) ? 'item' : null
         }, { timeout: 8000 }).then(h => h.jsonValue()).catch(async () => {
           const body = (await page.evaluate(() => document.body.innerText)).replace(/\n+/g, ' | ')
@@ -111,7 +111,17 @@ try {
         if (!firstSkill) firstSkill = item.skillId
         // #4 — the item right after a lesson is a guided-practice item at difficulty 1.
         if (afterLesson) { if (item.difficulty !== 1) fail(`#4: post-lesson guided item should be difficulty 1, got ${item.difficulty}`); afterLesson = false }
-        if (item.graphemes) {
+        if (item.itemType === 'dictation') {
+          // A high placement unlocks dictation rungs (word-by-word sentence build); answer correctly.
+          for (let w = 0; w < item.words.length; w++) {
+            for (const g of item.words[w].graphemes) await page.locator('button.tile:not([disabled])', { hasText: lbl(g) }).first().click()
+            await page.getByRole('button', { name: w < item.words.length - 1 ? 'Next word' : 'Check' }).click()
+          }
+        } else if (item.itemType === 'grammar_cloze') {
+          // Word-bank cloze (unlocked at a high placement): tap the accepted word for each blank.
+          for (const b of item.blanks) await page.locator('button.word-tile', { hasText: lbl(b.acceptable[0]) }).first().click()
+          await page.getByRole('button', { name: 'Check' }).click()
+        } else if (item.graphemes) {
           // Click an ENABLED matching tile each time (words with a repeated grapheme, e.g. p·o·p,
           // reuse the same label — .first() alone would re-target the now-disabled first tile).
           for (const g of item.graphemes) await page.locator('button.tile:not([disabled])', { hasText: lbl(g) }).first().click()

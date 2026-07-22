@@ -16,6 +16,7 @@ import { ClozeItem } from './items/ClozeItem'
 import { DictationItem } from './items/DictationItem'
 
 const DEFAULT_SESSION_LEN = 16
+const FOCUS_WIDTH = 3 // max distinct current-skills a session works at once (bounds high-placement fan-out)
 // M5 Test mode (§19.7): assessment only. Teaching (intro + struggle lessons) has moved to Learn;
 // on struggle Test flags the pattern for re-teaching (needs-review) instead of re-teaching.
 type Phase = 'loading' | 'item' | 'cert' | 'summary' | 'learnfirst'
@@ -39,6 +40,7 @@ export function Session(props: { child: Child; onExit: () => void; onTrophies: (
   const startBadgesRef = useRef<Set<string>>(new Set()) // badge ids already earned at session start (§14 highlights)
   const usageRef = useRef<import('../types').Usage | undefined>(undefined)
   const sessionCertsRef = useRef<Certificate[]>([]) // certificates minted THIS session (shown on the summary)
+  const flaggedPatternRef = useRef<SkillDef | null>(null) // a pattern struggled this session → offer Learn on the summary (§19.7)
   const [phase, setPhase] = useState<Phase>('loading')
   const [item, setItem] = useState<PackItem | null>(null)
   const [answered, setAnswered] = useState<ScoreResult | null>(null)
@@ -145,12 +147,20 @@ export function Session(props: { child: Child; onExit: () => void; onTrophies: (
     // skills (reading/M3/dictation/threaded) are not learned-gated.
     const elig = eligibleSkills(attemptsRef.current, masteredRef.current, learnedRef.current)
     if (!elig.length) { setPhase(learnedRef.current.size === 0 ? 'learnfirst' : 'summary'); return }
-    const skill = elig[countRef.current % elig.length]
+    // Concentrate the session on the lowest few unlocked skills instead of scattering across the
+    // whole unlocked curriculum. A high placement can unlock many skills at once (M3 + dictation +
+    // the held-back spelling rungs); round-robining all of them would stall mastery of any single
+    // one. Focusing on a small frontier keeps acquisition brisk (and matches §7's massed-practice
+    // intent). At a low placement few skills are eligible, so this is a no-op there.
+    const focus = elig.slice(0, FOCUS_WIDTH)
+    const skill = focus[countRef.current % focus.length]
     // Struggle → FLAG for re-teaching, don't teach (§19.7): teaching lives in Learn. Mark the
     // pattern needs-review so Learn resurfaces it, then drop to an easier prerequisite for
     // supported practice (down-shift, §7 #5); the per-item error-correction still applies.
     if (struggling(attemptsRef.current, skill)) {
-      void flagReview(props.child.id, patternDecodeSkill(skill).id)
+      const pat = patternDecodeSkill(skill)
+      void flagReview(props.child.id, pat.id)
+      flaggedPatternRef.current = pat // surface a "learn it" route on the session summary (§19.7)
       const prereq = skill.prereqs.map(p => getSkill(p)).find(p => p && !p.threaded)
       if (prereq) { loadItem(prereq, 1, true); return } // down-shift = supported rep, not assessment
     }
@@ -254,7 +264,11 @@ export function Session(props: { child: Child; onExit: () => void; onTrophies: (
             ))}
           </div>
         )}
+        {flaggedPatternRef.current && (
+          <p className="note">Tricky one today: <b>{flaggedPatternRef.current.iCanStatement.replace(/^I can /, '')}</b>. Learn it again to make it easier.</p>
+        )}
         <div className="row" style={{ gap: 8 }}>
+          {flaggedPatternRef.current && <button className="btn" onClick={props.onLearn}>📘 Learn it again</button>}
           <button className="btn ghost" onClick={props.onTrophies}>🏆 My trophies</button>
           <button className="btn" onClick={props.onExit}>Done</button>
         </div>

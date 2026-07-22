@@ -11,11 +11,19 @@ import { SKILLS, getSkill } from './packs'
 export const decodeLadder: SkillDef[] =
   SKILLS.filter(s => s.strand === 'phonics' && s.itemType === 'decode_choice' && !!s.encodePairId)
 
-// 3 items/level (was 2): two lucky 3-choice guesses (1/9) could fluke a level and OVER-place a
-// struggling reader above their true instructional level; 3/3 drops that to ~1/27 and, capped at
-// MAX_ITEMS, keeps placement conservative (start low, confirm foundations — §7).
+// 3 items/level (the fine-refine PER, the decision-maker): two lucky 3-choice guesses (1/9) could
+// fluke a level and OVER-place a struggling reader above their true instructional level; 3/3 drops
+// that to ~1/27 and keeps placement conservative (start low, confirm foundations — §7). Raised to 4
+// for weaker readers via difficulty flags (§1).
 export const PER_SKILL = 3
-export const MAX_ITEMS = 15
+// A single linear walk (PER_SKILL correct at EVERY rung to climb) can't span the ladder within a
+// short warm-up: 20 dual-gated rungs × 3 = 60 items. So placement is CHECKPOINT + REFINE — a coarse
+// pass probes rungs STRIDE apart (PER_COARSE each) to find the BAND a child's level sits in, then a
+// fine pass walks that band rung-by-rung (PER_SKILL each, from the low end → conservative) to pin the
+// entry. This reaches a strong reader's true level in ~12 items while staying start-low for a weak one.
+export const STRIDE = 4
+export const PER_COARSE = 2
+export const MAX_ITEMS = 22
 // A warm-up should feel like a few gentle items, not stop after 2 when the child misses the
 // first pair (CVC is the floor, so the staircase has nowhere down). Once the entry level is
 // decided, top up with achievable items to this minimum, ending on an easy one (§7).
@@ -23,26 +31,56 @@ export const MIN_WARMUP = 6
 
 export interface PlaceResult { skillId: string; correct: boolean }
 
-// The lowest ladder skill not yet passed (needs more items, or failed here). `perSkill` = how
-// many correct-in-a-row a rung requires (raised for weaker readers via difficulty flags, §1).
-function lowestUnpassed(results: PlaceResult[], perSkill = PER_SKILL): string {
-  for (const s of decodeLadder) {
-    const r = results.filter(x => x.skillId === s.id)
-    if (r.length < perSkill || r.filter(x => x.correct).length < perSkill) return s.id
+const tallyAt = (results: PlaceResult[], idx: number) => {
+  const id = decodeLadder[idx].id
+  const r = results.filter(x => x.skillId === id)
+  return { total: r.length, correct: r.filter(x => x.correct).length }
+}
+
+// Checkpoint ladder indices: every STRIDE rungs, always including the top rung.
+function checkpointIdxs(): number[] {
+  const top = decodeLadder.length - 1
+  const cps: number[] = []
+  for (let i = 0; i <= top; i += STRIDE) cps.push(i)
+  if (cps[cps.length - 1] !== top) cps.push(top)
+  return cps
+}
+
+// Coarse pass — walk checkpoints low→high (PER_COARSE probes each). Returns the checkpoint still
+// being probed (`serve`), the refine BAND [lo,hi] once a checkpoint fails (entry ∈ [lo..hi], with
+// checkpoints excluded from the middle so coarse/fine tallies never overlap), or `top` when every
+// checkpoint passed. Pure — reconstructable from `results` alone (no external phase state).
+function coarseState(results: PlaceResult[]): { serve?: number; band?: [number, number]; top?: boolean } {
+  let prevPass = -1
+  for (const cp of checkpointIdxs()) {
+    const t = tallyAt(results, cp)
+    if (t.total < PER_COARSE) return { serve: cp }        // still probing this checkpoint
+    if (t.correct >= PER_COARSE) { prevPass = cp; continue } // passed → probe higher
+    return { band: [prevPass + 1, cp] }                    // failed → entry is in (prevPass, cp]
   }
-  return decodeLadder[decodeLadder.length - 1].id
+  return { top: true }
 }
 
 // Given the results so far, decide the next step: draw another item from `skillId`,
-// or finish and place the child at `entrySkillId`.
+// or finish and place the child at `entrySkillId`. `perSkill` = the fine-refine PER.
 export function nextPlacement(results: PlaceResult[], perSkill = PER_SKILL): { done: boolean; skillId?: string; entrySkillId?: string } {
-  if (results.length >= MAX_ITEMS) return { done: true, entrySkillId: lowestUnpassed(results, perSkill) }
-  for (const s of decodeLadder) {
-    const r = results.filter(x => x.skillId === s.id)
-    if (r.length < perSkill) return { done: false, skillId: s.id }
-    if (r.filter(x => x.correct).length < perSkill) return { done: true, entrySkillId: s.id }
+  const atCap = results.length >= MAX_ITEMS
+  const top = decodeLadder.length - 1
+  const c = coarseState(results)
+  if (c.top) return { done: true, entrySkillId: decodeLadder[top].id }
+  if (c.serve !== undefined) {
+    return atCap ? { done: true, entrySkillId: decodeLadder[c.serve].id } : { done: false, skillId: decodeLadder[c.serve].id }
   }
-  return { done: true, entrySkillId: decodeLadder[decodeLadder.length - 1].id }
+  // Refine the band [lo,hi]: walk the middle rungs (lo..hi-1) from the low end; the first rung not
+  // passed is the entry. Pass all middle rungs → entry is `hi` (the checkpoint already failed coarse).
+  const [lo, hi] = c.band!
+  for (let r = lo; r <= hi - 1; r++) {
+    const t = tallyAt(results, r)
+    if (t.total < perSkill) return atCap ? { done: true, entrySkillId: decodeLadder[r].id } : { done: false, skillId: decodeLadder[r].id }
+    if (t.correct >= perSkill) continue
+    return { done: true, entrySkillId: decodeLadder[r].id }
+  }
+  return { done: true, entrySkillId: decodeLadder[hi].id }
 }
 
 // Skills to mark mastered on placement: every ladder skill BELOW the entry level (the child

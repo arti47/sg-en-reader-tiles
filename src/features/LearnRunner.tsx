@@ -17,8 +17,10 @@ type MapRow = { id: string; label: string; status: PatternStatus }
 // mark LEARNED (participation-based; the per-item error-correction guarantees a correct final
 // production, so there is no accuracy gate). No difficulty ramp, no timing, no SRS — that all
 // lives in Test. Target = the first needs-review pattern (re-teach first), else the frontier.
-const READ_N = 3
-const SPELL_N = 3
+// 4 read + 4 spell items (was 3): a little more guided exposure before a pattern is marked learned,
+// so participation-based "learned" rests on more than a token number of reps (audit).
+const READ_N = 4
+const SPELL_N = 4
 type Phase = 'loading' | 'map' | 'sound' | 'intro' | 'read' | 'spellIntro' | 'spell' | 'done'
 // A sound-intro card (§19.13): a NEW sound met for the first time, or a NEW spelling of a sound
 // the child already knows ("same sound, new way to spell it").
