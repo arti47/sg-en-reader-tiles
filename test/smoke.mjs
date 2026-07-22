@@ -441,6 +441,12 @@ try {
       if (def.interleaveEvery !== 5 || def.placementPerSkill !== 3 || def.promoteStreak !== 3 || def.guidedItems !== 3) return '#1 support: no-flags must equal defaults'
       if (!(dys.placementPerSkill > def.placementPerSkill && dys.promoteStreak > def.promoteStreak && dys.interleaveEvery < def.interleaveEvery)) return '#1 support: dyslexia should be more conservative'
       if (!(flu.fluencyMaxMs < def.fluencyMaxMs)) return '#1 support: fluency flag should lower the fluency threshold'
+      // Regression: interleave shares slots with the HF thread (THREAD_EVERY=4, checked first),
+      // so a flag-tuned interleaveEvery that collides with 4 yields FEWER reviews, not more.
+      // Effective review count (thread wins its slots) must be ≥ the no-flag default.
+      const eff = (i) => { let n = 0; for (let c = 1; c < 16; c++) { if (c % 4 === 0) continue; if (c % i === 0) n++ } return n }
+      if (eff(dys.interleaveEvery) < eff(def.interleaveEvery)) return '#1 support: dyslexia interleave shadowed by thread cadence (fewer reviews than default)'
+      if (eff(flu.interleaveEvery) < eff(def.interleaveEvery)) return '#1 support: fluency interleave shadowed by thread cadence'
     }
     // #4 — earlier re-teach: <0.6 over ≥5 items, or 2 same-concept misses, triggers a lesson.
     const mc = (concept) => ({ id: String(k++), childId: 'c', skillId: PH, itemId: 'i', correct: false, difficulty: 1, missedConcept: concept, latencyMs: 1, ts: k })

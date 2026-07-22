@@ -24,8 +24,11 @@ export const DEFAULT_SUPPORT: Support = {
 export function support(flags?: DifficultyFlag[]): Support {
   const f = new Set(flags ?? [])
   const s: Support = { ...DEFAULT_SUPPORT }
+  // NB: interleave shares slots with the HF thread (THREAD_EVERY=4, checked first), so an
+  // interleaveEvery that is a multiple/divisor of 4 gets shadowed — every-4 yields ZERO reviews.
+  // Use 3 (coprime-ish with 4) so "more review" actually delivers more (4 vs the default 3 / 16).
   if (f.has('dyslexia') || f.has('decoding')) {
-    s.interleaveEvery = 4
+    s.interleaveEvery = 3
     s.guidedItems = 4
     s.placementPerSkill = 4
     s.promoteStreak = 4
@@ -33,7 +36,7 @@ export function support(flags?: DifficultyFlag[]): Support {
   if (f.has('fluency')) {
     s.fluencyMaxMs = 5000
     s.fluencyEvery = 5
-    s.interleaveEvery = Math.min(s.interleaveEvery, 4)
+    s.interleaveEvery = Math.min(s.interleaveEvery, 3)
   }
   return s
 }
