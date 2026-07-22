@@ -91,10 +91,12 @@ export function Session(props: { child: Child; onExit: () => void; onTrophies: (
     await putUsage({ ...u, weekKey: wk, sessionsThisWeek: 1, streakWeeks: streak, lastSessionTs: now })
   }
 
-  function loadItem(skill: SkillDef, forceDiff?: Difficulty) {
+  const servedReviewRef = useRef(false) // was the current item a non-assessment rep (§ analytics)?
+  function loadItem(skill: SkillDef, forceDiff?: Difficulty, review = false) {
     const it = pickItem(skill.id, forceDiff ?? diffFor(skill.id), seenRef.current)
     if (!it) { setPhase('summary'); return }
     seenRef.current.add(it.id)
+    servedReviewRef.current = review
     if (import.meta.env.DEV) (window as unknown as { __item?: PackItem }).__item = it
     setItem(it); setAnswered(null); setPhase('item'); setServe(s => s + 1); startRef.current = Date.now()
   }
@@ -109,13 +111,13 @@ export function Session(props: { child: Child; onExit: () => void; onTrophies: (
       const gs = getSkill(guidedRef.current.id)
       guidedRef.current.left -= 1
       if (guidedRef.current.left <= 0) guidedRef.current = null
-      if (gs) { reviewingRef.current = null; loadItem(gs, 1); return }
+      if (gs) { reviewingRef.current = null; loadItem(gs, 1, true); return }
     }
     // Due spaced-repetition reviews first (§7): easier items on already-mastered skills.
     const dueSkillId = dueQueueRef.current.shift()
     if (dueSkillId) {
       const rs = getSkill(dueSkillId)
-      if (rs) { reviewingRef.current = dueSkillId; loadItem(rs, 1); return }
+      if (rs) { reviewingRef.current = dueSkillId; loadItem(rs, 1, true); return }
     }
     reviewingRef.current = null
     // Massed practice first (§7): threading (sight words / letter-sounds) and interleaved review
@@ -125,7 +127,7 @@ export function Session(props: { child: Child; onExit: () => void; onTrophies: (
     if (hasMastery) {
       // High-frequency sight words threaded throughout (§5/§6d): every Nth item, regardless of level.
       const threaded = threadedSkill(countRef.current)
-      if (threaded) { loadItem(threaded); return }
+      if (threaded) { loadItem(threaded, undefined, true); return }
       // Cumulative interleave + fluency share a per-session cap so acquisition keeps the majority
       // of items (≤ ⌈len/3⌉ combined) even when several patterns are mastered and slow — otherwise
       // stacked review cadences could crowd out new learning for a max-support child (audit). Due
@@ -133,10 +135,10 @@ export function Session(props: { child: Child; onExit: () => void; onTrophies: (
       if (reviewServedRef.current < Math.ceil(lenRef.current / 3)) {
         // Cumulative interleave (§7): every Nth item, slip in a quick review of a mastered skill.
         const review = interleavedReviewSkill(attemptsRef.current, countRef.current, masteredRef.current, sup.interleaveEvery)
-        if (review) { reviewServedRef.current += 1; loadItem(review, 1); return } // normal attempt (not an SRS review)
+        if (review) { reviewServedRef.current += 1; loadItem(review, 1, true); return } // interleaved review rep
         // Fluency loop (§7): a mastered pattern read accurately but SLOWLY gets a quick speed rep.
         const fl = fluencySkill(attemptsRef.current, countRef.current, sup.fluencyMaxMs, masteredRef.current, sup.fluencyEvery)
-        if (fl) { reviewServedRef.current += 1; loadItem(fl, 1); return }
+        if (fl) { reviewServedRef.current += 1; loadItem(fl, 1, true); return }
       }
     }
     // M5 Test gate (§19.7): only assess patterns that have been LEARNED (in Learn mode). Non-pattern
@@ -150,7 +152,7 @@ export function Session(props: { child: Child; onExit: () => void; onTrophies: (
     if (struggling(attemptsRef.current, skill)) {
       void flagReview(props.child.id, patternDecodeSkill(skill).id)
       const prereq = skill.prereqs.map(p => getSkill(p)).find(p => p && !p.threaded)
-      if (prereq) { loadItem(prereq, 1); return }
+      if (prereq) { loadItem(prereq, 1, true); return } // down-shift = supported rep, not assessment
     }
     loadItem(skill)
   }
@@ -163,7 +165,8 @@ export function Session(props: { child: Child; onExit: () => void; onTrophies: (
     const a: Attempt = {
       id: crypto.randomUUID(), childId: props.child.id, skillId: item.skillId, itemId: item.id,
       correct: r.correct, difficulty: item.difficulty, missedConcept: r.missedConcept,
-      latencyMs: Date.now() - startRef.current, ts: Date.now()
+      latencyMs: Date.now() - startRef.current, ts: Date.now(),
+      review: servedReviewRef.current || undefined // exclude reps from headline accuracy (§ analytics)
     }
     attemptsRef.current = [...attemptsRef.current, a]
     await addAttempt(a)

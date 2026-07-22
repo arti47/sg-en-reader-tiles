@@ -93,6 +93,13 @@ export interface Attempt {
   missedConcept?: string
   latencyMs: number
   ts: number
+  // True when this item was a non-assessment REP — an interleaved review, HF thread, fluency
+  // speed rep, due SRS review, post-lesson guided item, or a struggle down-shift to an easier
+  // prerequisite. These are deliberately easy (difficulty-1, mastered/prereq skills), so they
+  // must be EXCLUDED from the headline "recent accuracy"/readiness signals or they inflate them
+  // (a struggling child looks fine because half the recent items were trivial). Per-skill mastery
+  // is unaffected — it already scopes to one skill. Absent on legacy rows ⇒ treated as assessment.
+  review?: boolean
 }
 export interface SkillProgress {
   skillId: string

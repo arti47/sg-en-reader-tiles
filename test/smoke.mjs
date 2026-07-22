@@ -582,8 +582,17 @@ try {
     const rd = window.__readiness, store = window.__store
     if (!rd || !store) return '__readiness/__store missing'
     if (rd.computeReadiness([], new Set(), [], 10).status !== 'On-Target') return 'readiness: empty → On-Target'
+    // No assessment data → recentAccuracy is null (shown as "—"), never a misleading 100%.
+    if (rd.computeReadiness([], new Set(), [], 10).growth.recentAccuracy !== null) return 'readiness: empty → null accuracy (not 100%)'
     const wrong = Array.from({ length: 6 }, (_, i) => ({ id: 'w' + i, childId: 'c', skillId: 'PH-cvc-short-vowels', itemId: 'i', correct: false, difficulty: 1, latencyMs: 1, ts: i }))
     if (rd.computeReadiness(wrong, new Set(), [], 10).status !== 'High-Risk') return 'readiness: 6 wrong → High-Risk'
+    // Non-assessment REPS (review:true) must be EXCLUDED from the headline accuracy — 6 wrong
+    // assessment items stay High-Risk even with 30 easy correct reps mixed in (the inflation bug).
+    const reps = Array.from({ length: 30 }, (_, i) => ({ id: 'r' + i, childId: 'c', skillId: 'PH-cvc-short-vowels', itemId: 'i', correct: true, difficulty: 1, latencyMs: 1, ts: 100 + i, review: true }))
+    const mixed = rd.computeReadiness([...wrong, ...reps], new Set(), [], 10)
+    if (mixed.status !== 'High-Risk') return 'readiness: reps must not inflate status out of High-Risk'
+    if (mixed.growth.recentAccuracy !== 0) return 'readiness: reps must be excluded from recent accuracy'
+    if (mixed.growth.assessedN !== 6) return 'readiness: assessedN should count assessment items only'
     const before = await store.exportAll()
     if (before.schemaVersion !== 6) return 'export schemaVersion should be 6'
     // Trend summary (§11): summarise buckets weekly aggregates by day/week/month/year.

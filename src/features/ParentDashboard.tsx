@@ -170,7 +170,7 @@ export function ParentDashboard(props: { children: Child[]; onExit: () => void; 
 
           <div className="stat-row">
             <div className="stat"><b>{c.readiness.growth.mastered}</b><span>skills mastered</span></div>
-            <div className="stat"><b>{pct(c.readiness.growth.recentAccuracy)}</b><span>recent accuracy</span></div>
+            <div className="stat"><b>{c.readiness.growth.recentAccuracy === null ? '—' : pct(c.readiness.growth.recentAccuracy)}</b><span>recent accuracy</span></div>
             <div className="stat"><b>{c.readiness.growth.weeksActive}</b><span>weeks active</span></div>
           </div>
 
