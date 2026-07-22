@@ -20,14 +20,14 @@
           }
         },
         {
-          "id": "PH-cvc-short-vowels",
+          "id": "PH-cvc-1",
           "strand": "phonics",
-          "objective": "Decode CVC words with short vowels.",
-          "iCanStatement": "I can read short-vowel words.",
+          "objective": "Read CVC words with s, a, t, p, i, n.",
+          "iCanStatement": "I can read short words with s, a, t, p, i, n.",
           "prereqs": [],
           "itemType": "decode_choice",
-          "itemPool": "phonics-L02-cvc-short-vowels",
-          "encodePairId": "SP-cvc-short-vowels",
+          "itemPool": "phonics-L02a-cvc-1",
+          "encodePairId": "SP-cvc-1",
           "mastery": {
             "window": 12,
             "accuracyToPass": 0.85,
@@ -35,16 +35,118 @@
           }
         },
         {
-          "id": "SP-cvc-short-vowels",
+          "id": "SP-cvc-1",
           "strand": "spelling",
-          "objective": "Spell CVC words with short vowels from tiles.",
-          "iCanStatement": "I can spell short-vowel words.",
+          "objective": "Spell CVC words with s, a, t, p, i, n.",
+          "iCanStatement": "I can spell short words with s, a, t, p, i, n.",
           "prereqs": [
-            "PH-cvc-short-vowels"
+            "PH-cvc-1"
           ],
           "itemType": "build_word",
-          "itemPool": "spelling-L02-cvc-short-vowels",
-          "encodePairId": "PH-cvc-short-vowels",
+          "itemPool": "spelling-L02a-cvc-1",
+          "encodePairId": "PH-cvc-1",
+          "mastery": {
+            "window": 12,
+            "accuracyToPass": 0.85,
+            "minItems": 12
+          }
+        },
+        {
+          "id": "PH-cvc-2",
+          "strand": "phonics",
+          "objective": "Read CVC words with c, k, e, h, r, m, d.",
+          "iCanStatement": "I can read short words with c, k, e, h, r, m, d.",
+          "prereqs": [
+            "PH-cvc-1"
+          ],
+          "itemType": "decode_choice",
+          "itemPool": "phonics-L02b-cvc-2",
+          "encodePairId": "SP-cvc-2",
+          "mastery": {
+            "window": 12,
+            "accuracyToPass": 0.85,
+            "minItems": 12
+          }
+        },
+        {
+          "id": "SP-cvc-2",
+          "strand": "spelling",
+          "objective": "Spell CVC words with c, k, e, h, r, m, d.",
+          "iCanStatement": "I can spell short words with c, k, e, h, r, m, d.",
+          "prereqs": [
+            "PH-cvc-2"
+          ],
+          "itemType": "build_word",
+          "itemPool": "spelling-L02b-cvc-2",
+          "encodePairId": "PH-cvc-2",
+          "mastery": {
+            "window": 12,
+            "accuracyToPass": 0.85,
+            "minItems": 12
+          }
+        },
+        {
+          "id": "PH-cvc-3",
+          "strand": "phonics",
+          "objective": "Read CVC words with g, o, u, l, f, b.",
+          "iCanStatement": "I can read short words with g, o, u, l, f, b.",
+          "prereqs": [
+            "PH-cvc-2"
+          ],
+          "itemType": "decode_choice",
+          "itemPool": "phonics-L02c-cvc-3",
+          "encodePairId": "SP-cvc-3",
+          "mastery": {
+            "window": 12,
+            "accuracyToPass": 0.85,
+            "minItems": 12
+          }
+        },
+        {
+          "id": "SP-cvc-3",
+          "strand": "spelling",
+          "objective": "Spell CVC words with g, o, u, l, f, b.",
+          "iCanStatement": "I can spell short words with g, o, u, l, f, b.",
+          "prereqs": [
+            "PH-cvc-3"
+          ],
+          "itemType": "build_word",
+          "itemPool": "spelling-L02c-cvc-3",
+          "encodePairId": "PH-cvc-3",
+          "mastery": {
+            "window": 12,
+            "accuracyToPass": 0.85,
+            "minItems": 12
+          }
+        },
+        {
+          "id": "PH-cvc-4",
+          "strand": "phonics",
+          "objective": "Read CVC words with j, v, w, x, y, z, qu.",
+          "iCanStatement": "I can read short words with j, v, w, x, y, z, qu.",
+          "prereqs": [
+            "PH-cvc-3"
+          ],
+          "itemType": "decode_choice",
+          "itemPool": "phonics-L02d-cvc-4",
+          "encodePairId": "SP-cvc-4",
+          "mastery": {
+            "window": 12,
+            "accuracyToPass": 0.85,
+            "minItems": 12
+          }
+        },
+        {
+          "id": "SP-cvc-4",
+          "strand": "spelling",
+          "objective": "Spell CVC words with j, v, w, x, y, z, qu.",
+          "iCanStatement": "I can spell short words with j, v, w, x, y, z, qu.",
+          "prereqs": [
+            "PH-cvc-4"
+          ],
+          "itemType": "build_word",
+          "itemPool": "spelling-L02d-cvc-4",
+          "encodePairId": "PH-cvc-4",
           "mastery": {
             "window": 12,
             "accuracyToPass": 0.85,
@@ -57,7 +159,7 @@
           "objective": "Decode words with consonant digraphs sh, ch, th, ck.",
           "iCanStatement": "I can read words with sh, ch, th and ck.",
           "prereqs": [
-            "PH-cvc-short-vowels"
+            "PH-cvc-4"
           ],
           "itemType": "decode_choice",
           "itemPool": "phonics-L03-digraphs",
@@ -760,7 +862,7 @@
           "objective": "Read short decodable CVC sentences and answer a literal question (word→text bridge, T19).",
           "iCanStatement": "I can read a short sentence and say what it means.",
           "prereqs": [
-            "PH-cvc-short-vowels"
+            "PH-cvc-4"
           ],
           "itemType": "passage_question",
           "itemPool": "reading-L01-cvc",

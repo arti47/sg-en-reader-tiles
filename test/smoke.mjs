@@ -210,13 +210,13 @@ try {
       // M5 Phase 3 needs-review loop (§19.3): Test flagged the struggled pattern → Learn resurfaces
       // it (target = the needs-review pattern) and re-learning CLEARS the flag.
       db = await readDb()
-      if (!(db.learn || []).some(r => r.patternId === 'PH-cvc-short-vowels' && r.needsReview)) fail('M5 P3: Test struggle should flag the pattern needs-review')
+      if (!(db.learn || []).some(r => r.patternId === 'PH-cvc-1' && r.needsReview)) fail('M5 P3: Test struggle should flag the pattern needs-review')
       await page.getByRole('button', { name: 'Done' }).click() // summary → picker
       await page.waitForFunction(() => /Who's reading\?/.test(document.body.innerText), { timeout: 6000 })
       await page.getByRole('button', { name: 'Learn with Test' }).click()
       await walkLearn() // map targets the needs-review pattern → re-teach → clears the flag
       db = await readDb()
-      const cvc = (db.learn || []).find(r => r.patternId === 'PH-cvc-short-vowels')
+      const cvc = (db.learn || []).find(r => r.patternId === 'PH-cvc-1')
       if (!cvc || cvc.needsReview) fail('M5 P3: re-learning a needs-review pattern should clear the flag')
       if (!cvc.learned) fail('M5 P3: the re-learned pattern should stay learned')
     }
@@ -426,7 +426,7 @@ try {
     let k = 0
     const mk = (skillId, correct) => ({ id: String(k), childId: 'c', skillId, itemId: 'i', correct, difficulty: 1, latencyMs: 1, ts: k++ })
     const arr = (id, n, ok = true) => Array.from({ length: n }, () => mk(id, ok))
-    const PH = 'PH-cvc-short-vowels', SP = 'SP-cvc-short-vowels'
+    const PH = 'PH-cvc-1', SP = 'SP-cvc-1'
     const dec = gs(PH)
     // #2 — foundational decode/encode need 12 items (overlearning): 8 must NOT master.
     if (e.skillMastered(arr(PH, 8, true), dec)) return '#2 minItems: 8 items must not master (raised to 12)'
@@ -435,12 +435,12 @@ try {
     if (!e.skillMastered(decodeOnly, dec)) return 'A2 decode should master'
     if (e.patternMastered(decodeOnly, dec)) return 'A2 pattern must NOT pass on decode alone'
     if (!e.patternMastered([...decodeOnly, ...arr(SP, 12, true)], dec)) return 'A2 pattern should pass with both'
-    // A2 advancement gate — with only CVC decode mastered, the next decode skill (digraphs) must
-    // NOT be eligible (its encode partner is); it unlocks only once the whole CVC pattern is done.
+    // A2 advancement gate — with only the cvc-1 pattern's decode mastered, the next decode skill
+    // (cvc-2) must NOT be eligible (its encode partner is); it unlocks only once cvc-1 is fully done.
     const decElig = e.eligibleSkills(decodeOnly).map(s => s.id)
-    if (decElig.includes('PH-digraphs')) return 'A2 advancement: digraphs unlocked on decode alone'
+    if (decElig.includes('PH-cvc-2')) return 'A2 advancement: cvc-2 unlocked on decode alone'
     if (!decElig.includes(SP)) return 'A2 encode partner should be eligible at ≥70% decode'
-    if (!e.eligibleSkills([...decodeOnly, ...arr(SP, 12, true)]).map(s => s.id).includes('PH-digraphs')) return 'A2 advancement: digraphs should unlock after full pattern'
+    if (!e.eligibleSkills([...decodeOnly, ...arr(SP, 12, true)]).map(s => s.id).includes('PH-cvc-2')) return 'A2 advancement: cvc-2 should unlock after full pattern'
     // A1 — placement-mastered skills count without attempts.
     if (e.isMastered([], dec)) return 'A1 unmastered without attempts'
     if (!e.isMastered([], dec, new Set([PH]))) return 'A1 placement-mastered should count'
@@ -499,7 +499,7 @@ try {
     if (gs('PH-letter-sounds').prereqs.length !== 0) return 'T01 letter-sounds should have no prereqs'
     if (gs(PH).prereqs.length !== 0) return 'T01: CVC should be the ladder floor (letter-sounds no longer gates it)'
     if (e.eligibleSkills([]).map(s => s.id).includes('PH-letter-sounds')) return 'T01: threaded letter-sounds must not be in the eligible rotation'
-    if (e.eligibleSkills([]).map(s => s.id).includes('PH-cvc-short-vowels') === false) return 'T01: CVC should be eligible up front (it is the floor)'
+    if (e.eligibleSkills([]).map(s => s.id).includes('PH-cvc-1') === false) return 'T01: CVC should be eligible up front (it is the floor)'
     // M3 gating (§5) — grammar unlocks only after the decode ladder (PH-two-syllable pattern).
     if (e.eligibleSkills([]).map(s => s.id).includes('GR-articles')) return 'M3: grammar must be gated behind decoding'
     const decoded = [...arr('PH-two-syllable', 12, true), ...arr('SP-two-syllable', 12, true)]
@@ -507,7 +507,7 @@ try {
     // T19 connected-text reading (word→text bridge) gated behind the CVC pattern — not up front,
     // eligible once CVC read+spell is mastered.
     if (e.eligibleSkills([]).map(s => s.id).includes('RD-cvc-sentences')) return 'T19: reading must be gated behind the CVC pattern'
-    if (!e.eligibleSkills([...decodeOnly, ...arr(SP, 12, true)]).map(s => s.id).includes('RD-cvc-sentences')) return 'T19: reading should unlock after the CVC pattern'
+    if (!e.eligibleSkills([...arr('PH-cvc-4', 12, true), ...arr('SP-cvc-4', 12, true)]).map(s => s.id).includes('RD-cvc-sentences')) return 'T19: reading should unlock after the CVC pattern (cvc-4)'
     // T19 digraph-level reading gated behind the DIGRAPH pattern.
     if (e.eligibleSkills([]).map(s => s.id).includes('RD-digraph-sentences')) return 'T19: digraph reading must be gated behind the digraph pattern'
     if (!e.eligibleSkills([...arr('PH-digraphs', 12, true), ...arr('SP-digraphs', 12, true)]).map(s => s.id).includes('RD-digraph-sentences')) return 'T19: digraph reading should unlock after the digraph pattern'
@@ -516,11 +516,11 @@ try {
     // reading/M3 skills are NOT gated). Omitting the arg keeps pre-M5 behaviour.
     const L = window.__learn
     if (L) {
-      if (L.nextToLearn(new Set())?.id !== 'PH-cvc-short-vowels') return 'M5 nextToLearn: empty → CVC frontier'
-      if (L.nextToLearn(new Set(['PH-cvc-short-vowels']))?.id !== 'PH-digraphs') return 'M5 nextToLearn: CVC learned → digraphs frontier'
-      const full = [...arr(PH, 12, true), ...arr(SP, 12, true)] // CVC pattern mastered (digraphs eligible pre-gate)
+      if (L.nextToLearn(new Set())?.id !== 'PH-cvc-1') return 'M5 nextToLearn: empty → CVC frontier'
+      if (L.nextToLearn(new Set(['PH-cvc-1']))?.id !== 'PH-cvc-2') return 'M5 nextToLearn: cvc-1 learned → cvc-2 frontier'
+      const full = [...arr(PH, 12, true), ...arr(SP, 12, true), ...arr('PH-cvc-4', 12, true), ...arr('SP-cvc-4', 12, true)] // cvc-1 + cvc-4 patterns mastered
       if (e.eligibleSkills(full, undefined, new Set()).some(s => s.encodePairId)) return 'M5 gate: no pattern skill eligible when nothing learned'
-      if (!e.eligibleSkills(full, undefined, new Set(['PH-digraphs'])).map(s => s.id).includes('PH-digraphs')) return 'M5 gate: digraphs eligible once its pattern is learned'
+      if (!e.eligibleSkills(full, undefined, new Set(['PH-cvc-2'])).map(s => s.id).includes('PH-cvc-2')) return 'M5 gate: cvc-2 eligible once its pattern is learned'
       if (!e.eligibleSkills(full, undefined, new Set()).map(s => s.id).includes('RD-cvc-sentences')) return 'M5 gate: non-pattern reading must NOT be learned-gated'
     }
     // M5.1 (§19.13) — phoneme sound metadata: 44 rows, all clip ids resolvable; per-pattern new
@@ -533,7 +533,7 @@ try {
       // /ai/ is first taught at silent-e; vowel-teams adds new SPELLINGS (ai/ay) of that known sound.
       if (!SN.newSpellingsFor('PH-vowel-teams-a').some(x => x.sound.id === 'ai' && x.graphemes.includes('ai'))) return 'M5.1: vowel-teams = new spelling of /ai/'
       if (SN.newSpellingsFor('PH-silent-e').length !== 0) return 'M5.1: silent-e introduces, not re-spells'
-      const intro = SN.introducedSounds(new Set(['PH-cvc-short-vowels', 'PH-digraphs']))
+      const intro = SN.introducedSounds(new Set(['PH-cvc-1', 'PH-digraphs']))
       if (!intro.some(s => s.id === 'sh') || intro.some(s => s.id === 'ai')) return 'M5.1: introduced set follows learned patterns (no spoilers)'
       // T20/T21 orphan-sound units are now authored → their sound rows are live (§19.13.5).
       if (SN.newSoundsFor('PH-ng').map(s => s.id).join(',') !== 'ng') return 'T20: PH-ng introduces the /ng/ sound'
@@ -561,11 +561,11 @@ try {
     if (rd.computeReadiness([], new Set(), [], 10).status !== 'On-Target') return 'readiness: empty → On-Target'
     // No assessment data → recentAccuracy is null (shown as "—"), never a misleading 100%.
     if (rd.computeReadiness([], new Set(), [], 10).growth.recentAccuracy !== null) return 'readiness: empty → null accuracy (not 100%)'
-    const wrong = Array.from({ length: 6 }, (_, i) => ({ id: 'w' + i, childId: 'c', skillId: 'PH-cvc-short-vowels', itemId: 'i', correct: false, difficulty: 1, latencyMs: 1, ts: i }))
+    const wrong = Array.from({ length: 6 }, (_, i) => ({ id: 'w' + i, childId: 'c', skillId: 'PH-cvc-1', itemId: 'i', correct: false, difficulty: 1, latencyMs: 1, ts: i }))
     if (rd.computeReadiness(wrong, new Set(), [], 10).status !== 'High-Risk') return 'readiness: 6 wrong → High-Risk'
     // Non-assessment REPS (review:true) must be EXCLUDED from the headline accuracy — 6 wrong
     // assessment items stay High-Risk even with 30 easy correct reps mixed in (the inflation bug).
-    const reps = Array.from({ length: 30 }, (_, i) => ({ id: 'r' + i, childId: 'c', skillId: 'PH-cvc-short-vowels', itemId: 'i', correct: true, difficulty: 1, latencyMs: 1, ts: 100 + i, review: true }))
+    const reps = Array.from({ length: 30 }, (_, i) => ({ id: 'r' + i, childId: 'c', skillId: 'PH-cvc-1', itemId: 'i', correct: true, difficulty: 1, latencyMs: 1, ts: 100 + i, review: true }))
     const mixed = rd.computeReadiness([...wrong, ...reps], new Set(), [], 10)
     if (mixed.status !== 'High-Risk') return 'readiness: reps must not inflate status out of High-Risk'
     if (mixed.growth.recentAccuracy !== 0) return 'readiness: reps must be excluded from recent accuracy'
@@ -615,12 +615,12 @@ try {
     const some = g.achievements([{ correct: true }], [{}])
     if (!some.find(a => a.id === 'first-cert').earned || !some.find(a => a.id === 'getting-started').earned) return 'achievements: first-cert/getting-started'
     // M5 (§19.4) learn store round-trip: setLearned → flagReview → clearReview.
-    await store.setLearned('c5', 'PH-cvc-short-vowels')
+    await store.setLearned('c5', 'PH-cvc-1')
     let lr = await store.getLearn('c5')
-    if (!lr.some(r => r.patternId === 'PH-cvc-short-vowels' && r.learned)) return 'M5 store: setLearned'
-    await store.flagReview('c5', 'PH-cvc-short-vowels')
+    if (!lr.some(r => r.patternId === 'PH-cvc-1' && r.learned)) return 'M5 store: setLearned'
+    await store.flagReview('c5', 'PH-cvc-1')
     if (!(await store.getLearn('c5'))[0].needsReview) return 'M5 store: flagReview'
-    await store.clearReview('c5', 'PH-cvc-short-vowels')
+    await store.clearReview('c5', 'PH-cvc-1')
     if ((await store.getLearn('c5'))[0].needsReview) return 'M5 store: clearReview'
     return 'ok'
   })
@@ -640,11 +640,11 @@ try {
   // placement), then the session masters the entry skill and certifies. Assert ≥1
   // certificate and that placement marked CVC decode mastered.
   if (good.db.certs.length < 1) fail(`expected ≥1 certificate on mastery path (after confirmation review), got ${good.db.certs.length}`)
-  const cvc = good.db.progress.find(p => p.skillId === 'PH-cvc-short-vowels')
+  const cvc = good.db.progress.find(p => p.skillId === 'PH-cvc-1')
   if (!cvc || cvc.status !== 'mastered') fail('placement: CVC decode should be marked mastered')
   // A1 — the session must honour placement: it should NOT re-serve the CVC skill placement
   // already mastered, i.e. it starts at the entry skill above it.
-  if (good.firstSkill === 'PH-cvc-short-vowels') fail('A1: session ignored placement — re-served mastered CVC')
+  if (good.firstSkill === 'PH-cvc-1') fail('A1: session ignored placement — re-served mastered CVC')
   if (!good.firstSkill) fail('A1: no session item was served on the good path')
   // #3 — a high placement holds back the top rung's SPELLING: the child must earn it in-session,
   // so the first served skill is that encode (SP-*) skill, not a decode one.
@@ -664,7 +664,7 @@ try {
   // in Learn before Test could assess it.
   if (good.lessons !== 0) fail('M5: Test must not teach (no lessons should fire in Test mode)')
   if (!(good.db.learn || []).some(r => r.learned)) fail('M5: Learn should have marked a pattern learned')
-  if (bad.db.progress.some(p => p.skillId === 'SP-cvc-short-vowels')) fail('dual gate: encode must stay locked when decode <70%')
+  if (bad.db.progress.some(p => p.skillId === 'SP-cvc-1')) fail('dual gate: encode must stay locked when decode <70%')
   if (bad.db.certs.length) fail('struggle path: no certificate should be awarded')
   // M5.1 (§19.13): the CVC Learn unit (struggle-path frontier) opens with phoneme sound-intro cards.
   if (!bad.sawSoundCard) fail('M5.1: CVC Learn unit should show phoneme sound-intro cards before reading')

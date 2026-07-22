@@ -1,0 +1,650 @@
+{
+  "packId": "phonics-L02d-cvc-4",
+  "strand": "phonics",
+  "skillIds": [
+    "PH-cvc-4"
+  ],
+  "version": 1,
+  "items": [
+    {
+      "id": "ph-c4-001",
+      "skillId": "PH-cvc-4",
+      "itemType": "decode_choice",
+      "difficulty": 1,
+      "stem": "Tap the word you hear.",
+      "audioText": "jam",
+      "choices": [
+        {
+          "id": "a",
+          "label": "jam"
+        },
+        {
+          "id": "b",
+          "label": "jet"
+        },
+        {
+          "id": "c",
+          "label": "job"
+        }
+      ],
+      "correctChoiceId": "a",
+      "missedConceptOnFail": "vowel-short-a",
+      "rationale": "j-a-m = jam.",
+      "decodableWithin": "PH-cvc-4"
+    },
+    {
+      "id": "ph-c4-002",
+      "skillId": "PH-cvc-4",
+      "itemType": "decode_choice",
+      "difficulty": 2,
+      "stem": "Tap the word you hear.",
+      "audioText": "jet",
+      "choices": [
+        {
+          "id": "a",
+          "label": "job"
+        },
+        {
+          "id": "b",
+          "label": "jet"
+        },
+        {
+          "id": "c",
+          "label": "jog"
+        }
+      ],
+      "correctChoiceId": "b",
+      "missedConceptOnFail": "vowel-short-e",
+      "rationale": "j-e-t = jet.",
+      "decodableWithin": "PH-cvc-4"
+    },
+    {
+      "id": "ph-c4-003",
+      "skillId": "PH-cvc-4",
+      "itemType": "decode_choice",
+      "difficulty": 3,
+      "stem": "Tap the word you hear.",
+      "audioText": "job",
+      "choices": [
+        {
+          "id": "a",
+          "label": "jog"
+        },
+        {
+          "id": "b",
+          "label": "jug"
+        },
+        {
+          "id": "c",
+          "label": "job"
+        }
+      ],
+      "correctChoiceId": "c",
+      "missedConceptOnFail": "vowel-short-o",
+      "rationale": "j-o-b = job.",
+      "decodableWithin": "PH-cvc-4"
+    },
+    {
+      "id": "ph-c4-004",
+      "skillId": "PH-cvc-4",
+      "itemType": "decode_choice",
+      "difficulty": 1,
+      "stem": "Tap the word you hear.",
+      "audioText": "jog",
+      "choices": [
+        {
+          "id": "a",
+          "label": "jog"
+        },
+        {
+          "id": "b",
+          "label": "jug"
+        },
+        {
+          "id": "c",
+          "label": "van"
+        }
+      ],
+      "correctChoiceId": "a",
+      "missedConceptOnFail": "vowel-short-o",
+      "rationale": "j-o-g = jog.",
+      "decodableWithin": "PH-cvc-4"
+    },
+    {
+      "id": "ph-c4-005",
+      "skillId": "PH-cvc-4",
+      "itemType": "decode_choice",
+      "difficulty": 2,
+      "stem": "Tap the word you hear.",
+      "audioText": "jug",
+      "choices": [
+        {
+          "id": "a",
+          "label": "van"
+        },
+        {
+          "id": "b",
+          "label": "jug"
+        },
+        {
+          "id": "c",
+          "label": "vet"
+        }
+      ],
+      "correctChoiceId": "b",
+      "missedConceptOnFail": "vowel-short-u",
+      "rationale": "j-u-g = jug.",
+      "decodableWithin": "PH-cvc-4"
+    },
+    {
+      "id": "ph-c4-006",
+      "skillId": "PH-cvc-4",
+      "itemType": "decode_choice",
+      "difficulty": 3,
+      "stem": "Tap the word you hear.",
+      "audioText": "van",
+      "choices": [
+        {
+          "id": "a",
+          "label": "vet"
+        },
+        {
+          "id": "b",
+          "label": "web"
+        },
+        {
+          "id": "c",
+          "label": "van"
+        }
+      ],
+      "correctChoiceId": "c",
+      "missedConceptOnFail": "vowel-short-a",
+      "rationale": "v-a-n = van.",
+      "decodableWithin": "PH-cvc-4"
+    },
+    {
+      "id": "ph-c4-007",
+      "skillId": "PH-cvc-4",
+      "itemType": "decode_choice",
+      "difficulty": 1,
+      "stem": "Tap the word you hear.",
+      "audioText": "vet",
+      "choices": [
+        {
+          "id": "a",
+          "label": "vet"
+        },
+        {
+          "id": "b",
+          "label": "web"
+        },
+        {
+          "id": "c",
+          "label": "wet"
+        }
+      ],
+      "correctChoiceId": "a",
+      "missedConceptOnFail": "vowel-short-e",
+      "rationale": "v-e-t = vet.",
+      "decodableWithin": "PH-cvc-4"
+    },
+    {
+      "id": "ph-c4-008",
+      "skillId": "PH-cvc-4",
+      "itemType": "decode_choice",
+      "difficulty": 2,
+      "stem": "Tap the word you hear.",
+      "audioText": "web",
+      "choices": [
+        {
+          "id": "a",
+          "label": "wet"
+        },
+        {
+          "id": "b",
+          "label": "web"
+        },
+        {
+          "id": "c",
+          "label": "wig"
+        }
+      ],
+      "correctChoiceId": "b",
+      "missedConceptOnFail": "vowel-short-e",
+      "rationale": "w-e-b = web.",
+      "decodableWithin": "PH-cvc-4"
+    },
+    {
+      "id": "ph-c4-009",
+      "skillId": "PH-cvc-4",
+      "itemType": "decode_choice",
+      "difficulty": 3,
+      "stem": "Tap the word you hear.",
+      "audioText": "wet",
+      "choices": [
+        {
+          "id": "a",
+          "label": "wig"
+        },
+        {
+          "id": "b",
+          "label": "win"
+        },
+        {
+          "id": "c",
+          "label": "wet"
+        }
+      ],
+      "correctChoiceId": "c",
+      "missedConceptOnFail": "vowel-short-e",
+      "rationale": "w-e-t = wet.",
+      "decodableWithin": "PH-cvc-4"
+    },
+    {
+      "id": "ph-c4-010",
+      "skillId": "PH-cvc-4",
+      "itemType": "decode_choice",
+      "difficulty": 1,
+      "stem": "Tap the word you hear.",
+      "audioText": "wig",
+      "choices": [
+        {
+          "id": "a",
+          "label": "wig"
+        },
+        {
+          "id": "b",
+          "label": "win"
+        },
+        {
+          "id": "c",
+          "label": "box"
+        }
+      ],
+      "correctChoiceId": "a",
+      "missedConceptOnFail": "vowel-short-i",
+      "rationale": "w-i-g = wig.",
+      "decodableWithin": "PH-cvc-4"
+    },
+    {
+      "id": "ph-c4-011",
+      "skillId": "PH-cvc-4",
+      "itemType": "decode_choice",
+      "difficulty": 2,
+      "stem": "Tap the word you hear.",
+      "audioText": "win",
+      "choices": [
+        {
+          "id": "a",
+          "label": "box"
+        },
+        {
+          "id": "b",
+          "label": "win"
+        },
+        {
+          "id": "c",
+          "label": "fox"
+        }
+      ],
+      "correctChoiceId": "b",
+      "missedConceptOnFail": "vowel-short-i",
+      "rationale": "w-i-n = win.",
+      "decodableWithin": "PH-cvc-4"
+    },
+    {
+      "id": "ph-c4-012",
+      "skillId": "PH-cvc-4",
+      "itemType": "decode_choice",
+      "difficulty": 3,
+      "stem": "Tap the word you hear.",
+      "audioText": "box",
+      "choices": [
+        {
+          "id": "a",
+          "label": "fox"
+        },
+        {
+          "id": "b",
+          "label": "fix"
+        },
+        {
+          "id": "c",
+          "label": "box"
+        }
+      ],
+      "correctChoiceId": "c",
+      "missedConceptOnFail": "vowel-short-o",
+      "rationale": "b-o-x = box.",
+      "decodableWithin": "PH-cvc-4"
+    },
+    {
+      "id": "ph-c4-013",
+      "skillId": "PH-cvc-4",
+      "itemType": "decode_choice",
+      "difficulty": 1,
+      "stem": "Tap the word you hear.",
+      "audioText": "fox",
+      "choices": [
+        {
+          "id": "a",
+          "label": "fox"
+        },
+        {
+          "id": "b",
+          "label": "fix"
+        },
+        {
+          "id": "c",
+          "label": "six"
+        }
+      ],
+      "correctChoiceId": "a",
+      "missedConceptOnFail": "vowel-short-o",
+      "rationale": "f-o-x = fox.",
+      "decodableWithin": "PH-cvc-4"
+    },
+    {
+      "id": "ph-c4-014",
+      "skillId": "PH-cvc-4",
+      "itemType": "decode_choice",
+      "difficulty": 2,
+      "stem": "Tap the word you hear.",
+      "audioText": "fix",
+      "choices": [
+        {
+          "id": "a",
+          "label": "six"
+        },
+        {
+          "id": "b",
+          "label": "fix"
+        },
+        {
+          "id": "c",
+          "label": "mix"
+        }
+      ],
+      "correctChoiceId": "b",
+      "missedConceptOnFail": "vowel-short-i",
+      "rationale": "f-i-x = fix.",
+      "decodableWithin": "PH-cvc-4"
+    },
+    {
+      "id": "ph-c4-015",
+      "skillId": "PH-cvc-4",
+      "itemType": "decode_choice",
+      "difficulty": 3,
+      "stem": "Tap the word you hear.",
+      "audioText": "six",
+      "choices": [
+        {
+          "id": "a",
+          "label": "mix"
+        },
+        {
+          "id": "b",
+          "label": "wax"
+        },
+        {
+          "id": "c",
+          "label": "six"
+        }
+      ],
+      "correctChoiceId": "c",
+      "missedConceptOnFail": "vowel-short-i",
+      "rationale": "s-i-x = six.",
+      "decodableWithin": "PH-cvc-4"
+    },
+    {
+      "id": "ph-c4-016",
+      "skillId": "PH-cvc-4",
+      "itemType": "decode_choice",
+      "difficulty": 1,
+      "stem": "Tap the word you hear.",
+      "audioText": "mix",
+      "choices": [
+        {
+          "id": "a",
+          "label": "mix"
+        },
+        {
+          "id": "b",
+          "label": "wax"
+        },
+        {
+          "id": "c",
+          "label": "yam"
+        }
+      ],
+      "correctChoiceId": "a",
+      "missedConceptOnFail": "vowel-short-i",
+      "rationale": "m-i-x = mix.",
+      "decodableWithin": "PH-cvc-4"
+    },
+    {
+      "id": "ph-c4-017",
+      "skillId": "PH-cvc-4",
+      "itemType": "decode_choice",
+      "difficulty": 2,
+      "stem": "Tap the word you hear.",
+      "audioText": "wax",
+      "choices": [
+        {
+          "id": "a",
+          "label": "yam"
+        },
+        {
+          "id": "b",
+          "label": "wax"
+        },
+        {
+          "id": "c",
+          "label": "yes"
+        }
+      ],
+      "correctChoiceId": "b",
+      "missedConceptOnFail": "vowel-short-a",
+      "rationale": "w-a-x = wax.",
+      "decodableWithin": "PH-cvc-4"
+    },
+    {
+      "id": "ph-c4-018",
+      "skillId": "PH-cvc-4",
+      "itemType": "decode_choice",
+      "difficulty": 3,
+      "stem": "Tap the word you hear.",
+      "audioText": "yam",
+      "choices": [
+        {
+          "id": "a",
+          "label": "yes"
+        },
+        {
+          "id": "b",
+          "label": "zap"
+        },
+        {
+          "id": "c",
+          "label": "yam"
+        }
+      ],
+      "correctChoiceId": "c",
+      "missedConceptOnFail": "vowel-short-a",
+      "rationale": "y-a-m = yam.",
+      "decodableWithin": "PH-cvc-4"
+    },
+    {
+      "id": "ph-c4-019",
+      "skillId": "PH-cvc-4",
+      "itemType": "decode_choice",
+      "difficulty": 1,
+      "stem": "Tap the word you hear.",
+      "audioText": "yes",
+      "choices": [
+        {
+          "id": "a",
+          "label": "yes"
+        },
+        {
+          "id": "b",
+          "label": "zap"
+        },
+        {
+          "id": "c",
+          "label": "zip"
+        }
+      ],
+      "correctChoiceId": "a",
+      "missedConceptOnFail": "vowel-short-e",
+      "rationale": "y-e-s = yes.",
+      "decodableWithin": "PH-cvc-4"
+    },
+    {
+      "id": "ph-c4-020",
+      "skillId": "PH-cvc-4",
+      "itemType": "decode_choice",
+      "difficulty": 2,
+      "stem": "Tap the word you hear.",
+      "audioText": "zap",
+      "choices": [
+        {
+          "id": "a",
+          "label": "zip"
+        },
+        {
+          "id": "b",
+          "label": "zap"
+        },
+        {
+          "id": "c",
+          "label": "zig"
+        }
+      ],
+      "correctChoiceId": "b",
+      "missedConceptOnFail": "vowel-short-a",
+      "rationale": "z-a-p = zap.",
+      "decodableWithin": "PH-cvc-4"
+    },
+    {
+      "id": "ph-c4-021",
+      "skillId": "PH-cvc-4",
+      "itemType": "decode_choice",
+      "difficulty": 3,
+      "stem": "Tap the word you hear.",
+      "audioText": "zip",
+      "choices": [
+        {
+          "id": "a",
+          "label": "zig"
+        },
+        {
+          "id": "b",
+          "label": "quit"
+        },
+        {
+          "id": "c",
+          "label": "zip"
+        }
+      ],
+      "correctChoiceId": "c",
+      "missedConceptOnFail": "vowel-short-i",
+      "rationale": "z-i-p = zip.",
+      "decodableWithin": "PH-cvc-4"
+    },
+    {
+      "id": "ph-c4-022",
+      "skillId": "PH-cvc-4",
+      "itemType": "decode_choice",
+      "difficulty": 1,
+      "stem": "Tap the word you hear.",
+      "audioText": "zig",
+      "choices": [
+        {
+          "id": "a",
+          "label": "zig"
+        },
+        {
+          "id": "b",
+          "label": "quit"
+        },
+        {
+          "id": "c",
+          "label": "quiz"
+        }
+      ],
+      "correctChoiceId": "a",
+      "missedConceptOnFail": "vowel-short-i",
+      "rationale": "z-i-g = zig.",
+      "decodableWithin": "PH-cvc-4"
+    },
+    {
+      "id": "ph-c4-023",
+      "skillId": "PH-cvc-4",
+      "itemType": "decode_choice",
+      "difficulty": 2,
+      "stem": "Tap the word you hear.",
+      "audioText": "quit",
+      "choices": [
+        {
+          "id": "a",
+          "label": "quiz"
+        },
+        {
+          "id": "b",
+          "label": "quit"
+        },
+        {
+          "id": "c",
+          "label": "jam"
+        }
+      ],
+      "correctChoiceId": "b",
+      "missedConceptOnFail": "vowel-short-u",
+      "rationale": "qu-i-t = quit.",
+      "decodableWithin": "PH-cvc-4"
+    },
+    {
+      "id": "ph-c4-024",
+      "skillId": "PH-cvc-4",
+      "itemType": "decode_choice",
+      "difficulty": 3,
+      "stem": "Tap the word you hear.",
+      "audioText": "quiz",
+      "choices": [
+        {
+          "id": "a",
+          "label": "jam"
+        },
+        {
+          "id": "b",
+          "label": "jet"
+        },
+        {
+          "id": "c",
+          "label": "quiz"
+        }
+      ],
+      "correctChoiceId": "c",
+      "missedConceptOnFail": "vowel-short-u",
+      "rationale": "qu-i-z = quiz.",
+      "decodableWithin": "PH-cvc-4"
+    }
+  ],
+  "lessons": {
+    "PH-cvc-4": {
+      "iCanStatement": "I can read short words with j, v, w, x, y, z and qu.",
+      "explanation": "The last sounds: j, v, w, x (/ks/), y, z, and qu (/kw/). Blend them to read: j-a-m → jam, b-o-x → box, qu-i-z → quiz. Now you know all the letter sounds!",
+      "workedExamples": [
+        {
+          "text": "jam",
+          "note": "j · a · m → jam"
+        },
+        {
+          "text": "box",
+          "note": "b · o · x → box"
+        }
+      ]
+    }
+  }
+}

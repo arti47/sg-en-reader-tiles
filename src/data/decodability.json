@@ -93,6 +93,178 @@
     ],
     "highFrequency": []
   },
+  "PH-cvc-1": {
+    "_note": "CVC satpin sub-unit 1.",
+    "graphemes": [
+      "s",
+      "a",
+      "t",
+      "p",
+      "i",
+      "n"
+    ],
+    "highFrequency": []
+  },
+  "SP-cvc-1": {
+    "graphemes": [
+      "s",
+      "a",
+      "t",
+      "p",
+      "i",
+      "n"
+    ],
+    "highFrequency": []
+  },
+  "PH-cvc-2": {
+    "_note": "CVC satpin sub-unit 2.",
+    "graphemes": [
+      "s",
+      "a",
+      "t",
+      "p",
+      "i",
+      "n",
+      "c",
+      "k",
+      "e",
+      "h",
+      "r",
+      "m",
+      "d"
+    ],
+    "highFrequency": []
+  },
+  "SP-cvc-2": {
+    "graphemes": [
+      "s",
+      "a",
+      "t",
+      "p",
+      "i",
+      "n",
+      "c",
+      "k",
+      "e",
+      "h",
+      "r",
+      "m",
+      "d"
+    ],
+    "highFrequency": []
+  },
+  "PH-cvc-3": {
+    "_note": "CVC satpin sub-unit 3.",
+    "graphemes": [
+      "s",
+      "a",
+      "t",
+      "p",
+      "i",
+      "n",
+      "c",
+      "k",
+      "e",
+      "h",
+      "r",
+      "m",
+      "d",
+      "g",
+      "o",
+      "u",
+      "l",
+      "f",
+      "b"
+    ],
+    "highFrequency": []
+  },
+  "SP-cvc-3": {
+    "graphemes": [
+      "s",
+      "a",
+      "t",
+      "p",
+      "i",
+      "n",
+      "c",
+      "k",
+      "e",
+      "h",
+      "r",
+      "m",
+      "d",
+      "g",
+      "o",
+      "u",
+      "l",
+      "f",
+      "b"
+    ],
+    "highFrequency": []
+  },
+  "PH-cvc-4": {
+    "_note": "CVC satpin sub-unit 4.",
+    "graphemes": [
+      "s",
+      "a",
+      "t",
+      "p",
+      "i",
+      "n",
+      "c",
+      "k",
+      "e",
+      "h",
+      "r",
+      "m",
+      "d",
+      "g",
+      "o",
+      "u",
+      "l",
+      "f",
+      "b",
+      "j",
+      "v",
+      "w",
+      "x",
+      "y",
+      "z",
+      "qu"
+    ],
+    "highFrequency": []
+  },
+  "SP-cvc-4": {
+    "graphemes": [
+      "s",
+      "a",
+      "t",
+      "p",
+      "i",
+      "n",
+      "c",
+      "k",
+      "e",
+      "h",
+      "r",
+      "m",
+      "d",
+      "g",
+      "o",
+      "u",
+      "l",
+      "f",
+      "b",
+      "j",
+      "v",
+      "w",
+      "x",
+      "y",
+      "z",
+      "qu"
+    ],
+    "highFrequency": []
+  },
   "PH-digraphs": {
     "graphemes": [
       "sh",

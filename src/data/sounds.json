@@ -3,11 +3,11 @@
     "id": "b",
     "keyword": "ball",
     "articulation": "Lips together, then pop them apart — /b/",
-    "firstPattern": "PH-cvc-short-vowels",
+    "firstPattern": "PH-cvc-3",
     "spellings": [
       {
         "grapheme": "b",
-        "pattern": "PH-cvc-short-vowels"
+        "pattern": "PH-cvc-3"
       }
     ]
   },
@@ -15,11 +15,11 @@
     "id": "d",
     "keyword": "dog",
     "articulation": "Tongue taps behind your top teeth — /d/",
-    "firstPattern": "PH-cvc-short-vowels",
+    "firstPattern": "PH-cvc-2",
     "spellings": [
       {
         "grapheme": "d",
-        "pattern": "PH-cvc-short-vowels"
+        "pattern": "PH-cvc-2"
       }
     ]
   },
@@ -27,11 +27,11 @@
     "id": "f",
     "keyword": "fan",
     "articulation": "Top teeth on your bottom lip, blow — /fff/",
-    "firstPattern": "PH-cvc-short-vowels",
+    "firstPattern": "PH-cvc-3",
     "spellings": [
       {
         "grapheme": "f",
-        "pattern": "PH-cvc-short-vowels"
+        "pattern": "PH-cvc-3"
       }
     ]
   },
@@ -39,11 +39,11 @@
     "id": "g",
     "keyword": "goat",
     "articulation": "Back of the tongue, quick — /g/",
-    "firstPattern": "PH-cvc-short-vowels",
+    "firstPattern": "PH-cvc-3",
     "spellings": [
       {
         "grapheme": "g",
-        "pattern": "PH-cvc-short-vowels"
+        "pattern": "PH-cvc-3"
       }
     ]
   },
@@ -51,11 +51,11 @@
     "id": "h",
     "keyword": "hat",
     "articulation": "Open your mouth and breathe out — /h/",
-    "firstPattern": "PH-cvc-short-vowels",
+    "firstPattern": "PH-cvc-2",
     "spellings": [
       {
         "grapheme": "h",
-        "pattern": "PH-cvc-short-vowels"
+        "pattern": "PH-cvc-2"
       }
     ]
   },
@@ -63,11 +63,11 @@
     "id": "j",
     "keyword": "jam",
     "articulation": "Tongue up, push it out — /j/",
-    "firstPattern": "PH-cvc-short-vowels",
+    "firstPattern": "PH-cvc-4",
     "spellings": [
       {
         "grapheme": "j",
-        "pattern": "PH-cvc-short-vowels"
+        "pattern": "PH-cvc-4"
       }
     ]
   },
@@ -75,11 +75,11 @@
     "id": "k",
     "keyword": "kite",
     "articulation": "Back of the tongue, quick — /k/",
-    "firstPattern": "PH-cvc-short-vowels",
+    "firstPattern": "PH-cvc-2",
     "spellings": [
       {
         "grapheme": "k",
-        "pattern": "PH-cvc-short-vowels"
+        "pattern": "PH-cvc-2"
       }
     ]
   },
@@ -87,11 +87,11 @@
     "id": "l",
     "keyword": "leg",
     "articulation": "Tongue behind your top teeth, hum — /lll/",
-    "firstPattern": "PH-cvc-short-vowels",
+    "firstPattern": "PH-cvc-3",
     "spellings": [
       {
         "grapheme": "l",
-        "pattern": "PH-cvc-short-vowels"
+        "pattern": "PH-cvc-3"
       }
     ]
   },
@@ -99,11 +99,11 @@
     "id": "m",
     "keyword": "man",
     "articulation": "Lips together, hum — /mmm/",
-    "firstPattern": "PH-cvc-short-vowels",
+    "firstPattern": "PH-cvc-2",
     "spellings": [
       {
         "grapheme": "m",
-        "pattern": "PH-cvc-short-vowels"
+        "pattern": "PH-cvc-2"
       }
     ]
   },
@@ -111,11 +111,11 @@
     "id": "n",
     "keyword": "net",
     "articulation": "Tongue behind your top teeth, hum — /nnn/",
-    "firstPattern": "PH-cvc-short-vowels",
+    "firstPattern": "PH-cvc-1",
     "spellings": [
       {
         "grapheme": "n",
-        "pattern": "PH-cvc-short-vowels"
+        "pattern": "PH-cvc-1"
       }
     ]
   },
@@ -123,11 +123,11 @@
     "id": "p",
     "keyword": "pig",
     "articulation": "Lips together, then a quiet pop — /p/",
-    "firstPattern": "PH-cvc-short-vowels",
+    "firstPattern": "PH-cvc-1",
     "spellings": [
       {
         "grapheme": "p",
-        "pattern": "PH-cvc-short-vowels"
+        "pattern": "PH-cvc-1"
       }
     ]
   },
@@ -135,11 +135,11 @@
     "id": "r",
     "keyword": "rat",
     "articulation": "Round your lips and growl — /rrr/",
-    "firstPattern": "PH-cvc-short-vowels",
+    "firstPattern": "PH-cvc-2",
     "spellings": [
       {
         "grapheme": "r",
-        "pattern": "PH-cvc-short-vowels"
+        "pattern": "PH-cvc-2"
       }
     ]
   },
@@ -147,11 +147,11 @@
     "id": "s",
     "keyword": "sun",
     "articulation": "Teeth together, hiss like a snake — /sss/",
-    "firstPattern": "PH-cvc-short-vowels",
+    "firstPattern": "PH-cvc-1",
     "spellings": [
       {
         "grapheme": "s",
-        "pattern": "PH-cvc-short-vowels"
+        "pattern": "PH-cvc-1"
       }
     ]
   },
@@ -159,11 +159,11 @@
     "id": "t",
     "keyword": "tap",
     "articulation": "Tongue taps behind your top teeth — /t/",
-    "firstPattern": "PH-cvc-short-vowels",
+    "firstPattern": "PH-cvc-1",
     "spellings": [
       {
         "grapheme": "t",
-        "pattern": "PH-cvc-short-vowels"
+        "pattern": "PH-cvc-1"
       }
     ]
   },
@@ -171,11 +171,11 @@
     "id": "v",
     "keyword": "van",
     "articulation": "Top teeth on your bottom lip, buzz — /vvv/",
-    "firstPattern": "PH-cvc-short-vowels",
+    "firstPattern": "PH-cvc-4",
     "spellings": [
       {
         "grapheme": "v",
-        "pattern": "PH-cvc-short-vowels"
+        "pattern": "PH-cvc-4"
       }
     ]
   },
@@ -183,11 +183,11 @@
     "id": "w",
     "keyword": "web",
     "articulation": "Round your lips — /w/",
-    "firstPattern": "PH-cvc-short-vowels",
+    "firstPattern": "PH-cvc-4",
     "spellings": [
       {
         "grapheme": "w",
-        "pattern": "PH-cvc-short-vowels"
+        "pattern": "PH-cvc-4"
       }
     ]
   },
@@ -195,11 +195,11 @@
     "id": "y",
     "keyword": "yak",
     "articulation": "Smile, tongue up — /y/",
-    "firstPattern": "PH-cvc-short-vowels",
+    "firstPattern": "PH-cvc-4",
     "spellings": [
       {
         "grapheme": "y",
-        "pattern": "PH-cvc-short-vowels"
+        "pattern": "PH-cvc-4"
       }
     ]
   },
@@ -207,11 +207,11 @@
     "id": "z",
     "keyword": "zip",
     "articulation": "Teeth together, buzz like a bee — /zzz/",
-    "firstPattern": "PH-cvc-short-vowels",
+    "firstPattern": "PH-cvc-4",
     "spellings": [
       {
         "grapheme": "z",
-        "pattern": "PH-cvc-short-vowels"
+        "pattern": "PH-cvc-4"
       }
     ]
   },
@@ -219,11 +219,11 @@
     "id": "a",
     "keyword": "apple",
     "articulation": "Open your mouth, short — /a/",
-    "firstPattern": "PH-cvc-short-vowels",
+    "firstPattern": "PH-cvc-1",
     "spellings": [
       {
         "grapheme": "a",
-        "pattern": "PH-cvc-short-vowels"
+        "pattern": "PH-cvc-1"
       }
     ]
   },
@@ -231,11 +231,11 @@
     "id": "e",
     "keyword": "egg",
     "articulation": "Mouth a little open — /e/",
-    "firstPattern": "PH-cvc-short-vowels",
+    "firstPattern": "PH-cvc-2",
     "spellings": [
       {
         "grapheme": "e",
-        "pattern": "PH-cvc-short-vowels"
+        "pattern": "PH-cvc-2"
       }
     ]
   },
@@ -243,11 +243,11 @@
     "id": "i",
     "keyword": "insect",
     "articulation": "Smile a little — /i/",
-    "firstPattern": "PH-cvc-short-vowels",
+    "firstPattern": "PH-cvc-1",
     "spellings": [
       {
         "grapheme": "i",
-        "pattern": "PH-cvc-short-vowels"
+        "pattern": "PH-cvc-1"
       }
     ]
   },
@@ -255,11 +255,11 @@
     "id": "o",
     "keyword": "orange",
     "articulation": "Round mouth, short — /o/",
-    "firstPattern": "PH-cvc-short-vowels",
+    "firstPattern": "PH-cvc-3",
     "spellings": [
       {
         "grapheme": "o",
-        "pattern": "PH-cvc-short-vowels"
+        "pattern": "PH-cvc-3"
       }
     ]
   },
@@ -267,11 +267,11 @@
     "id": "u",
     "keyword": "umbrella",
     "articulation": "Mouth relaxed, short — /u/",
-    "firstPattern": "PH-cvc-short-vowels",
+    "firstPattern": "PH-cvc-3",
     "spellings": [
       {
         "grapheme": "u",
-        "pattern": "PH-cvc-short-vowels"
+        "pattern": "PH-cvc-3"
       }
     ]
   },

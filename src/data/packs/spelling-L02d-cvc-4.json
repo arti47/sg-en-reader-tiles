@@ -1,0 +1,554 @@
+{
+  "packId": "spelling-L02d-cvc-4",
+  "strand": "spelling",
+  "skillIds": [
+    "SP-cvc-4"
+  ],
+  "version": 1,
+  "items": [
+    {
+      "id": "sp-c4-001",
+      "skillId": "SP-cvc-4",
+      "itemType": "build_word",
+      "difficulty": 1,
+      "stem": "Build the word you hear.",
+      "displayWord": "jam",
+      "audioText": "jam",
+      "graphemes": [
+        "j",
+        "a",
+        "m"
+      ],
+      "distractorGraphemes": [
+        "s",
+        "t"
+      ],
+      "missedConceptOnFail": "vowel-short-a",
+      "rationale": "jam = j-a-m.",
+      "decodableWithin": "SP-cvc-4"
+    },
+    {
+      "id": "sp-c4-002",
+      "skillId": "SP-cvc-4",
+      "itemType": "build_word",
+      "difficulty": 2,
+      "stem": "Build the word you hear.",
+      "displayWord": "jet",
+      "audioText": "jet",
+      "graphemes": [
+        "j",
+        "e",
+        "t"
+      ],
+      "distractorGraphemes": [
+        "s",
+        "a",
+        "p"
+      ],
+      "missedConceptOnFail": "vowel-short-e",
+      "rationale": "jet = j-e-t.",
+      "decodableWithin": "SP-cvc-4"
+    },
+    {
+      "id": "sp-c4-003",
+      "skillId": "SP-cvc-4",
+      "itemType": "build_word",
+      "difficulty": 3,
+      "stem": "Build the word you hear.",
+      "displayWord": "job",
+      "audioText": "job",
+      "graphemes": [
+        "j",
+        "o",
+        "b"
+      ],
+      "distractorGraphemes": [
+        "s",
+        "a",
+        "t",
+        "p"
+      ],
+      "missedConceptOnFail": "vowel-short-o",
+      "rationale": "job = j-o-b.",
+      "decodableWithin": "SP-cvc-4"
+    },
+    {
+      "id": "sp-c4-004",
+      "skillId": "SP-cvc-4",
+      "itemType": "build_word",
+      "difficulty": 1,
+      "stem": "Build the word you hear.",
+      "displayWord": "jog",
+      "audioText": "jog",
+      "graphemes": [
+        "j",
+        "o",
+        "g"
+      ],
+      "distractorGraphemes": [
+        "s",
+        "a"
+      ],
+      "missedConceptOnFail": "vowel-short-o",
+      "rationale": "jog = j-o-g.",
+      "decodableWithin": "SP-cvc-4"
+    },
+    {
+      "id": "sp-c4-005",
+      "skillId": "SP-cvc-4",
+      "itemType": "build_word",
+      "difficulty": 2,
+      "stem": "Build the word you hear.",
+      "displayWord": "jug",
+      "audioText": "jug",
+      "graphemes": [
+        "j",
+        "u",
+        "g"
+      ],
+      "distractorGraphemes": [
+        "s",
+        "a",
+        "t"
+      ],
+      "missedConceptOnFail": "vowel-short-u",
+      "rationale": "jug = j-u-g.",
+      "decodableWithin": "SP-cvc-4"
+    },
+    {
+      "id": "sp-c4-006",
+      "skillId": "SP-cvc-4",
+      "itemType": "build_word",
+      "difficulty": 3,
+      "stem": "Build the word you hear.",
+      "displayWord": "van",
+      "audioText": "van",
+      "graphemes": [
+        "v",
+        "a",
+        "n"
+      ],
+      "distractorGraphemes": [
+        "s",
+        "t",
+        "p",
+        "i"
+      ],
+      "missedConceptOnFail": "vowel-short-a",
+      "rationale": "van = v-a-n.",
+      "decodableWithin": "SP-cvc-4"
+    },
+    {
+      "id": "sp-c4-007",
+      "skillId": "SP-cvc-4",
+      "itemType": "build_word",
+      "difficulty": 1,
+      "stem": "Build the word you hear.",
+      "displayWord": "vet",
+      "audioText": "vet",
+      "graphemes": [
+        "v",
+        "e",
+        "t"
+      ],
+      "distractorGraphemes": [
+        "s",
+        "a"
+      ],
+      "missedConceptOnFail": "vowel-short-e",
+      "rationale": "vet = v-e-t.",
+      "decodableWithin": "SP-cvc-4"
+    },
+    {
+      "id": "sp-c4-008",
+      "skillId": "SP-cvc-4",
+      "itemType": "build_word",
+      "difficulty": 2,
+      "stem": "Build the word you hear.",
+      "displayWord": "web",
+      "audioText": "web",
+      "graphemes": [
+        "w",
+        "e",
+        "b"
+      ],
+      "distractorGraphemes": [
+        "s",
+        "a",
+        "t"
+      ],
+      "missedConceptOnFail": "vowel-short-e",
+      "rationale": "web = w-e-b.",
+      "decodableWithin": "SP-cvc-4"
+    },
+    {
+      "id": "sp-c4-009",
+      "skillId": "SP-cvc-4",
+      "itemType": "build_word",
+      "difficulty": 3,
+      "stem": "Build the word you hear.",
+      "displayWord": "wet",
+      "audioText": "wet",
+      "graphemes": [
+        "w",
+        "e",
+        "t"
+      ],
+      "distractorGraphemes": [
+        "s",
+        "a",
+        "p",
+        "i"
+      ],
+      "missedConceptOnFail": "vowel-short-e",
+      "rationale": "wet = w-e-t.",
+      "decodableWithin": "SP-cvc-4"
+    },
+    {
+      "id": "sp-c4-010",
+      "skillId": "SP-cvc-4",
+      "itemType": "build_word",
+      "difficulty": 1,
+      "stem": "Build the word you hear.",
+      "displayWord": "wig",
+      "audioText": "wig",
+      "graphemes": [
+        "w",
+        "i",
+        "g"
+      ],
+      "distractorGraphemes": [
+        "s",
+        "a"
+      ],
+      "missedConceptOnFail": "vowel-short-i",
+      "rationale": "wig = w-i-g.",
+      "decodableWithin": "SP-cvc-4"
+    },
+    {
+      "id": "sp-c4-011",
+      "skillId": "SP-cvc-4",
+      "itemType": "build_word",
+      "difficulty": 2,
+      "stem": "Build the word you hear.",
+      "displayWord": "win",
+      "audioText": "win",
+      "graphemes": [
+        "w",
+        "i",
+        "n"
+      ],
+      "distractorGraphemes": [
+        "s",
+        "a",
+        "t"
+      ],
+      "missedConceptOnFail": "vowel-short-i",
+      "rationale": "win = w-i-n.",
+      "decodableWithin": "SP-cvc-4"
+    },
+    {
+      "id": "sp-c4-012",
+      "skillId": "SP-cvc-4",
+      "itemType": "build_word",
+      "difficulty": 3,
+      "stem": "Build the word you hear.",
+      "displayWord": "box",
+      "audioText": "box",
+      "graphemes": [
+        "b",
+        "o",
+        "x"
+      ],
+      "distractorGraphemes": [
+        "s",
+        "a",
+        "t",
+        "p"
+      ],
+      "missedConceptOnFail": "vowel-short-o",
+      "rationale": "box = b-o-x.",
+      "decodableWithin": "SP-cvc-4"
+    },
+    {
+      "id": "sp-c4-013",
+      "skillId": "SP-cvc-4",
+      "itemType": "build_word",
+      "difficulty": 1,
+      "stem": "Build the word you hear.",
+      "displayWord": "fox",
+      "audioText": "fox",
+      "graphemes": [
+        "f",
+        "o",
+        "x"
+      ],
+      "distractorGraphemes": [
+        "s",
+        "a"
+      ],
+      "missedConceptOnFail": "vowel-short-o",
+      "rationale": "fox = f-o-x.",
+      "decodableWithin": "SP-cvc-4"
+    },
+    {
+      "id": "sp-c4-014",
+      "skillId": "SP-cvc-4",
+      "itemType": "build_word",
+      "difficulty": 2,
+      "stem": "Build the word you hear.",
+      "displayWord": "fix",
+      "audioText": "fix",
+      "graphemes": [
+        "f",
+        "i",
+        "x"
+      ],
+      "distractorGraphemes": [
+        "s",
+        "a",
+        "t"
+      ],
+      "missedConceptOnFail": "vowel-short-i",
+      "rationale": "fix = f-i-x.",
+      "decodableWithin": "SP-cvc-4"
+    },
+    {
+      "id": "sp-c4-015",
+      "skillId": "SP-cvc-4",
+      "itemType": "build_word",
+      "difficulty": 3,
+      "stem": "Build the word you hear.",
+      "displayWord": "six",
+      "audioText": "six",
+      "graphemes": [
+        "s",
+        "i",
+        "x"
+      ],
+      "distractorGraphemes": [
+        "a",
+        "t",
+        "p",
+        "n"
+      ],
+      "missedConceptOnFail": "vowel-short-i",
+      "rationale": "six = s-i-x.",
+      "decodableWithin": "SP-cvc-4"
+    },
+    {
+      "id": "sp-c4-016",
+      "skillId": "SP-cvc-4",
+      "itemType": "build_word",
+      "difficulty": 1,
+      "stem": "Build the word you hear.",
+      "displayWord": "mix",
+      "audioText": "mix",
+      "graphemes": [
+        "m",
+        "i",
+        "x"
+      ],
+      "distractorGraphemes": [
+        "s",
+        "a"
+      ],
+      "missedConceptOnFail": "vowel-short-i",
+      "rationale": "mix = m-i-x.",
+      "decodableWithin": "SP-cvc-4"
+    },
+    {
+      "id": "sp-c4-017",
+      "skillId": "SP-cvc-4",
+      "itemType": "build_word",
+      "difficulty": 2,
+      "stem": "Build the word you hear.",
+      "displayWord": "wax",
+      "audioText": "wax",
+      "graphemes": [
+        "w",
+        "a",
+        "x"
+      ],
+      "distractorGraphemes": [
+        "s",
+        "t",
+        "p"
+      ],
+      "missedConceptOnFail": "vowel-short-a",
+      "rationale": "wax = w-a-x.",
+      "decodableWithin": "SP-cvc-4"
+    },
+    {
+      "id": "sp-c4-018",
+      "skillId": "SP-cvc-4",
+      "itemType": "build_word",
+      "difficulty": 3,
+      "stem": "Build the word you hear.",
+      "displayWord": "yam",
+      "audioText": "yam",
+      "graphemes": [
+        "y",
+        "a",
+        "m"
+      ],
+      "distractorGraphemes": [
+        "s",
+        "t",
+        "p",
+        "i"
+      ],
+      "missedConceptOnFail": "vowel-short-a",
+      "rationale": "yam = y-a-m.",
+      "decodableWithin": "SP-cvc-4"
+    },
+    {
+      "id": "sp-c4-019",
+      "skillId": "SP-cvc-4",
+      "itemType": "build_word",
+      "difficulty": 1,
+      "stem": "Build the word you hear.",
+      "displayWord": "yes",
+      "audioText": "yes",
+      "graphemes": [
+        "y",
+        "e",
+        "s"
+      ],
+      "distractorGraphemes": [
+        "a",
+        "t"
+      ],
+      "missedConceptOnFail": "vowel-short-e",
+      "rationale": "yes = y-e-s.",
+      "decodableWithin": "SP-cvc-4"
+    },
+    {
+      "id": "sp-c4-020",
+      "skillId": "SP-cvc-4",
+      "itemType": "build_word",
+      "difficulty": 2,
+      "stem": "Build the word you hear.",
+      "displayWord": "zap",
+      "audioText": "zap",
+      "graphemes": [
+        "z",
+        "a",
+        "p"
+      ],
+      "distractorGraphemes": [
+        "s",
+        "t",
+        "i"
+      ],
+      "missedConceptOnFail": "vowel-short-a",
+      "rationale": "zap = z-a-p.",
+      "decodableWithin": "SP-cvc-4"
+    },
+    {
+      "id": "sp-c4-021",
+      "skillId": "SP-cvc-4",
+      "itemType": "build_word",
+      "difficulty": 3,
+      "stem": "Build the word you hear.",
+      "displayWord": "zip",
+      "audioText": "zip",
+      "graphemes": [
+        "z",
+        "i",
+        "p"
+      ],
+      "distractorGraphemes": [
+        "s",
+        "a",
+        "t",
+        "n"
+      ],
+      "missedConceptOnFail": "vowel-short-i",
+      "rationale": "zip = z-i-p.",
+      "decodableWithin": "SP-cvc-4"
+    },
+    {
+      "id": "sp-c4-022",
+      "skillId": "SP-cvc-4",
+      "itemType": "build_word",
+      "difficulty": 1,
+      "stem": "Build the word you hear.",
+      "displayWord": "zig",
+      "audioText": "zig",
+      "graphemes": [
+        "z",
+        "i",
+        "g"
+      ],
+      "distractorGraphemes": [
+        "s",
+        "a"
+      ],
+      "missedConceptOnFail": "vowel-short-i",
+      "rationale": "zig = z-i-g.",
+      "decodableWithin": "SP-cvc-4"
+    },
+    {
+      "id": "sp-c4-023",
+      "skillId": "SP-cvc-4",
+      "itemType": "build_word",
+      "difficulty": 2,
+      "stem": "Build the word you hear.",
+      "displayWord": "quit",
+      "audioText": "quit",
+      "graphemes": [
+        "qu",
+        "i",
+        "t"
+      ],
+      "distractorGraphemes": [
+        "s",
+        "a",
+        "p"
+      ],
+      "missedConceptOnFail": "vowel-short-u",
+      "rationale": "quit = qu-i-t.",
+      "decodableWithin": "SP-cvc-4"
+    },
+    {
+      "id": "sp-c4-024",
+      "skillId": "SP-cvc-4",
+      "itemType": "build_word",
+      "difficulty": 3,
+      "stem": "Build the word you hear.",
+      "displayWord": "quiz",
+      "audioText": "quiz",
+      "graphemes": [
+        "qu",
+        "i",
+        "z"
+      ],
+      "distractorGraphemes": [
+        "s",
+        "a",
+        "t",
+        "p"
+      ],
+      "missedConceptOnFail": "vowel-short-u",
+      "rationale": "quiz = qu-i-z.",
+      "decodableWithin": "SP-cvc-4"
+    }
+  ],
+  "lessons": {
+    "SP-cvc-4": {
+      "iCanStatement": "I can spell short words with j, v, w, x, y, z and qu.",
+      "explanation": "Build each sound. x is one tile that says /ks/ (box). qu is one tile that says /kw/ (quiz) — q and u always go together.",
+      "workedExamples": [
+        {
+          "text": "box",
+          "note": "Hear b-o-x → b · o · x"
+        },
+        {
+          "text": "quiz",
+          "note": "Hear qu-i-z → qu · i · z"
+        }
+      ]
+    }
+  }
+}

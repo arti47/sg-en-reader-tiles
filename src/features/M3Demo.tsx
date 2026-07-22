@@ -13,7 +13,7 @@ export function M3Demo() {
   const comp = getPack('comp-L01')?.items[0] as PackItem
   const dict = getPack('dictation-L02-cvc')?.items[0] as PackItem
   const edit = getPack('sm-L01-editing')?.items[0] as PackItem
-  const spell = getPack('spelling-L02-cvc-short-vowels')?.items[0] as PackItem
+  const spell = getPack('spelling-L02a-cvc-1')?.items[0] as PackItem
   if (import.meta.env.DEV) (window as unknown as { __m3?: unknown }).__m3 = { cloze, comp, dict, edit, spell }
   return (
     <div className="stack">

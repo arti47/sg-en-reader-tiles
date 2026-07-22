@@ -2,8 +2,14 @@
 import type { ContentPack, PackItem, SkillDef, Lesson, Difficulty } from '../types'
 import scope from '../data/scopeAndSequence.json'
 import phonicsLs from '../data/packs/phonics-L01-letter-sounds.json'
-import phonicsCvc from '../data/packs/phonics-L02-cvc-short-vowels.json'
-import spellingCvc from '../data/packs/spelling-L02-cvc-short-vowels.json'
+import phonicsCvc1 from '../data/packs/phonics-L02a-cvc-1.json'
+import spellingCvc1 from '../data/packs/spelling-L02a-cvc-1.json'
+import phonicsCvc2 from '../data/packs/phonics-L02b-cvc-2.json'
+import spellingCvc2 from '../data/packs/spelling-L02b-cvc-2.json'
+import phonicsCvc3 from '../data/packs/phonics-L02c-cvc-3.json'
+import spellingCvc3 from '../data/packs/spelling-L02c-cvc-3.json'
+import phonicsCvc4 from '../data/packs/phonics-L02d-cvc-4.json'
+import spellingCvc4 from '../data/packs/spelling-L02d-cvc-4.json'
 import phonicsDig from '../data/packs/phonics-L03-digraphs.json'
 import spellingDig from '../data/packs/spelling-L03-digraphs.json'
 import phonicsBl from '../data/packs/phonics-L04-blends.json'
@@ -54,8 +60,14 @@ import reading8 from '../data/packs/reading-L08-two-syllable.json'
 
 const PACKS: ContentPack[] = [
   phonicsLs as ContentPack,
-  phonicsCvc as ContentPack,
-  spellingCvc as ContentPack,
+  phonicsCvc1 as ContentPack,
+  spellingCvc1 as ContentPack,
+  phonicsCvc2 as ContentPack,
+  spellingCvc2 as ContentPack,
+  phonicsCvc3 as ContentPack,
+  spellingCvc3 as ContentPack,
+  phonicsCvc4 as ContentPack,
+  spellingCvc4 as ContentPack,
   phonicsDig as ContentPack,
   spellingDig as ContentPack,
   phonicsBl as ContentPack,

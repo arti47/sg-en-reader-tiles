@@ -1,0 +1,416 @@
+{
+  "packId": "phonics-L02a-cvc-1",
+  "strand": "phonics",
+  "skillIds": [
+    "PH-cvc-1"
+  ],
+  "version": 1,
+  "items": [
+    {
+      "id": "ph-c1-001",
+      "skillId": "PH-cvc-1",
+      "itemType": "decode_choice",
+      "difficulty": 1,
+      "stem": "Tap the word you hear.",
+      "audioText": "sat",
+      "choices": [
+        {
+          "id": "a",
+          "label": "sat"
+        },
+        {
+          "id": "b",
+          "label": "sap"
+        },
+        {
+          "id": "c",
+          "label": "tap"
+        }
+      ],
+      "correctChoiceId": "a",
+      "missedConceptOnFail": "vowel-short-a",
+      "rationale": "s-a-t = sat.",
+      "decodableWithin": "PH-cvc-1"
+    },
+    {
+      "id": "ph-c1-002",
+      "skillId": "PH-cvc-1",
+      "itemType": "decode_choice",
+      "difficulty": 2,
+      "stem": "Tap the word you hear.",
+      "audioText": "sap",
+      "choices": [
+        {
+          "id": "a",
+          "label": "tap"
+        },
+        {
+          "id": "b",
+          "label": "sap"
+        },
+        {
+          "id": "c",
+          "label": "tan"
+        }
+      ],
+      "correctChoiceId": "b",
+      "missedConceptOnFail": "vowel-short-a",
+      "rationale": "s-a-p = sap.",
+      "decodableWithin": "PH-cvc-1"
+    },
+    {
+      "id": "ph-c1-003",
+      "skillId": "PH-cvc-1",
+      "itemType": "decode_choice",
+      "difficulty": 3,
+      "stem": "Tap the word you hear.",
+      "audioText": "tap",
+      "choices": [
+        {
+          "id": "a",
+          "label": "tan"
+        },
+        {
+          "id": "b",
+          "label": "nap"
+        },
+        {
+          "id": "c",
+          "label": "tap"
+        }
+      ],
+      "correctChoiceId": "c",
+      "missedConceptOnFail": "vowel-short-a",
+      "rationale": "t-a-p = tap.",
+      "decodableWithin": "PH-cvc-1"
+    },
+    {
+      "id": "ph-c1-004",
+      "skillId": "PH-cvc-1",
+      "itemType": "decode_choice",
+      "difficulty": 1,
+      "stem": "Tap the word you hear.",
+      "audioText": "tan",
+      "choices": [
+        {
+          "id": "a",
+          "label": "tan"
+        },
+        {
+          "id": "b",
+          "label": "nap"
+        },
+        {
+          "id": "c",
+          "label": "pan"
+        }
+      ],
+      "correctChoiceId": "a",
+      "missedConceptOnFail": "vowel-short-a",
+      "rationale": "t-a-n = tan.",
+      "decodableWithin": "PH-cvc-1"
+    },
+    {
+      "id": "ph-c1-005",
+      "skillId": "PH-cvc-1",
+      "itemType": "decode_choice",
+      "difficulty": 2,
+      "stem": "Tap the word you hear.",
+      "audioText": "nap",
+      "choices": [
+        {
+          "id": "a",
+          "label": "pan"
+        },
+        {
+          "id": "b",
+          "label": "nap"
+        },
+        {
+          "id": "c",
+          "label": "pat"
+        }
+      ],
+      "correctChoiceId": "b",
+      "missedConceptOnFail": "vowel-short-a",
+      "rationale": "n-a-p = nap.",
+      "decodableWithin": "PH-cvc-1"
+    },
+    {
+      "id": "ph-c1-006",
+      "skillId": "PH-cvc-1",
+      "itemType": "decode_choice",
+      "difficulty": 3,
+      "stem": "Tap the word you hear.",
+      "audioText": "pan",
+      "choices": [
+        {
+          "id": "a",
+          "label": "pat"
+        },
+        {
+          "id": "b",
+          "label": "sit"
+        },
+        {
+          "id": "c",
+          "label": "pan"
+        }
+      ],
+      "correctChoiceId": "c",
+      "missedConceptOnFail": "vowel-short-a",
+      "rationale": "p-a-n = pan.",
+      "decodableWithin": "PH-cvc-1"
+    },
+    {
+      "id": "ph-c1-007",
+      "skillId": "PH-cvc-1",
+      "itemType": "decode_choice",
+      "difficulty": 1,
+      "stem": "Tap the word you hear.",
+      "audioText": "pat",
+      "choices": [
+        {
+          "id": "a",
+          "label": "pat"
+        },
+        {
+          "id": "b",
+          "label": "sit"
+        },
+        {
+          "id": "c",
+          "label": "sip"
+        }
+      ],
+      "correctChoiceId": "a",
+      "missedConceptOnFail": "vowel-short-a",
+      "rationale": "p-a-t = pat.",
+      "decodableWithin": "PH-cvc-1"
+    },
+    {
+      "id": "ph-c1-008",
+      "skillId": "PH-cvc-1",
+      "itemType": "decode_choice",
+      "difficulty": 2,
+      "stem": "Tap the word you hear.",
+      "audioText": "sit",
+      "choices": [
+        {
+          "id": "a",
+          "label": "sip"
+        },
+        {
+          "id": "b",
+          "label": "sit"
+        },
+        {
+          "id": "c",
+          "label": "sin"
+        }
+      ],
+      "correctChoiceId": "b",
+      "missedConceptOnFail": "vowel-short-i",
+      "rationale": "s-i-t = sit.",
+      "decodableWithin": "PH-cvc-1"
+    },
+    {
+      "id": "ph-c1-009",
+      "skillId": "PH-cvc-1",
+      "itemType": "decode_choice",
+      "difficulty": 3,
+      "stem": "Tap the word you hear.",
+      "audioText": "sip",
+      "choices": [
+        {
+          "id": "a",
+          "label": "sin"
+        },
+        {
+          "id": "b",
+          "label": "tip"
+        },
+        {
+          "id": "c",
+          "label": "sip"
+        }
+      ],
+      "correctChoiceId": "c",
+      "missedConceptOnFail": "vowel-short-i",
+      "rationale": "s-i-p = sip.",
+      "decodableWithin": "PH-cvc-1"
+    },
+    {
+      "id": "ph-c1-010",
+      "skillId": "PH-cvc-1",
+      "itemType": "decode_choice",
+      "difficulty": 1,
+      "stem": "Tap the word you hear.",
+      "audioText": "sin",
+      "choices": [
+        {
+          "id": "a",
+          "label": "sin"
+        },
+        {
+          "id": "b",
+          "label": "tip"
+        },
+        {
+          "id": "c",
+          "label": "tin"
+        }
+      ],
+      "correctChoiceId": "a",
+      "missedConceptOnFail": "vowel-short-i",
+      "rationale": "s-i-n = sin.",
+      "decodableWithin": "PH-cvc-1"
+    },
+    {
+      "id": "ph-c1-011",
+      "skillId": "PH-cvc-1",
+      "itemType": "decode_choice",
+      "difficulty": 2,
+      "stem": "Tap the word you hear.",
+      "audioText": "tip",
+      "choices": [
+        {
+          "id": "a",
+          "label": "tin"
+        },
+        {
+          "id": "b",
+          "label": "tip"
+        },
+        {
+          "id": "c",
+          "label": "pit"
+        }
+      ],
+      "correctChoiceId": "b",
+      "missedConceptOnFail": "vowel-short-i",
+      "rationale": "t-i-p = tip.",
+      "decodableWithin": "PH-cvc-1"
+    },
+    {
+      "id": "ph-c1-012",
+      "skillId": "PH-cvc-1",
+      "itemType": "decode_choice",
+      "difficulty": 3,
+      "stem": "Tap the word you hear.",
+      "audioText": "tin",
+      "choices": [
+        {
+          "id": "a",
+          "label": "pit"
+        },
+        {
+          "id": "b",
+          "label": "pin"
+        },
+        {
+          "id": "c",
+          "label": "tin"
+        }
+      ],
+      "correctChoiceId": "c",
+      "missedConceptOnFail": "vowel-short-i",
+      "rationale": "t-i-n = tin.",
+      "decodableWithin": "PH-cvc-1"
+    },
+    {
+      "id": "ph-c1-013",
+      "skillId": "PH-cvc-1",
+      "itemType": "decode_choice",
+      "difficulty": 1,
+      "stem": "Tap the word you hear.",
+      "audioText": "pit",
+      "choices": [
+        {
+          "id": "a",
+          "label": "pit"
+        },
+        {
+          "id": "b",
+          "label": "pin"
+        },
+        {
+          "id": "c",
+          "label": "nip"
+        }
+      ],
+      "correctChoiceId": "a",
+      "missedConceptOnFail": "vowel-short-i",
+      "rationale": "p-i-t = pit.",
+      "decodableWithin": "PH-cvc-1"
+    },
+    {
+      "id": "ph-c1-014",
+      "skillId": "PH-cvc-1",
+      "itemType": "decode_choice",
+      "difficulty": 2,
+      "stem": "Tap the word you hear.",
+      "audioText": "pin",
+      "choices": [
+        {
+          "id": "a",
+          "label": "nip"
+        },
+        {
+          "id": "b",
+          "label": "pin"
+        },
+        {
+          "id": "c",
+          "label": "sat"
+        }
+      ],
+      "correctChoiceId": "b",
+      "missedConceptOnFail": "vowel-short-i",
+      "rationale": "p-i-n = pin.",
+      "decodableWithin": "PH-cvc-1"
+    },
+    {
+      "id": "ph-c1-015",
+      "skillId": "PH-cvc-1",
+      "itemType": "decode_choice",
+      "difficulty": 3,
+      "stem": "Tap the word you hear.",
+      "audioText": "nip",
+      "choices": [
+        {
+          "id": "a",
+          "label": "sat"
+        },
+        {
+          "id": "b",
+          "label": "sap"
+        },
+        {
+          "id": "c",
+          "label": "nip"
+        }
+      ],
+      "correctChoiceId": "c",
+      "missedConceptOnFail": "vowel-short-i",
+      "rationale": "n-i-p = nip.",
+      "decodableWithin": "PH-cvc-1"
+    }
+  ],
+  "lessons": {
+    "PH-cvc-1": {
+      "iCanStatement": "I can read short words with s, a, t, p, i, n.",
+      "explanation": "Learn six sounds: s, a, t, p, i, n. Say each sound, then blend them together to read a word: s-a-t → sat, p-i-n → pin. Read left to right, sound by sound.",
+      "workedExamples": [
+        {
+          "text": "sat",
+          "note": "s · a · t → sat"
+        },
+        {
+          "text": "pin",
+          "note": "p · i · n → pin"
+        }
+      ]
+    }
+  }
+}
