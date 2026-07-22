@@ -1,0 +1,1118 @@
+{
+  "packId": "phonics-L09a-diphthongs-a",
+  "strand": "phonics",
+  "skillIds": [
+    "PH-diphthongs-a"
+  ],
+  "version": 1,
+  "items": [
+    {
+      "id": "ph-dia-001",
+      "skillId": "PH-diphthongs-a",
+      "itemType": "decode_choice",
+      "difficulty": 1,
+      "stem": "Tap the word you hear.",
+      "audioText": "oil",
+      "choices": [
+        {
+          "id": "a",
+          "label": "oil"
+        },
+        {
+          "id": "b",
+          "label": "coin"
+        },
+        {
+          "id": "c",
+          "label": "boil"
+        }
+      ],
+      "correctChoiceId": "a",
+      "missedConceptOnFail": "diphthong-oi",
+      "rationale": "oi-l = oil.",
+      "decodableWithin": "PH-diphthongs-a"
+    },
+    {
+      "id": "ph-dia-002",
+      "skillId": "PH-diphthongs-a",
+      "itemType": "decode_choice",
+      "difficulty": 1,
+      "stem": "Tap the word you hear.",
+      "audioText": "coin",
+      "choices": [
+        {
+          "id": "a",
+          "label": "join"
+        },
+        {
+          "id": "b",
+          "label": "coin"
+        },
+        {
+          "id": "c",
+          "label": "boil"
+        }
+      ],
+      "correctChoiceId": "b",
+      "missedConceptOnFail": "diphthong-oi",
+      "rationale": "c-oi-n = coin.",
+      "decodableWithin": "PH-diphthongs-a"
+    },
+    {
+      "id": "ph-dia-003",
+      "skillId": "PH-diphthongs-a",
+      "itemType": "decode_choice",
+      "difficulty": 2,
+      "stem": "Tap the word you hear.",
+      "audioText": "boil",
+      "choices": [
+        {
+          "id": "a",
+          "label": "soil"
+        },
+        {
+          "id": "b",
+          "label": "coil"
+        },
+        {
+          "id": "c",
+          "label": "boil"
+        }
+      ],
+      "correctChoiceId": "c",
+      "missedConceptOnFail": "diphthong-oi",
+      "rationale": "b-oi-l = boil.",
+      "decodableWithin": "PH-diphthongs-a"
+    },
+    {
+      "id": "ph-dia-004",
+      "skillId": "PH-diphthongs-a",
+      "itemType": "decode_choice",
+      "difficulty": 2,
+      "stem": "Tap the word you hear.",
+      "audioText": "soil",
+      "choices": [
+        {
+          "id": "a",
+          "label": "soil"
+        },
+        {
+          "id": "b",
+          "label": "boil"
+        },
+        {
+          "id": "c",
+          "label": "coil"
+        }
+      ],
+      "correctChoiceId": "a",
+      "missedConceptOnFail": "diphthong-oi",
+      "rationale": "s-oi-l = soil.",
+      "decodableWithin": "PH-diphthongs-a"
+    },
+    {
+      "id": "ph-dia-005",
+      "skillId": "PH-diphthongs-a",
+      "itemType": "decode_choice",
+      "difficulty": 2,
+      "stem": "Tap the word you hear.",
+      "audioText": "join",
+      "choices": [
+        {
+          "id": "a",
+          "label": "coin"
+        },
+        {
+          "id": "b",
+          "label": "join"
+        },
+        {
+          "id": "c",
+          "label": "joint"
+        }
+      ],
+      "correctChoiceId": "b",
+      "missedConceptOnFail": "diphthong-oi",
+      "rationale": "j-oi-n = join.",
+      "decodableWithin": "PH-diphthongs-a"
+    },
+    {
+      "id": "ph-dia-006",
+      "skillId": "PH-diphthongs-a",
+      "itemType": "decode_choice",
+      "difficulty": 2,
+      "stem": "Tap the word you hear.",
+      "audioText": "coil",
+      "choices": [
+        {
+          "id": "a",
+          "label": "boil"
+        },
+        {
+          "id": "b",
+          "label": "foil"
+        },
+        {
+          "id": "c",
+          "label": "coil"
+        }
+      ],
+      "correctChoiceId": "c",
+      "missedConceptOnFail": "diphthong-oi",
+      "rationale": "c-oi-l = coil.",
+      "decodableWithin": "PH-diphthongs-a"
+    },
+    {
+      "id": "ph-dia-007",
+      "skillId": "PH-diphthongs-a",
+      "itemType": "decode_choice",
+      "difficulty": 2,
+      "stem": "Tap the word you hear.",
+      "audioText": "foil",
+      "choices": [
+        {
+          "id": "a",
+          "label": "foil"
+        },
+        {
+          "id": "b",
+          "label": "boil"
+        },
+        {
+          "id": "c",
+          "label": "soil"
+        }
+      ],
+      "correctChoiceId": "a",
+      "missedConceptOnFail": "diphthong-oi",
+      "rationale": "f-oi-l = foil.",
+      "decodableWithin": "PH-diphthongs-a"
+    },
+    {
+      "id": "ph-dia-008",
+      "skillId": "PH-diphthongs-a",
+      "itemType": "decode_choice",
+      "difficulty": 3,
+      "stem": "Tap the word you hear.",
+      "audioText": "point",
+      "choices": [
+        {
+          "id": "a",
+          "label": "joint"
+        },
+        {
+          "id": "b",
+          "label": "point"
+        },
+        {
+          "id": "c",
+          "label": "coin"
+        }
+      ],
+      "correctChoiceId": "b",
+      "missedConceptOnFail": "diphthong-oi",
+      "rationale": "p-oi-n-t = point.",
+      "decodableWithin": "PH-diphthongs-a"
+    },
+    {
+      "id": "ph-dia-009",
+      "skillId": "PH-diphthongs-a",
+      "itemType": "decode_choice",
+      "difficulty": 3,
+      "stem": "Tap the word you hear.",
+      "audioText": "joint",
+      "choices": [
+        {
+          "id": "a",
+          "label": "point"
+        },
+        {
+          "id": "b",
+          "label": "coin"
+        },
+        {
+          "id": "c",
+          "label": "joint"
+        }
+      ],
+      "correctChoiceId": "c",
+      "missedConceptOnFail": "diphthong-oi",
+      "rationale": "j-oi-n-t = joint.",
+      "decodableWithin": "PH-diphthongs-a"
+    },
+    {
+      "id": "ph-dia-010",
+      "skillId": "PH-diphthongs-a",
+      "itemType": "decode_choice",
+      "difficulty": 3,
+      "stem": "Tap the word you hear.",
+      "audioText": "spoil",
+      "choices": [
+        {
+          "id": "a",
+          "label": "spoil"
+        },
+        {
+          "id": "b",
+          "label": "boil"
+        },
+        {
+          "id": "c",
+          "label": "soil"
+        }
+      ],
+      "correctChoiceId": "a",
+      "missedConceptOnFail": "diphthong-oi",
+      "rationale": "s-p-oi-l = spoil.",
+      "decodableWithin": "PH-diphthongs-a"
+    },
+    {
+      "id": "ph-dia-011",
+      "skillId": "PH-diphthongs-a",
+      "itemType": "decode_choice",
+      "difficulty": 1,
+      "stem": "Tap the word you hear.",
+      "audioText": "boy",
+      "choices": [
+        {
+          "id": "a",
+          "label": "toy"
+        },
+        {
+          "id": "b",
+          "label": "boy"
+        },
+        {
+          "id": "c",
+          "label": "joy"
+        }
+      ],
+      "correctChoiceId": "b",
+      "missedConceptOnFail": "diphthong-oy",
+      "rationale": "b-oy = boy.",
+      "decodableWithin": "PH-diphthongs-a"
+    },
+    {
+      "id": "ph-dia-012",
+      "skillId": "PH-diphthongs-a",
+      "itemType": "decode_choice",
+      "difficulty": 1,
+      "stem": "Tap the word you hear.",
+      "audioText": "toy",
+      "choices": [
+        {
+          "id": "a",
+          "label": "boy"
+        },
+        {
+          "id": "b",
+          "label": "joy"
+        },
+        {
+          "id": "c",
+          "label": "toy"
+        }
+      ],
+      "correctChoiceId": "c",
+      "missedConceptOnFail": "diphthong-oy",
+      "rationale": "t-oy = toy.",
+      "decodableWithin": "PH-diphthongs-a"
+    },
+    {
+      "id": "ph-dia-013",
+      "skillId": "PH-diphthongs-a",
+      "itemType": "decode_choice",
+      "difficulty": 1,
+      "stem": "Tap the word you hear.",
+      "audioText": "joy",
+      "choices": [
+        {
+          "id": "a",
+          "label": "joy"
+        },
+        {
+          "id": "b",
+          "label": "boy"
+        },
+        {
+          "id": "c",
+          "label": "coy"
+        }
+      ],
+      "correctChoiceId": "a",
+      "missedConceptOnFail": "diphthong-oy",
+      "rationale": "j-oy = joy.",
+      "decodableWithin": "PH-diphthongs-a"
+    },
+    {
+      "id": "ph-dia-014",
+      "skillId": "PH-diphthongs-a",
+      "itemType": "decode_choice",
+      "difficulty": 2,
+      "stem": "Tap the word you hear.",
+      "audioText": "coy",
+      "choices": [
+        {
+          "id": "a",
+          "label": "soy"
+        },
+        {
+          "id": "b",
+          "label": "coy"
+        },
+        {
+          "id": "c",
+          "label": "joy"
+        }
+      ],
+      "correctChoiceId": "b",
+      "missedConceptOnFail": "diphthong-oy",
+      "rationale": "c-oy = coy.",
+      "decodableWithin": "PH-diphthongs-a"
+    },
+    {
+      "id": "ph-dia-015",
+      "skillId": "PH-diphthongs-a",
+      "itemType": "decode_choice",
+      "difficulty": 2,
+      "stem": "Tap the word you hear.",
+      "audioText": "soy",
+      "choices": [
+        {
+          "id": "a",
+          "label": "coy"
+        },
+        {
+          "id": "b",
+          "label": "joy"
+        },
+        {
+          "id": "c",
+          "label": "soy"
+        }
+      ],
+      "correctChoiceId": "c",
+      "missedConceptOnFail": "diphthong-oy",
+      "rationale": "s-oy = soy.",
+      "decodableWithin": "PH-diphthongs-a"
+    },
+    {
+      "id": "ph-dia-016",
+      "skillId": "PH-diphthongs-a",
+      "itemType": "decode_choice",
+      "difficulty": 3,
+      "stem": "Tap the word you hear.",
+      "audioText": "ploy",
+      "choices": [
+        {
+          "id": "a",
+          "label": "ploy"
+        },
+        {
+          "id": "b",
+          "label": "boy"
+        },
+        {
+          "id": "c",
+          "label": "toy"
+        }
+      ],
+      "correctChoiceId": "a",
+      "missedConceptOnFail": "diphthong-oy",
+      "rationale": "p-l-oy = ploy.",
+      "decodableWithin": "PH-diphthongs-a"
+    },
+    {
+      "id": "ph-dia-017",
+      "skillId": "PH-diphthongs-a",
+      "itemType": "decode_choice",
+      "difficulty": 1,
+      "stem": "Tap the word you hear.",
+      "audioText": "out",
+      "choices": [
+        {
+          "id": "a",
+          "label": "loud"
+        },
+        {
+          "id": "b",
+          "label": "out"
+        },
+        {
+          "id": "c",
+          "label": "shout"
+        }
+      ],
+      "correctChoiceId": "b",
+      "missedConceptOnFail": "diphthong-ou",
+      "rationale": "ou-t = out.",
+      "decodableWithin": "PH-diphthongs-a"
+    },
+    {
+      "id": "ph-dia-018",
+      "skillId": "PH-diphthongs-a",
+      "itemType": "decode_choice",
+      "difficulty": 1,
+      "stem": "Tap the word you hear.",
+      "audioText": "loud",
+      "choices": [
+        {
+          "id": "a",
+          "label": "cloud"
+        },
+        {
+          "id": "b",
+          "label": "proud"
+        },
+        {
+          "id": "c",
+          "label": "loud"
+        }
+      ],
+      "correctChoiceId": "c",
+      "missedConceptOnFail": "diphthong-ou",
+      "rationale": "l-ou-d = loud.",
+      "decodableWithin": "PH-diphthongs-a"
+    },
+    {
+      "id": "ph-dia-019",
+      "skillId": "PH-diphthongs-a",
+      "itemType": "decode_choice",
+      "difficulty": 2,
+      "stem": "Tap the word you hear.",
+      "audioText": "cloud",
+      "choices": [
+        {
+          "id": "a",
+          "label": "cloud"
+        },
+        {
+          "id": "b",
+          "label": "loud"
+        },
+        {
+          "id": "c",
+          "label": "proud"
+        }
+      ],
+      "correctChoiceId": "a",
+      "missedConceptOnFail": "diphthong-ou",
+      "rationale": "c-l-ou-d = cloud.",
+      "decodableWithin": "PH-diphthongs-a"
+    },
+    {
+      "id": "ph-dia-020",
+      "skillId": "PH-diphthongs-a",
+      "itemType": "decode_choice",
+      "difficulty": 3,
+      "stem": "Tap the word you hear.",
+      "audioText": "proud",
+      "choices": [
+        {
+          "id": "a",
+          "label": "loud"
+        },
+        {
+          "id": "b",
+          "label": "proud"
+        },
+        {
+          "id": "c",
+          "label": "cloud"
+        }
+      ],
+      "correctChoiceId": "b",
+      "missedConceptOnFail": "diphthong-ou",
+      "rationale": "p-r-ou-d = proud.",
+      "decodableWithin": "PH-diphthongs-a"
+    },
+    {
+      "id": "ph-dia-021",
+      "skillId": "PH-diphthongs-a",
+      "itemType": "decode_choice",
+      "difficulty": 2,
+      "stem": "Tap the word you hear.",
+      "audioText": "round",
+      "choices": [
+        {
+          "id": "a",
+          "label": "sound"
+        },
+        {
+          "id": "b",
+          "label": "found"
+        },
+        {
+          "id": "c",
+          "label": "round"
+        }
+      ],
+      "correctChoiceId": "c",
+      "missedConceptOnFail": "diphthong-ou",
+      "rationale": "r-ou-n-d = round.",
+      "decodableWithin": "PH-diphthongs-a"
+    },
+    {
+      "id": "ph-dia-022",
+      "skillId": "PH-diphthongs-a",
+      "itemType": "decode_choice",
+      "difficulty": 2,
+      "stem": "Tap the word you hear.",
+      "audioText": "sound",
+      "choices": [
+        {
+          "id": "a",
+          "label": "sound"
+        },
+        {
+          "id": "b",
+          "label": "round"
+        },
+        {
+          "id": "c",
+          "label": "found"
+        }
+      ],
+      "correctChoiceId": "a",
+      "missedConceptOnFail": "diphthong-ou",
+      "rationale": "s-ou-n-d = sound.",
+      "decodableWithin": "PH-diphthongs-a"
+    },
+    {
+      "id": "ph-dia-023",
+      "skillId": "PH-diphthongs-a",
+      "itemType": "decode_choice",
+      "difficulty": 2,
+      "stem": "Tap the word you hear.",
+      "audioText": "found",
+      "choices": [
+        {
+          "id": "a",
+          "label": "round"
+        },
+        {
+          "id": "b",
+          "label": "found"
+        },
+        {
+          "id": "c",
+          "label": "pound"
+        }
+      ],
+      "correctChoiceId": "b",
+      "missedConceptOnFail": "diphthong-ou",
+      "rationale": "f-ou-n-d = found.",
+      "decodableWithin": "PH-diphthongs-a"
+    },
+    {
+      "id": "ph-dia-024",
+      "skillId": "PH-diphthongs-a",
+      "itemType": "decode_choice",
+      "difficulty": 3,
+      "stem": "Tap the word you hear.",
+      "audioText": "pound",
+      "choices": [
+        {
+          "id": "a",
+          "label": "round"
+        },
+        {
+          "id": "b",
+          "label": "sound"
+        },
+        {
+          "id": "c",
+          "label": "pound"
+        }
+      ],
+      "correctChoiceId": "c",
+      "missedConceptOnFail": "diphthong-ou",
+      "rationale": "p-ou-n-d = pound.",
+      "decodableWithin": "PH-diphthongs-a"
+    },
+    {
+      "id": "ph-dia-025",
+      "skillId": "PH-diphthongs-a",
+      "itemType": "decode_choice",
+      "difficulty": 3,
+      "stem": "Tap the word you hear.",
+      "audioText": "ground",
+      "choices": [
+        {
+          "id": "a",
+          "label": "ground"
+        },
+        {
+          "id": "b",
+          "label": "round"
+        },
+        {
+          "id": "c",
+          "label": "sound"
+        }
+      ],
+      "correctChoiceId": "a",
+      "missedConceptOnFail": "diphthong-ou",
+      "rationale": "g-r-ou-n-d = ground.",
+      "decodableWithin": "PH-diphthongs-a"
+    },
+    {
+      "id": "ph-dia-026",
+      "skillId": "PH-diphthongs-a",
+      "itemType": "decode_choice",
+      "difficulty": 3,
+      "stem": "Tap the word you hear.",
+      "audioText": "count",
+      "choices": [
+        {
+          "id": "a",
+          "label": "found"
+        },
+        {
+          "id": "b",
+          "label": "count"
+        },
+        {
+          "id": "c",
+          "label": "round"
+        }
+      ],
+      "correctChoiceId": "b",
+      "missedConceptOnFail": "diphthong-ou",
+      "rationale": "c-ou-n-t = count.",
+      "decodableWithin": "PH-diphthongs-a"
+    },
+    {
+      "id": "ph-dia-027",
+      "skillId": "PH-diphthongs-a",
+      "itemType": "decode_choice",
+      "difficulty": 2,
+      "stem": "Tap the word you hear.",
+      "audioText": "mouth",
+      "choices": [
+        {
+          "id": "a",
+          "label": "south"
+        },
+        {
+          "id": "b",
+          "label": "shout"
+        },
+        {
+          "id": "c",
+          "label": "mouth"
+        }
+      ],
+      "correctChoiceId": "c",
+      "missedConceptOnFail": "diphthong-ou",
+      "rationale": "m-ou-th = mouth.",
+      "decodableWithin": "PH-diphthongs-a"
+    },
+    {
+      "id": "ph-dia-028",
+      "skillId": "PH-diphthongs-a",
+      "itemType": "decode_choice",
+      "difficulty": 2,
+      "stem": "Tap the word you hear.",
+      "audioText": "south",
+      "choices": [
+        {
+          "id": "a",
+          "label": "south"
+        },
+        {
+          "id": "b",
+          "label": "mouth"
+        },
+        {
+          "id": "c",
+          "label": "shout"
+        }
+      ],
+      "correctChoiceId": "a",
+      "missedConceptOnFail": "diphthong-ou",
+      "rationale": "s-ou-th = south.",
+      "decodableWithin": "PH-diphthongs-a"
+    },
+    {
+      "id": "ph-dia-029",
+      "skillId": "PH-diphthongs-a",
+      "itemType": "decode_choice",
+      "difficulty": 2,
+      "stem": "Tap the word you hear.",
+      "audioText": "shout",
+      "choices": [
+        {
+          "id": "a",
+          "label": "scout"
+        },
+        {
+          "id": "b",
+          "label": "shout"
+        },
+        {
+          "id": "c",
+          "label": "out"
+        }
+      ],
+      "correctChoiceId": "b",
+      "missedConceptOnFail": "diphthong-ou",
+      "rationale": "sh-ou-t = shout.",
+      "decodableWithin": "PH-diphthongs-a"
+    },
+    {
+      "id": "ph-dia-030",
+      "skillId": "PH-diphthongs-a",
+      "itemType": "decode_choice",
+      "difficulty": 3,
+      "stem": "Tap the word you hear.",
+      "audioText": "scout",
+      "choices": [
+        {
+          "id": "a",
+          "label": "shout"
+        },
+        {
+          "id": "b",
+          "label": "out"
+        },
+        {
+          "id": "c",
+          "label": "scout"
+        }
+      ],
+      "correctChoiceId": "c",
+      "missedConceptOnFail": "diphthong-ou",
+      "rationale": "s-c-ou-t = scout.",
+      "decodableWithin": "PH-diphthongs-a"
+    },
+    {
+      "id": "ph-dia-031",
+      "skillId": "PH-diphthongs-a",
+      "itemType": "decode_choice",
+      "difficulty": 1,
+      "stem": "Tap the word you hear.",
+      "audioText": "cow",
+      "choices": [
+        {
+          "id": "a",
+          "label": "cow"
+        },
+        {
+          "id": "b",
+          "label": "how"
+        },
+        {
+          "id": "c",
+          "label": "now"
+        }
+      ],
+      "correctChoiceId": "a",
+      "missedConceptOnFail": "diphthong-ow",
+      "rationale": "c-ow = cow.",
+      "decodableWithin": "PH-diphthongs-a"
+    },
+    {
+      "id": "ph-dia-032",
+      "skillId": "PH-diphthongs-a",
+      "itemType": "decode_choice",
+      "difficulty": 1,
+      "stem": "Tap the word you hear.",
+      "audioText": "how",
+      "choices": [
+        {
+          "id": "a",
+          "label": "cow"
+        },
+        {
+          "id": "b",
+          "label": "how"
+        },
+        {
+          "id": "c",
+          "label": "now"
+        }
+      ],
+      "correctChoiceId": "b",
+      "missedConceptOnFail": "diphthong-ow",
+      "rationale": "h-ow = how.",
+      "decodableWithin": "PH-diphthongs-a"
+    },
+    {
+      "id": "ph-dia-033",
+      "skillId": "PH-diphthongs-a",
+      "itemType": "decode_choice",
+      "difficulty": 1,
+      "stem": "Tap the word you hear.",
+      "audioText": "now",
+      "choices": [
+        {
+          "id": "a",
+          "label": "cow"
+        },
+        {
+          "id": "b",
+          "label": "how"
+        },
+        {
+          "id": "c",
+          "label": "now"
+        }
+      ],
+      "correctChoiceId": "c",
+      "missedConceptOnFail": "diphthong-ow",
+      "rationale": "n-ow = now.",
+      "decodableWithin": "PH-diphthongs-a"
+    },
+    {
+      "id": "ph-dia-034",
+      "skillId": "PH-diphthongs-a",
+      "itemType": "decode_choice",
+      "difficulty": 2,
+      "stem": "Tap the word you hear.",
+      "audioText": "owl",
+      "choices": [
+        {
+          "id": "a",
+          "label": "owl"
+        },
+        {
+          "id": "b",
+          "label": "down"
+        },
+        {
+          "id": "c",
+          "label": "town"
+        }
+      ],
+      "correctChoiceId": "a",
+      "missedConceptOnFail": "diphthong-ow",
+      "rationale": "ow-l = owl.",
+      "decodableWithin": "PH-diphthongs-a"
+    },
+    {
+      "id": "ph-dia-035",
+      "skillId": "PH-diphthongs-a",
+      "itemType": "decode_choice",
+      "difficulty": 1,
+      "stem": "Tap the word you hear.",
+      "audioText": "down",
+      "choices": [
+        {
+          "id": "a",
+          "label": "town"
+        },
+        {
+          "id": "b",
+          "label": "down"
+        },
+        {
+          "id": "c",
+          "label": "gown"
+        }
+      ],
+      "correctChoiceId": "b",
+      "missedConceptOnFail": "diphthong-ow",
+      "rationale": "d-ow-n = down.",
+      "decodableWithin": "PH-diphthongs-a"
+    },
+    {
+      "id": "ph-dia-036",
+      "skillId": "PH-diphthongs-a",
+      "itemType": "decode_choice",
+      "difficulty": 2,
+      "stem": "Tap the word you hear.",
+      "audioText": "town",
+      "choices": [
+        {
+          "id": "a",
+          "label": "down"
+        },
+        {
+          "id": "b",
+          "label": "gown"
+        },
+        {
+          "id": "c",
+          "label": "town"
+        }
+      ],
+      "correctChoiceId": "c",
+      "missedConceptOnFail": "diphthong-ow",
+      "rationale": "t-ow-n = town.",
+      "decodableWithin": "PH-diphthongs-a"
+    },
+    {
+      "id": "ph-dia-037",
+      "skillId": "PH-diphthongs-a",
+      "itemType": "decode_choice",
+      "difficulty": 2,
+      "stem": "Tap the word you hear.",
+      "audioText": "gown",
+      "choices": [
+        {
+          "id": "a",
+          "label": "gown"
+        },
+        {
+          "id": "b",
+          "label": "down"
+        },
+        {
+          "id": "c",
+          "label": "town"
+        }
+      ],
+      "correctChoiceId": "a",
+      "missedConceptOnFail": "diphthong-ow",
+      "rationale": "g-ow-n = gown.",
+      "decodableWithin": "PH-diphthongs-a"
+    },
+    {
+      "id": "ph-dia-038",
+      "skillId": "PH-diphthongs-a",
+      "itemType": "decode_choice",
+      "difficulty": 3,
+      "stem": "Tap the word you hear.",
+      "audioText": "brown",
+      "choices": [
+        {
+          "id": "a",
+          "label": "crown"
+        },
+        {
+          "id": "b",
+          "label": "brown"
+        },
+        {
+          "id": "c",
+          "label": "clown"
+        }
+      ],
+      "correctChoiceId": "b",
+      "missedConceptOnFail": "diphthong-ow",
+      "rationale": "b-r-ow-n = brown.",
+      "decodableWithin": "PH-diphthongs-a"
+    },
+    {
+      "id": "ph-dia-039",
+      "skillId": "PH-diphthongs-a",
+      "itemType": "decode_choice",
+      "difficulty": 3,
+      "stem": "Tap the word you hear.",
+      "audioText": "crown",
+      "choices": [
+        {
+          "id": "a",
+          "label": "brown"
+        },
+        {
+          "id": "b",
+          "label": "clown"
+        },
+        {
+          "id": "c",
+          "label": "crown"
+        }
+      ],
+      "correctChoiceId": "c",
+      "missedConceptOnFail": "diphthong-ow",
+      "rationale": "c-r-ow-n = crown.",
+      "decodableWithin": "PH-diphthongs-a"
+    },
+    {
+      "id": "ph-dia-040",
+      "skillId": "PH-diphthongs-a",
+      "itemType": "decode_choice",
+      "difficulty": 3,
+      "stem": "Tap the word you hear.",
+      "audioText": "clown",
+      "choices": [
+        {
+          "id": "a",
+          "label": "clown"
+        },
+        {
+          "id": "b",
+          "label": "brown"
+        },
+        {
+          "id": "c",
+          "label": "frown"
+        }
+      ],
+      "correctChoiceId": "a",
+      "missedConceptOnFail": "diphthong-ow",
+      "rationale": "c-l-ow-n = clown.",
+      "decodableWithin": "PH-diphthongs-a"
+    },
+    {
+      "id": "ph-dia-041",
+      "skillId": "PH-diphthongs-a",
+      "itemType": "decode_choice",
+      "difficulty": 3,
+      "stem": "Tap the word you hear.",
+      "audioText": "frown",
+      "choices": [
+        {
+          "id": "a",
+          "label": "clown"
+        },
+        {
+          "id": "b",
+          "label": "frown"
+        },
+        {
+          "id": "c",
+          "label": "crown"
+        }
+      ],
+      "correctChoiceId": "b",
+      "missedConceptOnFail": "diphthong-ow",
+      "rationale": "f-r-ow-n = frown.",
+      "decodableWithin": "PH-diphthongs-a"
+    },
+    {
+      "id": "ph-dia-042",
+      "skillId": "PH-diphthongs-a",
+      "itemType": "decode_choice",
+      "difficulty": 3,
+      "stem": "Tap the word you hear.",
+      "audioText": "growl",
+      "choices": [
+        {
+          "id": "a",
+          "label": "brown"
+        },
+        {
+          "id": "b",
+          "label": "crown"
+        },
+        {
+          "id": "c",
+          "label": "growl"
+        }
+      ],
+      "correctChoiceId": "c",
+      "missedConceptOnFail": "diphthong-ow",
+      "rationale": "g-r-ow-l = growl.",
+      "decodableWithin": "PH-diphthongs-a"
+    }
+  ],
+  "lessons": {
+    "PH-diphthongs-a": {
+      "iCanStatement": "I can read words with oi, oy, ou and ow.",
+      "explanation": "A diphthong glides from one sound to another. oi/oy say /oy/ (coin, boy — oi in the middle, oy at the end). ou/ow say /ow/ (out, cow). Read the two letters as one gliding sound.",
+      "workedExamples": [
+        {
+          "text": "coin",
+          "note": "c · oi · n → coin (oi = /oy/)"
+        },
+        {
+          "text": "cow",
+          "note": "c · ow → cow (ow = /ow/)"
+        }
+      ]
+    }
+  }
+}

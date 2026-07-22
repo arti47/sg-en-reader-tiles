@@ -16,10 +16,14 @@ import phonicsVtA from '../data/packs/phonics-L07a-vowel-teams-a.json'
 import spellingVtA from '../data/packs/spelling-L07a-vowel-teams-a.json'
 import phonicsVtB from '../data/packs/phonics-L07b-vowel-teams-b.json'
 import spellingVtB from '../data/packs/spelling-L07b-vowel-teams-b.json'
-import phonicsRc from '../data/packs/phonics-L08-r-controlled.json'
-import spellingRc from '../data/packs/spelling-L08-r-controlled.json'
-import phonicsDi from '../data/packs/phonics-L09-diphthongs.json'
-import spellingDi from '../data/packs/spelling-L09-diphthongs.json'
+import phonicsRcA from '../data/packs/phonics-L08a-r-controlled-a.json'
+import spellingRcA from '../data/packs/spelling-L08a-r-controlled-a.json'
+import phonicsRcB from '../data/packs/phonics-L08b-r-controlled-b.json'
+import spellingRcB from '../data/packs/spelling-L08b-r-controlled-b.json'
+import phonicsDiA from '../data/packs/phonics-L09a-diphthongs-a.json'
+import spellingDiA from '../data/packs/spelling-L09a-diphthongs-a.json'
+import phonicsDiB from '../data/packs/phonics-L09b-diphthongs-b.json'
+import spellingDiB from '../data/packs/spelling-L09b-diphthongs-b.json'
 import phonics2s from '../data/packs/phonics-L10-two-syllable.json'
 import spelling2s from '../data/packs/spelling-L10-two-syllable.json'
 import phonicsSf from '../data/packs/phonics-L11-suffixes.json'
@@ -64,10 +68,14 @@ const PACKS: ContentPack[] = [
   spellingVtA as ContentPack,
   phonicsVtB as ContentPack,
   spellingVtB as ContentPack,
-  phonicsRc as ContentPack,
-  spellingRc as ContentPack,
-  phonicsDi as ContentPack,
-  spellingDi as ContentPack,
+  phonicsRcA as ContentPack,
+  spellingRcA as ContentPack,
+  phonicsRcB as ContentPack,
+  spellingRcB as ContentPack,
+  phonicsDiA as ContentPack,
+  spellingDiA as ContentPack,
+  phonicsDiB as ContentPack,
+  spellingDiB as ContentPack,
   phonics2s as ContentPack,
   spelling2s as ContentPack,
   phonicsSf as ContentPack,

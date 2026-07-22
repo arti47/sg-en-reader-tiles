@@ -435,11 +435,11 @@
     "id": "ar",
     "keyword": "car",
     "articulation": "Open your mouth and add r — /ar/",
-    "firstPattern": "PH-r-controlled",
+    "firstPattern": "PH-r-controlled-a",
     "spellings": [
       {
         "grapheme": "ar",
-        "pattern": "PH-r-controlled"
+        "pattern": "PH-r-controlled-a"
       }
     ]
   },
@@ -447,19 +447,19 @@
     "id": "or",
     "keyword": "fork",
     "articulation": "Round your mouth and add r — /or/",
-    "firstPattern": "PH-r-controlled",
+    "firstPattern": "PH-r-controlled-a",
     "spellings": [
       {
         "grapheme": "or",
-        "pattern": "PH-r-controlled"
+        "pattern": "PH-r-controlled-a"
       },
       {
         "grapheme": "aw",
-        "pattern": "PH-diphthongs"
+        "pattern": "PH-diphthongs-b"
       },
       {
         "grapheme": "au",
-        "pattern": "PH-diphthongs"
+        "pattern": "PH-diphthongs-b"
       }
     ]
   },
@@ -467,19 +467,19 @@
     "id": "ur",
     "keyword": "her",
     "articulation": "The bossy-r sound — /ur/ (er, ir, ur)",
-    "firstPattern": "PH-r-controlled",
+    "firstPattern": "PH-r-controlled-b",
     "spellings": [
       {
         "grapheme": "er",
-        "pattern": "PH-r-controlled"
+        "pattern": "PH-r-controlled-b"
       },
       {
         "grapheme": "ir",
-        "pattern": "PH-r-controlled"
+        "pattern": "PH-r-controlled-b"
       },
       {
         "grapheme": "ur",
-        "pattern": "PH-r-controlled"
+        "pattern": "PH-r-controlled-b"
       }
     ]
   },
@@ -487,15 +487,15 @@
     "id": "oi",
     "keyword": "coin",
     "articulation": "Lips round, then smile — /oi/",
-    "firstPattern": "PH-diphthongs",
+    "firstPattern": "PH-diphthongs-a",
     "spellings": [
       {
         "grapheme": "oi",
-        "pattern": "PH-diphthongs"
+        "pattern": "PH-diphthongs-a"
       },
       {
         "grapheme": "oy",
-        "pattern": "PH-diphthongs"
+        "pattern": "PH-diphthongs-a"
       }
     ]
   },
@@ -503,15 +503,15 @@
     "id": "ow",
     "keyword": "cow",
     "articulation": "Open, then round your lips — /ow/",
-    "firstPattern": "PH-diphthongs",
+    "firstPattern": "PH-diphthongs-a",
     "spellings": [
       {
         "grapheme": "ow",
-        "pattern": "PH-diphthongs"
+        "pattern": "PH-diphthongs-a"
       },
       {
         "grapheme": "ou",
-        "pattern": "PH-diphthongs"
+        "pattern": "PH-diphthongs-a"
       }
     ]
   },
@@ -519,11 +519,11 @@
     "id": "oo-short",
     "keyword": "book",
     "articulation": "Short and quick — /oo/",
-    "firstPattern": "PH-diphthongs",
+    "firstPattern": "PH-diphthongs-b",
     "spellings": [
       {
         "grapheme": "oo",
-        "pattern": "PH-diphthongs"
+        "pattern": "PH-diphthongs-b"
       }
     ]
   },

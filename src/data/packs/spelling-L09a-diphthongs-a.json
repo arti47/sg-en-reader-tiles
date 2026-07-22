@@ -1,0 +1,960 @@
+{
+  "packId": "spelling-L09a-diphthongs-a",
+  "strand": "spelling",
+  "skillIds": [
+    "SP-diphthongs-a"
+  ],
+  "version": 1,
+  "items": [
+    {
+      "id": "sp-dia-001",
+      "skillId": "SP-diphthongs-a",
+      "itemType": "build_word",
+      "difficulty": 1,
+      "stem": "Build the word you hear.",
+      "displayWord": "oil",
+      "audioText": "oil",
+      "graphemes": [
+        "oi",
+        "l"
+      ],
+      "distractorGraphemes": [
+        "oy",
+        "ou"
+      ],
+      "missedConceptOnFail": "diphthong-oi",
+      "rationale": "oil = oi-l.",
+      "decodableWithin": "SP-diphthongs-a"
+    },
+    {
+      "id": "sp-dia-002",
+      "skillId": "SP-diphthongs-a",
+      "itemType": "build_word",
+      "difficulty": 1,
+      "stem": "Build the word you hear.",
+      "displayWord": "coin",
+      "audioText": "coin",
+      "graphemes": [
+        "c",
+        "oi",
+        "n"
+      ],
+      "distractorGraphemes": [
+        "oy",
+        "ou"
+      ],
+      "missedConceptOnFail": "diphthong-oi",
+      "rationale": "coin = c-oi-n.",
+      "decodableWithin": "SP-diphthongs-a"
+    },
+    {
+      "id": "sp-dia-003",
+      "skillId": "SP-diphthongs-a",
+      "itemType": "build_word",
+      "difficulty": 2,
+      "stem": "Build the word you hear.",
+      "displayWord": "boil",
+      "audioText": "boil",
+      "graphemes": [
+        "b",
+        "oi",
+        "l"
+      ],
+      "distractorGraphemes": [
+        "oy",
+        "ou",
+        "ow"
+      ],
+      "missedConceptOnFail": "diphthong-oi",
+      "rationale": "boil = b-oi-l.",
+      "decodableWithin": "SP-diphthongs-a"
+    },
+    {
+      "id": "sp-dia-004",
+      "skillId": "SP-diphthongs-a",
+      "itemType": "build_word",
+      "difficulty": 2,
+      "stem": "Build the word you hear.",
+      "displayWord": "soil",
+      "audioText": "soil",
+      "graphemes": [
+        "s",
+        "oi",
+        "l"
+      ],
+      "distractorGraphemes": [
+        "oy",
+        "ou",
+        "ow"
+      ],
+      "missedConceptOnFail": "diphthong-oi",
+      "rationale": "soil = s-oi-l.",
+      "decodableWithin": "SP-diphthongs-a"
+    },
+    {
+      "id": "sp-dia-005",
+      "skillId": "SP-diphthongs-a",
+      "itemType": "build_word",
+      "difficulty": 2,
+      "stem": "Build the word you hear.",
+      "displayWord": "join",
+      "audioText": "join",
+      "graphemes": [
+        "j",
+        "oi",
+        "n"
+      ],
+      "distractorGraphemes": [
+        "oy",
+        "ou",
+        "ow"
+      ],
+      "missedConceptOnFail": "diphthong-oi",
+      "rationale": "join = j-oi-n.",
+      "decodableWithin": "SP-diphthongs-a"
+    },
+    {
+      "id": "sp-dia-006",
+      "skillId": "SP-diphthongs-a",
+      "itemType": "build_word",
+      "difficulty": 2,
+      "stem": "Build the word you hear.",
+      "displayWord": "coil",
+      "audioText": "coil",
+      "graphemes": [
+        "c",
+        "oi",
+        "l"
+      ],
+      "distractorGraphemes": [
+        "oy",
+        "ou",
+        "ow"
+      ],
+      "missedConceptOnFail": "diphthong-oi",
+      "rationale": "coil = c-oi-l.",
+      "decodableWithin": "SP-diphthongs-a"
+    },
+    {
+      "id": "sp-dia-007",
+      "skillId": "SP-diphthongs-a",
+      "itemType": "build_word",
+      "difficulty": 2,
+      "stem": "Build the word you hear.",
+      "displayWord": "foil",
+      "audioText": "foil",
+      "graphemes": [
+        "f",
+        "oi",
+        "l"
+      ],
+      "distractorGraphemes": [
+        "oy",
+        "ou",
+        "ow"
+      ],
+      "missedConceptOnFail": "diphthong-oi",
+      "rationale": "foil = f-oi-l.",
+      "decodableWithin": "SP-diphthongs-a"
+    },
+    {
+      "id": "sp-dia-008",
+      "skillId": "SP-diphthongs-a",
+      "itemType": "build_word",
+      "difficulty": 3,
+      "stem": "Build the word you hear.",
+      "displayWord": "point",
+      "audioText": "point",
+      "graphemes": [
+        "p",
+        "oi",
+        "n",
+        "t"
+      ],
+      "distractorGraphemes": [
+        "oy",
+        "ou",
+        "ow",
+        "ar"
+      ],
+      "missedConceptOnFail": "diphthong-oi",
+      "rationale": "point = p-oi-n-t.",
+      "decodableWithin": "SP-diphthongs-a"
+    },
+    {
+      "id": "sp-dia-009",
+      "skillId": "SP-diphthongs-a",
+      "itemType": "build_word",
+      "difficulty": 3,
+      "stem": "Build the word you hear.",
+      "displayWord": "joint",
+      "audioText": "joint",
+      "graphemes": [
+        "j",
+        "oi",
+        "n",
+        "t"
+      ],
+      "distractorGraphemes": [
+        "oy",
+        "ou",
+        "ow",
+        "ar"
+      ],
+      "missedConceptOnFail": "diphthong-oi",
+      "rationale": "joint = j-oi-n-t.",
+      "decodableWithin": "SP-diphthongs-a"
+    },
+    {
+      "id": "sp-dia-010",
+      "skillId": "SP-diphthongs-a",
+      "itemType": "build_word",
+      "difficulty": 3,
+      "stem": "Build the word you hear.",
+      "displayWord": "spoil",
+      "audioText": "spoil",
+      "graphemes": [
+        "s",
+        "p",
+        "oi",
+        "l"
+      ],
+      "distractorGraphemes": [
+        "oy",
+        "ou",
+        "ow",
+        "ar"
+      ],
+      "missedConceptOnFail": "diphthong-oi",
+      "rationale": "spoil = s-p-oi-l.",
+      "decodableWithin": "SP-diphthongs-a"
+    },
+    {
+      "id": "sp-dia-011",
+      "skillId": "SP-diphthongs-a",
+      "itemType": "build_word",
+      "difficulty": 1,
+      "stem": "Build the word you hear.",
+      "displayWord": "boy",
+      "audioText": "boy",
+      "graphemes": [
+        "b",
+        "oy"
+      ],
+      "distractorGraphemes": [
+        "oi",
+        "ou"
+      ],
+      "missedConceptOnFail": "diphthong-oy",
+      "rationale": "boy = b-oy.",
+      "decodableWithin": "SP-diphthongs-a"
+    },
+    {
+      "id": "sp-dia-012",
+      "skillId": "SP-diphthongs-a",
+      "itemType": "build_word",
+      "difficulty": 1,
+      "stem": "Build the word you hear.",
+      "displayWord": "toy",
+      "audioText": "toy",
+      "graphemes": [
+        "t",
+        "oy"
+      ],
+      "distractorGraphemes": [
+        "oi",
+        "ou"
+      ],
+      "missedConceptOnFail": "diphthong-oy",
+      "rationale": "toy = t-oy.",
+      "decodableWithin": "SP-diphthongs-a"
+    },
+    {
+      "id": "sp-dia-013",
+      "skillId": "SP-diphthongs-a",
+      "itemType": "build_word",
+      "difficulty": 1,
+      "stem": "Build the word you hear.",
+      "displayWord": "joy",
+      "audioText": "joy",
+      "graphemes": [
+        "j",
+        "oy"
+      ],
+      "distractorGraphemes": [
+        "oi",
+        "ou"
+      ],
+      "missedConceptOnFail": "diphthong-oy",
+      "rationale": "joy = j-oy.",
+      "decodableWithin": "SP-diphthongs-a"
+    },
+    {
+      "id": "sp-dia-014",
+      "skillId": "SP-diphthongs-a",
+      "itemType": "build_word",
+      "difficulty": 2,
+      "stem": "Build the word you hear.",
+      "displayWord": "coy",
+      "audioText": "coy",
+      "graphemes": [
+        "c",
+        "oy"
+      ],
+      "distractorGraphemes": [
+        "oi",
+        "ou",
+        "ow"
+      ],
+      "missedConceptOnFail": "diphthong-oy",
+      "rationale": "coy = c-oy.",
+      "decodableWithin": "SP-diphthongs-a"
+    },
+    {
+      "id": "sp-dia-015",
+      "skillId": "SP-diphthongs-a",
+      "itemType": "build_word",
+      "difficulty": 2,
+      "stem": "Build the word you hear.",
+      "displayWord": "soy",
+      "audioText": "soy",
+      "graphemes": [
+        "s",
+        "oy"
+      ],
+      "distractorGraphemes": [
+        "oi",
+        "ou",
+        "ow"
+      ],
+      "missedConceptOnFail": "diphthong-oy",
+      "rationale": "soy = s-oy.",
+      "decodableWithin": "SP-diphthongs-a"
+    },
+    {
+      "id": "sp-dia-016",
+      "skillId": "SP-diphthongs-a",
+      "itemType": "build_word",
+      "difficulty": 3,
+      "stem": "Build the word you hear.",
+      "displayWord": "ploy",
+      "audioText": "ploy",
+      "graphemes": [
+        "p",
+        "l",
+        "oy"
+      ],
+      "distractorGraphemes": [
+        "oi",
+        "ou",
+        "ow",
+        "ar"
+      ],
+      "missedConceptOnFail": "diphthong-oy",
+      "rationale": "ploy = p-l-oy.",
+      "decodableWithin": "SP-diphthongs-a"
+    },
+    {
+      "id": "sp-dia-017",
+      "skillId": "SP-diphthongs-a",
+      "itemType": "build_word",
+      "difficulty": 1,
+      "stem": "Build the word you hear.",
+      "displayWord": "out",
+      "audioText": "out",
+      "graphemes": [
+        "ou",
+        "t"
+      ],
+      "distractorGraphemes": [
+        "oi",
+        "oy"
+      ],
+      "missedConceptOnFail": "diphthong-ou",
+      "rationale": "out = ou-t.",
+      "decodableWithin": "SP-diphthongs-a"
+    },
+    {
+      "id": "sp-dia-018",
+      "skillId": "SP-diphthongs-a",
+      "itemType": "build_word",
+      "difficulty": 1,
+      "stem": "Build the word you hear.",
+      "displayWord": "loud",
+      "audioText": "loud",
+      "graphemes": [
+        "l",
+        "ou",
+        "d"
+      ],
+      "distractorGraphemes": [
+        "oi",
+        "oy"
+      ],
+      "missedConceptOnFail": "diphthong-ou",
+      "rationale": "loud = l-ou-d.",
+      "decodableWithin": "SP-diphthongs-a"
+    },
+    {
+      "id": "sp-dia-019",
+      "skillId": "SP-diphthongs-a",
+      "itemType": "build_word",
+      "difficulty": 2,
+      "stem": "Build the word you hear.",
+      "displayWord": "cloud",
+      "audioText": "cloud",
+      "graphemes": [
+        "c",
+        "l",
+        "ou",
+        "d"
+      ],
+      "distractorGraphemes": [
+        "oi",
+        "oy",
+        "ow"
+      ],
+      "missedConceptOnFail": "diphthong-ou",
+      "rationale": "cloud = c-l-ou-d.",
+      "decodableWithin": "SP-diphthongs-a"
+    },
+    {
+      "id": "sp-dia-020",
+      "skillId": "SP-diphthongs-a",
+      "itemType": "build_word",
+      "difficulty": 3,
+      "stem": "Build the word you hear.",
+      "displayWord": "proud",
+      "audioText": "proud",
+      "graphemes": [
+        "p",
+        "r",
+        "ou",
+        "d"
+      ],
+      "distractorGraphemes": [
+        "oi",
+        "oy",
+        "ow",
+        "ar"
+      ],
+      "missedConceptOnFail": "diphthong-ou",
+      "rationale": "proud = p-r-ou-d.",
+      "decodableWithin": "SP-diphthongs-a"
+    },
+    {
+      "id": "sp-dia-021",
+      "skillId": "SP-diphthongs-a",
+      "itemType": "build_word",
+      "difficulty": 2,
+      "stem": "Build the word you hear.",
+      "displayWord": "round",
+      "audioText": "round",
+      "graphemes": [
+        "r",
+        "ou",
+        "n",
+        "d"
+      ],
+      "distractorGraphemes": [
+        "oi",
+        "oy",
+        "ow"
+      ],
+      "missedConceptOnFail": "diphthong-ou",
+      "rationale": "round = r-ou-n-d.",
+      "decodableWithin": "SP-diphthongs-a"
+    },
+    {
+      "id": "sp-dia-022",
+      "skillId": "SP-diphthongs-a",
+      "itemType": "build_word",
+      "difficulty": 2,
+      "stem": "Build the word you hear.",
+      "displayWord": "sound",
+      "audioText": "sound",
+      "graphemes": [
+        "s",
+        "ou",
+        "n",
+        "d"
+      ],
+      "distractorGraphemes": [
+        "oi",
+        "oy",
+        "ow"
+      ],
+      "missedConceptOnFail": "diphthong-ou",
+      "rationale": "sound = s-ou-n-d.",
+      "decodableWithin": "SP-diphthongs-a"
+    },
+    {
+      "id": "sp-dia-023",
+      "skillId": "SP-diphthongs-a",
+      "itemType": "build_word",
+      "difficulty": 2,
+      "stem": "Build the word you hear.",
+      "displayWord": "found",
+      "audioText": "found",
+      "graphemes": [
+        "f",
+        "ou",
+        "n",
+        "d"
+      ],
+      "distractorGraphemes": [
+        "oi",
+        "oy",
+        "ow"
+      ],
+      "missedConceptOnFail": "diphthong-ou",
+      "rationale": "found = f-ou-n-d.",
+      "decodableWithin": "SP-diphthongs-a"
+    },
+    {
+      "id": "sp-dia-024",
+      "skillId": "SP-diphthongs-a",
+      "itemType": "build_word",
+      "difficulty": 3,
+      "stem": "Build the word you hear.",
+      "displayWord": "pound",
+      "audioText": "pound",
+      "graphemes": [
+        "p",
+        "ou",
+        "n",
+        "d"
+      ],
+      "distractorGraphemes": [
+        "oi",
+        "oy",
+        "ow",
+        "ar"
+      ],
+      "missedConceptOnFail": "diphthong-ou",
+      "rationale": "pound = p-ou-n-d.",
+      "decodableWithin": "SP-diphthongs-a"
+    },
+    {
+      "id": "sp-dia-025",
+      "skillId": "SP-diphthongs-a",
+      "itemType": "build_word",
+      "difficulty": 3,
+      "stem": "Build the word you hear.",
+      "displayWord": "ground",
+      "audioText": "ground",
+      "graphemes": [
+        "g",
+        "r",
+        "ou",
+        "n",
+        "d"
+      ],
+      "distractorGraphemes": [
+        "oi",
+        "oy",
+        "ow",
+        "ar"
+      ],
+      "missedConceptOnFail": "diphthong-ou",
+      "rationale": "ground = g-r-ou-n-d.",
+      "decodableWithin": "SP-diphthongs-a"
+    },
+    {
+      "id": "sp-dia-026",
+      "skillId": "SP-diphthongs-a",
+      "itemType": "build_word",
+      "difficulty": 3,
+      "stem": "Build the word you hear.",
+      "displayWord": "count",
+      "audioText": "count",
+      "graphemes": [
+        "c",
+        "ou",
+        "n",
+        "t"
+      ],
+      "distractorGraphemes": [
+        "oi",
+        "oy",
+        "ow",
+        "ar"
+      ],
+      "missedConceptOnFail": "diphthong-ou",
+      "rationale": "count = c-ou-n-t.",
+      "decodableWithin": "SP-diphthongs-a"
+    },
+    {
+      "id": "sp-dia-027",
+      "skillId": "SP-diphthongs-a",
+      "itemType": "build_word",
+      "difficulty": 2,
+      "stem": "Build the word you hear.",
+      "displayWord": "mouth",
+      "audioText": "mouth",
+      "graphemes": [
+        "m",
+        "ou",
+        "th"
+      ],
+      "distractorGraphemes": [
+        "oi",
+        "oy",
+        "ow"
+      ],
+      "missedConceptOnFail": "diphthong-ou",
+      "rationale": "mouth = m-ou-th.",
+      "decodableWithin": "SP-diphthongs-a"
+    },
+    {
+      "id": "sp-dia-028",
+      "skillId": "SP-diphthongs-a",
+      "itemType": "build_word",
+      "difficulty": 2,
+      "stem": "Build the word you hear.",
+      "displayWord": "south",
+      "audioText": "south",
+      "graphemes": [
+        "s",
+        "ou",
+        "th"
+      ],
+      "distractorGraphemes": [
+        "oi",
+        "oy",
+        "ow"
+      ],
+      "missedConceptOnFail": "diphthong-ou",
+      "rationale": "south = s-ou-th.",
+      "decodableWithin": "SP-diphthongs-a"
+    },
+    {
+      "id": "sp-dia-029",
+      "skillId": "SP-diphthongs-a",
+      "itemType": "build_word",
+      "difficulty": 2,
+      "stem": "Build the word you hear.",
+      "displayWord": "shout",
+      "audioText": "shout",
+      "graphemes": [
+        "sh",
+        "ou",
+        "t"
+      ],
+      "distractorGraphemes": [
+        "oi",
+        "oy",
+        "ow"
+      ],
+      "missedConceptOnFail": "diphthong-ou",
+      "rationale": "shout = sh-ou-t.",
+      "decodableWithin": "SP-diphthongs-a"
+    },
+    {
+      "id": "sp-dia-030",
+      "skillId": "SP-diphthongs-a",
+      "itemType": "build_word",
+      "difficulty": 3,
+      "stem": "Build the word you hear.",
+      "displayWord": "scout",
+      "audioText": "scout",
+      "graphemes": [
+        "s",
+        "c",
+        "ou",
+        "t"
+      ],
+      "distractorGraphemes": [
+        "oi",
+        "oy",
+        "ow",
+        "ar"
+      ],
+      "missedConceptOnFail": "diphthong-ou",
+      "rationale": "scout = s-c-ou-t.",
+      "decodableWithin": "SP-diphthongs-a"
+    },
+    {
+      "id": "sp-dia-031",
+      "skillId": "SP-diphthongs-a",
+      "itemType": "build_word",
+      "difficulty": 1,
+      "stem": "Build the word you hear.",
+      "displayWord": "cow",
+      "audioText": "cow",
+      "graphemes": [
+        "c",
+        "ow"
+      ],
+      "distractorGraphemes": [
+        "oi",
+        "oy"
+      ],
+      "missedConceptOnFail": "diphthong-ow",
+      "rationale": "cow = c-ow.",
+      "decodableWithin": "SP-diphthongs-a"
+    },
+    {
+      "id": "sp-dia-032",
+      "skillId": "SP-diphthongs-a",
+      "itemType": "build_word",
+      "difficulty": 1,
+      "stem": "Build the word you hear.",
+      "displayWord": "how",
+      "audioText": "how",
+      "graphemes": [
+        "h",
+        "ow"
+      ],
+      "distractorGraphemes": [
+        "oi",
+        "oy"
+      ],
+      "missedConceptOnFail": "diphthong-ow",
+      "rationale": "how = h-ow.",
+      "decodableWithin": "SP-diphthongs-a"
+    },
+    {
+      "id": "sp-dia-033",
+      "skillId": "SP-diphthongs-a",
+      "itemType": "build_word",
+      "difficulty": 1,
+      "stem": "Build the word you hear.",
+      "displayWord": "now",
+      "audioText": "now",
+      "graphemes": [
+        "n",
+        "ow"
+      ],
+      "distractorGraphemes": [
+        "oi",
+        "oy"
+      ],
+      "missedConceptOnFail": "diphthong-ow",
+      "rationale": "now = n-ow.",
+      "decodableWithin": "SP-diphthongs-a"
+    },
+    {
+      "id": "sp-dia-034",
+      "skillId": "SP-diphthongs-a",
+      "itemType": "build_word",
+      "difficulty": 2,
+      "stem": "Build the word you hear.",
+      "displayWord": "owl",
+      "audioText": "owl",
+      "graphemes": [
+        "ow",
+        "l"
+      ],
+      "distractorGraphemes": [
+        "oi",
+        "oy",
+        "ou"
+      ],
+      "missedConceptOnFail": "diphthong-ow",
+      "rationale": "owl = ow-l.",
+      "decodableWithin": "SP-diphthongs-a"
+    },
+    {
+      "id": "sp-dia-035",
+      "skillId": "SP-diphthongs-a",
+      "itemType": "build_word",
+      "difficulty": 1,
+      "stem": "Build the word you hear.",
+      "displayWord": "down",
+      "audioText": "down",
+      "graphemes": [
+        "d",
+        "ow",
+        "n"
+      ],
+      "distractorGraphemes": [
+        "oi",
+        "oy"
+      ],
+      "missedConceptOnFail": "diphthong-ow",
+      "rationale": "down = d-ow-n.",
+      "decodableWithin": "SP-diphthongs-a"
+    },
+    {
+      "id": "sp-dia-036",
+      "skillId": "SP-diphthongs-a",
+      "itemType": "build_word",
+      "difficulty": 2,
+      "stem": "Build the word you hear.",
+      "displayWord": "town",
+      "audioText": "town",
+      "graphemes": [
+        "t",
+        "ow",
+        "n"
+      ],
+      "distractorGraphemes": [
+        "oi",
+        "oy",
+        "ou"
+      ],
+      "missedConceptOnFail": "diphthong-ow",
+      "rationale": "town = t-ow-n.",
+      "decodableWithin": "SP-diphthongs-a"
+    },
+    {
+      "id": "sp-dia-037",
+      "skillId": "SP-diphthongs-a",
+      "itemType": "build_word",
+      "difficulty": 2,
+      "stem": "Build the word you hear.",
+      "displayWord": "gown",
+      "audioText": "gown",
+      "graphemes": [
+        "g",
+        "ow",
+        "n"
+      ],
+      "distractorGraphemes": [
+        "oi",
+        "oy",
+        "ou"
+      ],
+      "missedConceptOnFail": "diphthong-ow",
+      "rationale": "gown = g-ow-n.",
+      "decodableWithin": "SP-diphthongs-a"
+    },
+    {
+      "id": "sp-dia-038",
+      "skillId": "SP-diphthongs-a",
+      "itemType": "build_word",
+      "difficulty": 3,
+      "stem": "Build the word you hear.",
+      "displayWord": "brown",
+      "audioText": "brown",
+      "graphemes": [
+        "b",
+        "r",
+        "ow",
+        "n"
+      ],
+      "distractorGraphemes": [
+        "oi",
+        "oy",
+        "ou",
+        "ar"
+      ],
+      "missedConceptOnFail": "diphthong-ow",
+      "rationale": "brown = b-r-ow-n.",
+      "decodableWithin": "SP-diphthongs-a"
+    },
+    {
+      "id": "sp-dia-039",
+      "skillId": "SP-diphthongs-a",
+      "itemType": "build_word",
+      "difficulty": 3,
+      "stem": "Build the word you hear.",
+      "displayWord": "crown",
+      "audioText": "crown",
+      "graphemes": [
+        "c",
+        "r",
+        "ow",
+        "n"
+      ],
+      "distractorGraphemes": [
+        "oi",
+        "oy",
+        "ou",
+        "ar"
+      ],
+      "missedConceptOnFail": "diphthong-ow",
+      "rationale": "crown = c-r-ow-n.",
+      "decodableWithin": "SP-diphthongs-a"
+    },
+    {
+      "id": "sp-dia-040",
+      "skillId": "SP-diphthongs-a",
+      "itemType": "build_word",
+      "difficulty": 3,
+      "stem": "Build the word you hear.",
+      "displayWord": "clown",
+      "audioText": "clown",
+      "graphemes": [
+        "c",
+        "l",
+        "ow",
+        "n"
+      ],
+      "distractorGraphemes": [
+        "oi",
+        "oy",
+        "ou",
+        "ar"
+      ],
+      "missedConceptOnFail": "diphthong-ow",
+      "rationale": "clown = c-l-ow-n.",
+      "decodableWithin": "SP-diphthongs-a"
+    },
+    {
+      "id": "sp-dia-041",
+      "skillId": "SP-diphthongs-a",
+      "itemType": "build_word",
+      "difficulty": 3,
+      "stem": "Build the word you hear.",
+      "displayWord": "frown",
+      "audioText": "frown",
+      "graphemes": [
+        "f",
+        "r",
+        "ow",
+        "n"
+      ],
+      "distractorGraphemes": [
+        "oi",
+        "oy",
+        "ou",
+        "ar"
+      ],
+      "missedConceptOnFail": "diphthong-ow",
+      "rationale": "frown = f-r-ow-n.",
+      "decodableWithin": "SP-diphthongs-a"
+    },
+    {
+      "id": "sp-dia-042",
+      "skillId": "SP-diphthongs-a",
+      "itemType": "build_word",
+      "difficulty": 3,
+      "stem": "Build the word you hear.",
+      "displayWord": "growl",
+      "audioText": "growl",
+      "graphemes": [
+        "g",
+        "r",
+        "ow",
+        "l"
+      ],
+      "distractorGraphemes": [
+        "oi",
+        "oy",
+        "ou",
+        "ar"
+      ],
+      "missedConceptOnFail": "diphthong-ow",
+      "rationale": "growl = g-r-ow-l.",
+      "decodableWithin": "SP-diphthongs-a"
+    }
+  ],
+  "lessons": {
+    "SP-diphthongs-a": {
+      "iCanStatement": "I can spell words with oi, oy, ou and ow.",
+      "explanation": "The /oy/ sound is oi in the middle (coin) and oy at the end (boy). The /ow/ sound is ou in the middle (out) and ow at the end (cow). Choose the right team tile.",
+      "workedExamples": [
+        {
+          "text": "boy",
+          "note": "/oy/ at the end → b · oy"
+        },
+        {
+          "text": "out",
+          "note": "/ow/ in the middle → ou · t"
+        }
+      ]
+    }
+  }
+}

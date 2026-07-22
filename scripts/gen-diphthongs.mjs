@@ -1,17 +1,14 @@
-// T09 diphthongs + short-oo generator (§12 pipeline). Emits
-// phonics-L09-diphthongs.json + spelling-L09-diphthongs.json. Gliding vowels:
-// oi/oy (coin, boy), ou/ow (out, cow — the /ow/ sound, NOT long-o snow), aw/au
-// (saw, haul), plus short oo (book). Each team is a SINGLE grapheme tile. ow and
-// oo reuse the existing tiles (different sound, this pack's sense). Concept
-// derived from the team. Run: node scripts/gen-diphthongs.mjs
-import { writeFileSync } from 'node:fs'
+// T09 diphthongs + short-oo generator (§12). SPLIT into two Learn sub-units so a session teaches
+// only a few new sounds (owner request): diphthongs-a = oi/oy/ou/ow (the /oy/ and /ow/ sounds),
+// diphthongs-b = aw/au (the /aw/ sound) + short oo (book). Each team is a SINGLE grapheme tile.
+// Run: node scripts/gen-diphthongs.mjs
+import { writeFileSync, rmSync } from 'node:fs'
 import { fileURLToPath } from 'node:url'
 import { dirname, join } from 'node:path'
 const dir = join(dirname(fileURLToPath(import.meta.url)), '..', 'src', 'data', 'packs')
 
 // [word, graphemes, difficulty, [decodeDistractor1, decodeDistractor2]]
 const WORDS = [
-  // oi
   ['oil', ['oi','l'], 1, ['coin','boil']],
   ['coin', ['c','oi','n'], 1, ['join','boil']],
   ['boil', ['b','oi','l'], 2, ['soil','coil']],
@@ -22,14 +19,12 @@ const WORDS = [
   ['point', ['p','oi','n','t'], 3, ['joint','coin']],
   ['joint', ['j','oi','n','t'], 3, ['point','coin']],
   ['spoil', ['s','p','oi','l'], 3, ['boil','soil']],
-  // oy
   ['boy', ['b','oy'], 1, ['toy','joy']],
   ['toy', ['t','oy'], 1, ['boy','joy']],
   ['joy', ['j','oy'], 1, ['boy','coy']],
   ['coy', ['c','oy'], 2, ['soy','joy']],
   ['soy', ['s','oy'], 2, ['coy','joy']],
   ['ploy', ['p','l','oy'], 3, ['boy','toy']],
-  // ou
   ['out', ['ou','t'], 1, ['loud','shout']],
   ['loud', ['l','ou','d'], 1, ['cloud','proud']],
   ['cloud', ['c','l','ou','d'], 2, ['loud','proud']],
@@ -44,7 +39,6 @@ const WORDS = [
   ['south', ['s','ou','th'], 2, ['mouth','shout']],
   ['shout', ['sh','ou','t'], 2, ['scout','out']],
   ['scout', ['s','c','ou','t'], 3, ['shout','out']],
-  // ow (diphthong)
   ['cow', ['c','ow'], 1, ['how','now']],
   ['how', ['h','ow'], 1, ['cow','now']],
   ['now', ['n','ow'], 1, ['cow','how']],
@@ -57,7 +51,6 @@ const WORDS = [
   ['clown', ['c','l','ow','n'], 3, ['brown','frown']],
   ['frown', ['f','r','ow','n'], 3, ['clown','crown']],
   ['growl', ['g','r','ow','l'], 3, ['brown','crown']],
-  // aw
   ['saw', ['s','aw'], 1, ['jaw','law']],
   ['jaw', ['j','aw'], 1, ['saw','law']],
   ['law', ['l','aw'], 1, ['saw','paw']],
@@ -70,7 +63,6 @@ const WORDS = [
   ['dawn', ['d','aw','n'], 2, ['yawn','lawn']],
   ['lawn', ['l','aw','n'], 3, ['dawn','yawn']],
   ['crawl', ['c','r','aw','l'], 3, ['claw','draw']],
-  // au
   ['haul', ['h','au','l'], 2, ['haunt','fault']],
   ['haunt', ['h','au','n','t'], 3, ['taunt','haul']],
   ['fault', ['f','au','l','t'], 3, ['vault','haul']],
@@ -79,7 +71,6 @@ const WORDS = [
   ['cause', ['c','au','s','e'], 3, ['pause','sauce']],
   ['sauce', ['s','au','c','e'], 3, ['pause','cause']],
   ['taunt', ['t','au','n','t'], 3, ['haunt','haul']],
-  // short oo
   ['book', ['b','oo','k'], 1, ['look','took']],
   ['look', ['l','oo','k'], 1, ['book','took']],
   ['took', ['t','oo','k'], 2, ['book','look']],
@@ -93,41 +84,55 @@ const WORDS = [
   ['stood', ['s','t','oo','d'], 3, ['good','wood']],
   ['shook', ['sh','oo','k'], 3, ['book','cook']],
   ['brook', ['b','r','oo','k'], 3, ['crook','book']],
-  ['crook', ['c','r','oo','k'], 3, ['brook','book']],
 ]
 
 const DIPH = ['oi','oy','ou','aw','au','ow']
 const conceptOf = g => g.includes('oo') ? 'short-oo' : 'diphthong-' + g.find(x => DIPH.includes(x))
-const POOL = ['oi','oy','ou','ow','aw','au','oo','ee','ai','a','e','i','o','u','sh','ch','th','ck','b','d','l','m','n','r','s','t']
-const encodeDistractors = (g, d) => POOL.filter(x => !g.includes(x)).slice(0, d + 1)
 const num = i => String(i + 1).padStart(3, '0')
+// Group A = /oy/ + /ow/ (oi/oy/ou/ow); Group B = /aw/ (aw/au) + short oo.
+const groupOf = g => g.includes('oo') ? 'b' : (['aw','au'].includes(g.find(x => DIPH.includes(x))) ? 'b' : 'a')
 
-const decode = WORDS.map(([w, g, d, dd], i) => {
-  const pos = i % 3, others = [dd[0], dd[1]]
-  const choices = [0, 1, 2].map(p => ({ id: 'abc'[p], label: p === pos ? w : others[p < pos ? p : p - 1] }))
-  return { id: `ph-di-${num(i)}`, skillId: 'PH-diphthongs', itemType: 'decode_choice', difficulty: d,
-    stem: 'Tap the word you hear.', audioText: w, choices, correctChoiceId: 'abc'[pos],
-    missedConceptOnFail: conceptOf(g), rationale: `${g.join('-')} = ${w}.`, decodableWithin: 'PH-diphthongs' }
-})
-const spell = WORDS.map(([w, g, d], i) => ({
-  id: `sp-di-${num(i)}`, skillId: 'SP-diphthongs', itemType: 'build_word', difficulty: d,
-  stem: 'Build the word you hear.', displayWord: w, audioText: w, graphemes: g,
-  distractorGraphemes: encodeDistractors(g, d), missedConceptOnFail: conceptOf(g),
-  rationale: `${w} = ${g.join('-')}.`, decodableWithin: 'SP-diphthongs' }))
+const GROUPS = {
+  a: { id: 'diphthongs-a', pfx: 'dia', file: 'L09a-diphthongs-a',
+    pool: ['oi','oy','ou','ow','ar','or','er','ir','ur','ai','ee','oo','a','e','i','o','u','sh','ch','th','ck','b','d','l','m','n','r','s','t'],
+    ph: { iCanStatement: 'I can read words with oi, oy, ou and ow.',
+      explanation: "A diphthong glides from one sound to another. oi/oy say /oy/ (coin, boy — oi in the middle, oy at the end). ou/ow say /ow/ (out, cow). Read the two letters as one gliding sound.",
+      workedExamples: [ { text: 'coin', note: 'c · oi · n → coin (oi = /oy/)' }, { text: 'cow', note: 'c · ow → cow (ow = /ow/)' } ] },
+    sp: { iCanStatement: 'I can spell words with oi, oy, ou and ow.',
+      explanation: "The /oy/ sound is oi in the middle (coin) and oy at the end (boy). The /ow/ sound is ou in the middle (out) and ow at the end (cow). Choose the right team tile.",
+      workedExamples: [ { text: 'boy', note: '/oy/ at the end → b · oy' }, { text: 'out', note: '/ow/ in the middle → ou · t' } ] } },
+  b: { id: 'diphthongs-b', pfx: 'dib', file: 'L09b-diphthongs-b',
+    pool: ['aw','au','oo','oi','oy','ou','ow','ar','or','ai','ee','a','e','i','o','u','sh','ch','th','ck','b','d','l','m','n','r','s','t'],
+    ph: { iCanStatement: 'I can read words with aw, au and short oo.',
+      explanation: "aw and au say /aw/ (saw, haul). Short oo says /uu/ as in book (a shorter sound than moon). Read the two letters as one sound.",
+      workedExamples: [ { text: 'saw', note: 's · aw → saw (aw = /aw/)' }, { text: 'book', note: 'b · oo · k → book (short oo)' } ] },
+    sp: { iCanStatement: 'I can spell words with aw, au and short oo.',
+      explanation: "The /aw/ sound is aw at the end (saw) or au in the middle (haul). Short oo words like book, look, good use oo. Choose the right team tile.",
+      workedExamples: [ { text: 'draw', note: '/aw/ at the end → d · r · aw' }, { text: 'good', note: 'short oo → g · oo · d' } ] } }
+}
 
-const phLesson = { 'PH-diphthongs': {
-  iCanStatement: 'I can read words with oi, oy, ou, ow, aw, au and short oo.',
-  explanation: "A diphthong is a vowel sound that GLIDES from one sound to another. oi/oy say /oy/ (coin, boy), ou/ow say /ow/ (out, cow), aw/au say /aw/ (saw, haul). Short oo says /uu/ as in book. Read the two letters as one gliding sound.",
-  workedExamples: [ { text: 'coin', note: 'c · oi · n → coin (oi = /oy/)' }, { text: 'cow', note: 'c · ow → cow (ow = /ow/)' } ]
-} }
-const spLesson = { 'SP-diphthongs': {
-  iCanStatement: 'I can spell words with oi, oy, ou, ow, aw, au and short oo.',
-  explanation: "The /oy/ sound is usually oi in the middle (coin) and oy at the end (boy). The /ow/ sound is usually ou in the middle (out) and ow at the end (cow). The /aw/ sound is aw (saw) or au (haul). Choose the right team tile.",
-  workedExamples: [ { text: 'boy', note: 'Hear b-oy, /oy/ at the end → b · oy' }, { text: 'out', note: 'Hear ou-t, /ow/ in the middle → ou · t' } ]
-} }
+for (const f of ['phonics-L09-diphthongs.json', 'spelling-L09-diphthongs.json']) {
+  try { rmSync(join(dir, f)) } catch { /* already gone */ }
+}
 
-writeFileSync(join(dir, 'phonics-L09-diphthongs.json'), JSON.stringify(
-  { packId: 'phonics-L09-diphthongs', strand: 'phonics', skillIds: ['PH-diphthongs'], version: 1, items: decode, lessons: phLesson }, null, 2) + '\n')
-writeFileSync(join(dir, 'spelling-L09-diphthongs.json'), JSON.stringify(
-  { packId: 'spelling-L09-diphthongs', strand: 'spelling', skillIds: ['SP-diphthongs'], version: 1, items: spell, lessons: spLesson }, null, 2) + '\n')
-console.log(`Wrote ${decode.length} decode + ${spell.length} encode diphthong items.`)
+for (const [key, g] of Object.entries(GROUPS)) {
+  const words = WORDS.filter(([, gr]) => groupOf(gr) === key)
+  const encodeDistractors = (gr, d) => g.pool.filter(x => !gr.includes(x)).slice(0, d + 1)
+  const decode = words.map(([w, gr, d, dd], i) => {
+    const pos = i % 3, others = [dd[0], dd[1]]
+    const choices = [0, 1, 2].map(p => ({ id: 'abc'[p], label: p === pos ? w : others[p < pos ? p : p - 1] }))
+    return { id: `ph-${g.pfx}-${num(i)}`, skillId: `PH-${g.id}`, itemType: 'decode_choice', difficulty: d,
+      stem: 'Tap the word you hear.', audioText: w, choices, correctChoiceId: 'abc'[pos],
+      missedConceptOnFail: conceptOf(gr), rationale: `${gr.join('-')} = ${w}.`, decodableWithin: `PH-${g.id}` }
+  })
+  const spell = words.map(([w, gr, d], i) => ({
+    id: `sp-${g.pfx}-${num(i)}`, skillId: `SP-${g.id}`, itemType: 'build_word', difficulty: d,
+    stem: 'Build the word you hear.', displayWord: w, audioText: w, graphemes: gr,
+    distractorGraphemes: encodeDistractors(gr, d), missedConceptOnFail: conceptOf(gr),
+    rationale: `${w} = ${gr.join('-')}.`, decodableWithin: `SP-${g.id}` }))
+  writeFileSync(join(dir, `phonics-${g.file}.json`), JSON.stringify(
+    { packId: `phonics-${g.file}`, strand: 'phonics', skillIds: [`PH-${g.id}`], version: 1, items: decode, lessons: { [`PH-${g.id}`]: g.ph } }, null, 2) + '\n')
+  writeFileSync(join(dir, `spelling-${g.file}.json`), JSON.stringify(
+    { packId: `spelling-${g.file}`, strand: 'spelling', skillIds: [`SP-${g.id}`], version: 1, items: spell, lessons: { [`SP-${g.id}`]: g.sp } }, null, 2) + '\n')
+  console.log(`Wrote ${decode.length} decode + ${spell.length} encode for ${g.id}.`)
+}

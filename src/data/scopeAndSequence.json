@@ -290,16 +290,16 @@
           }
         },
         {
-          "id": "PH-r-controlled",
+          "id": "PH-r-controlled-a",
           "strand": "phonics",
-          "objective": "Decode r-controlled vowels: ar, or, er, ir, ur (bossy r).",
-          "iCanStatement": "I can read words with a bossy r (ar, or, er, ir, ur).",
+          "objective": "Read words with ar and or (bossy r).",
+          "iCanStatement": "I can read words with ar and or (bossy r).",
           "prereqs": [
             "PH-vowel-teams-b"
           ],
           "itemType": "decode_choice",
-          "itemPool": "phonics-L08-r-controlled",
-          "encodePairId": "SP-r-controlled",
+          "itemPool": "phonics-L08a-r-controlled-a",
+          "encodePairId": "SP-r-controlled-a",
           "mastery": {
             "window": 12,
             "accuracyToPass": 0.85,
@@ -307,16 +307,50 @@
           }
         },
         {
-          "id": "SP-r-controlled",
+          "id": "SP-r-controlled-a",
           "strand": "spelling",
-          "objective": "Spell r-controlled vowel words (ar, or, er, ir, ur).",
-          "iCanStatement": "I can spell words with a bossy r.",
+          "objective": "Spell words with ar and or.",
+          "iCanStatement": "I can spell words with ar and or.",
           "prereqs": [
-            "PH-r-controlled"
+            "PH-r-controlled-a"
           ],
           "itemType": "build_word",
-          "itemPool": "spelling-L08-r-controlled",
-          "encodePairId": "PH-r-controlled",
+          "itemPool": "spelling-L08a-r-controlled-a",
+          "encodePairId": "PH-r-controlled-a",
+          "mastery": {
+            "window": 12,
+            "accuracyToPass": 0.85,
+            "minItems": 12
+          }
+        },
+        {
+          "id": "PH-r-controlled-b",
+          "strand": "phonics",
+          "objective": "Read words with er, ir and ur (bossy r).",
+          "iCanStatement": "I can read words with er, ir and ur (bossy r).",
+          "prereqs": [
+            "PH-r-controlled-a"
+          ],
+          "itemType": "decode_choice",
+          "itemPool": "phonics-L08b-r-controlled-b",
+          "encodePairId": "SP-r-controlled-b",
+          "mastery": {
+            "window": 12,
+            "accuracyToPass": 0.85,
+            "minItems": 12
+          }
+        },
+        {
+          "id": "SP-r-controlled-b",
+          "strand": "spelling",
+          "objective": "Spell words with er, ir and ur.",
+          "iCanStatement": "I can spell words with er, ir and ur.",
+          "prereqs": [
+            "PH-r-controlled-b"
+          ],
+          "itemType": "build_word",
+          "itemPool": "spelling-L08b-r-controlled-b",
+          "encodePairId": "PH-r-controlled-b",
           "mastery": {
             "window": 12,
             "accuracyToPass": 0.85,
@@ -329,7 +363,7 @@
           "objective": "Decode words with ear, air and ure.",
           "iCanStatement": "I can read words with ear, air and ure.",
           "prereqs": [
-            "PH-r-controlled"
+            "PH-r-controlled-b"
           ],
           "itemType": "decode_choice",
           "itemPool": "phonics-L15-r-vowel-teams",
@@ -358,16 +392,16 @@
           }
         },
         {
-          "id": "PH-diphthongs",
+          "id": "PH-diphthongs-a",
           "strand": "phonics",
-          "objective": "Decode diphthongs oi/oy, ou/ow, aw/au and short-oo.",
-          "iCanStatement": "I can read words with oi, oy, ou, ow, aw, au and short oo.",
+          "objective": "Read words with oi, oy, ou and ow.",
+          "iCanStatement": "I can read words with oi, oy, ou and ow.",
           "prereqs": [
-            "PH-r-controlled"
+            "PH-r-controlled-b"
           ],
           "itemType": "decode_choice",
-          "itemPool": "phonics-L09-diphthongs",
-          "encodePairId": "SP-diphthongs",
+          "itemPool": "phonics-L09a-diphthongs-a",
+          "encodePairId": "SP-diphthongs-a",
           "mastery": {
             "window": 12,
             "accuracyToPass": 0.85,
@@ -375,16 +409,50 @@
           }
         },
         {
-          "id": "SP-diphthongs",
+          "id": "SP-diphthongs-a",
           "strand": "spelling",
-          "objective": "Spell diphthong and short-oo words, choosing the right team.",
-          "iCanStatement": "I can spell words with oi, oy, ou, ow, aw, au and short oo.",
+          "objective": "Spell words with oi, oy, ou and ow.",
+          "iCanStatement": "I can spell words with oi, oy, ou and ow.",
           "prereqs": [
-            "PH-diphthongs"
+            "PH-diphthongs-a"
           ],
           "itemType": "build_word",
-          "itemPool": "spelling-L09-diphthongs",
-          "encodePairId": "PH-diphthongs",
+          "itemPool": "spelling-L09a-diphthongs-a",
+          "encodePairId": "PH-diphthongs-a",
+          "mastery": {
+            "window": 12,
+            "accuracyToPass": 0.85,
+            "minItems": 12
+          }
+        },
+        {
+          "id": "PH-diphthongs-b",
+          "strand": "phonics",
+          "objective": "Read words with aw, au and short oo.",
+          "iCanStatement": "I can read words with aw, au and short oo.",
+          "prereqs": [
+            "PH-diphthongs-a"
+          ],
+          "itemType": "decode_choice",
+          "itemPool": "phonics-L09b-diphthongs-b",
+          "encodePairId": "SP-diphthongs-b",
+          "mastery": {
+            "window": 12,
+            "accuracyToPass": 0.85,
+            "minItems": 12
+          }
+        },
+        {
+          "id": "SP-diphthongs-b",
+          "strand": "spelling",
+          "objective": "Spell words with aw, au and short oo.",
+          "iCanStatement": "I can spell words with aw, au and short oo.",
+          "prereqs": [
+            "PH-diphthongs-b"
+          ],
+          "itemType": "build_word",
+          "itemPool": "spelling-L09b-diphthongs-b",
+          "encodePairId": "PH-diphthongs-b",
           "mastery": {
             "window": 12,
             "accuracyToPass": 0.85,
@@ -397,7 +465,7 @@
           "objective": "Decode two-syllable words (compound, closed VCCV, medial doubles).",
           "iCanStatement": "I can read two-syllable words by breaking them into chunks.",
           "prereqs": [
-            "PH-diphthongs"
+            "PH-diphthongs-b"
           ],
           "itemType": "decode_choice",
           "itemPool": "phonics-L10-two-syllable",
@@ -772,7 +840,7 @@
           "objective": "Read decodable sentences with r-controlled (bossy-r) words (T19).",
           "iCanStatement": "I can read sentences with bossy-r words and say what they mean.",
           "prereqs": [
-            "PH-r-controlled"
+            "PH-r-controlled-b"
           ],
           "itemType": "passage_question",
           "itemPool": "reading-L06-r-controlled",
@@ -788,7 +856,7 @@
           "objective": "Read decodable sentences with diphthong words (oi/oy/ou/ow/aw/au) (T19).",
           "iCanStatement": "I can read sentences with oi, oy, ou, ow and aw words and say what they mean.",
           "prereqs": [
-            "PH-diphthongs"
+            "PH-diphthongs-b"
           ],
           "itemType": "passage_question",
           "itemPool": "reading-L07-diphthongs",

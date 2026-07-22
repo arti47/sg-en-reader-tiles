@@ -1,0 +1,910 @@
+{
+  "packId": "phonics-L08a-r-controlled-a",
+  "strand": "phonics",
+  "skillIds": [
+    "PH-r-controlled-a"
+  ],
+  "version": 1,
+  "items": [
+    {
+      "id": "ph-rca-001",
+      "skillId": "PH-r-controlled-a",
+      "itemType": "decode_choice",
+      "difficulty": 1,
+      "stem": "Tap the word you hear.",
+      "audioText": "car",
+      "choices": [
+        {
+          "id": "a",
+          "label": "car"
+        },
+        {
+          "id": "b",
+          "label": "bar"
+        },
+        {
+          "id": "c",
+          "label": "jar"
+        }
+      ],
+      "correctChoiceId": "a",
+      "missedConceptOnFail": "r-controlled-ar",
+      "rationale": "c-ar = car.",
+      "decodableWithin": "PH-r-controlled-a"
+    },
+    {
+      "id": "ph-rca-002",
+      "skillId": "PH-r-controlled-a",
+      "itemType": "decode_choice",
+      "difficulty": 1,
+      "stem": "Tap the word you hear.",
+      "audioText": "bar",
+      "choices": [
+        {
+          "id": "a",
+          "label": "car"
+        },
+        {
+          "id": "b",
+          "label": "bar"
+        },
+        {
+          "id": "c",
+          "label": "jar"
+        }
+      ],
+      "correctChoiceId": "b",
+      "missedConceptOnFail": "r-controlled-ar",
+      "rationale": "b-ar = bar.",
+      "decodableWithin": "PH-r-controlled-a"
+    },
+    {
+      "id": "ph-rca-003",
+      "skillId": "PH-r-controlled-a",
+      "itemType": "decode_choice",
+      "difficulty": 1,
+      "stem": "Tap the word you hear.",
+      "audioText": "jar",
+      "choices": [
+        {
+          "id": "a",
+          "label": "car"
+        },
+        {
+          "id": "b",
+          "label": "tar"
+        },
+        {
+          "id": "c",
+          "label": "jar"
+        }
+      ],
+      "correctChoiceId": "c",
+      "missedConceptOnFail": "r-controlled-ar",
+      "rationale": "j-ar = jar.",
+      "decodableWithin": "PH-r-controlled-a"
+    },
+    {
+      "id": "ph-rca-004",
+      "skillId": "PH-r-controlled-a",
+      "itemType": "decode_choice",
+      "difficulty": 2,
+      "stem": "Tap the word you hear.",
+      "audioText": "tar",
+      "choices": [
+        {
+          "id": "a",
+          "label": "tar"
+        },
+        {
+          "id": "b",
+          "label": "far"
+        },
+        {
+          "id": "c",
+          "label": "car"
+        }
+      ],
+      "correctChoiceId": "a",
+      "missedConceptOnFail": "r-controlled-ar",
+      "rationale": "t-ar = tar.",
+      "decodableWithin": "PH-r-controlled-a"
+    },
+    {
+      "id": "ph-rca-005",
+      "skillId": "PH-r-controlled-a",
+      "itemType": "decode_choice",
+      "difficulty": 1,
+      "stem": "Tap the word you hear.",
+      "audioText": "far",
+      "choices": [
+        {
+          "id": "a",
+          "label": "car"
+        },
+        {
+          "id": "b",
+          "label": "far"
+        },
+        {
+          "id": "c",
+          "label": "bar"
+        }
+      ],
+      "correctChoiceId": "b",
+      "missedConceptOnFail": "r-controlled-ar",
+      "rationale": "f-ar = far.",
+      "decodableWithin": "PH-r-controlled-a"
+    },
+    {
+      "id": "ph-rca-006",
+      "skillId": "PH-r-controlled-a",
+      "itemType": "decode_choice",
+      "difficulty": 2,
+      "stem": "Tap the word you hear.",
+      "audioText": "star",
+      "choices": [
+        {
+          "id": "a",
+          "label": "car"
+        },
+        {
+          "id": "b",
+          "label": "park"
+        },
+        {
+          "id": "c",
+          "label": "star"
+        }
+      ],
+      "correctChoiceId": "c",
+      "missedConceptOnFail": "r-controlled-ar",
+      "rationale": "s-t-ar = star.",
+      "decodableWithin": "PH-r-controlled-a"
+    },
+    {
+      "id": "ph-rca-007",
+      "skillId": "PH-r-controlled-a",
+      "itemType": "decode_choice",
+      "difficulty": 1,
+      "stem": "Tap the word you hear.",
+      "audioText": "arm",
+      "choices": [
+        {
+          "id": "a",
+          "label": "arm"
+        },
+        {
+          "id": "b",
+          "label": "art"
+        },
+        {
+          "id": "c",
+          "label": "farm"
+        }
+      ],
+      "correctChoiceId": "a",
+      "missedConceptOnFail": "r-controlled-ar",
+      "rationale": "ar-m = arm.",
+      "decodableWithin": "PH-r-controlled-a"
+    },
+    {
+      "id": "ph-rca-008",
+      "skillId": "PH-r-controlled-a",
+      "itemType": "decode_choice",
+      "difficulty": 2,
+      "stem": "Tap the word you hear.",
+      "audioText": "art",
+      "choices": [
+        {
+          "id": "a",
+          "label": "arm"
+        },
+        {
+          "id": "b",
+          "label": "art"
+        },
+        {
+          "id": "c",
+          "label": "cart"
+        }
+      ],
+      "correctChoiceId": "b",
+      "missedConceptOnFail": "r-controlled-ar",
+      "rationale": "ar-t = art.",
+      "decodableWithin": "PH-r-controlled-a"
+    },
+    {
+      "id": "ph-rca-009",
+      "skillId": "PH-r-controlled-a",
+      "itemType": "decode_choice",
+      "difficulty": 1,
+      "stem": "Tap the word you hear.",
+      "audioText": "card",
+      "choices": [
+        {
+          "id": "a",
+          "label": "hard"
+        },
+        {
+          "id": "b",
+          "label": "bark"
+        },
+        {
+          "id": "c",
+          "label": "card"
+        }
+      ],
+      "correctChoiceId": "c",
+      "missedConceptOnFail": "r-controlled-ar",
+      "rationale": "c-ar-d = card.",
+      "decodableWithin": "PH-r-controlled-a"
+    },
+    {
+      "id": "ph-rca-010",
+      "skillId": "PH-r-controlled-a",
+      "itemType": "decode_choice",
+      "difficulty": 2,
+      "stem": "Tap the word you hear.",
+      "audioText": "hard",
+      "choices": [
+        {
+          "id": "a",
+          "label": "hard"
+        },
+        {
+          "id": "b",
+          "label": "card"
+        },
+        {
+          "id": "c",
+          "label": "park"
+        }
+      ],
+      "correctChoiceId": "a",
+      "missedConceptOnFail": "r-controlled-ar",
+      "rationale": "h-ar-d = hard.",
+      "decodableWithin": "PH-r-controlled-a"
+    },
+    {
+      "id": "ph-rca-011",
+      "skillId": "PH-r-controlled-a",
+      "itemType": "decode_choice",
+      "difficulty": 1,
+      "stem": "Tap the word you hear.",
+      "audioText": "park",
+      "choices": [
+        {
+          "id": "a",
+          "label": "dark"
+        },
+        {
+          "id": "b",
+          "label": "park"
+        },
+        {
+          "id": "c",
+          "label": "bark"
+        }
+      ],
+      "correctChoiceId": "b",
+      "missedConceptOnFail": "r-controlled-ar",
+      "rationale": "p-ar-k = park.",
+      "decodableWithin": "PH-r-controlled-a"
+    },
+    {
+      "id": "ph-rca-012",
+      "skillId": "PH-r-controlled-a",
+      "itemType": "decode_choice",
+      "difficulty": 2,
+      "stem": "Tap the word you hear.",
+      "audioText": "dark",
+      "choices": [
+        {
+          "id": "a",
+          "label": "park"
+        },
+        {
+          "id": "b",
+          "label": "bark"
+        },
+        {
+          "id": "c",
+          "label": "dark"
+        }
+      ],
+      "correctChoiceId": "c",
+      "missedConceptOnFail": "r-controlled-ar",
+      "rationale": "d-ar-k = dark.",
+      "decodableWithin": "PH-r-controlled-a"
+    },
+    {
+      "id": "ph-rca-013",
+      "skillId": "PH-r-controlled-a",
+      "itemType": "decode_choice",
+      "difficulty": 2,
+      "stem": "Tap the word you hear.",
+      "audioText": "bark",
+      "choices": [
+        {
+          "id": "a",
+          "label": "bark"
+        },
+        {
+          "id": "b",
+          "label": "dark"
+        },
+        {
+          "id": "c",
+          "label": "mark"
+        }
+      ],
+      "correctChoiceId": "a",
+      "missedConceptOnFail": "r-controlled-ar",
+      "rationale": "b-ar-k = bark.",
+      "decodableWithin": "PH-r-controlled-a"
+    },
+    {
+      "id": "ph-rca-014",
+      "skillId": "PH-r-controlled-a",
+      "itemType": "decode_choice",
+      "difficulty": 2,
+      "stem": "Tap the word you hear.",
+      "audioText": "mark",
+      "choices": [
+        {
+          "id": "a",
+          "label": "bark"
+        },
+        {
+          "id": "b",
+          "label": "mark"
+        },
+        {
+          "id": "c",
+          "label": "park"
+        }
+      ],
+      "correctChoiceId": "b",
+      "missedConceptOnFail": "r-controlled-ar",
+      "rationale": "m-ar-k = mark.",
+      "decodableWithin": "PH-r-controlled-a"
+    },
+    {
+      "id": "ph-rca-015",
+      "skillId": "PH-r-controlled-a",
+      "itemType": "decode_choice",
+      "difficulty": 3,
+      "stem": "Tap the word you hear.",
+      "audioText": "shark",
+      "choices": [
+        {
+          "id": "a",
+          "label": "sharp"
+        },
+        {
+          "id": "b",
+          "label": "spark"
+        },
+        {
+          "id": "c",
+          "label": "shark"
+        }
+      ],
+      "correctChoiceId": "c",
+      "missedConceptOnFail": "r-controlled-ar",
+      "rationale": "sh-ar-k = shark.",
+      "decodableWithin": "PH-r-controlled-a"
+    },
+    {
+      "id": "ph-rca-016",
+      "skillId": "PH-r-controlled-a",
+      "itemType": "decode_choice",
+      "difficulty": 3,
+      "stem": "Tap the word you hear.",
+      "audioText": "sharp",
+      "choices": [
+        {
+          "id": "a",
+          "label": "sharp"
+        },
+        {
+          "id": "b",
+          "label": "shark"
+        },
+        {
+          "id": "c",
+          "label": "cart"
+        }
+      ],
+      "correctChoiceId": "a",
+      "missedConceptOnFail": "r-controlled-ar",
+      "rationale": "sh-ar-p = sharp.",
+      "decodableWithin": "PH-r-controlled-a"
+    },
+    {
+      "id": "ph-rca-017",
+      "skillId": "PH-r-controlled-a",
+      "itemType": "decode_choice",
+      "difficulty": 2,
+      "stem": "Tap the word you hear.",
+      "audioText": "cart",
+      "choices": [
+        {
+          "id": "a",
+          "label": "card"
+        },
+        {
+          "id": "b",
+          "label": "cart"
+        },
+        {
+          "id": "c",
+          "label": "dart"
+        }
+      ],
+      "correctChoiceId": "b",
+      "missedConceptOnFail": "r-controlled-ar",
+      "rationale": "c-ar-t = cart.",
+      "decodableWithin": "PH-r-controlled-a"
+    },
+    {
+      "id": "ph-rca-018",
+      "skillId": "PH-r-controlled-a",
+      "itemType": "decode_choice",
+      "difficulty": 2,
+      "stem": "Tap the word you hear.",
+      "audioText": "farm",
+      "choices": [
+        {
+          "id": "a",
+          "label": "arm"
+        },
+        {
+          "id": "b",
+          "label": "harm"
+        },
+        {
+          "id": "c",
+          "label": "farm"
+        }
+      ],
+      "correctChoiceId": "c",
+      "missedConceptOnFail": "r-controlled-ar",
+      "rationale": "f-ar-m = farm.",
+      "decodableWithin": "PH-r-controlled-a"
+    },
+    {
+      "id": "ph-rca-019",
+      "skillId": "PH-r-controlled-a",
+      "itemType": "decode_choice",
+      "difficulty": 1,
+      "stem": "Tap the word you hear.",
+      "audioText": "for",
+      "choices": [
+        {
+          "id": "a",
+          "label": "for"
+        },
+        {
+          "id": "b",
+          "label": "fort"
+        },
+        {
+          "id": "c",
+          "label": "sort"
+        }
+      ],
+      "correctChoiceId": "a",
+      "missedConceptOnFail": "r-controlled-or",
+      "rationale": "f-or = for.",
+      "decodableWithin": "PH-r-controlled-a"
+    },
+    {
+      "id": "ph-rca-020",
+      "skillId": "PH-r-controlled-a",
+      "itemType": "decode_choice",
+      "difficulty": 1,
+      "stem": "Tap the word you hear.",
+      "audioText": "fork",
+      "choices": [
+        {
+          "id": "a",
+          "label": "cork"
+        },
+        {
+          "id": "b",
+          "label": "fork"
+        },
+        {
+          "id": "c",
+          "label": "born"
+        }
+      ],
+      "correctChoiceId": "b",
+      "missedConceptOnFail": "r-controlled-or",
+      "rationale": "f-or-k = fork.",
+      "decodableWithin": "PH-r-controlled-a"
+    },
+    {
+      "id": "ph-rca-021",
+      "skillId": "PH-r-controlled-a",
+      "itemType": "decode_choice",
+      "difficulty": 2,
+      "stem": "Tap the word you hear.",
+      "audioText": "cork",
+      "choices": [
+        {
+          "id": "a",
+          "label": "fork"
+        },
+        {
+          "id": "b",
+          "label": "corn"
+        },
+        {
+          "id": "c",
+          "label": "cork"
+        }
+      ],
+      "correctChoiceId": "c",
+      "missedConceptOnFail": "r-controlled-or",
+      "rationale": "c-or-k = cork.",
+      "decodableWithin": "PH-r-controlled-a"
+    },
+    {
+      "id": "ph-rca-022",
+      "skillId": "PH-r-controlled-a",
+      "itemType": "decode_choice",
+      "difficulty": 1,
+      "stem": "Tap the word you hear.",
+      "audioText": "born",
+      "choices": [
+        {
+          "id": "a",
+          "label": "born"
+        },
+        {
+          "id": "b",
+          "label": "corn"
+        },
+        {
+          "id": "c",
+          "label": "horn"
+        }
+      ],
+      "correctChoiceId": "a",
+      "missedConceptOnFail": "r-controlled-or",
+      "rationale": "b-or-n = born.",
+      "decodableWithin": "PH-r-controlled-a"
+    },
+    {
+      "id": "ph-rca-023",
+      "skillId": "PH-r-controlled-a",
+      "itemType": "decode_choice",
+      "difficulty": 2,
+      "stem": "Tap the word you hear.",
+      "audioText": "corn",
+      "choices": [
+        {
+          "id": "a",
+          "label": "born"
+        },
+        {
+          "id": "b",
+          "label": "corn"
+        },
+        {
+          "id": "c",
+          "label": "horn"
+        }
+      ],
+      "correctChoiceId": "b",
+      "missedConceptOnFail": "r-controlled-or",
+      "rationale": "c-or-n = corn.",
+      "decodableWithin": "PH-r-controlled-a"
+    },
+    {
+      "id": "ph-rca-024",
+      "skillId": "PH-r-controlled-a",
+      "itemType": "decode_choice",
+      "difficulty": 2,
+      "stem": "Tap the word you hear.",
+      "audioText": "horn",
+      "choices": [
+        {
+          "id": "a",
+          "label": "born"
+        },
+        {
+          "id": "b",
+          "label": "corn"
+        },
+        {
+          "id": "c",
+          "label": "horn"
+        }
+      ],
+      "correctChoiceId": "c",
+      "missedConceptOnFail": "r-controlled-or",
+      "rationale": "h-or-n = horn.",
+      "decodableWithin": "PH-r-controlled-a"
+    },
+    {
+      "id": "ph-rca-025",
+      "skillId": "PH-r-controlled-a",
+      "itemType": "decode_choice",
+      "difficulty": 2,
+      "stem": "Tap the word you hear.",
+      "audioText": "torn",
+      "choices": [
+        {
+          "id": "a",
+          "label": "torn"
+        },
+        {
+          "id": "b",
+          "label": "born"
+        },
+        {
+          "id": "c",
+          "label": "corn"
+        }
+      ],
+      "correctChoiceId": "a",
+      "missedConceptOnFail": "r-controlled-or",
+      "rationale": "t-or-n = torn.",
+      "decodableWithin": "PH-r-controlled-a"
+    },
+    {
+      "id": "ph-rca-026",
+      "skillId": "PH-r-controlled-a",
+      "itemType": "decode_choice",
+      "difficulty": 2,
+      "stem": "Tap the word you hear.",
+      "audioText": "sort",
+      "choices": [
+        {
+          "id": "a",
+          "label": "port"
+        },
+        {
+          "id": "b",
+          "label": "sort"
+        },
+        {
+          "id": "c",
+          "label": "fort"
+        }
+      ],
+      "correctChoiceId": "b",
+      "missedConceptOnFail": "r-controlled-or",
+      "rationale": "s-or-t = sort.",
+      "decodableWithin": "PH-r-controlled-a"
+    },
+    {
+      "id": "ph-rca-027",
+      "skillId": "PH-r-controlled-a",
+      "itemType": "decode_choice",
+      "difficulty": 2,
+      "stem": "Tap the word you hear.",
+      "audioText": "port",
+      "choices": [
+        {
+          "id": "a",
+          "label": "sort"
+        },
+        {
+          "id": "b",
+          "label": "fort"
+        },
+        {
+          "id": "c",
+          "label": "port"
+        }
+      ],
+      "correctChoiceId": "c",
+      "missedConceptOnFail": "r-controlled-or",
+      "rationale": "p-or-t = port.",
+      "decodableWithin": "PH-r-controlled-a"
+    },
+    {
+      "id": "ph-rca-028",
+      "skillId": "PH-r-controlled-a",
+      "itemType": "decode_choice",
+      "difficulty": 1,
+      "stem": "Tap the word you hear.",
+      "audioText": "fort",
+      "choices": [
+        {
+          "id": "a",
+          "label": "fort"
+        },
+        {
+          "id": "b",
+          "label": "port"
+        },
+        {
+          "id": "c",
+          "label": "sort"
+        }
+      ],
+      "correctChoiceId": "a",
+      "missedConceptOnFail": "r-controlled-or",
+      "rationale": "f-or-t = fort.",
+      "decodableWithin": "PH-r-controlled-a"
+    },
+    {
+      "id": "ph-rca-029",
+      "skillId": "PH-r-controlled-a",
+      "itemType": "decode_choice",
+      "difficulty": 3,
+      "stem": "Tap the word you hear.",
+      "audioText": "sport",
+      "choices": [
+        {
+          "id": "a",
+          "label": "short"
+        },
+        {
+          "id": "b",
+          "label": "sport"
+        },
+        {
+          "id": "c",
+          "label": "storm"
+        }
+      ],
+      "correctChoiceId": "b",
+      "missedConceptOnFail": "r-controlled-or",
+      "rationale": "s-p-or-t = sport.",
+      "decodableWithin": "PH-r-controlled-a"
+    },
+    {
+      "id": "ph-rca-030",
+      "skillId": "PH-r-controlled-a",
+      "itemType": "decode_choice",
+      "difficulty": 2,
+      "stem": "Tap the word you hear.",
+      "audioText": "short",
+      "choices": [
+        {
+          "id": "a",
+          "label": "sport"
+        },
+        {
+          "id": "b",
+          "label": "storm"
+        },
+        {
+          "id": "c",
+          "label": "short"
+        }
+      ],
+      "correctChoiceId": "c",
+      "missedConceptOnFail": "r-controlled-or",
+      "rationale": "sh-or-t = short.",
+      "decodableWithin": "PH-r-controlled-a"
+    },
+    {
+      "id": "ph-rca-031",
+      "skillId": "PH-r-controlled-a",
+      "itemType": "decode_choice",
+      "difficulty": 3,
+      "stem": "Tap the word you hear.",
+      "audioText": "storm",
+      "choices": [
+        {
+          "id": "a",
+          "label": "storm"
+        },
+        {
+          "id": "b",
+          "label": "short"
+        },
+        {
+          "id": "c",
+          "label": "sport"
+        }
+      ],
+      "correctChoiceId": "a",
+      "missedConceptOnFail": "r-controlled-or",
+      "rationale": "s-t-or-m = storm.",
+      "decodableWithin": "PH-r-controlled-a"
+    },
+    {
+      "id": "ph-rca-032",
+      "skillId": "PH-r-controlled-a",
+      "itemType": "decode_choice",
+      "difficulty": 3,
+      "stem": "Tap the word you hear.",
+      "audioText": "north",
+      "choices": [
+        {
+          "id": "a",
+          "label": "storm"
+        },
+        {
+          "id": "b",
+          "label": "north"
+        },
+        {
+          "id": "c",
+          "label": "short"
+        }
+      ],
+      "correctChoiceId": "b",
+      "missedConceptOnFail": "r-controlled-or",
+      "rationale": "n-or-th = north.",
+      "decodableWithin": "PH-r-controlled-a"
+    },
+    {
+      "id": "ph-rca-033",
+      "skillId": "PH-r-controlled-a",
+      "itemType": "decode_choice",
+      "difficulty": 3,
+      "stem": "Tap the word you hear.",
+      "audioText": "horse",
+      "choices": [
+        {
+          "id": "a",
+          "label": "born"
+        },
+        {
+          "id": "b",
+          "label": "corn"
+        },
+        {
+          "id": "c",
+          "label": "horse"
+        }
+      ],
+      "correctChoiceId": "c",
+      "missedConceptOnFail": "r-controlled-or",
+      "rationale": "h-or-s-e = horse.",
+      "decodableWithin": "PH-r-controlled-a"
+    },
+    {
+      "id": "ph-rca-034",
+      "skillId": "PH-r-controlled-a",
+      "itemType": "decode_choice",
+      "difficulty": 3,
+      "stem": "Tap the word you hear.",
+      "audioText": "torch",
+      "choices": [
+        {
+          "id": "a",
+          "label": "torch"
+        },
+        {
+          "id": "b",
+          "label": "north"
+        },
+        {
+          "id": "c",
+          "label": "short"
+        }
+      ],
+      "correctChoiceId": "a",
+      "missedConceptOnFail": "r-controlled-or",
+      "rationale": "t-or-ch = torch.",
+      "decodableWithin": "PH-r-controlled-a"
+    }
+  ],
+  "lessons": {
+    "PH-r-controlled-a": {
+      "iCanStatement": "I can read words with ar and or (bossy r).",
+      "explanation": "When 'r' follows a vowel it bosses it into a new sound. ar says /ar/ (car, park). or says /or/ (fork, corn). Read the vowel and the r together as one chunk.",
+      "workedExamples": [
+        {
+          "text": "car",
+          "note": "c · ar → car (ar = /ar/)"
+        },
+        {
+          "text": "fork",
+          "note": "f · or · k → fork (or = /or/)"
+        }
+      ]
+    }
+  }
+}

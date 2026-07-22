@@ -1,0 +1,765 @@
+{
+  "packId": "spelling-L08a-r-controlled-a",
+  "strand": "spelling",
+  "skillIds": [
+    "SP-r-controlled-a"
+  ],
+  "version": 1,
+  "items": [
+    {
+      "id": "sp-rca-001",
+      "skillId": "SP-r-controlled-a",
+      "itemType": "build_word",
+      "difficulty": 1,
+      "stem": "Build the word you hear.",
+      "displayWord": "car",
+      "audioText": "car",
+      "graphemes": [
+        "c",
+        "ar"
+      ],
+      "distractorGraphemes": [
+        "or",
+        "ai"
+      ],
+      "missedConceptOnFail": "r-controlled-ar",
+      "rationale": "car = c-ar.",
+      "decodableWithin": "SP-r-controlled-a"
+    },
+    {
+      "id": "sp-rca-002",
+      "skillId": "SP-r-controlled-a",
+      "itemType": "build_word",
+      "difficulty": 1,
+      "stem": "Build the word you hear.",
+      "displayWord": "bar",
+      "audioText": "bar",
+      "graphemes": [
+        "b",
+        "ar"
+      ],
+      "distractorGraphemes": [
+        "or",
+        "ai"
+      ],
+      "missedConceptOnFail": "r-controlled-ar",
+      "rationale": "bar = b-ar.",
+      "decodableWithin": "SP-r-controlled-a"
+    },
+    {
+      "id": "sp-rca-003",
+      "skillId": "SP-r-controlled-a",
+      "itemType": "build_word",
+      "difficulty": 1,
+      "stem": "Build the word you hear.",
+      "displayWord": "jar",
+      "audioText": "jar",
+      "graphemes": [
+        "j",
+        "ar"
+      ],
+      "distractorGraphemes": [
+        "or",
+        "ai"
+      ],
+      "missedConceptOnFail": "r-controlled-ar",
+      "rationale": "jar = j-ar.",
+      "decodableWithin": "SP-r-controlled-a"
+    },
+    {
+      "id": "sp-rca-004",
+      "skillId": "SP-r-controlled-a",
+      "itemType": "build_word",
+      "difficulty": 2,
+      "stem": "Build the word you hear.",
+      "displayWord": "tar",
+      "audioText": "tar",
+      "graphemes": [
+        "t",
+        "ar"
+      ],
+      "distractorGraphemes": [
+        "or",
+        "ai",
+        "ay"
+      ],
+      "missedConceptOnFail": "r-controlled-ar",
+      "rationale": "tar = t-ar.",
+      "decodableWithin": "SP-r-controlled-a"
+    },
+    {
+      "id": "sp-rca-005",
+      "skillId": "SP-r-controlled-a",
+      "itemType": "build_word",
+      "difficulty": 1,
+      "stem": "Build the word you hear.",
+      "displayWord": "far",
+      "audioText": "far",
+      "graphemes": [
+        "f",
+        "ar"
+      ],
+      "distractorGraphemes": [
+        "or",
+        "ai"
+      ],
+      "missedConceptOnFail": "r-controlled-ar",
+      "rationale": "far = f-ar.",
+      "decodableWithin": "SP-r-controlled-a"
+    },
+    {
+      "id": "sp-rca-006",
+      "skillId": "SP-r-controlled-a",
+      "itemType": "build_word",
+      "difficulty": 2,
+      "stem": "Build the word you hear.",
+      "displayWord": "star",
+      "audioText": "star",
+      "graphemes": [
+        "s",
+        "t",
+        "ar"
+      ],
+      "distractorGraphemes": [
+        "or",
+        "ai",
+        "ay"
+      ],
+      "missedConceptOnFail": "r-controlled-ar",
+      "rationale": "star = s-t-ar.",
+      "decodableWithin": "SP-r-controlled-a"
+    },
+    {
+      "id": "sp-rca-007",
+      "skillId": "SP-r-controlled-a",
+      "itemType": "build_word",
+      "difficulty": 1,
+      "stem": "Build the word you hear.",
+      "displayWord": "arm",
+      "audioText": "arm",
+      "graphemes": [
+        "ar",
+        "m"
+      ],
+      "distractorGraphemes": [
+        "or",
+        "ai"
+      ],
+      "missedConceptOnFail": "r-controlled-ar",
+      "rationale": "arm = ar-m.",
+      "decodableWithin": "SP-r-controlled-a"
+    },
+    {
+      "id": "sp-rca-008",
+      "skillId": "SP-r-controlled-a",
+      "itemType": "build_word",
+      "difficulty": 2,
+      "stem": "Build the word you hear.",
+      "displayWord": "art",
+      "audioText": "art",
+      "graphemes": [
+        "ar",
+        "t"
+      ],
+      "distractorGraphemes": [
+        "or",
+        "ai",
+        "ay"
+      ],
+      "missedConceptOnFail": "r-controlled-ar",
+      "rationale": "art = ar-t.",
+      "decodableWithin": "SP-r-controlled-a"
+    },
+    {
+      "id": "sp-rca-009",
+      "skillId": "SP-r-controlled-a",
+      "itemType": "build_word",
+      "difficulty": 1,
+      "stem": "Build the word you hear.",
+      "displayWord": "card",
+      "audioText": "card",
+      "graphemes": [
+        "c",
+        "ar",
+        "d"
+      ],
+      "distractorGraphemes": [
+        "or",
+        "ai"
+      ],
+      "missedConceptOnFail": "r-controlled-ar",
+      "rationale": "card = c-ar-d.",
+      "decodableWithin": "SP-r-controlled-a"
+    },
+    {
+      "id": "sp-rca-010",
+      "skillId": "SP-r-controlled-a",
+      "itemType": "build_word",
+      "difficulty": 2,
+      "stem": "Build the word you hear.",
+      "displayWord": "hard",
+      "audioText": "hard",
+      "graphemes": [
+        "h",
+        "ar",
+        "d"
+      ],
+      "distractorGraphemes": [
+        "or",
+        "ai",
+        "ay"
+      ],
+      "missedConceptOnFail": "r-controlled-ar",
+      "rationale": "hard = h-ar-d.",
+      "decodableWithin": "SP-r-controlled-a"
+    },
+    {
+      "id": "sp-rca-011",
+      "skillId": "SP-r-controlled-a",
+      "itemType": "build_word",
+      "difficulty": 1,
+      "stem": "Build the word you hear.",
+      "displayWord": "park",
+      "audioText": "park",
+      "graphemes": [
+        "p",
+        "ar",
+        "k"
+      ],
+      "distractorGraphemes": [
+        "or",
+        "ai"
+      ],
+      "missedConceptOnFail": "r-controlled-ar",
+      "rationale": "park = p-ar-k.",
+      "decodableWithin": "SP-r-controlled-a"
+    },
+    {
+      "id": "sp-rca-012",
+      "skillId": "SP-r-controlled-a",
+      "itemType": "build_word",
+      "difficulty": 2,
+      "stem": "Build the word you hear.",
+      "displayWord": "dark",
+      "audioText": "dark",
+      "graphemes": [
+        "d",
+        "ar",
+        "k"
+      ],
+      "distractorGraphemes": [
+        "or",
+        "ai",
+        "ay"
+      ],
+      "missedConceptOnFail": "r-controlled-ar",
+      "rationale": "dark = d-ar-k.",
+      "decodableWithin": "SP-r-controlled-a"
+    },
+    {
+      "id": "sp-rca-013",
+      "skillId": "SP-r-controlled-a",
+      "itemType": "build_word",
+      "difficulty": 2,
+      "stem": "Build the word you hear.",
+      "displayWord": "bark",
+      "audioText": "bark",
+      "graphemes": [
+        "b",
+        "ar",
+        "k"
+      ],
+      "distractorGraphemes": [
+        "or",
+        "ai",
+        "ay"
+      ],
+      "missedConceptOnFail": "r-controlled-ar",
+      "rationale": "bark = b-ar-k.",
+      "decodableWithin": "SP-r-controlled-a"
+    },
+    {
+      "id": "sp-rca-014",
+      "skillId": "SP-r-controlled-a",
+      "itemType": "build_word",
+      "difficulty": 2,
+      "stem": "Build the word you hear.",
+      "displayWord": "mark",
+      "audioText": "mark",
+      "graphemes": [
+        "m",
+        "ar",
+        "k"
+      ],
+      "distractorGraphemes": [
+        "or",
+        "ai",
+        "ay"
+      ],
+      "missedConceptOnFail": "r-controlled-ar",
+      "rationale": "mark = m-ar-k.",
+      "decodableWithin": "SP-r-controlled-a"
+    },
+    {
+      "id": "sp-rca-015",
+      "skillId": "SP-r-controlled-a",
+      "itemType": "build_word",
+      "difficulty": 3,
+      "stem": "Build the word you hear.",
+      "displayWord": "shark",
+      "audioText": "shark",
+      "graphemes": [
+        "sh",
+        "ar",
+        "k"
+      ],
+      "distractorGraphemes": [
+        "or",
+        "ai",
+        "ay",
+        "ee"
+      ],
+      "missedConceptOnFail": "r-controlled-ar",
+      "rationale": "shark = sh-ar-k.",
+      "decodableWithin": "SP-r-controlled-a"
+    },
+    {
+      "id": "sp-rca-016",
+      "skillId": "SP-r-controlled-a",
+      "itemType": "build_word",
+      "difficulty": 3,
+      "stem": "Build the word you hear.",
+      "displayWord": "sharp",
+      "audioText": "sharp",
+      "graphemes": [
+        "sh",
+        "ar",
+        "p"
+      ],
+      "distractorGraphemes": [
+        "or",
+        "ai",
+        "ay",
+        "ee"
+      ],
+      "missedConceptOnFail": "r-controlled-ar",
+      "rationale": "sharp = sh-ar-p.",
+      "decodableWithin": "SP-r-controlled-a"
+    },
+    {
+      "id": "sp-rca-017",
+      "skillId": "SP-r-controlled-a",
+      "itemType": "build_word",
+      "difficulty": 2,
+      "stem": "Build the word you hear.",
+      "displayWord": "cart",
+      "audioText": "cart",
+      "graphemes": [
+        "c",
+        "ar",
+        "t"
+      ],
+      "distractorGraphemes": [
+        "or",
+        "ai",
+        "ay"
+      ],
+      "missedConceptOnFail": "r-controlled-ar",
+      "rationale": "cart = c-ar-t.",
+      "decodableWithin": "SP-r-controlled-a"
+    },
+    {
+      "id": "sp-rca-018",
+      "skillId": "SP-r-controlled-a",
+      "itemType": "build_word",
+      "difficulty": 2,
+      "stem": "Build the word you hear.",
+      "displayWord": "farm",
+      "audioText": "farm",
+      "graphemes": [
+        "f",
+        "ar",
+        "m"
+      ],
+      "distractorGraphemes": [
+        "or",
+        "ai",
+        "ay"
+      ],
+      "missedConceptOnFail": "r-controlled-ar",
+      "rationale": "farm = f-ar-m.",
+      "decodableWithin": "SP-r-controlled-a"
+    },
+    {
+      "id": "sp-rca-019",
+      "skillId": "SP-r-controlled-a",
+      "itemType": "build_word",
+      "difficulty": 1,
+      "stem": "Build the word you hear.",
+      "displayWord": "for",
+      "audioText": "for",
+      "graphemes": [
+        "f",
+        "or"
+      ],
+      "distractorGraphemes": [
+        "ar",
+        "ai"
+      ],
+      "missedConceptOnFail": "r-controlled-or",
+      "rationale": "for = f-or.",
+      "decodableWithin": "SP-r-controlled-a"
+    },
+    {
+      "id": "sp-rca-020",
+      "skillId": "SP-r-controlled-a",
+      "itemType": "build_word",
+      "difficulty": 1,
+      "stem": "Build the word you hear.",
+      "displayWord": "fork",
+      "audioText": "fork",
+      "graphemes": [
+        "f",
+        "or",
+        "k"
+      ],
+      "distractorGraphemes": [
+        "ar",
+        "ai"
+      ],
+      "missedConceptOnFail": "r-controlled-or",
+      "rationale": "fork = f-or-k.",
+      "decodableWithin": "SP-r-controlled-a"
+    },
+    {
+      "id": "sp-rca-021",
+      "skillId": "SP-r-controlled-a",
+      "itemType": "build_word",
+      "difficulty": 2,
+      "stem": "Build the word you hear.",
+      "displayWord": "cork",
+      "audioText": "cork",
+      "graphemes": [
+        "c",
+        "or",
+        "k"
+      ],
+      "distractorGraphemes": [
+        "ar",
+        "ai",
+        "ay"
+      ],
+      "missedConceptOnFail": "r-controlled-or",
+      "rationale": "cork = c-or-k.",
+      "decodableWithin": "SP-r-controlled-a"
+    },
+    {
+      "id": "sp-rca-022",
+      "skillId": "SP-r-controlled-a",
+      "itemType": "build_word",
+      "difficulty": 1,
+      "stem": "Build the word you hear.",
+      "displayWord": "born",
+      "audioText": "born",
+      "graphemes": [
+        "b",
+        "or",
+        "n"
+      ],
+      "distractorGraphemes": [
+        "ar",
+        "ai"
+      ],
+      "missedConceptOnFail": "r-controlled-or",
+      "rationale": "born = b-or-n.",
+      "decodableWithin": "SP-r-controlled-a"
+    },
+    {
+      "id": "sp-rca-023",
+      "skillId": "SP-r-controlled-a",
+      "itemType": "build_word",
+      "difficulty": 2,
+      "stem": "Build the word you hear.",
+      "displayWord": "corn",
+      "audioText": "corn",
+      "graphemes": [
+        "c",
+        "or",
+        "n"
+      ],
+      "distractorGraphemes": [
+        "ar",
+        "ai",
+        "ay"
+      ],
+      "missedConceptOnFail": "r-controlled-or",
+      "rationale": "corn = c-or-n.",
+      "decodableWithin": "SP-r-controlled-a"
+    },
+    {
+      "id": "sp-rca-024",
+      "skillId": "SP-r-controlled-a",
+      "itemType": "build_word",
+      "difficulty": 2,
+      "stem": "Build the word you hear.",
+      "displayWord": "horn",
+      "audioText": "horn",
+      "graphemes": [
+        "h",
+        "or",
+        "n"
+      ],
+      "distractorGraphemes": [
+        "ar",
+        "ai",
+        "ay"
+      ],
+      "missedConceptOnFail": "r-controlled-or",
+      "rationale": "horn = h-or-n.",
+      "decodableWithin": "SP-r-controlled-a"
+    },
+    {
+      "id": "sp-rca-025",
+      "skillId": "SP-r-controlled-a",
+      "itemType": "build_word",
+      "difficulty": 2,
+      "stem": "Build the word you hear.",
+      "displayWord": "torn",
+      "audioText": "torn",
+      "graphemes": [
+        "t",
+        "or",
+        "n"
+      ],
+      "distractorGraphemes": [
+        "ar",
+        "ai",
+        "ay"
+      ],
+      "missedConceptOnFail": "r-controlled-or",
+      "rationale": "torn = t-or-n.",
+      "decodableWithin": "SP-r-controlled-a"
+    },
+    {
+      "id": "sp-rca-026",
+      "skillId": "SP-r-controlled-a",
+      "itemType": "build_word",
+      "difficulty": 2,
+      "stem": "Build the word you hear.",
+      "displayWord": "sort",
+      "audioText": "sort",
+      "graphemes": [
+        "s",
+        "or",
+        "t"
+      ],
+      "distractorGraphemes": [
+        "ar",
+        "ai",
+        "ay"
+      ],
+      "missedConceptOnFail": "r-controlled-or",
+      "rationale": "sort = s-or-t.",
+      "decodableWithin": "SP-r-controlled-a"
+    },
+    {
+      "id": "sp-rca-027",
+      "skillId": "SP-r-controlled-a",
+      "itemType": "build_word",
+      "difficulty": 2,
+      "stem": "Build the word you hear.",
+      "displayWord": "port",
+      "audioText": "port",
+      "graphemes": [
+        "p",
+        "or",
+        "t"
+      ],
+      "distractorGraphemes": [
+        "ar",
+        "ai",
+        "ay"
+      ],
+      "missedConceptOnFail": "r-controlled-or",
+      "rationale": "port = p-or-t.",
+      "decodableWithin": "SP-r-controlled-a"
+    },
+    {
+      "id": "sp-rca-028",
+      "skillId": "SP-r-controlled-a",
+      "itemType": "build_word",
+      "difficulty": 1,
+      "stem": "Build the word you hear.",
+      "displayWord": "fort",
+      "audioText": "fort",
+      "graphemes": [
+        "f",
+        "or",
+        "t"
+      ],
+      "distractorGraphemes": [
+        "ar",
+        "ai"
+      ],
+      "missedConceptOnFail": "r-controlled-or",
+      "rationale": "fort = f-or-t.",
+      "decodableWithin": "SP-r-controlled-a"
+    },
+    {
+      "id": "sp-rca-029",
+      "skillId": "SP-r-controlled-a",
+      "itemType": "build_word",
+      "difficulty": 3,
+      "stem": "Build the word you hear.",
+      "displayWord": "sport",
+      "audioText": "sport",
+      "graphemes": [
+        "s",
+        "p",
+        "or",
+        "t"
+      ],
+      "distractorGraphemes": [
+        "ar",
+        "ai",
+        "ay",
+        "ee"
+      ],
+      "missedConceptOnFail": "r-controlled-or",
+      "rationale": "sport = s-p-or-t.",
+      "decodableWithin": "SP-r-controlled-a"
+    },
+    {
+      "id": "sp-rca-030",
+      "skillId": "SP-r-controlled-a",
+      "itemType": "build_word",
+      "difficulty": 2,
+      "stem": "Build the word you hear.",
+      "displayWord": "short",
+      "audioText": "short",
+      "graphemes": [
+        "sh",
+        "or",
+        "t"
+      ],
+      "distractorGraphemes": [
+        "ar",
+        "ai",
+        "ay"
+      ],
+      "missedConceptOnFail": "r-controlled-or",
+      "rationale": "short = sh-or-t.",
+      "decodableWithin": "SP-r-controlled-a"
+    },
+    {
+      "id": "sp-rca-031",
+      "skillId": "SP-r-controlled-a",
+      "itemType": "build_word",
+      "difficulty": 3,
+      "stem": "Build the word you hear.",
+      "displayWord": "storm",
+      "audioText": "storm",
+      "graphemes": [
+        "s",
+        "t",
+        "or",
+        "m"
+      ],
+      "distractorGraphemes": [
+        "ar",
+        "ai",
+        "ay",
+        "ee"
+      ],
+      "missedConceptOnFail": "r-controlled-or",
+      "rationale": "storm = s-t-or-m.",
+      "decodableWithin": "SP-r-controlled-a"
+    },
+    {
+      "id": "sp-rca-032",
+      "skillId": "SP-r-controlled-a",
+      "itemType": "build_word",
+      "difficulty": 3,
+      "stem": "Build the word you hear.",
+      "displayWord": "north",
+      "audioText": "north",
+      "graphemes": [
+        "n",
+        "or",
+        "th"
+      ],
+      "distractorGraphemes": [
+        "ar",
+        "ai",
+        "ay",
+        "ee"
+      ],
+      "missedConceptOnFail": "r-controlled-or",
+      "rationale": "north = n-or-th.",
+      "decodableWithin": "SP-r-controlled-a"
+    },
+    {
+      "id": "sp-rca-033",
+      "skillId": "SP-r-controlled-a",
+      "itemType": "build_word",
+      "difficulty": 3,
+      "stem": "Build the word you hear.",
+      "displayWord": "horse",
+      "audioText": "horse",
+      "graphemes": [
+        "h",
+        "or",
+        "s",
+        "e"
+      ],
+      "distractorGraphemes": [
+        "ar",
+        "ai",
+        "ay",
+        "ee"
+      ],
+      "missedConceptOnFail": "r-controlled-or",
+      "rationale": "horse = h-or-s-e.",
+      "decodableWithin": "SP-r-controlled-a"
+    },
+    {
+      "id": "sp-rca-034",
+      "skillId": "SP-r-controlled-a",
+      "itemType": "build_word",
+      "difficulty": 3,
+      "stem": "Build the word you hear.",
+      "displayWord": "torch",
+      "audioText": "torch",
+      "graphemes": [
+        "t",
+        "or",
+        "ch"
+      ],
+      "distractorGraphemes": [
+        "ar",
+        "ai",
+        "ay",
+        "ee"
+      ],
+      "missedConceptOnFail": "r-controlled-or",
+      "rationale": "torch = t-or-ch.",
+      "decodableWithin": "SP-r-controlled-a"
+    }
+  ],
+  "lessons": {
+    "SP-r-controlled-a": {
+      "iCanStatement": "I can spell words with ar and or.",
+      "explanation": "For the /ar/ sound use ar (car, park). For the /or/ sound use or (fork, corn). Pick the r-team tile — don't split it into two letters.",
+      "workedExamples": [
+        {
+          "text": "park",
+          "note": "Hear p-ar-k → p · ar · k"
+        },
+        {
+          "text": "corn",
+          "note": "Hear c-or-n → c · or · n"
+        }
+      ]
+    }
+  }
+}
