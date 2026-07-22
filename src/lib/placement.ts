@@ -46,28 +46,35 @@ function checkpointIdxs(): number[] {
   return cps
 }
 
-// Coarse pass — walk checkpoints low→high (PER_COARSE probes each). Returns the checkpoint still
-// being probed (`serve`), the refine BAND [lo,hi] once a checkpoint fails (entry ∈ [lo..hi], with
-// checkpoints excluded from the middle so coarse/fine tallies never overlap), or `top` when every
-// checkpoint passed. Pure — reconstructable from `results` alone (no external phase state).
-function coarseState(results: PlaceResult[]): { serve?: number; band?: [number, number]; top?: boolean } {
+// Coarse pass — walk checkpoints low→high (`perCoarse` probes each). Returns the checkpoint still
+// being probed (`serve`) or the refine BAND [lo,hi] to pin the entry (entry ∈ [lo..hi], checkpoints
+// excluded from the middle so coarse/fine tallies never overlap). Passing a checkpoint fails → band
+// is (prevPass, cp]. Passing EVERY checkpoint (incl. the top) → the top band [2nd-last-cp+1, top] is
+// still refined, so a coarse-only top placement DIRECTLY confirms the top rungs before they're
+// credited (§7 #1 — don't credit untested rungs on an all-pass). Pure — reconstructable from
+// `results` alone. Lower-band rungs between passed checkpoints are credited without per-rung testing;
+// that speed/coverage trade-off is intrinsic to checkpointing and low-harm (a mis-credit surfaces in
+// Test as struggle → needs-review → Learn).
+function coarseState(results: PlaceResult[], perCoarse = PER_COARSE): { serve?: number; band?: [number, number] } {
+  const cps = checkpointIdxs()
   let prevPass = -1
-  for (const cp of checkpointIdxs()) {
+  for (const cp of cps) {
     const t = tallyAt(results, cp)
-    if (t.total < PER_COARSE) return { serve: cp }        // still probing this checkpoint
-    if (t.correct >= PER_COARSE) { prevPass = cp; continue } // passed → probe higher
+    if (t.total < perCoarse) return { serve: cp }          // still probing this checkpoint
+    if (t.correct >= perCoarse) { prevPass = cp; continue } // passed → probe higher
     return { band: [prevPass + 1, cp] }                    // failed → entry is in (prevPass, cp]
   }
-  return { top: true }
+  const top = decodeLadder.length - 1
+  const secondLast = cps.length >= 2 ? cps[cps.length - 2] : -1
+  return { band: [secondLast + 1, top] }                   // all passed → confirm the top band
 }
 
 // Given the results so far, decide the next step: draw another item from `skillId`,
-// or finish and place the child at `entrySkillId`. `perSkill` = the fine-refine PER.
-export function nextPlacement(results: PlaceResult[], perSkill = PER_SKILL): { done: boolean; skillId?: string; entrySkillId?: string } {
+// or finish and place the child at `entrySkillId`. `perSkill` = the fine-refine PER (the conservative
+// decision-maker); `perCoarse` = the checkpoint PER. Both raised for weaker readers via flags (§1).
+export function nextPlacement(results: PlaceResult[], perSkill = PER_SKILL, perCoarse = PER_COARSE): { done: boolean; skillId?: string; entrySkillId?: string } {
   const atCap = results.length >= MAX_ITEMS
-  const top = decodeLadder.length - 1
-  const c = coarseState(results)
-  if (c.top) return { done: true, entrySkillId: decodeLadder[top].id }
+  const c = coarseState(results, perCoarse)
   if (c.serve !== undefined) {
     return atCap ? { done: true, entrySkillId: decodeLadder[c.serve].id } : { done: false, skillId: decodeLadder[c.serve].id }
   }

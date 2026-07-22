@@ -56,7 +56,9 @@ export function Session(props: { child: Child; onExit: () => void; onTrophies: (
     startedRef.current = true
     void (async () => {
       const settings = await getSettings()
-      lenRef.current = settings.sessionLength || DEFAULT_SESSION_LEN
+      // §14: a dyslexia/decoding flag caps the session shorter than the global setting (shorter
+      // sittings reduce cognitive load); unflagged children keep the full length (sup default = 16).
+      lenRef.current = Math.min(settings.sessionLength || DEFAULT_SESSION_LEN, sup.sessionLength)
       setRate(settings.ttsRate)
       setVoice(settings.voiceURI)
       attemptsRef.current = await getAttempts(props.child.id)

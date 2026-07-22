@@ -480,6 +480,9 @@ try {
       const def = sp.support(), dys = sp.support(['dyslexia']), flu = sp.support(['fluency'])
       if (def.interleaveEvery !== 5 || def.placementPerSkill !== 3 || def.promoteStreak !== 3 || def.guidedItems !== 3) return '#1 support: no-flags must equal defaults'
       if (!(dys.placementPerSkill > def.placementPerSkill && dys.promoteStreak > def.promoteStreak && dys.interleaveEvery < def.interleaveEvery)) return '#1 support: dyslexia should be more conservative'
+      // #3/#4 — a dyslexia/decoding flag shortens the session and stiffens the coarse placement PER.
+      if (def.sessionLength !== 16 || def.placementCoarsePer !== 2) return 'support: session/coarse defaults (16/2)'
+      if (!(dys.sessionLength < def.sessionLength && dys.placementCoarsePer > def.placementCoarsePer)) return 'support: dyslexia → shorter session + stricter coarse placement'
       if (!(flu.fluencyMaxMs < def.fluencyMaxMs)) return '#1 support: fluency flag should lower the fluency threshold'
       // Regression: interleave shares slots with the HF thread (THREAD_EVERY=4, checked first),
       // so a flag-tuned interleaveEvery that collides with 4 yields FEWER reviews, not more.

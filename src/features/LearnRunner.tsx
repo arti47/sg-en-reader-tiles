@@ -21,7 +21,11 @@ type MapRow = { id: string; label: string; status: PatternStatus }
 // so participation-based "learned" rests on more than a token number of reps (audit).
 const READ_N = 4
 const SPELL_N = 4
-type Phase = 'loading' | 'map' | 'sound' | 'intro' | 'read' | 'spellIntro' | 'spell' | 'done'
+// Cumulative review (OG "constant review", §3): a unit OPENS with a quick read item from a
+// previously-learned pattern before teaching the new one, so prior patterns are revisited during
+// Learn (not only via Test's interleave). Skipped when nothing has been learned yet.
+const REVIEW_N = 1
+type Phase = 'loading' | 'map' | 'review' | 'sound' | 'intro' | 'read' | 'spellIntro' | 'spell' | 'done'
 // A sound-intro card (§19.13): a NEW sound met for the first time, or a NEW spelling of a sound
 // the child already knows ("same sound, new way to spell it").
 type SoundCard = { kind: 'new' | 'spelling'; sound: Sound; graphemes: string[] }
@@ -29,6 +33,8 @@ type SoundCard = { kind: 'new' | 'spelling'; sound: Sound; graphemes: string[] }
 export function LearnRunner(props: { child: Child; onExit: () => void; onSoundWall: () => void }) {
   const patternRef = useRef<SkillDef | null>(null)  // the next target (needs-review first, else frontier)
   const encodeRef = useRef<SkillDef | null>(null)
+  const reviewSkillRef = useRef<SkillDef | null>(null) // a prior learned pattern to warm up on (§3 cumulative)
+  const learnedRef = useRef<Set<string>>(new Set())    // patterns learned so far (source for the review pick)
   const seenRef = useRef<Set<string>>(new Set())
   const soundsRef = useRef<SoundCard[]>([])         // this pattern's sound-intro cards (§19.13)
   const [soundIdx, setSoundIdx] = useState(0)
@@ -63,6 +69,7 @@ export function LearnRunner(props: { child: Child; onExit: () => void; onSoundWa
     const prog = await getProgress(props.child.id)
     const masteredSkills = new Set(prog.filter(p => p.status === 'mastered').map(p => p.skillId))
     const learned = learnedSet(rows); const needs = needsReviewSet(rows)
+    learnedRef.current = learned
     patternRef.current = PATTERNS.find(p => needs.has(p.id)) ?? nextToLearn(learned) ?? null
     setMapRows(PATTERNS.map(p => {
       const mastered = masteredSkills.has(p.id) && (!p.encodePairId || masteredSkills.has(p.encodePairId))
@@ -71,13 +78,21 @@ export function LearnRunner(props: { child: Child; onExit: () => void; onSoundWa
     setPhase('map')
   }
 
-  // Begin the target pattern's unit. §19.13: FIRST teach the pattern's new sound(s) (and any new
-  // spelling of an already-known sound), then the read+spell flow.
+  // Begin the target pattern's unit. §3 cumulative: OPEN with a quick review of a prior learned
+  // pattern (if any), then §19.13 teach the pattern's new sound(s), then the read+spell flow.
   function startUnit() {
     const target = patternRef.current
     if (!target) { setPhase('map'); return }
     encodeRef.current = target.encodePairId ? getSkill(target.encodePairId) ?? null : null
     seenRef.current = new Set(); stepRef.current = 0
+    const priors = PATTERNS.filter(p => learnedRef.current.has(p.id) && p.id !== target.id)
+    reviewSkillRef.current = priors.length ? priors[Math.floor(Math.random() * priors.length)] : null
+    if (reviewSkillRef.current) loadPractice(reviewSkillRef.current.id, 'review')
+    else startSounds()
+  }
+  // Build the pattern's sound-intro cards (§19.13) then enter the read+spell flow.
+  function startSounds() {
+    const target = patternRef.current!
     const graphemesAt = (s: Sound) => s.spellings.filter(sp => sp.pattern === target.id).map(sp => sp.grapheme)
     soundsRef.current = [
       ...newSoundsFor(target.id).map(s => ({ kind: 'new' as const, sound: s, graphemes: graphemesAt(s) })),
@@ -105,6 +120,12 @@ export function LearnRunner(props: { child: Child; onExit: () => void; onSoundWa
   }
   // Called by Continue after an answered practice item, or when a pool is empty.
   function advanceAfterPractice(current: Phase) {
+    if (current === 'review') {
+      stepRef.current += 1
+      if (stepRef.current >= REVIEW_N) { stepRef.current = 0; startSounds(); return }
+      loadPractice(reviewSkillRef.current!.id, 'review')
+      return
+    }
     if (current === 'read') {
       stepRef.current += 1
       if (stepRef.current >= READ_N) { setPhase('spellIntro'); return }
@@ -170,13 +191,14 @@ export function LearnRunner(props: { child: Child; onExit: () => void; onSoundWa
     return <div className="stack center"><button className="btn" onClick={beginSpell}>Start spelling</button></div>
   }
 
-  if ((phase === 'read' || phase === 'spell') && item) {
+  if ((phase === 'review' || phase === 'read' || phase === 'spell') && item) {
     const isTile = phase === 'spell'
+    const badge = phase === 'review' ? '🔁 quick review' : isTile ? 'spell it' : 'read it'
     return (
       <div className="stack">
         <div className="row" style={{ justifyContent: 'space-between', alignItems: 'center' }}>
           <button className="link" onClick={props.onExit}>← Back</button>
-          <span className="lesson-badge">📘 Learn · {isTile ? 'spell it' : 'read it'}</span>
+          <span className="lesson-badge">📘 Learn · {badge}</span>
         </div>
         {isTile
           ? <TileItem key={serve} item={item} onAnswer={() => setAnswered(true)} />
