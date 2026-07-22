@@ -437,6 +437,114 @@
       "missedConceptOnFail": "comprehension-literal",
       "rationale": "a jar.",
       "decodableWithin": "PH-r-controlled"
+    },
+    {
+      "id": "rd-rc-017",
+      "skillId": "RD-rcontrolled-sentences",
+      "itemType": "passage_question",
+      "difficulty": 2,
+      "passage": "The farmer parks the cart.",
+      "audioText": "The farmer parks the cart.",
+      "stem": "What does the farmer park?",
+      "choices": [
+        {
+          "id": "a",
+          "label": "the car"
+        },
+        {
+          "id": "b",
+          "label": "the cart"
+        },
+        {
+          "id": "c",
+          "label": "the horse"
+        }
+      ],
+      "correctChoiceId": "b",
+      "missedConceptOnFail": "comprehension-literal",
+      "rationale": "the cart.",
+      "decodableWithin": "PH-r-controlled"
+    },
+    {
+      "id": "rd-rc-018",
+      "skillId": "RD-rcontrolled-sentences",
+      "itemType": "passage_question",
+      "difficulty": 3,
+      "passage": "The stork stands by the shore.",
+      "audioText": "The stork stands by the shore.",
+      "stem": "Where does the stork stand?",
+      "choices": [
+        {
+          "id": "a",
+          "label": "in the barn"
+        },
+        {
+          "id": "b",
+          "label": "at the corner"
+        },
+        {
+          "id": "c",
+          "label": "by the shore"
+        }
+      ],
+      "correctChoiceId": "c",
+      "missedConceptOnFail": "comprehension-literal",
+      "rationale": "by the shore.",
+      "decodableWithin": "PH-r-controlled"
+    },
+    {
+      "id": "rd-rc-019",
+      "skillId": "RD-rcontrolled-sentences",
+      "itemType": "passage_question",
+      "difficulty": 3,
+      "passage": "The girl turns the corner first.",
+      "audioText": "The girl turns the corner first.",
+      "stem": "What does the girl turn?",
+      "choices": [
+        {
+          "id": "a",
+          "label": "the corner"
+        },
+        {
+          "id": "b",
+          "label": "the cart"
+        },
+        {
+          "id": "c",
+          "label": "the fork"
+        }
+      ],
+      "correctChoiceId": "a",
+      "missedConceptOnFail": "comprehension-literal",
+      "rationale": "the corner.",
+      "decodableWithin": "PH-r-controlled"
+    },
+    {
+      "id": "rd-rc-020",
+      "skillId": "RD-rcontrolled-sentences",
+      "itemType": "passage_question",
+      "difficulty": 2,
+      "passage": "Her scarf is warm and dark.",
+      "audioText": "Her scarf is warm and dark.",
+      "stem": "How is her scarf?",
+      "choices": [
+        {
+          "id": "a",
+          "label": "cold and wet"
+        },
+        {
+          "id": "b",
+          "label": "warm and dark"
+        },
+        {
+          "id": "c",
+          "label": "short and red"
+        }
+      ],
+      "correctChoiceId": "b",
+      "missedConceptOnFail": "comprehension-literal",
+      "rationale": "warm and dark.",
+      "decodableWithin": "PH-r-controlled"
     }
   ],
   "lessons": {

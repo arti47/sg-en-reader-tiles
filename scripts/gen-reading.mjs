@@ -36,7 +36,9 @@ const LEVELS = {
       ['Trish had a fresh snack.', 'What did Trish have?', 'a fresh snack', 'a red flag', 'a big drum', 2],
       ['Glen ran to catch the bus.', 'Why did Glen run?', 'to catch the bus', 'to grab a snack', 'to swim', 3],
       ['The drum is on the desk.', 'Where is the drum?', 'on the desk', 'on the step', 'in the chest', 2],
-      ['Brad and Fran swim fast.', 'Who can swim fast?', 'Brad and Fran', 'the black cat', 'the frog', 3]
+      ['Brad and Fran swim fast.', 'Who can swim fast?', 'Brad and Fran', 'the black cat', 'the frog', 3],
+      ['Frank must stop and rest.', 'What must Frank do?', 'stop and rest', 'run and jump', 'clap and spin', 2],
+      ['The twins had lunch on the bench.', 'Where did the twins have lunch?', 'on the bench', 'in the truck', 'at the pond', 2]
     ]
   },
   'reading-L04-silent-e': {
@@ -63,7 +65,10 @@ const LEVELS = {
       ['The cube is on the plate.', 'Where is the cube?', 'on the plate', 'in the cave', 'by the gate', 2],
       ['Dave gave the mule some hay.', 'Who did Dave give the hay to?', 'the mule', 'the snake', 'the mole', 3],
       ['Mike will race his bike.', 'What will Mike race?', 'his bike', 'a plane', 'a mule', 3],
-      ['The rose is by the lake.', 'Where is the rose?', 'by the lake', 'in the cave', 'on the gate', 1]
+      ['The rose is by the lake.', 'Where is the rose?', 'by the lake', 'in the cave', 'on the gate', 1],
+      ['Jake will hide the bone.', 'What will Jake hide?', 'the bone', 'the cake', 'the rose', 2],
+      ['The tame mule ate a lime.', 'What did the mule eat?', 'a lime', 'a grape', 'a cake', 2],
+      ['Nate rode home on time.', 'When did Nate get home?', 'on time', 'late', 'at five', 2]
     ]
   },
   'reading-L05-vowel-teams': {
@@ -89,7 +94,11 @@ const LEVELS = {
       ['The moon is high in the sky.', 'Where is the moon?', 'high in the sky', 'on the sea', 'on the road', 2],
       ['Dean ate meat and beans.', 'What did Dean eat?', 'meat and beans', 'a green leaf', 'sea foam', 2],
       ['The goat and the sheep eat hay.', 'What do the goat and sheep eat?', 'hay', 'beans', 'seeds', 2],
-      ['Rain and sleet fell all day.', 'What fell all day?', 'rain and sleet', 'sea foam', 'green leaves', 3]
+      ['Rain and sleet fell all day.', 'What fell all day?', 'rain and sleet', 'sea foam', 'green leaves', 3],
+      ['The seal ate fish by the sea.', 'What did the seal eat?', 'fish', 'meat', 'beans', 2],
+      ['Joan rode the train to the coast.', 'Where did Joan ride the train?', 'to the coast', 'to the beach', 'to the road', 3],
+      ['The bright moon lit the road.', 'What lit the road?', 'the moon', 'the sun', 'the train', 2],
+      ['Dean sees three green trees.', 'How many trees does Dean see?', 'three', 'two', 'ten', 2]
     ]
   },
   'reading-L06-r-controlled': {
@@ -115,7 +124,11 @@ const LEVELS = {
       ['The bird chirps in the morning.', 'When does the bird chirp?', 'in the morning', 'in the dark', 'at the corner', 3],
       ['Mark has a short black cord.', 'What does Mark have?', 'a short black cord', 'a red card', 'a green fork', 2],
       ['The horse ran far past the barn.', 'Where did the horse run?', 'far past the barn', 'to the corner', 'near the surf', 3],
-      ['The nurse gave Bart a jar.', 'What did the nurse give Bart?', 'a jar', 'a card', 'a fork', 2]
+      ['The nurse gave Bart a jar.', 'What did the nurse give Bart?', 'a jar', 'a card', 'a fork', 2],
+      ['The farmer parks the cart.', 'What does the farmer park?', 'the cart', 'the car', 'the horse', 2],
+      ['The stork stands by the shore.', 'Where does the stork stand?', 'by the shore', 'in the barn', 'at the corner', 3],
+      ['The girl turns the corner first.', 'What does the girl turn?', 'the corner', 'the cart', 'the fork', 3],
+      ['Her scarf is warm and dark.', 'How is her scarf?', 'warm and dark', 'cold and wet', 'short and red', 2]
     ]
   },
   'reading-L07-diphthongs': {
@@ -141,7 +154,11 @@ const LEVELS = {
       ['Paul saw a hawk.', 'What did Paul see?', 'a hawk', 'an owl', 'a cow', 2],
       ['The king has a gold crown.', 'What does the king have?', 'a gold crown', 'a round coin', 'a new toy', 2],
       ['The boy shouts out loud.', 'How does the boy shout?', 'out loud', 'very soft', 'not at all', 3],
-      ['A brown owl hoots at night.', 'When does the owl hoot?', 'at night', 'at noon', 'in the town', 3]
+      ['A brown owl hoots at night.', 'When does the owl hoot?', 'at night', 'at noon', 'in the town', 3],
+      ['The boy found a coin in town.', 'What did the boy find?', 'a coin', 'a toy', 'a crown', 2],
+      ['The owl hoots at the moon.', 'What does the owl hoot at?', 'the moon', 'the cloud', 'the town', 2],
+      ['Roy enjoys his new toy.', 'What does Roy enjoy?', 'his new toy', 'his round coin', 'his brown cow', 2],
+      ['The proud cow stood on the mound.', 'Where did the cow stand?', 'on the mound', 'in the town', 'by the pond', 3]
     ]
   },
   'reading-L08-two-syllable': {
@@ -167,7 +184,11 @@ const LEVELS = {
       ['We had a picnic and a sunset.', 'What did we have?', 'a picnic and a sunset', 'a muffin and a magnet', 'a wagon and a basket', 3],
       ['The bandit hid in the tunnel.', 'Where did the bandit hide?', 'in the tunnel', 'on the hilltop', 'in the wagon', 3],
       ['The muffin and the carrot are on the napkin.', 'What is on the napkin?', 'the muffin and the carrot', 'the magnet and the pocket', 'the puppet and the basket', 3],
-      ['The kitten sat in the sunset on the hilltop.', 'Where did the kitten sit?', 'on the hilltop', 'in the tunnel', 'in the basket', 3]
+      ['The kitten sat in the sunset on the hilltop.', 'Where did the kitten sit?', 'on the hilltop', 'in the tunnel', 'in the basket', 3],
+      ['The puppy ran to the wagon.', 'Where did the puppy run?', 'to the wagon', 'to the basket', 'to the tunnel', 2],
+      ['The robin landed on the chimney.', 'Where did the robin land?', 'on the chimney', 'on the mailbox', 'on the hilltop', 3],
+      ['We ate a muffin at the picnic.', 'What did we eat at the picnic?', 'a muffin', 'a carrot', 'a basket', 2],
+      ['The rabbit and robin sat in the sunset.', 'Who sat in the sunset?', 'the rabbit and robin', 'the kitten and puppy', 'the bandit and goblin', 3]
     ]
   }
 }

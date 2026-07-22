@@ -437,6 +437,114 @@
       "missedConceptOnFail": "comprehension-literal",
       "rationale": "on the hilltop.",
       "decodableWithin": "PH-two-syllable"
+    },
+    {
+      "id": "rd-2s-017",
+      "skillId": "RD-twosyllable-sentences",
+      "itemType": "passage_question",
+      "difficulty": 2,
+      "passage": "The puppy ran to the wagon.",
+      "audioText": "The puppy ran to the wagon.",
+      "stem": "Where did the puppy run?",
+      "choices": [
+        {
+          "id": "a",
+          "label": "to the basket"
+        },
+        {
+          "id": "b",
+          "label": "to the wagon"
+        },
+        {
+          "id": "c",
+          "label": "to the tunnel"
+        }
+      ],
+      "correctChoiceId": "b",
+      "missedConceptOnFail": "comprehension-literal",
+      "rationale": "to the wagon.",
+      "decodableWithin": "PH-two-syllable"
+    },
+    {
+      "id": "rd-2s-018",
+      "skillId": "RD-twosyllable-sentences",
+      "itemType": "passage_question",
+      "difficulty": 3,
+      "passage": "The robin landed on the chimney.",
+      "audioText": "The robin landed on the chimney.",
+      "stem": "Where did the robin land?",
+      "choices": [
+        {
+          "id": "a",
+          "label": "on the mailbox"
+        },
+        {
+          "id": "b",
+          "label": "on the hilltop"
+        },
+        {
+          "id": "c",
+          "label": "on the chimney"
+        }
+      ],
+      "correctChoiceId": "c",
+      "missedConceptOnFail": "comprehension-literal",
+      "rationale": "on the chimney.",
+      "decodableWithin": "PH-two-syllable"
+    },
+    {
+      "id": "rd-2s-019",
+      "skillId": "RD-twosyllable-sentences",
+      "itemType": "passage_question",
+      "difficulty": 2,
+      "passage": "We ate a muffin at the picnic.",
+      "audioText": "We ate a muffin at the picnic.",
+      "stem": "What did we eat at the picnic?",
+      "choices": [
+        {
+          "id": "a",
+          "label": "a muffin"
+        },
+        {
+          "id": "b",
+          "label": "a carrot"
+        },
+        {
+          "id": "c",
+          "label": "a basket"
+        }
+      ],
+      "correctChoiceId": "a",
+      "missedConceptOnFail": "comprehension-literal",
+      "rationale": "a muffin.",
+      "decodableWithin": "PH-two-syllable"
+    },
+    {
+      "id": "rd-2s-020",
+      "skillId": "RD-twosyllable-sentences",
+      "itemType": "passage_question",
+      "difficulty": 3,
+      "passage": "The rabbit and robin sat in the sunset.",
+      "audioText": "The rabbit and robin sat in the sunset.",
+      "stem": "Who sat in the sunset?",
+      "choices": [
+        {
+          "id": "a",
+          "label": "the kitten and puppy"
+        },
+        {
+          "id": "b",
+          "label": "the rabbit and robin"
+        },
+        {
+          "id": "c",
+          "label": "the bandit and goblin"
+        }
+      ],
+      "correctChoiceId": "b",
+      "missedConceptOnFail": "comprehension-literal",
+      "rationale": "the rabbit and robin.",
+      "decodableWithin": "PH-two-syllable"
     }
   ],
   "lessons": {

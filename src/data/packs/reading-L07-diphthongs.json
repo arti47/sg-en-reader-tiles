@@ -437,6 +437,114 @@
       "missedConceptOnFail": "comprehension-literal",
       "rationale": "at night.",
       "decodableWithin": "PH-diphthongs"
+    },
+    {
+      "id": "rd-di-017",
+      "skillId": "RD-diphthong-sentences",
+      "itemType": "passage_question",
+      "difficulty": 2,
+      "passage": "The boy found a coin in town.",
+      "audioText": "The boy found a coin in town.",
+      "stem": "What did the boy find?",
+      "choices": [
+        {
+          "id": "a",
+          "label": "a toy"
+        },
+        {
+          "id": "b",
+          "label": "a coin"
+        },
+        {
+          "id": "c",
+          "label": "a crown"
+        }
+      ],
+      "correctChoiceId": "b",
+      "missedConceptOnFail": "comprehension-literal",
+      "rationale": "a coin.",
+      "decodableWithin": "PH-diphthongs"
+    },
+    {
+      "id": "rd-di-018",
+      "skillId": "RD-diphthong-sentences",
+      "itemType": "passage_question",
+      "difficulty": 2,
+      "passage": "The owl hoots at the moon.",
+      "audioText": "The owl hoots at the moon.",
+      "stem": "What does the owl hoot at?",
+      "choices": [
+        {
+          "id": "a",
+          "label": "the cloud"
+        },
+        {
+          "id": "b",
+          "label": "the town"
+        },
+        {
+          "id": "c",
+          "label": "the moon"
+        }
+      ],
+      "correctChoiceId": "c",
+      "missedConceptOnFail": "comprehension-literal",
+      "rationale": "the moon.",
+      "decodableWithin": "PH-diphthongs"
+    },
+    {
+      "id": "rd-di-019",
+      "skillId": "RD-diphthong-sentences",
+      "itemType": "passage_question",
+      "difficulty": 2,
+      "passage": "Roy enjoys his new toy.",
+      "audioText": "Roy enjoys his new toy.",
+      "stem": "What does Roy enjoy?",
+      "choices": [
+        {
+          "id": "a",
+          "label": "his new toy"
+        },
+        {
+          "id": "b",
+          "label": "his round coin"
+        },
+        {
+          "id": "c",
+          "label": "his brown cow"
+        }
+      ],
+      "correctChoiceId": "a",
+      "missedConceptOnFail": "comprehension-literal",
+      "rationale": "his new toy.",
+      "decodableWithin": "PH-diphthongs"
+    },
+    {
+      "id": "rd-di-020",
+      "skillId": "RD-diphthong-sentences",
+      "itemType": "passage_question",
+      "difficulty": 3,
+      "passage": "The proud cow stood on the mound.",
+      "audioText": "The proud cow stood on the mound.",
+      "stem": "Where did the cow stand?",
+      "choices": [
+        {
+          "id": "a",
+          "label": "in the town"
+        },
+        {
+          "id": "b",
+          "label": "on the mound"
+        },
+        {
+          "id": "c",
+          "label": "by the pond"
+        }
+      ],
+      "correctChoiceId": "b",
+      "missedConceptOnFail": "comprehension-literal",
+      "rationale": "on the mound.",
+      "decodableWithin": "PH-diphthongs"
     }
   ],
   "lessons": {

@@ -491,6 +491,60 @@
       "missedConceptOnFail": "comprehension-literal",
       "rationale": "Brad and Fran.",
       "decodableWithin": "PH-blends"
+    },
+    {
+      "id": "rd-bl-019",
+      "skillId": "RD-blend-sentences",
+      "itemType": "passage_question",
+      "difficulty": 2,
+      "passage": "Frank must stop and rest.",
+      "audioText": "Frank must stop and rest.",
+      "stem": "What must Frank do?",
+      "choices": [
+        {
+          "id": "a",
+          "label": "stop and rest"
+        },
+        {
+          "id": "b",
+          "label": "run and jump"
+        },
+        {
+          "id": "c",
+          "label": "clap and spin"
+        }
+      ],
+      "correctChoiceId": "a",
+      "missedConceptOnFail": "comprehension-literal",
+      "rationale": "stop and rest.",
+      "decodableWithin": "PH-blends"
+    },
+    {
+      "id": "rd-bl-020",
+      "skillId": "RD-blend-sentences",
+      "itemType": "passage_question",
+      "difficulty": 2,
+      "passage": "The twins had lunch on the bench.",
+      "audioText": "The twins had lunch on the bench.",
+      "stem": "Where did the twins have lunch?",
+      "choices": [
+        {
+          "id": "a",
+          "label": "in the truck"
+        },
+        {
+          "id": "b",
+          "label": "on the bench"
+        },
+        {
+          "id": "c",
+          "label": "at the pond"
+        }
+      ],
+      "correctChoiceId": "b",
+      "missedConceptOnFail": "comprehension-literal",
+      "rationale": "on the bench.",
+      "decodableWithin": "PH-blends"
     }
   ],
   "lessons": {

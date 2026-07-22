@@ -437,6 +437,114 @@
       "missedConceptOnFail": "comprehension-literal",
       "rationale": "rain and sleet.",
       "decodableWithin": "PH-vowel-teams"
+    },
+    {
+      "id": "rd-vt-017",
+      "skillId": "RD-vowelteam-sentences",
+      "itemType": "passage_question",
+      "difficulty": 2,
+      "passage": "The seal ate fish by the sea.",
+      "audioText": "The seal ate fish by the sea.",
+      "stem": "What did the seal eat?",
+      "choices": [
+        {
+          "id": "a",
+          "label": "meat"
+        },
+        {
+          "id": "b",
+          "label": "fish"
+        },
+        {
+          "id": "c",
+          "label": "beans"
+        }
+      ],
+      "correctChoiceId": "b",
+      "missedConceptOnFail": "comprehension-literal",
+      "rationale": "fish.",
+      "decodableWithin": "PH-vowel-teams"
+    },
+    {
+      "id": "rd-vt-018",
+      "skillId": "RD-vowelteam-sentences",
+      "itemType": "passage_question",
+      "difficulty": 3,
+      "passage": "Joan rode the train to the coast.",
+      "audioText": "Joan rode the train to the coast.",
+      "stem": "Where did Joan ride the train?",
+      "choices": [
+        {
+          "id": "a",
+          "label": "to the beach"
+        },
+        {
+          "id": "b",
+          "label": "to the road"
+        },
+        {
+          "id": "c",
+          "label": "to the coast"
+        }
+      ],
+      "correctChoiceId": "c",
+      "missedConceptOnFail": "comprehension-literal",
+      "rationale": "to the coast.",
+      "decodableWithin": "PH-vowel-teams"
+    },
+    {
+      "id": "rd-vt-019",
+      "skillId": "RD-vowelteam-sentences",
+      "itemType": "passage_question",
+      "difficulty": 2,
+      "passage": "The bright moon lit the road.",
+      "audioText": "The bright moon lit the road.",
+      "stem": "What lit the road?",
+      "choices": [
+        {
+          "id": "a",
+          "label": "the moon"
+        },
+        {
+          "id": "b",
+          "label": "the sun"
+        },
+        {
+          "id": "c",
+          "label": "the train"
+        }
+      ],
+      "correctChoiceId": "a",
+      "missedConceptOnFail": "comprehension-literal",
+      "rationale": "the moon.",
+      "decodableWithin": "PH-vowel-teams"
+    },
+    {
+      "id": "rd-vt-020",
+      "skillId": "RD-vowelteam-sentences",
+      "itemType": "passage_question",
+      "difficulty": 2,
+      "passage": "Dean sees three green trees.",
+      "audioText": "Dean sees three green trees.",
+      "stem": "How many trees does Dean see?",
+      "choices": [
+        {
+          "id": "a",
+          "label": "two"
+        },
+        {
+          "id": "b",
+          "label": "three"
+        },
+        {
+          "id": "c",
+          "label": "ten"
+        }
+      ],
+      "correctChoiceId": "b",
+      "missedConceptOnFail": "comprehension-literal",
+      "rationale": "three.",
+      "decodableWithin": "PH-vowel-teams"
     }
   ],
   "lessons": {

@@ -464,6 +464,87 @@
       "missedConceptOnFail": "comprehension-literal",
       "rationale": "by the lake.",
       "decodableWithin": "PH-silent-e"
+    },
+    {
+      "id": "rd-se-018",
+      "skillId": "RD-silente-sentences",
+      "itemType": "passage_question",
+      "difficulty": 2,
+      "passage": "Jake will hide the bone.",
+      "audioText": "Jake will hide the bone.",
+      "stem": "What will Jake hide?",
+      "choices": [
+        {
+          "id": "a",
+          "label": "the cake"
+        },
+        {
+          "id": "b",
+          "label": "the rose"
+        },
+        {
+          "id": "c",
+          "label": "the bone"
+        }
+      ],
+      "correctChoiceId": "c",
+      "missedConceptOnFail": "comprehension-literal",
+      "rationale": "the bone.",
+      "decodableWithin": "PH-silent-e"
+    },
+    {
+      "id": "rd-se-019",
+      "skillId": "RD-silente-sentences",
+      "itemType": "passage_question",
+      "difficulty": 2,
+      "passage": "The tame mule ate a lime.",
+      "audioText": "The tame mule ate a lime.",
+      "stem": "What did the mule eat?",
+      "choices": [
+        {
+          "id": "a",
+          "label": "a lime"
+        },
+        {
+          "id": "b",
+          "label": "a grape"
+        },
+        {
+          "id": "c",
+          "label": "a cake"
+        }
+      ],
+      "correctChoiceId": "a",
+      "missedConceptOnFail": "comprehension-literal",
+      "rationale": "a lime.",
+      "decodableWithin": "PH-silent-e"
+    },
+    {
+      "id": "rd-se-020",
+      "skillId": "RD-silente-sentences",
+      "itemType": "passage_question",
+      "difficulty": 2,
+      "passage": "Nate rode home on time.",
+      "audioText": "Nate rode home on time.",
+      "stem": "When did Nate get home?",
+      "choices": [
+        {
+          "id": "a",
+          "label": "late"
+        },
+        {
+          "id": "b",
+          "label": "on time"
+        },
+        {
+          "id": "c",
+          "label": "at five"
+        }
+      ],
+      "correctChoiceId": "b",
+      "missedConceptOnFail": "comprehension-literal",
+      "rationale": "on time.",
+      "decodableWithin": "PH-silent-e"
     }
   ],
   "lessons": {
