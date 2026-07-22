@@ -543,6 +543,19 @@ try {
       if (!e.eligibleSkills(full, undefined, new Set(['PH-digraphs'])).map(s => s.id).includes('PH-digraphs')) return 'M5 gate: digraphs eligible once its pattern is learned'
       if (!e.eligibleSkills(full, undefined, new Set()).map(s => s.id).includes('RD-cvc-sentences')) return 'M5 gate: non-pattern reading must NOT be learned-gated'
     }
+    // M5.1 (§19.13) — phoneme sound metadata: 44 rows, all clip ids resolvable; per-pattern new
+    // sounds + "same sound, new spelling" links; introduced set derives from learned patterns.
+    const SN = window.__sounds
+    if (SN) {
+      if (SN.SOUNDS.length !== 44) return 'M5.1 sounds: expected 44 phonemes'
+      if (SN.newSoundsFor('PH-digraphs').map(s => s.id).join(',') !== 'sh,ch,th-unvoiced,th-voiced') return 'M5.1: digraphs introduce sh/ch/th sounds'
+      if (SN.newSoundsFor('PH-blends').length !== 0) return 'M5.1: blends introduce no new sound'
+      // /ai/ is first taught at silent-e; vowel-teams adds new SPELLINGS (ai/ay) of that known sound.
+      if (!SN.newSpellingsFor('PH-vowel-teams').some(x => x.sound.id === 'ai' && x.graphemes.includes('ai'))) return 'M5.1: vowel-teams = new spelling of /ai/'
+      if (SN.newSpellingsFor('PH-silent-e').length !== 0) return 'M5.1: silent-e introduces, not re-spells'
+      const intro = SN.introducedSounds(new Set(['PH-cvc-short-vowels', 'PH-digraphs']))
+      if (!intro.some(s => s.id === 'sh') || intro.some(s => s.id === 'ai')) return 'M5.1: introduced set follows learned patterns (no spoilers)'
+    }
     // T17 sentence manipulation gated deep behind grammar/cloze — never eligible up front.
     if (e.eligibleSkills([]).map(s => s.id).includes('SM-editing')) return 'T17: editing must be gated behind grammar/cloze'
     // T12/T01 — sight words + letter-sounds are threaded (every 4th item, rotating), never eligible.

@@ -1,0 +1,580 @@
+[
+  {
+    "id": "b",
+    "keyword": "ball",
+    "articulation": "Lips together, then pop them apart — /b/",
+    "firstPattern": "PH-cvc-short-vowels",
+    "spellings": [
+      {
+        "grapheme": "b",
+        "pattern": "PH-cvc-short-vowels"
+      }
+    ]
+  },
+  {
+    "id": "d",
+    "keyword": "dog",
+    "articulation": "Tongue taps behind your top teeth — /d/",
+    "firstPattern": "PH-cvc-short-vowels",
+    "spellings": [
+      {
+        "grapheme": "d",
+        "pattern": "PH-cvc-short-vowels"
+      }
+    ]
+  },
+  {
+    "id": "f",
+    "keyword": "fan",
+    "articulation": "Top teeth on your bottom lip, blow — /fff/",
+    "firstPattern": "PH-cvc-short-vowels",
+    "spellings": [
+      {
+        "grapheme": "f",
+        "pattern": "PH-cvc-short-vowels"
+      }
+    ]
+  },
+  {
+    "id": "g",
+    "keyword": "goat",
+    "articulation": "Back of the tongue, quick — /g/",
+    "firstPattern": "PH-cvc-short-vowels",
+    "spellings": [
+      {
+        "grapheme": "g",
+        "pattern": "PH-cvc-short-vowels"
+      }
+    ]
+  },
+  {
+    "id": "h",
+    "keyword": "hat",
+    "articulation": "Open your mouth and breathe out — /h/",
+    "firstPattern": "PH-cvc-short-vowels",
+    "spellings": [
+      {
+        "grapheme": "h",
+        "pattern": "PH-cvc-short-vowels"
+      }
+    ]
+  },
+  {
+    "id": "j",
+    "keyword": "jam",
+    "articulation": "Tongue up, push it out — /j/",
+    "firstPattern": "PH-cvc-short-vowels",
+    "spellings": [
+      {
+        "grapheme": "j",
+        "pattern": "PH-cvc-short-vowels"
+      }
+    ]
+  },
+  {
+    "id": "k",
+    "keyword": "kite",
+    "articulation": "Back of the tongue, quick — /k/",
+    "firstPattern": "PH-cvc-short-vowels",
+    "spellings": [
+      {
+        "grapheme": "k",
+        "pattern": "PH-cvc-short-vowels"
+      }
+    ]
+  },
+  {
+    "id": "l",
+    "keyword": "leg",
+    "articulation": "Tongue behind your top teeth, hum — /lll/",
+    "firstPattern": "PH-cvc-short-vowels",
+    "spellings": [
+      {
+        "grapheme": "l",
+        "pattern": "PH-cvc-short-vowels"
+      }
+    ]
+  },
+  {
+    "id": "m",
+    "keyword": "man",
+    "articulation": "Lips together, hum — /mmm/",
+    "firstPattern": "PH-cvc-short-vowels",
+    "spellings": [
+      {
+        "grapheme": "m",
+        "pattern": "PH-cvc-short-vowels"
+      }
+    ]
+  },
+  {
+    "id": "n",
+    "keyword": "net",
+    "articulation": "Tongue behind your top teeth, hum — /nnn/",
+    "firstPattern": "PH-cvc-short-vowels",
+    "spellings": [
+      {
+        "grapheme": "n",
+        "pattern": "PH-cvc-short-vowels"
+      }
+    ]
+  },
+  {
+    "id": "p",
+    "keyword": "pig",
+    "articulation": "Lips together, then a quiet pop — /p/",
+    "firstPattern": "PH-cvc-short-vowels",
+    "spellings": [
+      {
+        "grapheme": "p",
+        "pattern": "PH-cvc-short-vowels"
+      }
+    ]
+  },
+  {
+    "id": "r",
+    "keyword": "rat",
+    "articulation": "Round your lips and growl — /rrr/",
+    "firstPattern": "PH-cvc-short-vowels",
+    "spellings": [
+      {
+        "grapheme": "r",
+        "pattern": "PH-cvc-short-vowels"
+      }
+    ]
+  },
+  {
+    "id": "s",
+    "keyword": "sun",
+    "articulation": "Teeth together, hiss like a snake — /sss/",
+    "firstPattern": "PH-cvc-short-vowels",
+    "spellings": [
+      {
+        "grapheme": "s",
+        "pattern": "PH-cvc-short-vowels"
+      }
+    ]
+  },
+  {
+    "id": "t",
+    "keyword": "tap",
+    "articulation": "Tongue taps behind your top teeth — /t/",
+    "firstPattern": "PH-cvc-short-vowels",
+    "spellings": [
+      {
+        "grapheme": "t",
+        "pattern": "PH-cvc-short-vowels"
+      }
+    ]
+  },
+  {
+    "id": "v",
+    "keyword": "van",
+    "articulation": "Top teeth on your bottom lip, buzz — /vvv/",
+    "firstPattern": "PH-cvc-short-vowels",
+    "spellings": [
+      {
+        "grapheme": "v",
+        "pattern": "PH-cvc-short-vowels"
+      }
+    ]
+  },
+  {
+    "id": "w",
+    "keyword": "web",
+    "articulation": "Round your lips — /w/",
+    "firstPattern": "PH-cvc-short-vowels",
+    "spellings": [
+      {
+        "grapheme": "w",
+        "pattern": "PH-cvc-short-vowels"
+      }
+    ]
+  },
+  {
+    "id": "y",
+    "keyword": "yak",
+    "articulation": "Smile, tongue up — /y/",
+    "firstPattern": "PH-cvc-short-vowels",
+    "spellings": [
+      {
+        "grapheme": "y",
+        "pattern": "PH-cvc-short-vowels"
+      }
+    ]
+  },
+  {
+    "id": "z",
+    "keyword": "zip",
+    "articulation": "Teeth together, buzz like a bee — /zzz/",
+    "firstPattern": "PH-cvc-short-vowels",
+    "spellings": [
+      {
+        "grapheme": "z",
+        "pattern": "PH-cvc-short-vowels"
+      }
+    ]
+  },
+  {
+    "id": "a",
+    "keyword": "apple",
+    "articulation": "Open your mouth, short — /a/",
+    "firstPattern": "PH-cvc-short-vowels",
+    "spellings": [
+      {
+        "grapheme": "a",
+        "pattern": "PH-cvc-short-vowels"
+      }
+    ]
+  },
+  {
+    "id": "e",
+    "keyword": "egg",
+    "articulation": "Mouth a little open — /e/",
+    "firstPattern": "PH-cvc-short-vowels",
+    "spellings": [
+      {
+        "grapheme": "e",
+        "pattern": "PH-cvc-short-vowels"
+      }
+    ]
+  },
+  {
+    "id": "i",
+    "keyword": "insect",
+    "articulation": "Smile a little — /i/",
+    "firstPattern": "PH-cvc-short-vowels",
+    "spellings": [
+      {
+        "grapheme": "i",
+        "pattern": "PH-cvc-short-vowels"
+      }
+    ]
+  },
+  {
+    "id": "o",
+    "keyword": "orange",
+    "articulation": "Round mouth, short — /o/",
+    "firstPattern": "PH-cvc-short-vowels",
+    "spellings": [
+      {
+        "grapheme": "o",
+        "pattern": "PH-cvc-short-vowels"
+      }
+    ]
+  },
+  {
+    "id": "u",
+    "keyword": "umbrella",
+    "articulation": "Mouth relaxed, short — /u/",
+    "firstPattern": "PH-cvc-short-vowels",
+    "spellings": [
+      {
+        "grapheme": "u",
+        "pattern": "PH-cvc-short-vowels"
+      }
+    ]
+  },
+  {
+    "id": "sh",
+    "keyword": "ship",
+    "articulation": "Lips forward, quiet air — /shhh/",
+    "firstPattern": "PH-digraphs",
+    "spellings": [
+      {
+        "grapheme": "sh",
+        "pattern": "PH-digraphs"
+      }
+    ]
+  },
+  {
+    "id": "ch",
+    "keyword": "chip",
+    "articulation": "Lips forward, short puff — /ch/",
+    "firstPattern": "PH-digraphs",
+    "spellings": [
+      {
+        "grapheme": "ch",
+        "pattern": "PH-digraphs"
+      }
+    ]
+  },
+  {
+    "id": "th-unvoiced",
+    "keyword": "thin",
+    "articulation": "Tongue between your teeth, blow — /th/",
+    "firstPattern": "PH-digraphs",
+    "spellings": [
+      {
+        "grapheme": "th",
+        "pattern": "PH-digraphs"
+      }
+    ]
+  },
+  {
+    "id": "th-voiced",
+    "keyword": "this",
+    "articulation": "Tongue between your teeth, buzz — /th/",
+    "firstPattern": "PH-digraphs",
+    "spellings": [
+      {
+        "grapheme": "th",
+        "pattern": "PH-digraphs"
+      }
+    ]
+  },
+  {
+    "id": "ng",
+    "keyword": "ring",
+    "articulation": "Back of the tongue, hum through your nose — /ng/",
+    "firstPattern": "PH-ng",
+    "spellings": [
+      {
+        "grapheme": "ng",
+        "pattern": "PH-ng"
+      },
+      {
+        "grapheme": "nk",
+        "pattern": "PH-ng"
+      }
+    ]
+  },
+  {
+    "id": "ai",
+    "keyword": "cake",
+    "articulation": "Say the letter a's name — /ai/",
+    "firstPattern": "PH-silent-e",
+    "spellings": [
+      {
+        "grapheme": "a_e",
+        "pattern": "PH-silent-e"
+      },
+      {
+        "grapheme": "ai",
+        "pattern": "PH-vowel-teams"
+      },
+      {
+        "grapheme": "ay",
+        "pattern": "PH-vowel-teams"
+      }
+    ]
+  },
+  {
+    "id": "igh",
+    "keyword": "bike",
+    "articulation": "Say the letter i's name — /igh/",
+    "firstPattern": "PH-silent-e",
+    "spellings": [
+      {
+        "grapheme": "i_e",
+        "pattern": "PH-silent-e"
+      },
+      {
+        "grapheme": "igh",
+        "pattern": "PH-vowel-teams"
+      }
+    ]
+  },
+  {
+    "id": "oa",
+    "keyword": "home",
+    "articulation": "Say the letter o's name — /oa/",
+    "firstPattern": "PH-silent-e",
+    "spellings": [
+      {
+        "grapheme": "o_e",
+        "pattern": "PH-silent-e"
+      },
+      {
+        "grapheme": "oa",
+        "pattern": "PH-vowel-teams"
+      },
+      {
+        "grapheme": "ow",
+        "pattern": "PH-vowel-teams"
+      }
+    ]
+  },
+  {
+    "id": "ee",
+    "keyword": "feet",
+    "articulation": "Smile wide, say e's name — /ee/",
+    "firstPattern": "PH-vowel-teams",
+    "spellings": [
+      {
+        "grapheme": "ee",
+        "pattern": "PH-vowel-teams"
+      },
+      {
+        "grapheme": "ea",
+        "pattern": "PH-vowel-teams"
+      }
+    ]
+  },
+  {
+    "id": "oo-long",
+    "keyword": "moon",
+    "articulation": "Round your lips, long — /oo/",
+    "firstPattern": "PH-vowel-teams",
+    "spellings": [
+      {
+        "grapheme": "oo",
+        "pattern": "PH-vowel-teams"
+      },
+      {
+        "grapheme": "ew",
+        "pattern": "PH-vowel-teams"
+      },
+      {
+        "grapheme": "ue",
+        "pattern": "PH-vowel-teams"
+      }
+    ]
+  },
+  {
+    "id": "ar",
+    "keyword": "car",
+    "articulation": "Open your mouth and add r — /ar/",
+    "firstPattern": "PH-r-controlled",
+    "spellings": [
+      {
+        "grapheme": "ar",
+        "pattern": "PH-r-controlled"
+      }
+    ]
+  },
+  {
+    "id": "or",
+    "keyword": "fork",
+    "articulation": "Round your mouth and add r — /or/",
+    "firstPattern": "PH-r-controlled",
+    "spellings": [
+      {
+        "grapheme": "or",
+        "pattern": "PH-r-controlled"
+      },
+      {
+        "grapheme": "aw",
+        "pattern": "PH-diphthongs"
+      },
+      {
+        "grapheme": "au",
+        "pattern": "PH-diphthongs"
+      }
+    ]
+  },
+  {
+    "id": "ur",
+    "keyword": "her",
+    "articulation": "The bossy-r sound — /ur/ (er, ir, ur)",
+    "firstPattern": "PH-r-controlled",
+    "spellings": [
+      {
+        "grapheme": "er",
+        "pattern": "PH-r-controlled"
+      },
+      {
+        "grapheme": "ir",
+        "pattern": "PH-r-controlled"
+      },
+      {
+        "grapheme": "ur",
+        "pattern": "PH-r-controlled"
+      }
+    ]
+  },
+  {
+    "id": "oi",
+    "keyword": "coin",
+    "articulation": "Lips round, then smile — /oi/",
+    "firstPattern": "PH-diphthongs",
+    "spellings": [
+      {
+        "grapheme": "oi",
+        "pattern": "PH-diphthongs"
+      },
+      {
+        "grapheme": "oy",
+        "pattern": "PH-diphthongs"
+      }
+    ]
+  },
+  {
+    "id": "ow",
+    "keyword": "cow",
+    "articulation": "Open, then round your lips — /ow/",
+    "firstPattern": "PH-diphthongs",
+    "spellings": [
+      {
+        "grapheme": "ow",
+        "pattern": "PH-diphthongs"
+      },
+      {
+        "grapheme": "ou",
+        "pattern": "PH-diphthongs"
+      }
+    ]
+  },
+  {
+    "id": "oo-short",
+    "keyword": "book",
+    "articulation": "Short and quick — /oo/",
+    "firstPattern": "PH-diphthongs",
+    "spellings": [
+      {
+        "grapheme": "oo",
+        "pattern": "PH-diphthongs"
+      }
+    ]
+  },
+  {
+    "id": "ear",
+    "keyword": "hear",
+    "articulation": "The /ear/ sound, like in hear",
+    "firstPattern": "PH-r-vowel-teams",
+    "spellings": [
+      {
+        "grapheme": "ear",
+        "pattern": "PH-r-vowel-teams"
+      }
+    ]
+  },
+  {
+    "id": "air",
+    "keyword": "hair",
+    "articulation": "The /air/ sound, like in hair",
+    "firstPattern": "PH-r-vowel-teams",
+    "spellings": [
+      {
+        "grapheme": "air",
+        "pattern": "PH-r-vowel-teams"
+      }
+    ]
+  },
+  {
+    "id": "ure",
+    "keyword": "cure",
+    "articulation": "The /ure/ sound, like in cure",
+    "firstPattern": "PH-r-vowel-teams",
+    "spellings": [
+      {
+        "grapheme": "ure",
+        "pattern": "PH-r-vowel-teams"
+      }
+    ]
+  },
+  {
+    "id": "schwa",
+    "keyword": "about",
+    "articulation": "The lazy /uh/ sound in longer words",
+    "firstPattern": null,
+    "spellings": []
+  },
+  {
+    "id": "zh",
+    "keyword": "measure",
+    "articulation": "A soft buzzy /zh/ sound",
+    "firstPattern": null,
+    "spellings": []
+  }
+]
