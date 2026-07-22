@@ -1,10 +1,10 @@
 import { useEffect, useState } from 'react'
-import type { Child, Attempt, SkillProgress, Certificate, Aggregate, Usage, Settings } from '../types'
-import { getAttempts, getProgress, getCertificates, getAggregates, getUsage, getSettings, putSettings, exportAll, importAll } from '../store'
+import type { Child, Attempt, SkillProgress, Certificate, Aggregate, Daily, Usage, Settings } from '../types'
+import { getAttempts, getProgress, getCertificates, getAggregates, getDaily, getUsage, getSettings, putSettings, exportAll, importAll } from '../store'
 import { SKILLS, getSkill } from '../lib/packs'
 import { computeReadiness, type Readiness } from '../lib/readiness'
 import { achievements, type Achievement } from '../lib/gamify'
-import { weekLabel } from '../lib/aggregate'
+import { summarise, type Granularity } from '../lib/aggregate'
 import { setRate, setVoice, listVoices, onVoicesReady } from '../lib/audio'
 
 // Parent dashboard (§10, §11, §14). PIN-gated, growth-framed, parent-only. Per-child readiness
@@ -13,25 +13,22 @@ import { setRate, setVoice, listVoices, onVoicesReady } from '../lib/audio'
 type Gate = 'loading' | 'enter' | 'create1' | 'create2' | 'open'
 interface CardData {
   child: Child; readiness: Readiness; usage?: Usage
-  certs: Certificate[]; weeks: { week: string; items: number; correct: number }[]; entryLabel: string
+  certs: Certificate[]; aggs: Aggregate[]; daily: Daily[]; entryLabel: string
   badges: Achievement[]
 }
+const GRANS: { id: Granularity; label: string }[] = [
+  { id: 'day', label: 'Daily' }, { id: 'week', label: 'Weekly' }, { id: 'month', label: 'Monthly' }, { id: 'year', label: 'Yearly' }
+]
 
 const pct = (n: number) => `${Math.round(n * 100)}%`
 const dot = (s: Readiness['status']) => s === 'On-Target' ? 'green' : s === 'Some-Risk' ? 'amber' : 'red'
 
-function buildCard(child: Child, attempts: Attempt[], progress: SkillProgress[], certs: Certificate[], aggs: Aggregate[], usage?: Usage): CardData {
+function buildCard(child: Child, attempts: Attempt[], progress: SkillProgress[], certs: Certificate[], aggs: Aggregate[], daily: Daily[], usage?: Usage): CardData {
   const mastered = new Set(progress.filter(p => p.status === 'mastered').map(p => p.skillId))
   const readiness = computeReadiness(attempts, mastered, aggs, SKILLS.length)
-  const byWeek = new Map<string, { items: number; correct: number }>()
-  for (const a of aggs) {
-    const w = byWeek.get(a.week) ?? { items: 0, correct: 0 }
-    w.items += a.items; w.correct += a.correct; byWeek.set(a.week, w)
-  }
-  const weeks = [...byWeek.entries()].sort((a, b) => a[0] < b[0] ? -1 : 1).slice(-8).map(([week, v]) => ({ week, ...v }))
   const entry = child.entrySkillId ? getSkill(child.entrySkillId) : undefined
   const entryLabel = entry ? entry.iCanStatement : 'Not placed yet'
-  return { child, readiness, usage, certs: certs.slice(-3).reverse(), weeks, entryLabel, badges: achievements(attempts, certs, usage) }
+  return { child, readiness, usage, certs: certs.slice(-3).reverse(), aggs, daily, entryLabel, badges: achievements(attempts, certs, usage) }
 }
 
 export function ParentDashboard(props: { children: Child[]; onExit: () => void; onReset: (c: Child) => void }) {
@@ -42,6 +39,8 @@ export function ParentDashboard(props: { children: Child[]; onExit: () => void; 
   const [cards, setCards] = useState<CardData[]>([])
   const [voices, setVoices] = useState<{ voiceURI: string; name: string; lang: string }[]>([])
   const [tstat, setTstat] = useState('')
+  const [gran, setGran] = useState<Granularity>('week')      // trend-chart granularity
+  const [pickId, setPickId] = useState<string>('all')         // selected student in the dropdown ('all' = show every card)
 
   // Self-diagnosing TTS test: speaks synchronously in the click gesture and surfaces the
   // engine's own start/end/error events, so a silent device tells us *why* (not-allowed,
@@ -78,10 +77,10 @@ export function ParentDashboard(props: { children: Child[]; onExit: () => void; 
 
   async function loadCards() {
     const data = await Promise.all(props.children.map(async c => {
-      const [a, p, ce, ag, u] = await Promise.all([
-        getAttempts(c.id), getProgress(c.id), getCertificates(c.id), getAggregates(c.id), getUsage(c.id)
+      const [a, p, ce, ag, dy, u] = await Promise.all([
+        getAttempts(c.id), getProgress(c.id), getCertificates(c.id), getAggregates(c.id), getDaily(c.id), getUsage(c.id)
       ])
-      return buildCard(c, a, p, ce, ag, u)
+      return buildCard(c, a, p, ce, ag, dy, u)
     }))
     setCards(data)
   }
@@ -144,7 +143,17 @@ export function ParentDashboard(props: { children: Child[]; onExit: () => void; 
 
       {cards.length === 0 && <p className="note">No students yet.</p>}
 
-      {cards.map(c => (
+      {cards.length > 1 && (
+        <label className="field">
+          <span>Student</span>
+          <select className="select" value={pickId} onChange={e => setPickId(e.target.value)}>
+            <option value="all">All students</option>
+            {cards.map(c => <option key={c.child.id} value={c.child.id}>{c.child.name}</option>)}
+          </select>
+        </label>
+      )}
+
+      {cards.filter(c => pickId === 'all' || c.child.id === pickId).map(c => (
         <div key={c.child.id} className="dash-card">
           <div className="row" style={{ justifyContent: 'space-between', alignItems: 'baseline' }}>
             <h2 style={{ margin: 0 }}>{c.child.name}</h2>
@@ -172,19 +181,32 @@ export function ParentDashboard(props: { children: Child[]; onExit: () => void; 
             </p>
           )}
 
-          {c.weeks.length > 0 && (
-            <div className="chart" aria-label="Weekly activity">
-              {c.weeks.map(w => {
-                const max = Math.max(...c.weeks.map(x => x.items), 1)
-                return (
-                  <div key={w.week} className="bar-wrap" title={`${w.week}: ${w.correct}/${w.items}`}>
-                    <div className="bar" style={{ height: `${Math.max(6, (w.items / max) * 64)}px`, opacity: 0.4 + 0.6 * (w.items ? w.correct / w.items : 0) }} />
-                    <span className="bar-lbl">{weekLabel(w.week)}</span>
+          {(() => {
+            const buckets = summarise(c.aggs, c.daily, gran)
+            return (
+              <>
+                <div className="seg" role="tablist" aria-label="Trend range">
+                  {GRANS.map(g => (
+                    <button key={g.id} role="tab" aria-selected={gran === g.id}
+                      className={'seg-btn' + (gran === g.id ? ' on' : '')} onClick={() => setGran(g.id)}>{g.label}</button>
+                  ))}
+                </div>
+                {buckets.length > 0 ? (
+                  <div className="chart" aria-label={`${gran} activity`}>
+                    {buckets.map(b => {
+                      const max = Math.max(...buckets.map(x => x.items), 1)
+                      return (
+                        <div key={b.key} className="bar-wrap" title={`${b.label}: ${b.correct}/${b.items}`}>
+                          <div className="bar" style={{ height: `${Math.max(6, (b.items / max) * 64)}px`, opacity: 0.4 + 0.6 * (b.items ? b.correct / b.items : 0) }} />
+                          <span className="bar-lbl">{b.label}</span>
+                        </div>
+                      )
+                    })}
                   </div>
-                )
-              })}
-            </div>
-          )}
+                ) : <p className="note tiny">No {gran === 'day' ? 'daily' : gran + 'ly'} activity yet.</p>}
+              </>
+            )
+          })()}
 
           <div className="action">
             <b>Next step:</b> {c.readiness.action.text}

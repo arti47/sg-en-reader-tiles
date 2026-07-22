@@ -1,6 +1,6 @@
 // IndexedDB persistence (CLAUDE.md §11). No deps.
-import type { Child, Attempt, SkillProgress, Certificate, Review, Aggregate, Usage, Settings } from './types'
-export const SCHEMA_VERSION = 4
+import type { Child, Attempt, SkillProgress, Certificate, Review, Aggregate, Daily, Usage, Settings } from './types'
+export const SCHEMA_VERSION = 5
 const DB = 'sg-reader'; const VER = SCHEMA_VERSION
 
 function open(): Promise<IDBDatabase> {
@@ -27,6 +27,10 @@ function open(): Promise<IDBDatabase> {
         if (!db.objectStoreNames.contains('aggregates')) db.createObjectStore('aggregates', { keyPath: 'key' })
         if (!db.objectStoreNames.contains('usage')) db.createObjectStore('usage', { keyPath: 'childId' })
         if (!db.objectStoreNames.contains('settings')) db.createObjectStore('settings', { keyPath: 'key' })
+      }
+      if (oldV < 5) {
+        // v5 adds per-day rollups for the daily view of the trend chart.
+        if (!db.objectStoreNames.contains('daily')) db.createObjectStore('daily', { keyPath: 'key' })
       }
     }
     r.onsuccess = () => res(r.result)
@@ -89,6 +93,23 @@ export async function bumpAggregate(childId: string, skillId: string, week: stri
   await req('aggregates', 'readwrite', s => s.put(next))
 }
 
+// Daily rollups — keyed "childId::YYYY-MM-DD" (per-day totals across skills)
+const dKey = (childId: string, day: string) => `${childId}::${day}`
+export const getDaily = (childId: string) =>
+  req<Array<Daily & { key: string }>>('daily', 'readonly', s => s.getAll())
+    .then(rows => rows.filter(r => r.key.startsWith(childId + '::')))
+export async function bumpDaily(childId: string, day: string, correct: boolean, minutes: number): Promise<void> {
+  const key = dKey(childId, day)
+  const prev = await req<(Daily & { key: string }) | undefined>('daily', 'readonly', s => s.get(key))
+  const next: Daily & { key: string } = {
+    key, childId, day,
+    items: (prev?.items ?? 0) + 1,
+    correct: (prev?.correct ?? 0) + (correct ? 1 : 0),
+    minutes: (prev?.minutes ?? 0) + minutes
+  }
+  await req('daily', 'readwrite', s => s.put(next))
+}
+
 // Usage / streak (§14)
 export const getUsage = (childId: string) =>
   req<Usage | undefined>('usage', 'readonly', s => s.get(childId))
@@ -101,7 +122,7 @@ export const getSettings = () =>
 export const putSettings = (st: Settings) => req('settings', 'readwrite', s => s.put({ ...st, key: 'app' }))
 
 // Export / import (§11) — device-bound storage safety net. Full-DB JSON round-trip.
-const ALL_STORES = ['children', 'attempts', 'progress', 'certificates', 'reviews', 'aggregates', 'usage', 'settings']
+const ALL_STORES = ['children', 'attempts', 'progress', 'certificates', 'reviews', 'aggregates', 'daily', 'usage', 'settings']
 export async function exportAll(): Promise<{ app: string; schemaVersion: number; exportedAt: number; stores: Record<string, unknown[]> }> {
   const db = await open()
   const stores: Record<string, unknown[]> = {}
@@ -134,11 +155,11 @@ function run(stores: string[], mode: IDBTransactionMode, fn: (t: IDBTransaction)
 // Delete all of a child's data (attempts by index; progress/certs/reviews/aggregates by
 // key prefix; usage by childId key).
 function clearChildData(childId: string): Promise<void> {
-  return run(['attempts', 'progress', 'certificates', 'reviews', 'aggregates', 'usage'], 'readwrite', t => {
+  return run(['attempts', 'progress', 'certificates', 'reviews', 'aggregates', 'daily', 'usage'], 'readwrite', t => {
     const at = t.objectStore('attempts')
     at.index('childId').getAllKeys(childId).onsuccess = e =>
       (e.target as IDBRequest<IDBValidKey[]>).result.forEach(k => at.delete(k))
-    for (const name of ['progress', 'certificates', 'reviews', 'aggregates']) {
+    for (const name of ['progress', 'certificates', 'reviews', 'aggregates', 'daily']) {
       const st = t.objectStore(name)
       st.getAllKeys().onsuccess = e =>
         (e.target as IDBRequest<IDBValidKey[]>).result.forEach(k => {

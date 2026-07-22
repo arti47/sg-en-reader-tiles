@@ -291,6 +291,13 @@ try {
       .catch(() => fail('dashboard: card did not render after PIN'))
     if (!/Dash/.test(await dp.evaluate(() => document.body.innerText))) fail('dashboard: child card missing')
     if (!/badges/.test(await dp.evaluate(() => document.body.innerText))) fail('M4 gamify: dashboard should show achievement badges')
+    // Trend granularity toggle: Daily/Weekly/Monthly/Yearly present; switching to Daily works.
+    for (const g of ['Daily', 'Weekly', 'Monthly', 'Yearly']) {
+      if (!(await dp.getByRole('tab', { name: g }).count())) fail(`dashboard: missing ${g} trend toggle`)
+    }
+    await dp.getByRole('tab', { name: 'Daily' }).click()
+    await dp.waitForFunction(() => document.querySelector('[role="tab"][aria-selected="true"]')?.textContent === 'Daily', { timeout: 6000 })
+      .catch(() => fail('dashboard: Daily toggle did not select'))
     const dOverflow = await dp.evaluate(() => document.documentElement.scrollWidth > window.innerWidth + 1)
     if (dOverflow) fail('dashboard: horizontal overflow at 390px')
     const [dl] = await Promise.all([
@@ -503,7 +510,17 @@ try {
     const wrong = Array.from({ length: 6 }, (_, i) => ({ id: 'w' + i, childId: 'c', skillId: 'PH-cvc-short-vowels', itemId: 'i', correct: false, difficulty: 1, latencyMs: 1, ts: i }))
     if (rd.computeReadiness(wrong, new Set(), [], 10).status !== 'High-Risk') return 'readiness: 6 wrong → High-Risk'
     const before = await store.exportAll()
-    if (before.schemaVersion !== 4) return 'export schemaVersion should be 4'
+    if (before.schemaVersion !== 5) return 'export schemaVersion should be 5'
+    // Trend summary (§11): summarise buckets weekly aggregates by day/week/month/year.
+    const agg = window.__aggregate
+    const aggs = [{ week: '2026-W29', items: 4, correct: 3 }, { week: '2026-W29', items: 2, correct: 2 }, { week: '2026-W30', items: 5, correct: 4 }]
+    const dyl = [{ day: '2026-07-20', items: 3, correct: 2 }, { day: '2026-07-21', items: 6, correct: 5 }]
+    const wk = agg.summarise(aggs, dyl, 'week')
+    if (wk.length !== 2 || wk[0].items !== 6 || wk[1].items !== 5) return 'summarise week: group+sum by week'
+    const mo = agg.summarise(aggs, dyl, 'month')
+    if (mo.length !== 1 || mo[0].items !== 11) return 'summarise month: sum all July weeks'
+    const dd = agg.summarise(aggs, dyl, 'day')
+    if (dd.length !== 2 || dd[1].label !== '21 Jul' || dd[1].items !== 6) return 'summarise day: from daily rows'
     await store.importAll(before)
     const after = await store.exportAll()
     const count = d => Object.fromEntries(Object.entries(d.stores).map(([k, v]) => [k, v.length]))

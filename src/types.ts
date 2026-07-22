@@ -108,6 +108,8 @@ export interface Certificate { skillId: string; iCanStatement: string; awardedAt
 // ---- M2 analytics (§10, §11) ----
 // Per (child, ISO-week, skill) rollup — never rolled off; feeds the trend chart.
 export interface Aggregate { childId: string; week: string; skillId: string; items: number; correct: number; minutes: number }
+// Per (child, calendar-day) rollup — feeds the daily view of the trend chart (§11).
+export interface Daily { childId: string; day: string; items: number; correct: number; minutes: number }
 // Usage/fidelity mechanic (§14) — sessions toward a weekly target + streak.
 export interface Usage { childId: string; weeklySessionTarget: number; sessionsThisWeek: number; weekKey: string; streakWeeks: number; lastSessionTs: number }
 // Global settings (§11).

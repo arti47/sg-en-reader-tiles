@@ -1,14 +1,14 @@
 import { useEffect, useRef, useState } from 'react'
 import type { Child, PackItem, Attempt, SkillProgress, Difficulty, SkillDef, Certificate, Review } from '../types'
 import type { ScoreResult } from '../lib/scoring'
-import { addAttempt, getAttempts, getProgress, putProgress, putCertificate, getCertificates, getReviews, putReview, bumpAggregate, getUsage, putUsage, getSettings } from '../store'
+import { addAttempt, getAttempts, getProgress, putProgress, putCertificate, getCertificates, getReviews, putReview, bumpAggregate, bumpDaily, getUsage, putUsage, getSettings } from '../store'
 import { setRate, setVoice } from '../lib/audio'
 import { XP_PER_CORRECT, XP_PER_CERT, achievements, type Achievement } from '../lib/gamify'
 import { SKILLS, getSkill, getLesson, pickItem } from '../lib/packs'
 import { rollingAccuracy, itemsAnswered, nextDifficulty, isMastered, patternMastered, struggling, eligibleSkills, patternDecodeSkill, interleavedReviewSkill, threadedSkill, fluencySkill } from '../lib/engine'
 import { support } from '../lib/support'
 import { scheduleFirst, onReviewPass, onReviewFail, dueReviews } from '../lib/srs'
-import { isoWeek, isConsecutiveWeek } from '../lib/aggregate'
+import { isoWeek, isConsecutiveWeek, isoDay } from '../lib/aggregate'
 import { McqItem } from './items/McqItem'
 import { TileItem } from './items/TileItem'
 import { ClozeItem } from './items/ClozeItem'
@@ -191,6 +191,7 @@ export function Session(props: { child: Child; onExit: () => void; onTrophies: (
     await putProgress(props.child.id, sp)
     // Weekly rollup for the trend chart (§11): items/correct/minutes per (child, week, skill).
     await bumpAggregate(props.child.id, skill.id, isoWeek(a.ts), r.correct, a.latencyMs / 60000)
+    await bumpDaily(props.child.id, isoDay(a.ts), r.correct, a.latencyMs / 60000)
 
     countRef.current += 1; setCount(countRef.current)
     if (r.correct) xpGainRef.current += XP_PER_CORRECT
