@@ -1,0 +1,1556 @@
+{
+  "packId": "dictation-L07-vowel-teams",
+  "strand": "spelling",
+  "skillIds": [
+    "SP-vowelteam-dictation"
+  ],
+  "version": 1,
+  "items": [
+    {
+      "id": "dic-vowelteam-01",
+      "skillId": "SP-vowelteam-dictation",
+      "itemType": "dictation",
+      "difficulty": 1,
+      "stem": "Build the sentence you hear, word by word.",
+      "audioText": "a boat is on the sea",
+      "words": [
+        {
+          "text": "a",
+          "graphemes": [
+            "a"
+          ],
+          "distractorGraphemes": [
+            "e",
+            "i"
+          ]
+        },
+        {
+          "text": "boat",
+          "graphemes": [
+            "b",
+            "oa",
+            "t"
+          ],
+          "distractorGraphemes": [
+            "a",
+            "e"
+          ]
+        },
+        {
+          "text": "is",
+          "graphemes": [
+            "i",
+            "s"
+          ],
+          "distractorGraphemes": [
+            "a",
+            "e"
+          ]
+        },
+        {
+          "text": "on",
+          "graphemes": [
+            "o",
+            "n"
+          ],
+          "distractorGraphemes": [
+            "a",
+            "e"
+          ]
+        },
+        {
+          "text": "the",
+          "graphemes": [
+            "th",
+            "e"
+          ],
+          "distractorGraphemes": [
+            "a",
+            "i"
+          ]
+        },
+        {
+          "text": "sea",
+          "graphemes": [
+            "s",
+            "ea"
+          ],
+          "distractorGraphemes": [
+            "a",
+            "e"
+          ]
+        }
+      ],
+      "decodableWithin": "SP-vowel-teams",
+      "missedConceptOnFail": "sentence-dictation",
+      "rationale": "a boat is on the sea — build each word from its sounds."
+    },
+    {
+      "id": "dic-vowelteam-02",
+      "skillId": "SP-vowelteam-dictation",
+      "itemType": "dictation",
+      "difficulty": 2,
+      "stem": "Build the sentence you hear, word by word.",
+      "audioText": "jean had a green bean",
+      "words": [
+        {
+          "text": "jean",
+          "graphemes": [
+            "j",
+            "ea",
+            "n"
+          ],
+          "distractorGraphemes": [
+            "a",
+            "e"
+          ]
+        },
+        {
+          "text": "had",
+          "graphemes": [
+            "h",
+            "a",
+            "d"
+          ],
+          "distractorGraphemes": [
+            "e",
+            "i"
+          ]
+        },
+        {
+          "text": "a",
+          "graphemes": [
+            "a"
+          ],
+          "distractorGraphemes": [
+            "e",
+            "i"
+          ]
+        },
+        {
+          "text": "green",
+          "graphemes": [
+            "g",
+            "r",
+            "ee",
+            "n"
+          ],
+          "distractorGraphemes": [
+            "a",
+            "e"
+          ]
+        },
+        {
+          "text": "bean",
+          "graphemes": [
+            "b",
+            "ea",
+            "n"
+          ],
+          "distractorGraphemes": [
+            "a",
+            "e"
+          ]
+        }
+      ],
+      "decodableWithin": "SP-vowel-teams",
+      "missedConceptOnFail": "sentence-dictation",
+      "rationale": "Jean had a green bean — build each word from its sounds."
+    },
+    {
+      "id": "dic-vowelteam-03",
+      "skillId": "SP-vowelteam-dictation",
+      "itemType": "dictation",
+      "difficulty": 3,
+      "stem": "Build the sentence you hear, word by word.",
+      "audioText": "the rain fell on the road",
+      "words": [
+        {
+          "text": "the",
+          "graphemes": [
+            "th",
+            "e"
+          ],
+          "distractorGraphemes": [
+            "a",
+            "i"
+          ]
+        },
+        {
+          "text": "rain",
+          "graphemes": [
+            "r",
+            "ai",
+            "n"
+          ],
+          "distractorGraphemes": [
+            "a",
+            "e"
+          ]
+        },
+        {
+          "text": "fell",
+          "graphemes": [
+            "f",
+            "e",
+            "ll"
+          ],
+          "distractorGraphemes": [
+            "a",
+            "i"
+          ]
+        },
+        {
+          "text": "on",
+          "graphemes": [
+            "o",
+            "n"
+          ],
+          "distractorGraphemes": [
+            "a",
+            "e"
+          ]
+        },
+        {
+          "text": "the",
+          "graphemes": [
+            "th",
+            "e"
+          ],
+          "distractorGraphemes": [
+            "a",
+            "i"
+          ]
+        },
+        {
+          "text": "road",
+          "graphemes": [
+            "r",
+            "oa",
+            "d"
+          ],
+          "distractorGraphemes": [
+            "a",
+            "e"
+          ]
+        }
+      ],
+      "decodableWithin": "SP-vowel-teams",
+      "missedConceptOnFail": "sentence-dictation",
+      "rationale": "the rain fell on the road — build each word from its sounds."
+    },
+    {
+      "id": "dic-vowelteam-04",
+      "skillId": "SP-vowelteam-dictation",
+      "itemType": "dictation",
+      "difficulty": 1,
+      "stem": "Build the sentence you hear, word by word.",
+      "audioText": "a goat ate a leaf",
+      "words": [
+        {
+          "text": "a",
+          "graphemes": [
+            "a"
+          ],
+          "distractorGraphemes": [
+            "e",
+            "i"
+          ]
+        },
+        {
+          "text": "goat",
+          "graphemes": [
+            "g",
+            "oa",
+            "t"
+          ],
+          "distractorGraphemes": [
+            "a",
+            "e"
+          ]
+        },
+        {
+          "text": "ate",
+          "graphemes": [
+            "a",
+            "t",
+            "e"
+          ],
+          "distractorGraphemes": [
+            "i",
+            "o"
+          ]
+        },
+        {
+          "text": "a",
+          "graphemes": [
+            "a"
+          ],
+          "distractorGraphemes": [
+            "e",
+            "i"
+          ]
+        },
+        {
+          "text": "leaf",
+          "graphemes": [
+            "l",
+            "ea",
+            "f"
+          ],
+          "distractorGraphemes": [
+            "a",
+            "e"
+          ]
+        }
+      ],
+      "decodableWithin": "SP-vowel-teams",
+      "missedConceptOnFail": "sentence-dictation",
+      "rationale": "a goat ate a leaf — build each word from its sounds."
+    },
+    {
+      "id": "dic-vowelteam-05",
+      "skillId": "SP-vowelteam-dictation",
+      "itemType": "dictation",
+      "difficulty": 2,
+      "stem": "Build the sentence you hear, word by word.",
+      "audioText": "joan put on a coat",
+      "words": [
+        {
+          "text": "joan",
+          "graphemes": [
+            "j",
+            "oa",
+            "n"
+          ],
+          "distractorGraphemes": [
+            "a",
+            "e"
+          ]
+        },
+        {
+          "text": "put",
+          "graphemes": [
+            "p",
+            "u",
+            "t"
+          ],
+          "distractorGraphemes": [
+            "a",
+            "e"
+          ]
+        },
+        {
+          "text": "on",
+          "graphemes": [
+            "o",
+            "n"
+          ],
+          "distractorGraphemes": [
+            "a",
+            "e"
+          ]
+        },
+        {
+          "text": "a",
+          "graphemes": [
+            "a"
+          ],
+          "distractorGraphemes": [
+            "e",
+            "i"
+          ]
+        },
+        {
+          "text": "coat",
+          "graphemes": [
+            "c",
+            "oa",
+            "t"
+          ],
+          "distractorGraphemes": [
+            "a",
+            "e"
+          ]
+        }
+      ],
+      "decodableWithin": "SP-vowel-teams",
+      "missedConceptOnFail": "sentence-dictation",
+      "rationale": "Joan put on a coat — build each word from its sounds."
+    },
+    {
+      "id": "dic-vowelteam-06",
+      "skillId": "SP-vowelteam-dictation",
+      "itemType": "dictation",
+      "difficulty": 3,
+      "stem": "Build the sentence you hear, word by word.",
+      "audioText": "a bee sat on a leaf",
+      "words": [
+        {
+          "text": "a",
+          "graphemes": [
+            "a"
+          ],
+          "distractorGraphemes": [
+            "e",
+            "i"
+          ]
+        },
+        {
+          "text": "bee",
+          "graphemes": [
+            "b",
+            "ee"
+          ],
+          "distractorGraphemes": [
+            "a",
+            "e"
+          ]
+        },
+        {
+          "text": "sat",
+          "graphemes": [
+            "s",
+            "a",
+            "t"
+          ],
+          "distractorGraphemes": [
+            "e",
+            "i"
+          ]
+        },
+        {
+          "text": "on",
+          "graphemes": [
+            "o",
+            "n"
+          ],
+          "distractorGraphemes": [
+            "a",
+            "e"
+          ]
+        },
+        {
+          "text": "a",
+          "graphemes": [
+            "a"
+          ],
+          "distractorGraphemes": [
+            "e",
+            "i"
+          ]
+        },
+        {
+          "text": "leaf",
+          "graphemes": [
+            "l",
+            "ea",
+            "f"
+          ],
+          "distractorGraphemes": [
+            "a",
+            "e"
+          ]
+        }
+      ],
+      "decodableWithin": "SP-vowel-teams",
+      "missedConceptOnFail": "sentence-dictation",
+      "rationale": "a bee sat on a leaf — build each word from its sounds."
+    },
+    {
+      "id": "dic-vowelteam-07",
+      "skillId": "SP-vowelteam-dictation",
+      "itemType": "dictation",
+      "difficulty": 1,
+      "stem": "Build the sentence you hear, word by word.",
+      "audioText": "dean can see the moon",
+      "words": [
+        {
+          "text": "dean",
+          "graphemes": [
+            "d",
+            "ea",
+            "n"
+          ],
+          "distractorGraphemes": [
+            "a",
+            "e"
+          ]
+        },
+        {
+          "text": "can",
+          "graphemes": [
+            "c",
+            "a",
+            "n"
+          ],
+          "distractorGraphemes": [
+            "e",
+            "i"
+          ]
+        },
+        {
+          "text": "see",
+          "graphemes": [
+            "s",
+            "ee"
+          ],
+          "distractorGraphemes": [
+            "a",
+            "e"
+          ]
+        },
+        {
+          "text": "the",
+          "graphemes": [
+            "th",
+            "e"
+          ],
+          "distractorGraphemes": [
+            "a",
+            "i"
+          ]
+        },
+        {
+          "text": "moon",
+          "graphemes": [
+            "m",
+            "oo",
+            "n"
+          ],
+          "distractorGraphemes": [
+            "a",
+            "e"
+          ]
+        }
+      ],
+      "decodableWithin": "SP-vowel-teams",
+      "missedConceptOnFail": "sentence-dictation",
+      "rationale": "Dean can see the moon — build each word from its sounds."
+    },
+    {
+      "id": "dic-vowelteam-08",
+      "skillId": "SP-vowelteam-dictation",
+      "itemType": "dictation",
+      "difficulty": 2,
+      "stem": "Build the sentence you hear, word by word.",
+      "audioText": "a train is on the track",
+      "words": [
+        {
+          "text": "a",
+          "graphemes": [
+            "a"
+          ],
+          "distractorGraphemes": [
+            "e",
+            "i"
+          ]
+        },
+        {
+          "text": "train",
+          "graphemes": [
+            "t",
+            "r",
+            "ai",
+            "n"
+          ],
+          "distractorGraphemes": [
+            "a",
+            "e"
+          ]
+        },
+        {
+          "text": "is",
+          "graphemes": [
+            "i",
+            "s"
+          ],
+          "distractorGraphemes": [
+            "a",
+            "e"
+          ]
+        },
+        {
+          "text": "on",
+          "graphemes": [
+            "o",
+            "n"
+          ],
+          "distractorGraphemes": [
+            "a",
+            "e"
+          ]
+        },
+        {
+          "text": "the",
+          "graphemes": [
+            "th",
+            "e"
+          ],
+          "distractorGraphemes": [
+            "a",
+            "i"
+          ]
+        },
+        {
+          "text": "track",
+          "graphemes": [
+            "t",
+            "r",
+            "a",
+            "ck"
+          ],
+          "distractorGraphemes": [
+            "e",
+            "i"
+          ]
+        }
+      ],
+      "decodableWithin": "SP-vowel-teams",
+      "missedConceptOnFail": "sentence-dictation",
+      "rationale": "a train is on the track — build each word from its sounds."
+    },
+    {
+      "id": "dic-vowelteam-09",
+      "skillId": "SP-vowelteam-dictation",
+      "itemType": "dictation",
+      "difficulty": 3,
+      "stem": "Build the sentence you hear, word by word.",
+      "audioText": "the team ran in the rain",
+      "words": [
+        {
+          "text": "the",
+          "graphemes": [
+            "th",
+            "e"
+          ],
+          "distractorGraphemes": [
+            "a",
+            "i"
+          ]
+        },
+        {
+          "text": "team",
+          "graphemes": [
+            "t",
+            "ea",
+            "m"
+          ],
+          "distractorGraphemes": [
+            "a",
+            "e"
+          ]
+        },
+        {
+          "text": "ran",
+          "graphemes": [
+            "r",
+            "a",
+            "n"
+          ],
+          "distractorGraphemes": [
+            "e",
+            "i"
+          ]
+        },
+        {
+          "text": "in",
+          "graphemes": [
+            "i",
+            "n"
+          ],
+          "distractorGraphemes": [
+            "a",
+            "e"
+          ]
+        },
+        {
+          "text": "the",
+          "graphemes": [
+            "th",
+            "e"
+          ],
+          "distractorGraphemes": [
+            "a",
+            "i"
+          ]
+        },
+        {
+          "text": "rain",
+          "graphemes": [
+            "r",
+            "ai",
+            "n"
+          ],
+          "distractorGraphemes": [
+            "a",
+            "e"
+          ]
+        }
+      ],
+      "decodableWithin": "SP-vowel-teams",
+      "missedConceptOnFail": "sentence-dictation",
+      "rationale": "the team ran in the rain — build each word from its sounds."
+    },
+    {
+      "id": "dic-vowelteam-10",
+      "skillId": "SP-vowelteam-dictation",
+      "itemType": "dictation",
+      "difficulty": 1,
+      "stem": "Build the sentence you hear, word by word.",
+      "audioText": "a seal ate meat",
+      "words": [
+        {
+          "text": "a",
+          "graphemes": [
+            "a"
+          ],
+          "distractorGraphemes": [
+            "e",
+            "i"
+          ]
+        },
+        {
+          "text": "seal",
+          "graphemes": [
+            "s",
+            "ea",
+            "l"
+          ],
+          "distractorGraphemes": [
+            "a",
+            "e"
+          ]
+        },
+        {
+          "text": "ate",
+          "graphemes": [
+            "a",
+            "t",
+            "e"
+          ],
+          "distractorGraphemes": [
+            "i",
+            "o"
+          ]
+        },
+        {
+          "text": "meat",
+          "graphemes": [
+            "m",
+            "ea",
+            "t"
+          ],
+          "distractorGraphemes": [
+            "a",
+            "e"
+          ]
+        }
+      ],
+      "decodableWithin": "SP-vowel-teams",
+      "missedConceptOnFail": "sentence-dictation",
+      "rationale": "a seal ate meat — build each word from its sounds."
+    },
+    {
+      "id": "dic-vowelteam-11",
+      "skillId": "SP-vowelteam-dictation",
+      "itemType": "dictation",
+      "difficulty": 2,
+      "stem": "Build the sentence you hear, word by word.",
+      "audioText": "neil keeps seeds in a jar",
+      "words": [
+        {
+          "text": "neil",
+          "graphemes": [
+            "n",
+            "e",
+            "i",
+            "l"
+          ],
+          "distractorGraphemes": [
+            "a",
+            "o"
+          ]
+        },
+        {
+          "text": "keeps",
+          "graphemes": [
+            "k",
+            "ee",
+            "p",
+            "s"
+          ],
+          "distractorGraphemes": [
+            "a",
+            "e"
+          ]
+        },
+        {
+          "text": "seeds",
+          "graphemes": [
+            "s",
+            "ee",
+            "d",
+            "s"
+          ],
+          "distractorGraphemes": [
+            "a",
+            "e"
+          ]
+        },
+        {
+          "text": "in",
+          "graphemes": [
+            "i",
+            "n"
+          ],
+          "distractorGraphemes": [
+            "a",
+            "e"
+          ]
+        },
+        {
+          "text": "a",
+          "graphemes": [
+            "a"
+          ],
+          "distractorGraphemes": [
+            "e",
+            "i"
+          ]
+        },
+        {
+          "text": "jar",
+          "graphemes": [
+            "j",
+            "a",
+            "r"
+          ],
+          "distractorGraphemes": [
+            "e",
+            "i"
+          ]
+        }
+      ],
+      "decodableWithin": "SP-vowel-teams",
+      "missedConceptOnFail": "sentence-dictation",
+      "rationale": "Neil keeps seeds in a jar — build each word from its sounds."
+    },
+    {
+      "id": "dic-vowelteam-12",
+      "skillId": "SP-vowelteam-dictation",
+      "itemType": "dictation",
+      "difficulty": 3,
+      "stem": "Build the sentence you hear, word by word.",
+      "audioText": "a boat sails to sea",
+      "words": [
+        {
+          "text": "a",
+          "graphemes": [
+            "a"
+          ],
+          "distractorGraphemes": [
+            "e",
+            "i"
+          ]
+        },
+        {
+          "text": "boat",
+          "graphemes": [
+            "b",
+            "oa",
+            "t"
+          ],
+          "distractorGraphemes": [
+            "a",
+            "e"
+          ]
+        },
+        {
+          "text": "sails",
+          "graphemes": [
+            "s",
+            "ai",
+            "l",
+            "s"
+          ],
+          "distractorGraphemes": [
+            "a",
+            "e"
+          ]
+        },
+        {
+          "text": "to",
+          "graphemes": [
+            "t",
+            "o"
+          ],
+          "distractorGraphemes": [
+            "a",
+            "e"
+          ]
+        },
+        {
+          "text": "sea",
+          "graphemes": [
+            "s",
+            "ea"
+          ],
+          "distractorGraphemes": [
+            "a",
+            "e"
+          ]
+        }
+      ],
+      "decodableWithin": "SP-vowel-teams",
+      "missedConceptOnFail": "sentence-dictation",
+      "rationale": "a boat sails to sea — build each word from its sounds."
+    },
+    {
+      "id": "dic-vowelteam-13",
+      "skillId": "SP-vowelteam-dictation",
+      "itemType": "dictation",
+      "difficulty": 1,
+      "stem": "Build the sentence you hear, word by word.",
+      "audioText": "the moon is in the sky",
+      "words": [
+        {
+          "text": "the",
+          "graphemes": [
+            "th",
+            "e"
+          ],
+          "distractorGraphemes": [
+            "a",
+            "i"
+          ]
+        },
+        {
+          "text": "moon",
+          "graphemes": [
+            "m",
+            "oo",
+            "n"
+          ],
+          "distractorGraphemes": [
+            "a",
+            "e"
+          ]
+        },
+        {
+          "text": "is",
+          "graphemes": [
+            "i",
+            "s"
+          ],
+          "distractorGraphemes": [
+            "a",
+            "e"
+          ]
+        },
+        {
+          "text": "in",
+          "graphemes": [
+            "i",
+            "n"
+          ],
+          "distractorGraphemes": [
+            "a",
+            "e"
+          ]
+        },
+        {
+          "text": "the",
+          "graphemes": [
+            "th",
+            "e"
+          ],
+          "distractorGraphemes": [
+            "a",
+            "i"
+          ]
+        },
+        {
+          "text": "sky",
+          "graphemes": [
+            "s",
+            "k",
+            "y"
+          ],
+          "distractorGraphemes": [
+            "a",
+            "e"
+          ]
+        }
+      ],
+      "decodableWithin": "SP-vowel-teams",
+      "missedConceptOnFail": "sentence-dictation",
+      "rationale": "the moon is in the sky — build each word from its sounds."
+    },
+    {
+      "id": "dic-vowelteam-14",
+      "skillId": "SP-vowelteam-dictation",
+      "itemType": "dictation",
+      "difficulty": 2,
+      "stem": "Build the sentence you hear, word by word.",
+      "audioText": "dean ate beans and meat",
+      "words": [
+        {
+          "text": "dean",
+          "graphemes": [
+            "d",
+            "ea",
+            "n"
+          ],
+          "distractorGraphemes": [
+            "a",
+            "e"
+          ]
+        },
+        {
+          "text": "ate",
+          "graphemes": [
+            "a",
+            "t",
+            "e"
+          ],
+          "distractorGraphemes": [
+            "i",
+            "o"
+          ]
+        },
+        {
+          "text": "beans",
+          "graphemes": [
+            "b",
+            "ea",
+            "n",
+            "s"
+          ],
+          "distractorGraphemes": [
+            "a",
+            "e"
+          ]
+        },
+        {
+          "text": "and",
+          "graphemes": [
+            "a",
+            "n",
+            "d"
+          ],
+          "distractorGraphemes": [
+            "e",
+            "i"
+          ]
+        },
+        {
+          "text": "meat",
+          "graphemes": [
+            "m",
+            "ea",
+            "t"
+          ],
+          "distractorGraphemes": [
+            "a",
+            "e"
+          ]
+        }
+      ],
+      "decodableWithin": "SP-vowel-teams",
+      "missedConceptOnFail": "sentence-dictation",
+      "rationale": "Dean ate beans and meat — build each word from its sounds."
+    },
+    {
+      "id": "dic-vowelteam-15",
+      "skillId": "SP-vowelteam-dictation",
+      "itemType": "dictation",
+      "difficulty": 3,
+      "stem": "Build the sentence you hear, word by word.",
+      "audioText": "a goat and a sheep eat hay",
+      "words": [
+        {
+          "text": "a",
+          "graphemes": [
+            "a"
+          ],
+          "distractorGraphemes": [
+            "e",
+            "i"
+          ]
+        },
+        {
+          "text": "goat",
+          "graphemes": [
+            "g",
+            "oa",
+            "t"
+          ],
+          "distractorGraphemes": [
+            "a",
+            "e"
+          ]
+        },
+        {
+          "text": "and",
+          "graphemes": [
+            "a",
+            "n",
+            "d"
+          ],
+          "distractorGraphemes": [
+            "e",
+            "i"
+          ]
+        },
+        {
+          "text": "a",
+          "graphemes": [
+            "a"
+          ],
+          "distractorGraphemes": [
+            "e",
+            "i"
+          ]
+        },
+        {
+          "text": "sheep",
+          "graphemes": [
+            "sh",
+            "ee",
+            "p"
+          ],
+          "distractorGraphemes": [
+            "a",
+            "e"
+          ]
+        },
+        {
+          "text": "eat",
+          "graphemes": [
+            "ea",
+            "t"
+          ],
+          "distractorGraphemes": [
+            "a",
+            "e"
+          ]
+        },
+        {
+          "text": "hay",
+          "graphemes": [
+            "h",
+            "ay"
+          ],
+          "distractorGraphemes": [
+            "a",
+            "e"
+          ]
+        }
+      ],
+      "decodableWithin": "SP-vowel-teams",
+      "missedConceptOnFail": "sentence-dictation",
+      "rationale": "a goat and a sheep eat hay — build each word from its sounds."
+    },
+    {
+      "id": "dic-vowelteam-16",
+      "skillId": "SP-vowelteam-dictation",
+      "itemType": "dictation",
+      "difficulty": 1,
+      "stem": "Build the sentence you hear, word by word.",
+      "audioText": "a toad sat in the rain",
+      "words": [
+        {
+          "text": "a",
+          "graphemes": [
+            "a"
+          ],
+          "distractorGraphemes": [
+            "e",
+            "i"
+          ]
+        },
+        {
+          "text": "toad",
+          "graphemes": [
+            "t",
+            "oa",
+            "d"
+          ],
+          "distractorGraphemes": [
+            "a",
+            "e"
+          ]
+        },
+        {
+          "text": "sat",
+          "graphemes": [
+            "s",
+            "a",
+            "t"
+          ],
+          "distractorGraphemes": [
+            "e",
+            "i"
+          ]
+        },
+        {
+          "text": "in",
+          "graphemes": [
+            "i",
+            "n"
+          ],
+          "distractorGraphemes": [
+            "a",
+            "e"
+          ]
+        },
+        {
+          "text": "the",
+          "graphemes": [
+            "th",
+            "e"
+          ],
+          "distractorGraphemes": [
+            "a",
+            "i"
+          ]
+        },
+        {
+          "text": "rain",
+          "graphemes": [
+            "r",
+            "ai",
+            "n"
+          ],
+          "distractorGraphemes": [
+            "a",
+            "e"
+          ]
+        }
+      ],
+      "decodableWithin": "SP-vowel-teams",
+      "missedConceptOnFail": "sentence-dictation",
+      "rationale": "a toad sat in the rain — build each word from its sounds."
+    },
+    {
+      "id": "dic-vowelteam-17",
+      "skillId": "SP-vowelteam-dictation",
+      "itemType": "dictation",
+      "difficulty": 2,
+      "stem": "Build the sentence you hear, word by word.",
+      "audioText": "jean sees a green tree",
+      "words": [
+        {
+          "text": "jean",
+          "graphemes": [
+            "j",
+            "ea",
+            "n"
+          ],
+          "distractorGraphemes": [
+            "a",
+            "e"
+          ]
+        },
+        {
+          "text": "sees",
+          "graphemes": [
+            "s",
+            "ee",
+            "s"
+          ],
+          "distractorGraphemes": [
+            "a",
+            "e"
+          ]
+        },
+        {
+          "text": "a",
+          "graphemes": [
+            "a"
+          ],
+          "distractorGraphemes": [
+            "e",
+            "i"
+          ]
+        },
+        {
+          "text": "green",
+          "graphemes": [
+            "g",
+            "r",
+            "ee",
+            "n"
+          ],
+          "distractorGraphemes": [
+            "a",
+            "e"
+          ]
+        },
+        {
+          "text": "tree",
+          "graphemes": [
+            "t",
+            "r",
+            "ee"
+          ],
+          "distractorGraphemes": [
+            "a",
+            "e"
+          ]
+        }
+      ],
+      "decodableWithin": "SP-vowel-teams",
+      "missedConceptOnFail": "sentence-dictation",
+      "rationale": "Jean sees a green tree — build each word from its sounds."
+    },
+    {
+      "id": "dic-vowelteam-18",
+      "skillId": "SP-vowelteam-dictation",
+      "itemType": "dictation",
+      "difficulty": 3,
+      "stem": "Build the sentence you hear, word by word.",
+      "audioText": "the sail is on the boat",
+      "words": [
+        {
+          "text": "the",
+          "graphemes": [
+            "th",
+            "e"
+          ],
+          "distractorGraphemes": [
+            "a",
+            "i"
+          ]
+        },
+        {
+          "text": "sail",
+          "graphemes": [
+            "s",
+            "ai",
+            "l"
+          ],
+          "distractorGraphemes": [
+            "a",
+            "e"
+          ]
+        },
+        {
+          "text": "is",
+          "graphemes": [
+            "i",
+            "s"
+          ],
+          "distractorGraphemes": [
+            "a",
+            "e"
+          ]
+        },
+        {
+          "text": "on",
+          "graphemes": [
+            "o",
+            "n"
+          ],
+          "distractorGraphemes": [
+            "a",
+            "e"
+          ]
+        },
+        {
+          "text": "the",
+          "graphemes": [
+            "th",
+            "e"
+          ],
+          "distractorGraphemes": [
+            "a",
+            "i"
+          ]
+        },
+        {
+          "text": "boat",
+          "graphemes": [
+            "b",
+            "oa",
+            "t"
+          ],
+          "distractorGraphemes": [
+            "a",
+            "e"
+          ]
+        }
+      ],
+      "decodableWithin": "SP-vowel-teams",
+      "missedConceptOnFail": "sentence-dictation",
+      "rationale": "the sail is on the boat — build each word from its sounds."
+    },
+    {
+      "id": "dic-vowelteam-19",
+      "skillId": "SP-vowelteam-dictation",
+      "itemType": "dictation",
+      "difficulty": 1,
+      "stem": "Build the sentence you hear, word by word.",
+      "audioText": "a deer ate a leaf",
+      "words": [
+        {
+          "text": "a",
+          "graphemes": [
+            "a"
+          ],
+          "distractorGraphemes": [
+            "e",
+            "i"
+          ]
+        },
+        {
+          "text": "deer",
+          "graphemes": [
+            "d",
+            "ee",
+            "r"
+          ],
+          "distractorGraphemes": [
+            "a",
+            "e"
+          ]
+        },
+        {
+          "text": "ate",
+          "graphemes": [
+            "a",
+            "t",
+            "e"
+          ],
+          "distractorGraphemes": [
+            "i",
+            "o"
+          ]
+        },
+        {
+          "text": "a",
+          "graphemes": [
+            "a"
+          ],
+          "distractorGraphemes": [
+            "e",
+            "i"
+          ]
+        },
+        {
+          "text": "leaf",
+          "graphemes": [
+            "l",
+            "ea",
+            "f"
+          ],
+          "distractorGraphemes": [
+            "a",
+            "e"
+          ]
+        }
+      ],
+      "decodableWithin": "SP-vowel-teams",
+      "missedConceptOnFail": "sentence-dictation",
+      "rationale": "a deer ate a leaf — build each word from its sounds."
+    },
+    {
+      "id": "dic-vowelteam-20",
+      "skillId": "SP-vowelteam-dictation",
+      "itemType": "dictation",
+      "difficulty": 2,
+      "stem": "Build the sentence you hear, word by word.",
+      "audioText": "the moon is in the sky",
+      "words": [
+        {
+          "text": "the",
+          "graphemes": [
+            "th",
+            "e"
+          ],
+          "distractorGraphemes": [
+            "a",
+            "i"
+          ]
+        },
+        {
+          "text": "moon",
+          "graphemes": [
+            "m",
+            "oo",
+            "n"
+          ],
+          "distractorGraphemes": [
+            "a",
+            "e"
+          ]
+        },
+        {
+          "text": "is",
+          "graphemes": [
+            "i",
+            "s"
+          ],
+          "distractorGraphemes": [
+            "a",
+            "e"
+          ]
+        },
+        {
+          "text": "in",
+          "graphemes": [
+            "i",
+            "n"
+          ],
+          "distractorGraphemes": [
+            "a",
+            "e"
+          ]
+        },
+        {
+          "text": "the",
+          "graphemes": [
+            "th",
+            "e"
+          ],
+          "distractorGraphemes": [
+            "a",
+            "i"
+          ]
+        },
+        {
+          "text": "sky",
+          "graphemes": [
+            "s",
+            "k",
+            "y"
+          ],
+          "distractorGraphemes": [
+            "a",
+            "e"
+          ]
+        }
+      ],
+      "decodableWithin": "SP-vowel-teams",
+      "missedConceptOnFail": "sentence-dictation",
+      "rationale": "the moon is in the sky — build each word from its sounds."
+    }
+  ],
+  "lessons": {
+    "SP-vowelteam-dictation": {
+      "iCanStatement": "I can spell short sentences with vowel teams.",
+      "explanation": "Vowel teams are two letters that make one vowel sound: ai, ee, oa, ea. The team is one tile. Build each word you hear.",
+      "workedExamples": [
+        {
+          "text": "a boat is on the sea",
+          "note": "b·oa·t, s·ea."
+        },
+        {
+          "text": "Jean had a green bean",
+          "note": "ee and ea teams."
+        }
+      ]
+    }
+  }
+}

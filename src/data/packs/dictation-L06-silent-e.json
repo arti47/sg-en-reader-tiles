@@ -1,0 +1,1476 @@
+{
+  "packId": "dictation-L06-silent-e",
+  "strand": "spelling",
+  "skillIds": [
+    "SP-silente-dictation"
+  ],
+  "version": 1,
+  "items": [
+    {
+      "id": "dic-silente-01",
+      "skillId": "SP-silente-dictation",
+      "itemType": "dictation",
+      "difficulty": 1,
+      "stem": "Build the sentence you hear, word by word.",
+      "audioText": "jake had a cake",
+      "words": [
+        {
+          "text": "jake",
+          "graphemes": [
+            "j",
+            "a",
+            "k",
+            "e"
+          ],
+          "distractorGraphemes": [
+            "i",
+            "o"
+          ]
+        },
+        {
+          "text": "had",
+          "graphemes": [
+            "h",
+            "a",
+            "d"
+          ],
+          "distractorGraphemes": [
+            "e",
+            "i"
+          ]
+        },
+        {
+          "text": "a",
+          "graphemes": [
+            "a"
+          ],
+          "distractorGraphemes": [
+            "e",
+            "i"
+          ]
+        },
+        {
+          "text": "cake",
+          "graphemes": [
+            "c",
+            "a",
+            "k",
+            "e"
+          ],
+          "distractorGraphemes": [
+            "i",
+            "o"
+          ]
+        }
+      ],
+      "decodableWithin": "SP-silent-e",
+      "missedConceptOnFail": "sentence-dictation",
+      "rationale": "Jake had a cake — build each word from its sounds."
+    },
+    {
+      "id": "dic-silente-02",
+      "skillId": "SP-silente-dictation",
+      "itemType": "dictation",
+      "difficulty": 2,
+      "stem": "Build the sentence you hear, word by word.",
+      "audioText": "a bike is at home",
+      "words": [
+        {
+          "text": "a",
+          "graphemes": [
+            "a"
+          ],
+          "distractorGraphemes": [
+            "e",
+            "i"
+          ]
+        },
+        {
+          "text": "bike",
+          "graphemes": [
+            "b",
+            "i",
+            "k",
+            "e"
+          ],
+          "distractorGraphemes": [
+            "a",
+            "o"
+          ]
+        },
+        {
+          "text": "is",
+          "graphemes": [
+            "i",
+            "s"
+          ],
+          "distractorGraphemes": [
+            "a",
+            "e"
+          ]
+        },
+        {
+          "text": "at",
+          "graphemes": [
+            "a",
+            "t"
+          ],
+          "distractorGraphemes": [
+            "e",
+            "i"
+          ]
+        },
+        {
+          "text": "home",
+          "graphemes": [
+            "h",
+            "o",
+            "m",
+            "e"
+          ],
+          "distractorGraphemes": [
+            "a",
+            "i"
+          ]
+        }
+      ],
+      "decodableWithin": "SP-silent-e",
+      "missedConceptOnFail": "sentence-dictation",
+      "rationale": "a bike is at home — build each word from its sounds."
+    },
+    {
+      "id": "dic-silente-03",
+      "skillId": "SP-silente-dictation",
+      "itemType": "dictation",
+      "difficulty": 3,
+      "stem": "Build the sentence you hear, word by word.",
+      "audioText": "kate ate a lime",
+      "words": [
+        {
+          "text": "kate",
+          "graphemes": [
+            "k",
+            "a",
+            "t",
+            "e"
+          ],
+          "distractorGraphemes": [
+            "i",
+            "o"
+          ]
+        },
+        {
+          "text": "ate",
+          "graphemes": [
+            "a",
+            "t",
+            "e"
+          ],
+          "distractorGraphemes": [
+            "i",
+            "o"
+          ]
+        },
+        {
+          "text": "a",
+          "graphemes": [
+            "a"
+          ],
+          "distractorGraphemes": [
+            "e",
+            "i"
+          ]
+        },
+        {
+          "text": "lime",
+          "graphemes": [
+            "l",
+            "i",
+            "m",
+            "e"
+          ],
+          "distractorGraphemes": [
+            "a",
+            "o"
+          ]
+        }
+      ],
+      "decodableWithin": "SP-silent-e",
+      "missedConceptOnFail": "sentence-dictation",
+      "rationale": "Kate ate a lime — build each word from its sounds."
+    },
+    {
+      "id": "dic-silente-04",
+      "skillId": "SP-silente-dictation",
+      "itemType": "dictation",
+      "difficulty": 1,
+      "stem": "Build the sentence you hear, word by word.",
+      "audioText": "a mole hid in a hole",
+      "words": [
+        {
+          "text": "a",
+          "graphemes": [
+            "a"
+          ],
+          "distractorGraphemes": [
+            "e",
+            "i"
+          ]
+        },
+        {
+          "text": "mole",
+          "graphemes": [
+            "m",
+            "o",
+            "l",
+            "e"
+          ],
+          "distractorGraphemes": [
+            "a",
+            "i"
+          ]
+        },
+        {
+          "text": "hid",
+          "graphemes": [
+            "h",
+            "i",
+            "d"
+          ],
+          "distractorGraphemes": [
+            "a",
+            "e"
+          ]
+        },
+        {
+          "text": "in",
+          "graphemes": [
+            "i",
+            "n"
+          ],
+          "distractorGraphemes": [
+            "a",
+            "e"
+          ]
+        },
+        {
+          "text": "a",
+          "graphemes": [
+            "a"
+          ],
+          "distractorGraphemes": [
+            "e",
+            "i"
+          ]
+        },
+        {
+          "text": "hole",
+          "graphemes": [
+            "h",
+            "o",
+            "l",
+            "e"
+          ],
+          "distractorGraphemes": [
+            "a",
+            "i"
+          ]
+        }
+      ],
+      "decodableWithin": "SP-silent-e",
+      "missedConceptOnFail": "sentence-dictation",
+      "rationale": "a mole hid in a hole — build each word from its sounds."
+    },
+    {
+      "id": "dic-silente-05",
+      "skillId": "SP-silente-dictation",
+      "itemType": "dictation",
+      "difficulty": 2,
+      "stem": "Build the sentence you hear, word by word.",
+      "audioText": "dave got a kite",
+      "words": [
+        {
+          "text": "dave",
+          "graphemes": [
+            "d",
+            "a",
+            "v",
+            "e"
+          ],
+          "distractorGraphemes": [
+            "i",
+            "o"
+          ]
+        },
+        {
+          "text": "got",
+          "graphemes": [
+            "g",
+            "o",
+            "t"
+          ],
+          "distractorGraphemes": [
+            "a",
+            "e"
+          ]
+        },
+        {
+          "text": "a",
+          "graphemes": [
+            "a"
+          ],
+          "distractorGraphemes": [
+            "e",
+            "i"
+          ]
+        },
+        {
+          "text": "kite",
+          "graphemes": [
+            "k",
+            "i",
+            "t",
+            "e"
+          ],
+          "distractorGraphemes": [
+            "a",
+            "o"
+          ]
+        }
+      ],
+      "decodableWithin": "SP-silent-e",
+      "missedConceptOnFail": "sentence-dictation",
+      "rationale": "Dave got a kite — build each word from its sounds."
+    },
+    {
+      "id": "dic-silente-06",
+      "skillId": "SP-silente-dictation",
+      "itemType": "dictation",
+      "difficulty": 3,
+      "stem": "Build the sentence you hear, word by word.",
+      "audioText": "a mule ran to a gate",
+      "words": [
+        {
+          "text": "a",
+          "graphemes": [
+            "a"
+          ],
+          "distractorGraphemes": [
+            "e",
+            "i"
+          ]
+        },
+        {
+          "text": "mule",
+          "graphemes": [
+            "m",
+            "u",
+            "l",
+            "e"
+          ],
+          "distractorGraphemes": [
+            "a",
+            "i"
+          ]
+        },
+        {
+          "text": "ran",
+          "graphemes": [
+            "r",
+            "a",
+            "n"
+          ],
+          "distractorGraphemes": [
+            "e",
+            "i"
+          ]
+        },
+        {
+          "text": "to",
+          "graphemes": [
+            "t",
+            "o"
+          ],
+          "distractorGraphemes": [
+            "a",
+            "e"
+          ]
+        },
+        {
+          "text": "a",
+          "graphemes": [
+            "a"
+          ],
+          "distractorGraphemes": [
+            "e",
+            "i"
+          ]
+        },
+        {
+          "text": "gate",
+          "graphemes": [
+            "g",
+            "a",
+            "t",
+            "e"
+          ],
+          "distractorGraphemes": [
+            "i",
+            "o"
+          ]
+        }
+      ],
+      "decodableWithin": "SP-silent-e",
+      "missedConceptOnFail": "sentence-dictation",
+      "rationale": "a mule ran to a gate — build each word from its sounds."
+    },
+    {
+      "id": "dic-silente-07",
+      "skillId": "SP-silente-dictation",
+      "itemType": "dictation",
+      "difficulty": 1,
+      "stem": "Build the sentence you hear, word by word.",
+      "audioText": "pete gave jane a rose",
+      "words": [
+        {
+          "text": "pete",
+          "graphemes": [
+            "p",
+            "e",
+            "t",
+            "e"
+          ],
+          "distractorGraphemes": [
+            "a",
+            "i"
+          ]
+        },
+        {
+          "text": "gave",
+          "graphemes": [
+            "g",
+            "a",
+            "v",
+            "e"
+          ],
+          "distractorGraphemes": [
+            "i",
+            "o"
+          ]
+        },
+        {
+          "text": "jane",
+          "graphemes": [
+            "j",
+            "a",
+            "n",
+            "e"
+          ],
+          "distractorGraphemes": [
+            "i",
+            "o"
+          ]
+        },
+        {
+          "text": "a",
+          "graphemes": [
+            "a"
+          ],
+          "distractorGraphemes": [
+            "e",
+            "i"
+          ]
+        },
+        {
+          "text": "rose",
+          "graphemes": [
+            "r",
+            "o",
+            "s",
+            "e"
+          ],
+          "distractorGraphemes": [
+            "a",
+            "i"
+          ]
+        }
+      ],
+      "decodableWithin": "SP-silent-e",
+      "missedConceptOnFail": "sentence-dictation",
+      "rationale": "Pete gave Jane a rose — build each word from its sounds."
+    },
+    {
+      "id": "dic-silente-08",
+      "skillId": "SP-silente-dictation",
+      "itemType": "dictation",
+      "difficulty": 2,
+      "stem": "Build the sentence you hear, word by word.",
+      "audioText": "a snake hid in a cave",
+      "words": [
+        {
+          "text": "a",
+          "graphemes": [
+            "a"
+          ],
+          "distractorGraphemes": [
+            "e",
+            "i"
+          ]
+        },
+        {
+          "text": "snake",
+          "graphemes": [
+            "s",
+            "n",
+            "a",
+            "k",
+            "e"
+          ],
+          "distractorGraphemes": [
+            "i",
+            "o"
+          ]
+        },
+        {
+          "text": "hid",
+          "graphemes": [
+            "h",
+            "i",
+            "d"
+          ],
+          "distractorGraphemes": [
+            "a",
+            "e"
+          ]
+        },
+        {
+          "text": "in",
+          "graphemes": [
+            "i",
+            "n"
+          ],
+          "distractorGraphemes": [
+            "a",
+            "e"
+          ]
+        },
+        {
+          "text": "a",
+          "graphemes": [
+            "a"
+          ],
+          "distractorGraphemes": [
+            "e",
+            "i"
+          ]
+        },
+        {
+          "text": "cave",
+          "graphemes": [
+            "c",
+            "a",
+            "v",
+            "e"
+          ],
+          "distractorGraphemes": [
+            "i",
+            "o"
+          ]
+        }
+      ],
+      "decodableWithin": "SP-silent-e",
+      "missedConceptOnFail": "sentence-dictation",
+      "rationale": "a snake hid in a cave — build each word from its sounds."
+    },
+    {
+      "id": "dic-silente-09",
+      "skillId": "SP-silente-dictation",
+      "itemType": "dictation",
+      "difficulty": 3,
+      "stem": "Build the sentence you hear, word by word.",
+      "audioText": "mike rode home late",
+      "words": [
+        {
+          "text": "mike",
+          "graphemes": [
+            "m",
+            "i",
+            "k",
+            "e"
+          ],
+          "distractorGraphemes": [
+            "a",
+            "o"
+          ]
+        },
+        {
+          "text": "rode",
+          "graphemes": [
+            "r",
+            "o",
+            "d",
+            "e"
+          ],
+          "distractorGraphemes": [
+            "a",
+            "i"
+          ]
+        },
+        {
+          "text": "home",
+          "graphemes": [
+            "h",
+            "o",
+            "m",
+            "e"
+          ],
+          "distractorGraphemes": [
+            "a",
+            "i"
+          ]
+        },
+        {
+          "text": "late",
+          "graphemes": [
+            "l",
+            "a",
+            "t",
+            "e"
+          ],
+          "distractorGraphemes": [
+            "i",
+            "o"
+          ]
+        }
+      ],
+      "decodableWithin": "SP-silent-e",
+      "missedConceptOnFail": "sentence-dictation",
+      "rationale": "Mike rode home late — build each word from its sounds."
+    },
+    {
+      "id": "dic-silente-10",
+      "skillId": "SP-silente-dictation",
+      "itemType": "dictation",
+      "difficulty": 1,
+      "stem": "Build the sentence you hear, word by word.",
+      "audioText": "a cube is on a plate",
+      "words": [
+        {
+          "text": "a",
+          "graphemes": [
+            "a"
+          ],
+          "distractorGraphemes": [
+            "e",
+            "i"
+          ]
+        },
+        {
+          "text": "cube",
+          "graphemes": [
+            "c",
+            "u",
+            "b",
+            "e"
+          ],
+          "distractorGraphemes": [
+            "a",
+            "i"
+          ]
+        },
+        {
+          "text": "is",
+          "graphemes": [
+            "i",
+            "s"
+          ],
+          "distractorGraphemes": [
+            "a",
+            "e"
+          ]
+        },
+        {
+          "text": "on",
+          "graphemes": [
+            "o",
+            "n"
+          ],
+          "distractorGraphemes": [
+            "a",
+            "e"
+          ]
+        },
+        {
+          "text": "a",
+          "graphemes": [
+            "a"
+          ],
+          "distractorGraphemes": [
+            "e",
+            "i"
+          ]
+        },
+        {
+          "text": "plate",
+          "graphemes": [
+            "p",
+            "l",
+            "a",
+            "t",
+            "e"
+          ],
+          "distractorGraphemes": [
+            "i",
+            "o"
+          ]
+        }
+      ],
+      "decodableWithin": "SP-silent-e",
+      "missedConceptOnFail": "sentence-dictation",
+      "rationale": "a cube is on a plate — build each word from its sounds."
+    },
+    {
+      "id": "dic-silente-11",
+      "skillId": "SP-silente-dictation",
+      "itemType": "dictation",
+      "difficulty": 2,
+      "stem": "Build the sentence you hear, word by word.",
+      "audioText": "jane had five limes",
+      "words": [
+        {
+          "text": "jane",
+          "graphemes": [
+            "j",
+            "a",
+            "n",
+            "e"
+          ],
+          "distractorGraphemes": [
+            "i",
+            "o"
+          ]
+        },
+        {
+          "text": "had",
+          "graphemes": [
+            "h",
+            "a",
+            "d"
+          ],
+          "distractorGraphemes": [
+            "e",
+            "i"
+          ]
+        },
+        {
+          "text": "five",
+          "graphemes": [
+            "f",
+            "i",
+            "v",
+            "e"
+          ],
+          "distractorGraphemes": [
+            "a",
+            "o"
+          ]
+        },
+        {
+          "text": "limes",
+          "graphemes": [
+            "l",
+            "i",
+            "m",
+            "e",
+            "s"
+          ],
+          "distractorGraphemes": [
+            "a",
+            "o"
+          ]
+        }
+      ],
+      "decodableWithin": "SP-silent-e",
+      "missedConceptOnFail": "sentence-dictation",
+      "rationale": "Jane had five limes — build each word from its sounds."
+    },
+    {
+      "id": "dic-silente-12",
+      "skillId": "SP-silente-dictation",
+      "itemType": "dictation",
+      "difficulty": 3,
+      "stem": "Build the sentence you hear, word by word.",
+      "audioText": "a bone is in a cage",
+      "words": [
+        {
+          "text": "a",
+          "graphemes": [
+            "a"
+          ],
+          "distractorGraphemes": [
+            "e",
+            "i"
+          ]
+        },
+        {
+          "text": "bone",
+          "graphemes": [
+            "b",
+            "o",
+            "n",
+            "e"
+          ],
+          "distractorGraphemes": [
+            "a",
+            "i"
+          ]
+        },
+        {
+          "text": "is",
+          "graphemes": [
+            "i",
+            "s"
+          ],
+          "distractorGraphemes": [
+            "a",
+            "e"
+          ]
+        },
+        {
+          "text": "in",
+          "graphemes": [
+            "i",
+            "n"
+          ],
+          "distractorGraphemes": [
+            "a",
+            "e"
+          ]
+        },
+        {
+          "text": "a",
+          "graphemes": [
+            "a"
+          ],
+          "distractorGraphemes": [
+            "e",
+            "i"
+          ]
+        },
+        {
+          "text": "cage",
+          "graphemes": [
+            "c",
+            "a",
+            "g",
+            "e"
+          ],
+          "distractorGraphemes": [
+            "i",
+            "o"
+          ]
+        }
+      ],
+      "decodableWithin": "SP-silent-e",
+      "missedConceptOnFail": "sentence-dictation",
+      "rationale": "a bone is in a cage — build each word from its sounds."
+    },
+    {
+      "id": "dic-silente-13",
+      "skillId": "SP-silente-dictation",
+      "itemType": "dictation",
+      "difficulty": 1,
+      "stem": "Build the sentence you hear, word by word.",
+      "audioText": "nate made a fire",
+      "words": [
+        {
+          "text": "nate",
+          "graphemes": [
+            "n",
+            "a",
+            "t",
+            "e"
+          ],
+          "distractorGraphemes": [
+            "i",
+            "o"
+          ]
+        },
+        {
+          "text": "made",
+          "graphemes": [
+            "m",
+            "a",
+            "d",
+            "e"
+          ],
+          "distractorGraphemes": [
+            "i",
+            "o"
+          ]
+        },
+        {
+          "text": "a",
+          "graphemes": [
+            "a"
+          ],
+          "distractorGraphemes": [
+            "e",
+            "i"
+          ]
+        },
+        {
+          "text": "fire",
+          "graphemes": [
+            "f",
+            "i",
+            "r",
+            "e"
+          ],
+          "distractorGraphemes": [
+            "a",
+            "o"
+          ]
+        }
+      ],
+      "decodableWithin": "SP-silent-e",
+      "missedConceptOnFail": "sentence-dictation",
+      "rationale": "Nate made a fire — build each word from its sounds."
+    },
+    {
+      "id": "dic-silente-14",
+      "skillId": "SP-silente-dictation",
+      "itemType": "dictation",
+      "difficulty": 2,
+      "stem": "Build the sentence you hear, word by word.",
+      "audioText": "a wave came to shore",
+      "words": [
+        {
+          "text": "a",
+          "graphemes": [
+            "a"
+          ],
+          "distractorGraphemes": [
+            "e",
+            "i"
+          ]
+        },
+        {
+          "text": "wave",
+          "graphemes": [
+            "w",
+            "a",
+            "v",
+            "e"
+          ],
+          "distractorGraphemes": [
+            "i",
+            "o"
+          ]
+        },
+        {
+          "text": "came",
+          "graphemes": [
+            "c",
+            "a",
+            "m",
+            "e"
+          ],
+          "distractorGraphemes": [
+            "i",
+            "o"
+          ]
+        },
+        {
+          "text": "to",
+          "graphemes": [
+            "t",
+            "o"
+          ],
+          "distractorGraphemes": [
+            "a",
+            "e"
+          ]
+        },
+        {
+          "text": "shore",
+          "graphemes": [
+            "sh",
+            "o",
+            "r",
+            "e"
+          ],
+          "distractorGraphemes": [
+            "a",
+            "i"
+          ]
+        }
+      ],
+      "decodableWithin": "SP-silent-e",
+      "missedConceptOnFail": "sentence-dictation",
+      "rationale": "a wave came to shore — build each word from its sounds."
+    },
+    {
+      "id": "dic-silente-15",
+      "skillId": "SP-silente-dictation",
+      "itemType": "dictation",
+      "difficulty": 3,
+      "stem": "Build the sentence you hear, word by word.",
+      "audioText": "kate and jake bake a cake",
+      "words": [
+        {
+          "text": "kate",
+          "graphemes": [
+            "k",
+            "a",
+            "t",
+            "e"
+          ],
+          "distractorGraphemes": [
+            "i",
+            "o"
+          ]
+        },
+        {
+          "text": "and",
+          "graphemes": [
+            "a",
+            "n",
+            "d"
+          ],
+          "distractorGraphemes": [
+            "e",
+            "i"
+          ]
+        },
+        {
+          "text": "jake",
+          "graphemes": [
+            "j",
+            "a",
+            "k",
+            "e"
+          ],
+          "distractorGraphemes": [
+            "i",
+            "o"
+          ]
+        },
+        {
+          "text": "bake",
+          "graphemes": [
+            "b",
+            "a",
+            "k",
+            "e"
+          ],
+          "distractorGraphemes": [
+            "i",
+            "o"
+          ]
+        },
+        {
+          "text": "a",
+          "graphemes": [
+            "a"
+          ],
+          "distractorGraphemes": [
+            "e",
+            "i"
+          ]
+        },
+        {
+          "text": "cake",
+          "graphemes": [
+            "c",
+            "a",
+            "k",
+            "e"
+          ],
+          "distractorGraphemes": [
+            "i",
+            "o"
+          ]
+        }
+      ],
+      "decodableWithin": "SP-silent-e",
+      "missedConceptOnFail": "sentence-dictation",
+      "rationale": "Kate and Jake bake a cake — build each word from its sounds."
+    },
+    {
+      "id": "dic-silente-16",
+      "skillId": "SP-silente-dictation",
+      "itemType": "dictation",
+      "difficulty": 1,
+      "stem": "Build the sentence you hear, word by word.",
+      "audioText": "a snake is in a cave",
+      "words": [
+        {
+          "text": "a",
+          "graphemes": [
+            "a"
+          ],
+          "distractorGraphemes": [
+            "e",
+            "i"
+          ]
+        },
+        {
+          "text": "snake",
+          "graphemes": [
+            "s",
+            "n",
+            "a",
+            "k",
+            "e"
+          ],
+          "distractorGraphemes": [
+            "i",
+            "o"
+          ]
+        },
+        {
+          "text": "is",
+          "graphemes": [
+            "i",
+            "s"
+          ],
+          "distractorGraphemes": [
+            "a",
+            "e"
+          ]
+        },
+        {
+          "text": "in",
+          "graphemes": [
+            "i",
+            "n"
+          ],
+          "distractorGraphemes": [
+            "a",
+            "e"
+          ]
+        },
+        {
+          "text": "a",
+          "graphemes": [
+            "a"
+          ],
+          "distractorGraphemes": [
+            "e",
+            "i"
+          ]
+        },
+        {
+          "text": "cave",
+          "graphemes": [
+            "c",
+            "a",
+            "v",
+            "e"
+          ],
+          "distractorGraphemes": [
+            "i",
+            "o"
+          ]
+        }
+      ],
+      "decodableWithin": "SP-silent-e",
+      "missedConceptOnFail": "sentence-dictation",
+      "rationale": "a snake is in a cave — build each word from its sounds."
+    },
+    {
+      "id": "dic-silente-17",
+      "skillId": "SP-silente-dictation",
+      "itemType": "dictation",
+      "difficulty": 2,
+      "stem": "Build the sentence you hear, word by word.",
+      "audioText": "jane rode a bike",
+      "words": [
+        {
+          "text": "jane",
+          "graphemes": [
+            "j",
+            "a",
+            "n",
+            "e"
+          ],
+          "distractorGraphemes": [
+            "i",
+            "o"
+          ]
+        },
+        {
+          "text": "rode",
+          "graphemes": [
+            "r",
+            "o",
+            "d",
+            "e"
+          ],
+          "distractorGraphemes": [
+            "a",
+            "i"
+          ]
+        },
+        {
+          "text": "a",
+          "graphemes": [
+            "a"
+          ],
+          "distractorGraphemes": [
+            "e",
+            "i"
+          ]
+        },
+        {
+          "text": "bike",
+          "graphemes": [
+            "b",
+            "i",
+            "k",
+            "e"
+          ],
+          "distractorGraphemes": [
+            "a",
+            "o"
+          ]
+        }
+      ],
+      "decodableWithin": "SP-silent-e",
+      "missedConceptOnFail": "sentence-dictation",
+      "rationale": "Jane rode a bike — build each word from its sounds."
+    },
+    {
+      "id": "dic-silente-18",
+      "skillId": "SP-silente-dictation",
+      "itemType": "dictation",
+      "difficulty": 3,
+      "stem": "Build the sentence you hear, word by word.",
+      "audioText": "a mole made a hole",
+      "words": [
+        {
+          "text": "a",
+          "graphemes": [
+            "a"
+          ],
+          "distractorGraphemes": [
+            "e",
+            "i"
+          ]
+        },
+        {
+          "text": "mole",
+          "graphemes": [
+            "m",
+            "o",
+            "l",
+            "e"
+          ],
+          "distractorGraphemes": [
+            "a",
+            "i"
+          ]
+        },
+        {
+          "text": "made",
+          "graphemes": [
+            "m",
+            "a",
+            "d",
+            "e"
+          ],
+          "distractorGraphemes": [
+            "i",
+            "o"
+          ]
+        },
+        {
+          "text": "a",
+          "graphemes": [
+            "a"
+          ],
+          "distractorGraphemes": [
+            "e",
+            "i"
+          ]
+        },
+        {
+          "text": "hole",
+          "graphemes": [
+            "h",
+            "o",
+            "l",
+            "e"
+          ],
+          "distractorGraphemes": [
+            "a",
+            "i"
+          ]
+        }
+      ],
+      "decodableWithin": "SP-silent-e",
+      "missedConceptOnFail": "sentence-dictation",
+      "rationale": "a mole made a hole — build each word from its sounds."
+    },
+    {
+      "id": "dic-silente-19",
+      "skillId": "SP-silente-dictation",
+      "itemType": "dictation",
+      "difficulty": 1,
+      "stem": "Build the sentence you hear, word by word.",
+      "audioText": "pete gave a rose",
+      "words": [
+        {
+          "text": "pete",
+          "graphemes": [
+            "p",
+            "e",
+            "t",
+            "e"
+          ],
+          "distractorGraphemes": [
+            "a",
+            "i"
+          ]
+        },
+        {
+          "text": "gave",
+          "graphemes": [
+            "g",
+            "a",
+            "v",
+            "e"
+          ],
+          "distractorGraphemes": [
+            "i",
+            "o"
+          ]
+        },
+        {
+          "text": "a",
+          "graphemes": [
+            "a"
+          ],
+          "distractorGraphemes": [
+            "e",
+            "i"
+          ]
+        },
+        {
+          "text": "rose",
+          "graphemes": [
+            "r",
+            "o",
+            "s",
+            "e"
+          ],
+          "distractorGraphemes": [
+            "a",
+            "i"
+          ]
+        }
+      ],
+      "decodableWithin": "SP-silent-e",
+      "missedConceptOnFail": "sentence-dictation",
+      "rationale": "Pete gave a rose — build each word from its sounds."
+    },
+    {
+      "id": "dic-silente-20",
+      "skillId": "SP-silente-dictation",
+      "itemType": "dictation",
+      "difficulty": 2,
+      "stem": "Build the sentence you hear, word by word.",
+      "audioText": "a kite is by a pine",
+      "words": [
+        {
+          "text": "a",
+          "graphemes": [
+            "a"
+          ],
+          "distractorGraphemes": [
+            "e",
+            "i"
+          ]
+        },
+        {
+          "text": "kite",
+          "graphemes": [
+            "k",
+            "i",
+            "t",
+            "e"
+          ],
+          "distractorGraphemes": [
+            "a",
+            "o"
+          ]
+        },
+        {
+          "text": "is",
+          "graphemes": [
+            "i",
+            "s"
+          ],
+          "distractorGraphemes": [
+            "a",
+            "e"
+          ]
+        },
+        {
+          "text": "by",
+          "graphemes": [
+            "b",
+            "y"
+          ],
+          "distractorGraphemes": [
+            "a",
+            "e"
+          ]
+        },
+        {
+          "text": "a",
+          "graphemes": [
+            "a"
+          ],
+          "distractorGraphemes": [
+            "e",
+            "i"
+          ]
+        },
+        {
+          "text": "pine",
+          "graphemes": [
+            "p",
+            "i",
+            "n",
+            "e"
+          ],
+          "distractorGraphemes": [
+            "a",
+            "o"
+          ]
+        }
+      ],
+      "decodableWithin": "SP-silent-e",
+      "missedConceptOnFail": "sentence-dictation",
+      "rationale": "a kite is by a pine — build each word from its sounds."
+    }
+  ],
+  "lessons": {
+    "SP-silente-dictation": {
+      "iCanStatement": "I can spell short sentences with a bossy silent e.",
+      "explanation": "Magic-e words end in a silent e that makes the vowel say its name: cake, bike, home. Remember to add the silent e at the end.",
+      "workedExamples": [
+        {
+          "text": "Jake had a cake",
+          "note": "c·a·k·e — silent e at the end."
+        },
+        {
+          "text": "a bike is at home",
+          "note": "b·i·k·e, h·o·m·e."
+        }
+      ]
+    }
+  }
+}

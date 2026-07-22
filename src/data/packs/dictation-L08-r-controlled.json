@@ -1,0 +1,1497 @@
+{
+  "packId": "dictation-L08-r-controlled",
+  "strand": "spelling",
+  "skillIds": [
+    "SP-rcontrolled-dictation"
+  ],
+  "version": 1,
+  "items": [
+    {
+      "id": "dic-rcontrolled-01",
+      "skillId": "SP-rcontrolled-dictation",
+      "itemType": "dictation",
+      "difficulty": 1,
+      "stem": "Build the sentence you hear, word by word.",
+      "audioText": "the car is far",
+      "words": [
+        {
+          "text": "the",
+          "graphemes": [
+            "th",
+            "e"
+          ],
+          "distractorGraphemes": [
+            "a",
+            "i"
+          ]
+        },
+        {
+          "text": "car",
+          "graphemes": [
+            "c",
+            "ar"
+          ],
+          "distractorGraphemes": [
+            "a",
+            "e"
+          ]
+        },
+        {
+          "text": "is",
+          "graphemes": [
+            "i",
+            "s"
+          ],
+          "distractorGraphemes": [
+            "a",
+            "e"
+          ]
+        },
+        {
+          "text": "far",
+          "graphemes": [
+            "f",
+            "ar"
+          ],
+          "distractorGraphemes": [
+            "a",
+            "e"
+          ]
+        }
+      ],
+      "decodableWithin": "SP-r-controlled",
+      "missedConceptOnFail": "sentence-dictation",
+      "rationale": "the car is far — build each word from its sounds."
+    },
+    {
+      "id": "dic-rcontrolled-02",
+      "skillId": "SP-rcontrolled-dictation",
+      "itemType": "dictation",
+      "difficulty": 2,
+      "stem": "Build the sentence you hear, word by word.",
+      "audioText": "a bird sat on a perch",
+      "words": [
+        {
+          "text": "a",
+          "graphemes": [
+            "a"
+          ],
+          "distractorGraphemes": [
+            "e",
+            "i"
+          ]
+        },
+        {
+          "text": "bird",
+          "graphemes": [
+            "b",
+            "ir",
+            "d"
+          ],
+          "distractorGraphemes": [
+            "a",
+            "e"
+          ]
+        },
+        {
+          "text": "sat",
+          "graphemes": [
+            "s",
+            "a",
+            "t"
+          ],
+          "distractorGraphemes": [
+            "e",
+            "i"
+          ]
+        },
+        {
+          "text": "on",
+          "graphemes": [
+            "o",
+            "n"
+          ],
+          "distractorGraphemes": [
+            "a",
+            "e"
+          ]
+        },
+        {
+          "text": "a",
+          "graphemes": [
+            "a"
+          ],
+          "distractorGraphemes": [
+            "e",
+            "i"
+          ]
+        },
+        {
+          "text": "perch",
+          "graphemes": [
+            "p",
+            "er",
+            "ch"
+          ],
+          "distractorGraphemes": [
+            "a",
+            "e"
+          ]
+        }
+      ],
+      "decodableWithin": "SP-r-controlled",
+      "missedConceptOnFail": "sentence-dictation",
+      "rationale": "a bird sat on a perch — build each word from its sounds."
+    },
+    {
+      "id": "dic-rcontrolled-03",
+      "skillId": "SP-rcontrolled-dictation",
+      "itemType": "dictation",
+      "difficulty": 3,
+      "stem": "Build the sentence you hear, word by word.",
+      "audioText": "bart put corn in a cart",
+      "words": [
+        {
+          "text": "bart",
+          "graphemes": [
+            "b",
+            "ar",
+            "t"
+          ],
+          "distractorGraphemes": [
+            "a",
+            "e"
+          ]
+        },
+        {
+          "text": "put",
+          "graphemes": [
+            "p",
+            "u",
+            "t"
+          ],
+          "distractorGraphemes": [
+            "a",
+            "e"
+          ]
+        },
+        {
+          "text": "corn",
+          "graphemes": [
+            "c",
+            "or",
+            "n"
+          ],
+          "distractorGraphemes": [
+            "a",
+            "e"
+          ]
+        },
+        {
+          "text": "in",
+          "graphemes": [
+            "i",
+            "n"
+          ],
+          "distractorGraphemes": [
+            "a",
+            "e"
+          ]
+        },
+        {
+          "text": "a",
+          "graphemes": [
+            "a"
+          ],
+          "distractorGraphemes": [
+            "e",
+            "i"
+          ]
+        },
+        {
+          "text": "cart",
+          "graphemes": [
+            "c",
+            "ar",
+            "t"
+          ],
+          "distractorGraphemes": [
+            "a",
+            "e"
+          ]
+        }
+      ],
+      "decodableWithin": "SP-r-controlled",
+      "missedConceptOnFail": "sentence-dictation",
+      "rationale": "Bart put corn in a cart — build each word from its sounds."
+    },
+    {
+      "id": "dic-rcontrolled-04",
+      "skillId": "SP-rcontrolled-dictation",
+      "itemType": "dictation",
+      "difficulty": 1,
+      "stem": "Build the sentence you hear, word by word.",
+      "audioText": "her shirt is dark",
+      "words": [
+        {
+          "text": "her",
+          "graphemes": [
+            "h",
+            "er"
+          ],
+          "distractorGraphemes": [
+            "a",
+            "e"
+          ]
+        },
+        {
+          "text": "shirt",
+          "graphemes": [
+            "sh",
+            "ir",
+            "t"
+          ],
+          "distractorGraphemes": [
+            "a",
+            "e"
+          ]
+        },
+        {
+          "text": "is",
+          "graphemes": [
+            "i",
+            "s"
+          ],
+          "distractorGraphemes": [
+            "a",
+            "e"
+          ]
+        },
+        {
+          "text": "dark",
+          "graphemes": [
+            "d",
+            "ar",
+            "k"
+          ],
+          "distractorGraphemes": [
+            "a",
+            "e"
+          ]
+        }
+      ],
+      "decodableWithin": "SP-r-controlled",
+      "missedConceptOnFail": "sentence-dictation",
+      "rationale": "her shirt is dark — build each word from its sounds."
+    },
+    {
+      "id": "dic-rcontrolled-05",
+      "skillId": "SP-rcontrolled-dictation",
+      "itemType": "dictation",
+      "difficulty": 2,
+      "stem": "Build the sentence you hear, word by word.",
+      "audioText": "a horse is in the barn",
+      "words": [
+        {
+          "text": "a",
+          "graphemes": [
+            "a"
+          ],
+          "distractorGraphemes": [
+            "e",
+            "i"
+          ]
+        },
+        {
+          "text": "horse",
+          "graphemes": [
+            "h",
+            "or",
+            "s",
+            "e"
+          ],
+          "distractorGraphemes": [
+            "a",
+            "i"
+          ]
+        },
+        {
+          "text": "is",
+          "graphemes": [
+            "i",
+            "s"
+          ],
+          "distractorGraphemes": [
+            "a",
+            "e"
+          ]
+        },
+        {
+          "text": "in",
+          "graphemes": [
+            "i",
+            "n"
+          ],
+          "distractorGraphemes": [
+            "a",
+            "e"
+          ]
+        },
+        {
+          "text": "the",
+          "graphemes": [
+            "th",
+            "e"
+          ],
+          "distractorGraphemes": [
+            "a",
+            "i"
+          ]
+        },
+        {
+          "text": "barn",
+          "graphemes": [
+            "b",
+            "ar",
+            "n"
+          ],
+          "distractorGraphemes": [
+            "a",
+            "e"
+          ]
+        }
+      ],
+      "decodableWithin": "SP-r-controlled",
+      "missedConceptOnFail": "sentence-dictation",
+      "rationale": "a horse is in the barn — build each word from its sounds."
+    },
+    {
+      "id": "dic-rcontrolled-06",
+      "skillId": "SP-rcontrolled-dictation",
+      "itemType": "dictation",
+      "difficulty": 3,
+      "stem": "Build the sentence you hear, word by word.",
+      "audioText": "the girl has a card",
+      "words": [
+        {
+          "text": "the",
+          "graphemes": [
+            "th",
+            "e"
+          ],
+          "distractorGraphemes": [
+            "a",
+            "i"
+          ]
+        },
+        {
+          "text": "girl",
+          "graphemes": [
+            "g",
+            "ir",
+            "l"
+          ],
+          "distractorGraphemes": [
+            "a",
+            "e"
+          ]
+        },
+        {
+          "text": "has",
+          "graphemes": [
+            "h",
+            "a",
+            "s"
+          ],
+          "distractorGraphemes": [
+            "e",
+            "i"
+          ]
+        },
+        {
+          "text": "a",
+          "graphemes": [
+            "a"
+          ],
+          "distractorGraphemes": [
+            "e",
+            "i"
+          ]
+        },
+        {
+          "text": "card",
+          "graphemes": [
+            "c",
+            "ar",
+            "d"
+          ],
+          "distractorGraphemes": [
+            "a",
+            "e"
+          ]
+        }
+      ],
+      "decodableWithin": "SP-r-controlled",
+      "missedConceptOnFail": "sentence-dictation",
+      "rationale": "the girl has a card — build each word from its sounds."
+    },
+    {
+      "id": "dic-rcontrolled-07",
+      "skillId": "SP-rcontrolled-dictation",
+      "itemType": "dictation",
+      "difficulty": 1,
+      "stem": "Build the sentence you hear, word by word.",
+      "audioText": "a shark swam far",
+      "words": [
+        {
+          "text": "a",
+          "graphemes": [
+            "a"
+          ],
+          "distractorGraphemes": [
+            "e",
+            "i"
+          ]
+        },
+        {
+          "text": "shark",
+          "graphemes": [
+            "sh",
+            "ar",
+            "k"
+          ],
+          "distractorGraphemes": [
+            "a",
+            "e"
+          ]
+        },
+        {
+          "text": "swam",
+          "graphemes": [
+            "s",
+            "w",
+            "a",
+            "m"
+          ],
+          "distractorGraphemes": [
+            "e",
+            "i"
+          ]
+        },
+        {
+          "text": "far",
+          "graphemes": [
+            "f",
+            "ar"
+          ],
+          "distractorGraphemes": [
+            "a",
+            "e"
+          ]
+        }
+      ],
+      "decodableWithin": "SP-r-controlled",
+      "missedConceptOnFail": "sentence-dictation",
+      "rationale": "a shark swam far — build each word from its sounds."
+    },
+    {
+      "id": "dic-rcontrolled-08",
+      "skillId": "SP-rcontrolled-dictation",
+      "itemType": "dictation",
+      "difficulty": 2,
+      "stem": "Build the sentence you hear, word by word.",
+      "audioText": "turn the car at the corner",
+      "words": [
+        {
+          "text": "turn",
+          "graphemes": [
+            "t",
+            "ur",
+            "n"
+          ],
+          "distractorGraphemes": [
+            "a",
+            "e"
+          ]
+        },
+        {
+          "text": "the",
+          "graphemes": [
+            "th",
+            "e"
+          ],
+          "distractorGraphemes": [
+            "a",
+            "i"
+          ]
+        },
+        {
+          "text": "car",
+          "graphemes": [
+            "c",
+            "ar"
+          ],
+          "distractorGraphemes": [
+            "a",
+            "e"
+          ]
+        },
+        {
+          "text": "at",
+          "graphemes": [
+            "a",
+            "t"
+          ],
+          "distractorGraphemes": [
+            "e",
+            "i"
+          ]
+        },
+        {
+          "text": "the",
+          "graphemes": [
+            "th",
+            "e"
+          ],
+          "distractorGraphemes": [
+            "a",
+            "i"
+          ]
+        },
+        {
+          "text": "corner",
+          "graphemes": [
+            "c",
+            "or",
+            "n",
+            "er"
+          ],
+          "distractorGraphemes": [
+            "a",
+            "e"
+          ]
+        }
+      ],
+      "decodableWithin": "SP-r-controlled",
+      "missedConceptOnFail": "sentence-dictation",
+      "rationale": "turn the car at the corner — build each word from its sounds."
+    },
+    {
+      "id": "dic-rcontrolled-09",
+      "skillId": "SP-rcontrolled-dictation",
+      "itemType": "dictation",
+      "difficulty": 3,
+      "stem": "Build the sentence you hear, word by word.",
+      "audioText": "a fork is on the cart",
+      "words": [
+        {
+          "text": "a",
+          "graphemes": [
+            "a"
+          ],
+          "distractorGraphemes": [
+            "e",
+            "i"
+          ]
+        },
+        {
+          "text": "fork",
+          "graphemes": [
+            "f",
+            "or",
+            "k"
+          ],
+          "distractorGraphemes": [
+            "a",
+            "e"
+          ]
+        },
+        {
+          "text": "is",
+          "graphemes": [
+            "i",
+            "s"
+          ],
+          "distractorGraphemes": [
+            "a",
+            "e"
+          ]
+        },
+        {
+          "text": "on",
+          "graphemes": [
+            "o",
+            "n"
+          ],
+          "distractorGraphemes": [
+            "a",
+            "e"
+          ]
+        },
+        {
+          "text": "the",
+          "graphemes": [
+            "th",
+            "e"
+          ],
+          "distractorGraphemes": [
+            "a",
+            "i"
+          ]
+        },
+        {
+          "text": "cart",
+          "graphemes": [
+            "c",
+            "ar",
+            "t"
+          ],
+          "distractorGraphemes": [
+            "a",
+            "e"
+          ]
+        }
+      ],
+      "decodableWithin": "SP-r-controlled",
+      "missedConceptOnFail": "sentence-dictation",
+      "rationale": "a fork is on the cart — build each word from its sounds."
+    },
+    {
+      "id": "dic-rcontrolled-10",
+      "skillId": "SP-rcontrolled-dictation",
+      "itemType": "dictation",
+      "difficulty": 1,
+      "stem": "Build the sentence you hear, word by word.",
+      "audioText": "her purse is in the car",
+      "words": [
+        {
+          "text": "her",
+          "graphemes": [
+            "h",
+            "er"
+          ],
+          "distractorGraphemes": [
+            "a",
+            "e"
+          ]
+        },
+        {
+          "text": "purse",
+          "graphemes": [
+            "p",
+            "ur",
+            "s",
+            "e"
+          ],
+          "distractorGraphemes": [
+            "a",
+            "i"
+          ]
+        },
+        {
+          "text": "is",
+          "graphemes": [
+            "i",
+            "s"
+          ],
+          "distractorGraphemes": [
+            "a",
+            "e"
+          ]
+        },
+        {
+          "text": "in",
+          "graphemes": [
+            "i",
+            "n"
+          ],
+          "distractorGraphemes": [
+            "a",
+            "e"
+          ]
+        },
+        {
+          "text": "the",
+          "graphemes": [
+            "th",
+            "e"
+          ],
+          "distractorGraphemes": [
+            "a",
+            "i"
+          ]
+        },
+        {
+          "text": "car",
+          "graphemes": [
+            "c",
+            "ar"
+          ],
+          "distractorGraphemes": [
+            "a",
+            "e"
+          ]
+        }
+      ],
+      "decodableWithin": "SP-r-controlled",
+      "missedConceptOnFail": "sentence-dictation",
+      "rationale": "her purse is in the car — build each word from its sounds."
+    },
+    {
+      "id": "dic-rcontrolled-11",
+      "skillId": "SP-rcontrolled-dictation",
+      "itemType": "dictation",
+      "difficulty": 2,
+      "stem": "Build the sentence you hear, word by word.",
+      "audioText": "mark has a short cord",
+      "words": [
+        {
+          "text": "mark",
+          "graphemes": [
+            "m",
+            "ar",
+            "k"
+          ],
+          "distractorGraphemes": [
+            "a",
+            "e"
+          ]
+        },
+        {
+          "text": "has",
+          "graphemes": [
+            "h",
+            "a",
+            "s"
+          ],
+          "distractorGraphemes": [
+            "e",
+            "i"
+          ]
+        },
+        {
+          "text": "a",
+          "graphemes": [
+            "a"
+          ],
+          "distractorGraphemes": [
+            "e",
+            "i"
+          ]
+        },
+        {
+          "text": "short",
+          "graphemes": [
+            "sh",
+            "or",
+            "t"
+          ],
+          "distractorGraphemes": [
+            "a",
+            "e"
+          ]
+        },
+        {
+          "text": "cord",
+          "graphemes": [
+            "c",
+            "or",
+            "d"
+          ],
+          "distractorGraphemes": [
+            "a",
+            "e"
+          ]
+        }
+      ],
+      "decodableWithin": "SP-r-controlled",
+      "missedConceptOnFail": "sentence-dictation",
+      "rationale": "Mark has a short cord — build each word from its sounds."
+    },
+    {
+      "id": "dic-rcontrolled-12",
+      "skillId": "SP-rcontrolled-dictation",
+      "itemType": "dictation",
+      "difficulty": 3,
+      "stem": "Build the sentence you hear, word by word.",
+      "audioText": "the nurse gave bart a jar",
+      "words": [
+        {
+          "text": "the",
+          "graphemes": [
+            "th",
+            "e"
+          ],
+          "distractorGraphemes": [
+            "a",
+            "i"
+          ]
+        },
+        {
+          "text": "nurse",
+          "graphemes": [
+            "n",
+            "ur",
+            "s",
+            "e"
+          ],
+          "distractorGraphemes": [
+            "a",
+            "i"
+          ]
+        },
+        {
+          "text": "gave",
+          "graphemes": [
+            "g",
+            "a",
+            "v",
+            "e"
+          ],
+          "distractorGraphemes": [
+            "i",
+            "o"
+          ]
+        },
+        {
+          "text": "bart",
+          "graphemes": [
+            "b",
+            "ar",
+            "t"
+          ],
+          "distractorGraphemes": [
+            "a",
+            "e"
+          ]
+        },
+        {
+          "text": "a",
+          "graphemes": [
+            "a"
+          ],
+          "distractorGraphemes": [
+            "e",
+            "i"
+          ]
+        },
+        {
+          "text": "jar",
+          "graphemes": [
+            "j",
+            "ar"
+          ],
+          "distractorGraphemes": [
+            "a",
+            "e"
+          ]
+        }
+      ],
+      "decodableWithin": "SP-r-controlled",
+      "missedConceptOnFail": "sentence-dictation",
+      "rationale": "the nurse gave Bart a jar — build each word from its sounds."
+    },
+    {
+      "id": "dic-rcontrolled-13",
+      "skillId": "SP-rcontrolled-dictation",
+      "itemType": "dictation",
+      "difficulty": 1,
+      "stem": "Build the sentence you hear, word by word.",
+      "audioText": "a stork is by the shore",
+      "words": [
+        {
+          "text": "a",
+          "graphemes": [
+            "a"
+          ],
+          "distractorGraphemes": [
+            "e",
+            "i"
+          ]
+        },
+        {
+          "text": "stork",
+          "graphemes": [
+            "s",
+            "t",
+            "or",
+            "k"
+          ],
+          "distractorGraphemes": [
+            "a",
+            "e"
+          ]
+        },
+        {
+          "text": "is",
+          "graphemes": [
+            "i",
+            "s"
+          ],
+          "distractorGraphemes": [
+            "a",
+            "e"
+          ]
+        },
+        {
+          "text": "by",
+          "graphemes": [
+            "b",
+            "y"
+          ],
+          "distractorGraphemes": [
+            "a",
+            "e"
+          ]
+        },
+        {
+          "text": "the",
+          "graphemes": [
+            "th",
+            "e"
+          ],
+          "distractorGraphemes": [
+            "a",
+            "i"
+          ]
+        },
+        {
+          "text": "shore",
+          "graphemes": [
+            "sh",
+            "or",
+            "e"
+          ],
+          "distractorGraphemes": [
+            "a",
+            "i"
+          ]
+        }
+      ],
+      "decodableWithin": "SP-r-controlled",
+      "missedConceptOnFail": "sentence-dictation",
+      "rationale": "a stork is by the shore — build each word from its sounds."
+    },
+    {
+      "id": "dic-rcontrolled-14",
+      "skillId": "SP-rcontrolled-dictation",
+      "itemType": "dictation",
+      "difficulty": 2,
+      "stem": "Build the sentence you hear, word by word.",
+      "audioText": "the farmer feeds the horse",
+      "words": [
+        {
+          "text": "the",
+          "graphemes": [
+            "th",
+            "e"
+          ],
+          "distractorGraphemes": [
+            "a",
+            "i"
+          ]
+        },
+        {
+          "text": "farmer",
+          "graphemes": [
+            "f",
+            "ar",
+            "m",
+            "er"
+          ],
+          "distractorGraphemes": [
+            "a",
+            "e"
+          ]
+        },
+        {
+          "text": "feeds",
+          "graphemes": [
+            "f",
+            "ee",
+            "d",
+            "s"
+          ],
+          "distractorGraphemes": [
+            "a",
+            "e"
+          ]
+        },
+        {
+          "text": "the",
+          "graphemes": [
+            "th",
+            "e"
+          ],
+          "distractorGraphemes": [
+            "a",
+            "i"
+          ]
+        },
+        {
+          "text": "horse",
+          "graphemes": [
+            "h",
+            "or",
+            "s",
+            "e"
+          ],
+          "distractorGraphemes": [
+            "a",
+            "i"
+          ]
+        }
+      ],
+      "decodableWithin": "SP-r-controlled",
+      "missedConceptOnFail": "sentence-dictation",
+      "rationale": "the farmer feeds the horse — build each word from its sounds."
+    },
+    {
+      "id": "dic-rcontrolled-15",
+      "skillId": "SP-rcontrolled-dictation",
+      "itemType": "dictation",
+      "difficulty": 3,
+      "stem": "Build the sentence you hear, word by word.",
+      "audioText": "her scarf is warm",
+      "words": [
+        {
+          "text": "her",
+          "graphemes": [
+            "h",
+            "er"
+          ],
+          "distractorGraphemes": [
+            "a",
+            "e"
+          ]
+        },
+        {
+          "text": "scarf",
+          "graphemes": [
+            "s",
+            "c",
+            "ar",
+            "f"
+          ],
+          "distractorGraphemes": [
+            "a",
+            "e"
+          ]
+        },
+        {
+          "text": "is",
+          "graphemes": [
+            "i",
+            "s"
+          ],
+          "distractorGraphemes": [
+            "a",
+            "e"
+          ]
+        },
+        {
+          "text": "warm",
+          "graphemes": [
+            "w",
+            "ar",
+            "m"
+          ],
+          "distractorGraphemes": [
+            "a",
+            "e"
+          ]
+        }
+      ],
+      "decodableWithin": "SP-r-controlled",
+      "missedConceptOnFail": "sentence-dictation",
+      "rationale": "her scarf is warm — build each word from its sounds."
+    },
+    {
+      "id": "dic-rcontrolled-16",
+      "skillId": "SP-rcontrolled-dictation",
+      "itemType": "dictation",
+      "difficulty": 1,
+      "stem": "Build the sentence you hear, word by word.",
+      "audioText": "the bird is in the barn",
+      "words": [
+        {
+          "text": "the",
+          "graphemes": [
+            "th",
+            "e"
+          ],
+          "distractorGraphemes": [
+            "a",
+            "i"
+          ]
+        },
+        {
+          "text": "bird",
+          "graphemes": [
+            "b",
+            "ir",
+            "d"
+          ],
+          "distractorGraphemes": [
+            "a",
+            "e"
+          ]
+        },
+        {
+          "text": "is",
+          "graphemes": [
+            "i",
+            "s"
+          ],
+          "distractorGraphemes": [
+            "a",
+            "e"
+          ]
+        },
+        {
+          "text": "in",
+          "graphemes": [
+            "i",
+            "n"
+          ],
+          "distractorGraphemes": [
+            "a",
+            "e"
+          ]
+        },
+        {
+          "text": "the",
+          "graphemes": [
+            "th",
+            "e"
+          ],
+          "distractorGraphemes": [
+            "a",
+            "i"
+          ]
+        },
+        {
+          "text": "barn",
+          "graphemes": [
+            "b",
+            "ar",
+            "n"
+          ],
+          "distractorGraphemes": [
+            "a",
+            "e"
+          ]
+        }
+      ],
+      "decodableWithin": "SP-r-controlled",
+      "missedConceptOnFail": "sentence-dictation",
+      "rationale": "the bird is in the barn — build each word from its sounds."
+    },
+    {
+      "id": "dic-rcontrolled-17",
+      "skillId": "SP-rcontrolled-dictation",
+      "itemType": "dictation",
+      "difficulty": 2,
+      "stem": "Build the sentence you hear, word by word.",
+      "audioText": "mark has a cart",
+      "words": [
+        {
+          "text": "mark",
+          "graphemes": [
+            "m",
+            "ar",
+            "k"
+          ],
+          "distractorGraphemes": [
+            "a",
+            "e"
+          ]
+        },
+        {
+          "text": "has",
+          "graphemes": [
+            "h",
+            "a",
+            "s"
+          ],
+          "distractorGraphemes": [
+            "e",
+            "i"
+          ]
+        },
+        {
+          "text": "a",
+          "graphemes": [
+            "a"
+          ],
+          "distractorGraphemes": [
+            "e",
+            "i"
+          ]
+        },
+        {
+          "text": "cart",
+          "graphemes": [
+            "c",
+            "ar",
+            "t"
+          ],
+          "distractorGraphemes": [
+            "a",
+            "e"
+          ]
+        }
+      ],
+      "decodableWithin": "SP-r-controlled",
+      "missedConceptOnFail": "sentence-dictation",
+      "rationale": "Mark has a cart — build each word from its sounds."
+    },
+    {
+      "id": "dic-rcontrolled-18",
+      "skillId": "SP-rcontrolled-dictation",
+      "itemType": "dictation",
+      "difficulty": 3,
+      "stem": "Build the sentence you hear, word by word.",
+      "audioText": "her card is in the car",
+      "words": [
+        {
+          "text": "her",
+          "graphemes": [
+            "h",
+            "er"
+          ],
+          "distractorGraphemes": [
+            "a",
+            "e"
+          ]
+        },
+        {
+          "text": "card",
+          "graphemes": [
+            "c",
+            "ar",
+            "d"
+          ],
+          "distractorGraphemes": [
+            "a",
+            "e"
+          ]
+        },
+        {
+          "text": "is",
+          "graphemes": [
+            "i",
+            "s"
+          ],
+          "distractorGraphemes": [
+            "a",
+            "e"
+          ]
+        },
+        {
+          "text": "in",
+          "graphemes": [
+            "i",
+            "n"
+          ],
+          "distractorGraphemes": [
+            "a",
+            "e"
+          ]
+        },
+        {
+          "text": "the",
+          "graphemes": [
+            "th",
+            "e"
+          ],
+          "distractorGraphemes": [
+            "a",
+            "i"
+          ]
+        },
+        {
+          "text": "car",
+          "graphemes": [
+            "c",
+            "ar"
+          ],
+          "distractorGraphemes": [
+            "a",
+            "e"
+          ]
+        }
+      ],
+      "decodableWithin": "SP-r-controlled",
+      "missedConceptOnFail": "sentence-dictation",
+      "rationale": "her card is in the car — build each word from its sounds."
+    },
+    {
+      "id": "dic-rcontrolled-19",
+      "skillId": "SP-rcontrolled-dictation",
+      "itemType": "dictation",
+      "difficulty": 1,
+      "stem": "Build the sentence you hear, word by word.",
+      "audioText": "a shark is near the surf",
+      "words": [
+        {
+          "text": "a",
+          "graphemes": [
+            "a"
+          ],
+          "distractorGraphemes": [
+            "e",
+            "i"
+          ]
+        },
+        {
+          "text": "shark",
+          "graphemes": [
+            "sh",
+            "ar",
+            "k"
+          ],
+          "distractorGraphemes": [
+            "a",
+            "e"
+          ]
+        },
+        {
+          "text": "is",
+          "graphemes": [
+            "i",
+            "s"
+          ],
+          "distractorGraphemes": [
+            "a",
+            "e"
+          ]
+        },
+        {
+          "text": "near",
+          "graphemes": [
+            "n",
+            "ea",
+            "r"
+          ],
+          "distractorGraphemes": [
+            "a",
+            "e"
+          ]
+        },
+        {
+          "text": "the",
+          "graphemes": [
+            "th",
+            "e"
+          ],
+          "distractorGraphemes": [
+            "a",
+            "i"
+          ]
+        },
+        {
+          "text": "surf",
+          "graphemes": [
+            "s",
+            "ur",
+            "f"
+          ],
+          "distractorGraphemes": [
+            "a",
+            "e"
+          ]
+        }
+      ],
+      "decodableWithin": "SP-r-controlled",
+      "missedConceptOnFail": "sentence-dictation",
+      "rationale": "a shark is near the surf — build each word from its sounds."
+    },
+    {
+      "id": "dic-rcontrolled-20",
+      "skillId": "SP-rcontrolled-dictation",
+      "itemType": "dictation",
+      "difficulty": 2,
+      "stem": "Build the sentence you hear, word by word.",
+      "audioText": "the girl has a fork",
+      "words": [
+        {
+          "text": "the",
+          "graphemes": [
+            "th",
+            "e"
+          ],
+          "distractorGraphemes": [
+            "a",
+            "i"
+          ]
+        },
+        {
+          "text": "girl",
+          "graphemes": [
+            "g",
+            "ir",
+            "l"
+          ],
+          "distractorGraphemes": [
+            "a",
+            "e"
+          ]
+        },
+        {
+          "text": "has",
+          "graphemes": [
+            "h",
+            "a",
+            "s"
+          ],
+          "distractorGraphemes": [
+            "e",
+            "i"
+          ]
+        },
+        {
+          "text": "a",
+          "graphemes": [
+            "a"
+          ],
+          "distractorGraphemes": [
+            "e",
+            "i"
+          ]
+        },
+        {
+          "text": "fork",
+          "graphemes": [
+            "f",
+            "or",
+            "k"
+          ],
+          "distractorGraphemes": [
+            "a",
+            "e"
+          ]
+        }
+      ],
+      "decodableWithin": "SP-r-controlled",
+      "missedConceptOnFail": "sentence-dictation",
+      "rationale": "the girl has a fork — build each word from its sounds."
+    }
+  ],
+  "lessons": {
+    "SP-rcontrolled-dictation": {
+      "iCanStatement": "I can spell short sentences with bossy r.",
+      "explanation": "When r follows a vowel it changes the sound: ar, or, er, ir, ur. The vowel and r make one tile. Build each word you hear.",
+      "workedExamples": [
+        {
+          "text": "the car is far",
+          "note": "c·ar, f·ar."
+        },
+        {
+          "text": "a bird is on the perch",
+          "note": "b·ir·d, p·er·ch."
+        }
+      ]
+    }
+  }
+}

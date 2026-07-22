@@ -1,0 +1,1424 @@
+{
+  "packId": "dictation-L04-blends",
+  "strand": "spelling",
+  "skillIds": [
+    "SP-blend-dictation"
+  ],
+  "version": 1,
+  "items": [
+    {
+      "id": "dic-blend-01",
+      "skillId": "SP-blend-dictation",
+      "itemType": "dictation",
+      "difficulty": 1,
+      "stem": "Build the sentence you hear, word by word.",
+      "audioText": "a frog can swim",
+      "words": [
+        {
+          "text": "a",
+          "graphemes": [
+            "a"
+          ],
+          "distractorGraphemes": [
+            "e",
+            "i"
+          ]
+        },
+        {
+          "text": "frog",
+          "graphemes": [
+            "f",
+            "r",
+            "o",
+            "g"
+          ],
+          "distractorGraphemes": [
+            "a",
+            "e"
+          ]
+        },
+        {
+          "text": "can",
+          "graphemes": [
+            "c",
+            "a",
+            "n"
+          ],
+          "distractorGraphemes": [
+            "e",
+            "i"
+          ]
+        },
+        {
+          "text": "swim",
+          "graphemes": [
+            "s",
+            "w",
+            "i",
+            "m"
+          ],
+          "distractorGraphemes": [
+            "a",
+            "e"
+          ]
+        }
+      ],
+      "decodableWithin": "SP-blends",
+      "missedConceptOnFail": "sentence-dictation",
+      "rationale": "a frog can swim — build each word from its sounds."
+    },
+    {
+      "id": "dic-blend-02",
+      "skillId": "SP-blend-dictation",
+      "itemType": "dictation",
+      "difficulty": 2,
+      "stem": "Build the sentence you hear, word by word.",
+      "audioText": "stan had a flag",
+      "words": [
+        {
+          "text": "stan",
+          "graphemes": [
+            "s",
+            "t",
+            "a",
+            "n"
+          ],
+          "distractorGraphemes": [
+            "e",
+            "i"
+          ]
+        },
+        {
+          "text": "had",
+          "graphemes": [
+            "h",
+            "a",
+            "d"
+          ],
+          "distractorGraphemes": [
+            "e",
+            "i"
+          ]
+        },
+        {
+          "text": "a",
+          "graphemes": [
+            "a"
+          ],
+          "distractorGraphemes": [
+            "e",
+            "i"
+          ]
+        },
+        {
+          "text": "flag",
+          "graphemes": [
+            "f",
+            "l",
+            "a",
+            "g"
+          ],
+          "distractorGraphemes": [
+            "e",
+            "i"
+          ]
+        }
+      ],
+      "decodableWithin": "SP-blends",
+      "missedConceptOnFail": "sentence-dictation",
+      "rationale": "Stan had a flag — build each word from its sounds."
+    },
+    {
+      "id": "dic-blend-03",
+      "skillId": "SP-blend-dictation",
+      "itemType": "dictation",
+      "difficulty": 3,
+      "stem": "Build the sentence you hear, word by word.",
+      "audioText": "fred got a drum",
+      "words": [
+        {
+          "text": "fred",
+          "graphemes": [
+            "f",
+            "r",
+            "e",
+            "d"
+          ],
+          "distractorGraphemes": [
+            "a",
+            "i"
+          ]
+        },
+        {
+          "text": "got",
+          "graphemes": [
+            "g",
+            "o",
+            "t"
+          ],
+          "distractorGraphemes": [
+            "a",
+            "e"
+          ]
+        },
+        {
+          "text": "a",
+          "graphemes": [
+            "a"
+          ],
+          "distractorGraphemes": [
+            "e",
+            "i"
+          ]
+        },
+        {
+          "text": "drum",
+          "graphemes": [
+            "d",
+            "r",
+            "u",
+            "m"
+          ],
+          "distractorGraphemes": [
+            "a",
+            "e"
+          ]
+        }
+      ],
+      "decodableWithin": "SP-blends",
+      "missedConceptOnFail": "sentence-dictation",
+      "rationale": "Fred got a drum — build each word from its sounds."
+    },
+    {
+      "id": "dic-blend-04",
+      "skillId": "SP-blend-dictation",
+      "itemType": "dictation",
+      "difficulty": 1,
+      "stem": "Build the sentence you hear, word by word.",
+      "audioText": "a crab can grab",
+      "words": [
+        {
+          "text": "a",
+          "graphemes": [
+            "a"
+          ],
+          "distractorGraphemes": [
+            "e",
+            "i"
+          ]
+        },
+        {
+          "text": "crab",
+          "graphemes": [
+            "c",
+            "r",
+            "a",
+            "b"
+          ],
+          "distractorGraphemes": [
+            "e",
+            "i"
+          ]
+        },
+        {
+          "text": "can",
+          "graphemes": [
+            "c",
+            "a",
+            "n"
+          ],
+          "distractorGraphemes": [
+            "e",
+            "i"
+          ]
+        },
+        {
+          "text": "grab",
+          "graphemes": [
+            "g",
+            "r",
+            "a",
+            "b"
+          ],
+          "distractorGraphemes": [
+            "e",
+            "i"
+          ]
+        }
+      ],
+      "decodableWithin": "SP-blends",
+      "missedConceptOnFail": "sentence-dictation",
+      "rationale": "a crab can grab — build each word from its sounds."
+    },
+    {
+      "id": "dic-blend-05",
+      "skillId": "SP-blend-dictation",
+      "itemType": "dictation",
+      "difficulty": 2,
+      "stem": "Build the sentence you hear, word by word.",
+      "audioText": "brad had a snack",
+      "words": [
+        {
+          "text": "brad",
+          "graphemes": [
+            "b",
+            "r",
+            "a",
+            "d"
+          ],
+          "distractorGraphemes": [
+            "e",
+            "i"
+          ]
+        },
+        {
+          "text": "had",
+          "graphemes": [
+            "h",
+            "a",
+            "d"
+          ],
+          "distractorGraphemes": [
+            "e",
+            "i"
+          ]
+        },
+        {
+          "text": "a",
+          "graphemes": [
+            "a"
+          ],
+          "distractorGraphemes": [
+            "e",
+            "i"
+          ]
+        },
+        {
+          "text": "snack",
+          "graphemes": [
+            "s",
+            "n",
+            "a",
+            "ck"
+          ],
+          "distractorGraphemes": [
+            "e",
+            "i"
+          ]
+        }
+      ],
+      "decodableWithin": "SP-blends",
+      "missedConceptOnFail": "sentence-dictation",
+      "rationale": "Brad had a snack — build each word from its sounds."
+    },
+    {
+      "id": "dic-blend-06",
+      "skillId": "SP-blend-dictation",
+      "itemType": "dictation",
+      "difficulty": 3,
+      "stem": "Build the sentence you hear, word by word.",
+      "audioText": "a twin ran fast",
+      "words": [
+        {
+          "text": "a",
+          "graphemes": [
+            "a"
+          ],
+          "distractorGraphemes": [
+            "e",
+            "i"
+          ]
+        },
+        {
+          "text": "twin",
+          "graphemes": [
+            "t",
+            "w",
+            "i",
+            "n"
+          ],
+          "distractorGraphemes": [
+            "a",
+            "e"
+          ]
+        },
+        {
+          "text": "ran",
+          "graphemes": [
+            "r",
+            "a",
+            "n"
+          ],
+          "distractorGraphemes": [
+            "e",
+            "i"
+          ]
+        },
+        {
+          "text": "fast",
+          "graphemes": [
+            "f",
+            "a",
+            "s",
+            "t"
+          ],
+          "distractorGraphemes": [
+            "e",
+            "i"
+          ]
+        }
+      ],
+      "decodableWithin": "SP-blends",
+      "missedConceptOnFail": "sentence-dictation",
+      "rationale": "a twin ran fast — build each word from its sounds."
+    },
+    {
+      "id": "dic-blend-07",
+      "skillId": "SP-blend-dictation",
+      "itemType": "dictation",
+      "difficulty": 1,
+      "stem": "Build the sentence you hear, word by word.",
+      "audioText": "glen got a gift",
+      "words": [
+        {
+          "text": "glen",
+          "graphemes": [
+            "g",
+            "l",
+            "e",
+            "n"
+          ],
+          "distractorGraphemes": [
+            "a",
+            "i"
+          ]
+        },
+        {
+          "text": "got",
+          "graphemes": [
+            "g",
+            "o",
+            "t"
+          ],
+          "distractorGraphemes": [
+            "a",
+            "e"
+          ]
+        },
+        {
+          "text": "a",
+          "graphemes": [
+            "a"
+          ],
+          "distractorGraphemes": [
+            "e",
+            "i"
+          ]
+        },
+        {
+          "text": "gift",
+          "graphemes": [
+            "g",
+            "i",
+            "f",
+            "t"
+          ],
+          "distractorGraphemes": [
+            "a",
+            "e"
+          ]
+        }
+      ],
+      "decodableWithin": "SP-blends",
+      "missedConceptOnFail": "sentence-dictation",
+      "rationale": "Glen got a gift — build each word from its sounds."
+    },
+    {
+      "id": "dic-blend-08",
+      "skillId": "SP-blend-dictation",
+      "itemType": "dictation",
+      "difficulty": 2,
+      "stem": "Build the sentence you hear, word by word.",
+      "audioText": "frank had a brick",
+      "words": [
+        {
+          "text": "frank",
+          "graphemes": [
+            "f",
+            "r",
+            "a",
+            "n",
+            "k"
+          ],
+          "distractorGraphemes": [
+            "e",
+            "i"
+          ]
+        },
+        {
+          "text": "had",
+          "graphemes": [
+            "h",
+            "a",
+            "d"
+          ],
+          "distractorGraphemes": [
+            "e",
+            "i"
+          ]
+        },
+        {
+          "text": "a",
+          "graphemes": [
+            "a"
+          ],
+          "distractorGraphemes": [
+            "e",
+            "i"
+          ]
+        },
+        {
+          "text": "brick",
+          "graphemes": [
+            "b",
+            "r",
+            "i",
+            "ck"
+          ],
+          "distractorGraphemes": [
+            "a",
+            "e"
+          ]
+        }
+      ],
+      "decodableWithin": "SP-blends",
+      "missedConceptOnFail": "sentence-dictation",
+      "rationale": "Frank had a brick — build each word from its sounds."
+    },
+    {
+      "id": "dic-blend-09",
+      "skillId": "SP-blend-dictation",
+      "itemType": "dictation",
+      "difficulty": 3,
+      "stem": "Build the sentence you hear, word by word.",
+      "audioText": "a frog sat on a log",
+      "words": [
+        {
+          "text": "a",
+          "graphemes": [
+            "a"
+          ],
+          "distractorGraphemes": [
+            "e",
+            "i"
+          ]
+        },
+        {
+          "text": "frog",
+          "graphemes": [
+            "f",
+            "r",
+            "o",
+            "g"
+          ],
+          "distractorGraphemes": [
+            "a",
+            "e"
+          ]
+        },
+        {
+          "text": "sat",
+          "graphemes": [
+            "s",
+            "a",
+            "t"
+          ],
+          "distractorGraphemes": [
+            "e",
+            "i"
+          ]
+        },
+        {
+          "text": "on",
+          "graphemes": [
+            "o",
+            "n"
+          ],
+          "distractorGraphemes": [
+            "a",
+            "e"
+          ]
+        },
+        {
+          "text": "a",
+          "graphemes": [
+            "a"
+          ],
+          "distractorGraphemes": [
+            "e",
+            "i"
+          ]
+        },
+        {
+          "text": "log",
+          "graphemes": [
+            "l",
+            "o",
+            "g"
+          ],
+          "distractorGraphemes": [
+            "a",
+            "e"
+          ]
+        }
+      ],
+      "decodableWithin": "SP-blends",
+      "missedConceptOnFail": "sentence-dictation",
+      "rationale": "a frog sat on a log — build each word from its sounds."
+    },
+    {
+      "id": "dic-blend-10",
+      "skillId": "SP-blend-dictation",
+      "itemType": "dictation",
+      "difficulty": 1,
+      "stem": "Build the sentence you hear, word by word.",
+      "audioText": "stan got a red truck",
+      "words": [
+        {
+          "text": "stan",
+          "graphemes": [
+            "s",
+            "t",
+            "a",
+            "n"
+          ],
+          "distractorGraphemes": [
+            "e",
+            "i"
+          ]
+        },
+        {
+          "text": "got",
+          "graphemes": [
+            "g",
+            "o",
+            "t"
+          ],
+          "distractorGraphemes": [
+            "a",
+            "e"
+          ]
+        },
+        {
+          "text": "a",
+          "graphemes": [
+            "a"
+          ],
+          "distractorGraphemes": [
+            "e",
+            "i"
+          ]
+        },
+        {
+          "text": "red",
+          "graphemes": [
+            "r",
+            "e",
+            "d"
+          ],
+          "distractorGraphemes": [
+            "a",
+            "i"
+          ]
+        },
+        {
+          "text": "truck",
+          "graphemes": [
+            "t",
+            "r",
+            "u",
+            "ck"
+          ],
+          "distractorGraphemes": [
+            "a",
+            "e"
+          ]
+        }
+      ],
+      "decodableWithin": "SP-blends",
+      "missedConceptOnFail": "sentence-dictation",
+      "rationale": "Stan got a red truck — build each word from its sounds."
+    },
+    {
+      "id": "dic-blend-11",
+      "skillId": "SP-blend-dictation",
+      "itemType": "dictation",
+      "difficulty": 2,
+      "stem": "Build the sentence you hear, word by word.",
+      "audioText": "a black cat ran",
+      "words": [
+        {
+          "text": "a",
+          "graphemes": [
+            "a"
+          ],
+          "distractorGraphemes": [
+            "e",
+            "i"
+          ]
+        },
+        {
+          "text": "black",
+          "graphemes": [
+            "b",
+            "l",
+            "a",
+            "ck"
+          ],
+          "distractorGraphemes": [
+            "e",
+            "i"
+          ]
+        },
+        {
+          "text": "cat",
+          "graphemes": [
+            "c",
+            "a",
+            "t"
+          ],
+          "distractorGraphemes": [
+            "e",
+            "i"
+          ]
+        },
+        {
+          "text": "ran",
+          "graphemes": [
+            "r",
+            "a",
+            "n"
+          ],
+          "distractorGraphemes": [
+            "e",
+            "i"
+          ]
+        }
+      ],
+      "decodableWithin": "SP-blends",
+      "missedConceptOnFail": "sentence-dictation",
+      "rationale": "a black cat ran — build each word from its sounds."
+    },
+    {
+      "id": "dic-blend-12",
+      "skillId": "SP-blend-dictation",
+      "itemType": "dictation",
+      "difficulty": 3,
+      "stem": "Build the sentence you hear, word by word.",
+      "audioText": "fran had a fresh plum",
+      "words": [
+        {
+          "text": "fran",
+          "graphemes": [
+            "f",
+            "r",
+            "a",
+            "n"
+          ],
+          "distractorGraphemes": [
+            "e",
+            "i"
+          ]
+        },
+        {
+          "text": "had",
+          "graphemes": [
+            "h",
+            "a",
+            "d"
+          ],
+          "distractorGraphemes": [
+            "e",
+            "i"
+          ]
+        },
+        {
+          "text": "a",
+          "graphemes": [
+            "a"
+          ],
+          "distractorGraphemes": [
+            "e",
+            "i"
+          ]
+        },
+        {
+          "text": "fresh",
+          "graphemes": [
+            "f",
+            "r",
+            "e",
+            "sh"
+          ],
+          "distractorGraphemes": [
+            "a",
+            "i"
+          ]
+        },
+        {
+          "text": "plum",
+          "graphemes": [
+            "p",
+            "l",
+            "u",
+            "m"
+          ],
+          "distractorGraphemes": [
+            "a",
+            "e"
+          ]
+        }
+      ],
+      "decodableWithin": "SP-blends",
+      "missedConceptOnFail": "sentence-dictation",
+      "rationale": "Fran had a fresh plum — build each word from its sounds."
+    },
+    {
+      "id": "dic-blend-13",
+      "skillId": "SP-blend-dictation",
+      "itemType": "dictation",
+      "difficulty": 1,
+      "stem": "Build the sentence you hear, word by word.",
+      "audioText": "grant can spin a top",
+      "words": [
+        {
+          "text": "grant",
+          "graphemes": [
+            "g",
+            "r",
+            "a",
+            "n",
+            "t"
+          ],
+          "distractorGraphemes": [
+            "e",
+            "i"
+          ]
+        },
+        {
+          "text": "can",
+          "graphemes": [
+            "c",
+            "a",
+            "n"
+          ],
+          "distractorGraphemes": [
+            "e",
+            "i"
+          ]
+        },
+        {
+          "text": "spin",
+          "graphemes": [
+            "s",
+            "p",
+            "i",
+            "n"
+          ],
+          "distractorGraphemes": [
+            "a",
+            "e"
+          ]
+        },
+        {
+          "text": "a",
+          "graphemes": [
+            "a"
+          ],
+          "distractorGraphemes": [
+            "e",
+            "i"
+          ]
+        },
+        {
+          "text": "top",
+          "graphemes": [
+            "t",
+            "o",
+            "p"
+          ],
+          "distractorGraphemes": [
+            "a",
+            "e"
+          ]
+        }
+      ],
+      "decodableWithin": "SP-blends",
+      "missedConceptOnFail": "sentence-dictation",
+      "rationale": "Grant can spin a top — build each word from its sounds."
+    },
+    {
+      "id": "dic-blend-14",
+      "skillId": "SP-blend-dictation",
+      "itemType": "dictation",
+      "difficulty": 2,
+      "stem": "Build the sentence you hear, word by word.",
+      "audioText": "a clock is on a desk",
+      "words": [
+        {
+          "text": "a",
+          "graphemes": [
+            "a"
+          ],
+          "distractorGraphemes": [
+            "e",
+            "i"
+          ]
+        },
+        {
+          "text": "clock",
+          "graphemes": [
+            "c",
+            "l",
+            "o",
+            "ck"
+          ],
+          "distractorGraphemes": [
+            "a",
+            "e"
+          ]
+        },
+        {
+          "text": "is",
+          "graphemes": [
+            "i",
+            "s"
+          ],
+          "distractorGraphemes": [
+            "a",
+            "e"
+          ]
+        },
+        {
+          "text": "on",
+          "graphemes": [
+            "o",
+            "n"
+          ],
+          "distractorGraphemes": [
+            "a",
+            "e"
+          ]
+        },
+        {
+          "text": "a",
+          "graphemes": [
+            "a"
+          ],
+          "distractorGraphemes": [
+            "e",
+            "i"
+          ]
+        },
+        {
+          "text": "desk",
+          "graphemes": [
+            "d",
+            "e",
+            "s",
+            "k"
+          ],
+          "distractorGraphemes": [
+            "a",
+            "i"
+          ]
+        }
+      ],
+      "decodableWithin": "SP-blends",
+      "missedConceptOnFail": "sentence-dictation",
+      "rationale": "a clock is on a desk — build each word from its sounds."
+    },
+    {
+      "id": "dic-blend-15",
+      "skillId": "SP-blend-dictation",
+      "itemType": "dictation",
+      "difficulty": 3,
+      "stem": "Build the sentence you hear, word by word.",
+      "audioText": "chad ran and ran",
+      "words": [
+        {
+          "text": "chad",
+          "graphemes": [
+            "ch",
+            "a",
+            "d"
+          ],
+          "distractorGraphemes": [
+            "e",
+            "i"
+          ]
+        },
+        {
+          "text": "ran",
+          "graphemes": [
+            "r",
+            "a",
+            "n"
+          ],
+          "distractorGraphemes": [
+            "e",
+            "i"
+          ]
+        },
+        {
+          "text": "and",
+          "graphemes": [
+            "a",
+            "n",
+            "d"
+          ],
+          "distractorGraphemes": [
+            "e",
+            "i"
+          ]
+        },
+        {
+          "text": "ran",
+          "graphemes": [
+            "r",
+            "a",
+            "n"
+          ],
+          "distractorGraphemes": [
+            "e",
+            "i"
+          ]
+        }
+      ],
+      "decodableWithin": "SP-blends",
+      "missedConceptOnFail": "sentence-dictation",
+      "rationale": "Chad ran and ran — build each word from its sounds."
+    },
+    {
+      "id": "dic-blend-16",
+      "skillId": "SP-blend-dictation",
+      "itemType": "dictation",
+      "difficulty": 1,
+      "stem": "Build the sentence you hear, word by word.",
+      "audioText": "a crab hid in mud",
+      "words": [
+        {
+          "text": "a",
+          "graphemes": [
+            "a"
+          ],
+          "distractorGraphemes": [
+            "e",
+            "i"
+          ]
+        },
+        {
+          "text": "crab",
+          "graphemes": [
+            "c",
+            "r",
+            "a",
+            "b"
+          ],
+          "distractorGraphemes": [
+            "e",
+            "i"
+          ]
+        },
+        {
+          "text": "hid",
+          "graphemes": [
+            "h",
+            "i",
+            "d"
+          ],
+          "distractorGraphemes": [
+            "a",
+            "e"
+          ]
+        },
+        {
+          "text": "in",
+          "graphemes": [
+            "i",
+            "n"
+          ],
+          "distractorGraphemes": [
+            "a",
+            "e"
+          ]
+        },
+        {
+          "text": "mud",
+          "graphemes": [
+            "m",
+            "u",
+            "d"
+          ],
+          "distractorGraphemes": [
+            "a",
+            "e"
+          ]
+        }
+      ],
+      "decodableWithin": "SP-blends",
+      "missedConceptOnFail": "sentence-dictation",
+      "rationale": "a crab hid in mud — build each word from its sounds."
+    },
+    {
+      "id": "dic-blend-17",
+      "skillId": "SP-blend-dictation",
+      "itemType": "dictation",
+      "difficulty": 2,
+      "stem": "Build the sentence you hear, word by word.",
+      "audioText": "a sled slid fast",
+      "words": [
+        {
+          "text": "a",
+          "graphemes": [
+            "a"
+          ],
+          "distractorGraphemes": [
+            "e",
+            "i"
+          ]
+        },
+        {
+          "text": "sled",
+          "graphemes": [
+            "s",
+            "l",
+            "e",
+            "d"
+          ],
+          "distractorGraphemes": [
+            "a",
+            "i"
+          ]
+        },
+        {
+          "text": "slid",
+          "graphemes": [
+            "s",
+            "l",
+            "i",
+            "d"
+          ],
+          "distractorGraphemes": [
+            "a",
+            "e"
+          ]
+        },
+        {
+          "text": "fast",
+          "graphemes": [
+            "f",
+            "a",
+            "s",
+            "t"
+          ],
+          "distractorGraphemes": [
+            "e",
+            "i"
+          ]
+        }
+      ],
+      "decodableWithin": "SP-blends",
+      "missedConceptOnFail": "sentence-dictation",
+      "rationale": "a sled slid fast — build each word from its sounds."
+    },
+    {
+      "id": "dic-blend-18",
+      "skillId": "SP-blend-dictation",
+      "itemType": "dictation",
+      "difficulty": 3,
+      "stem": "Build the sentence you hear, word by word.",
+      "audioText": "brent held a lamp",
+      "words": [
+        {
+          "text": "brent",
+          "graphemes": [
+            "b",
+            "r",
+            "e",
+            "n",
+            "t"
+          ],
+          "distractorGraphemes": [
+            "a",
+            "i"
+          ]
+        },
+        {
+          "text": "held",
+          "graphemes": [
+            "h",
+            "e",
+            "l",
+            "d"
+          ],
+          "distractorGraphemes": [
+            "a",
+            "i"
+          ]
+        },
+        {
+          "text": "a",
+          "graphemes": [
+            "a"
+          ],
+          "distractorGraphemes": [
+            "e",
+            "i"
+          ]
+        },
+        {
+          "text": "lamp",
+          "graphemes": [
+            "l",
+            "a",
+            "m",
+            "p"
+          ],
+          "distractorGraphemes": [
+            "e",
+            "i"
+          ]
+        }
+      ],
+      "decodableWithin": "SP-blends",
+      "missedConceptOnFail": "sentence-dictation",
+      "rationale": "Brent held a lamp — build each word from its sounds."
+    },
+    {
+      "id": "dic-blend-19",
+      "skillId": "SP-blend-dictation",
+      "itemType": "dictation",
+      "difficulty": 1,
+      "stem": "Build the sentence you hear, word by word.",
+      "audioText": "glen had a gift and a flag",
+      "words": [
+        {
+          "text": "glen",
+          "graphemes": [
+            "g",
+            "l",
+            "e",
+            "n"
+          ],
+          "distractorGraphemes": [
+            "a",
+            "i"
+          ]
+        },
+        {
+          "text": "had",
+          "graphemes": [
+            "h",
+            "a",
+            "d"
+          ],
+          "distractorGraphemes": [
+            "e",
+            "i"
+          ]
+        },
+        {
+          "text": "a",
+          "graphemes": [
+            "a"
+          ],
+          "distractorGraphemes": [
+            "e",
+            "i"
+          ]
+        },
+        {
+          "text": "gift",
+          "graphemes": [
+            "g",
+            "i",
+            "f",
+            "t"
+          ],
+          "distractorGraphemes": [
+            "a",
+            "e"
+          ]
+        },
+        {
+          "text": "and",
+          "graphemes": [
+            "a",
+            "n",
+            "d"
+          ],
+          "distractorGraphemes": [
+            "e",
+            "i"
+          ]
+        },
+        {
+          "text": "a",
+          "graphemes": [
+            "a"
+          ],
+          "distractorGraphemes": [
+            "e",
+            "i"
+          ]
+        },
+        {
+          "text": "flag",
+          "graphemes": [
+            "f",
+            "l",
+            "a",
+            "g"
+          ],
+          "distractorGraphemes": [
+            "e",
+            "i"
+          ]
+        }
+      ],
+      "decodableWithin": "SP-blends",
+      "missedConceptOnFail": "sentence-dictation",
+      "rationale": "Glen had a gift and a flag — build each word from its sounds."
+    },
+    {
+      "id": "dic-blend-20",
+      "skillId": "SP-blend-dictation",
+      "itemType": "dictation",
+      "difficulty": 2,
+      "stem": "Build the sentence you hear, word by word.",
+      "audioText": "fred must stop",
+      "words": [
+        {
+          "text": "fred",
+          "graphemes": [
+            "f",
+            "r",
+            "e",
+            "d"
+          ],
+          "distractorGraphemes": [
+            "a",
+            "i"
+          ]
+        },
+        {
+          "text": "must",
+          "graphemes": [
+            "m",
+            "u",
+            "s",
+            "t"
+          ],
+          "distractorGraphemes": [
+            "a",
+            "e"
+          ]
+        },
+        {
+          "text": "stop",
+          "graphemes": [
+            "s",
+            "t",
+            "o",
+            "p"
+          ],
+          "distractorGraphemes": [
+            "a",
+            "e"
+          ]
+        }
+      ],
+      "decodableWithin": "SP-blends",
+      "missedConceptOnFail": "sentence-dictation",
+      "rationale": "Fred must stop — build each word from its sounds."
+    },
+    {
+      "id": "dic-blend-21",
+      "skillId": "SP-blend-dictation",
+      "itemType": "dictation",
+      "difficulty": 3,
+      "stem": "Build the sentence you hear, word by word.",
+      "audioText": "a frog can jump",
+      "words": [
+        {
+          "text": "a",
+          "graphemes": [
+            "a"
+          ],
+          "distractorGraphemes": [
+            "e",
+            "i"
+          ]
+        },
+        {
+          "text": "frog",
+          "graphemes": [
+            "f",
+            "r",
+            "o",
+            "g"
+          ],
+          "distractorGraphemes": [
+            "a",
+            "e"
+          ]
+        },
+        {
+          "text": "can",
+          "graphemes": [
+            "c",
+            "a",
+            "n"
+          ],
+          "distractorGraphemes": [
+            "e",
+            "i"
+          ]
+        },
+        {
+          "text": "jump",
+          "graphemes": [
+            "j",
+            "u",
+            "m",
+            "p"
+          ],
+          "distractorGraphemes": [
+            "a",
+            "e"
+          ]
+        }
+      ],
+      "decodableWithin": "SP-blends",
+      "missedConceptOnFail": "sentence-dictation",
+      "rationale": "a frog can jump — build each word from its sounds."
+    }
+  ],
+  "lessons": {
+    "SP-blend-dictation": {
+      "iCanStatement": "I can spell short sentences with blends.",
+      "explanation": "Listen to the sentence, then build it word by word. Blend words have two consonants you say quickly together, like st, fr and nd — build each sound in order.",
+      "workedExamples": [
+        {
+          "text": "a frog can swim",
+          "note": "fr·o·g — say each sound."
+        },
+        {
+          "text": "Stan had a snack",
+          "note": "sn·a·ck — ck is one tile."
+        }
+      ]
+    }
+  }
+}

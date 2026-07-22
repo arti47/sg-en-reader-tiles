@@ -1,0 +1,1348 @@
+{
+  "packId": "dictation-L05-floss",
+  "strand": "spelling",
+  "skillIds": [
+    "SP-floss-dictation"
+  ],
+  "version": 1,
+  "items": [
+    {
+      "id": "dic-floss-01",
+      "skillId": "SP-floss-dictation",
+      "itemType": "dictation",
+      "difficulty": 1,
+      "stem": "Build the sentence you hear, word by word.",
+      "audioText": "a bell can ring",
+      "words": [
+        {
+          "text": "a",
+          "graphemes": [
+            "a"
+          ],
+          "distractorGraphemes": [
+            "e",
+            "i"
+          ]
+        },
+        {
+          "text": "bell",
+          "graphemes": [
+            "b",
+            "e",
+            "ll"
+          ],
+          "distractorGraphemes": [
+            "a",
+            "i"
+          ]
+        },
+        {
+          "text": "can",
+          "graphemes": [
+            "c",
+            "a",
+            "n"
+          ],
+          "distractorGraphemes": [
+            "e",
+            "i"
+          ]
+        },
+        {
+          "text": "ring",
+          "graphemes": [
+            "r",
+            "i",
+            "n",
+            "g"
+          ],
+          "distractorGraphemes": [
+            "a",
+            "e"
+          ]
+        }
+      ],
+      "decodableWithin": "SP-floss",
+      "missedConceptOnFail": "sentence-dictation",
+      "rationale": "a bell can ring — build each word from its sounds."
+    },
+    {
+      "id": "dic-floss-02",
+      "skillId": "SP-floss-dictation",
+      "itemType": "dictation",
+      "difficulty": 2,
+      "stem": "Build the sentence you hear, word by word.",
+      "audioText": "bill had a ball",
+      "words": [
+        {
+          "text": "bill",
+          "graphemes": [
+            "b",
+            "i",
+            "ll"
+          ],
+          "distractorGraphemes": [
+            "a",
+            "e"
+          ]
+        },
+        {
+          "text": "had",
+          "graphemes": [
+            "h",
+            "a",
+            "d"
+          ],
+          "distractorGraphemes": [
+            "e",
+            "i"
+          ]
+        },
+        {
+          "text": "a",
+          "graphemes": [
+            "a"
+          ],
+          "distractorGraphemes": [
+            "e",
+            "i"
+          ]
+        },
+        {
+          "text": "ball",
+          "graphemes": [
+            "b",
+            "a",
+            "ll"
+          ],
+          "distractorGraphemes": [
+            "e",
+            "i"
+          ]
+        }
+      ],
+      "decodableWithin": "SP-floss",
+      "missedConceptOnFail": "sentence-dictation",
+      "rationale": "Bill had a ball — build each word from its sounds."
+    },
+    {
+      "id": "dic-floss-03",
+      "skillId": "SP-floss-dictation",
+      "itemType": "dictation",
+      "difficulty": 3,
+      "stem": "Build the sentence you hear, word by word.",
+      "audioText": "a frog sat on a hill",
+      "words": [
+        {
+          "text": "a",
+          "graphemes": [
+            "a"
+          ],
+          "distractorGraphemes": [
+            "e",
+            "i"
+          ]
+        },
+        {
+          "text": "frog",
+          "graphemes": [
+            "f",
+            "r",
+            "o",
+            "g"
+          ],
+          "distractorGraphemes": [
+            "a",
+            "e"
+          ]
+        },
+        {
+          "text": "sat",
+          "graphemes": [
+            "s",
+            "a",
+            "t"
+          ],
+          "distractorGraphemes": [
+            "e",
+            "i"
+          ]
+        },
+        {
+          "text": "on",
+          "graphemes": [
+            "o",
+            "n"
+          ],
+          "distractorGraphemes": [
+            "a",
+            "e"
+          ]
+        },
+        {
+          "text": "a",
+          "graphemes": [
+            "a"
+          ],
+          "distractorGraphemes": [
+            "e",
+            "i"
+          ]
+        },
+        {
+          "text": "hill",
+          "graphemes": [
+            "h",
+            "i",
+            "ll"
+          ],
+          "distractorGraphemes": [
+            "a",
+            "e"
+          ]
+        }
+      ],
+      "decodableWithin": "SP-floss",
+      "missedConceptOnFail": "sentence-dictation",
+      "rationale": "a frog sat on a hill — build each word from its sounds."
+    },
+    {
+      "id": "dic-floss-04",
+      "skillId": "SP-floss-dictation",
+      "itemType": "dictation",
+      "difficulty": 1,
+      "stem": "Build the sentence you hear, word by word.",
+      "audioText": "jeff had a puff",
+      "words": [
+        {
+          "text": "jeff",
+          "graphemes": [
+            "j",
+            "e",
+            "ff"
+          ],
+          "distractorGraphemes": [
+            "a",
+            "i"
+          ]
+        },
+        {
+          "text": "had",
+          "graphemes": [
+            "h",
+            "a",
+            "d"
+          ],
+          "distractorGraphemes": [
+            "e",
+            "i"
+          ]
+        },
+        {
+          "text": "a",
+          "graphemes": [
+            "a"
+          ],
+          "distractorGraphemes": [
+            "e",
+            "i"
+          ]
+        },
+        {
+          "text": "puff",
+          "graphemes": [
+            "p",
+            "u",
+            "ff"
+          ],
+          "distractorGraphemes": [
+            "a",
+            "e"
+          ]
+        }
+      ],
+      "decodableWithin": "SP-floss",
+      "missedConceptOnFail": "sentence-dictation",
+      "rationale": "Jeff had a puff — build each word from its sounds."
+    },
+    {
+      "id": "dic-floss-05",
+      "skillId": "SP-floss-dictation",
+      "itemType": "dictation",
+      "difficulty": 2,
+      "stem": "Build the sentence you hear, word by word.",
+      "audioText": "a bee can buzz",
+      "words": [
+        {
+          "text": "a",
+          "graphemes": [
+            "a"
+          ],
+          "distractorGraphemes": [
+            "e",
+            "i"
+          ]
+        },
+        {
+          "text": "bee",
+          "graphemes": [
+            "b",
+            "e",
+            "e"
+          ],
+          "distractorGraphemes": [
+            "a",
+            "i"
+          ]
+        },
+        {
+          "text": "can",
+          "graphemes": [
+            "c",
+            "a",
+            "n"
+          ],
+          "distractorGraphemes": [
+            "e",
+            "i"
+          ]
+        },
+        {
+          "text": "buzz",
+          "graphemes": [
+            "b",
+            "u",
+            "zz"
+          ],
+          "distractorGraphemes": [
+            "a",
+            "e"
+          ]
+        }
+      ],
+      "decodableWithin": "SP-floss",
+      "missedConceptOnFail": "sentence-dictation",
+      "rationale": "a bee can buzz — build each word from its sounds."
+    },
+    {
+      "id": "dic-floss-06",
+      "skillId": "SP-floss-dictation",
+      "itemType": "dictation",
+      "difficulty": 3,
+      "stem": "Build the sentence you hear, word by word.",
+      "audioText": "nell got a doll",
+      "words": [
+        {
+          "text": "nell",
+          "graphemes": [
+            "n",
+            "e",
+            "ll"
+          ],
+          "distractorGraphemes": [
+            "a",
+            "i"
+          ]
+        },
+        {
+          "text": "got",
+          "graphemes": [
+            "g",
+            "o",
+            "t"
+          ],
+          "distractorGraphemes": [
+            "a",
+            "e"
+          ]
+        },
+        {
+          "text": "a",
+          "graphemes": [
+            "a"
+          ],
+          "distractorGraphemes": [
+            "e",
+            "i"
+          ]
+        },
+        {
+          "text": "doll",
+          "graphemes": [
+            "d",
+            "o",
+            "ll"
+          ],
+          "distractorGraphemes": [
+            "a",
+            "e"
+          ]
+        }
+      ],
+      "decodableWithin": "SP-floss",
+      "missedConceptOnFail": "sentence-dictation",
+      "rationale": "Nell got a doll — build each word from its sounds."
+    },
+    {
+      "id": "dic-floss-07",
+      "skillId": "SP-floss-dictation",
+      "itemType": "dictation",
+      "difficulty": 1,
+      "stem": "Build the sentence you hear, word by word.",
+      "audioText": "russ had a mess",
+      "words": [
+        {
+          "text": "russ",
+          "graphemes": [
+            "r",
+            "u",
+            "ss"
+          ],
+          "distractorGraphemes": [
+            "a",
+            "e"
+          ]
+        },
+        {
+          "text": "had",
+          "graphemes": [
+            "h",
+            "a",
+            "d"
+          ],
+          "distractorGraphemes": [
+            "e",
+            "i"
+          ]
+        },
+        {
+          "text": "a",
+          "graphemes": [
+            "a"
+          ],
+          "distractorGraphemes": [
+            "e",
+            "i"
+          ]
+        },
+        {
+          "text": "mess",
+          "graphemes": [
+            "m",
+            "e",
+            "ss"
+          ],
+          "distractorGraphemes": [
+            "a",
+            "i"
+          ]
+        }
+      ],
+      "decodableWithin": "SP-floss",
+      "missedConceptOnFail": "sentence-dictation",
+      "rationale": "Russ had a mess — build each word from its sounds."
+    },
+    {
+      "id": "dic-floss-08",
+      "skillId": "SP-floss-dictation",
+      "itemType": "dictation",
+      "difficulty": 2,
+      "stem": "Build the sentence you hear, word by word.",
+      "audioText": "a cliff is tall",
+      "words": [
+        {
+          "text": "a",
+          "graphemes": [
+            "a"
+          ],
+          "distractorGraphemes": [
+            "e",
+            "i"
+          ]
+        },
+        {
+          "text": "cliff",
+          "graphemes": [
+            "c",
+            "l",
+            "i",
+            "ff"
+          ],
+          "distractorGraphemes": [
+            "a",
+            "e"
+          ]
+        },
+        {
+          "text": "is",
+          "graphemes": [
+            "i",
+            "s"
+          ],
+          "distractorGraphemes": [
+            "a",
+            "e"
+          ]
+        },
+        {
+          "text": "tall",
+          "graphemes": [
+            "t",
+            "a",
+            "ll"
+          ],
+          "distractorGraphemes": [
+            "e",
+            "i"
+          ]
+        }
+      ],
+      "decodableWithin": "SP-floss",
+      "missedConceptOnFail": "sentence-dictation",
+      "rationale": "a cliff is tall — build each word from its sounds."
+    },
+    {
+      "id": "dic-floss-09",
+      "skillId": "SP-floss-dictation",
+      "itemType": "dictation",
+      "difficulty": 3,
+      "stem": "Build the sentence you hear, word by word.",
+      "audioText": "bill will huff and puff",
+      "words": [
+        {
+          "text": "bill",
+          "graphemes": [
+            "b",
+            "i",
+            "ll"
+          ],
+          "distractorGraphemes": [
+            "a",
+            "e"
+          ]
+        },
+        {
+          "text": "will",
+          "graphemes": [
+            "w",
+            "i",
+            "ll"
+          ],
+          "distractorGraphemes": [
+            "a",
+            "e"
+          ]
+        },
+        {
+          "text": "huff",
+          "graphemes": [
+            "h",
+            "u",
+            "ff"
+          ],
+          "distractorGraphemes": [
+            "a",
+            "e"
+          ]
+        },
+        {
+          "text": "and",
+          "graphemes": [
+            "a",
+            "n",
+            "d"
+          ],
+          "distractorGraphemes": [
+            "e",
+            "i"
+          ]
+        },
+        {
+          "text": "puff",
+          "graphemes": [
+            "p",
+            "u",
+            "ff"
+          ],
+          "distractorGraphemes": [
+            "a",
+            "e"
+          ]
+        }
+      ],
+      "decodableWithin": "SP-floss",
+      "missedConceptOnFail": "sentence-dictation",
+      "rationale": "Bill will huff and puff — build each word from its sounds."
+    },
+    {
+      "id": "dic-floss-10",
+      "skillId": "SP-floss-dictation",
+      "itemType": "dictation",
+      "difficulty": 1,
+      "stem": "Build the sentence you hear, word by word.",
+      "audioText": "a bull sat in grass",
+      "words": [
+        {
+          "text": "a",
+          "graphemes": [
+            "a"
+          ],
+          "distractorGraphemes": [
+            "e",
+            "i"
+          ]
+        },
+        {
+          "text": "bull",
+          "graphemes": [
+            "b",
+            "u",
+            "ll"
+          ],
+          "distractorGraphemes": [
+            "a",
+            "e"
+          ]
+        },
+        {
+          "text": "sat",
+          "graphemes": [
+            "s",
+            "a",
+            "t"
+          ],
+          "distractorGraphemes": [
+            "e",
+            "i"
+          ]
+        },
+        {
+          "text": "in",
+          "graphemes": [
+            "i",
+            "n"
+          ],
+          "distractorGraphemes": [
+            "a",
+            "e"
+          ]
+        },
+        {
+          "text": "grass",
+          "graphemes": [
+            "g",
+            "r",
+            "a",
+            "ss"
+          ],
+          "distractorGraphemes": [
+            "e",
+            "i"
+          ]
+        }
+      ],
+      "decodableWithin": "SP-floss",
+      "missedConceptOnFail": "sentence-dictation",
+      "rationale": "a bull sat in grass — build each word from its sounds."
+    },
+    {
+      "id": "dic-floss-11",
+      "skillId": "SP-floss-dictation",
+      "itemType": "dictation",
+      "difficulty": 2,
+      "stem": "Build the sentence you hear, word by word.",
+      "audioText": "tess had a red dress",
+      "words": [
+        {
+          "text": "tess",
+          "graphemes": [
+            "t",
+            "e",
+            "ss"
+          ],
+          "distractorGraphemes": [
+            "a",
+            "i"
+          ]
+        },
+        {
+          "text": "had",
+          "graphemes": [
+            "h",
+            "a",
+            "d"
+          ],
+          "distractorGraphemes": [
+            "e",
+            "i"
+          ]
+        },
+        {
+          "text": "a",
+          "graphemes": [
+            "a"
+          ],
+          "distractorGraphemes": [
+            "e",
+            "i"
+          ]
+        },
+        {
+          "text": "red",
+          "graphemes": [
+            "r",
+            "e",
+            "d"
+          ],
+          "distractorGraphemes": [
+            "a",
+            "i"
+          ]
+        },
+        {
+          "text": "dress",
+          "graphemes": [
+            "d",
+            "r",
+            "e",
+            "ss"
+          ],
+          "distractorGraphemes": [
+            "a",
+            "i"
+          ]
+        }
+      ],
+      "decodableWithin": "SP-floss",
+      "missedConceptOnFail": "sentence-dictation",
+      "rationale": "Tess had a red dress — build each word from its sounds."
+    },
+    {
+      "id": "dic-floss-12",
+      "skillId": "SP-floss-dictation",
+      "itemType": "dictation",
+      "difficulty": 3,
+      "stem": "Build the sentence you hear, word by word.",
+      "audioText": "a shell is on a hill",
+      "words": [
+        {
+          "text": "a",
+          "graphemes": [
+            "a"
+          ],
+          "distractorGraphemes": [
+            "e",
+            "i"
+          ]
+        },
+        {
+          "text": "shell",
+          "graphemes": [
+            "sh",
+            "e",
+            "ll"
+          ],
+          "distractorGraphemes": [
+            "a",
+            "i"
+          ]
+        },
+        {
+          "text": "is",
+          "graphemes": [
+            "i",
+            "s"
+          ],
+          "distractorGraphemes": [
+            "a",
+            "e"
+          ]
+        },
+        {
+          "text": "on",
+          "graphemes": [
+            "o",
+            "n"
+          ],
+          "distractorGraphemes": [
+            "a",
+            "e"
+          ]
+        },
+        {
+          "text": "a",
+          "graphemes": [
+            "a"
+          ],
+          "distractorGraphemes": [
+            "e",
+            "i"
+          ]
+        },
+        {
+          "text": "hill",
+          "graphemes": [
+            "h",
+            "i",
+            "ll"
+          ],
+          "distractorGraphemes": [
+            "a",
+            "e"
+          ]
+        }
+      ],
+      "decodableWithin": "SP-floss",
+      "missedConceptOnFail": "sentence-dictation",
+      "rationale": "a shell is on a hill — build each word from its sounds."
+    },
+    {
+      "id": "dic-floss-13",
+      "skillId": "SP-floss-dictation",
+      "itemType": "dictation",
+      "difficulty": 1,
+      "stem": "Build the sentence you hear, word by word.",
+      "audioText": "jill can spell well",
+      "words": [
+        {
+          "text": "jill",
+          "graphemes": [
+            "j",
+            "i",
+            "ll"
+          ],
+          "distractorGraphemes": [
+            "a",
+            "e"
+          ]
+        },
+        {
+          "text": "can",
+          "graphemes": [
+            "c",
+            "a",
+            "n"
+          ],
+          "distractorGraphemes": [
+            "e",
+            "i"
+          ]
+        },
+        {
+          "text": "spell",
+          "graphemes": [
+            "s",
+            "p",
+            "e",
+            "ll"
+          ],
+          "distractorGraphemes": [
+            "a",
+            "i"
+          ]
+        },
+        {
+          "text": "well",
+          "graphemes": [
+            "w",
+            "e",
+            "ll"
+          ],
+          "distractorGraphemes": [
+            "a",
+            "i"
+          ]
+        }
+      ],
+      "decodableWithin": "SP-floss",
+      "missedConceptOnFail": "sentence-dictation",
+      "rationale": "Jill can spell well — build each word from its sounds."
+    },
+    {
+      "id": "dic-floss-14",
+      "skillId": "SP-floss-dictation",
+      "itemType": "dictation",
+      "difficulty": 2,
+      "stem": "Build the sentence you hear, word by word.",
+      "audioText": "a fluff ball fell",
+      "words": [
+        {
+          "text": "a",
+          "graphemes": [
+            "a"
+          ],
+          "distractorGraphemes": [
+            "e",
+            "i"
+          ]
+        },
+        {
+          "text": "fluff",
+          "graphemes": [
+            "f",
+            "l",
+            "u",
+            "ff"
+          ],
+          "distractorGraphemes": [
+            "a",
+            "e"
+          ]
+        },
+        {
+          "text": "ball",
+          "graphemes": [
+            "b",
+            "a",
+            "ll"
+          ],
+          "distractorGraphemes": [
+            "e",
+            "i"
+          ]
+        },
+        {
+          "text": "fell",
+          "graphemes": [
+            "f",
+            "e",
+            "ll"
+          ],
+          "distractorGraphemes": [
+            "a",
+            "i"
+          ]
+        }
+      ],
+      "decodableWithin": "SP-floss",
+      "missedConceptOnFail": "sentence-dictation",
+      "rationale": "a fluff ball fell — build each word from its sounds."
+    },
+    {
+      "id": "dic-floss-15",
+      "skillId": "SP-floss-dictation",
+      "itemType": "dictation",
+      "difficulty": 3,
+      "stem": "Build the sentence you hear, word by word.",
+      "audioText": "russ will pass the ball",
+      "words": [
+        {
+          "text": "russ",
+          "graphemes": [
+            "r",
+            "u",
+            "ss"
+          ],
+          "distractorGraphemes": [
+            "a",
+            "e"
+          ]
+        },
+        {
+          "text": "will",
+          "graphemes": [
+            "w",
+            "i",
+            "ll"
+          ],
+          "distractorGraphemes": [
+            "a",
+            "e"
+          ]
+        },
+        {
+          "text": "pass",
+          "graphemes": [
+            "p",
+            "a",
+            "ss"
+          ],
+          "distractorGraphemes": [
+            "e",
+            "i"
+          ]
+        },
+        {
+          "text": "the",
+          "graphemes": [
+            "th",
+            "e"
+          ],
+          "distractorGraphemes": [
+            "a",
+            "i"
+          ]
+        },
+        {
+          "text": "ball",
+          "graphemes": [
+            "b",
+            "a",
+            "ll"
+          ],
+          "distractorGraphemes": [
+            "e",
+            "i"
+          ]
+        }
+      ],
+      "decodableWithin": "SP-floss",
+      "missedConceptOnFail": "sentence-dictation",
+      "rationale": "Russ will pass the ball — build each word from its sounds."
+    },
+    {
+      "id": "dic-floss-16",
+      "skillId": "SP-floss-dictation",
+      "itemType": "dictation",
+      "difficulty": 1,
+      "stem": "Build the sentence you hear, word by word.",
+      "audioText": "a doll is on a hill",
+      "words": [
+        {
+          "text": "a",
+          "graphemes": [
+            "a"
+          ],
+          "distractorGraphemes": [
+            "e",
+            "i"
+          ]
+        },
+        {
+          "text": "doll",
+          "graphemes": [
+            "d",
+            "o",
+            "ll"
+          ],
+          "distractorGraphemes": [
+            "a",
+            "e"
+          ]
+        },
+        {
+          "text": "is",
+          "graphemes": [
+            "i",
+            "s"
+          ],
+          "distractorGraphemes": [
+            "a",
+            "e"
+          ]
+        },
+        {
+          "text": "on",
+          "graphemes": [
+            "o",
+            "n"
+          ],
+          "distractorGraphemes": [
+            "a",
+            "e"
+          ]
+        },
+        {
+          "text": "a",
+          "graphemes": [
+            "a"
+          ],
+          "distractorGraphemes": [
+            "e",
+            "i"
+          ]
+        },
+        {
+          "text": "hill",
+          "graphemes": [
+            "h",
+            "i",
+            "ll"
+          ],
+          "distractorGraphemes": [
+            "a",
+            "e"
+          ]
+        }
+      ],
+      "decodableWithin": "SP-floss",
+      "missedConceptOnFail": "sentence-dictation",
+      "rationale": "a doll is on a hill — build each word from its sounds."
+    },
+    {
+      "id": "dic-floss-17",
+      "skillId": "SP-floss-dictation",
+      "itemType": "dictation",
+      "difficulty": 2,
+      "stem": "Build the sentence you hear, word by word.",
+      "audioText": "jeff had a mess",
+      "words": [
+        {
+          "text": "jeff",
+          "graphemes": [
+            "j",
+            "e",
+            "ff"
+          ],
+          "distractorGraphemes": [
+            "a",
+            "i"
+          ]
+        },
+        {
+          "text": "had",
+          "graphemes": [
+            "h",
+            "a",
+            "d"
+          ],
+          "distractorGraphemes": [
+            "e",
+            "i"
+          ]
+        },
+        {
+          "text": "a",
+          "graphemes": [
+            "a"
+          ],
+          "distractorGraphemes": [
+            "e",
+            "i"
+          ]
+        },
+        {
+          "text": "mess",
+          "graphemes": [
+            "m",
+            "e",
+            "ss"
+          ],
+          "distractorGraphemes": [
+            "a",
+            "i"
+          ]
+        }
+      ],
+      "decodableWithin": "SP-floss",
+      "missedConceptOnFail": "sentence-dictation",
+      "rationale": "Jeff had a mess — build each word from its sounds."
+    },
+    {
+      "id": "dic-floss-18",
+      "skillId": "SP-floss-dictation",
+      "itemType": "dictation",
+      "difficulty": 3,
+      "stem": "Build the sentence you hear, word by word.",
+      "audioText": "a bell will ring",
+      "words": [
+        {
+          "text": "a",
+          "graphemes": [
+            "a"
+          ],
+          "distractorGraphemes": [
+            "e",
+            "i"
+          ]
+        },
+        {
+          "text": "bell",
+          "graphemes": [
+            "b",
+            "e",
+            "ll"
+          ],
+          "distractorGraphemes": [
+            "a",
+            "i"
+          ]
+        },
+        {
+          "text": "will",
+          "graphemes": [
+            "w",
+            "i",
+            "ll"
+          ],
+          "distractorGraphemes": [
+            "a",
+            "e"
+          ]
+        },
+        {
+          "text": "ring",
+          "graphemes": [
+            "r",
+            "i",
+            "n",
+            "g"
+          ],
+          "distractorGraphemes": [
+            "a",
+            "e"
+          ]
+        }
+      ],
+      "decodableWithin": "SP-floss",
+      "missedConceptOnFail": "sentence-dictation",
+      "rationale": "a bell will ring — build each word from its sounds."
+    },
+    {
+      "id": "dic-floss-19",
+      "skillId": "SP-floss-dictation",
+      "itemType": "dictation",
+      "difficulty": 1,
+      "stem": "Build the sentence you hear, word by word.",
+      "audioText": "tess lost a doll",
+      "words": [
+        {
+          "text": "tess",
+          "graphemes": [
+            "t",
+            "e",
+            "ss"
+          ],
+          "distractorGraphemes": [
+            "a",
+            "i"
+          ]
+        },
+        {
+          "text": "lost",
+          "graphemes": [
+            "l",
+            "o",
+            "s",
+            "t"
+          ],
+          "distractorGraphemes": [
+            "a",
+            "e"
+          ]
+        },
+        {
+          "text": "a",
+          "graphemes": [
+            "a"
+          ],
+          "distractorGraphemes": [
+            "e",
+            "i"
+          ]
+        },
+        {
+          "text": "doll",
+          "graphemes": [
+            "d",
+            "o",
+            "ll"
+          ],
+          "distractorGraphemes": [
+            "a",
+            "e"
+          ]
+        }
+      ],
+      "decodableWithin": "SP-floss",
+      "missedConceptOnFail": "sentence-dictation",
+      "rationale": "Tess lost a doll — build each word from its sounds."
+    },
+    {
+      "id": "dic-floss-20",
+      "skillId": "SP-floss-dictation",
+      "itemType": "dictation",
+      "difficulty": 2,
+      "stem": "Build the sentence you hear, word by word.",
+      "audioText": "a bull ran up a hill",
+      "words": [
+        {
+          "text": "a",
+          "graphemes": [
+            "a"
+          ],
+          "distractorGraphemes": [
+            "e",
+            "i"
+          ]
+        },
+        {
+          "text": "bull",
+          "graphemes": [
+            "b",
+            "u",
+            "ll"
+          ],
+          "distractorGraphemes": [
+            "a",
+            "e"
+          ]
+        },
+        {
+          "text": "ran",
+          "graphemes": [
+            "r",
+            "a",
+            "n"
+          ],
+          "distractorGraphemes": [
+            "e",
+            "i"
+          ]
+        },
+        {
+          "text": "up",
+          "graphemes": [
+            "u",
+            "p"
+          ],
+          "distractorGraphemes": [
+            "a",
+            "e"
+          ]
+        },
+        {
+          "text": "a",
+          "graphemes": [
+            "a"
+          ],
+          "distractorGraphemes": [
+            "e",
+            "i"
+          ]
+        },
+        {
+          "text": "hill",
+          "graphemes": [
+            "h",
+            "i",
+            "ll"
+          ],
+          "distractorGraphemes": [
+            "a",
+            "e"
+          ]
+        }
+      ],
+      "decodableWithin": "SP-floss",
+      "missedConceptOnFail": "sentence-dictation",
+      "rationale": "a bull ran up a hill — build each word from its sounds."
+    }
+  ],
+  "lessons": {
+    "SP-floss-dictation": {
+      "iCanStatement": "I can spell short sentences with ff, ll, ss and zz.",
+      "explanation": "Some short words double the last f, l, s or z: hill, bell, miss, buzz. That double is one tile. Build each word you hear.",
+      "workedExamples": [
+        {
+          "text": "a bell can ring",
+          "note": "b·e·ll — ll is one tile."
+        },
+        {
+          "text": "the frog will hop",
+          "note": "w·i·ll — doubled l."
+        }
+      ]
+    }
+  }
+}

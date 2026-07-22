@@ -1,0 +1,1405 @@
+{
+  "packId": "dictation-L09-diphthongs",
+  "strand": "spelling",
+  "skillIds": [
+    "SP-diphthong-dictation"
+  ],
+  "version": 1,
+  "items": [
+    {
+      "id": "dic-diphthong-01",
+      "skillId": "SP-diphthong-dictation",
+      "itemType": "dictation",
+      "difficulty": 1,
+      "stem": "Build the sentence you hear, word by word.",
+      "audioText": "the boy found a coin",
+      "words": [
+        {
+          "text": "the",
+          "graphemes": [
+            "th",
+            "e"
+          ],
+          "distractorGraphemes": [
+            "a",
+            "i"
+          ]
+        },
+        {
+          "text": "boy",
+          "graphemes": [
+            "b",
+            "oy"
+          ],
+          "distractorGraphemes": [
+            "a",
+            "e"
+          ]
+        },
+        {
+          "text": "found",
+          "graphemes": [
+            "f",
+            "ou",
+            "n",
+            "d"
+          ],
+          "distractorGraphemes": [
+            "a",
+            "e"
+          ]
+        },
+        {
+          "text": "a",
+          "graphemes": [
+            "a"
+          ],
+          "distractorGraphemes": [
+            "e",
+            "i"
+          ]
+        },
+        {
+          "text": "coin",
+          "graphemes": [
+            "c",
+            "oi",
+            "n"
+          ],
+          "distractorGraphemes": [
+            "a",
+            "e"
+          ]
+        }
+      ],
+      "decodableWithin": "SP-diphthongs",
+      "missedConceptOnFail": "sentence-dictation",
+      "rationale": "the boy found a coin — build each word from its sounds."
+    },
+    {
+      "id": "dic-diphthong-02",
+      "skillId": "SP-diphthong-dictation",
+      "itemType": "dictation",
+      "difficulty": 2,
+      "stem": "Build the sentence you hear, word by word.",
+      "audioText": "a brown owl hoots",
+      "words": [
+        {
+          "text": "a",
+          "graphemes": [
+            "a"
+          ],
+          "distractorGraphemes": [
+            "e",
+            "i"
+          ]
+        },
+        {
+          "text": "brown",
+          "graphemes": [
+            "b",
+            "r",
+            "ow",
+            "n"
+          ],
+          "distractorGraphemes": [
+            "a",
+            "e"
+          ]
+        },
+        {
+          "text": "owl",
+          "graphemes": [
+            "ow",
+            "l"
+          ],
+          "distractorGraphemes": [
+            "a",
+            "e"
+          ]
+        },
+        {
+          "text": "hoots",
+          "graphemes": [
+            "h",
+            "oo",
+            "t",
+            "s"
+          ],
+          "distractorGraphemes": [
+            "a",
+            "e"
+          ]
+        }
+      ],
+      "decodableWithin": "SP-diphthongs",
+      "missedConceptOnFail": "sentence-dictation",
+      "rationale": "a brown owl hoots — build each word from its sounds."
+    },
+    {
+      "id": "dic-diphthong-03",
+      "skillId": "SP-diphthong-dictation",
+      "itemType": "dictation",
+      "difficulty": 3,
+      "stem": "Build the sentence you hear, word by word.",
+      "audioText": "roy has a new toy",
+      "words": [
+        {
+          "text": "roy",
+          "graphemes": [
+            "r",
+            "oy"
+          ],
+          "distractorGraphemes": [
+            "a",
+            "e"
+          ]
+        },
+        {
+          "text": "has",
+          "graphemes": [
+            "h",
+            "a",
+            "s"
+          ],
+          "distractorGraphemes": [
+            "e",
+            "i"
+          ]
+        },
+        {
+          "text": "a",
+          "graphemes": [
+            "a"
+          ],
+          "distractorGraphemes": [
+            "e",
+            "i"
+          ]
+        },
+        {
+          "text": "new",
+          "graphemes": [
+            "n",
+            "ew"
+          ],
+          "distractorGraphemes": [
+            "a",
+            "e"
+          ]
+        },
+        {
+          "text": "toy",
+          "graphemes": [
+            "t",
+            "oy"
+          ],
+          "distractorGraphemes": [
+            "a",
+            "e"
+          ]
+        }
+      ],
+      "decodableWithin": "SP-diphthongs",
+      "missedConceptOnFail": "sentence-dictation",
+      "rationale": "Roy has a new toy — build each word from its sounds."
+    },
+    {
+      "id": "dic-diphthong-04",
+      "skillId": "SP-diphthong-dictation",
+      "itemType": "dictation",
+      "difficulty": 1,
+      "stem": "Build the sentence you hear, word by word.",
+      "audioText": "a cow is in the town",
+      "words": [
+        {
+          "text": "a",
+          "graphemes": [
+            "a"
+          ],
+          "distractorGraphemes": [
+            "e",
+            "i"
+          ]
+        },
+        {
+          "text": "cow",
+          "graphemes": [
+            "c",
+            "ow"
+          ],
+          "distractorGraphemes": [
+            "a",
+            "e"
+          ]
+        },
+        {
+          "text": "is",
+          "graphemes": [
+            "i",
+            "s"
+          ],
+          "distractorGraphemes": [
+            "a",
+            "e"
+          ]
+        },
+        {
+          "text": "in",
+          "graphemes": [
+            "i",
+            "n"
+          ],
+          "distractorGraphemes": [
+            "a",
+            "e"
+          ]
+        },
+        {
+          "text": "the",
+          "graphemes": [
+            "th",
+            "e"
+          ],
+          "distractorGraphemes": [
+            "a",
+            "i"
+          ]
+        },
+        {
+          "text": "town",
+          "graphemes": [
+            "t",
+            "ow",
+            "n"
+          ],
+          "distractorGraphemes": [
+            "a",
+            "e"
+          ]
+        }
+      ],
+      "decodableWithin": "SP-diphthongs",
+      "missedConceptOnFail": "sentence-dictation",
+      "rationale": "a cow is in the town — build each word from its sounds."
+    },
+    {
+      "id": "dic-diphthong-05",
+      "skillId": "SP-diphthong-dictation",
+      "itemType": "dictation",
+      "difficulty": 2,
+      "stem": "Build the sentence you hear, word by word.",
+      "audioText": "paul saw a hawk",
+      "words": [
+        {
+          "text": "paul",
+          "graphemes": [
+            "p",
+            "au",
+            "l"
+          ],
+          "distractorGraphemes": [
+            "a",
+            "e"
+          ]
+        },
+        {
+          "text": "saw",
+          "graphemes": [
+            "s",
+            "aw"
+          ],
+          "distractorGraphemes": [
+            "a",
+            "e"
+          ]
+        },
+        {
+          "text": "a",
+          "graphemes": [
+            "a"
+          ],
+          "distractorGraphemes": [
+            "e",
+            "i"
+          ]
+        },
+        {
+          "text": "hawk",
+          "graphemes": [
+            "h",
+            "aw",
+            "k"
+          ],
+          "distractorGraphemes": [
+            "a",
+            "e"
+          ]
+        }
+      ],
+      "decodableWithin": "SP-diphthongs",
+      "missedConceptOnFail": "sentence-dictation",
+      "rationale": "Paul saw a hawk — build each word from its sounds."
+    },
+    {
+      "id": "dic-diphthong-06",
+      "skillId": "SP-diphthong-dictation",
+      "itemType": "dictation",
+      "difficulty": 3,
+      "stem": "Build the sentence you hear, word by word.",
+      "audioText": "the dog has a sore paw",
+      "words": [
+        {
+          "text": "the",
+          "graphemes": [
+            "th",
+            "e"
+          ],
+          "distractorGraphemes": [
+            "a",
+            "i"
+          ]
+        },
+        {
+          "text": "dog",
+          "graphemes": [
+            "d",
+            "o",
+            "g"
+          ],
+          "distractorGraphemes": [
+            "a",
+            "e"
+          ]
+        },
+        {
+          "text": "has",
+          "graphemes": [
+            "h",
+            "a",
+            "s"
+          ],
+          "distractorGraphemes": [
+            "e",
+            "i"
+          ]
+        },
+        {
+          "text": "a",
+          "graphemes": [
+            "a"
+          ],
+          "distractorGraphemes": [
+            "e",
+            "i"
+          ]
+        },
+        {
+          "text": "sore",
+          "graphemes": [
+            "s",
+            "or",
+            "e"
+          ],
+          "distractorGraphemes": [
+            "a",
+            "i"
+          ]
+        },
+        {
+          "text": "paw",
+          "graphemes": [
+            "p",
+            "aw"
+          ],
+          "distractorGraphemes": [
+            "a",
+            "e"
+          ]
+        }
+      ],
+      "decodableWithin": "SP-diphthongs",
+      "missedConceptOnFail": "sentence-dictation",
+      "rationale": "the dog has a sore paw — build each word from its sounds."
+    },
+    {
+      "id": "dic-diphthong-07",
+      "skillId": "SP-diphthong-dictation",
+      "itemType": "dictation",
+      "difficulty": 1,
+      "stem": "Build the sentence you hear, word by word.",
+      "audioText": "joy found a round coin",
+      "words": [
+        {
+          "text": "joy",
+          "graphemes": [
+            "j",
+            "oy"
+          ],
+          "distractorGraphemes": [
+            "a",
+            "e"
+          ]
+        },
+        {
+          "text": "found",
+          "graphemes": [
+            "f",
+            "ou",
+            "n",
+            "d"
+          ],
+          "distractorGraphemes": [
+            "a",
+            "e"
+          ]
+        },
+        {
+          "text": "a",
+          "graphemes": [
+            "a"
+          ],
+          "distractorGraphemes": [
+            "e",
+            "i"
+          ]
+        },
+        {
+          "text": "round",
+          "graphemes": [
+            "r",
+            "ou",
+            "n",
+            "d"
+          ],
+          "distractorGraphemes": [
+            "a",
+            "e"
+          ]
+        },
+        {
+          "text": "coin",
+          "graphemes": [
+            "c",
+            "oi",
+            "n"
+          ],
+          "distractorGraphemes": [
+            "a",
+            "e"
+          ]
+        }
+      ],
+      "decodableWithin": "SP-diphthongs",
+      "missedConceptOnFail": "sentence-dictation",
+      "rationale": "Joy found a round coin — build each word from its sounds."
+    },
+    {
+      "id": "dic-diphthong-08",
+      "skillId": "SP-diphthong-dictation",
+      "itemType": "dictation",
+      "difficulty": 2,
+      "stem": "Build the sentence you hear, word by word.",
+      "audioText": "a loud crowd shouts",
+      "words": [
+        {
+          "text": "a",
+          "graphemes": [
+            "a"
+          ],
+          "distractorGraphemes": [
+            "e",
+            "i"
+          ]
+        },
+        {
+          "text": "loud",
+          "graphemes": [
+            "l",
+            "ou",
+            "d"
+          ],
+          "distractorGraphemes": [
+            "a",
+            "e"
+          ]
+        },
+        {
+          "text": "crowd",
+          "graphemes": [
+            "c",
+            "r",
+            "ow",
+            "d"
+          ],
+          "distractorGraphemes": [
+            "a",
+            "e"
+          ]
+        },
+        {
+          "text": "shouts",
+          "graphemes": [
+            "sh",
+            "ou",
+            "t",
+            "s"
+          ],
+          "distractorGraphemes": [
+            "a",
+            "e"
+          ]
+        }
+      ],
+      "decodableWithin": "SP-diphthongs",
+      "missedConceptOnFail": "sentence-dictation",
+      "rationale": "a loud crowd shouts — build each word from its sounds."
+    },
+    {
+      "id": "dic-diphthong-09",
+      "skillId": "SP-diphthong-dictation",
+      "itemType": "dictation",
+      "difficulty": 3,
+      "stem": "Build the sentence you hear, word by word.",
+      "audioText": "the owl flew down",
+      "words": [
+        {
+          "text": "the",
+          "graphemes": [
+            "th",
+            "e"
+          ],
+          "distractorGraphemes": [
+            "a",
+            "i"
+          ]
+        },
+        {
+          "text": "owl",
+          "graphemes": [
+            "ow",
+            "l"
+          ],
+          "distractorGraphemes": [
+            "a",
+            "e"
+          ]
+        },
+        {
+          "text": "flew",
+          "graphemes": [
+            "f",
+            "l",
+            "ew"
+          ],
+          "distractorGraphemes": [
+            "a",
+            "e"
+          ]
+        },
+        {
+          "text": "down",
+          "graphemes": [
+            "d",
+            "ow",
+            "n"
+          ],
+          "distractorGraphemes": [
+            "a",
+            "e"
+          ]
+        }
+      ],
+      "decodableWithin": "SP-diphthongs",
+      "missedConceptOnFail": "sentence-dictation",
+      "rationale": "the owl flew down — build each word from its sounds."
+    },
+    {
+      "id": "dic-diphthong-10",
+      "skillId": "SP-diphthong-dictation",
+      "itemType": "dictation",
+      "difficulty": 1,
+      "stem": "Build the sentence you hear, word by word.",
+      "audioText": "a boy spoils his toy",
+      "words": [
+        {
+          "text": "a",
+          "graphemes": [
+            "a"
+          ],
+          "distractorGraphemes": [
+            "e",
+            "i"
+          ]
+        },
+        {
+          "text": "boy",
+          "graphemes": [
+            "b",
+            "oy"
+          ],
+          "distractorGraphemes": [
+            "a",
+            "e"
+          ]
+        },
+        {
+          "text": "spoils",
+          "graphemes": [
+            "s",
+            "p",
+            "oi",
+            "l",
+            "s"
+          ],
+          "distractorGraphemes": [
+            "a",
+            "e"
+          ]
+        },
+        {
+          "text": "his",
+          "graphemes": [
+            "h",
+            "i",
+            "s"
+          ],
+          "distractorGraphemes": [
+            "a",
+            "e"
+          ]
+        },
+        {
+          "text": "toy",
+          "graphemes": [
+            "t",
+            "oy"
+          ],
+          "distractorGraphemes": [
+            "a",
+            "e"
+          ]
+        }
+      ],
+      "decodableWithin": "SP-diphthongs",
+      "missedConceptOnFail": "sentence-dictation",
+      "rationale": "a boy spoils his toy — build each word from its sounds."
+    },
+    {
+      "id": "dic-diphthong-11",
+      "skillId": "SP-diphthong-dictation",
+      "itemType": "dictation",
+      "difficulty": 2,
+      "stem": "Build the sentence you hear, word by word.",
+      "audioText": "the king has a crown",
+      "words": [
+        {
+          "text": "the",
+          "graphemes": [
+            "th",
+            "e"
+          ],
+          "distractorGraphemes": [
+            "a",
+            "i"
+          ]
+        },
+        {
+          "text": "king",
+          "graphemes": [
+            "k",
+            "i",
+            "n",
+            "g"
+          ],
+          "distractorGraphemes": [
+            "a",
+            "e"
+          ]
+        },
+        {
+          "text": "has",
+          "graphemes": [
+            "h",
+            "a",
+            "s"
+          ],
+          "distractorGraphemes": [
+            "e",
+            "i"
+          ]
+        },
+        {
+          "text": "a",
+          "graphemes": [
+            "a"
+          ],
+          "distractorGraphemes": [
+            "e",
+            "i"
+          ]
+        },
+        {
+          "text": "crown",
+          "graphemes": [
+            "c",
+            "r",
+            "ow",
+            "n"
+          ],
+          "distractorGraphemes": [
+            "a",
+            "e"
+          ]
+        }
+      ],
+      "decodableWithin": "SP-diphthongs",
+      "missedConceptOnFail": "sentence-dictation",
+      "rationale": "the king has a crown — build each word from its sounds."
+    },
+    {
+      "id": "dic-diphthong-12",
+      "skillId": "SP-diphthong-dictation",
+      "itemType": "dictation",
+      "difficulty": 3,
+      "stem": "Build the sentence you hear, word by word.",
+      "audioText": "a cat has sharp claws",
+      "words": [
+        {
+          "text": "a",
+          "graphemes": [
+            "a"
+          ],
+          "distractorGraphemes": [
+            "e",
+            "i"
+          ]
+        },
+        {
+          "text": "cat",
+          "graphemes": [
+            "c",
+            "a",
+            "t"
+          ],
+          "distractorGraphemes": [
+            "e",
+            "i"
+          ]
+        },
+        {
+          "text": "has",
+          "graphemes": [
+            "h",
+            "a",
+            "s"
+          ],
+          "distractorGraphemes": [
+            "e",
+            "i"
+          ]
+        },
+        {
+          "text": "sharp",
+          "graphemes": [
+            "sh",
+            "ar",
+            "p"
+          ],
+          "distractorGraphemes": [
+            "a",
+            "e"
+          ]
+        },
+        {
+          "text": "claws",
+          "graphemes": [
+            "c",
+            "l",
+            "aw",
+            "s"
+          ],
+          "distractorGraphemes": [
+            "a",
+            "e"
+          ]
+        }
+      ],
+      "decodableWithin": "SP-diphthongs",
+      "missedConceptOnFail": "sentence-dictation",
+      "rationale": "a cat has sharp claws — build each word from its sounds."
+    },
+    {
+      "id": "dic-diphthong-13",
+      "skillId": "SP-diphthong-dictation",
+      "itemType": "dictation",
+      "difficulty": 1,
+      "stem": "Build the sentence you hear, word by word.",
+      "audioText": "troy sat down in town",
+      "words": [
+        {
+          "text": "troy",
+          "graphemes": [
+            "t",
+            "r",
+            "oy"
+          ],
+          "distractorGraphemes": [
+            "a",
+            "e"
+          ]
+        },
+        {
+          "text": "sat",
+          "graphemes": [
+            "s",
+            "a",
+            "t"
+          ],
+          "distractorGraphemes": [
+            "e",
+            "i"
+          ]
+        },
+        {
+          "text": "down",
+          "graphemes": [
+            "d",
+            "ow",
+            "n"
+          ],
+          "distractorGraphemes": [
+            "a",
+            "e"
+          ]
+        },
+        {
+          "text": "in",
+          "graphemes": [
+            "i",
+            "n"
+          ],
+          "distractorGraphemes": [
+            "a",
+            "e"
+          ]
+        },
+        {
+          "text": "town",
+          "graphemes": [
+            "t",
+            "ow",
+            "n"
+          ],
+          "distractorGraphemes": [
+            "a",
+            "e"
+          ]
+        }
+      ],
+      "decodableWithin": "SP-diphthongs",
+      "missedConceptOnFail": "sentence-dictation",
+      "rationale": "Troy sat down in town — build each word from its sounds."
+    },
+    {
+      "id": "dic-diphthong-14",
+      "skillId": "SP-diphthong-dictation",
+      "itemType": "dictation",
+      "difficulty": 2,
+      "stem": "Build the sentence you hear, word by word.",
+      "audioText": "the cow saw an owl",
+      "words": [
+        {
+          "text": "the",
+          "graphemes": [
+            "th",
+            "e"
+          ],
+          "distractorGraphemes": [
+            "a",
+            "i"
+          ]
+        },
+        {
+          "text": "cow",
+          "graphemes": [
+            "c",
+            "ow"
+          ],
+          "distractorGraphemes": [
+            "a",
+            "e"
+          ]
+        },
+        {
+          "text": "saw",
+          "graphemes": [
+            "s",
+            "aw"
+          ],
+          "distractorGraphemes": [
+            "a",
+            "e"
+          ]
+        },
+        {
+          "text": "an",
+          "graphemes": [
+            "a",
+            "n"
+          ],
+          "distractorGraphemes": [
+            "e",
+            "i"
+          ]
+        },
+        {
+          "text": "owl",
+          "graphemes": [
+            "ow",
+            "l"
+          ],
+          "distractorGraphemes": [
+            "a",
+            "e"
+          ]
+        }
+      ],
+      "decodableWithin": "SP-diphthongs",
+      "missedConceptOnFail": "sentence-dictation",
+      "rationale": "the cow saw an owl — build each word from its sounds."
+    },
+    {
+      "id": "dic-diphthong-15",
+      "skillId": "SP-diphthong-dictation",
+      "itemType": "dictation",
+      "difficulty": 3,
+      "stem": "Build the sentence you hear, word by word.",
+      "audioText": "paul draws a cow",
+      "words": [
+        {
+          "text": "paul",
+          "graphemes": [
+            "p",
+            "au",
+            "l"
+          ],
+          "distractorGraphemes": [
+            "a",
+            "e"
+          ]
+        },
+        {
+          "text": "draws",
+          "graphemes": [
+            "d",
+            "r",
+            "aw",
+            "s"
+          ],
+          "distractorGraphemes": [
+            "a",
+            "e"
+          ]
+        },
+        {
+          "text": "a",
+          "graphemes": [
+            "a"
+          ],
+          "distractorGraphemes": [
+            "e",
+            "i"
+          ]
+        },
+        {
+          "text": "cow",
+          "graphemes": [
+            "c",
+            "ow"
+          ],
+          "distractorGraphemes": [
+            "a",
+            "e"
+          ]
+        }
+      ],
+      "decodableWithin": "SP-diphthongs",
+      "missedConceptOnFail": "sentence-dictation",
+      "rationale": "Paul draws a cow — build each word from its sounds."
+    },
+    {
+      "id": "dic-diphthong-16",
+      "skillId": "SP-diphthong-dictation",
+      "itemType": "dictation",
+      "difficulty": 1,
+      "stem": "Build the sentence you hear, word by word.",
+      "audioText": "the owl is in the town",
+      "words": [
+        {
+          "text": "the",
+          "graphemes": [
+            "th",
+            "e"
+          ],
+          "distractorGraphemes": [
+            "a",
+            "i"
+          ]
+        },
+        {
+          "text": "owl",
+          "graphemes": [
+            "ow",
+            "l"
+          ],
+          "distractorGraphemes": [
+            "a",
+            "e"
+          ]
+        },
+        {
+          "text": "is",
+          "graphemes": [
+            "i",
+            "s"
+          ],
+          "distractorGraphemes": [
+            "a",
+            "e"
+          ]
+        },
+        {
+          "text": "in",
+          "graphemes": [
+            "i",
+            "n"
+          ],
+          "distractorGraphemes": [
+            "a",
+            "e"
+          ]
+        },
+        {
+          "text": "the",
+          "graphemes": [
+            "th",
+            "e"
+          ],
+          "distractorGraphemes": [
+            "a",
+            "i"
+          ]
+        },
+        {
+          "text": "town",
+          "graphemes": [
+            "t",
+            "ow",
+            "n"
+          ],
+          "distractorGraphemes": [
+            "a",
+            "e"
+          ]
+        }
+      ],
+      "decodableWithin": "SP-diphthongs",
+      "missedConceptOnFail": "sentence-dictation",
+      "rationale": "the owl is in the town — build each word from its sounds."
+    },
+    {
+      "id": "dic-diphthong-17",
+      "skillId": "SP-diphthong-dictation",
+      "itemType": "dictation",
+      "difficulty": 2,
+      "stem": "Build the sentence you hear, word by word.",
+      "audioText": "roy has a coin",
+      "words": [
+        {
+          "text": "roy",
+          "graphemes": [
+            "r",
+            "oy"
+          ],
+          "distractorGraphemes": [
+            "a",
+            "e"
+          ]
+        },
+        {
+          "text": "has",
+          "graphemes": [
+            "h",
+            "a",
+            "s"
+          ],
+          "distractorGraphemes": [
+            "e",
+            "i"
+          ]
+        },
+        {
+          "text": "a",
+          "graphemes": [
+            "a"
+          ],
+          "distractorGraphemes": [
+            "e",
+            "i"
+          ]
+        },
+        {
+          "text": "coin",
+          "graphemes": [
+            "c",
+            "oi",
+            "n"
+          ],
+          "distractorGraphemes": [
+            "a",
+            "e"
+          ]
+        }
+      ],
+      "decodableWithin": "SP-diphthongs",
+      "missedConceptOnFail": "sentence-dictation",
+      "rationale": "Roy has a coin — build each word from its sounds."
+    },
+    {
+      "id": "dic-diphthong-18",
+      "skillId": "SP-diphthong-dictation",
+      "itemType": "dictation",
+      "difficulty": 3,
+      "stem": "Build the sentence you hear, word by word.",
+      "audioText": "a cow ate in the town",
+      "words": [
+        {
+          "text": "a",
+          "graphemes": [
+            "a"
+          ],
+          "distractorGraphemes": [
+            "e",
+            "i"
+          ]
+        },
+        {
+          "text": "cow",
+          "graphemes": [
+            "c",
+            "ow"
+          ],
+          "distractorGraphemes": [
+            "a",
+            "e"
+          ]
+        },
+        {
+          "text": "ate",
+          "graphemes": [
+            "a",
+            "t",
+            "e"
+          ],
+          "distractorGraphemes": [
+            "i",
+            "o"
+          ]
+        },
+        {
+          "text": "in",
+          "graphemes": [
+            "i",
+            "n"
+          ],
+          "distractorGraphemes": [
+            "a",
+            "e"
+          ]
+        },
+        {
+          "text": "the",
+          "graphemes": [
+            "th",
+            "e"
+          ],
+          "distractorGraphemes": [
+            "a",
+            "i"
+          ]
+        },
+        {
+          "text": "town",
+          "graphemes": [
+            "t",
+            "ow",
+            "n"
+          ],
+          "distractorGraphemes": [
+            "a",
+            "e"
+          ]
+        }
+      ],
+      "decodableWithin": "SP-diphthongs",
+      "missedConceptOnFail": "sentence-dictation",
+      "rationale": "a cow ate in the town — build each word from its sounds."
+    },
+    {
+      "id": "dic-diphthong-19",
+      "skillId": "SP-diphthong-dictation",
+      "itemType": "dictation",
+      "difficulty": 1,
+      "stem": "Build the sentence you hear, word by word.",
+      "audioText": "paul saw a brown owl",
+      "words": [
+        {
+          "text": "paul",
+          "graphemes": [
+            "p",
+            "au",
+            "l"
+          ],
+          "distractorGraphemes": [
+            "a",
+            "e"
+          ]
+        },
+        {
+          "text": "saw",
+          "graphemes": [
+            "s",
+            "aw"
+          ],
+          "distractorGraphemes": [
+            "a",
+            "e"
+          ]
+        },
+        {
+          "text": "a",
+          "graphemes": [
+            "a"
+          ],
+          "distractorGraphemes": [
+            "e",
+            "i"
+          ]
+        },
+        {
+          "text": "brown",
+          "graphemes": [
+            "b",
+            "r",
+            "ow",
+            "n"
+          ],
+          "distractorGraphemes": [
+            "a",
+            "e"
+          ]
+        },
+        {
+          "text": "owl",
+          "graphemes": [
+            "ow",
+            "l"
+          ],
+          "distractorGraphemes": [
+            "a",
+            "e"
+          ]
+        }
+      ],
+      "decodableWithin": "SP-diphthongs",
+      "missedConceptOnFail": "sentence-dictation",
+      "rationale": "Paul saw a brown owl — build each word from its sounds."
+    },
+    {
+      "id": "dic-diphthong-20",
+      "skillId": "SP-diphthong-dictation",
+      "itemType": "dictation",
+      "difficulty": 2,
+      "stem": "Build the sentence you hear, word by word.",
+      "audioText": "the boy found a toy",
+      "words": [
+        {
+          "text": "the",
+          "graphemes": [
+            "th",
+            "e"
+          ],
+          "distractorGraphemes": [
+            "a",
+            "i"
+          ]
+        },
+        {
+          "text": "boy",
+          "graphemes": [
+            "b",
+            "oy"
+          ],
+          "distractorGraphemes": [
+            "a",
+            "e"
+          ]
+        },
+        {
+          "text": "found",
+          "graphemes": [
+            "f",
+            "ou",
+            "n",
+            "d"
+          ],
+          "distractorGraphemes": [
+            "a",
+            "e"
+          ]
+        },
+        {
+          "text": "a",
+          "graphemes": [
+            "a"
+          ],
+          "distractorGraphemes": [
+            "e",
+            "i"
+          ]
+        },
+        {
+          "text": "toy",
+          "graphemes": [
+            "t",
+            "oy"
+          ],
+          "distractorGraphemes": [
+            "a",
+            "e"
+          ]
+        }
+      ],
+      "decodableWithin": "SP-diphthongs",
+      "missedConceptOnFail": "sentence-dictation",
+      "rationale": "the boy found a toy — build each word from its sounds."
+    }
+  ],
+  "lessons": {
+    "SP-diphthong-dictation": {
+      "iCanStatement": "I can spell short sentences with oi, oy, ou, ow, aw and au.",
+      "explanation": "Gliding vowels come in teams: oi/oy (coin, boy), ou/ow (cloud, cow), aw/au (paw, Paul). Each team is one tile. Build each word you hear.",
+      "workedExamples": [
+        {
+          "text": "the boy found a coin",
+          "note": "b·oy, c·oi·n."
+        },
+        {
+          "text": "a brown owl",
+          "note": "br·ow·n, ow·l."
+        }
+      ]
+    }
+  }
+}

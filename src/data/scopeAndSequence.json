@@ -405,9 +405,121 @@
           }
         },
         {
+          "id": "SP-blend-dictation",
+          "strand": "spelling",
+          "objective": "Spell short decodable sentences with consonant blends from dictation.",
+          "iCanStatement": "I can spell short sentences with blends.",
+          "prereqs": [
+            "SP-digraph-dictation"
+          ],
+          "itemType": "dictation",
+          "itemPool": "dictation-L04-blends",
+          "mastery": {
+            "window": 12,
+            "accuracyToPass": 0.85,
+            "minItems": 12
+          }
+        },
+        {
+          "id": "SP-floss-dictation",
+          "strand": "spelling",
+          "objective": "Spell short decodable sentences with FLOSS words from dictation.",
+          "iCanStatement": "I can spell short sentences with ff, ll, ss and zz.",
+          "prereqs": [
+            "SP-blend-dictation"
+          ],
+          "itemType": "dictation",
+          "itemPool": "dictation-L05-floss",
+          "mastery": {
+            "window": 12,
+            "accuracyToPass": 0.85,
+            "minItems": 12
+          }
+        },
+        {
+          "id": "SP-silente-dictation",
+          "strand": "spelling",
+          "objective": "Spell short decodable sentences with magic-e words from dictation.",
+          "iCanStatement": "I can spell short sentences with a bossy silent e.",
+          "prereqs": [
+            "SP-floss-dictation"
+          ],
+          "itemType": "dictation",
+          "itemPool": "dictation-L06-silent-e",
+          "mastery": {
+            "window": 12,
+            "accuracyToPass": 0.85,
+            "minItems": 12
+          }
+        },
+        {
+          "id": "SP-vowelteam-dictation",
+          "strand": "spelling",
+          "objective": "Spell short decodable sentences with vowel-team words from dictation.",
+          "iCanStatement": "I can spell short sentences with vowel teams.",
+          "prereqs": [
+            "SP-silente-dictation"
+          ],
+          "itemType": "dictation",
+          "itemPool": "dictation-L07-vowel-teams",
+          "mastery": {
+            "window": 12,
+            "accuracyToPass": 0.85,
+            "minItems": 12
+          }
+        },
+        {
+          "id": "SP-rcontrolled-dictation",
+          "strand": "spelling",
+          "objective": "Spell short decodable sentences with bossy-r words from dictation.",
+          "iCanStatement": "I can spell short sentences with bossy r.",
+          "prereqs": [
+            "SP-vowelteam-dictation"
+          ],
+          "itemType": "dictation",
+          "itemPool": "dictation-L08-r-controlled",
+          "mastery": {
+            "window": 12,
+            "accuracyToPass": 0.85,
+            "minItems": 12
+          }
+        },
+        {
+          "id": "SP-diphthong-dictation",
+          "strand": "spelling",
+          "objective": "Spell short decodable sentences with diphthong words from dictation.",
+          "iCanStatement": "I can spell short sentences with oi, oy, ou, ow, aw and au.",
+          "prereqs": [
+            "SP-rcontrolled-dictation"
+          ],
+          "itemType": "dictation",
+          "itemPool": "dictation-L09-diphthongs",
+          "mastery": {
+            "window": 12,
+            "accuracyToPass": 0.85,
+            "minItems": 12
+          }
+        },
+        {
+          "id": "SP-twosyllable-dictation",
+          "strand": "spelling",
+          "objective": "Spell short decodable two-syllable sentences from dictation.",
+          "iCanStatement": "I can spell short two-syllable sentences.",
+          "prereqs": [
+            "SP-diphthong-dictation"
+          ],
+          "itemType": "dictation",
+          "itemPool": "dictation-L10-two-syllable",
+          "mastery": {
+            "window": 12,
+            "accuracyToPass": 0.85,
+            "minItems": 12
+          }
+        },
+        {
           "id": "RD-cvc-sentences",
           "strand": "reading",
-          "objective": "Read short decodable CVC sentences and answer a literal question (word→text bridge, T19).",
+          "objective": "Read short decodable CVC sentences and answer a literal question (word\u2192text bridge, T19).",
           "iCanStatement": "I can read a short sentence and say what it means.",
           "prereqs": [
             "PH-cvc-short-vowels"
@@ -441,60 +553,96 @@
           "strand": "reading",
           "objective": "Read decodable sentences with consonant blends (T19).",
           "iCanStatement": "I can read sentences with blends and say what they mean.",
-          "prereqs": [ "PH-blends" ],
+          "prereqs": [
+            "PH-blends"
+          ],
           "itemType": "passage_question",
           "itemPool": "reading-L03-blends",
-          "mastery": { "window": 12, "accuracyToPass": 0.8, "minItems": 8 }
+          "mastery": {
+            "window": 12,
+            "accuracyToPass": 0.8,
+            "minItems": 8
+          }
         },
         {
           "id": "RD-silente-sentences",
           "strand": "reading",
           "objective": "Read decodable sentences with magic-e (silent-e) words (T19).",
           "iCanStatement": "I can read sentences with magic-e words and say what they mean.",
-          "prereqs": [ "PH-silent-e" ],
+          "prereqs": [
+            "PH-silent-e"
+          ],
           "itemType": "passage_question",
           "itemPool": "reading-L04-silent-e",
-          "mastery": { "window": 12, "accuracyToPass": 0.8, "minItems": 8 }
+          "mastery": {
+            "window": 12,
+            "accuracyToPass": 0.8,
+            "minItems": 8
+          }
         },
         {
           "id": "RD-vowelteam-sentences",
           "strand": "reading",
           "objective": "Read decodable sentences with vowel-team words (T19).",
           "iCanStatement": "I can read sentences with vowel-team words and say what they mean.",
-          "prereqs": [ "PH-vowel-teams" ],
+          "prereqs": [
+            "PH-vowel-teams"
+          ],
           "itemType": "passage_question",
           "itemPool": "reading-L05-vowel-teams",
-          "mastery": { "window": 12, "accuracyToPass": 0.8, "minItems": 8 }
+          "mastery": {
+            "window": 12,
+            "accuracyToPass": 0.8,
+            "minItems": 8
+          }
         },
         {
           "id": "RD-rcontrolled-sentences",
           "strand": "reading",
           "objective": "Read decodable sentences with r-controlled (bossy-r) words (T19).",
           "iCanStatement": "I can read sentences with bossy-r words and say what they mean.",
-          "prereqs": [ "PH-r-controlled" ],
+          "prereqs": [
+            "PH-r-controlled"
+          ],
           "itemType": "passage_question",
           "itemPool": "reading-L06-r-controlled",
-          "mastery": { "window": 12, "accuracyToPass": 0.8, "minItems": 8 }
+          "mastery": {
+            "window": 12,
+            "accuracyToPass": 0.8,
+            "minItems": 8
+          }
         },
         {
           "id": "RD-diphthong-sentences",
           "strand": "reading",
           "objective": "Read decodable sentences with diphthong words (oi/oy/ou/ow/aw/au) (T19).",
           "iCanStatement": "I can read sentences with oi, oy, ou, ow and aw words and say what they mean.",
-          "prereqs": [ "PH-diphthongs" ],
+          "prereqs": [
+            "PH-diphthongs"
+          ],
           "itemType": "passage_question",
           "itemPool": "reading-L07-diphthongs",
-          "mastery": { "window": 12, "accuracyToPass": 0.8, "minItems": 8 }
+          "mastery": {
+            "window": 12,
+            "accuracyToPass": 0.8,
+            "minItems": 8
+          }
         },
         {
           "id": "RD-twosyllable-sentences",
           "strand": "reading",
           "objective": "Read decodable sentences with two-syllable words (T19).",
           "iCanStatement": "I can read sentences with two-syllable words and say what they mean.",
-          "prereqs": [ "PH-two-syllable" ],
+          "prereqs": [
+            "PH-two-syllable"
+          ],
           "itemType": "passage_question",
           "itemPool": "reading-L08-two-syllable",
-          "mastery": { "window": 12, "accuracyToPass": 0.8, "minItems": 8 }
+          "mastery": {
+            "window": 12,
+            "accuracyToPass": 0.8,
+            "minItems": 8
+          }
         }
       ]
     },
