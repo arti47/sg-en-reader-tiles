@@ -12,8 +12,10 @@ import phonicsFl from '../data/packs/phonics-L05-floss.json'
 import spellingFl from '../data/packs/spelling-L05-floss.json'
 import phonicsSe from '../data/packs/phonics-L06-silent-e.json'
 import spellingSe from '../data/packs/spelling-L06-silent-e.json'
-import phonicsVt from '../data/packs/phonics-L07-vowel-teams.json'
-import spellingVt from '../data/packs/spelling-L07-vowel-teams.json'
+import phonicsVtA from '../data/packs/phonics-L07a-vowel-teams-a.json'
+import spellingVtA from '../data/packs/spelling-L07a-vowel-teams-a.json'
+import phonicsVtB from '../data/packs/phonics-L07b-vowel-teams-b.json'
+import spellingVtB from '../data/packs/spelling-L07b-vowel-teams-b.json'
 import phonicsRc from '../data/packs/phonics-L08-r-controlled.json'
 import spellingRc from '../data/packs/spelling-L08-r-controlled.json'
 import phonicsDi from '../data/packs/phonics-L09-diphthongs.json'
@@ -58,8 +60,10 @@ const PACKS: ContentPack[] = [
   spellingFl as ContentPack,
   phonicsSe as ContentPack,
   spellingSe as ContentPack,
-  phonicsVt as ContentPack,
-  spellingVt as ContentPack,
+  phonicsVtA as ContentPack,
+  spellingVtA as ContentPack,
+  phonicsVtB as ContentPack,
+  spellingVtB as ContentPack,
   phonicsRc as ContentPack,
   spellingRc as ContentPack,
   phonicsDi as ContentPack,

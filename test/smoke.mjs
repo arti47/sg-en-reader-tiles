@@ -531,7 +531,7 @@ try {
       if (SN.newSoundsFor('PH-digraphs').map(s => s.id).join(',') !== 'sh,ch,th-unvoiced,th-voiced') return 'M5.1: digraphs introduce sh/ch/th sounds'
       if (SN.newSoundsFor('PH-blends').length !== 0) return 'M5.1: blends introduce no new sound'
       // /ai/ is first taught at silent-e; vowel-teams adds new SPELLINGS (ai/ay) of that known sound.
-      if (!SN.newSpellingsFor('PH-vowel-teams').some(x => x.sound.id === 'ai' && x.graphemes.includes('ai'))) return 'M5.1: vowel-teams = new spelling of /ai/'
+      if (!SN.newSpellingsFor('PH-vowel-teams-a').some(x => x.sound.id === 'ai' && x.graphemes.includes('ai'))) return 'M5.1: vowel-teams = new spelling of /ai/'
       if (SN.newSpellingsFor('PH-silent-e').length !== 0) return 'M5.1: silent-e introduces, not re-spells'
       const intro = SN.introducedSounds(new Set(['PH-cvc-short-vowels', 'PH-digraphs']))
       if (!intro.some(s => s.id === 'sh') || intro.some(s => s.id === 'ai')) return 'M5.1: introduced set follows learned patterns (no spoilers)'

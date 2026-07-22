@@ -222,16 +222,16 @@
           }
         },
         {
-          "id": "PH-vowel-teams",
+          "id": "PH-vowel-teams-a",
           "strand": "phonics",
-          "objective": "Decode vowel-team long vowels: ai/ay, ee/ea, oa/ow, oo, ew/ue, igh.",
-          "iCanStatement": "I can read words where two letters make one long vowel.",
+          "objective": "Read words with the ai, ay, ee, ea vowel teams (long a, long e).",
+          "iCanStatement": "I can read words with the ai, ay, ee and ea teams.",
           "prereqs": [
             "PH-silent-e"
           ],
           "itemType": "decode_choice",
-          "itemPool": "phonics-L07-vowel-teams",
-          "encodePairId": "SP-vowel-teams",
+          "itemPool": "phonics-L07a-vowel-teams-a",
+          "encodePairId": "SP-vowel-teams-a",
           "mastery": {
             "window": 12,
             "accuracyToPass": 0.85,
@@ -239,16 +239,50 @@
           }
         },
         {
-          "id": "SP-vowel-teams",
+          "id": "SP-vowel-teams-a",
           "strand": "spelling",
-          "objective": "Spell vowel-team words, choosing the right team for the long vowel.",
-          "iCanStatement": "I can spell words where two letters make one long vowel.",
+          "objective": "Spell words with ai, ay, ee, ea from tiles.",
+          "iCanStatement": "I can spell words with the ai, ay, ee and ea teams.",
           "prereqs": [
-            "PH-vowel-teams"
+            "PH-vowel-teams-a"
           ],
           "itemType": "build_word",
-          "itemPool": "spelling-L07-vowel-teams",
-          "encodePairId": "PH-vowel-teams",
+          "itemPool": "spelling-L07a-vowel-teams-a",
+          "encodePairId": "PH-vowel-teams-a",
+          "mastery": {
+            "window": 12,
+            "accuracyToPass": 0.85,
+            "minItems": 12
+          }
+        },
+        {
+          "id": "PH-vowel-teams-b",
+          "strand": "phonics",
+          "objective": "Read words with the oa, ow, oo, ew, ue, igh vowel teams.",
+          "iCanStatement": "I can read words with the oa, ow, oo, ew, ue and igh teams.",
+          "prereqs": [
+            "PH-vowel-teams-a"
+          ],
+          "itemType": "decode_choice",
+          "itemPool": "phonics-L07b-vowel-teams-b",
+          "encodePairId": "SP-vowel-teams-b",
+          "mastery": {
+            "window": 12,
+            "accuracyToPass": 0.85,
+            "minItems": 12
+          }
+        },
+        {
+          "id": "SP-vowel-teams-b",
+          "strand": "spelling",
+          "objective": "Spell words with oa, ow, oo, ew, ue, igh from tiles.",
+          "iCanStatement": "I can spell words with the oa, ow, oo, ew, ue and igh teams.",
+          "prereqs": [
+            "PH-vowel-teams-b"
+          ],
+          "itemType": "build_word",
+          "itemPool": "spelling-L07b-vowel-teams-b",
+          "encodePairId": "PH-vowel-teams-b",
           "mastery": {
             "window": 12,
             "accuracyToPass": 0.85,
@@ -261,7 +295,7 @@
           "objective": "Decode r-controlled vowels: ar, or, er, ir, ur (bossy r).",
           "iCanStatement": "I can read words with a bossy r (ar, or, er, ir, ur).",
           "prereqs": [
-            "PH-vowel-teams"
+            "PH-vowel-teams-b"
           ],
           "itemType": "decode_choice",
           "itemPool": "phonics-L08-r-controlled",
@@ -655,7 +689,7 @@
         {
           "id": "RD-cvc-sentences",
           "strand": "reading",
-          "objective": "Read short decodable CVC sentences and answer a literal question (word\u2192text bridge, T19).",
+          "objective": "Read short decodable CVC sentences and answer a literal question (word→text bridge, T19).",
           "iCanStatement": "I can read a short sentence and say what it means.",
           "prereqs": [
             "PH-cvc-short-vowels"
@@ -722,7 +756,7 @@
           "objective": "Read decodable sentences with vowel-team words (T19).",
           "iCanStatement": "I can read sentences with vowel-team words and say what they mean.",
           "prereqs": [
-            "PH-vowel-teams"
+            "PH-vowel-teams-b"
           ],
           "itemType": "passage_question",
           "itemPool": "reading-L05-vowel-teams",

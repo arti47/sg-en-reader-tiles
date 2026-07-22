@@ -351,11 +351,11 @@
       },
       {
         "grapheme": "ai",
-        "pattern": "PH-vowel-teams"
+        "pattern": "PH-vowel-teams-a"
       },
       {
         "grapheme": "ay",
-        "pattern": "PH-vowel-teams"
+        "pattern": "PH-vowel-teams-a"
       }
     ]
   },
@@ -371,7 +371,7 @@
       },
       {
         "grapheme": "igh",
-        "pattern": "PH-vowel-teams"
+        "pattern": "PH-vowel-teams-b"
       }
     ]
   },
@@ -387,11 +387,11 @@
       },
       {
         "grapheme": "oa",
-        "pattern": "PH-vowel-teams"
+        "pattern": "PH-vowel-teams-b"
       },
       {
         "grapheme": "ow",
-        "pattern": "PH-vowel-teams"
+        "pattern": "PH-vowel-teams-b"
       }
     ]
   },
@@ -399,15 +399,15 @@
     "id": "ee",
     "keyword": "feet",
     "articulation": "Smile wide, say e's name — /ee/",
-    "firstPattern": "PH-vowel-teams",
+    "firstPattern": "PH-vowel-teams-a",
     "spellings": [
       {
         "grapheme": "ee",
-        "pattern": "PH-vowel-teams"
+        "pattern": "PH-vowel-teams-a"
       },
       {
         "grapheme": "ea",
-        "pattern": "PH-vowel-teams"
+        "pattern": "PH-vowel-teams-a"
       }
     ]
   },
@@ -415,19 +415,19 @@
     "id": "oo-long",
     "keyword": "moon",
     "articulation": "Round your lips, long — /oo/",
-    "firstPattern": "PH-vowel-teams",
+    "firstPattern": "PH-vowel-teams-b",
     "spellings": [
       {
         "grapheme": "oo",
-        "pattern": "PH-vowel-teams"
+        "pattern": "PH-vowel-teams-b"
       },
       {
         "grapheme": "ew",
-        "pattern": "PH-vowel-teams"
+        "pattern": "PH-vowel-teams-b"
       },
       {
         "grapheme": "ue",
-        "pattern": "PH-vowel-teams"
+        "pattern": "PH-vowel-teams-b"
       }
     ]
   },
