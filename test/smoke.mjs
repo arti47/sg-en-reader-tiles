@@ -66,12 +66,13 @@ try {
     const readDb = () => page.evaluate(() => new Promise(res => {
       const o = indexedDB.open('sg-reader')
       o.onsuccess = () => {
-        const t = o.result.transaction(['progress', 'certificates', 'reviews', 'aggregates', 'usage'], 'readonly'); const out = {}
+        const t = o.result.transaction(['progress', 'certificates', 'reviews', 'aggregates', 'usage', 'learn'], 'readonly'); const out = {}
         t.objectStore('progress').getAll().onsuccess = e => out.progress = e.target.result
         t.objectStore('certificates').getAll().onsuccess = e => out.certs = e.target.result
         t.objectStore('reviews').getAll().onsuccess = e => out.reviews = e.target.result
         t.objectStore('aggregates').getAll().onsuccess = e => out.aggregates = e.target.result
         t.objectStore('usage').getAll().onsuccess = e => out.usage = e.target.result
+        t.objectStore('learn').getAll().onsuccess = e => out.learn = e.target.result
         t.oncomplete = () => res(out)
       }
     }))
@@ -133,6 +134,33 @@ try {
       await page.getByRole('button', { name: 'Done' }).click()
       await page.waitForFunction(() => /Who's reading\?/.test(document.body.innerText), { timeout: 6000 })
     }
+    // M5 (§19.6): drive ONE Learn unit to completion (intro→read→spellIntro→spell→learned),
+    // then click Done back to the picker. Learn always answers correctly (participation-based).
+    async function walkLearn() {
+      for (let step = 0; step < 50; step++) {
+        const kind = await page.waitForFunction(() => {
+          const t = document.body.innerText
+          if (/You learned it!/.test(t) || /learned everything/.test(t)) return 'done'
+          if (/Let's learn this/.test(t)) return 'lesson'
+          const hasContinue = [...document.querySelectorAll('button')].some(b => b.textContent.trim() === 'Continue')
+          const freshTile = document.querySelector('button.tile:not([disabled])')
+          return (freshTile && !hasContinue) ? 'item' : null
+        }, { timeout: 8000 }).then(h => h.jsonValue())
+        if (kind === 'done') { await page.getByRole('button', { name: 'Done', exact: true }).click(); return }
+        if (kind === 'lesson') { await page.getByRole('button', { name: "Let's try" }).click(); continue }
+        const it = await page.evaluate(() => window.__item || null)
+        if (it.graphemes) {
+          for (const g of it.graphemes) await page.locator('button.tile:not([disabled])', { hasText: lbl(g) }).first().click()
+          await page.getByRole('button', { name: 'Check' }).click()
+        } else {
+          await page.locator('button.tile').nth(it.choices.findIndex(c => c.id === it.correctChoiceId)).click()
+        }
+        await page.getByRole('button', { name: 'Continue' }).click()
+      }
+    }
+    // Test now only assesses LEARNED patterns (§19.7) — learn the frontier pattern first.
+    await page.getByRole('button', { name: 'Learn with Test' }).click()
+    await walkLearn()
     // §7 #1 retention gate: the certificate is WITHHELD at acquisition and minted only on the
     // first +2d review pass. So the mastery path (a) plays sessions until a pattern is
     // provisionally mastered (a review is scheduled), asserting NO certificate yet, then
@@ -140,7 +168,7 @@ try {
     // retention and awards the certificate. #2 (minItems 12) means this spans several sessions.
     const SESSIONS = WRONG ? 1 : 8
     for (let s = 0; s < SESSIONS; s++) {
-      await page.getByRole('button', { name: /Play with Test/ }).click()
+      await page.getByRole('button', { name: 'Test with Test', exact: true }).click()
       await playSession(WRONG)
       db = await readDb()
       if (!WRONG && (db.reviews || []).some(r => r.status === 'scheduled')) break
@@ -159,7 +187,7 @@ try {
           t.oncomplete = () => res()
         }
       }))
-      await page.getByRole('button', { name: /Play with Test/ }).click()
+      await page.getByRole('button', { name: 'Test with Test', exact: true }).click()
       await playSession(false)
       // Session-summary highlights (§14): the confirmation minted a certificate, so the summary
       // must surface a "New this session!" award block (child sees achievements immediately).
@@ -611,10 +639,11 @@ try {
   const usage0 = (good.db.usage || [])[0]
   if (!(usage0 && usage0.sessionsThisWeek >= 1 && usage0.weeklySessionTarget === 4)) fail('M2: usage/session-count row')
   const bad = results.find(r => r.WRONG)
-  if (bad.lessons < 1) fail('struggle path: expected a lesson branch')
-  // Explicit-first teaching (§3): a new pattern is taught BEFORE its first item, so the mastery
-  // path (all-correct, never struggles) still sees ≥1 lesson — the proactive intro.
-  if (good.lessons < 1) fail('explicit-first: a first-exposure lesson should fire without struggling')
+  if (!(bad.db.learn || []).some(r => r.patternId === 'PH-cvc-short-vowels' && r.needsReview)) fail('M5 struggle: Test should flag the pattern needs-review')
+  // M5 (§19.7): teaching moved to Learn — Test fires NO lessons; and the child LEARNED a pattern
+  // in Learn before Test could assess it.
+  if (good.lessons !== 0) fail('M5: Test must not teach (no lessons should fire in Test mode)')
+  if (!(good.db.learn || []).some(r => r.learned)) fail('M5: Learn should have marked a pattern learned')
   if (bad.db.progress.some(p => p.skillId === 'SP-cvc-short-vowels')) fail('dual gate: encode must stay locked when decode <70%')
   if (bad.db.certs.length) fail('struggle path: no certificate should be awarded')
 

@@ -6,6 +6,7 @@ export function ChildPicker(props: {
   children: Child[]
   xpByChild?: Record<string, number>
   onPick: (c: Child) => void
+  onLearn: (c: Child) => void
   onAdd: () => void
   onRemove: (c: Child) => void
   onReset: (c: Child) => void
@@ -37,8 +38,10 @@ export function ChildPicker(props: {
 
               {!editing && (
                 <div className="stack" style={{ gap: 6 }}>
+                  <button className="btn small" onClick={() => props.onLearn(c)}
+                    aria-label={`Learn with ${c.name}`}>📘 Learn</button>
                   <button className="btn small" onClick={() => props.onPick(c)}
-                    aria-label={`Play with ${c.name}`}>Play</button>
+                    aria-label={`Test with ${c.name}`}>🎮 Test</button>
                   <button className="btn small ghost" onClick={() => props.onTrophies(c)}
                     aria-label={`${c.name}'s trophies`}>🏆 Trophies</button>
                 </div>

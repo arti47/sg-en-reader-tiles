@@ -6,6 +6,7 @@ import { xp as calcXp } from './lib/gamify'
 import { ChildPicker } from './features/ChildPicker'
 import { AddStudent } from './features/AddStudent'
 import { Session } from './features/Session'
+import { LearnRunner } from './features/LearnRunner'
 import { Placement } from './features/Placement'
 import { Trophies } from './features/Trophies'
 import { ParentDashboard } from './features/ParentDashboard'
@@ -29,7 +30,7 @@ if (import.meta.env.DEV) {
 }
 const m3demo = import.meta.env.DEV && typeof location !== 'undefined' && location.hash === '#m3demo'
 
-type View = 'pick' | 'add' | 'placement' | 'session' | 'dashboard' | 'trophies'
+type View = 'pick' | 'add' | 'placement' | 'session' | 'learn' | 'dashboard' | 'trophies'
 const APP_VERSION = __APP_VERSION__ // from package.json (§18.6), never hand-edited
 
 export default function App() {
@@ -79,6 +80,7 @@ export default function App() {
           <ChildPicker children={children}
             xpByChild={xpByChild}
             onPick={(c) => { setActive(c); setView('session') }}
+            onLearn={(c) => { setActive(c); setView('learn') }}
             onAdd={() => setView('add')}
             onRemove={removeStudent}
             onReset={resetStudent}
@@ -88,10 +90,14 @@ export default function App() {
         {view === 'add' && <AddStudent onSave={save} onCancel={() => setView('pick')} />}
         {view === 'placement' && active && <Placement child={active} onDone={placementDone} />}
         {view === 'trophies' && active && <Trophies child={active} onExit={() => { void refreshChildren(); setView('pick') }} />}
+        {view === 'learn' && active && (
+          <LearnRunner child={active} onExit={() => { void refreshChildren(); setView('pick') }} />
+        )}
         {view === 'session' && active && (
           <Session child={active}
             onExit={() => { void refreshChildren(); setView('pick') }}
-            onTrophies={() => setView('trophies')} />
+            onTrophies={() => setView('trophies')}
+            onLearn={() => setView('learn')} />
         )}
         {view === 'dashboard' && (
           <ParentDashboard children={children} onExit={() => setView('pick')} onReset={resetStudent} />

@@ -1,11 +1,12 @@
 import { useEffect, useRef, useState } from 'react'
 import type { Child, PackItem, Attempt, SkillProgress, Difficulty, SkillDef, Certificate, Review } from '../types'
 import type { ScoreResult } from '../lib/scoring'
-import { addAttempt, getAttempts, getProgress, putProgress, putCertificate, getCertificates, getReviews, putReview, bumpAggregate, bumpDaily, getUsage, putUsage, getSettings } from '../store'
+import { addAttempt, getAttempts, getProgress, putProgress, putCertificate, getCertificates, getReviews, putReview, bumpAggregate, bumpDaily, getUsage, putUsage, getSettings, getLearn, flagReview } from '../store'
 import { setRate, setVoice } from '../lib/audio'
 import { XP_PER_CORRECT, XP_PER_CERT, achievements, type Achievement } from '../lib/gamify'
-import { SKILLS, getSkill, getLesson, pickItem } from '../lib/packs'
+import { SKILLS, getSkill, pickItem } from '../lib/packs'
 import { rollingAccuracy, itemsAnswered, nextDifficulty, isMastered, patternMastered, struggling, eligibleSkills, patternDecodeSkill, interleavedReviewSkill, threadedSkill, fluencySkill } from '../lib/engine'
+import { learnedSet } from '../lib/learn'
 import { support } from '../lib/support'
 import { scheduleFirst, onReviewPass, onReviewFail, dueReviews } from '../lib/srs'
 import { isoWeek, isConsecutiveWeek, isoDay } from '../lib/aggregate'
@@ -13,21 +14,18 @@ import { McqItem } from './items/McqItem'
 import { TileItem } from './items/TileItem'
 import { ClozeItem } from './items/ClozeItem'
 import { DictationItem } from './items/DictationItem'
-import { LessonView } from './LessonView'
 
 const DEFAULT_SESSION_LEN = 16
-const LESSON_MAX = 2      // re-teach at most twice per skill per session (§8 #4)
-const REFIRE_AFTER = 3    // …and only re-fire after ≥3 further attempts, if still struggling
-type Phase = 'loading' | 'item' | 'lesson' | 'cert' | 'summary'
+// M5 Test mode (§19.7): assessment only. Teaching (intro + struggle lessons) has moved to Learn;
+// on struggle Test flags the pattern for re-teaching (needs-review) instead of re-teaching.
+type Phase = 'loading' | 'item' | 'cert' | 'summary' | 'learnfirst'
 
-export function Session(props: { child: Child; onExit: () => void; onTrophies: () => void }) {
+export function Session(props: { child: Child; onExit: () => void; onTrophies: () => void; onLearn: () => void }) {
   const attemptsRef = useRef<Attempt[]>([])
   const diffRef = useRef<Map<string, Difficulty>>(new Map())
   const seenRef = useRef<Set<string>>(new Set())
-  const lessonCountRef = useRef<Map<string, number>>(new Map())   // lessons shown per skill this session (§8, cap LESSON_MAX)
-  const lessonAtRef = useRef<Map<string, number>>(new Map())      // itemsAnswered(skill) when its last lesson fired (re-fire gate)
-  const guidedRef = useRef<{ id: string; left: number } | null>(null) // post-lesson guided-practice block (§8)
-  const introRef = useRef<Set<string>>(new Set()) // skills whose first-exposure lesson has been shown (§3 explicit-first)
+  const guidedRef = useRef<{ id: string; left: number } | null>(null) // re-practice block after a failed review (§7 #1)
+  const learnedRef = useRef<Set<string>>(new Set()) // M5: patterns learned in Learn → the Test gate (§19.7)
   const certsRef = useRef<Set<string>>(new Set())                 // skillIds already certified (retention-confirmed, §7)
   const masteredRef = useRef<Set<string>>(new Set()) // skills mastered at placement (§7)
   const startRef = useRef<number>(Date.now())
@@ -66,6 +64,7 @@ export function Session(props: { child: Child; onExit: () => void; onTrophies: (
         if (p.status === 'mastered') masteredRef.current.add(p.skillId) // seed placement mastery
       }
       reviewsRef.current = await getReviews(props.child.id)
+      learnedRef.current = learnedSet(await getLearn(props.child.id)) // M5 Test gate (§19.7)
       for (const c of await getCertificates(props.child.id)) certsRef.current.add(c.skillId)
       dueQueueRef.current = dueReviews(reviewsRef.current, Date.now()).map(r => r.skillId)
       await countSession()
@@ -140,34 +139,16 @@ export function Session(props: { child: Child; onExit: () => void; onTrophies: (
         if (fl) { reviewServedRef.current += 1; loadItem(fl, 1); return }
       }
     }
-    const elig = eligibleSkills(attemptsRef.current, masteredRef.current)
-    if (!elig.length) { setPhase('summary'); return }
+    // M5 Test gate (§19.7): only assess patterns that have been LEARNED (in Learn mode). Non-pattern
+    // skills (reading/M3/dictation/threaded) are not learned-gated.
+    const elig = eligibleSkills(attemptsRef.current, masteredRef.current, learnedRef.current)
+    if (!elig.length) { setPhase(learnedRef.current.size === 0 ? 'learnfirst' : 'summary'); return }
     const skill = elig[countRef.current % elig.length]
-    // Explicit-first teaching (§3 "lessons state the rule BEFORE practice"): the FIRST time a new
-    // pattern is met (no prior attempts, not placement-credited), teach the rule up front instead
-    // of testing it cold. The shared lesson→guided(we-do)→normal(you-do) flow gives gradual
-    // release. Uses its own `introRef` so it never consumes the struggle re-teach budget.
-    if (itemsAnswered(attemptsRef.current, skill.id) === 0 && !introRef.current.has(skill.id) && getLesson(skill.id)) {
-      introRef.current.add(skill.id)
-      setItem({ skillId: skill.id } as PackItem)
-      setAnswered(null); setPhase('lesson'); return
-    }
-    // Re-teach on struggle (§8): up to LESSON_MAX times per skill/session, re-firing only after
-    // ≥REFIRE_AFTER further attempts if still struggling (so a child still failing gets a 2nd
-    // explicit lesson, not just one — but the lesson doesn't repeat every item).
-    const shown = lessonCountRef.current.get(skill.id) ?? 0
-    const answeredSince = itemsAnswered(attemptsRef.current, skill.id) - (lessonAtRef.current.get(skill.id) ?? -Infinity)
-    if (struggling(attemptsRef.current, skill) && getLesson(skill.id) &&
-        shown < LESSON_MAX && (shown === 0 || answeredSince >= REFIRE_AFTER)) {
-      lessonCountRef.current.set(skill.id, shown + 1)
-      lessonAtRef.current.set(skill.id, itemsAnswered(attemptsRef.current, skill.id))
-      setItem({ skillId: skill.id } as PackItem) // carries skill id for lesson lookup
-      setAnswered(null); setPhase('lesson'); return
-    }
-    // Down-shift (§8): if re-teaching is exhausted (LESSON_MAX reached) and the child is STILL
-    // struggling, drop to an easier prerequisite for supported practice instead of hammering the
-    // too-hard skill. The floor (CVC, no prereqs) has nowhere down and just continues.
-    if (struggling(attemptsRef.current, skill) && shown >= LESSON_MAX) {
+    // Struggle → FLAG for re-teaching, don't teach (§19.7): teaching lives in Learn. Mark the
+    // pattern needs-review so Learn resurfaces it, then drop to an easier prerequisite for
+    // supported practice (down-shift, §7 #5); the per-item error-correction still applies.
+    if (struggling(attemptsRef.current, skill)) {
+      void flagReview(props.child.id, patternDecodeSkill(skill).id)
       const prereq = skill.prereqs.map(p => getSkill(p)).find(p => p && !p.threaded)
       if (prereq) { loadItem(prereq, 1); return }
     }
@@ -289,9 +270,18 @@ export function Session(props: { child: Child; onExit: () => void; onTrophies: (
     )
   }
 
-  if (phase === 'lesson' && item) {
-    const lesson = getLesson(item.skillId)
-    if (lesson) return <LessonView lesson={lesson} onContinue={() => { guidedRef.current = { id: item.skillId, left: GUIDED_ITEMS }; advance() }} />
+  if (phase === 'learnfirst') {
+    return (
+      <div className="stack center">
+        <div className="cert">📘</div>
+        <h1>Let's learn first, {props.child.name}!</h1>
+        <p className="note">There's nothing to test yet. Learn a new pattern, then come back to Test it.</p>
+        <div className="row" style={{ gap: 8 }}>
+          <button className="btn" onClick={props.onLearn}>📘 Go to Learn</button>
+          <button className="btn ghost" onClick={props.onExit}>Back</button>
+        </div>
+      </div>
+    )
   }
 
   if (phase === 'item' && item) {
