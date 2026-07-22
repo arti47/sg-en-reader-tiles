@@ -592,6 +592,9 @@ try {
   if (!(usage0 && usage0.sessionsThisWeek >= 1 && usage0.weeklySessionTarget === 4)) fail('M2: usage/session-count row')
   const bad = results.find(r => r.WRONG)
   if (bad.lessons < 1) fail('struggle path: expected a lesson branch')
+  // Explicit-first teaching (§3): a new pattern is taught BEFORE its first item, so the mastery
+  // path (all-correct, never struggles) still sees ≥1 lesson — the proactive intro.
+  if (good.lessons < 1) fail('explicit-first: a first-exposure lesson should fire without struggling')
   if (bad.db.progress.some(p => p.skillId === 'SP-cvc-short-vowels')) fail('dual gate: encode must stay locked when decode <70%')
   if (bad.db.certs.length) fail('struggle path: no certificate should be awarded')
 

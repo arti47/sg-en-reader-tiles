@@ -27,6 +27,7 @@ export function Session(props: { child: Child; onExit: () => void; onTrophies: (
   const lessonCountRef = useRef<Map<string, number>>(new Map())   // lessons shown per skill this session (§8, cap LESSON_MAX)
   const lessonAtRef = useRef<Map<string, number>>(new Map())      // itemsAnswered(skill) when its last lesson fired (re-fire gate)
   const guidedRef = useRef<{ id: string; left: number } | null>(null) // post-lesson guided-practice block (§8)
+  const introRef = useRef<Set<string>>(new Set()) // skills whose first-exposure lesson has been shown (§3 explicit-first)
   const certsRef = useRef<Set<string>>(new Set())                 // skillIds already certified (retention-confirmed, §7)
   const masteredRef = useRef<Set<string>>(new Set()) // skills mastered at placement (§7)
   const startRef = useRef<number>(Date.now())
@@ -142,6 +143,15 @@ export function Session(props: { child: Child; onExit: () => void; onTrophies: (
     const elig = eligibleSkills(attemptsRef.current, masteredRef.current)
     if (!elig.length) { setPhase('summary'); return }
     const skill = elig[countRef.current % elig.length]
+    // Explicit-first teaching (§3 "lessons state the rule BEFORE practice"): the FIRST time a new
+    // pattern is met (no prior attempts, not placement-credited), teach the rule up front instead
+    // of testing it cold. The shared lesson→guided(we-do)→normal(you-do) flow gives gradual
+    // release. Uses its own `introRef` so it never consumes the struggle re-teach budget.
+    if (itemsAnswered(attemptsRef.current, skill.id) === 0 && !introRef.current.has(skill.id) && getLesson(skill.id)) {
+      introRef.current.add(skill.id)
+      setItem({ skillId: skill.id } as PackItem)
+      setAnswered(null); setPhase('lesson'); return
+    }
     // Re-teach on struggle (§8): up to LESSON_MAX times per skill/session, re-firing only after
     // ≥REFIRE_AFTER further attempts if still struggling (so a child still failing gets a 2nd
     // explicit lesson, not just one — but the lesson doesn't repeat every item).
