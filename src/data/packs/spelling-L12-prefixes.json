@@ -1,0 +1,662 @@
+{
+  "packId": "spelling-L12-prefixes",
+  "strand": "spelling",
+  "skillIds": [
+    "SP-prefixes"
+  ],
+  "version": 1,
+  "items": [
+    {
+      "id": "sp-pf-01",
+      "skillId": "SP-prefixes",
+      "itemType": "build_word",
+      "difficulty": 1,
+      "stem": "Build the word you hear.",
+      "displayWord": "undo",
+      "audioText": "undo",
+      "graphemes": [
+        "u",
+        "n",
+        "d",
+        "o"
+      ],
+      "distractorGraphemes": [
+        "bb",
+        "tt"
+      ],
+      "missedConceptOnFail": "prefix",
+      "rationale": "undo = u-n-d-o.",
+      "decodableWithin": "SP-prefixes"
+    },
+    {
+      "id": "sp-pf-02",
+      "skillId": "SP-prefixes",
+      "itemType": "build_word",
+      "difficulty": 1,
+      "stem": "Build the word you hear.",
+      "displayWord": "unfit",
+      "audioText": "unfit",
+      "graphemes": [
+        "u",
+        "n",
+        "f",
+        "i",
+        "t"
+      ],
+      "distractorGraphemes": [
+        "bb",
+        "tt"
+      ],
+      "missedConceptOnFail": "prefix",
+      "rationale": "unfit = u-n-f-i-t.",
+      "decodableWithin": "SP-prefixes"
+    },
+    {
+      "id": "sp-pf-03",
+      "skillId": "SP-prefixes",
+      "itemType": "build_word",
+      "difficulty": 1,
+      "stem": "Build the word you hear.",
+      "displayWord": "unzip",
+      "audioText": "unzip",
+      "graphemes": [
+        "u",
+        "n",
+        "z",
+        "i",
+        "p"
+      ],
+      "distractorGraphemes": [
+        "bb",
+        "tt"
+      ],
+      "missedConceptOnFail": "prefix",
+      "rationale": "unzip = u-n-z-i-p.",
+      "decodableWithin": "SP-prefixes"
+    },
+    {
+      "id": "sp-pf-04",
+      "skillId": "SP-prefixes",
+      "itemType": "build_word",
+      "difficulty": 2,
+      "stem": "Build the word you hear.",
+      "displayWord": "unlock",
+      "audioText": "unlock",
+      "graphemes": [
+        "u",
+        "n",
+        "l",
+        "o",
+        "ck"
+      ],
+      "distractorGraphemes": [
+        "bb",
+        "tt",
+        "nn"
+      ],
+      "missedConceptOnFail": "prefix",
+      "rationale": "unlock = u-n-l-o-ck.",
+      "decodableWithin": "SP-prefixes"
+    },
+    {
+      "id": "sp-pf-05",
+      "skillId": "SP-prefixes",
+      "itemType": "build_word",
+      "difficulty": 2,
+      "stem": "Build the word you hear.",
+      "displayWord": "unpack",
+      "audioText": "unpack",
+      "graphemes": [
+        "u",
+        "n",
+        "p",
+        "a",
+        "ck"
+      ],
+      "distractorGraphemes": [
+        "bb",
+        "tt",
+        "nn"
+      ],
+      "missedConceptOnFail": "prefix",
+      "rationale": "unpack = u-n-p-a-ck.",
+      "decodableWithin": "SP-prefixes"
+    },
+    {
+      "id": "sp-pf-06",
+      "skillId": "SP-prefixes",
+      "itemType": "build_word",
+      "difficulty": 2,
+      "stem": "Build the word you hear.",
+      "displayWord": "undid",
+      "audioText": "undid",
+      "graphemes": [
+        "u",
+        "n",
+        "d",
+        "i",
+        "d"
+      ],
+      "distractorGraphemes": [
+        "bb",
+        "tt",
+        "nn"
+      ],
+      "missedConceptOnFail": "prefix",
+      "rationale": "undid = u-n-d-i-d.",
+      "decodableWithin": "SP-prefixes"
+    },
+    {
+      "id": "sp-pf-07",
+      "skillId": "SP-prefixes",
+      "itemType": "build_word",
+      "difficulty": 2,
+      "stem": "Build the word you hear.",
+      "displayWord": "unwell",
+      "audioText": "unwell",
+      "graphemes": [
+        "u",
+        "n",
+        "w",
+        "e",
+        "ll"
+      ],
+      "distractorGraphemes": [
+        "bb",
+        "tt",
+        "nn"
+      ],
+      "missedConceptOnFail": "prefix",
+      "rationale": "unwell = u-n-w-e-ll.",
+      "decodableWithin": "SP-prefixes"
+    },
+    {
+      "id": "sp-pf-08",
+      "skillId": "SP-prefixes",
+      "itemType": "build_word",
+      "difficulty": 2,
+      "stem": "Build the word you hear.",
+      "displayWord": "unlit",
+      "audioText": "unlit",
+      "graphemes": [
+        "u",
+        "n",
+        "l",
+        "i",
+        "t"
+      ],
+      "distractorGraphemes": [
+        "bb",
+        "tt",
+        "nn"
+      ],
+      "missedConceptOnFail": "prefix",
+      "rationale": "unlit = u-n-l-i-t.",
+      "decodableWithin": "SP-prefixes"
+    },
+    {
+      "id": "sp-pf-09",
+      "skillId": "SP-prefixes",
+      "itemType": "build_word",
+      "difficulty": 3,
+      "stem": "Build the word you hear.",
+      "displayWord": "unhappy",
+      "audioText": "unhappy",
+      "graphemes": [
+        "u",
+        "n",
+        "h",
+        "a",
+        "pp",
+        "y"
+      ],
+      "distractorGraphemes": [
+        "bb",
+        "tt",
+        "nn",
+        "dd"
+      ],
+      "missedConceptOnFail": "prefix",
+      "rationale": "unhappy = u-n-h-a-pp-y.",
+      "decodableWithin": "SP-prefixes"
+    },
+    {
+      "id": "sp-pf-10",
+      "skillId": "SP-prefixes",
+      "itemType": "build_word",
+      "difficulty": 1,
+      "stem": "Build the word you hear.",
+      "displayWord": "unpin",
+      "audioText": "unpin",
+      "graphemes": [
+        "u",
+        "n",
+        "p",
+        "i",
+        "n"
+      ],
+      "distractorGraphemes": [
+        "bb",
+        "tt"
+      ],
+      "missedConceptOnFail": "prefix",
+      "rationale": "unpin = u-n-p-i-n.",
+      "decodableWithin": "SP-prefixes"
+    },
+    {
+      "id": "sp-pf-11",
+      "skillId": "SP-prefixes",
+      "itemType": "build_word",
+      "difficulty": 1,
+      "stem": "Build the word you hear.",
+      "displayWord": "redo",
+      "audioText": "redo",
+      "graphemes": [
+        "r",
+        "e",
+        "d",
+        "o"
+      ],
+      "distractorGraphemes": [
+        "bb",
+        "tt"
+      ],
+      "missedConceptOnFail": "prefix",
+      "rationale": "redo = r-e-d-o.",
+      "decodableWithin": "SP-prefixes"
+    },
+    {
+      "id": "sp-pf-12",
+      "skillId": "SP-prefixes",
+      "itemType": "build_word",
+      "difficulty": 2,
+      "stem": "Build the word you hear.",
+      "displayWord": "refill",
+      "audioText": "refill",
+      "graphemes": [
+        "r",
+        "e",
+        "f",
+        "i",
+        "ll"
+      ],
+      "distractorGraphemes": [
+        "bb",
+        "tt",
+        "nn"
+      ],
+      "missedConceptOnFail": "prefix",
+      "rationale": "refill = r-e-f-i-ll.",
+      "decodableWithin": "SP-prefixes"
+    },
+    {
+      "id": "sp-pf-13",
+      "skillId": "SP-prefixes",
+      "itemType": "build_word",
+      "difficulty": 2,
+      "stem": "Build the word you hear.",
+      "displayWord": "reset",
+      "audioText": "reset",
+      "graphemes": [
+        "r",
+        "e",
+        "s",
+        "e",
+        "t"
+      ],
+      "distractorGraphemes": [
+        "bb",
+        "tt",
+        "nn"
+      ],
+      "missedConceptOnFail": "prefix",
+      "rationale": "reset = r-e-s-e-t.",
+      "decodableWithin": "SP-prefixes"
+    },
+    {
+      "id": "sp-pf-14",
+      "skillId": "SP-prefixes",
+      "itemType": "build_word",
+      "difficulty": 2,
+      "stem": "Build the word you hear.",
+      "displayWord": "retell",
+      "audioText": "retell",
+      "graphemes": [
+        "r",
+        "e",
+        "t",
+        "e",
+        "ll"
+      ],
+      "distractorGraphemes": [
+        "bb",
+        "tt",
+        "nn"
+      ],
+      "missedConceptOnFail": "prefix",
+      "rationale": "retell = r-e-t-e-ll.",
+      "decodableWithin": "SP-prefixes"
+    },
+    {
+      "id": "sp-pf-15",
+      "skillId": "SP-prefixes",
+      "itemType": "build_word",
+      "difficulty": 2,
+      "stem": "Build the word you hear.",
+      "displayWord": "repack",
+      "audioText": "repack",
+      "graphemes": [
+        "r",
+        "e",
+        "p",
+        "a",
+        "ck"
+      ],
+      "distractorGraphemes": [
+        "bb",
+        "tt",
+        "nn"
+      ],
+      "missedConceptOnFail": "prefix",
+      "rationale": "repack = r-e-p-a-ck.",
+      "decodableWithin": "SP-prefixes"
+    },
+    {
+      "id": "sp-pf-16",
+      "skillId": "SP-prefixes",
+      "itemType": "build_word",
+      "difficulty": 2,
+      "stem": "Build the word you hear.",
+      "displayWord": "rerun",
+      "audioText": "rerun",
+      "graphemes": [
+        "r",
+        "er",
+        "u",
+        "n"
+      ],
+      "distractorGraphemes": [
+        "bb",
+        "tt",
+        "nn"
+      ],
+      "missedConceptOnFail": "prefix",
+      "rationale": "rerun = r-er-u-n.",
+      "decodableWithin": "SP-prefixes"
+    },
+    {
+      "id": "sp-pf-17",
+      "skillId": "SP-prefixes",
+      "itemType": "build_word",
+      "difficulty": 3,
+      "stem": "Build the word you hear.",
+      "displayWord": "reheat",
+      "audioText": "reheat",
+      "graphemes": [
+        "r",
+        "e",
+        "h",
+        "ea",
+        "t"
+      ],
+      "distractorGraphemes": [
+        "bb",
+        "tt",
+        "nn",
+        "pp"
+      ],
+      "missedConceptOnFail": "prefix",
+      "rationale": "reheat = r-e-h-ea-t.",
+      "decodableWithin": "SP-prefixes"
+    },
+    {
+      "id": "sp-pf-18",
+      "skillId": "SP-prefixes",
+      "itemType": "build_word",
+      "difficulty": 3,
+      "stem": "Build the word you hear.",
+      "displayWord": "distrust",
+      "audioText": "distrust",
+      "graphemes": [
+        "d",
+        "i",
+        "s",
+        "t",
+        "r",
+        "u",
+        "s",
+        "t"
+      ],
+      "distractorGraphemes": [
+        "bb",
+        "tt",
+        "nn",
+        "pp"
+      ],
+      "missedConceptOnFail": "prefix",
+      "rationale": "distrust = d-i-s-t-r-u-s-t.",
+      "decodableWithin": "SP-prefixes"
+    },
+    {
+      "id": "sp-pf-19",
+      "skillId": "SP-prefixes",
+      "itemType": "build_word",
+      "difficulty": 3,
+      "stem": "Build the word you hear.",
+      "displayWord": "dismiss",
+      "audioText": "dismiss",
+      "graphemes": [
+        "d",
+        "i",
+        "s",
+        "m",
+        "i",
+        "ss"
+      ],
+      "distractorGraphemes": [
+        "bb",
+        "tt",
+        "nn",
+        "pp"
+      ],
+      "missedConceptOnFail": "prefix",
+      "rationale": "dismiss = d-i-s-m-i-ss.",
+      "decodableWithin": "SP-prefixes"
+    },
+    {
+      "id": "sp-pf-20",
+      "skillId": "SP-prefixes",
+      "itemType": "build_word",
+      "difficulty": 3,
+      "stem": "Build the word you hear.",
+      "displayWord": "discuss",
+      "audioText": "discuss",
+      "graphemes": [
+        "d",
+        "i",
+        "s",
+        "c",
+        "u",
+        "ss"
+      ],
+      "distractorGraphemes": [
+        "bb",
+        "tt",
+        "nn",
+        "pp"
+      ],
+      "missedConceptOnFail": "prefix",
+      "rationale": "discuss = d-i-s-c-u-ss.",
+      "decodableWithin": "SP-prefixes"
+    },
+    {
+      "id": "sp-pf-21",
+      "skillId": "SP-prefixes",
+      "itemType": "build_word",
+      "difficulty": 3,
+      "stem": "Build the word you hear.",
+      "displayWord": "mistrust",
+      "audioText": "mistrust",
+      "graphemes": [
+        "m",
+        "i",
+        "s",
+        "t",
+        "r",
+        "u",
+        "s",
+        "t"
+      ],
+      "distractorGraphemes": [
+        "bb",
+        "tt",
+        "nn",
+        "pp"
+      ],
+      "missedConceptOnFail": "prefix",
+      "rationale": "mistrust = m-i-s-t-r-u-s-t.",
+      "decodableWithin": "SP-prefixes"
+    },
+    {
+      "id": "sp-pf-22",
+      "skillId": "SP-prefixes",
+      "itemType": "build_word",
+      "difficulty": 2,
+      "stem": "Build the word you hear.",
+      "displayWord": "misfit",
+      "audioText": "misfit",
+      "graphemes": [
+        "m",
+        "i",
+        "s",
+        "f",
+        "i",
+        "t"
+      ],
+      "distractorGraphemes": [
+        "bb",
+        "tt",
+        "nn"
+      ],
+      "missedConceptOnFail": "prefix",
+      "rationale": "misfit = m-i-s-f-i-t.",
+      "decodableWithin": "SP-prefixes"
+    },
+    {
+      "id": "sp-pf-23",
+      "skillId": "SP-prefixes",
+      "itemType": "build_word",
+      "difficulty": 2,
+      "stem": "Build the word you hear.",
+      "displayWord": "mishap",
+      "audioText": "mishap",
+      "graphemes": [
+        "m",
+        "i",
+        "sh",
+        "a",
+        "p"
+      ],
+      "distractorGraphemes": [
+        "bb",
+        "tt",
+        "nn"
+      ],
+      "missedConceptOnFail": "prefix",
+      "rationale": "mishap = m-i-sh-a-p.",
+      "decodableWithin": "SP-prefixes"
+    },
+    {
+      "id": "sp-pf-24",
+      "skillId": "SP-prefixes",
+      "itemType": "build_word",
+      "difficulty": 2,
+      "stem": "Build the word you hear.",
+      "displayWord": "nonstop",
+      "audioText": "nonstop",
+      "graphemes": [
+        "n",
+        "o",
+        "n",
+        "s",
+        "t",
+        "o",
+        "p"
+      ],
+      "distractorGraphemes": [
+        "bb",
+        "tt",
+        "nn"
+      ],
+      "missedConceptOnFail": "prefix",
+      "rationale": "nonstop = n-o-n-s-t-o-p.",
+      "decodableWithin": "SP-prefixes"
+    },
+    {
+      "id": "sp-pf-25",
+      "skillId": "SP-prefixes",
+      "itemType": "build_word",
+      "difficulty": 2,
+      "stem": "Build the word you hear.",
+      "displayWord": "nonfat",
+      "audioText": "nonfat",
+      "graphemes": [
+        "n",
+        "o",
+        "n",
+        "f",
+        "a",
+        "t"
+      ],
+      "distractorGraphemes": [
+        "bb",
+        "tt",
+        "nn"
+      ],
+      "missedConceptOnFail": "prefix",
+      "rationale": "nonfat = n-o-n-f-a-t.",
+      "decodableWithin": "SP-prefixes"
+    },
+    {
+      "id": "sp-pf-26",
+      "skillId": "SP-prefixes",
+      "itemType": "build_word",
+      "difficulty": 2,
+      "stem": "Build the word you hear.",
+      "displayWord": "preset",
+      "audioText": "preset",
+      "graphemes": [
+        "p",
+        "r",
+        "e",
+        "s",
+        "e",
+        "t"
+      ],
+      "distractorGraphemes": [
+        "bb",
+        "tt",
+        "nn"
+      ],
+      "missedConceptOnFail": "prefix",
+      "rationale": "preset = p-r-e-s-e-t.",
+      "decodableWithin": "SP-prefixes"
+    }
+  ],
+  "lessons": {
+    "SP-prefixes": {
+      "iCanStatement": "I can spell words that start with a prefix.",
+      "explanation": "Prefixes are just added to the front — the base word does not change its spelling: un + happy = unhappy, mis + trust = mistrust. Build the prefix, then the base word.",
+      "workedExamples": [
+        {
+          "text": "unlock",
+          "note": "un + lock — spell the base lock as usual"
+        },
+        {
+          "text": "nonstop",
+          "note": "non + stop"
+        }
+      ]
+    }
+  }
+}

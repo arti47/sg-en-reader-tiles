@@ -1,0 +1,702 @@
+{
+  "packId": "phonics-L12-prefixes",
+  "strand": "phonics",
+  "skillIds": [
+    "PH-prefixes"
+  ],
+  "version": 1,
+  "items": [
+    {
+      "id": "ph-pf-01",
+      "skillId": "PH-prefixes",
+      "itemType": "decode_choice",
+      "difficulty": 1,
+      "stem": "Tap the word you hear.",
+      "audioText": "undo",
+      "choices": [
+        {
+          "id": "a",
+          "label": "undo"
+        },
+        {
+          "id": "b",
+          "label": "unfit"
+        },
+        {
+          "id": "c",
+          "label": "unlock"
+        }
+      ],
+      "correctChoiceId": "a",
+      "missedConceptOnFail": "prefix",
+      "rationale": "undo — read the prefix, then the base word.",
+      "decodableWithin": "PH-prefixes"
+    },
+    {
+      "id": "ph-pf-02",
+      "skillId": "PH-prefixes",
+      "itemType": "decode_choice",
+      "difficulty": 1,
+      "stem": "Tap the word you hear.",
+      "audioText": "unfit",
+      "choices": [
+        {
+          "id": "a",
+          "label": "unzip"
+        },
+        {
+          "id": "b",
+          "label": "unfit"
+        },
+        {
+          "id": "c",
+          "label": "unpack"
+        }
+      ],
+      "correctChoiceId": "b",
+      "missedConceptOnFail": "prefix",
+      "rationale": "unfit — read the prefix, then the base word.",
+      "decodableWithin": "PH-prefixes"
+    },
+    {
+      "id": "ph-pf-03",
+      "skillId": "PH-prefixes",
+      "itemType": "decode_choice",
+      "difficulty": 1,
+      "stem": "Tap the word you hear.",
+      "audioText": "unzip",
+      "choices": [
+        {
+          "id": "a",
+          "label": "unlock"
+        },
+        {
+          "id": "b",
+          "label": "undid"
+        },
+        {
+          "id": "c",
+          "label": "unzip"
+        }
+      ],
+      "correctChoiceId": "c",
+      "missedConceptOnFail": "prefix",
+      "rationale": "unzip — read the prefix, then the base word.",
+      "decodableWithin": "PH-prefixes"
+    },
+    {
+      "id": "ph-pf-04",
+      "skillId": "PH-prefixes",
+      "itemType": "decode_choice",
+      "difficulty": 2,
+      "stem": "Tap the word you hear.",
+      "audioText": "unlock",
+      "choices": [
+        {
+          "id": "a",
+          "label": "unlock"
+        },
+        {
+          "id": "b",
+          "label": "unpack"
+        },
+        {
+          "id": "c",
+          "label": "unwell"
+        }
+      ],
+      "correctChoiceId": "a",
+      "missedConceptOnFail": "prefix",
+      "rationale": "unlock — read the prefix, then the base word.",
+      "decodableWithin": "PH-prefixes"
+    },
+    {
+      "id": "ph-pf-05",
+      "skillId": "PH-prefixes",
+      "itemType": "decode_choice",
+      "difficulty": 2,
+      "stem": "Tap the word you hear.",
+      "audioText": "unpack",
+      "choices": [
+        {
+          "id": "a",
+          "label": "undid"
+        },
+        {
+          "id": "b",
+          "label": "unpack"
+        },
+        {
+          "id": "c",
+          "label": "unlit"
+        }
+      ],
+      "correctChoiceId": "b",
+      "missedConceptOnFail": "prefix",
+      "rationale": "unpack — read the prefix, then the base word.",
+      "decodableWithin": "PH-prefixes"
+    },
+    {
+      "id": "ph-pf-06",
+      "skillId": "PH-prefixes",
+      "itemType": "decode_choice",
+      "difficulty": 2,
+      "stem": "Tap the word you hear.",
+      "audioText": "undid",
+      "choices": [
+        {
+          "id": "a",
+          "label": "unwell"
+        },
+        {
+          "id": "b",
+          "label": "unhappy"
+        },
+        {
+          "id": "c",
+          "label": "undid"
+        }
+      ],
+      "correctChoiceId": "c",
+      "missedConceptOnFail": "prefix",
+      "rationale": "undid — read the prefix, then the base word.",
+      "decodableWithin": "PH-prefixes"
+    },
+    {
+      "id": "ph-pf-07",
+      "skillId": "PH-prefixes",
+      "itemType": "decode_choice",
+      "difficulty": 2,
+      "stem": "Tap the word you hear.",
+      "audioText": "unwell",
+      "choices": [
+        {
+          "id": "a",
+          "label": "unwell"
+        },
+        {
+          "id": "b",
+          "label": "unlit"
+        },
+        {
+          "id": "c",
+          "label": "unpin"
+        }
+      ],
+      "correctChoiceId": "a",
+      "missedConceptOnFail": "prefix",
+      "rationale": "unwell — read the prefix, then the base word.",
+      "decodableWithin": "PH-prefixes"
+    },
+    {
+      "id": "ph-pf-08",
+      "skillId": "PH-prefixes",
+      "itemType": "decode_choice",
+      "difficulty": 2,
+      "stem": "Tap the word you hear.",
+      "audioText": "unlit",
+      "choices": [
+        {
+          "id": "a",
+          "label": "unhappy"
+        },
+        {
+          "id": "b",
+          "label": "unlit"
+        },
+        {
+          "id": "c",
+          "label": "redo"
+        }
+      ],
+      "correctChoiceId": "b",
+      "missedConceptOnFail": "prefix",
+      "rationale": "unlit — read the prefix, then the base word.",
+      "decodableWithin": "PH-prefixes"
+    },
+    {
+      "id": "ph-pf-09",
+      "skillId": "PH-prefixes",
+      "itemType": "decode_choice",
+      "difficulty": 3,
+      "stem": "Tap the word you hear.",
+      "audioText": "unhappy",
+      "choices": [
+        {
+          "id": "a",
+          "label": "unpin"
+        },
+        {
+          "id": "b",
+          "label": "refill"
+        },
+        {
+          "id": "c",
+          "label": "unhappy"
+        }
+      ],
+      "correctChoiceId": "c",
+      "missedConceptOnFail": "prefix",
+      "rationale": "unhappy — read the prefix, then the base word.",
+      "decodableWithin": "PH-prefixes"
+    },
+    {
+      "id": "ph-pf-10",
+      "skillId": "PH-prefixes",
+      "itemType": "decode_choice",
+      "difficulty": 1,
+      "stem": "Tap the word you hear.",
+      "audioText": "unpin",
+      "choices": [
+        {
+          "id": "a",
+          "label": "unpin"
+        },
+        {
+          "id": "b",
+          "label": "redo"
+        },
+        {
+          "id": "c",
+          "label": "reset"
+        }
+      ],
+      "correctChoiceId": "a",
+      "missedConceptOnFail": "prefix",
+      "rationale": "unpin — read the prefix, then the base word.",
+      "decodableWithin": "PH-prefixes"
+    },
+    {
+      "id": "ph-pf-11",
+      "skillId": "PH-prefixes",
+      "itemType": "decode_choice",
+      "difficulty": 1,
+      "stem": "Tap the word you hear.",
+      "audioText": "redo",
+      "choices": [
+        {
+          "id": "a",
+          "label": "refill"
+        },
+        {
+          "id": "b",
+          "label": "redo"
+        },
+        {
+          "id": "c",
+          "label": "retell"
+        }
+      ],
+      "correctChoiceId": "b",
+      "missedConceptOnFail": "prefix",
+      "rationale": "redo — read the prefix, then the base word.",
+      "decodableWithin": "PH-prefixes"
+    },
+    {
+      "id": "ph-pf-12",
+      "skillId": "PH-prefixes",
+      "itemType": "decode_choice",
+      "difficulty": 2,
+      "stem": "Tap the word you hear.",
+      "audioText": "refill",
+      "choices": [
+        {
+          "id": "a",
+          "label": "reset"
+        },
+        {
+          "id": "b",
+          "label": "repack"
+        },
+        {
+          "id": "c",
+          "label": "refill"
+        }
+      ],
+      "correctChoiceId": "c",
+      "missedConceptOnFail": "prefix",
+      "rationale": "refill — read the prefix, then the base word.",
+      "decodableWithin": "PH-prefixes"
+    },
+    {
+      "id": "ph-pf-13",
+      "skillId": "PH-prefixes",
+      "itemType": "decode_choice",
+      "difficulty": 2,
+      "stem": "Tap the word you hear.",
+      "audioText": "reset",
+      "choices": [
+        {
+          "id": "a",
+          "label": "reset"
+        },
+        {
+          "id": "b",
+          "label": "retell"
+        },
+        {
+          "id": "c",
+          "label": "rerun"
+        }
+      ],
+      "correctChoiceId": "a",
+      "missedConceptOnFail": "prefix",
+      "rationale": "reset — read the prefix, then the base word.",
+      "decodableWithin": "PH-prefixes"
+    },
+    {
+      "id": "ph-pf-14",
+      "skillId": "PH-prefixes",
+      "itemType": "decode_choice",
+      "difficulty": 2,
+      "stem": "Tap the word you hear.",
+      "audioText": "retell",
+      "choices": [
+        {
+          "id": "a",
+          "label": "repack"
+        },
+        {
+          "id": "b",
+          "label": "retell"
+        },
+        {
+          "id": "c",
+          "label": "reheat"
+        }
+      ],
+      "correctChoiceId": "b",
+      "missedConceptOnFail": "prefix",
+      "rationale": "retell — read the prefix, then the base word.",
+      "decodableWithin": "PH-prefixes"
+    },
+    {
+      "id": "ph-pf-15",
+      "skillId": "PH-prefixes",
+      "itemType": "decode_choice",
+      "difficulty": 2,
+      "stem": "Tap the word you hear.",
+      "audioText": "repack",
+      "choices": [
+        {
+          "id": "a",
+          "label": "rerun"
+        },
+        {
+          "id": "b",
+          "label": "distrust"
+        },
+        {
+          "id": "c",
+          "label": "repack"
+        }
+      ],
+      "correctChoiceId": "c",
+      "missedConceptOnFail": "prefix",
+      "rationale": "repack — read the prefix, then the base word.",
+      "decodableWithin": "PH-prefixes"
+    },
+    {
+      "id": "ph-pf-16",
+      "skillId": "PH-prefixes",
+      "itemType": "decode_choice",
+      "difficulty": 2,
+      "stem": "Tap the word you hear.",
+      "audioText": "rerun",
+      "choices": [
+        {
+          "id": "a",
+          "label": "rerun"
+        },
+        {
+          "id": "b",
+          "label": "reheat"
+        },
+        {
+          "id": "c",
+          "label": "dismiss"
+        }
+      ],
+      "correctChoiceId": "a",
+      "missedConceptOnFail": "prefix",
+      "rationale": "rerun — read the prefix, then the base word.",
+      "decodableWithin": "PH-prefixes"
+    },
+    {
+      "id": "ph-pf-17",
+      "skillId": "PH-prefixes",
+      "itemType": "decode_choice",
+      "difficulty": 3,
+      "stem": "Tap the word you hear.",
+      "audioText": "reheat",
+      "choices": [
+        {
+          "id": "a",
+          "label": "distrust"
+        },
+        {
+          "id": "b",
+          "label": "reheat"
+        },
+        {
+          "id": "c",
+          "label": "discuss"
+        }
+      ],
+      "correctChoiceId": "b",
+      "missedConceptOnFail": "prefix",
+      "rationale": "reheat — read the prefix, then the base word.",
+      "decodableWithin": "PH-prefixes"
+    },
+    {
+      "id": "ph-pf-18",
+      "skillId": "PH-prefixes",
+      "itemType": "decode_choice",
+      "difficulty": 3,
+      "stem": "Tap the word you hear.",
+      "audioText": "distrust",
+      "choices": [
+        {
+          "id": "a",
+          "label": "dismiss"
+        },
+        {
+          "id": "b",
+          "label": "mistrust"
+        },
+        {
+          "id": "c",
+          "label": "distrust"
+        }
+      ],
+      "correctChoiceId": "c",
+      "missedConceptOnFail": "prefix",
+      "rationale": "distrust — read the prefix, then the base word.",
+      "decodableWithin": "PH-prefixes"
+    },
+    {
+      "id": "ph-pf-19",
+      "skillId": "PH-prefixes",
+      "itemType": "decode_choice",
+      "difficulty": 3,
+      "stem": "Tap the word you hear.",
+      "audioText": "dismiss",
+      "choices": [
+        {
+          "id": "a",
+          "label": "dismiss"
+        },
+        {
+          "id": "b",
+          "label": "discuss"
+        },
+        {
+          "id": "c",
+          "label": "misfit"
+        }
+      ],
+      "correctChoiceId": "a",
+      "missedConceptOnFail": "prefix",
+      "rationale": "dismiss — read the prefix, then the base word.",
+      "decodableWithin": "PH-prefixes"
+    },
+    {
+      "id": "ph-pf-20",
+      "skillId": "PH-prefixes",
+      "itemType": "decode_choice",
+      "difficulty": 3,
+      "stem": "Tap the word you hear.",
+      "audioText": "discuss",
+      "choices": [
+        {
+          "id": "a",
+          "label": "mistrust"
+        },
+        {
+          "id": "b",
+          "label": "discuss"
+        },
+        {
+          "id": "c",
+          "label": "mishap"
+        }
+      ],
+      "correctChoiceId": "b",
+      "missedConceptOnFail": "prefix",
+      "rationale": "discuss — read the prefix, then the base word.",
+      "decodableWithin": "PH-prefixes"
+    },
+    {
+      "id": "ph-pf-21",
+      "skillId": "PH-prefixes",
+      "itemType": "decode_choice",
+      "difficulty": 3,
+      "stem": "Tap the word you hear.",
+      "audioText": "mistrust",
+      "choices": [
+        {
+          "id": "a",
+          "label": "misfit"
+        },
+        {
+          "id": "b",
+          "label": "nonstop"
+        },
+        {
+          "id": "c",
+          "label": "mistrust"
+        }
+      ],
+      "correctChoiceId": "c",
+      "missedConceptOnFail": "prefix",
+      "rationale": "mistrust — read the prefix, then the base word.",
+      "decodableWithin": "PH-prefixes"
+    },
+    {
+      "id": "ph-pf-22",
+      "skillId": "PH-prefixes",
+      "itemType": "decode_choice",
+      "difficulty": 2,
+      "stem": "Tap the word you hear.",
+      "audioText": "misfit",
+      "choices": [
+        {
+          "id": "a",
+          "label": "misfit"
+        },
+        {
+          "id": "b",
+          "label": "mishap"
+        },
+        {
+          "id": "c",
+          "label": "nonfat"
+        }
+      ],
+      "correctChoiceId": "a",
+      "missedConceptOnFail": "prefix",
+      "rationale": "misfit — read the prefix, then the base word.",
+      "decodableWithin": "PH-prefixes"
+    },
+    {
+      "id": "ph-pf-23",
+      "skillId": "PH-prefixes",
+      "itemType": "decode_choice",
+      "difficulty": 2,
+      "stem": "Tap the word you hear.",
+      "audioText": "mishap",
+      "choices": [
+        {
+          "id": "a",
+          "label": "nonstop"
+        },
+        {
+          "id": "b",
+          "label": "mishap"
+        },
+        {
+          "id": "c",
+          "label": "preset"
+        }
+      ],
+      "correctChoiceId": "b",
+      "missedConceptOnFail": "prefix",
+      "rationale": "mishap — read the prefix, then the base word.",
+      "decodableWithin": "PH-prefixes"
+    },
+    {
+      "id": "ph-pf-24",
+      "skillId": "PH-prefixes",
+      "itemType": "decode_choice",
+      "difficulty": 2,
+      "stem": "Tap the word you hear.",
+      "audioText": "nonstop",
+      "choices": [
+        {
+          "id": "a",
+          "label": "nonfat"
+        },
+        {
+          "id": "b",
+          "label": "undo"
+        },
+        {
+          "id": "c",
+          "label": "nonstop"
+        }
+      ],
+      "correctChoiceId": "c",
+      "missedConceptOnFail": "prefix",
+      "rationale": "nonstop — read the prefix, then the base word.",
+      "decodableWithin": "PH-prefixes"
+    },
+    {
+      "id": "ph-pf-25",
+      "skillId": "PH-prefixes",
+      "itemType": "decode_choice",
+      "difficulty": 2,
+      "stem": "Tap the word you hear.",
+      "audioText": "nonfat",
+      "choices": [
+        {
+          "id": "a",
+          "label": "nonfat"
+        },
+        {
+          "id": "b",
+          "label": "preset"
+        },
+        {
+          "id": "c",
+          "label": "unfit"
+        }
+      ],
+      "correctChoiceId": "a",
+      "missedConceptOnFail": "prefix",
+      "rationale": "nonfat — read the prefix, then the base word.",
+      "decodableWithin": "PH-prefixes"
+    },
+    {
+      "id": "ph-pf-26",
+      "skillId": "PH-prefixes",
+      "itemType": "decode_choice",
+      "difficulty": 2,
+      "stem": "Tap the word you hear.",
+      "audioText": "preset",
+      "choices": [
+        {
+          "id": "a",
+          "label": "undo"
+        },
+        {
+          "id": "b",
+          "label": "preset"
+        },
+        {
+          "id": "c",
+          "label": "unzip"
+        }
+      ],
+      "correctChoiceId": "b",
+      "missedConceptOnFail": "prefix",
+      "rationale": "preset — read the prefix, then the base word.",
+      "decodableWithin": "PH-prefixes"
+    }
+  ],
+  "lessons": {
+    "PH-prefixes": {
+      "iCanStatement": "I can read words that start with a prefix.",
+      "explanation": "A prefix is a small part added to the START of a base word: un + do = undo, re + fill = refill, dis + like = dislike. To read a long word, cover the prefix, read the base word you know, then add the prefix back on.",
+      "workedExamples": [
+        {
+          "text": "undo",
+          "note": "un + do → undo (not do)"
+        },
+        {
+          "text": "refill",
+          "note": "re + fill → refill (fill again)"
+        }
+      ]
+    }
+  }
+}

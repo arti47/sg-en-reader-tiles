@@ -1,0 +1,730 @@
+{
+  "packId": "spelling-L13-c-le",
+  "strand": "spelling",
+  "skillIds": [
+    "SP-c-le"
+  ],
+  "version": 1,
+  "items": [
+    {
+      "id": "sp-cle-01",
+      "skillId": "SP-c-le",
+      "itemType": "build_word",
+      "difficulty": 1,
+      "stem": "Build the word you hear.",
+      "displayWord": "little",
+      "audioText": "little",
+      "graphemes": [
+        "l",
+        "i",
+        "tt",
+        "le"
+      ],
+      "distractorGraphemes": [
+        "bb",
+        "nn"
+      ],
+      "missedConceptOnFail": "c-le",
+      "rationale": "little = l-i-tt-le.",
+      "decodableWithin": "SP-c-le"
+    },
+    {
+      "id": "sp-cle-02",
+      "skillId": "SP-c-le",
+      "itemType": "build_word",
+      "difficulty": 1,
+      "stem": "Build the word you hear.",
+      "displayWord": "apple",
+      "audioText": "apple",
+      "graphemes": [
+        "a",
+        "pp",
+        "le"
+      ],
+      "distractorGraphemes": [
+        "bb",
+        "tt"
+      ],
+      "missedConceptOnFail": "c-le",
+      "rationale": "apple = a-pp-le.",
+      "decodableWithin": "SP-c-le"
+    },
+    {
+      "id": "sp-cle-03",
+      "skillId": "SP-c-le",
+      "itemType": "build_word",
+      "difficulty": 2,
+      "stem": "Build the word you hear.",
+      "displayWord": "middle",
+      "audioText": "middle",
+      "graphemes": [
+        "m",
+        "i",
+        "dd",
+        "le"
+      ],
+      "distractorGraphemes": [
+        "bb",
+        "tt",
+        "nn"
+      ],
+      "missedConceptOnFail": "c-le",
+      "rationale": "middle = m-i-dd-le.",
+      "decodableWithin": "SP-c-le"
+    },
+    {
+      "id": "sp-cle-04",
+      "skillId": "SP-c-le",
+      "itemType": "build_word",
+      "difficulty": 2,
+      "stem": "Build the word you hear.",
+      "displayWord": "bottle",
+      "audioText": "bottle",
+      "graphemes": [
+        "b",
+        "o",
+        "tt",
+        "le"
+      ],
+      "distractorGraphemes": [
+        "bb",
+        "nn",
+        "pp"
+      ],
+      "missedConceptOnFail": "c-le",
+      "rationale": "bottle = b-o-tt-le.",
+      "decodableWithin": "SP-c-le"
+    },
+    {
+      "id": "sp-cle-05",
+      "skillId": "SP-c-le",
+      "itemType": "build_word",
+      "difficulty": 2,
+      "stem": "Build the word you hear.",
+      "displayWord": "puzzle",
+      "audioText": "puzzle",
+      "graphemes": [
+        "p",
+        "u",
+        "zz",
+        "le"
+      ],
+      "distractorGraphemes": [
+        "bb",
+        "tt",
+        "nn"
+      ],
+      "missedConceptOnFail": "c-le",
+      "rationale": "puzzle = p-u-zz-le.",
+      "decodableWithin": "SP-c-le"
+    },
+    {
+      "id": "sp-cle-06",
+      "skillId": "SP-c-le",
+      "itemType": "build_word",
+      "difficulty": 2,
+      "stem": "Build the word you hear.",
+      "displayWord": "giggle",
+      "audioText": "giggle",
+      "graphemes": [
+        "g",
+        "i",
+        "gg",
+        "le"
+      ],
+      "distractorGraphemes": [
+        "bb",
+        "tt",
+        "nn"
+      ],
+      "missedConceptOnFail": "c-le",
+      "rationale": "giggle = g-i-gg-le.",
+      "decodableWithin": "SP-c-le"
+    },
+    {
+      "id": "sp-cle-07",
+      "skillId": "SP-c-le",
+      "itemType": "build_word",
+      "difficulty": 2,
+      "stem": "Build the word you hear.",
+      "displayWord": "wiggle",
+      "audioText": "wiggle",
+      "graphemes": [
+        "w",
+        "i",
+        "gg",
+        "le"
+      ],
+      "distractorGraphemes": [
+        "bb",
+        "tt",
+        "nn"
+      ],
+      "missedConceptOnFail": "c-le",
+      "rationale": "wiggle = w-i-gg-le.",
+      "decodableWithin": "SP-c-le"
+    },
+    {
+      "id": "sp-cle-08",
+      "skillId": "SP-c-le",
+      "itemType": "build_word",
+      "difficulty": 2,
+      "stem": "Build the word you hear.",
+      "displayWord": "bubble",
+      "audioText": "bubble",
+      "graphemes": [
+        "b",
+        "u",
+        "bb",
+        "le"
+      ],
+      "distractorGraphemes": [
+        "tt",
+        "nn",
+        "pp"
+      ],
+      "missedConceptOnFail": "c-le",
+      "rationale": "bubble = b-u-bb-le.",
+      "decodableWithin": "SP-c-le"
+    },
+    {
+      "id": "sp-cle-09",
+      "skillId": "SP-c-le",
+      "itemType": "build_word",
+      "difficulty": 3,
+      "stem": "Build the word you hear.",
+      "displayWord": "pebble",
+      "audioText": "pebble",
+      "graphemes": [
+        "p",
+        "e",
+        "bb",
+        "le"
+      ],
+      "distractorGraphemes": [
+        "tt",
+        "nn",
+        "pp",
+        "dd"
+      ],
+      "missedConceptOnFail": "c-le",
+      "rationale": "pebble = p-e-bb-le.",
+      "decodableWithin": "SP-c-le"
+    },
+    {
+      "id": "sp-cle-10",
+      "skillId": "SP-c-le",
+      "itemType": "build_word",
+      "difficulty": 2,
+      "stem": "Build the word you hear.",
+      "displayWord": "saddle",
+      "audioText": "saddle",
+      "graphemes": [
+        "s",
+        "a",
+        "dd",
+        "le"
+      ],
+      "distractorGraphemes": [
+        "bb",
+        "tt",
+        "nn"
+      ],
+      "missedConceptOnFail": "c-le",
+      "rationale": "saddle = s-a-dd-le.",
+      "decodableWithin": "SP-c-le"
+    },
+    {
+      "id": "sp-cle-11",
+      "skillId": "SP-c-le",
+      "itemType": "build_word",
+      "difficulty": 2,
+      "stem": "Build the word you hear.",
+      "displayWord": "paddle",
+      "audioText": "paddle",
+      "graphemes": [
+        "p",
+        "a",
+        "dd",
+        "le"
+      ],
+      "distractorGraphemes": [
+        "bb",
+        "tt",
+        "nn"
+      ],
+      "missedConceptOnFail": "c-le",
+      "rationale": "paddle = p-a-dd-le.",
+      "decodableWithin": "SP-c-le"
+    },
+    {
+      "id": "sp-cle-12",
+      "skillId": "SP-c-le",
+      "itemType": "build_word",
+      "difficulty": 2,
+      "stem": "Build the word you hear.",
+      "displayWord": "kettle",
+      "audioText": "kettle",
+      "graphemes": [
+        "k",
+        "e",
+        "tt",
+        "le"
+      ],
+      "distractorGraphemes": [
+        "bb",
+        "nn",
+        "pp"
+      ],
+      "missedConceptOnFail": "c-le",
+      "rationale": "kettle = k-e-tt-le.",
+      "decodableWithin": "SP-c-le"
+    },
+    {
+      "id": "sp-cle-13",
+      "skillId": "SP-c-le",
+      "itemType": "build_word",
+      "difficulty": 3,
+      "stem": "Build the word you hear.",
+      "displayWord": "settle",
+      "audioText": "settle",
+      "graphemes": [
+        "s",
+        "e",
+        "tt",
+        "le"
+      ],
+      "distractorGraphemes": [
+        "bb",
+        "nn",
+        "pp",
+        "dd"
+      ],
+      "missedConceptOnFail": "c-le",
+      "rationale": "settle = s-e-tt-le.",
+      "decodableWithin": "SP-c-le"
+    },
+    {
+      "id": "sp-cle-14",
+      "skillId": "SP-c-le",
+      "itemType": "build_word",
+      "difficulty": 2,
+      "stem": "Build the word you hear.",
+      "displayWord": "tickle",
+      "audioText": "tickle",
+      "graphemes": [
+        "t",
+        "i",
+        "ck",
+        "le"
+      ],
+      "distractorGraphemes": [
+        "bb",
+        "tt",
+        "nn"
+      ],
+      "missedConceptOnFail": "c-le",
+      "rationale": "tickle = t-i-ck-le.",
+      "decodableWithin": "SP-c-le"
+    },
+    {
+      "id": "sp-cle-15",
+      "skillId": "SP-c-le",
+      "itemType": "build_word",
+      "difficulty": 2,
+      "stem": "Build the word you hear.",
+      "displayWord": "pickle",
+      "audioText": "pickle",
+      "graphemes": [
+        "p",
+        "i",
+        "ck",
+        "le"
+      ],
+      "distractorGraphemes": [
+        "bb",
+        "tt",
+        "nn"
+      ],
+      "missedConceptOnFail": "c-le",
+      "rationale": "pickle = p-i-ck-le.",
+      "decodableWithin": "SP-c-le"
+    },
+    {
+      "id": "sp-cle-16",
+      "skillId": "SP-c-le",
+      "itemType": "build_word",
+      "difficulty": 2,
+      "stem": "Build the word you hear.",
+      "displayWord": "candle",
+      "audioText": "candle",
+      "graphemes": [
+        "c",
+        "a",
+        "n",
+        "d",
+        "le"
+      ],
+      "distractorGraphemes": [
+        "bb",
+        "tt",
+        "nn"
+      ],
+      "missedConceptOnFail": "c-le",
+      "rationale": "candle = c-a-n-d-le.",
+      "decodableWithin": "SP-c-le"
+    },
+    {
+      "id": "sp-cle-17",
+      "skillId": "SP-c-le",
+      "itemType": "build_word",
+      "difficulty": 2,
+      "stem": "Build the word you hear.",
+      "displayWord": "handle",
+      "audioText": "handle",
+      "graphemes": [
+        "h",
+        "a",
+        "n",
+        "d",
+        "le"
+      ],
+      "distractorGraphemes": [
+        "bb",
+        "tt",
+        "nn"
+      ],
+      "missedConceptOnFail": "c-le",
+      "rationale": "handle = h-a-n-d-le.",
+      "decodableWithin": "SP-c-le"
+    },
+    {
+      "id": "sp-cle-18",
+      "skillId": "SP-c-le",
+      "itemType": "build_word",
+      "difficulty": 3,
+      "stem": "Build the word you hear.",
+      "displayWord": "jungle",
+      "audioText": "jungle",
+      "graphemes": [
+        "j",
+        "u",
+        "n",
+        "g",
+        "le"
+      ],
+      "distractorGraphemes": [
+        "bb",
+        "tt",
+        "nn",
+        "pp"
+      ],
+      "missedConceptOnFail": "c-le",
+      "rationale": "jungle = j-u-n-g-le.",
+      "decodableWithin": "SP-c-le"
+    },
+    {
+      "id": "sp-cle-19",
+      "skillId": "SP-c-le",
+      "itemType": "build_word",
+      "difficulty": 3,
+      "stem": "Build the word you hear.",
+      "displayWord": "simple",
+      "audioText": "simple",
+      "graphemes": [
+        "s",
+        "i",
+        "m",
+        "p",
+        "le"
+      ],
+      "distractorGraphemes": [
+        "bb",
+        "tt",
+        "nn",
+        "pp"
+      ],
+      "missedConceptOnFail": "c-le",
+      "rationale": "simple = s-i-m-p-le.",
+      "decodableWithin": "SP-c-le"
+    },
+    {
+      "id": "sp-cle-20",
+      "skillId": "SP-c-le",
+      "itemType": "build_word",
+      "difficulty": 3,
+      "stem": "Build the word you hear.",
+      "displayWord": "sample",
+      "audioText": "sample",
+      "graphemes": [
+        "s",
+        "a",
+        "m",
+        "p",
+        "le"
+      ],
+      "distractorGraphemes": [
+        "bb",
+        "tt",
+        "nn",
+        "pp"
+      ],
+      "missedConceptOnFail": "c-le",
+      "rationale": "sample = s-a-m-p-le.",
+      "decodableWithin": "SP-c-le"
+    },
+    {
+      "id": "sp-cle-21",
+      "skillId": "SP-c-le",
+      "itemType": "build_word",
+      "difficulty": 2,
+      "stem": "Build the word you hear.",
+      "displayWord": "rattle",
+      "audioText": "rattle",
+      "graphemes": [
+        "r",
+        "a",
+        "tt",
+        "le"
+      ],
+      "distractorGraphemes": [
+        "bb",
+        "nn",
+        "pp"
+      ],
+      "missedConceptOnFail": "c-le",
+      "rationale": "rattle = r-a-tt-le.",
+      "decodableWithin": "SP-c-le"
+    },
+    {
+      "id": "sp-cle-22",
+      "skillId": "SP-c-le",
+      "itemType": "build_word",
+      "difficulty": 2,
+      "stem": "Build the word you hear.",
+      "displayWord": "cattle",
+      "audioText": "cattle",
+      "graphemes": [
+        "c",
+        "a",
+        "tt",
+        "le"
+      ],
+      "distractorGraphemes": [
+        "bb",
+        "nn",
+        "pp"
+      ],
+      "missedConceptOnFail": "c-le",
+      "rationale": "cattle = c-a-tt-le.",
+      "decodableWithin": "SP-c-le"
+    },
+    {
+      "id": "sp-cle-23",
+      "skillId": "SP-c-le",
+      "itemType": "build_word",
+      "difficulty": 3,
+      "stem": "Build the word you hear.",
+      "displayWord": "nozzle",
+      "audioText": "nozzle",
+      "graphemes": [
+        "n",
+        "o",
+        "zz",
+        "le"
+      ],
+      "distractorGraphemes": [
+        "bb",
+        "tt",
+        "nn",
+        "pp"
+      ],
+      "missedConceptOnFail": "c-le",
+      "rationale": "nozzle = n-o-zz-le.",
+      "decodableWithin": "SP-c-le"
+    },
+    {
+      "id": "sp-cle-24",
+      "skillId": "SP-c-le",
+      "itemType": "build_word",
+      "difficulty": 2,
+      "stem": "Build the word you hear.",
+      "displayWord": "tackle",
+      "audioText": "tackle",
+      "graphemes": [
+        "t",
+        "a",
+        "ck",
+        "le"
+      ],
+      "distractorGraphemes": [
+        "bb",
+        "tt",
+        "nn"
+      ],
+      "missedConceptOnFail": "c-le",
+      "rationale": "tackle = t-a-ck-le.",
+      "decodableWithin": "SP-c-le"
+    },
+    {
+      "id": "sp-cle-25",
+      "skillId": "SP-c-le",
+      "itemType": "build_word",
+      "difficulty": 3,
+      "stem": "Build the word you hear.",
+      "displayWord": "buckle",
+      "audioText": "buckle",
+      "graphemes": [
+        "b",
+        "u",
+        "ck",
+        "le"
+      ],
+      "distractorGraphemes": [
+        "bb",
+        "tt",
+        "nn",
+        "pp"
+      ],
+      "missedConceptOnFail": "c-le",
+      "rationale": "buckle = b-u-ck-le.",
+      "decodableWithin": "SP-c-le"
+    },
+    {
+      "id": "sp-cle-26",
+      "skillId": "SP-c-le",
+      "itemType": "build_word",
+      "difficulty": 3,
+      "stem": "Build the word you hear.",
+      "displayWord": "ripple",
+      "audioText": "ripple",
+      "graphemes": [
+        "r",
+        "i",
+        "pp",
+        "le"
+      ],
+      "distractorGraphemes": [
+        "bb",
+        "tt",
+        "nn",
+        "dd"
+      ],
+      "missedConceptOnFail": "c-le",
+      "rationale": "ripple = r-i-pp-le.",
+      "decodableWithin": "SP-c-le"
+    },
+    {
+      "id": "sp-cle-27",
+      "skillId": "SP-c-le",
+      "itemType": "build_word",
+      "difficulty": 3,
+      "stem": "Build the word you hear.",
+      "displayWord": "dazzle",
+      "audioText": "dazzle",
+      "graphemes": [
+        "d",
+        "a",
+        "zz",
+        "le"
+      ],
+      "distractorGraphemes": [
+        "bb",
+        "tt",
+        "nn",
+        "pp"
+      ],
+      "missedConceptOnFail": "c-le",
+      "rationale": "dazzle = d-a-zz-le.",
+      "decodableWithin": "SP-c-le"
+    },
+    {
+      "id": "sp-cle-28",
+      "skillId": "SP-c-le",
+      "itemType": "build_word",
+      "difficulty": 2,
+      "stem": "Build the word you hear.",
+      "displayWord": "cuddle",
+      "audioText": "cuddle",
+      "graphemes": [
+        "c",
+        "u",
+        "dd",
+        "le"
+      ],
+      "distractorGraphemes": [
+        "bb",
+        "tt",
+        "nn"
+      ],
+      "missedConceptOnFail": "c-le",
+      "rationale": "cuddle = c-u-dd-le.",
+      "decodableWithin": "SP-c-le"
+    },
+    {
+      "id": "sp-cle-29",
+      "skillId": "SP-c-le",
+      "itemType": "build_word",
+      "difficulty": 3,
+      "stem": "Build the word you hear.",
+      "displayWord": "muddle",
+      "audioText": "muddle",
+      "graphemes": [
+        "m",
+        "u",
+        "dd",
+        "le"
+      ],
+      "distractorGraphemes": [
+        "bb",
+        "tt",
+        "nn",
+        "pp"
+      ],
+      "missedConceptOnFail": "c-le",
+      "rationale": "muddle = m-u-dd-le.",
+      "decodableWithin": "SP-c-le"
+    },
+    {
+      "id": "sp-cle-30",
+      "skillId": "SP-c-le",
+      "itemType": "build_word",
+      "difficulty": 3,
+      "stem": "Build the word you hear.",
+      "displayWord": "dimple",
+      "audioText": "dimple",
+      "graphemes": [
+        "d",
+        "i",
+        "m",
+        "p",
+        "le"
+      ],
+      "distractorGraphemes": [
+        "bb",
+        "tt",
+        "nn",
+        "pp"
+      ],
+      "missedConceptOnFail": "c-le",
+      "rationale": "dimple = d-i-m-p-le.",
+      "decodableWithin": "SP-c-le"
+    }
+  ],
+  "lessons": {
+    "SP-c-le": {
+      "iCanStatement": "I can spell words that end in a consonant plus le.",
+      "explanation": "The /ul/ sound at the end of these words is spelt with the consonant + le. After a short vowel the consonant is often doubled: ap-ple, lit-tle, bub-ble. Build the first chunk, then the consonant and the 'le' tile.",
+      "workedExamples": [
+        {
+          "text": "apple",
+          "note": "a + pp + le — double p, then le"
+        },
+        {
+          "text": "candle",
+          "note": "c-a-n-d + le"
+        }
+      ]
+    }
+  }
+}

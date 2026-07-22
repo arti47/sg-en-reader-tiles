@@ -1,0 +1,806 @@
+{
+  "packId": "phonics-L13-c-le",
+  "strand": "phonics",
+  "skillIds": [
+    "PH-c-le"
+  ],
+  "version": 1,
+  "items": [
+    {
+      "id": "ph-cle-01",
+      "skillId": "PH-c-le",
+      "itemType": "decode_choice",
+      "difficulty": 1,
+      "stem": "Tap the word you hear.",
+      "audioText": "little",
+      "choices": [
+        {
+          "id": "a",
+          "label": "little"
+        },
+        {
+          "id": "b",
+          "label": "apple"
+        },
+        {
+          "id": "c",
+          "label": "puzzle"
+        }
+      ],
+      "correctChoiceId": "a",
+      "missedConceptOnFail": "c-le",
+      "rationale": "little — the ending \"le\" sounds like /ul/.",
+      "decodableWithin": "PH-c-le"
+    },
+    {
+      "id": "ph-cle-02",
+      "skillId": "PH-c-le",
+      "itemType": "decode_choice",
+      "difficulty": 1,
+      "stem": "Tap the word you hear.",
+      "audioText": "apple",
+      "choices": [
+        {
+          "id": "a",
+          "label": "middle"
+        },
+        {
+          "id": "b",
+          "label": "apple"
+        },
+        {
+          "id": "c",
+          "label": "giggle"
+        }
+      ],
+      "correctChoiceId": "b",
+      "missedConceptOnFail": "c-le",
+      "rationale": "apple — the ending \"le\" sounds like /ul/.",
+      "decodableWithin": "PH-c-le"
+    },
+    {
+      "id": "ph-cle-03",
+      "skillId": "PH-c-le",
+      "itemType": "decode_choice",
+      "difficulty": 2,
+      "stem": "Tap the word you hear.",
+      "audioText": "middle",
+      "choices": [
+        {
+          "id": "a",
+          "label": "bottle"
+        },
+        {
+          "id": "b",
+          "label": "wiggle"
+        },
+        {
+          "id": "c",
+          "label": "middle"
+        }
+      ],
+      "correctChoiceId": "c",
+      "missedConceptOnFail": "c-le",
+      "rationale": "middle — the ending \"le\" sounds like /ul/.",
+      "decodableWithin": "PH-c-le"
+    },
+    {
+      "id": "ph-cle-04",
+      "skillId": "PH-c-le",
+      "itemType": "decode_choice",
+      "difficulty": 2,
+      "stem": "Tap the word you hear.",
+      "audioText": "bottle",
+      "choices": [
+        {
+          "id": "a",
+          "label": "bottle"
+        },
+        {
+          "id": "b",
+          "label": "puzzle"
+        },
+        {
+          "id": "c",
+          "label": "bubble"
+        }
+      ],
+      "correctChoiceId": "a",
+      "missedConceptOnFail": "c-le",
+      "rationale": "bottle — the ending \"le\" sounds like /ul/.",
+      "decodableWithin": "PH-c-le"
+    },
+    {
+      "id": "ph-cle-05",
+      "skillId": "PH-c-le",
+      "itemType": "decode_choice",
+      "difficulty": 2,
+      "stem": "Tap the word you hear.",
+      "audioText": "puzzle",
+      "choices": [
+        {
+          "id": "a",
+          "label": "giggle"
+        },
+        {
+          "id": "b",
+          "label": "puzzle"
+        },
+        {
+          "id": "c",
+          "label": "pebble"
+        }
+      ],
+      "correctChoiceId": "b",
+      "missedConceptOnFail": "c-le",
+      "rationale": "puzzle — the ending \"le\" sounds like /ul/.",
+      "decodableWithin": "PH-c-le"
+    },
+    {
+      "id": "ph-cle-06",
+      "skillId": "PH-c-le",
+      "itemType": "decode_choice",
+      "difficulty": 2,
+      "stem": "Tap the word you hear.",
+      "audioText": "giggle",
+      "choices": [
+        {
+          "id": "a",
+          "label": "wiggle"
+        },
+        {
+          "id": "b",
+          "label": "saddle"
+        },
+        {
+          "id": "c",
+          "label": "giggle"
+        }
+      ],
+      "correctChoiceId": "c",
+      "missedConceptOnFail": "c-le",
+      "rationale": "giggle — the ending \"le\" sounds like /ul/.",
+      "decodableWithin": "PH-c-le"
+    },
+    {
+      "id": "ph-cle-07",
+      "skillId": "PH-c-le",
+      "itemType": "decode_choice",
+      "difficulty": 2,
+      "stem": "Tap the word you hear.",
+      "audioText": "wiggle",
+      "choices": [
+        {
+          "id": "a",
+          "label": "wiggle"
+        },
+        {
+          "id": "b",
+          "label": "bubble"
+        },
+        {
+          "id": "c",
+          "label": "paddle"
+        }
+      ],
+      "correctChoiceId": "a",
+      "missedConceptOnFail": "c-le",
+      "rationale": "wiggle — the ending \"le\" sounds like /ul/.",
+      "decodableWithin": "PH-c-le"
+    },
+    {
+      "id": "ph-cle-08",
+      "skillId": "PH-c-le",
+      "itemType": "decode_choice",
+      "difficulty": 2,
+      "stem": "Tap the word you hear.",
+      "audioText": "bubble",
+      "choices": [
+        {
+          "id": "a",
+          "label": "pebble"
+        },
+        {
+          "id": "b",
+          "label": "bubble"
+        },
+        {
+          "id": "c",
+          "label": "kettle"
+        }
+      ],
+      "correctChoiceId": "b",
+      "missedConceptOnFail": "c-le",
+      "rationale": "bubble — the ending \"le\" sounds like /ul/.",
+      "decodableWithin": "PH-c-le"
+    },
+    {
+      "id": "ph-cle-09",
+      "skillId": "PH-c-le",
+      "itemType": "decode_choice",
+      "difficulty": 3,
+      "stem": "Tap the word you hear.",
+      "audioText": "pebble",
+      "choices": [
+        {
+          "id": "a",
+          "label": "saddle"
+        },
+        {
+          "id": "b",
+          "label": "settle"
+        },
+        {
+          "id": "c",
+          "label": "pebble"
+        }
+      ],
+      "correctChoiceId": "c",
+      "missedConceptOnFail": "c-le",
+      "rationale": "pebble — the ending \"le\" sounds like /ul/.",
+      "decodableWithin": "PH-c-le"
+    },
+    {
+      "id": "ph-cle-10",
+      "skillId": "PH-c-le",
+      "itemType": "decode_choice",
+      "difficulty": 2,
+      "stem": "Tap the word you hear.",
+      "audioText": "saddle",
+      "choices": [
+        {
+          "id": "a",
+          "label": "saddle"
+        },
+        {
+          "id": "b",
+          "label": "paddle"
+        },
+        {
+          "id": "c",
+          "label": "tickle"
+        }
+      ],
+      "correctChoiceId": "a",
+      "missedConceptOnFail": "c-le",
+      "rationale": "saddle — the ending \"le\" sounds like /ul/.",
+      "decodableWithin": "PH-c-le"
+    },
+    {
+      "id": "ph-cle-11",
+      "skillId": "PH-c-le",
+      "itemType": "decode_choice",
+      "difficulty": 2,
+      "stem": "Tap the word you hear.",
+      "audioText": "paddle",
+      "choices": [
+        {
+          "id": "a",
+          "label": "kettle"
+        },
+        {
+          "id": "b",
+          "label": "paddle"
+        },
+        {
+          "id": "c",
+          "label": "pickle"
+        }
+      ],
+      "correctChoiceId": "b",
+      "missedConceptOnFail": "c-le",
+      "rationale": "paddle — the ending \"le\" sounds like /ul/.",
+      "decodableWithin": "PH-c-le"
+    },
+    {
+      "id": "ph-cle-12",
+      "skillId": "PH-c-le",
+      "itemType": "decode_choice",
+      "difficulty": 2,
+      "stem": "Tap the word you hear.",
+      "audioText": "kettle",
+      "choices": [
+        {
+          "id": "a",
+          "label": "settle"
+        },
+        {
+          "id": "b",
+          "label": "candle"
+        },
+        {
+          "id": "c",
+          "label": "kettle"
+        }
+      ],
+      "correctChoiceId": "c",
+      "missedConceptOnFail": "c-le",
+      "rationale": "kettle — the ending \"le\" sounds like /ul/.",
+      "decodableWithin": "PH-c-le"
+    },
+    {
+      "id": "ph-cle-13",
+      "skillId": "PH-c-le",
+      "itemType": "decode_choice",
+      "difficulty": 3,
+      "stem": "Tap the word you hear.",
+      "audioText": "settle",
+      "choices": [
+        {
+          "id": "a",
+          "label": "settle"
+        },
+        {
+          "id": "b",
+          "label": "tickle"
+        },
+        {
+          "id": "c",
+          "label": "handle"
+        }
+      ],
+      "correctChoiceId": "a",
+      "missedConceptOnFail": "c-le",
+      "rationale": "settle — the ending \"le\" sounds like /ul/.",
+      "decodableWithin": "PH-c-le"
+    },
+    {
+      "id": "ph-cle-14",
+      "skillId": "PH-c-le",
+      "itemType": "decode_choice",
+      "difficulty": 2,
+      "stem": "Tap the word you hear.",
+      "audioText": "tickle",
+      "choices": [
+        {
+          "id": "a",
+          "label": "pickle"
+        },
+        {
+          "id": "b",
+          "label": "tickle"
+        },
+        {
+          "id": "c",
+          "label": "jungle"
+        }
+      ],
+      "correctChoiceId": "b",
+      "missedConceptOnFail": "c-le",
+      "rationale": "tickle — the ending \"le\" sounds like /ul/.",
+      "decodableWithin": "PH-c-le"
+    },
+    {
+      "id": "ph-cle-15",
+      "skillId": "PH-c-le",
+      "itemType": "decode_choice",
+      "difficulty": 2,
+      "stem": "Tap the word you hear.",
+      "audioText": "pickle",
+      "choices": [
+        {
+          "id": "a",
+          "label": "candle"
+        },
+        {
+          "id": "b",
+          "label": "simple"
+        },
+        {
+          "id": "c",
+          "label": "pickle"
+        }
+      ],
+      "correctChoiceId": "c",
+      "missedConceptOnFail": "c-le",
+      "rationale": "pickle — the ending \"le\" sounds like /ul/.",
+      "decodableWithin": "PH-c-le"
+    },
+    {
+      "id": "ph-cle-16",
+      "skillId": "PH-c-le",
+      "itemType": "decode_choice",
+      "difficulty": 2,
+      "stem": "Tap the word you hear.",
+      "audioText": "candle",
+      "choices": [
+        {
+          "id": "a",
+          "label": "candle"
+        },
+        {
+          "id": "b",
+          "label": "handle"
+        },
+        {
+          "id": "c",
+          "label": "sample"
+        }
+      ],
+      "correctChoiceId": "a",
+      "missedConceptOnFail": "c-le",
+      "rationale": "candle — the ending \"le\" sounds like /ul/.",
+      "decodableWithin": "PH-c-le"
+    },
+    {
+      "id": "ph-cle-17",
+      "skillId": "PH-c-le",
+      "itemType": "decode_choice",
+      "difficulty": 2,
+      "stem": "Tap the word you hear.",
+      "audioText": "handle",
+      "choices": [
+        {
+          "id": "a",
+          "label": "jungle"
+        },
+        {
+          "id": "b",
+          "label": "handle"
+        },
+        {
+          "id": "c",
+          "label": "rattle"
+        }
+      ],
+      "correctChoiceId": "b",
+      "missedConceptOnFail": "c-le",
+      "rationale": "handle — the ending \"le\" sounds like /ul/.",
+      "decodableWithin": "PH-c-le"
+    },
+    {
+      "id": "ph-cle-18",
+      "skillId": "PH-c-le",
+      "itemType": "decode_choice",
+      "difficulty": 3,
+      "stem": "Tap the word you hear.",
+      "audioText": "jungle",
+      "choices": [
+        {
+          "id": "a",
+          "label": "simple"
+        },
+        {
+          "id": "b",
+          "label": "cattle"
+        },
+        {
+          "id": "c",
+          "label": "jungle"
+        }
+      ],
+      "correctChoiceId": "c",
+      "missedConceptOnFail": "c-le",
+      "rationale": "jungle — the ending \"le\" sounds like /ul/.",
+      "decodableWithin": "PH-c-le"
+    },
+    {
+      "id": "ph-cle-19",
+      "skillId": "PH-c-le",
+      "itemType": "decode_choice",
+      "difficulty": 3,
+      "stem": "Tap the word you hear.",
+      "audioText": "simple",
+      "choices": [
+        {
+          "id": "a",
+          "label": "simple"
+        },
+        {
+          "id": "b",
+          "label": "sample"
+        },
+        {
+          "id": "c",
+          "label": "nozzle"
+        }
+      ],
+      "correctChoiceId": "a",
+      "missedConceptOnFail": "c-le",
+      "rationale": "simple — the ending \"le\" sounds like /ul/.",
+      "decodableWithin": "PH-c-le"
+    },
+    {
+      "id": "ph-cle-20",
+      "skillId": "PH-c-le",
+      "itemType": "decode_choice",
+      "difficulty": 3,
+      "stem": "Tap the word you hear.",
+      "audioText": "sample",
+      "choices": [
+        {
+          "id": "a",
+          "label": "rattle"
+        },
+        {
+          "id": "b",
+          "label": "sample"
+        },
+        {
+          "id": "c",
+          "label": "tackle"
+        }
+      ],
+      "correctChoiceId": "b",
+      "missedConceptOnFail": "c-le",
+      "rationale": "sample — the ending \"le\" sounds like /ul/.",
+      "decodableWithin": "PH-c-le"
+    },
+    {
+      "id": "ph-cle-21",
+      "skillId": "PH-c-le",
+      "itemType": "decode_choice",
+      "difficulty": 2,
+      "stem": "Tap the word you hear.",
+      "audioText": "rattle",
+      "choices": [
+        {
+          "id": "a",
+          "label": "cattle"
+        },
+        {
+          "id": "b",
+          "label": "buckle"
+        },
+        {
+          "id": "c",
+          "label": "rattle"
+        }
+      ],
+      "correctChoiceId": "c",
+      "missedConceptOnFail": "c-le",
+      "rationale": "rattle — the ending \"le\" sounds like /ul/.",
+      "decodableWithin": "PH-c-le"
+    },
+    {
+      "id": "ph-cle-22",
+      "skillId": "PH-c-le",
+      "itemType": "decode_choice",
+      "difficulty": 2,
+      "stem": "Tap the word you hear.",
+      "audioText": "cattle",
+      "choices": [
+        {
+          "id": "a",
+          "label": "cattle"
+        },
+        {
+          "id": "b",
+          "label": "nozzle"
+        },
+        {
+          "id": "c",
+          "label": "ripple"
+        }
+      ],
+      "correctChoiceId": "a",
+      "missedConceptOnFail": "c-le",
+      "rationale": "cattle — the ending \"le\" sounds like /ul/.",
+      "decodableWithin": "PH-c-le"
+    },
+    {
+      "id": "ph-cle-23",
+      "skillId": "PH-c-le",
+      "itemType": "decode_choice",
+      "difficulty": 3,
+      "stem": "Tap the word you hear.",
+      "audioText": "nozzle",
+      "choices": [
+        {
+          "id": "a",
+          "label": "tackle"
+        },
+        {
+          "id": "b",
+          "label": "nozzle"
+        },
+        {
+          "id": "c",
+          "label": "dazzle"
+        }
+      ],
+      "correctChoiceId": "b",
+      "missedConceptOnFail": "c-le",
+      "rationale": "nozzle — the ending \"le\" sounds like /ul/.",
+      "decodableWithin": "PH-c-le"
+    },
+    {
+      "id": "ph-cle-24",
+      "skillId": "PH-c-le",
+      "itemType": "decode_choice",
+      "difficulty": 2,
+      "stem": "Tap the word you hear.",
+      "audioText": "tackle",
+      "choices": [
+        {
+          "id": "a",
+          "label": "buckle"
+        },
+        {
+          "id": "b",
+          "label": "cuddle"
+        },
+        {
+          "id": "c",
+          "label": "tackle"
+        }
+      ],
+      "correctChoiceId": "c",
+      "missedConceptOnFail": "c-le",
+      "rationale": "tackle — the ending \"le\" sounds like /ul/.",
+      "decodableWithin": "PH-c-le"
+    },
+    {
+      "id": "ph-cle-25",
+      "skillId": "PH-c-le",
+      "itemType": "decode_choice",
+      "difficulty": 3,
+      "stem": "Tap the word you hear.",
+      "audioText": "buckle",
+      "choices": [
+        {
+          "id": "a",
+          "label": "buckle"
+        },
+        {
+          "id": "b",
+          "label": "ripple"
+        },
+        {
+          "id": "c",
+          "label": "muddle"
+        }
+      ],
+      "correctChoiceId": "a",
+      "missedConceptOnFail": "c-le",
+      "rationale": "buckle — the ending \"le\" sounds like /ul/.",
+      "decodableWithin": "PH-c-le"
+    },
+    {
+      "id": "ph-cle-26",
+      "skillId": "PH-c-le",
+      "itemType": "decode_choice",
+      "difficulty": 3,
+      "stem": "Tap the word you hear.",
+      "audioText": "ripple",
+      "choices": [
+        {
+          "id": "a",
+          "label": "dazzle"
+        },
+        {
+          "id": "b",
+          "label": "ripple"
+        },
+        {
+          "id": "c",
+          "label": "dimple"
+        }
+      ],
+      "correctChoiceId": "b",
+      "missedConceptOnFail": "c-le",
+      "rationale": "ripple — the ending \"le\" sounds like /ul/.",
+      "decodableWithin": "PH-c-le"
+    },
+    {
+      "id": "ph-cle-27",
+      "skillId": "PH-c-le",
+      "itemType": "decode_choice",
+      "difficulty": 3,
+      "stem": "Tap the word you hear.",
+      "audioText": "dazzle",
+      "choices": [
+        {
+          "id": "a",
+          "label": "cuddle"
+        },
+        {
+          "id": "b",
+          "label": "little"
+        },
+        {
+          "id": "c",
+          "label": "dazzle"
+        }
+      ],
+      "correctChoiceId": "c",
+      "missedConceptOnFail": "c-le",
+      "rationale": "dazzle — the ending \"le\" sounds like /ul/.",
+      "decodableWithin": "PH-c-le"
+    },
+    {
+      "id": "ph-cle-28",
+      "skillId": "PH-c-le",
+      "itemType": "decode_choice",
+      "difficulty": 2,
+      "stem": "Tap the word you hear.",
+      "audioText": "cuddle",
+      "choices": [
+        {
+          "id": "a",
+          "label": "cuddle"
+        },
+        {
+          "id": "b",
+          "label": "muddle"
+        },
+        {
+          "id": "c",
+          "label": "apple"
+        }
+      ],
+      "correctChoiceId": "a",
+      "missedConceptOnFail": "c-le",
+      "rationale": "cuddle — the ending \"le\" sounds like /ul/.",
+      "decodableWithin": "PH-c-le"
+    },
+    {
+      "id": "ph-cle-29",
+      "skillId": "PH-c-le",
+      "itemType": "decode_choice",
+      "difficulty": 3,
+      "stem": "Tap the word you hear.",
+      "audioText": "muddle",
+      "choices": [
+        {
+          "id": "a",
+          "label": "dimple"
+        },
+        {
+          "id": "b",
+          "label": "muddle"
+        },
+        {
+          "id": "c",
+          "label": "middle"
+        }
+      ],
+      "correctChoiceId": "b",
+      "missedConceptOnFail": "c-le",
+      "rationale": "muddle — the ending \"le\" sounds like /ul/.",
+      "decodableWithin": "PH-c-le"
+    },
+    {
+      "id": "ph-cle-30",
+      "skillId": "PH-c-le",
+      "itemType": "decode_choice",
+      "difficulty": 3,
+      "stem": "Tap the word you hear.",
+      "audioText": "dimple",
+      "choices": [
+        {
+          "id": "a",
+          "label": "little"
+        },
+        {
+          "id": "b",
+          "label": "bottle"
+        },
+        {
+          "id": "c",
+          "label": "dimple"
+        }
+      ],
+      "correctChoiceId": "c",
+      "missedConceptOnFail": "c-le",
+      "rationale": "dimple — the ending \"le\" sounds like /ul/.",
+      "decodableWithin": "PH-c-le"
+    }
+  ],
+  "lessons": {
+    "PH-c-le": {
+      "iCanStatement": "I can read words that end in a consonant plus le.",
+      "explanation": "Many longer words end in a consonant followed by 'le' — like ap-ple, lit-tle, can-dle. That final 'le' chunk sounds like /ul/. Read the first chunk, then add the consonant-le chunk: /ul/.",
+      "workedExamples": [
+        {
+          "text": "little",
+          "note": "lit + tle → little"
+        },
+        {
+          "text": "candle",
+          "note": "can + dle → candle"
+        }
+      ]
+    }
+  }
+}

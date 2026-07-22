@@ -358,6 +358,74 @@
           }
         },
         {
+          "id": "PH-prefixes",
+          "strand": "phonics",
+          "objective": "Read words with prefixes un-, re-, dis-, mis-, non-, pre-.",
+          "iCanStatement": "I can read words that start with a prefix.",
+          "prereqs": [
+            "PH-suffixes"
+          ],
+          "itemType": "decode_choice",
+          "itemPool": "phonics-L12-prefixes",
+          "encodePairId": "SP-prefixes",
+          "mastery": {
+            "window": 12,
+            "accuracyToPass": 0.85,
+            "minItems": 12
+          }
+        },
+        {
+          "id": "SP-prefixes",
+          "strand": "spelling",
+          "objective": "Spell words with prefixes (the base word keeps its spelling).",
+          "iCanStatement": "I can spell words that start with a prefix.",
+          "prereqs": [
+            "PH-prefixes"
+          ],
+          "itemType": "build_word",
+          "itemPool": "spelling-L12-prefixes",
+          "encodePairId": "PH-prefixes",
+          "mastery": {
+            "window": 12,
+            "accuracyToPass": 0.85,
+            "minItems": 12
+          }
+        },
+        {
+          "id": "PH-c-le",
+          "strand": "phonics",
+          "objective": "Read words ending in a consonant + le (little, apple, candle).",
+          "iCanStatement": "I can read words that end in a consonant plus le.",
+          "prereqs": [
+            "PH-prefixes"
+          ],
+          "itemType": "decode_choice",
+          "itemPool": "phonics-L13-c-le",
+          "encodePairId": "SP-c-le",
+          "mastery": {
+            "window": 12,
+            "accuracyToPass": 0.85,
+            "minItems": 12
+          }
+        },
+        {
+          "id": "SP-c-le",
+          "strand": "spelling",
+          "objective": "Spell words ending in a consonant + le.",
+          "iCanStatement": "I can spell words that end in a consonant plus le.",
+          "prereqs": [
+            "PH-c-le"
+          ],
+          "itemType": "build_word",
+          "itemPool": "spelling-L13-c-le",
+          "encodePairId": "PH-c-le",
+          "mastery": {
+            "window": 12,
+            "accuracyToPass": 0.85,
+            "minItems": 12
+          }
+        },
+        {
           "id": "HF-words",
           "strand": "phonics",
           "objective": "Recognise high-frequency tricky (sight) words by heart.",
