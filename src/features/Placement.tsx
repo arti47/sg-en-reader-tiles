@@ -4,7 +4,7 @@ import type { ScoreResult } from '../lib/scoring'
 import { pickItem, getSkill } from '../lib/packs'
 import { nextPlacement, priorSkillIds, decodeLadder, MIN_WARMUP, type PlaceResult } from '../lib/placement'
 import { support } from '../lib/support'
-import { addChild, putProgress } from '../store'
+import { addChild, putProgress, setLearned } from '../store'
 import { McqItem } from './items/McqItem'
 
 // Warm-up placement walk (§7). Framed as a game, no right/wrong feedback. The staircase finds
@@ -58,7 +58,8 @@ export function Placement(props: { child: Child; onDone: () => void }) {
     setBusy(true)
     await addChild({ ...props.child, entrySkillId })
     const now = Date.now()
-    for (const sid of priorSkillIds(entrySkillId)) {
+    const prior = priorSkillIds(entrySkillId)
+    for (const sid of prior) {
       const skill = getSkill(sid)
       const p: SkillProgress = {
         skillId: sid, status: 'mastered',
@@ -66,6 +67,13 @@ export function Placement(props: { child: Child; onDone: () => void }) {
         difficulty: 1, lastSeen: now, masteredAt: now
       }
       await putProgress(props.child.id, p)
+    }
+    // M5 (§19.8): a pattern is LEARNED at placement only when BOTH its decode and encode are
+    // credited. The top-2 held-back encode rungs are decode-known but spelling-untaught, so their
+    // patterns are NOT learned → they become the child's first Learn units.
+    const priorSet = new Set(prior)
+    for (const p of decodeLadder) {
+      if (priorSet.has(p.id) && p.encodePairId && priorSet.has(p.encodePairId)) await setLearned(props.child.id, p.id)
     }
     setDone(true) // gentle end card instead of snapping back to the picker
   }

@@ -120,3 +120,16 @@ export interface Review {
   stage: number                  // 0,1,2 → +2d,+7d,+21d; graduates after the last
   status: 'scheduled' | 'graduated'
 }
+
+// ---- M5 Learn/Test dual-mode (§19). Per (child, pattern) learn state; a pattern is
+// identified by its phonics DECODE skill id. `mastered` is NOT stored here — it is derived
+// from `progress`/`certificates` (one source of truth). DB v6 `learn` store. ----
+export interface LearnState {
+  patternId: string              // the pattern's decode skill id (e.g. PH-cvc-short-vowels)
+  learned: boolean               // Learn unit completed (or placement-credited) → unlocks Test
+  needsReview: boolean           // Test flagged struggle on a learned pattern → Learn resurfaces it
+  learnedAt?: number
+  flaggedAt?: number
+}
+// Derived per-pattern status shown in the Learn map (§19.3), in order.
+export type PatternStatus = 'not-started' | 'learning' | 'learned' | 'mastered' | 'needs-review'

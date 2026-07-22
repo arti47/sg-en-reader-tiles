@@ -1,6 +1,6 @@
 // IndexedDB persistence (CLAUDE.md §11). No deps.
-import type { Child, Attempt, SkillProgress, Certificate, Review, Aggregate, Daily, Usage, Settings } from './types'
-export const SCHEMA_VERSION = 5
+import type { Child, Attempt, SkillProgress, Certificate, Review, Aggregate, Daily, Usage, Settings, LearnState } from './types'
+export const SCHEMA_VERSION = 6
 const DB = 'sg-reader'; const VER = SCHEMA_VERSION
 
 function open(): Promise<IDBDatabase> {
@@ -31,6 +31,10 @@ function open(): Promise<IDBDatabase> {
       if (oldV < 5) {
         // v5 adds per-day rollups for the daily view of the trend chart.
         if (!db.objectStoreNames.contains('daily')) db.createObjectStore('daily', { keyPath: 'key' })
+      }
+      if (oldV < 6) {
+        // v6 adds M5 Learn/Test dual-mode per-pattern learn state (§19.4).
+        if (!db.objectStoreNames.contains('learn')) db.createObjectStore('learn', { keyPath: 'key' })
       }
     }
     r.onsuccess = () => res(r.result)
@@ -110,6 +114,25 @@ export async function bumpDaily(childId: string, day: string, correct: boolean, 
   await req('daily', 'readwrite', s => s.put(next))
 }
 
+// Learn state (M5 dual-mode, §19.4) — keyed "childId::patternId"
+export const getLearn = (childId: string) =>
+  req<Array<LearnState & { key: string }>>('learn', 'readonly', s => s.getAll())
+    .then(rows => rows.filter(r => r.key.startsWith(childId + '::')))
+export const putLearn = (childId: string, row: LearnState) =>
+  req('learn', 'readwrite', s => s.put({ ...row, key: pKey(childId, row.patternId) }))
+async function updateLearn(childId: string, patternId: string, patch: Partial<LearnState>): Promise<void> {
+  const key = pKey(childId, patternId)
+  const prev = await req<(LearnState & { key: string }) | undefined>('learn', 'readonly', s => s.get(key))
+  const base: LearnState = prev ?? { patternId, learned: false, needsReview: false }
+  await req('learn', 'readwrite', s => s.put({ ...base, ...patch, patternId, key }))
+}
+export const setLearned = (childId: string, patternId: string) =>
+  updateLearn(childId, patternId, { learned: true, needsReview: false, learnedAt: Date.now() })
+export const flagReview = (childId: string, patternId: string) =>
+  updateLearn(childId, patternId, { needsReview: true, flaggedAt: Date.now() })
+export const clearReview = (childId: string, patternId: string) =>
+  updateLearn(childId, patternId, { needsReview: false })
+
 // Usage / streak (§14)
 export const getUsage = (childId: string) =>
   req<Usage | undefined>('usage', 'readonly', s => s.get(childId))
@@ -122,7 +145,7 @@ export const getSettings = () =>
 export const putSettings = (st: Settings) => req('settings', 'readwrite', s => s.put({ ...st, key: 'app' }))
 
 // Export / import (§11) — device-bound storage safety net. Full-DB JSON round-trip.
-const ALL_STORES = ['children', 'attempts', 'progress', 'certificates', 'reviews', 'aggregates', 'daily', 'usage', 'settings']
+const ALL_STORES = ['children', 'attempts', 'progress', 'certificates', 'reviews', 'aggregates', 'daily', 'usage', 'settings', 'learn']
 export async function exportAll(): Promise<{ app: string; schemaVersion: number; exportedAt: number; stores: Record<string, unknown[]> }> {
   const db = await open()
   const stores: Record<string, unknown[]> = {}
@@ -155,11 +178,11 @@ function run(stores: string[], mode: IDBTransactionMode, fn: (t: IDBTransaction)
 // Delete all of a child's data (attempts by index; progress/certs/reviews/aggregates by
 // key prefix; usage by childId key).
 function clearChildData(childId: string): Promise<void> {
-  return run(['attempts', 'progress', 'certificates', 'reviews', 'aggregates', 'daily', 'usage'], 'readwrite', t => {
+  return run(['attempts', 'progress', 'certificates', 'reviews', 'aggregates', 'daily', 'usage', 'learn'], 'readwrite', t => {
     const at = t.objectStore('attempts')
     at.index('childId').getAllKeys(childId).onsuccess = e =>
       (e.target as IDBRequest<IDBValidKey[]>).result.forEach(k => at.delete(k))
-    for (const name of ['progress', 'certificates', 'reviews', 'aggregates', 'daily']) {
+    for (const name of ['progress', 'certificates', 'reviews', 'aggregates', 'daily', 'learn']) {
       const st = t.objectStore(name)
       st.getAllKeys().onsuccess = e =>
         (e.target as IDBRequest<IDBValidKey[]>).result.forEach(k => {

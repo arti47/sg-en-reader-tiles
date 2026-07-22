@@ -67,10 +67,15 @@ export function patternDecodeSkill(skill: SkillDef): SkillDef {
 // partner unlocks at 70% decode (guided overlap); a decode skill only unlocks once the
 // PREVIOUS pattern is fully mastered — decode AND encode — enforcing the dual gate on
 // advancement (§7). `pre` = skills already mastered at placement (no attempts of their own).
-export function eligibleSkills(attempts: Attempt[], pre?: Set<string>): SkillDef[] {
+// M5 (§19.5): when `learnedPatterns` is supplied (Test mode), a dual-gated phonics/spelling
+// PATTERN skill is eligible only once its pattern (decode skill id) has been LEARNED — Test never
+// assesses an untaught pattern. Non-pattern skills (reading, M3, dictation, threaded) are not
+// gated by learned. Omitting the arg preserves the pre-M5 behaviour (no learned-gate).
+export function eligibleSkills(attempts: Attempt[], pre?: Set<string>, learnedPatterns?: Set<string>): SkillDef[] {
   return SKILLS.filter(s => {
     if (s.threaded) return false // threaded skills (HF sight words) are woven in separately (§5/§6d)
     if (isMastered(attempts, s, pre)) return false
+    if (learnedPatterns && s.encodePairId && !learnedPatterns.has(patternDecodeSkill(s).id)) return false
     return s.prereqs.every(p => {
       const preSkill = getSkill(p); if (!preSkill) return false
       return s.encodePairId === p ? encodeUnlocked(attempts, preSkill, pre) : patternMastered(attempts, preSkill, pre)

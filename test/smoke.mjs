@@ -488,6 +488,18 @@ try {
     // T19 digraph-level reading gated behind the DIGRAPH pattern.
     if (e.eligibleSkills([]).map(s => s.id).includes('RD-digraph-sentences')) return 'T19: digraph reading must be gated behind the digraph pattern'
     if (!e.eligibleSkills([...arr('PH-digraphs', 12, true), ...arr('SP-digraphs', 12, true)]).map(s => s.id).includes('RD-digraph-sentences')) return 'T19: digraph reading should unlock after the digraph pattern'
+    // M5 (§19.5) — Learn frontier + Test learned-gate. `nextToLearn` walks the pattern ladder;
+    // `eligibleSkills(...,learnedPatterns)` gates dual-gated PATTERN skills by learned (non-pattern
+    // reading/M3 skills are NOT gated). Omitting the arg keeps pre-M5 behaviour.
+    const L = window.__learn
+    if (L) {
+      if (L.nextToLearn(new Set())?.id !== 'PH-cvc-short-vowels') return 'M5 nextToLearn: empty → CVC frontier'
+      if (L.nextToLearn(new Set(['PH-cvc-short-vowels']))?.id !== 'PH-digraphs') return 'M5 nextToLearn: CVC learned → digraphs frontier'
+      const full = [...arr(PH, 12, true), ...arr(SP, 12, true)] // CVC pattern mastered (digraphs eligible pre-gate)
+      if (e.eligibleSkills(full, undefined, new Set()).some(s => s.encodePairId)) return 'M5 gate: no pattern skill eligible when nothing learned'
+      if (!e.eligibleSkills(full, undefined, new Set(['PH-digraphs'])).map(s => s.id).includes('PH-digraphs')) return 'M5 gate: digraphs eligible once its pattern is learned'
+      if (!e.eligibleSkills(full, undefined, new Set()).map(s => s.id).includes('RD-cvc-sentences')) return 'M5 gate: non-pattern reading must NOT be learned-gated'
+    }
     // T17 sentence manipulation gated deep behind grammar/cloze — never eligible up front.
     if (e.eligibleSkills([]).map(s => s.id).includes('SM-editing')) return 'T17: editing must be gated behind grammar/cloze'
     // T12/T01 — sight words + letter-sounds are threaded (every 4th item, rotating), never eligible.
@@ -510,7 +522,7 @@ try {
     const wrong = Array.from({ length: 6 }, (_, i) => ({ id: 'w' + i, childId: 'c', skillId: 'PH-cvc-short-vowels', itemId: 'i', correct: false, difficulty: 1, latencyMs: 1, ts: i }))
     if (rd.computeReadiness(wrong, new Set(), [], 10).status !== 'High-Risk') return 'readiness: 6 wrong → High-Risk'
     const before = await store.exportAll()
-    if (before.schemaVersion !== 5) return 'export schemaVersion should be 5'
+    if (before.schemaVersion !== 6) return 'export schemaVersion should be 6'
     // Trend summary (§11): summarise buckets weekly aggregates by day/week/month/year.
     const agg = window.__aggregate
     const aggs = [{ week: '2026-W29', items: 4, correct: 3 }, { week: '2026-W29', items: 2, correct: 2 }, { week: '2026-W30', items: 5, correct: 4 }]
@@ -553,6 +565,14 @@ try {
     if (none.length !== 6 || none.some(a => a.earned)) return 'achievements: none earned at zero'
     const some = g.achievements([{ correct: true }], [{}])
     if (!some.find(a => a.id === 'first-cert').earned || !some.find(a => a.id === 'getting-started').earned) return 'achievements: first-cert/getting-started'
+    // M5 (§19.4) learn store round-trip: setLearned → flagReview → clearReview.
+    await store.setLearned('c5', 'PH-cvc-short-vowels')
+    let lr = await store.getLearn('c5')
+    if (!lr.some(r => r.patternId === 'PH-cvc-short-vowels' && r.learned)) return 'M5 store: setLearned'
+    await store.flagReview('c5', 'PH-cvc-short-vowels')
+    if (!(await store.getLearn('c5'))[0].needsReview) return 'M5 store: flagReview'
+    await store.clearReview('c5', 'PH-cvc-short-vowels')
+    if ((await store.getLearn('c5'))[0].needsReview) return 'M5 store: clearReview'
     return 'ok'
   })
 
