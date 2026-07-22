@@ -17,12 +17,23 @@ export function isConsecutiveWeek(a: string, b: string): boolean {
   return weekOrdinal(b) - weekOrdinal(a) === 1
 }
 
-// A monotonic ordinal for an ISO-week key, so consecutive weeks differ by 1 across year
-// boundaries. Anchored on the Monday of that ISO week.
-function weekOrdinal(key: string): number {
+// The Monday (week start) of an ISO-week key, as a Date.
+export function weekMonday(key: string): Date {
   const [y, w] = key.split('-W').map(Number)
   const jan4 = new Date(y, 0, 4)
   const monday = new Date(jan4)
   monday.setDate(jan4.getDate() - ((jan4.getDay() + 6) % 7) + (w - 1) * 7)
-  return Math.round(monday.getTime() / (7 * 86400000))
+  return monday
+}
+
+// Friendly chart label for an ISO-week key: the Monday date, e.g. "21 Jul" (en-GB), instead
+// of the cryptic "W30".
+export function weekLabel(key: string): string {
+  return weekMonday(key).toLocaleDateString('en-GB', { day: 'numeric', month: 'short' })
+}
+
+// A monotonic ordinal for an ISO-week key, so consecutive weeks differ by 1 across year
+// boundaries. Anchored on the Monday of that ISO week.
+function weekOrdinal(key: string): number {
+  return Math.round(weekMonday(key).getTime() / (7 * 86400000))
 }

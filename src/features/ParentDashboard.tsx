@@ -4,6 +4,7 @@ import { getAttempts, getProgress, getCertificates, getAggregates, getUsage, get
 import { SKILLS, getSkill } from '../lib/packs'
 import { computeReadiness, type Readiness } from '../lib/readiness'
 import { achievements, type Achievement } from '../lib/gamify'
+import { weekLabel } from '../lib/aggregate'
 import { setRate, setVoice, listVoices, onVoicesReady } from '../lib/audio'
 
 // Parent dashboard (§10, §11, §14). PIN-gated, growth-framed, parent-only. Per-child readiness
@@ -178,7 +179,7 @@ export function ParentDashboard(props: { children: Child[]; onExit: () => void; 
                 return (
                   <div key={w.week} className="bar-wrap" title={`${w.week}: ${w.correct}/${w.items}`}>
                     <div className="bar" style={{ height: `${Math.max(6, (w.items / max) * 64)}px`, opacity: 0.4 + 0.6 * (w.items ? w.correct / w.items : 0) }} />
-                    <span className="bar-lbl">{w.week.slice(-3)}</span>
+                    <span className="bar-lbl">{weekLabel(w.week)}</span>
                   </div>
                 )
               })}
