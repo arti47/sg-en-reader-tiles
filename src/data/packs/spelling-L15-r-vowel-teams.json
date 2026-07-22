@@ -1,0 +1,511 @@
+{
+  "packId": "spelling-L15-r-vowel-teams",
+  "strand": "spelling",
+  "skillIds": [
+    "SP-r-vowel-teams"
+  ],
+  "version": 1,
+  "items": [
+    {
+      "id": "sp-rvt-001",
+      "skillId": "SP-r-vowel-teams",
+      "itemType": "build_word",
+      "difficulty": 1,
+      "stem": "Build the word you hear.",
+      "displayWord": "hear",
+      "audioText": "hear",
+      "graphemes": [
+        "h",
+        "ear"
+      ],
+      "distractorGraphemes": [
+        "air",
+        "ure"
+      ],
+      "missedConceptOnFail": "r-vowel-team-ear",
+      "rationale": "hear = h-ear.",
+      "decodableWithin": "SP-r-vowel-teams"
+    },
+    {
+      "id": "sp-rvt-002",
+      "skillId": "SP-r-vowel-teams",
+      "itemType": "build_word",
+      "difficulty": 1,
+      "stem": "Build the word you hear.",
+      "displayWord": "near",
+      "audioText": "near",
+      "graphemes": [
+        "n",
+        "ear"
+      ],
+      "distractorGraphemes": [
+        "air",
+        "ure"
+      ],
+      "missedConceptOnFail": "r-vowel-team-ear",
+      "rationale": "near = n-ear.",
+      "decodableWithin": "SP-r-vowel-teams"
+    },
+    {
+      "id": "sp-rvt-003",
+      "skillId": "SP-r-vowel-teams",
+      "itemType": "build_word",
+      "difficulty": 1,
+      "stem": "Build the word you hear.",
+      "displayWord": "dear",
+      "audioText": "dear",
+      "graphemes": [
+        "d",
+        "ear"
+      ],
+      "distractorGraphemes": [
+        "air",
+        "ure"
+      ],
+      "missedConceptOnFail": "r-vowel-team-ear",
+      "rationale": "dear = d-ear.",
+      "decodableWithin": "SP-r-vowel-teams"
+    },
+    {
+      "id": "sp-rvt-004",
+      "skillId": "SP-r-vowel-teams",
+      "itemType": "build_word",
+      "difficulty": 1,
+      "stem": "Build the word you hear.",
+      "displayWord": "fear",
+      "audioText": "fear",
+      "graphemes": [
+        "f",
+        "ear"
+      ],
+      "distractorGraphemes": [
+        "air",
+        "ure"
+      ],
+      "missedConceptOnFail": "r-vowel-team-ear",
+      "rationale": "fear = f-ear.",
+      "decodableWithin": "SP-r-vowel-teams"
+    },
+    {
+      "id": "sp-rvt-005",
+      "skillId": "SP-r-vowel-teams",
+      "itemType": "build_word",
+      "difficulty": 2,
+      "stem": "Build the word you hear.",
+      "displayWord": "gear",
+      "audioText": "gear",
+      "graphemes": [
+        "g",
+        "ear"
+      ],
+      "distractorGraphemes": [
+        "air",
+        "ure",
+        "ar"
+      ],
+      "missedConceptOnFail": "r-vowel-team-ear",
+      "rationale": "gear = g-ear.",
+      "decodableWithin": "SP-r-vowel-teams"
+    },
+    {
+      "id": "sp-rvt-006",
+      "skillId": "SP-r-vowel-teams",
+      "itemType": "build_word",
+      "difficulty": 1,
+      "stem": "Build the word you hear.",
+      "displayWord": "year",
+      "audioText": "year",
+      "graphemes": [
+        "y",
+        "ear"
+      ],
+      "distractorGraphemes": [
+        "air",
+        "ure"
+      ],
+      "missedConceptOnFail": "r-vowel-team-ear",
+      "rationale": "year = y-ear.",
+      "decodableWithin": "SP-r-vowel-teams"
+    },
+    {
+      "id": "sp-rvt-007",
+      "skillId": "SP-r-vowel-teams",
+      "itemType": "build_word",
+      "difficulty": 2,
+      "stem": "Build the word you hear.",
+      "displayWord": "rear",
+      "audioText": "rear",
+      "graphemes": [
+        "r",
+        "ear"
+      ],
+      "distractorGraphemes": [
+        "air",
+        "ure",
+        "ar"
+      ],
+      "missedConceptOnFail": "r-vowel-team-ear",
+      "rationale": "rear = r-ear.",
+      "decodableWithin": "SP-r-vowel-teams"
+    },
+    {
+      "id": "sp-rvt-008",
+      "skillId": "SP-r-vowel-teams",
+      "itemType": "build_word",
+      "difficulty": 2,
+      "stem": "Build the word you hear.",
+      "displayWord": "tear",
+      "audioText": "tear",
+      "graphemes": [
+        "t",
+        "ear"
+      ],
+      "distractorGraphemes": [
+        "air",
+        "ure",
+        "ar"
+      ],
+      "missedConceptOnFail": "r-vowel-team-ear",
+      "rationale": "tear = t-ear.",
+      "decodableWithin": "SP-r-vowel-teams"
+    },
+    {
+      "id": "sp-rvt-009",
+      "skillId": "SP-r-vowel-teams",
+      "itemType": "build_word",
+      "difficulty": 2,
+      "stem": "Build the word you hear.",
+      "displayWord": "clear",
+      "audioText": "clear",
+      "graphemes": [
+        "c",
+        "l",
+        "ear"
+      ],
+      "distractorGraphemes": [
+        "air",
+        "ure",
+        "ar"
+      ],
+      "missedConceptOnFail": "r-vowel-team-ear",
+      "rationale": "clear = c-l-ear.",
+      "decodableWithin": "SP-r-vowel-teams"
+    },
+    {
+      "id": "sp-rvt-010",
+      "skillId": "SP-r-vowel-teams",
+      "itemType": "build_word",
+      "difficulty": 3,
+      "stem": "Build the word you hear.",
+      "displayWord": "spear",
+      "audioText": "spear",
+      "graphemes": [
+        "s",
+        "p",
+        "ear"
+      ],
+      "distractorGraphemes": [
+        "air",
+        "ure",
+        "ar",
+        "or"
+      ],
+      "missedConceptOnFail": "r-vowel-team-ear",
+      "rationale": "spear = s-p-ear.",
+      "decodableWithin": "SP-r-vowel-teams"
+    },
+    {
+      "id": "sp-rvt-011",
+      "skillId": "SP-r-vowel-teams",
+      "itemType": "build_word",
+      "difficulty": 3,
+      "stem": "Build the word you hear.",
+      "displayWord": "smear",
+      "audioText": "smear",
+      "graphemes": [
+        "s",
+        "m",
+        "ear"
+      ],
+      "distractorGraphemes": [
+        "air",
+        "ure",
+        "ar",
+        "or"
+      ],
+      "missedConceptOnFail": "r-vowel-team-ear",
+      "rationale": "smear = s-m-ear.",
+      "decodableWithin": "SP-r-vowel-teams"
+    },
+    {
+      "id": "sp-rvt-012",
+      "skillId": "SP-r-vowel-teams",
+      "itemType": "build_word",
+      "difficulty": 3,
+      "stem": "Build the word you hear.",
+      "displayWord": "beard",
+      "audioText": "beard",
+      "graphemes": [
+        "b",
+        "ear",
+        "d"
+      ],
+      "distractorGraphemes": [
+        "air",
+        "ure",
+        "ar",
+        "or"
+      ],
+      "missedConceptOnFail": "r-vowel-team-ear",
+      "rationale": "beard = b-ear-d.",
+      "decodableWithin": "SP-r-vowel-teams"
+    },
+    {
+      "id": "sp-rvt-013",
+      "skillId": "SP-r-vowel-teams",
+      "itemType": "build_word",
+      "difficulty": 1,
+      "stem": "Build the word you hear.",
+      "displayWord": "hair",
+      "audioText": "hair",
+      "graphemes": [
+        "h",
+        "air"
+      ],
+      "distractorGraphemes": [
+        "ear",
+        "ure"
+      ],
+      "missedConceptOnFail": "r-vowel-team-air",
+      "rationale": "hair = h-air.",
+      "decodableWithin": "SP-r-vowel-teams"
+    },
+    {
+      "id": "sp-rvt-014",
+      "skillId": "SP-r-vowel-teams",
+      "itemType": "build_word",
+      "difficulty": 1,
+      "stem": "Build the word you hear.",
+      "displayWord": "fair",
+      "audioText": "fair",
+      "graphemes": [
+        "f",
+        "air"
+      ],
+      "distractorGraphemes": [
+        "ear",
+        "ure"
+      ],
+      "missedConceptOnFail": "r-vowel-team-air",
+      "rationale": "fair = f-air.",
+      "decodableWithin": "SP-r-vowel-teams"
+    },
+    {
+      "id": "sp-rvt-015",
+      "skillId": "SP-r-vowel-teams",
+      "itemType": "build_word",
+      "difficulty": 1,
+      "stem": "Build the word you hear.",
+      "displayWord": "pair",
+      "audioText": "pair",
+      "graphemes": [
+        "p",
+        "air"
+      ],
+      "distractorGraphemes": [
+        "ear",
+        "ure"
+      ],
+      "missedConceptOnFail": "r-vowel-team-air",
+      "rationale": "pair = p-air.",
+      "decodableWithin": "SP-r-vowel-teams"
+    },
+    {
+      "id": "sp-rvt-016",
+      "skillId": "SP-r-vowel-teams",
+      "itemType": "build_word",
+      "difficulty": 2,
+      "stem": "Build the word you hear.",
+      "displayWord": "lair",
+      "audioText": "lair",
+      "graphemes": [
+        "l",
+        "air"
+      ],
+      "distractorGraphemes": [
+        "ear",
+        "ure",
+        "ar"
+      ],
+      "missedConceptOnFail": "r-vowel-team-air",
+      "rationale": "lair = l-air.",
+      "decodableWithin": "SP-r-vowel-teams"
+    },
+    {
+      "id": "sp-rvt-017",
+      "skillId": "SP-r-vowel-teams",
+      "itemType": "build_word",
+      "difficulty": 2,
+      "stem": "Build the word you hear.",
+      "displayWord": "chair",
+      "audioText": "chair",
+      "graphemes": [
+        "ch",
+        "air"
+      ],
+      "distractorGraphemes": [
+        "ear",
+        "ure",
+        "ar"
+      ],
+      "missedConceptOnFail": "r-vowel-team-air",
+      "rationale": "chair = ch-air.",
+      "decodableWithin": "SP-r-vowel-teams"
+    },
+    {
+      "id": "sp-rvt-018",
+      "skillId": "SP-r-vowel-teams",
+      "itemType": "build_word",
+      "difficulty": 2,
+      "stem": "Build the word you hear.",
+      "displayWord": "stair",
+      "audioText": "stair",
+      "graphemes": [
+        "s",
+        "t",
+        "air"
+      ],
+      "distractorGraphemes": [
+        "ear",
+        "ure",
+        "ar"
+      ],
+      "missedConceptOnFail": "r-vowel-team-air",
+      "rationale": "stair = s-t-air.",
+      "decodableWithin": "SP-r-vowel-teams"
+    },
+    {
+      "id": "sp-rvt-019",
+      "skillId": "SP-r-vowel-teams",
+      "itemType": "build_word",
+      "difficulty": 3,
+      "stem": "Build the word you hear.",
+      "displayWord": "flair",
+      "audioText": "flair",
+      "graphemes": [
+        "f",
+        "l",
+        "air"
+      ],
+      "distractorGraphemes": [
+        "ear",
+        "ure",
+        "ar",
+        "or"
+      ],
+      "missedConceptOnFail": "r-vowel-team-air",
+      "rationale": "flair = f-l-air.",
+      "decodableWithin": "SP-r-vowel-teams"
+    },
+    {
+      "id": "sp-rvt-020",
+      "skillId": "SP-r-vowel-teams",
+      "itemType": "build_word",
+      "difficulty": 1,
+      "stem": "Build the word you hear.",
+      "displayWord": "cure",
+      "audioText": "cure",
+      "graphemes": [
+        "c",
+        "ure"
+      ],
+      "distractorGraphemes": [
+        "ear",
+        "air"
+      ],
+      "missedConceptOnFail": "r-vowel-team-ure",
+      "rationale": "cure = c-ure.",
+      "decodableWithin": "SP-r-vowel-teams"
+    },
+    {
+      "id": "sp-rvt-021",
+      "skillId": "SP-r-vowel-teams",
+      "itemType": "build_word",
+      "difficulty": 2,
+      "stem": "Build the word you hear.",
+      "displayWord": "pure",
+      "audioText": "pure",
+      "graphemes": [
+        "p",
+        "ure"
+      ],
+      "distractorGraphemes": [
+        "ear",
+        "air",
+        "ar"
+      ],
+      "missedConceptOnFail": "r-vowel-team-ure",
+      "rationale": "pure = p-ure.",
+      "decodableWithin": "SP-r-vowel-teams"
+    },
+    {
+      "id": "sp-rvt-022",
+      "skillId": "SP-r-vowel-teams",
+      "itemType": "build_word",
+      "difficulty": 2,
+      "stem": "Build the word you hear.",
+      "displayWord": "sure",
+      "audioText": "sure",
+      "graphemes": [
+        "s",
+        "ure"
+      ],
+      "distractorGraphemes": [
+        "ear",
+        "air",
+        "ar"
+      ],
+      "missedConceptOnFail": "r-vowel-team-ure",
+      "rationale": "sure = s-ure.",
+      "decodableWithin": "SP-r-vowel-teams"
+    },
+    {
+      "id": "sp-rvt-023",
+      "skillId": "SP-r-vowel-teams",
+      "itemType": "build_word",
+      "difficulty": 3,
+      "stem": "Build the word you hear.",
+      "displayWord": "lure",
+      "audioText": "lure",
+      "graphemes": [
+        "l",
+        "ure"
+      ],
+      "distractorGraphemes": [
+        "ear",
+        "air",
+        "ar",
+        "or"
+      ],
+      "missedConceptOnFail": "r-vowel-team-ure",
+      "rationale": "lure = l-ure.",
+      "decodableWithin": "SP-r-vowel-teams"
+    }
+  ],
+  "lessons": {
+    "SP-r-vowel-teams": {
+      "iCanStatement": "I can spell words with ear, air and ure.",
+      "explanation": "For the /eer/ sound at the end, write ear (hear). For /air/, write air (hair). For /yoor/, write ure (cure). Use the one ear, air or ure tile.",
+      "workedExamples": [
+        {
+          "text": "near",
+          "note": "Hear n-ear → tiles n · ear"
+        },
+        {
+          "text": "cure",
+          "note": "Hear c-ure → tiles c · ure"
+        }
+      ]
+    }
+  }
+}

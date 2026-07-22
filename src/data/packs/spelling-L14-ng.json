@@ -1,0 +1,1079 @@
+{
+  "packId": "spelling-L14-ng",
+  "strand": "spelling",
+  "skillIds": [
+    "SP-ng"
+  ],
+  "version": 1,
+  "items": [
+    {
+      "id": "sp-ng-001",
+      "skillId": "SP-ng",
+      "itemType": "build_word",
+      "difficulty": 1,
+      "stem": "Build the word you hear.",
+      "displayWord": "ring",
+      "audioText": "ring",
+      "graphemes": [
+        "r",
+        "i",
+        "ng"
+      ],
+      "distractorGraphemes": [
+        "nk",
+        "n"
+      ],
+      "missedConceptOnFail": "nasal-ng",
+      "rationale": "ring = r-i-ng.",
+      "decodableWithin": "SP-ng"
+    },
+    {
+      "id": "sp-ng-002",
+      "skillId": "SP-ng",
+      "itemType": "build_word",
+      "difficulty": 1,
+      "stem": "Build the word you hear.",
+      "displayWord": "king",
+      "audioText": "king",
+      "graphemes": [
+        "k",
+        "i",
+        "ng"
+      ],
+      "distractorGraphemes": [
+        "nk",
+        "n"
+      ],
+      "missedConceptOnFail": "nasal-ng",
+      "rationale": "king = k-i-ng.",
+      "decodableWithin": "SP-ng"
+    },
+    {
+      "id": "sp-ng-003",
+      "skillId": "SP-ng",
+      "itemType": "build_word",
+      "difficulty": 1,
+      "stem": "Build the word you hear.",
+      "displayWord": "sing",
+      "audioText": "sing",
+      "graphemes": [
+        "s",
+        "i",
+        "ng"
+      ],
+      "distractorGraphemes": [
+        "nk",
+        "n"
+      ],
+      "missedConceptOnFail": "nasal-ng",
+      "rationale": "sing = s-i-ng.",
+      "decodableWithin": "SP-ng"
+    },
+    {
+      "id": "sp-ng-004",
+      "skillId": "SP-ng",
+      "itemType": "build_word",
+      "difficulty": 1,
+      "stem": "Build the word you hear.",
+      "displayWord": "wing",
+      "audioText": "wing",
+      "graphemes": [
+        "w",
+        "i",
+        "ng"
+      ],
+      "distractorGraphemes": [
+        "nk",
+        "n"
+      ],
+      "missedConceptOnFail": "nasal-ng",
+      "rationale": "wing = w-i-ng.",
+      "decodableWithin": "SP-ng"
+    },
+    {
+      "id": "sp-ng-005",
+      "skillId": "SP-ng",
+      "itemType": "build_word",
+      "difficulty": 1,
+      "stem": "Build the word you hear.",
+      "displayWord": "bang",
+      "audioText": "bang",
+      "graphemes": [
+        "b",
+        "a",
+        "ng"
+      ],
+      "distractorGraphemes": [
+        "nk",
+        "n"
+      ],
+      "missedConceptOnFail": "nasal-ng",
+      "rationale": "bang = b-a-ng.",
+      "decodableWithin": "SP-ng"
+    },
+    {
+      "id": "sp-ng-006",
+      "skillId": "SP-ng",
+      "itemType": "build_word",
+      "difficulty": 1,
+      "stem": "Build the word you hear.",
+      "displayWord": "hang",
+      "audioText": "hang",
+      "graphemes": [
+        "h",
+        "a",
+        "ng"
+      ],
+      "distractorGraphemes": [
+        "nk",
+        "n"
+      ],
+      "missedConceptOnFail": "nasal-ng",
+      "rationale": "hang = h-a-ng.",
+      "decodableWithin": "SP-ng"
+    },
+    {
+      "id": "sp-ng-007",
+      "skillId": "SP-ng",
+      "itemType": "build_word",
+      "difficulty": 2,
+      "stem": "Build the word you hear.",
+      "displayWord": "gang",
+      "audioText": "gang",
+      "graphemes": [
+        "g",
+        "a",
+        "ng"
+      ],
+      "distractorGraphemes": [
+        "nk",
+        "n",
+        "k"
+      ],
+      "missedConceptOnFail": "nasal-ng",
+      "rationale": "gang = g-a-ng.",
+      "decodableWithin": "SP-ng"
+    },
+    {
+      "id": "sp-ng-008",
+      "skillId": "SP-ng",
+      "itemType": "build_word",
+      "difficulty": 2,
+      "stem": "Build the word you hear.",
+      "displayWord": "rang",
+      "audioText": "rang",
+      "graphemes": [
+        "r",
+        "a",
+        "ng"
+      ],
+      "distractorGraphemes": [
+        "nk",
+        "n",
+        "g"
+      ],
+      "missedConceptOnFail": "nasal-ng",
+      "rationale": "rang = r-a-ng.",
+      "decodableWithin": "SP-ng"
+    },
+    {
+      "id": "sp-ng-009",
+      "skillId": "SP-ng",
+      "itemType": "build_word",
+      "difficulty": 2,
+      "stem": "Build the word you hear.",
+      "displayWord": "sang",
+      "audioText": "sang",
+      "graphemes": [
+        "s",
+        "a",
+        "ng"
+      ],
+      "distractorGraphemes": [
+        "nk",
+        "n",
+        "g"
+      ],
+      "missedConceptOnFail": "nasal-ng",
+      "rationale": "sang = s-a-ng.",
+      "decodableWithin": "SP-ng"
+    },
+    {
+      "id": "sp-ng-010",
+      "skillId": "SP-ng",
+      "itemType": "build_word",
+      "difficulty": 1,
+      "stem": "Build the word you hear.",
+      "displayWord": "song",
+      "audioText": "song",
+      "graphemes": [
+        "s",
+        "o",
+        "ng"
+      ],
+      "distractorGraphemes": [
+        "nk",
+        "n"
+      ],
+      "missedConceptOnFail": "nasal-ng",
+      "rationale": "song = s-o-ng.",
+      "decodableWithin": "SP-ng"
+    },
+    {
+      "id": "sp-ng-011",
+      "skillId": "SP-ng",
+      "itemType": "build_word",
+      "difficulty": 1,
+      "stem": "Build the word you hear.",
+      "displayWord": "long",
+      "audioText": "long",
+      "graphemes": [
+        "l",
+        "o",
+        "ng"
+      ],
+      "distractorGraphemes": [
+        "nk",
+        "n"
+      ],
+      "missedConceptOnFail": "nasal-ng",
+      "rationale": "long = l-o-ng.",
+      "decodableWithin": "SP-ng"
+    },
+    {
+      "id": "sp-ng-012",
+      "skillId": "SP-ng",
+      "itemType": "build_word",
+      "difficulty": 2,
+      "stem": "Build the word you hear.",
+      "displayWord": "gong",
+      "audioText": "gong",
+      "graphemes": [
+        "g",
+        "o",
+        "ng"
+      ],
+      "distractorGraphemes": [
+        "nk",
+        "n",
+        "k"
+      ],
+      "missedConceptOnFail": "nasal-ng",
+      "rationale": "gong = g-o-ng.",
+      "decodableWithin": "SP-ng"
+    },
+    {
+      "id": "sp-ng-013",
+      "skillId": "SP-ng",
+      "itemType": "build_word",
+      "difficulty": 2,
+      "stem": "Build the word you hear.",
+      "displayWord": "lung",
+      "audioText": "lung",
+      "graphemes": [
+        "l",
+        "u",
+        "ng"
+      ],
+      "distractorGraphemes": [
+        "nk",
+        "n",
+        "g"
+      ],
+      "missedConceptOnFail": "nasal-ng",
+      "rationale": "lung = l-u-ng.",
+      "decodableWithin": "SP-ng"
+    },
+    {
+      "id": "sp-ng-014",
+      "skillId": "SP-ng",
+      "itemType": "build_word",
+      "difficulty": 2,
+      "stem": "Build the word you hear.",
+      "displayWord": "rung",
+      "audioText": "rung",
+      "graphemes": [
+        "r",
+        "u",
+        "ng"
+      ],
+      "distractorGraphemes": [
+        "nk",
+        "n",
+        "g"
+      ],
+      "missedConceptOnFail": "nasal-ng",
+      "rationale": "rung = r-u-ng.",
+      "decodableWithin": "SP-ng"
+    },
+    {
+      "id": "sp-ng-015",
+      "skillId": "SP-ng",
+      "itemType": "build_word",
+      "difficulty": 2,
+      "stem": "Build the word you hear.",
+      "displayWord": "hung",
+      "audioText": "hung",
+      "graphemes": [
+        "h",
+        "u",
+        "ng"
+      ],
+      "distractorGraphemes": [
+        "nk",
+        "n",
+        "g"
+      ],
+      "missedConceptOnFail": "nasal-ng",
+      "rationale": "hung = h-u-ng.",
+      "decodableWithin": "SP-ng"
+    },
+    {
+      "id": "sp-ng-016",
+      "skillId": "SP-ng",
+      "itemType": "build_word",
+      "difficulty": 3,
+      "stem": "Build the word you hear.",
+      "displayWord": "sung",
+      "audioText": "sung",
+      "graphemes": [
+        "s",
+        "u",
+        "ng"
+      ],
+      "distractorGraphemes": [
+        "nk",
+        "n",
+        "g",
+        "k"
+      ],
+      "missedConceptOnFail": "nasal-ng",
+      "rationale": "sung = s-u-ng.",
+      "decodableWithin": "SP-ng"
+    },
+    {
+      "id": "sp-ng-017",
+      "skillId": "SP-ng",
+      "itemType": "build_word",
+      "difficulty": 2,
+      "stem": "Build the word you hear.",
+      "displayWord": "thing",
+      "audioText": "thing",
+      "graphemes": [
+        "th",
+        "i",
+        "ng"
+      ],
+      "distractorGraphemes": [
+        "nk",
+        "n",
+        "g"
+      ],
+      "missedConceptOnFail": "nasal-ng",
+      "rationale": "thing = th-i-ng.",
+      "decodableWithin": "SP-ng"
+    },
+    {
+      "id": "sp-ng-018",
+      "skillId": "SP-ng",
+      "itemType": "build_word",
+      "difficulty": 2,
+      "stem": "Build the word you hear.",
+      "displayWord": "bring",
+      "audioText": "bring",
+      "graphemes": [
+        "b",
+        "r",
+        "i",
+        "ng"
+      ],
+      "distractorGraphemes": [
+        "nk",
+        "n",
+        "g"
+      ],
+      "missedConceptOnFail": "nasal-ng",
+      "rationale": "bring = b-r-i-ng.",
+      "decodableWithin": "SP-ng"
+    },
+    {
+      "id": "sp-ng-019",
+      "skillId": "SP-ng",
+      "itemType": "build_word",
+      "difficulty": 3,
+      "stem": "Build the word you hear.",
+      "displayWord": "sting",
+      "audioText": "sting",
+      "graphemes": [
+        "s",
+        "t",
+        "i",
+        "ng"
+      ],
+      "distractorGraphemes": [
+        "nk",
+        "n",
+        "g",
+        "k"
+      ],
+      "missedConceptOnFail": "nasal-ng",
+      "rationale": "sting = s-t-i-ng.",
+      "decodableWithin": "SP-ng"
+    },
+    {
+      "id": "sp-ng-020",
+      "skillId": "SP-ng",
+      "itemType": "build_word",
+      "difficulty": 2,
+      "stem": "Build the word you hear.",
+      "displayWord": "swing",
+      "audioText": "swing",
+      "graphemes": [
+        "s",
+        "w",
+        "i",
+        "ng"
+      ],
+      "distractorGraphemes": [
+        "nk",
+        "n",
+        "g"
+      ],
+      "missedConceptOnFail": "nasal-ng",
+      "rationale": "swing = s-w-i-ng.",
+      "decodableWithin": "SP-ng"
+    },
+    {
+      "id": "sp-ng-021",
+      "skillId": "SP-ng",
+      "itemType": "build_word",
+      "difficulty": 3,
+      "stem": "Build the word you hear.",
+      "displayWord": "cling",
+      "audioText": "cling",
+      "graphemes": [
+        "c",
+        "l",
+        "i",
+        "ng"
+      ],
+      "distractorGraphemes": [
+        "nk",
+        "n",
+        "g",
+        "k"
+      ],
+      "missedConceptOnFail": "nasal-ng",
+      "rationale": "cling = c-l-i-ng.",
+      "decodableWithin": "SP-ng"
+    },
+    {
+      "id": "sp-ng-022",
+      "skillId": "SP-ng",
+      "itemType": "build_word",
+      "difficulty": 3,
+      "stem": "Build the word you hear.",
+      "displayWord": "strong",
+      "audioText": "strong",
+      "graphemes": [
+        "s",
+        "t",
+        "r",
+        "o",
+        "ng"
+      ],
+      "distractorGraphemes": [
+        "nk",
+        "n",
+        "g",
+        "k"
+      ],
+      "missedConceptOnFail": "nasal-ng",
+      "rationale": "strong = s-t-r-o-ng.",
+      "decodableWithin": "SP-ng"
+    },
+    {
+      "id": "sp-ng-023",
+      "skillId": "SP-ng",
+      "itemType": "build_word",
+      "difficulty": 3,
+      "stem": "Build the word you hear.",
+      "displayWord": "spring",
+      "audioText": "spring",
+      "graphemes": [
+        "s",
+        "p",
+        "r",
+        "i",
+        "ng"
+      ],
+      "distractorGraphemes": [
+        "nk",
+        "n",
+        "g",
+        "k"
+      ],
+      "missedConceptOnFail": "nasal-ng",
+      "rationale": "spring = s-p-r-i-ng.",
+      "decodableWithin": "SP-ng"
+    },
+    {
+      "id": "sp-ng-024",
+      "skillId": "SP-ng",
+      "itemType": "build_word",
+      "difficulty": 3,
+      "stem": "Build the word you hear.",
+      "displayWord": "string",
+      "audioText": "string",
+      "graphemes": [
+        "s",
+        "t",
+        "r",
+        "i",
+        "ng"
+      ],
+      "distractorGraphemes": [
+        "nk",
+        "n",
+        "g",
+        "k"
+      ],
+      "missedConceptOnFail": "nasal-ng",
+      "rationale": "string = s-t-r-i-ng.",
+      "decodableWithin": "SP-ng"
+    },
+    {
+      "id": "sp-ng-025",
+      "skillId": "SP-ng",
+      "itemType": "build_word",
+      "difficulty": 1,
+      "stem": "Build the word you hear.",
+      "displayWord": "bank",
+      "audioText": "bank",
+      "graphemes": [
+        "b",
+        "a",
+        "nk"
+      ],
+      "distractorGraphemes": [
+        "ng",
+        "n"
+      ],
+      "missedConceptOnFail": "nasal-nk",
+      "rationale": "bank = b-a-nk.",
+      "decodableWithin": "SP-ng"
+    },
+    {
+      "id": "sp-ng-026",
+      "skillId": "SP-ng",
+      "itemType": "build_word",
+      "difficulty": 1,
+      "stem": "Build the word you hear.",
+      "displayWord": "tank",
+      "audioText": "tank",
+      "graphemes": [
+        "t",
+        "a",
+        "nk"
+      ],
+      "distractorGraphemes": [
+        "ng",
+        "n"
+      ],
+      "missedConceptOnFail": "nasal-nk",
+      "rationale": "tank = t-a-nk.",
+      "decodableWithin": "SP-ng"
+    },
+    {
+      "id": "sp-ng-027",
+      "skillId": "SP-ng",
+      "itemType": "build_word",
+      "difficulty": 1,
+      "stem": "Build the word you hear.",
+      "displayWord": "sank",
+      "audioText": "sank",
+      "graphemes": [
+        "s",
+        "a",
+        "nk"
+      ],
+      "distractorGraphemes": [
+        "ng",
+        "n"
+      ],
+      "missedConceptOnFail": "nasal-nk",
+      "rationale": "sank = s-a-nk.",
+      "decodableWithin": "SP-ng"
+    },
+    {
+      "id": "sp-ng-028",
+      "skillId": "SP-ng",
+      "itemType": "build_word",
+      "difficulty": 1,
+      "stem": "Build the word you hear.",
+      "displayWord": "pink",
+      "audioText": "pink",
+      "graphemes": [
+        "p",
+        "i",
+        "nk"
+      ],
+      "distractorGraphemes": [
+        "ng",
+        "n"
+      ],
+      "missedConceptOnFail": "nasal-nk",
+      "rationale": "pink = p-i-nk.",
+      "decodableWithin": "SP-ng"
+    },
+    {
+      "id": "sp-ng-029",
+      "skillId": "SP-ng",
+      "itemType": "build_word",
+      "difficulty": 1,
+      "stem": "Build the word you hear.",
+      "displayWord": "sink",
+      "audioText": "sink",
+      "graphemes": [
+        "s",
+        "i",
+        "nk"
+      ],
+      "distractorGraphemes": [
+        "ng",
+        "n"
+      ],
+      "missedConceptOnFail": "nasal-nk",
+      "rationale": "sink = s-i-nk.",
+      "decodableWithin": "SP-ng"
+    },
+    {
+      "id": "sp-ng-030",
+      "skillId": "SP-ng",
+      "itemType": "build_word",
+      "difficulty": 2,
+      "stem": "Build the word you hear.",
+      "displayWord": "link",
+      "audioText": "link",
+      "graphemes": [
+        "l",
+        "i",
+        "nk"
+      ],
+      "distractorGraphemes": [
+        "ng",
+        "n",
+        "g"
+      ],
+      "missedConceptOnFail": "nasal-nk",
+      "rationale": "link = l-i-nk.",
+      "decodableWithin": "SP-ng"
+    },
+    {
+      "id": "sp-ng-031",
+      "skillId": "SP-ng",
+      "itemType": "build_word",
+      "difficulty": 2,
+      "stem": "Build the word you hear.",
+      "displayWord": "wink",
+      "audioText": "wink",
+      "graphemes": [
+        "w",
+        "i",
+        "nk"
+      ],
+      "distractorGraphemes": [
+        "ng",
+        "n",
+        "g"
+      ],
+      "missedConceptOnFail": "nasal-nk",
+      "rationale": "wink = w-i-nk.",
+      "decodableWithin": "SP-ng"
+    },
+    {
+      "id": "sp-ng-032",
+      "skillId": "SP-ng",
+      "itemType": "build_word",
+      "difficulty": 2,
+      "stem": "Build the word you hear.",
+      "displayWord": "junk",
+      "audioText": "junk",
+      "graphemes": [
+        "j",
+        "u",
+        "nk"
+      ],
+      "distractorGraphemes": [
+        "ng",
+        "n",
+        "g"
+      ],
+      "missedConceptOnFail": "nasal-nk",
+      "rationale": "junk = j-u-nk.",
+      "decodableWithin": "SP-ng"
+    },
+    {
+      "id": "sp-ng-033",
+      "skillId": "SP-ng",
+      "itemType": "build_word",
+      "difficulty": 2,
+      "stem": "Build the word you hear.",
+      "displayWord": "sunk",
+      "audioText": "sunk",
+      "graphemes": [
+        "s",
+        "u",
+        "nk"
+      ],
+      "distractorGraphemes": [
+        "ng",
+        "n",
+        "g"
+      ],
+      "missedConceptOnFail": "nasal-nk",
+      "rationale": "sunk = s-u-nk.",
+      "decodableWithin": "SP-ng"
+    },
+    {
+      "id": "sp-ng-034",
+      "skillId": "SP-ng",
+      "itemType": "build_word",
+      "difficulty": 2,
+      "stem": "Build the word you hear.",
+      "displayWord": "bunk",
+      "audioText": "bunk",
+      "graphemes": [
+        "b",
+        "u",
+        "nk"
+      ],
+      "distractorGraphemes": [
+        "ng",
+        "n",
+        "g"
+      ],
+      "missedConceptOnFail": "nasal-nk",
+      "rationale": "bunk = b-u-nk.",
+      "decodableWithin": "SP-ng"
+    },
+    {
+      "id": "sp-ng-035",
+      "skillId": "SP-ng",
+      "itemType": "build_word",
+      "difficulty": 2,
+      "stem": "Build the word you hear.",
+      "displayWord": "dunk",
+      "audioText": "dunk",
+      "graphemes": [
+        "d",
+        "u",
+        "nk"
+      ],
+      "distractorGraphemes": [
+        "ng",
+        "n",
+        "g"
+      ],
+      "missedConceptOnFail": "nasal-nk",
+      "rationale": "dunk = d-u-nk.",
+      "decodableWithin": "SP-ng"
+    },
+    {
+      "id": "sp-ng-036",
+      "skillId": "SP-ng",
+      "itemType": "build_word",
+      "difficulty": 3,
+      "stem": "Build the word you hear.",
+      "displayWord": "honk",
+      "audioText": "honk",
+      "graphemes": [
+        "h",
+        "o",
+        "nk"
+      ],
+      "distractorGraphemes": [
+        "ng",
+        "n",
+        "g",
+        "k"
+      ],
+      "missedConceptOnFail": "nasal-nk",
+      "rationale": "honk = h-o-nk.",
+      "decodableWithin": "SP-ng"
+    },
+    {
+      "id": "sp-ng-037",
+      "skillId": "SP-ng",
+      "itemType": "build_word",
+      "difficulty": 2,
+      "stem": "Build the word you hear.",
+      "displayWord": "thank",
+      "audioText": "thank",
+      "graphemes": [
+        "th",
+        "a",
+        "nk"
+      ],
+      "distractorGraphemes": [
+        "ng",
+        "n",
+        "g"
+      ],
+      "missedConceptOnFail": "nasal-nk",
+      "rationale": "thank = th-a-nk.",
+      "decodableWithin": "SP-ng"
+    },
+    {
+      "id": "sp-ng-038",
+      "skillId": "SP-ng",
+      "itemType": "build_word",
+      "difficulty": 2,
+      "stem": "Build the word you hear.",
+      "displayWord": "blank",
+      "audioText": "blank",
+      "graphemes": [
+        "b",
+        "l",
+        "a",
+        "nk"
+      ],
+      "distractorGraphemes": [
+        "ng",
+        "n",
+        "g"
+      ],
+      "missedConceptOnFail": "nasal-nk",
+      "rationale": "blank = b-l-a-nk.",
+      "decodableWithin": "SP-ng"
+    },
+    {
+      "id": "sp-ng-039",
+      "skillId": "SP-ng",
+      "itemType": "build_word",
+      "difficulty": 3,
+      "stem": "Build the word you hear.",
+      "displayWord": "plank",
+      "audioText": "plank",
+      "graphemes": [
+        "p",
+        "l",
+        "a",
+        "nk"
+      ],
+      "distractorGraphemes": [
+        "ng",
+        "n",
+        "g",
+        "k"
+      ],
+      "missedConceptOnFail": "nasal-nk",
+      "rationale": "plank = p-l-a-nk.",
+      "decodableWithin": "SP-ng"
+    },
+    {
+      "id": "sp-ng-040",
+      "skillId": "SP-ng",
+      "itemType": "build_word",
+      "difficulty": 2,
+      "stem": "Build the word you hear.",
+      "displayWord": "drink",
+      "audioText": "drink",
+      "graphemes": [
+        "d",
+        "r",
+        "i",
+        "nk"
+      ],
+      "distractorGraphemes": [
+        "ng",
+        "n",
+        "g"
+      ],
+      "missedConceptOnFail": "nasal-nk",
+      "rationale": "drink = d-r-i-nk.",
+      "decodableWithin": "SP-ng"
+    },
+    {
+      "id": "sp-ng-041",
+      "skillId": "SP-ng",
+      "itemType": "build_word",
+      "difficulty": 2,
+      "stem": "Build the word you hear.",
+      "displayWord": "think",
+      "audioText": "think",
+      "graphemes": [
+        "th",
+        "i",
+        "nk"
+      ],
+      "distractorGraphemes": [
+        "ng",
+        "n",
+        "g"
+      ],
+      "missedConceptOnFail": "nasal-nk",
+      "rationale": "think = th-i-nk.",
+      "decodableWithin": "SP-ng"
+    },
+    {
+      "id": "sp-ng-042",
+      "skillId": "SP-ng",
+      "itemType": "build_word",
+      "difficulty": 3,
+      "stem": "Build the word you hear.",
+      "displayWord": "blink",
+      "audioText": "blink",
+      "graphemes": [
+        "b",
+        "l",
+        "i",
+        "nk"
+      ],
+      "distractorGraphemes": [
+        "ng",
+        "n",
+        "g",
+        "k"
+      ],
+      "missedConceptOnFail": "nasal-nk",
+      "rationale": "blink = b-l-i-nk.",
+      "decodableWithin": "SP-ng"
+    },
+    {
+      "id": "sp-ng-043",
+      "skillId": "SP-ng",
+      "itemType": "build_word",
+      "difficulty": 3,
+      "stem": "Build the word you hear.",
+      "displayWord": "trunk",
+      "audioText": "trunk",
+      "graphemes": [
+        "t",
+        "r",
+        "u",
+        "nk"
+      ],
+      "distractorGraphemes": [
+        "ng",
+        "n",
+        "g",
+        "k"
+      ],
+      "missedConceptOnFail": "nasal-nk",
+      "rationale": "trunk = t-r-u-nk.",
+      "decodableWithin": "SP-ng"
+    },
+    {
+      "id": "sp-ng-044",
+      "skillId": "SP-ng",
+      "itemType": "build_word",
+      "difficulty": 3,
+      "stem": "Build the word you hear.",
+      "displayWord": "drunk",
+      "audioText": "drunk",
+      "graphemes": [
+        "d",
+        "r",
+        "u",
+        "nk"
+      ],
+      "distractorGraphemes": [
+        "ng",
+        "n",
+        "g",
+        "k"
+      ],
+      "missedConceptOnFail": "nasal-nk",
+      "rationale": "drunk = d-r-u-nk.",
+      "decodableWithin": "SP-ng"
+    },
+    {
+      "id": "sp-ng-045",
+      "skillId": "SP-ng",
+      "itemType": "build_word",
+      "difficulty": 3,
+      "stem": "Build the word you hear.",
+      "displayWord": "skunk",
+      "audioText": "skunk",
+      "graphemes": [
+        "s",
+        "k",
+        "u",
+        "nk"
+      ],
+      "distractorGraphemes": [
+        "ng",
+        "n",
+        "g",
+        "sh"
+      ],
+      "missedConceptOnFail": "nasal-nk",
+      "rationale": "skunk = s-k-u-nk.",
+      "decodableWithin": "SP-ng"
+    },
+    {
+      "id": "sp-ng-046",
+      "skillId": "SP-ng",
+      "itemType": "build_word",
+      "difficulty": 3,
+      "stem": "Build the word you hear.",
+      "displayWord": "chunk",
+      "audioText": "chunk",
+      "graphemes": [
+        "ch",
+        "u",
+        "nk"
+      ],
+      "distractorGraphemes": [
+        "ng",
+        "n",
+        "g",
+        "k"
+      ],
+      "missedConceptOnFail": "nasal-nk",
+      "rationale": "chunk = ch-u-nk.",
+      "decodableWithin": "SP-ng"
+    },
+    {
+      "id": "sp-ng-047",
+      "skillId": "SP-ng",
+      "itemType": "build_word",
+      "difficulty": 3,
+      "stem": "Build the word you hear.",
+      "displayWord": "shrink",
+      "audioText": "shrink",
+      "graphemes": [
+        "sh",
+        "r",
+        "i",
+        "nk"
+      ],
+      "distractorGraphemes": [
+        "ng",
+        "n",
+        "g",
+        "k"
+      ],
+      "missedConceptOnFail": "nasal-nk",
+      "rationale": "shrink = sh-r-i-nk.",
+      "decodableWithin": "SP-ng"
+    }
+  ],
+  "lessons": {
+    "SP-ng": {
+      "iCanStatement": "I can spell words that end in ng and nk.",
+      "explanation": "When you hear the humming /ng/ at the end, write ng (song). When you hear /ngk/ — a hum with a little /k/ — write nk (pink). Use the one ng or nk tile, not n + g or n + k.",
+      "workedExamples": [
+        {
+          "text": "song",
+          "note": "Hear s-o-ng → tiles s · o · ng"
+        },
+        {
+          "text": "pink",
+          "note": "Hear p-i-nk → tiles p · i · nk"
+        }
+      ]
+    }
+  }
+}

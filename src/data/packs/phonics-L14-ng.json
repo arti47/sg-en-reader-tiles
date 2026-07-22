@@ -1,0 +1,1248 @@
+{
+  "packId": "phonics-L14-ng",
+  "strand": "phonics",
+  "skillIds": [
+    "PH-ng"
+  ],
+  "version": 1,
+  "items": [
+    {
+      "id": "ph-ng-001",
+      "skillId": "PH-ng",
+      "itemType": "decode_choice",
+      "difficulty": 1,
+      "stem": "Tap the word you hear.",
+      "audioText": "ring",
+      "choices": [
+        {
+          "id": "a",
+          "label": "ring"
+        },
+        {
+          "id": "b",
+          "label": "king"
+        },
+        {
+          "id": "c",
+          "label": "wing"
+        }
+      ],
+      "correctChoiceId": "a",
+      "missedConceptOnFail": "nasal-ng",
+      "rationale": "r-i-ng = ring.",
+      "decodableWithin": "PH-ng"
+    },
+    {
+      "id": "ph-ng-002",
+      "skillId": "PH-ng",
+      "itemType": "decode_choice",
+      "difficulty": 1,
+      "stem": "Tap the word you hear.",
+      "audioText": "king",
+      "choices": [
+        {
+          "id": "a",
+          "label": "ring"
+        },
+        {
+          "id": "b",
+          "label": "king"
+        },
+        {
+          "id": "c",
+          "label": "sing"
+        }
+      ],
+      "correctChoiceId": "b",
+      "missedConceptOnFail": "nasal-ng",
+      "rationale": "k-i-ng = king.",
+      "decodableWithin": "PH-ng"
+    },
+    {
+      "id": "ph-ng-003",
+      "skillId": "PH-ng",
+      "itemType": "decode_choice",
+      "difficulty": 1,
+      "stem": "Tap the word you hear.",
+      "audioText": "sing",
+      "choices": [
+        {
+          "id": "a",
+          "label": "ring"
+        },
+        {
+          "id": "b",
+          "label": "wing"
+        },
+        {
+          "id": "c",
+          "label": "sing"
+        }
+      ],
+      "correctChoiceId": "c",
+      "missedConceptOnFail": "nasal-ng",
+      "rationale": "s-i-ng = sing.",
+      "decodableWithin": "PH-ng"
+    },
+    {
+      "id": "ph-ng-004",
+      "skillId": "PH-ng",
+      "itemType": "decode_choice",
+      "difficulty": 1,
+      "stem": "Tap the word you hear.",
+      "audioText": "wing",
+      "choices": [
+        {
+          "id": "a",
+          "label": "wing"
+        },
+        {
+          "id": "b",
+          "label": "ring"
+        },
+        {
+          "id": "c",
+          "label": "king"
+        }
+      ],
+      "correctChoiceId": "a",
+      "missedConceptOnFail": "nasal-ng",
+      "rationale": "w-i-ng = wing.",
+      "decodableWithin": "PH-ng"
+    },
+    {
+      "id": "ph-ng-005",
+      "skillId": "PH-ng",
+      "itemType": "decode_choice",
+      "difficulty": 1,
+      "stem": "Tap the word you hear.",
+      "audioText": "bang",
+      "choices": [
+        {
+          "id": "a",
+          "label": "gang"
+        },
+        {
+          "id": "b",
+          "label": "bang"
+        },
+        {
+          "id": "c",
+          "label": "hang"
+        }
+      ],
+      "correctChoiceId": "b",
+      "missedConceptOnFail": "nasal-ng",
+      "rationale": "b-a-ng = bang.",
+      "decodableWithin": "PH-ng"
+    },
+    {
+      "id": "ph-ng-006",
+      "skillId": "PH-ng",
+      "itemType": "decode_choice",
+      "difficulty": 1,
+      "stem": "Tap the word you hear.",
+      "audioText": "hang",
+      "choices": [
+        {
+          "id": "a",
+          "label": "bang"
+        },
+        {
+          "id": "b",
+          "label": "rang"
+        },
+        {
+          "id": "c",
+          "label": "hang"
+        }
+      ],
+      "correctChoiceId": "c",
+      "missedConceptOnFail": "nasal-ng",
+      "rationale": "h-a-ng = hang.",
+      "decodableWithin": "PH-ng"
+    },
+    {
+      "id": "ph-ng-007",
+      "skillId": "PH-ng",
+      "itemType": "decode_choice",
+      "difficulty": 2,
+      "stem": "Tap the word you hear.",
+      "audioText": "gang",
+      "choices": [
+        {
+          "id": "a",
+          "label": "gang"
+        },
+        {
+          "id": "b",
+          "label": "bang"
+        },
+        {
+          "id": "c",
+          "label": "hang"
+        }
+      ],
+      "correctChoiceId": "a",
+      "missedConceptOnFail": "nasal-ng",
+      "rationale": "g-a-ng = gang.",
+      "decodableWithin": "PH-ng"
+    },
+    {
+      "id": "ph-ng-008",
+      "skillId": "PH-ng",
+      "itemType": "decode_choice",
+      "difficulty": 2,
+      "stem": "Tap the word you hear.",
+      "audioText": "rang",
+      "choices": [
+        {
+          "id": "a",
+          "label": "bang"
+        },
+        {
+          "id": "b",
+          "label": "rang"
+        },
+        {
+          "id": "c",
+          "label": "sang"
+        }
+      ],
+      "correctChoiceId": "b",
+      "missedConceptOnFail": "nasal-ng",
+      "rationale": "r-a-ng = rang.",
+      "decodableWithin": "PH-ng"
+    },
+    {
+      "id": "ph-ng-009",
+      "skillId": "PH-ng",
+      "itemType": "decode_choice",
+      "difficulty": 2,
+      "stem": "Tap the word you hear.",
+      "audioText": "sang",
+      "choices": [
+        {
+          "id": "a",
+          "label": "rang"
+        },
+        {
+          "id": "b",
+          "label": "hang"
+        },
+        {
+          "id": "c",
+          "label": "sang"
+        }
+      ],
+      "correctChoiceId": "c",
+      "missedConceptOnFail": "nasal-ng",
+      "rationale": "s-a-ng = sang.",
+      "decodableWithin": "PH-ng"
+    },
+    {
+      "id": "ph-ng-010",
+      "skillId": "PH-ng",
+      "itemType": "decode_choice",
+      "difficulty": 1,
+      "stem": "Tap the word you hear.",
+      "audioText": "song",
+      "choices": [
+        {
+          "id": "a",
+          "label": "song"
+        },
+        {
+          "id": "b",
+          "label": "long"
+        },
+        {
+          "id": "c",
+          "label": "gong"
+        }
+      ],
+      "correctChoiceId": "a",
+      "missedConceptOnFail": "nasal-ng",
+      "rationale": "s-o-ng = song.",
+      "decodableWithin": "PH-ng"
+    },
+    {
+      "id": "ph-ng-011",
+      "skillId": "PH-ng",
+      "itemType": "decode_choice",
+      "difficulty": 1,
+      "stem": "Tap the word you hear.",
+      "audioText": "long",
+      "choices": [
+        {
+          "id": "a",
+          "label": "song"
+        },
+        {
+          "id": "b",
+          "label": "long"
+        },
+        {
+          "id": "c",
+          "label": "gong"
+        }
+      ],
+      "correctChoiceId": "b",
+      "missedConceptOnFail": "nasal-ng",
+      "rationale": "l-o-ng = long.",
+      "decodableWithin": "PH-ng"
+    },
+    {
+      "id": "ph-ng-012",
+      "skillId": "PH-ng",
+      "itemType": "decode_choice",
+      "difficulty": 2,
+      "stem": "Tap the word you hear.",
+      "audioText": "gong",
+      "choices": [
+        {
+          "id": "a",
+          "label": "song"
+        },
+        {
+          "id": "b",
+          "label": "long"
+        },
+        {
+          "id": "c",
+          "label": "gong"
+        }
+      ],
+      "correctChoiceId": "c",
+      "missedConceptOnFail": "nasal-ng",
+      "rationale": "g-o-ng = gong.",
+      "decodableWithin": "PH-ng"
+    },
+    {
+      "id": "ph-ng-013",
+      "skillId": "PH-ng",
+      "itemType": "decode_choice",
+      "difficulty": 2,
+      "stem": "Tap the word you hear.",
+      "audioText": "lung",
+      "choices": [
+        {
+          "id": "a",
+          "label": "lung"
+        },
+        {
+          "id": "b",
+          "label": "rung"
+        },
+        {
+          "id": "c",
+          "label": "hung"
+        }
+      ],
+      "correctChoiceId": "a",
+      "missedConceptOnFail": "nasal-ng",
+      "rationale": "l-u-ng = lung.",
+      "decodableWithin": "PH-ng"
+    },
+    {
+      "id": "ph-ng-014",
+      "skillId": "PH-ng",
+      "itemType": "decode_choice",
+      "difficulty": 2,
+      "stem": "Tap the word you hear.",
+      "audioText": "rung",
+      "choices": [
+        {
+          "id": "a",
+          "label": "lung"
+        },
+        {
+          "id": "b",
+          "label": "rung"
+        },
+        {
+          "id": "c",
+          "label": "hung"
+        }
+      ],
+      "correctChoiceId": "b",
+      "missedConceptOnFail": "nasal-ng",
+      "rationale": "r-u-ng = rung.",
+      "decodableWithin": "PH-ng"
+    },
+    {
+      "id": "ph-ng-015",
+      "skillId": "PH-ng",
+      "itemType": "decode_choice",
+      "difficulty": 2,
+      "stem": "Tap the word you hear.",
+      "audioText": "hung",
+      "choices": [
+        {
+          "id": "a",
+          "label": "lung"
+        },
+        {
+          "id": "b",
+          "label": "rung"
+        },
+        {
+          "id": "c",
+          "label": "hung"
+        }
+      ],
+      "correctChoiceId": "c",
+      "missedConceptOnFail": "nasal-ng",
+      "rationale": "h-u-ng = hung.",
+      "decodableWithin": "PH-ng"
+    },
+    {
+      "id": "ph-ng-016",
+      "skillId": "PH-ng",
+      "itemType": "decode_choice",
+      "difficulty": 3,
+      "stem": "Tap the word you hear.",
+      "audioText": "sung",
+      "choices": [
+        {
+          "id": "a",
+          "label": "sung"
+        },
+        {
+          "id": "b",
+          "label": "rung"
+        },
+        {
+          "id": "c",
+          "label": "lung"
+        }
+      ],
+      "correctChoiceId": "a",
+      "missedConceptOnFail": "nasal-ng",
+      "rationale": "s-u-ng = sung.",
+      "decodableWithin": "PH-ng"
+    },
+    {
+      "id": "ph-ng-017",
+      "skillId": "PH-ng",
+      "itemType": "decode_choice",
+      "difficulty": 2,
+      "stem": "Tap the word you hear.",
+      "audioText": "thing",
+      "choices": [
+        {
+          "id": "a",
+          "label": "sting"
+        },
+        {
+          "id": "b",
+          "label": "thing"
+        },
+        {
+          "id": "c",
+          "label": "swing"
+        }
+      ],
+      "correctChoiceId": "b",
+      "missedConceptOnFail": "nasal-ng",
+      "rationale": "th-i-ng = thing.",
+      "decodableWithin": "PH-ng"
+    },
+    {
+      "id": "ph-ng-018",
+      "skillId": "PH-ng",
+      "itemType": "decode_choice",
+      "difficulty": 2,
+      "stem": "Tap the word you hear.",
+      "audioText": "bring",
+      "choices": [
+        {
+          "id": "a",
+          "label": "sting"
+        },
+        {
+          "id": "b",
+          "label": "cling"
+        },
+        {
+          "id": "c",
+          "label": "bring"
+        }
+      ],
+      "correctChoiceId": "c",
+      "missedConceptOnFail": "nasal-ng",
+      "rationale": "b-r-i-ng = bring.",
+      "decodableWithin": "PH-ng"
+    },
+    {
+      "id": "ph-ng-019",
+      "skillId": "PH-ng",
+      "itemType": "decode_choice",
+      "difficulty": 3,
+      "stem": "Tap the word you hear.",
+      "audioText": "sting",
+      "choices": [
+        {
+          "id": "a",
+          "label": "sting"
+        },
+        {
+          "id": "b",
+          "label": "bring"
+        },
+        {
+          "id": "c",
+          "label": "swing"
+        }
+      ],
+      "correctChoiceId": "a",
+      "missedConceptOnFail": "nasal-ng",
+      "rationale": "s-t-i-ng = sting.",
+      "decodableWithin": "PH-ng"
+    },
+    {
+      "id": "ph-ng-020",
+      "skillId": "PH-ng",
+      "itemType": "decode_choice",
+      "difficulty": 2,
+      "stem": "Tap the word you hear.",
+      "audioText": "swing",
+      "choices": [
+        {
+          "id": "a",
+          "label": "sting"
+        },
+        {
+          "id": "b",
+          "label": "swing"
+        },
+        {
+          "id": "c",
+          "label": "bring"
+        }
+      ],
+      "correctChoiceId": "b",
+      "missedConceptOnFail": "nasal-ng",
+      "rationale": "s-w-i-ng = swing.",
+      "decodableWithin": "PH-ng"
+    },
+    {
+      "id": "ph-ng-021",
+      "skillId": "PH-ng",
+      "itemType": "decode_choice",
+      "difficulty": 3,
+      "stem": "Tap the word you hear.",
+      "audioText": "cling",
+      "choices": [
+        {
+          "id": "a",
+          "label": "sting"
+        },
+        {
+          "id": "b",
+          "label": "bring"
+        },
+        {
+          "id": "c",
+          "label": "cling"
+        }
+      ],
+      "correctChoiceId": "c",
+      "missedConceptOnFail": "nasal-ng",
+      "rationale": "c-l-i-ng = cling.",
+      "decodableWithin": "PH-ng"
+    },
+    {
+      "id": "ph-ng-022",
+      "skillId": "PH-ng",
+      "itemType": "decode_choice",
+      "difficulty": 3,
+      "stem": "Tap the word you hear.",
+      "audioText": "strong",
+      "choices": [
+        {
+          "id": "a",
+          "label": "strong"
+        },
+        {
+          "id": "b",
+          "label": "spring"
+        },
+        {
+          "id": "c",
+          "label": "string"
+        }
+      ],
+      "correctChoiceId": "a",
+      "missedConceptOnFail": "nasal-ng",
+      "rationale": "s-t-r-o-ng = strong.",
+      "decodableWithin": "PH-ng"
+    },
+    {
+      "id": "ph-ng-023",
+      "skillId": "PH-ng",
+      "itemType": "decode_choice",
+      "difficulty": 3,
+      "stem": "Tap the word you hear.",
+      "audioText": "spring",
+      "choices": [
+        {
+          "id": "a",
+          "label": "strong"
+        },
+        {
+          "id": "b",
+          "label": "spring"
+        },
+        {
+          "id": "c",
+          "label": "string"
+        }
+      ],
+      "correctChoiceId": "b",
+      "missedConceptOnFail": "nasal-ng",
+      "rationale": "s-p-r-i-ng = spring.",
+      "decodableWithin": "PH-ng"
+    },
+    {
+      "id": "ph-ng-024",
+      "skillId": "PH-ng",
+      "itemType": "decode_choice",
+      "difficulty": 3,
+      "stem": "Tap the word you hear.",
+      "audioText": "string",
+      "choices": [
+        {
+          "id": "a",
+          "label": "spring"
+        },
+        {
+          "id": "b",
+          "label": "strong"
+        },
+        {
+          "id": "c",
+          "label": "string"
+        }
+      ],
+      "correctChoiceId": "c",
+      "missedConceptOnFail": "nasal-ng",
+      "rationale": "s-t-r-i-ng = string.",
+      "decodableWithin": "PH-ng"
+    },
+    {
+      "id": "ph-ng-025",
+      "skillId": "PH-ng",
+      "itemType": "decode_choice",
+      "difficulty": 1,
+      "stem": "Tap the word you hear.",
+      "audioText": "bank",
+      "choices": [
+        {
+          "id": "a",
+          "label": "bank"
+        },
+        {
+          "id": "b",
+          "label": "tank"
+        },
+        {
+          "id": "c",
+          "label": "sank"
+        }
+      ],
+      "correctChoiceId": "a",
+      "missedConceptOnFail": "nasal-nk",
+      "rationale": "b-a-nk = bank.",
+      "decodableWithin": "PH-ng"
+    },
+    {
+      "id": "ph-ng-026",
+      "skillId": "PH-ng",
+      "itemType": "decode_choice",
+      "difficulty": 1,
+      "stem": "Tap the word you hear.",
+      "audioText": "tank",
+      "choices": [
+        {
+          "id": "a",
+          "label": "bank"
+        },
+        {
+          "id": "b",
+          "label": "tank"
+        },
+        {
+          "id": "c",
+          "label": "rank"
+        }
+      ],
+      "correctChoiceId": "b",
+      "missedConceptOnFail": "nasal-nk",
+      "rationale": "t-a-nk = tank.",
+      "decodableWithin": "PH-ng"
+    },
+    {
+      "id": "ph-ng-027",
+      "skillId": "PH-ng",
+      "itemType": "decode_choice",
+      "difficulty": 1,
+      "stem": "Tap the word you hear.",
+      "audioText": "sank",
+      "choices": [
+        {
+          "id": "a",
+          "label": "bank"
+        },
+        {
+          "id": "b",
+          "label": "rank"
+        },
+        {
+          "id": "c",
+          "label": "sank"
+        }
+      ],
+      "correctChoiceId": "c",
+      "missedConceptOnFail": "nasal-nk",
+      "rationale": "s-a-nk = sank.",
+      "decodableWithin": "PH-ng"
+    },
+    {
+      "id": "ph-ng-028",
+      "skillId": "PH-ng",
+      "itemType": "decode_choice",
+      "difficulty": 1,
+      "stem": "Tap the word you hear.",
+      "audioText": "pink",
+      "choices": [
+        {
+          "id": "a",
+          "label": "pink"
+        },
+        {
+          "id": "b",
+          "label": "sink"
+        },
+        {
+          "id": "c",
+          "label": "link"
+        }
+      ],
+      "correctChoiceId": "a",
+      "missedConceptOnFail": "nasal-nk",
+      "rationale": "p-i-nk = pink.",
+      "decodableWithin": "PH-ng"
+    },
+    {
+      "id": "ph-ng-029",
+      "skillId": "PH-ng",
+      "itemType": "decode_choice",
+      "difficulty": 1,
+      "stem": "Tap the word you hear.",
+      "audioText": "sink",
+      "choices": [
+        {
+          "id": "a",
+          "label": "pink"
+        },
+        {
+          "id": "b",
+          "label": "sink"
+        },
+        {
+          "id": "c",
+          "label": "wink"
+        }
+      ],
+      "correctChoiceId": "b",
+      "missedConceptOnFail": "nasal-nk",
+      "rationale": "s-i-nk = sink.",
+      "decodableWithin": "PH-ng"
+    },
+    {
+      "id": "ph-ng-030",
+      "skillId": "PH-ng",
+      "itemType": "decode_choice",
+      "difficulty": 2,
+      "stem": "Tap the word you hear.",
+      "audioText": "link",
+      "choices": [
+        {
+          "id": "a",
+          "label": "pink"
+        },
+        {
+          "id": "b",
+          "label": "wink"
+        },
+        {
+          "id": "c",
+          "label": "link"
+        }
+      ],
+      "correctChoiceId": "c",
+      "missedConceptOnFail": "nasal-nk",
+      "rationale": "l-i-nk = link.",
+      "decodableWithin": "PH-ng"
+    },
+    {
+      "id": "ph-ng-031",
+      "skillId": "PH-ng",
+      "itemType": "decode_choice",
+      "difficulty": 2,
+      "stem": "Tap the word you hear.",
+      "audioText": "wink",
+      "choices": [
+        {
+          "id": "a",
+          "label": "wink"
+        },
+        {
+          "id": "b",
+          "label": "pink"
+        },
+        {
+          "id": "c",
+          "label": "sink"
+        }
+      ],
+      "correctChoiceId": "a",
+      "missedConceptOnFail": "nasal-nk",
+      "rationale": "w-i-nk = wink.",
+      "decodableWithin": "PH-ng"
+    },
+    {
+      "id": "ph-ng-032",
+      "skillId": "PH-ng",
+      "itemType": "decode_choice",
+      "difficulty": 2,
+      "stem": "Tap the word you hear.",
+      "audioText": "junk",
+      "choices": [
+        {
+          "id": "a",
+          "label": "sunk"
+        },
+        {
+          "id": "b",
+          "label": "junk"
+        },
+        {
+          "id": "c",
+          "label": "bunk"
+        }
+      ],
+      "correctChoiceId": "b",
+      "missedConceptOnFail": "nasal-nk",
+      "rationale": "j-u-nk = junk.",
+      "decodableWithin": "PH-ng"
+    },
+    {
+      "id": "ph-ng-033",
+      "skillId": "PH-ng",
+      "itemType": "decode_choice",
+      "difficulty": 2,
+      "stem": "Tap the word you hear.",
+      "audioText": "sunk",
+      "choices": [
+        {
+          "id": "a",
+          "label": "junk"
+        },
+        {
+          "id": "b",
+          "label": "bunk"
+        },
+        {
+          "id": "c",
+          "label": "sunk"
+        }
+      ],
+      "correctChoiceId": "c",
+      "missedConceptOnFail": "nasal-nk",
+      "rationale": "s-u-nk = sunk.",
+      "decodableWithin": "PH-ng"
+    },
+    {
+      "id": "ph-ng-034",
+      "skillId": "PH-ng",
+      "itemType": "decode_choice",
+      "difficulty": 2,
+      "stem": "Tap the word you hear.",
+      "audioText": "bunk",
+      "choices": [
+        {
+          "id": "a",
+          "label": "bunk"
+        },
+        {
+          "id": "b",
+          "label": "junk"
+        },
+        {
+          "id": "c",
+          "label": "dunk"
+        }
+      ],
+      "correctChoiceId": "a",
+      "missedConceptOnFail": "nasal-nk",
+      "rationale": "b-u-nk = bunk.",
+      "decodableWithin": "PH-ng"
+    },
+    {
+      "id": "ph-ng-035",
+      "skillId": "PH-ng",
+      "itemType": "decode_choice",
+      "difficulty": 2,
+      "stem": "Tap the word you hear.",
+      "audioText": "dunk",
+      "choices": [
+        {
+          "id": "a",
+          "label": "sunk"
+        },
+        {
+          "id": "b",
+          "label": "dunk"
+        },
+        {
+          "id": "c",
+          "label": "bunk"
+        }
+      ],
+      "correctChoiceId": "b",
+      "missedConceptOnFail": "nasal-nk",
+      "rationale": "d-u-nk = dunk.",
+      "decodableWithin": "PH-ng"
+    },
+    {
+      "id": "ph-ng-036",
+      "skillId": "PH-ng",
+      "itemType": "decode_choice",
+      "difficulty": 3,
+      "stem": "Tap the word you hear.",
+      "audioText": "honk",
+      "choices": [
+        {
+          "id": "a",
+          "label": "bank"
+        },
+        {
+          "id": "b",
+          "label": "sink"
+        },
+        {
+          "id": "c",
+          "label": "honk"
+        }
+      ],
+      "correctChoiceId": "c",
+      "missedConceptOnFail": "nasal-nk",
+      "rationale": "h-o-nk = honk.",
+      "decodableWithin": "PH-ng"
+    },
+    {
+      "id": "ph-ng-037",
+      "skillId": "PH-ng",
+      "itemType": "decode_choice",
+      "difficulty": 2,
+      "stem": "Tap the word you hear.",
+      "audioText": "thank",
+      "choices": [
+        {
+          "id": "a",
+          "label": "thank"
+        },
+        {
+          "id": "b",
+          "label": "blank"
+        },
+        {
+          "id": "c",
+          "label": "plank"
+        }
+      ],
+      "correctChoiceId": "a",
+      "missedConceptOnFail": "nasal-nk",
+      "rationale": "th-a-nk = thank.",
+      "decodableWithin": "PH-ng"
+    },
+    {
+      "id": "ph-ng-038",
+      "skillId": "PH-ng",
+      "itemType": "decode_choice",
+      "difficulty": 2,
+      "stem": "Tap the word you hear.",
+      "audioText": "blank",
+      "choices": [
+        {
+          "id": "a",
+          "label": "plank"
+        },
+        {
+          "id": "b",
+          "label": "blank"
+        },
+        {
+          "id": "c",
+          "label": "crank"
+        }
+      ],
+      "correctChoiceId": "b",
+      "missedConceptOnFail": "nasal-nk",
+      "rationale": "b-l-a-nk = blank.",
+      "decodableWithin": "PH-ng"
+    },
+    {
+      "id": "ph-ng-039",
+      "skillId": "PH-ng",
+      "itemType": "decode_choice",
+      "difficulty": 3,
+      "stem": "Tap the word you hear.",
+      "audioText": "plank",
+      "choices": [
+        {
+          "id": "a",
+          "label": "blank"
+        },
+        {
+          "id": "b",
+          "label": "crank"
+        },
+        {
+          "id": "c",
+          "label": "plank"
+        }
+      ],
+      "correctChoiceId": "c",
+      "missedConceptOnFail": "nasal-nk",
+      "rationale": "p-l-a-nk = plank.",
+      "decodableWithin": "PH-ng"
+    },
+    {
+      "id": "ph-ng-040",
+      "skillId": "PH-ng",
+      "itemType": "decode_choice",
+      "difficulty": 2,
+      "stem": "Tap the word you hear.",
+      "audioText": "drink",
+      "choices": [
+        {
+          "id": "a",
+          "label": "drink"
+        },
+        {
+          "id": "b",
+          "label": "blink"
+        },
+        {
+          "id": "c",
+          "label": "think"
+        }
+      ],
+      "correctChoiceId": "a",
+      "missedConceptOnFail": "nasal-nk",
+      "rationale": "d-r-i-nk = drink.",
+      "decodableWithin": "PH-ng"
+    },
+    {
+      "id": "ph-ng-041",
+      "skillId": "PH-ng",
+      "itemType": "decode_choice",
+      "difficulty": 2,
+      "stem": "Tap the word you hear.",
+      "audioText": "think",
+      "choices": [
+        {
+          "id": "a",
+          "label": "drink"
+        },
+        {
+          "id": "b",
+          "label": "think"
+        },
+        {
+          "id": "c",
+          "label": "blink"
+        }
+      ],
+      "correctChoiceId": "b",
+      "missedConceptOnFail": "nasal-nk",
+      "rationale": "th-i-nk = think.",
+      "decodableWithin": "PH-ng"
+    },
+    {
+      "id": "ph-ng-042",
+      "skillId": "PH-ng",
+      "itemType": "decode_choice",
+      "difficulty": 3,
+      "stem": "Tap the word you hear.",
+      "audioText": "blink",
+      "choices": [
+        {
+          "id": "a",
+          "label": "drink"
+        },
+        {
+          "id": "b",
+          "label": "think"
+        },
+        {
+          "id": "c",
+          "label": "blink"
+        }
+      ],
+      "correctChoiceId": "c",
+      "missedConceptOnFail": "nasal-nk",
+      "rationale": "b-l-i-nk = blink.",
+      "decodableWithin": "PH-ng"
+    },
+    {
+      "id": "ph-ng-043",
+      "skillId": "PH-ng",
+      "itemType": "decode_choice",
+      "difficulty": 3,
+      "stem": "Tap the word you hear.",
+      "audioText": "trunk",
+      "choices": [
+        {
+          "id": "a",
+          "label": "trunk"
+        },
+        {
+          "id": "b",
+          "label": "drunk"
+        },
+        {
+          "id": "c",
+          "label": "skunk"
+        }
+      ],
+      "correctChoiceId": "a",
+      "missedConceptOnFail": "nasal-nk",
+      "rationale": "t-r-u-nk = trunk.",
+      "decodableWithin": "PH-ng"
+    },
+    {
+      "id": "ph-ng-044",
+      "skillId": "PH-ng",
+      "itemType": "decode_choice",
+      "difficulty": 3,
+      "stem": "Tap the word you hear.",
+      "audioText": "drunk",
+      "choices": [
+        {
+          "id": "a",
+          "label": "trunk"
+        },
+        {
+          "id": "b",
+          "label": "drunk"
+        },
+        {
+          "id": "c",
+          "label": "skunk"
+        }
+      ],
+      "correctChoiceId": "b",
+      "missedConceptOnFail": "nasal-nk",
+      "rationale": "d-r-u-nk = drunk.",
+      "decodableWithin": "PH-ng"
+    },
+    {
+      "id": "ph-ng-045",
+      "skillId": "PH-ng",
+      "itemType": "decode_choice",
+      "difficulty": 3,
+      "stem": "Tap the word you hear.",
+      "audioText": "skunk",
+      "choices": [
+        {
+          "id": "a",
+          "label": "trunk"
+        },
+        {
+          "id": "b",
+          "label": "chunk"
+        },
+        {
+          "id": "c",
+          "label": "skunk"
+        }
+      ],
+      "correctChoiceId": "c",
+      "missedConceptOnFail": "nasal-nk",
+      "rationale": "s-k-u-nk = skunk.",
+      "decodableWithin": "PH-ng"
+    },
+    {
+      "id": "ph-ng-046",
+      "skillId": "PH-ng",
+      "itemType": "decode_choice",
+      "difficulty": 3,
+      "stem": "Tap the word you hear.",
+      "audioText": "chunk",
+      "choices": [
+        {
+          "id": "a",
+          "label": "chunk"
+        },
+        {
+          "id": "b",
+          "label": "skunk"
+        },
+        {
+          "id": "c",
+          "label": "trunk"
+        }
+      ],
+      "correctChoiceId": "a",
+      "missedConceptOnFail": "nasal-nk",
+      "rationale": "ch-u-nk = chunk.",
+      "decodableWithin": "PH-ng"
+    },
+    {
+      "id": "ph-ng-047",
+      "skillId": "PH-ng",
+      "itemType": "decode_choice",
+      "difficulty": 3,
+      "stem": "Tap the word you hear.",
+      "audioText": "shrink",
+      "choices": [
+        {
+          "id": "a",
+          "label": "drink"
+        },
+        {
+          "id": "b",
+          "label": "shrink"
+        },
+        {
+          "id": "c",
+          "label": "blink"
+        }
+      ],
+      "correctChoiceId": "b",
+      "missedConceptOnFail": "nasal-nk",
+      "rationale": "sh-r-i-nk = shrink.",
+      "decodableWithin": "PH-ng"
+    }
+  ],
+  "lessons": {
+    "PH-ng": {
+      "iCanStatement": "I can read words that end in ng and nk.",
+      "explanation": "Two letters at the end of a word can hum through your nose. ng says /ng/ — ring, song. nk says /ngk/ — bank, think. Each is ONE sound: keep the two letters together and add them after the short vowel.",
+      "workedExamples": [
+        {
+          "text": "ring",
+          "note": "r · i · ng → ring"
+        },
+        {
+          "text": "bank",
+          "note": "b · a · nk → bank"
+        }
+      ]
+    }
+  }
+}

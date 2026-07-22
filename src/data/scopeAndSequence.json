@@ -120,6 +120,40 @@
           }
         },
         {
+          "id": "PH-ng",
+          "strand": "phonics",
+          "objective": "Decode words ending in ng and nk.",
+          "iCanStatement": "I can read words that end in ng and nk.",
+          "prereqs": [
+            "PH-blends"
+          ],
+          "itemType": "decode_choice",
+          "itemPool": "phonics-L14-ng",
+          "encodePairId": "SP-ng",
+          "mastery": {
+            "window": 12,
+            "accuracyToPass": 0.85,
+            "minItems": 12
+          }
+        },
+        {
+          "id": "SP-ng",
+          "strand": "spelling",
+          "objective": "Spell words ending in ng and nk from tiles.",
+          "iCanStatement": "I can spell words that end in ng and nk.",
+          "prereqs": [
+            "PH-ng"
+          ],
+          "itemType": "build_word",
+          "itemPool": "spelling-L14-ng",
+          "encodePairId": "PH-ng",
+          "mastery": {
+            "window": 12,
+            "accuracyToPass": 0.85,
+            "minItems": 12
+          }
+        },
+        {
           "id": "PH-floss",
           "strand": "phonics",
           "objective": "Decode words ending in doubled ff, ll, ss, zz (FLOSS rule).",
@@ -249,6 +283,40 @@
           "itemType": "build_word",
           "itemPool": "spelling-L08-r-controlled",
           "encodePairId": "PH-r-controlled",
+          "mastery": {
+            "window": 12,
+            "accuracyToPass": 0.85,
+            "minItems": 12
+          }
+        },
+        {
+          "id": "PH-r-vowel-teams",
+          "strand": "phonics",
+          "objective": "Decode words with ear, air and ure.",
+          "iCanStatement": "I can read words with ear, air and ure.",
+          "prereqs": [
+            "PH-r-controlled"
+          ],
+          "itemType": "decode_choice",
+          "itemPool": "phonics-L15-r-vowel-teams",
+          "encodePairId": "SP-r-vowel-teams",
+          "mastery": {
+            "window": 12,
+            "accuracyToPass": 0.85,
+            "minItems": 12
+          }
+        },
+        {
+          "id": "SP-r-vowel-teams",
+          "strand": "spelling",
+          "objective": "Spell words with ear, air and ure from tiles.",
+          "iCanStatement": "I can spell words with ear, air and ure.",
+          "prereqs": [
+            "PH-r-vowel-teams"
+          ],
+          "itemType": "build_word",
+          "itemPool": "spelling-L15-r-vowel-teams",
+          "encodePairId": "PH-r-vowel-teams",
           "mastery": {
             "window": 12,
             "accuracyToPass": 0.85,

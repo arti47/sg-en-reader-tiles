@@ -1,0 +1,624 @@
+{
+  "packId": "phonics-L15-r-vowel-teams",
+  "strand": "phonics",
+  "skillIds": [
+    "PH-r-vowel-teams"
+  ],
+  "version": 1,
+  "items": [
+    {
+      "id": "ph-rvt-001",
+      "skillId": "PH-r-vowel-teams",
+      "itemType": "decode_choice",
+      "difficulty": 1,
+      "stem": "Tap the word you hear.",
+      "audioText": "hear",
+      "choices": [
+        {
+          "id": "a",
+          "label": "hear"
+        },
+        {
+          "id": "b",
+          "label": "near"
+        },
+        {
+          "id": "c",
+          "label": "fear"
+        }
+      ],
+      "correctChoiceId": "a",
+      "missedConceptOnFail": "r-vowel-team-ear",
+      "rationale": "h-ear = hear.",
+      "decodableWithin": "PH-r-vowel-teams"
+    },
+    {
+      "id": "ph-rvt-002",
+      "skillId": "PH-r-vowel-teams",
+      "itemType": "decode_choice",
+      "difficulty": 1,
+      "stem": "Tap the word you hear.",
+      "audioText": "near",
+      "choices": [
+        {
+          "id": "a",
+          "label": "hear"
+        },
+        {
+          "id": "b",
+          "label": "near"
+        },
+        {
+          "id": "c",
+          "label": "dear"
+        }
+      ],
+      "correctChoiceId": "b",
+      "missedConceptOnFail": "r-vowel-team-ear",
+      "rationale": "n-ear = near.",
+      "decodableWithin": "PH-r-vowel-teams"
+    },
+    {
+      "id": "ph-rvt-003",
+      "skillId": "PH-r-vowel-teams",
+      "itemType": "decode_choice",
+      "difficulty": 1,
+      "stem": "Tap the word you hear.",
+      "audioText": "dear",
+      "choices": [
+        {
+          "id": "a",
+          "label": "hear"
+        },
+        {
+          "id": "b",
+          "label": "year"
+        },
+        {
+          "id": "c",
+          "label": "dear"
+        }
+      ],
+      "correctChoiceId": "c",
+      "missedConceptOnFail": "r-vowel-team-ear",
+      "rationale": "d-ear = dear.",
+      "decodableWithin": "PH-r-vowel-teams"
+    },
+    {
+      "id": "ph-rvt-004",
+      "skillId": "PH-r-vowel-teams",
+      "itemType": "decode_choice",
+      "difficulty": 1,
+      "stem": "Tap the word you hear.",
+      "audioText": "fear",
+      "choices": [
+        {
+          "id": "a",
+          "label": "fear"
+        },
+        {
+          "id": "b",
+          "label": "near"
+        },
+        {
+          "id": "c",
+          "label": "gear"
+        }
+      ],
+      "correctChoiceId": "a",
+      "missedConceptOnFail": "r-vowel-team-ear",
+      "rationale": "f-ear = fear.",
+      "decodableWithin": "PH-r-vowel-teams"
+    },
+    {
+      "id": "ph-rvt-005",
+      "skillId": "PH-r-vowel-teams",
+      "itemType": "decode_choice",
+      "difficulty": 2,
+      "stem": "Tap the word you hear.",
+      "audioText": "gear",
+      "choices": [
+        {
+          "id": "a",
+          "label": "year"
+        },
+        {
+          "id": "b",
+          "label": "gear"
+        },
+        {
+          "id": "c",
+          "label": "rear"
+        }
+      ],
+      "correctChoiceId": "b",
+      "missedConceptOnFail": "r-vowel-team-ear",
+      "rationale": "g-ear = gear.",
+      "decodableWithin": "PH-r-vowel-teams"
+    },
+    {
+      "id": "ph-rvt-006",
+      "skillId": "PH-r-vowel-teams",
+      "itemType": "decode_choice",
+      "difficulty": 1,
+      "stem": "Tap the word you hear.",
+      "audioText": "year",
+      "choices": [
+        {
+          "id": "a",
+          "label": "hear"
+        },
+        {
+          "id": "b",
+          "label": "near"
+        },
+        {
+          "id": "c",
+          "label": "year"
+        }
+      ],
+      "correctChoiceId": "c",
+      "missedConceptOnFail": "r-vowel-team-ear",
+      "rationale": "y-ear = year.",
+      "decodableWithin": "PH-r-vowel-teams"
+    },
+    {
+      "id": "ph-rvt-007",
+      "skillId": "PH-r-vowel-teams",
+      "itemType": "decode_choice",
+      "difficulty": 2,
+      "stem": "Tap the word you hear.",
+      "audioText": "rear",
+      "choices": [
+        {
+          "id": "a",
+          "label": "rear"
+        },
+        {
+          "id": "b",
+          "label": "gear"
+        },
+        {
+          "id": "c",
+          "label": "fear"
+        }
+      ],
+      "correctChoiceId": "a",
+      "missedConceptOnFail": "r-vowel-team-ear",
+      "rationale": "r-ear = rear.",
+      "decodableWithin": "PH-r-vowel-teams"
+    },
+    {
+      "id": "ph-rvt-008",
+      "skillId": "PH-r-vowel-teams",
+      "itemType": "decode_choice",
+      "difficulty": 2,
+      "stem": "Tap the word you hear.",
+      "audioText": "tear",
+      "choices": [
+        {
+          "id": "a",
+          "label": "year"
+        },
+        {
+          "id": "b",
+          "label": "tear"
+        },
+        {
+          "id": "c",
+          "label": "dear"
+        }
+      ],
+      "correctChoiceId": "b",
+      "missedConceptOnFail": "r-vowel-team-ear",
+      "rationale": "t-ear = tear.",
+      "decodableWithin": "PH-r-vowel-teams"
+    },
+    {
+      "id": "ph-rvt-009",
+      "skillId": "PH-r-vowel-teams",
+      "itemType": "decode_choice",
+      "difficulty": 2,
+      "stem": "Tap the word you hear.",
+      "audioText": "clear",
+      "choices": [
+        {
+          "id": "a",
+          "label": "spear"
+        },
+        {
+          "id": "b",
+          "label": "smear"
+        },
+        {
+          "id": "c",
+          "label": "clear"
+        }
+      ],
+      "correctChoiceId": "c",
+      "missedConceptOnFail": "r-vowel-team-ear",
+      "rationale": "c-l-ear = clear.",
+      "decodableWithin": "PH-r-vowel-teams"
+    },
+    {
+      "id": "ph-rvt-010",
+      "skillId": "PH-r-vowel-teams",
+      "itemType": "decode_choice",
+      "difficulty": 3,
+      "stem": "Tap the word you hear.",
+      "audioText": "spear",
+      "choices": [
+        {
+          "id": "a",
+          "label": "spear"
+        },
+        {
+          "id": "b",
+          "label": "clear"
+        },
+        {
+          "id": "c",
+          "label": "smear"
+        }
+      ],
+      "correctChoiceId": "a",
+      "missedConceptOnFail": "r-vowel-team-ear",
+      "rationale": "s-p-ear = spear.",
+      "decodableWithin": "PH-r-vowel-teams"
+    },
+    {
+      "id": "ph-rvt-011",
+      "skillId": "PH-r-vowel-teams",
+      "itemType": "decode_choice",
+      "difficulty": 3,
+      "stem": "Tap the word you hear.",
+      "audioText": "smear",
+      "choices": [
+        {
+          "id": "a",
+          "label": "clear"
+        },
+        {
+          "id": "b",
+          "label": "smear"
+        },
+        {
+          "id": "c",
+          "label": "spear"
+        }
+      ],
+      "correctChoiceId": "b",
+      "missedConceptOnFail": "r-vowel-team-ear",
+      "rationale": "s-m-ear = smear.",
+      "decodableWithin": "PH-r-vowel-teams"
+    },
+    {
+      "id": "ph-rvt-012",
+      "skillId": "PH-r-vowel-teams",
+      "itemType": "decode_choice",
+      "difficulty": 3,
+      "stem": "Tap the word you hear.",
+      "audioText": "beard",
+      "choices": [
+        {
+          "id": "a",
+          "label": "clear"
+        },
+        {
+          "id": "b",
+          "label": "spear"
+        },
+        {
+          "id": "c",
+          "label": "beard"
+        }
+      ],
+      "correctChoiceId": "c",
+      "missedConceptOnFail": "r-vowel-team-ear",
+      "rationale": "b-ear-d = beard.",
+      "decodableWithin": "PH-r-vowel-teams"
+    },
+    {
+      "id": "ph-rvt-013",
+      "skillId": "PH-r-vowel-teams",
+      "itemType": "decode_choice",
+      "difficulty": 1,
+      "stem": "Tap the word you hear.",
+      "audioText": "hair",
+      "choices": [
+        {
+          "id": "a",
+          "label": "hair"
+        },
+        {
+          "id": "b",
+          "label": "fair"
+        },
+        {
+          "id": "c",
+          "label": "pair"
+        }
+      ],
+      "correctChoiceId": "a",
+      "missedConceptOnFail": "r-vowel-team-air",
+      "rationale": "h-air = hair.",
+      "decodableWithin": "PH-r-vowel-teams"
+    },
+    {
+      "id": "ph-rvt-014",
+      "skillId": "PH-r-vowel-teams",
+      "itemType": "decode_choice",
+      "difficulty": 1,
+      "stem": "Tap the word you hear.",
+      "audioText": "fair",
+      "choices": [
+        {
+          "id": "a",
+          "label": "hair"
+        },
+        {
+          "id": "b",
+          "label": "fair"
+        },
+        {
+          "id": "c",
+          "label": "pair"
+        }
+      ],
+      "correctChoiceId": "b",
+      "missedConceptOnFail": "r-vowel-team-air",
+      "rationale": "f-air = fair.",
+      "decodableWithin": "PH-r-vowel-teams"
+    },
+    {
+      "id": "ph-rvt-015",
+      "skillId": "PH-r-vowel-teams",
+      "itemType": "decode_choice",
+      "difficulty": 1,
+      "stem": "Tap the word you hear.",
+      "audioText": "pair",
+      "choices": [
+        {
+          "id": "a",
+          "label": "hair"
+        },
+        {
+          "id": "b",
+          "label": "lair"
+        },
+        {
+          "id": "c",
+          "label": "pair"
+        }
+      ],
+      "correctChoiceId": "c",
+      "missedConceptOnFail": "r-vowel-team-air",
+      "rationale": "p-air = pair.",
+      "decodableWithin": "PH-r-vowel-teams"
+    },
+    {
+      "id": "ph-rvt-016",
+      "skillId": "PH-r-vowel-teams",
+      "itemType": "decode_choice",
+      "difficulty": 2,
+      "stem": "Tap the word you hear.",
+      "audioText": "lair",
+      "choices": [
+        {
+          "id": "a",
+          "label": "lair"
+        },
+        {
+          "id": "b",
+          "label": "fair"
+        },
+        {
+          "id": "c",
+          "label": "pair"
+        }
+      ],
+      "correctChoiceId": "a",
+      "missedConceptOnFail": "r-vowel-team-air",
+      "rationale": "l-air = lair.",
+      "decodableWithin": "PH-r-vowel-teams"
+    },
+    {
+      "id": "ph-rvt-017",
+      "skillId": "PH-r-vowel-teams",
+      "itemType": "decode_choice",
+      "difficulty": 2,
+      "stem": "Tap the word you hear.",
+      "audioText": "chair",
+      "choices": [
+        {
+          "id": "a",
+          "label": "stair"
+        },
+        {
+          "id": "b",
+          "label": "chair"
+        },
+        {
+          "id": "c",
+          "label": "flair"
+        }
+      ],
+      "correctChoiceId": "b",
+      "missedConceptOnFail": "r-vowel-team-air",
+      "rationale": "ch-air = chair.",
+      "decodableWithin": "PH-r-vowel-teams"
+    },
+    {
+      "id": "ph-rvt-018",
+      "skillId": "PH-r-vowel-teams",
+      "itemType": "decode_choice",
+      "difficulty": 2,
+      "stem": "Tap the word you hear.",
+      "audioText": "stair",
+      "choices": [
+        {
+          "id": "a",
+          "label": "chair"
+        },
+        {
+          "id": "b",
+          "label": "flair"
+        },
+        {
+          "id": "c",
+          "label": "stair"
+        }
+      ],
+      "correctChoiceId": "c",
+      "missedConceptOnFail": "r-vowel-team-air",
+      "rationale": "s-t-air = stair.",
+      "decodableWithin": "PH-r-vowel-teams"
+    },
+    {
+      "id": "ph-rvt-019",
+      "skillId": "PH-r-vowel-teams",
+      "itemType": "decode_choice",
+      "difficulty": 3,
+      "stem": "Tap the word you hear.",
+      "audioText": "flair",
+      "choices": [
+        {
+          "id": "a",
+          "label": "flair"
+        },
+        {
+          "id": "b",
+          "label": "chair"
+        },
+        {
+          "id": "c",
+          "label": "stair"
+        }
+      ],
+      "correctChoiceId": "a",
+      "missedConceptOnFail": "r-vowel-team-air",
+      "rationale": "f-l-air = flair.",
+      "decodableWithin": "PH-r-vowel-teams"
+    },
+    {
+      "id": "ph-rvt-020",
+      "skillId": "PH-r-vowel-teams",
+      "itemType": "decode_choice",
+      "difficulty": 1,
+      "stem": "Tap the word you hear.",
+      "audioText": "cure",
+      "choices": [
+        {
+          "id": "a",
+          "label": "pure"
+        },
+        {
+          "id": "b",
+          "label": "cure"
+        },
+        {
+          "id": "c",
+          "label": "sure"
+        }
+      ],
+      "correctChoiceId": "b",
+      "missedConceptOnFail": "r-vowel-team-ure",
+      "rationale": "c-ure = cure.",
+      "decodableWithin": "PH-r-vowel-teams"
+    },
+    {
+      "id": "ph-rvt-021",
+      "skillId": "PH-r-vowel-teams",
+      "itemType": "decode_choice",
+      "difficulty": 2,
+      "stem": "Tap the word you hear.",
+      "audioText": "pure",
+      "choices": [
+        {
+          "id": "a",
+          "label": "cure"
+        },
+        {
+          "id": "b",
+          "label": "lure"
+        },
+        {
+          "id": "c",
+          "label": "pure"
+        }
+      ],
+      "correctChoiceId": "c",
+      "missedConceptOnFail": "r-vowel-team-ure",
+      "rationale": "p-ure = pure.",
+      "decodableWithin": "PH-r-vowel-teams"
+    },
+    {
+      "id": "ph-rvt-022",
+      "skillId": "PH-r-vowel-teams",
+      "itemType": "decode_choice",
+      "difficulty": 2,
+      "stem": "Tap the word you hear.",
+      "audioText": "sure",
+      "choices": [
+        {
+          "id": "a",
+          "label": "sure"
+        },
+        {
+          "id": "b",
+          "label": "cure"
+        },
+        {
+          "id": "c",
+          "label": "pure"
+        }
+      ],
+      "correctChoiceId": "a",
+      "missedConceptOnFail": "r-vowel-team-ure",
+      "rationale": "s-ure = sure.",
+      "decodableWithin": "PH-r-vowel-teams"
+    },
+    {
+      "id": "ph-rvt-023",
+      "skillId": "PH-r-vowel-teams",
+      "itemType": "decode_choice",
+      "difficulty": 3,
+      "stem": "Tap the word you hear.",
+      "audioText": "lure",
+      "choices": [
+        {
+          "id": "a",
+          "label": "cure"
+        },
+        {
+          "id": "b",
+          "label": "lure"
+        },
+        {
+          "id": "c",
+          "label": "pure"
+        }
+      ],
+      "correctChoiceId": "b",
+      "missedConceptOnFail": "r-vowel-team-ure",
+      "rationale": "l-ure = lure.",
+      "decodableWithin": "PH-r-vowel-teams"
+    }
+  ],
+  "lessons": {
+    "PH-r-vowel-teams": {
+      "iCanStatement": "I can read words with ear, air and ure.",
+      "explanation": "Three letters together can make one r-vowel sound. ear says /eer/ — hear, near. air says /air/ — hair, chair. ure says /yoor/ — cure, pure. Keep the three letters together as one chunk.",
+      "workedExamples": [
+        {
+          "text": "hear",
+          "note": "h · ear → hear"
+        },
+        {
+          "text": "chair",
+          "note": "ch · air → chair"
+        }
+      ]
+    }
+  }
+}

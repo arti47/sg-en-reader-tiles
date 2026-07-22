@@ -20,6 +20,8 @@ put(['bb', 'cc', 'dd', 'gg', 'mm', 'nn', 'pp', 'rr', 'tt'], g => `medial-double-
 put(['ai', 'ay', 'ee', 'ea', 'oa', 'ow', 'oo', 'ew', 'ue', 'igh'], g => `vowel-team-${g}`)
 put(['ar', 'or', 'er', 'ir', 'ur'], g => `r-controlled-${g}`)
 put(['oi', 'oy', 'ou', 'aw', 'au'], g => `diphthong-${g}`)
+put(['ng', 'nk'], g => `nasal-${g}`)            // T20 (§19.13.5) ng/nk
+put(['ear', 'air', 'ure'], g => `r-vowel-team-${g}`) // T21 (§19.13.5)
 
 writeFileSync(join(dir, 'graphemeConcepts.json'), JSON.stringify(map, null, 0) + '\n')
 console.log(`graphemeConcepts: ${Object.keys(map).length} graphemes mapped`)

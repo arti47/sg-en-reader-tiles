@@ -558,6 +558,10 @@ try {
       if (SN.newSpellingsFor('PH-silent-e').length !== 0) return 'M5.1: silent-e introduces, not re-spells'
       const intro = SN.introducedSounds(new Set(['PH-cvc-short-vowels', 'PH-digraphs']))
       if (!intro.some(s => s.id === 'sh') || intro.some(s => s.id === 'ai')) return 'M5.1: introduced set follows learned patterns (no spoilers)'
+      // T20/T21 orphan-sound units are now authored → their sound rows are live (§19.13.5).
+      if (SN.newSoundsFor('PH-ng').map(s => s.id).join(',') !== 'ng') return 'T20: PH-ng introduces the /ng/ sound'
+      if (SN.newSoundsFor('PH-r-vowel-teams').map(s => s.id).join(',') !== 'ear,air,ure') return 'T21: r-vowel-teams introduces ear/air/ure'
+      if (!gs('PH-ng') || !gs('PH-r-vowel-teams')) return 'T20/T21: scope skills should resolve'
     }
     // T17 sentence manipulation gated deep behind grammar/cloze — never eligible up front.
     if (e.eligibleSkills([]).map(s => s.id).includes('SM-editing')) return 'T17: editing must be gated behind grammar/cloze'
