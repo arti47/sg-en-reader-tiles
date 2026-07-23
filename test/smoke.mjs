@@ -49,17 +49,28 @@ try {
     let placeCount = 0
     for (let step = 0; step < 30; step++) {
       const kind = await page.waitForFunction(() => {
-        if (/Who's reading\?/.test(document.body.innerText)) return 'pick'
+        if (document.querySelector('.galaxy')) return 'galaxy' // placement now lands in the galaxy hub (M6)
         if ([...document.querySelectorAll('button')].some(b => b.textContent.trim() === "Let's read")) return 'done'
         return document.querySelector('button.tile:not([disabled])') ? 'item' : null
       }, { timeout: 8000 }).then(h => h.jsonValue())
-      if (kind === 'pick') break
+      if (kind === 'galaxy') break
       if (kind === 'done') { await page.evaluate(() => [...document.querySelectorAll('button')].find(b => b.textContent.trim() === "Let's read")?.click()); continue }
       const it = await page.evaluate(() => window.__item || null)
       const pick = WRONG ? it.choices.find(c => c.id !== it.correctChoiceId) : it.choices.find(c => c.id === it.correctChoiceId)
       await page.locator('button.tile', { hasText: lbl(pick.label) }).first().click()
       placeCount++
     }
+    // M6.2 (§20.2): after placement the child lands in their galaxy hub — planets render, the active
+    // one is a tappable learn-planet, and planets past the frontier are locked.
+    const gx = await page.evaluate(() => ({
+      planets: document.querySelectorAll('.planet').length,
+      learn: document.querySelectorAll('.planet-learn').length,
+      locked: document.querySelectorAll('.planet-locked').length
+    }))
+    if (gx.planets < 1) fail('galaxy: planets should render')
+    if (gx.learn < 1) fail('galaxy: the active planet should be a tappable learn-planet')
+    // A low (struggle-path) placement leaves most planets locked; a high placement may lock none.
+    if (WRONG && gx.locked < 1) fail('galaxy: planets past the frontier should be locked')
     // Warm-up must not stop abruptly: at least MIN_WARMUP (6) items even when the child
     // misses the first pair (the reported "ends after two steps" bug).
     if (placeCount < 6) fail(`placement ended after ${placeCount} items (expected ≥6) @ WRONG=${WRONG}`)
@@ -146,12 +157,20 @@ try {
         await page.getByRole('button', { name: 'Continue' }).click()
       }
     }
-    const returnToPicker = async () => {
+    // M6 (§20.2): the galaxy hub is the child home. These helpers drive it.
+    const returnToGalaxy = async () => {
       await page.getByRole('button', { name: 'Done' }).click()
-      await page.waitForFunction(() => /Who's reading\?/.test(document.body.innerText), { timeout: 6000 })
+      await page.waitForFunction(() => !!document.querySelector('.galaxy'), { timeout: 6000 })
     }
-    // M5 (§19.6): drive ONE Learn unit to completion (intro→read→spellIntro→spell→learned),
-    // then click Done back to the picker. Learn always answers correctly (participation-based).
+    const learnActivePlanet = async () => { // tap the glowing (active) learn planet → walk the unit
+      await page.locator('.planet-learn').last().click()
+      await walkLearn()
+    }
+    const startMission = async () => { // tap a mission-ready (learned) planet → enter Test
+      await page.locator('.planet-test').first().click()
+    }
+    // M6/M5 (§20.2/§19.6): drive ONE Learn unit to completion (pa→sound→intro→read→spell→text→
+    // learned), then click "Back to galaxy". Learn always answers correctly (participation-based).
     let sawSoundCard = false
     let sawPA = false // §3 audit: CVC Learn units open with a phonemic-awareness warm-up (pa_blend/pa_count)
     let sawReadText = false // §3 audit #1: a Learn unit ends by reading a decodable sentence (passage_question)
@@ -160,30 +179,14 @@ try {
       for (let step = 0; step < 80; step++) {
         const kind = await page.waitForFunction(() => {
           const t = document.body.innerText
-          if (/You learned it!/.test(t)) return 'done'
-          if (document.querySelector('.learn-map')) return 'map' // tappable lesson rows (no Start button)
+          if (/Planet explored!|Every planet explored/.test(t)) return 'done'
           if (document.querySelector('.sound-card')) return 'sound' // M5.1 phoneme intro (§19.13)
           if (/Let's learn this/.test(t)) return 'lesson'
           const hasContinue = [...document.querySelectorAll('button')].some(b => b.textContent.trim() === 'Continue')
           const freshTile = document.querySelector('button.tile:not([disabled])')
           return (freshTile && !hasContinue) ? 'item' : null
         }, { timeout: 8000 }).then(h => h.jsonValue())
-        if (kind === 'done') { await page.getByRole('button', { name: 'Done', exact: true }).click(); return }
-        if (kind === 'map') {
-          // Learn map UX: no "Start learning" button; lessons are tappable rows; the active lesson +
-          // earlier ones are open, later ones locked. Sound wall button lives in the header.
-          const map = await page.evaluate(() => ({
-            start: [...document.querySelectorAll('button')].some(b => b.textContent.trim() === 'Start learning'),
-            open: document.querySelectorAll('.lm-row.lm-open').length,
-            locked: document.querySelectorAll('.lm-row.lm-locked').length,
-            wall: [...document.querySelectorAll('button')].some(b => /Sound wall/.test(b.textContent))
-          }))
-          if (map.start) fail('Learn map: "Start learning" button should be removed')
-          if (map.open < 1) fail('Learn map: the active lesson row must be tappable')
-          if (!map.wall) fail('Learn map: Sound wall button should be in the header')
-          await page.locator('.lm-row.lm-open').last().click() // tap the active lesson row
-          continue
-        }
+        if (kind === 'done') { await page.getByRole('button', { name: /Back to (my )?galaxy/ }).click(); return }
         if (kind === 'sound') { sawSoundCard = true; await page.getByRole('button', { name: /Next sound|Let's read/ }).click(); continue }
         if (kind === 'lesson') { await page.getByRole('button', { name: "Let's try" }).click(); continue }
         const it = await page.evaluate(() => window.__item || null)
@@ -199,9 +202,9 @@ try {
         await page.getByRole('button', { name: 'Continue' }).click()
       }
     }
-    // Test now only assesses LEARNED patterns (§19.7) — learn the frontier pattern first.
-    await page.getByRole('button', { name: 'Learn with Test' }).click()
-    await walkLearn()
+    // Test now only assesses LEARNED patterns (§19.7) — learn the frontier planet first (we're in
+    // the galaxy after placement; tap the active learn-planet).
+    await learnActivePlanet()
     // §7 #1 retention gate: the certificate is WITHHELD at acquisition and minted only on the
     // first +2d review pass. So the mastery path (a) plays sessions until a pattern is
     // provisionally mastered (a review is scheduled), asserting NO certificate yet, then
@@ -209,16 +212,16 @@ try {
     // retention and awards the certificate. #2 (minItems 12) means this spans several sessions.
     const SESSIONS = WRONG ? 1 : 8
     for (let s = 0; s < SESSIONS; s++) {
-      await page.getByRole('button', { name: 'Test with Test', exact: true }).click()
+      await startMission() // tap a mission-ready planet → Test
       await playSession(WRONG)
       db = await readDb()
       if (!WRONG && (db.reviews || []).some(r => r.status === 'scheduled')) break
-      if (s < SESSIONS - 1) await returnToPicker()
+      if (s < SESSIONS - 1) await returnToGalaxy()
     }
     if (!WRONG) {
       if (!(db.reviews || []).some(r => r.status === 'scheduled')) fail('mastery path: no pattern provisionally mastered (no review scheduled)')
       if (db.certs.length) fail('§7 #1: certificate must NOT be awarded at acquisition (only on the +2d review pass)')
-      await returnToPicker()
+      await returnToGalaxy()
       // Backdate the scheduled reviews so they are due, then confirm on the next session.
       await page.evaluate(() => new Promise(res => {
         const o = indexedDB.open('sg-reader')
@@ -228,7 +231,7 @@ try {
           t.oncomplete = () => res()
         }
       }))
-      await page.getByRole('button', { name: 'Test with Test', exact: true }).click()
+      await startMission()
       await playSession(false)
       // Session-summary highlights (§14): the confirmation minted a certificate, so the summary
       // must surface a "New this session!" award block (child sees achievements immediately).
@@ -247,10 +250,8 @@ try {
       // it (target = the needs-review pattern) and re-learning CLEARS the flag.
       db = await readDb()
       if (!(db.learn || []).some(r => r.patternId === 'PH-cvc-1' && r.needsReview)) fail('M5 P3: Test struggle should flag the pattern needs-review')
-      await page.getByRole('button', { name: 'Done' }).click() // summary → picker
-      await page.waitForFunction(() => /Who's reading\?/.test(document.body.innerText), { timeout: 6000 })
-      await page.getByRole('button', { name: 'Learn with Test' }).click()
-      await walkLearn() // map targets the needs-review pattern → re-teach → clears the flag
+      await returnToGalaxy() // summary → galaxy
+      await learnActivePlanet() // the needs-review pattern is now the active learn-planet → re-teach clears the flag
       db = await readDb()
       const cvc = (db.learn || []).find(r => r.patternId === 'PH-cvc-1')
       if (!cvc || cvc.needsReview) fail('M5 P3: re-learning a needs-review pattern should clear the flag')
@@ -275,14 +276,17 @@ try {
       await op.getByRole('button', { name: 'Save' }).click()
       for (let i = 0; i < 30; i++) {
         const kind = await op.waitForFunction(() => {
-          if (/Who's reading\?/.test(document.body.innerText)) return 'pick'
+          if (document.querySelector('.galaxy')) return 'galaxy'
           if ([...document.querySelectorAll('button')].some(b => b.textContent.trim() === "Let's read")) return 'done'
           return document.querySelector('button.tile:not([disabled])') ? 'item' : null
         }, { timeout: 8000 }).then(h => h.jsonValue())
-        if (kind === 'pick') break
+        if (kind === 'galaxy') break
         if (kind === 'done') { await op.evaluate(() => [...document.querySelectorAll('button')].find(b => b.textContent.trim() === "Let's read")?.click()); continue }
         await op.locator('button.tile:not([disabled])').first().click()
       }
+      // M6: placement lands in the galaxy hub — return to the picker to add the next child + check cards.
+      await op.getByRole('button', { name: /Back/ }).click()
+      await op.waitForFunction(() => /Who's reading\?/.test(document.body.innerText), { timeout: 6000 })
     }
     await op.evaluate(() => { document.documentElement.dataset.font = 'dyslexic' })
     // A button must not exceed the card's inner CONTENT box (past the padding into/over the border).
@@ -323,14 +327,17 @@ try {
     await dp.getByRole('button', { name: 'Save' }).click()
     for (let i = 0; i < 30; i++) {
       const kind = await dp.waitForFunction(() => {
-        if (/Who's reading\?/.test(document.body.innerText)) return 'pick'
+        if (document.querySelector('.galaxy')) return 'galaxy'
         if ([...document.querySelectorAll('button')].some(b => b.textContent.trim() === "Let's read")) return 'done'
         return document.querySelector('button.tile:not([disabled])') ? 'item' : null
       }, { timeout: 8000 }).then(h => h.jsonValue())
-      if (kind === 'pick') break
+      if (kind === 'galaxy') break
       if (kind === 'done') { await dp.evaluate(() => [...document.querySelectorAll('button')].find(b => b.textContent.trim() === "Let's read")?.click()); continue }
       await dp.locator('button.tile:not([disabled])').first().click()
     }
+    // M6: placement lands in the galaxy hub — return to the picker for the teacher-area entry.
+    await dp.getByRole('button', { name: /Back/ }).click()
+    await dp.waitForFunction(() => /Who's reading\?/.test(document.body.innerText), { timeout: 6000 })
     // M4: picker card shows the gamification level badge.
     if (!/Lvl/.test(await dp.evaluate(() => document.body.innerText))) fail('M4 gamify: picker should show a level badge')
     // Student management moved OFF the home screen (§14): no "Manage" button on the picker.

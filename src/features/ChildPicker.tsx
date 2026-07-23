@@ -1,16 +1,14 @@
 import type { Child } from '../types'
 import { level } from '../lib/gamify'
 
-// Home screen (§14). Student management (reset/remove) lives in the Teacher area, not here —
-// the child picker is child-facing and only launches Learn / Test / Trophies.
+// Home screen (§14). Student management lives in the Teacher area. M6 (§20.2): tapping a child
+// launches THEIR galaxy hub (which houses Learn / missions / trophies) — one big Play button.
 export function ChildPicker(props: {
   children: Child[]
   xpByChild?: Record<string, number>
-  onPick: (c: Child) => void
-  onLearn: (c: Child) => void
+  onPick: (c: Child) => void   // → the child's galaxy hub
   onAdd: () => void
   onParent: () => void
-  onTrophies: (c: Child) => void
 }) {
   return (
     <div className="stack">
@@ -26,12 +24,8 @@ export function ChildPicker(props: {
             <span className="avatar-sub">P{c.pLevel}{props.xpByChild ? ` · ⭐ Lvl ${level(props.xpByChild[c.id] ?? 0)}` : ''}</span>
 
             <div className="stack" style={{ gap: 6 }}>
-              <button className="btn small" onClick={() => props.onLearn(c)}
-                aria-label={`Learn with ${c.name}`}>📘 Learn</button>
               <button className="btn small" onClick={() => props.onPick(c)}
-                aria-label={`Test with ${c.name}`}>🎮 Test</button>
-              <button className="btn small ghost" onClick={() => props.onTrophies(c)}
-                aria-label={`${c.name}'s trophies`}>🏆 Trophies</button>
+                aria-label={`Play with ${c.name}`}>🚀 Play</button>
             </div>
           </div>
         ))}

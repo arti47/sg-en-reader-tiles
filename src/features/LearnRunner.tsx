@@ -1,17 +1,14 @@
 import { useEffect, useRef, useState } from 'react'
-import type { Child, PackItem, SkillDef, PatternStatus } from '../types'
+import type { Child, PackItem, SkillDef } from '../types'
 import { pickItem, getSkill, getLesson } from '../lib/packs'
-import { nextToLearn, PATTERNS, learnedSet, needsReviewSet, patternStatus } from '../lib/learn'
-import { getLearn, setLearned, clearReview, getProgress, getSettings } from '../store'
+import { nextToLearn, PATTERNS, learnedSet, needsReviewSet } from '../lib/learn'
+import { getLearn, setLearned, clearReview, getSettings } from '../store'
 import { setRate, setVoice, phoneme, speak } from '../lib/audio'
 import { newSoundsFor, newSpellingsFor, type Sound } from '../lib/sounds'
 import { paItemsFor } from '../lib/pa'
 import { McqItem } from './items/McqItem'
 import { TileItem } from './items/TileItem'
 import { LessonView } from './LessonView'
-import { LearnMap } from './LearnMap'
-
-type MapRow = { id: string; label: string; status: PatternStatus }
 
 // M5 Learn mode (§19.6). A linear, low-pressure teaching walk. One unit = one pattern taught
 // read+spell together: decode rule → a few read items → encode rule → a few spell items →
@@ -42,12 +39,12 @@ const READING_FOR: Record<string, string> = {
 // (hear the sounds → blend; count the sounds) — the upstream skill a weak/dyslexic reader needs
 // before grapheme work. Learn-only, participation-based; pulled from lib/pa (not a Test skill).
 const PA_N = 2
-type Phase = 'loading' | 'map' | 'pa' | 'review' | 'sound' | 'intro' | 'read' | 'spellIntro' | 'spell' | 'text' | 'done'
+type Phase = 'loading' | 'alldone' | 'pa' | 'review' | 'sound' | 'intro' | 'read' | 'spellIntro' | 'spell' | 'text' | 'done'
 // A sound-intro card (§19.13): a NEW sound met for the first time, or a NEW spelling of a sound
 // the child already knows ("same sound, new way to spell it").
 type SoundCard = { kind: 'new' | 'spelling'; sound: Sound; graphemes: string[] }
 
-export function LearnRunner(props: { child: Child; onExit: () => void; onSoundWall: () => void }) {
+export function LearnRunner(props: { child: Child; onExit: () => void; onSoundWall: () => void; initialPattern?: string }) {
   const patternRef = useRef<SkillDef | null>(null)  // the next target (needs-review first, else frontier)
   const encodeRef = useRef<SkillDef | null>(null)
   const reviewSkillRef = useRef<SkillDef | null>(null) // a prior learned pattern to warm up on (§3 cumulative)
@@ -64,38 +61,34 @@ export function LearnRunner(props: { child: Child; onExit: () => void; onSoundWa
   const [item, setItem] = useState<PackItem | null>(null)
   const [answered, setAnswered] = useState(false)
   const [serve, setServe] = useState(0)
-  const [mapRows, setMapRows] = useState<MapRow[]>([])
 
   useEffect(() => {
     if (startedRef.current) return
     startedRef.current = true
     void (async () => {
       const s = await getSettings(); setRate(s.ttsRate); setVoice(s.voiceURI)
-      await openMap()
+      await resolveAndStart()
     })()
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
   // A11y (§18.12): move focus to the screen on each Learn sub-phase so screen readers announce
-  // the new step (map → rule → read → spell → done), mirroring App's per-view focus.
+  // the new step, mirroring App's per-view focus.
   useEffect(() => { (document.querySelector('main.screen') as HTMLElement | null)?.focus() }, [phase])
 
   // Auto-play the phoneme clip when a sound-intro card appears (§19.13.2).
   useEffect(() => { if (phase === 'sound') { const c = soundsRef.current[soundIdx]; if (c) phoneme(c.sound.id) } }, [phase, soundIdx])
 
-  // Landing screen: compute every pattern's status + the next target (needs-review first, §19.3).
-  async function openMap() {
+  // M6 (§20.2): the galaxy hub picks the planet, so Learn opens a unit DIRECTLY (no internal map).
+  // Target = the tapped pattern (`initialPattern`), else needs-review first, else the frontier.
+  async function resolveAndStart() {
     const rows = await getLearn(props.child.id)
-    const prog = await getProgress(props.child.id)
-    const masteredSkills = new Set(prog.filter(p => p.status === 'mastered').map(p => p.skillId))
     const learned = learnedSet(rows); const needs = needsReviewSet(rows)
     learnedRef.current = learned
-    patternRef.current = PATTERNS.find(p => needs.has(p.id)) ?? nextToLearn(learned) ?? null
-    setMapRows(PATTERNS.map(p => {
-      const mastered = masteredSkills.has(p.id) && (!p.encodePairId || masteredSkills.has(p.encodePairId))
-      return { id: p.id, label: p.iCanStatement.replace(/^I can /, ''), status: patternStatus(p.id, rows, mastered) }
-    }))
-    setPhase('map')
+    const target = (props.initialPattern && PATTERNS.find(p => p.id === props.initialPattern))
+      ?? PATTERNS.find(p => needs.has(p.id)) ?? nextToLearn(learned) ?? null
+    if (!target) { setPhase('alldone'); return }
+    startUnit(target.id)
   }
 
   // Begin a pattern's unit (the one the child TAPPED on the map — the active lesson or an earlier
@@ -104,7 +97,7 @@ export function LearnRunner(props: { child: Child; onExit: () => void; onSoundWa
   function startUnit(patternId: string) {
     const target = PATTERNS.find(p => p.id === patternId) ?? null
     patternRef.current = target
-    if (!target) { setPhase('map'); return }
+    if (!target) { setPhase('alldone'); return }
     encodeRef.current = target.encodePairId ? getSkill(target.encodePairId) ?? null : null
     seenRef.current = new Set(); stepRef.current = 0
     const priors = PATTERNS.filter(p => learnedRef.current.has(p.id) && p.id !== target.id)
@@ -200,14 +193,19 @@ export function LearnRunner(props: { child: Child; onExit: () => void; onSoundWa
     const id = patternRef.current!.id
     await setLearned(props.child.id, id)
     await clearReview(props.child.id, id)
+    learnedRef.current = new Set([...learnedRef.current, id]) // so "learn the next one" advances the frontier
     setPhase('done')
   }
 
   if (phase === 'loading') return <div className="stack center"><p className="note">Getting ready…</p></div>
 
-  if (phase === 'map') return (
-    <LearnMap name={props.child.name} rows={mapRows} targetId={patternRef.current?.id ?? null}
-      onSelect={startUnit} onExit={props.onExit} onSoundWall={props.onSoundWall} />
+  if (phase === 'alldone') return (
+    <div className="stack center" aria-live="polite">
+      <div className="cert">🌟</div>
+      <h1>Every planet explored!</h1>
+      <p className="note">You've learned them all, {props.child.name}. Blast off on a mission any time.</p>
+      <button className="btn" onClick={props.onExit}>Back to my galaxy</button>
+    </div>
   )
 
   if (phase === 'sound') {
@@ -268,18 +266,21 @@ export function LearnRunner(props: { child: Child; onExit: () => void; onSoundWa
     )
   }
 
-  if (phase === 'done') return (
-    <div className="stack center" aria-live="polite">
-      <div className="cert">🌟</div>
-      <h1>You learned it!</h1>
-      <p className="stem">{patternRef.current!.iCanStatement}</p>
-      <p className="note">Now try it in Test — or learn the next one.</p>
-      <div className="row" style={{ gap: 8 }}>
-        <button className="btn" onClick={() => { void openMap() }}>Learn the next one</button>
-        <button className="btn ghost" onClick={props.onExit}>Done</button>
+  if (phase === 'done') {
+    const next = nextToLearn(learnedRef.current)
+    return (
+      <div className="stack center" aria-live="polite">
+        <div className="cert">🌟</div>
+        <h1>Planet explored! 🚀</h1>
+        <p className="stem">{patternRef.current!.iCanStatement}</p>
+        <p className="note">Blast off on a mission to try it — or learn the next planet.</p>
+        <div className="row" style={{ gap: 8 }}>
+          {next && <button className="btn" onClick={() => startUnit(next.id)}>Next planet</button>}
+          <button className="btn ghost" onClick={props.onExit}>Back to galaxy</button>
+        </div>
       </div>
-    </div>
-  )
+    )
+  }
 
   return null
 }

@@ -7,6 +7,7 @@ import { ChildPicker } from './features/ChildPicker'
 import { AddStudent } from './features/AddStudent'
 import { Session } from './features/Session'
 import { LearnRunner } from './features/LearnRunner'
+import { GalaxyMap } from './features/GalaxyMap'
 import { Placement } from './features/Placement'
 import { Trophies } from './features/Trophies'
 import { SoundWall } from './features/SoundWall'
@@ -36,14 +37,15 @@ if (import.meta.env.DEV) {
 }
 const m3demo = import.meta.env.DEV && typeof location !== 'undefined' && location.hash === '#m3demo'
 
-type View = 'pick' | 'add' | 'placement' | 'session' | 'learn' | 'dashboard' | 'trophies' | 'soundwall'
+type View = 'pick' | 'add' | 'placement' | 'galaxy' | 'session' | 'learn' | 'dashboard' | 'trophies' | 'soundwall'
 const APP_VERSION = __APP_VERSION__ // from package.json (§18.6), never hand-edited
 
 export default function App() {
   const [children, setChildren] = useState<Child[]>([])
   const [view, setView] = useState<View>('pick')
-  const [swReturn, setSwReturn] = useState<View>('learn') // where the Sound wall returns to
+  const [swReturn, setSwReturn] = useState<View>('galaxy') // where the Sound wall returns to
   const [active, setActive] = useState<Child | null>(null)
+  const [learnPattern, setLearnPattern] = useState<string | null>(null) // planet tapped to learn (M6 §20.2)
   const [reload, setReload] = useState<null | (() => void)>(null)
   const [xpByChild, setXpByChild] = useState<Record<string, number>>({})
 
@@ -69,7 +71,7 @@ export default function App() {
     await addChild(c); setActive(c); setView('placement') // run the warm-up placement next
   }
   async function placementDone() {
-    await refreshChildren(); setView('pick')
+    await refreshChildren(); setView('galaxy') // land the newly-placed child in their galaxy hub
   }
   async function removeStudent(c: Child) {
     await removeChild(c.id); await refreshChildren()
@@ -91,24 +93,32 @@ export default function App() {
         {!m3demo && view === 'pick' && (
           <ChildPicker children={children}
             xpByChild={xpByChild}
-            onPick={(c) => { setActive(c); setView('session') }}
-            onLearn={(c) => { setActive(c); setView('learn') }}
+            onPick={(c) => { setActive(c); setView('galaxy') }}
             onAdd={() => setView('add')}
-            onTrophies={(c) => { setActive(c); setView('trophies') }}
             onParent={() => setView('dashboard')} />
         )}
         {view === 'add' && <AddStudent onSave={save} onCancel={() => setView('pick')} />}
         {view === 'placement' && active && <Placement child={active} onDone={placementDone} />}
-        {view === 'trophies' && active && <Trophies child={active} onExit={() => { void refreshChildren(); setView('pick') }} onSoundWall={() => { setSwReturn('trophies'); setView('soundwall') }} />}
+        {view === 'galaxy' && active && (
+          <GalaxyMap child={active}
+            onLearn={(pid) => { setLearnPattern(pid); setView('learn') }}
+            onTest={() => setView('session')}
+            onTrophies={() => setView('trophies')}
+            onExit={() => { void refreshChildren(); setView('pick') }}
+            onSoundWall={() => { setSwReturn('galaxy'); setView('soundwall') }} />
+        )}
+        {view === 'trophies' && active && <Trophies child={active} onExit={() => { void refreshChildren(); setView('galaxy') }} onSoundWall={() => { setSwReturn('trophies'); setView('soundwall') }} />}
         {view === 'soundwall' && active && <SoundWall child={active} onExit={() => setView(swReturn)} />}
         {view === 'learn' && active && (
-          <LearnRunner child={active} onExit={() => { void refreshChildren(); setView('pick') }} onSoundWall={() => { setSwReturn('learn'); setView('soundwall') }} />
+          <LearnRunner child={active} initialPattern={learnPattern ?? undefined}
+            onExit={() => { void refreshChildren(); setView('galaxy') }}
+            onSoundWall={() => { setSwReturn('learn'); setView('soundwall') }} />
         )}
         {view === 'session' && active && (
           <Session child={active}
-            onExit={() => { void refreshChildren(); setView('pick') }}
+            onExit={() => { void refreshChildren(); setView('galaxy') }}
             onTrophies={() => setView('trophies')}
-            onLearn={() => setView('learn')} />
+            onLearn={() => { setLearnPattern(null); setView('learn') }} />
         )}
         {view === 'dashboard' && (
           <ParentDashboard children={children} onExit={() => setView('pick')} onReset={resetStudent} onRemove={removeStudent} />
