@@ -2,8 +2,11 @@ import { useEffect, useRef, useState } from 'react'
 import type { Child, PackItem, SkillDef } from '../types'
 import { pickItem, getSkill, getLesson } from '../lib/packs'
 import { nextToLearn, PATTERNS, learnedSet, needsReviewSet } from '../lib/learn'
-import { getLearn, setLearned, clearReview, getSettings } from '../store'
+import { getLearn, setLearned, clearReview, getSettings, addCoins, getDailyGoal, putDailyGoal } from '../store'
 import { setRate, setVoice, phoneme, speak } from '../lib/audio'
+import { playSfx } from '../lib/audio-sfx'
+import { COIN_LEARN, progressGoal, rollGoal } from '../lib/economy'
+import { isoDay } from '../lib/aggregate'
 import { newSoundsFor, newSpellingsFor, type Sound } from '../lib/sounds'
 import { paItemsFor } from '../lib/pa'
 import { McqItem } from './items/McqItem'
@@ -194,6 +197,15 @@ export function LearnRunner(props: { child: Child; onExit: () => void; onSoundWa
     await setLearned(props.child.id, id)
     await clearReview(props.child.id, id)
     learnedRef.current = new Set([...learnedRef.current, id]) // so "learn the next one" advances the frontier
+    // M6.5 fix: reward completing a Learn unit with Star Coins (so learn-heavy struggling readers
+    // still earn stars) and count them toward the daily goal — the same reward loop as missions.
+    playSfx('levelup')
+    await addCoins(props.child.id, COIN_LEARN)
+    const today = isoDay(Date.now())
+    const dg = rollGoal(await getDailyGoal(props.child.id), today)
+    const { goal, bonus } = progressGoal(dg, today, COIN_LEARN)
+    await putDailyGoal(goal)
+    if (bonus > 0) await addCoins(props.child.id, bonus)
     setPhase('done')
   }
 
@@ -273,7 +285,7 @@ export function LearnRunner(props: { child: Child; onExit: () => void; onSoundWa
         <div className="cert">🌟</div>
         <h1>Planet explored! 🚀</h1>
         <p className="stem">{patternRef.current!.iCanStatement}</p>
-        <p className="note">Blast off on a mission to try it — or learn the next planet.</p>
+        <p className="note">+{COIN_LEARN} ⭐ · Blast off on a mission to try it — or learn the next planet.</p>
         <div className="row" style={{ gap: 8 }}>
           {next && <button className="btn" onClick={() => startUnit(next.id)}>Next planet</button>}
           <button className="btn ghost" onClick={props.onExit}>Back to galaxy</button>

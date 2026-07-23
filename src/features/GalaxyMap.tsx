@@ -99,7 +99,20 @@ export function GalaxyMap(props: {
             <div className="goalbar"><div className="goalbar-fill" style={{ width: `${Math.min(100, Math.round((goal.progress / goal.target) * 100))}%` }} /></div>
           </div>
         )}
-        <p className="note" role="status">{learnedCount} of {rows.length} planets explored. {targetIdx >= 0 && targetIdx < rows.length ? 'Tap your glowing planet!' : 'Whole galaxy explored! 🎉'}</p>
+        <p className="note" role="status">{learnedCount} of {rows.length} planets explored.</p>
+        {/* Explicit primary actions so Test/Learn are always reachable (a struggling reader may have
+            no mission planets yet). "Start mission" = Test (earns Star Coins); else Learn the frontier. */}
+        <div className="galaxy-cta stack" style={{ gap: 8 }}>
+          {rows.some(r => r.route === 'test') && (
+            <button className="btn big" onClick={props.onTest}>🚀 Start a mission <span className="note tiny">(earn ⭐)</span></button>
+          )}
+          {targetIdx >= 0 && targetIdx < rows.length && rows[targetIdx]?.route === 'learn' && (
+            <button className="btn big" onClick={() => props.onLearn(rows[targetIdx].id)}>
+              📘 {rows[targetIdx].status === 'needs-review' ? 'Practise' : 'Learn'} the next planet
+            </button>
+          )}
+        </div>
+        <p className="note tiny">…or tap any planet below.</p>
         <div className="planets" role="group" aria-label="Your planets — tap one to travel there">
           {rows.map((r, i) => {
             const active = i === targetIdx

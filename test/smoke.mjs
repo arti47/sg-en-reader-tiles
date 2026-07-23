@@ -67,10 +67,12 @@ try {
       learn: document.querySelectorAll('.planet-learn').length,
       locked: document.querySelectorAll('.planet-locked').length,
       buddy: document.querySelectorAll('.galaxy-buddy .buddy').length, // M6.3: the child's buddy renders
-      arcade: document.querySelectorAll('[aria-label="Fluency Arcade"]').length // M6.5: opt-in, default off
+      arcade: document.querySelectorAll('[aria-label="Fluency Arcade"]').length, // M6.5: opt-in, default off
+      cta: document.querySelectorAll('.galaxy-cta button').length // M6.5 fix: explicit Start-mission/Learn CTA
     }))
     if (gx.planets < 1) fail('galaxy: planets should render')
     if (gx.learn < 1) fail('galaxy: the active planet should be a tappable learn-planet')
+    if (gx.cta < 1) fail('M6.5 fix: the galaxy must show an explicit mission/learn CTA (Test was unreachable)')
     if (gx.buddy < 1) fail('M6.3: the child buddy should render in the galaxy')
     if (gx.arcade !== 0) fail('M6.5: Fluency Arcade must be OFF by default (no entry on the galaxy)')
     // M6.5 a11y: Calm Mode disables animation (verify the CSS guard on the glowing active planet).
@@ -761,6 +763,9 @@ try {
   if (!(good.db.learn || []).some(r => r.learned)) fail('M5: Learn should have marked a pattern learned')
   // M6.1 (§20.4): correct assessment answers earn Star Coins (cosmetic reward; pedagogy untouched).
   if (!(good.db.wallet || []).some(w => w.coins > 0)) fail('M6.1: correct answers should earn Star Coins')
+  // M6.5 fix: completing a Learn unit also earns stars (so a learn-heavy struggling reader — the
+  // struggle path — can still earn, even without reaching a mission).
+  if (!(bad.db.wallet || []).some(w => w.coins > 0)) fail('M6.5 fix: learning a planet should earn Star Coins')
   if (bad.db.progress.some(p => p.skillId === 'SP-cvc-1')) fail('dual gate: encode must stay locked when decode <70%')
   if (bad.db.certs.length) fail('struggle path: no certificate should be awarded')
   // M5.1 (§19.13): the CVC Learn unit (struggle-path frontier) opens with phoneme sound-intro cards.

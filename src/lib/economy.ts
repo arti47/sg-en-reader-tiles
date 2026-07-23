@@ -6,6 +6,7 @@
 export const COIN_CORRECT = 5   // a correct assessment answer
 export const COIN_REVIEW = 1    // a correct non-assessment rep
 export const COIN_CERT = 50     // a pattern certificate (retention-confirmed mastery)
+export const COIN_LEARN = 15    // completing a Learn unit (so learn-heavy readers still earn stars)
 
 // Coins for a single answer. `review` = the item was a non-assessment rep.
 export function coinsForAnswer(correct: boolean, review: boolean): number {
