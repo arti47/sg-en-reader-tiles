@@ -98,10 +98,12 @@ export function LearnRunner(props: { child: Child; onExit: () => void; onSoundWa
     setPhase('map')
   }
 
-  // Begin the target pattern's unit. §3 cumulative: OPEN with a quick review of a prior learned
-  // pattern (if any), then §19.13 teach the pattern's new sound(s), then the read+spell flow.
-  function startUnit() {
-    const target = patternRef.current
+  // Begin a pattern's unit (the one the child TAPPED on the map — the active lesson or an earlier
+  // one to redo). §3 cumulative: OPEN with a quick review of a prior learned pattern (if any), then
+  // §19.13 teach the pattern's new sound(s), then the read+spell flow.
+  function startUnit(patternId: string) {
+    const target = PATTERNS.find(p => p.id === patternId) ?? null
+    patternRef.current = target
     if (!target) { setPhase('map'); return }
     encodeRef.current = target.encodePairId ? getSkill(target.encodePairId) ?? null : null
     seenRef.current = new Set(); stepRef.current = 0
@@ -204,8 +206,8 @@ export function LearnRunner(props: { child: Child; onExit: () => void; onSoundWa
   if (phase === 'loading') return <div className="stack center"><p className="note">Getting ready…</p></div>
 
   if (phase === 'map') return (
-    <LearnMap name={props.child.name} rows={mapRows} hasTarget={!!patternRef.current}
-      onStart={startUnit} onExit={props.onExit} onSoundWall={props.onSoundWall} />
+    <LearnMap name={props.child.name} rows={mapRows} targetId={patternRef.current?.id ?? null}
+      onSelect={startUnit} onExit={props.onExit} onSoundWall={props.onSoundWall} />
   )
 
   if (phase === 'sound') {

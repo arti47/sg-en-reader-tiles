@@ -160,7 +160,7 @@ try {
         const kind = await page.waitForFunction(() => {
           const t = document.body.innerText
           if (/You learned it!/.test(t)) return 'done'
-          if ([...document.querySelectorAll('button')].some(b => b.textContent.trim() === 'Start learning')) return 'map'
+          if (document.querySelector('.learn-map')) return 'map' // tappable lesson rows (no Start button)
           if (document.querySelector('.sound-card')) return 'sound' // M5.1 phoneme intro (§19.13)
           if (/Let's learn this/.test(t)) return 'lesson'
           const hasContinue = [...document.querySelectorAll('button')].some(b => b.textContent.trim() === 'Continue')
@@ -168,7 +168,21 @@ try {
           return (freshTile && !hasContinue) ? 'item' : null
         }, { timeout: 8000 }).then(h => h.jsonValue())
         if (kind === 'done') { await page.getByRole('button', { name: 'Done', exact: true }).click(); return }
-        if (kind === 'map') { await page.getByRole('button', { name: 'Start learning' }).click(); continue }
+        if (kind === 'map') {
+          // Learn map UX: no "Start learning" button; lessons are tappable rows; the active lesson +
+          // earlier ones are open, later ones locked. Sound wall button lives in the header.
+          const map = await page.evaluate(() => ({
+            start: [...document.querySelectorAll('button')].some(b => b.textContent.trim() === 'Start learning'),
+            open: document.querySelectorAll('.lm-row.lm-open').length,
+            locked: document.querySelectorAll('.lm-row.lm-locked').length,
+            wall: [...document.querySelectorAll('button')].some(b => /Sound wall/.test(b.textContent))
+          }))
+          if (map.start) fail('Learn map: "Start learning" button should be removed')
+          if (map.open < 1) fail('Learn map: the active lesson row must be tappable')
+          if (!map.wall) fail('Learn map: Sound wall button should be in the header')
+          await page.locator('.lm-row.lm-open').last().click() // tap the active lesson row
+          continue
+        }
         if (kind === 'sound') { sawSoundCard = true; await page.getByRole('button', { name: /Next sound|Let's read/ }).click(); continue }
         if (kind === 'lesson') { await page.getByRole('button', { name: "Let's try" }).click(); continue }
         const it = await page.evaluate(() => window.__item || null)
