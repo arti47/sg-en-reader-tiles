@@ -4,7 +4,8 @@ import type { ScoreResult } from '../lib/scoring'
 import { addAttempt, getAttempts, getProgress, putProgress, putCertificate, getCertificates, getReviews, putReview, bumpAggregate, bumpDaily, getUsage, putUsage, getSettings, getLearn, flagReview } from '../store'
 import { setRate, setVoice } from '../lib/audio'
 import { XP_PER_CORRECT, XP_PER_CERT, achievements, type Achievement } from '../lib/gamify'
-import { SKILLS, getSkill, pickItem } from '../lib/packs'
+import { SKILLS, getSkill, pickItem, getLesson } from '../lib/packs'
+import { LessonView } from './LessonView'
 import { rollingAccuracy, itemsAnswered, nextDifficulty, isMastered, patternMastered, struggling, eligibleSkills, patternDecodeSkill, interleavedReviewSkill, threadedSkill, fluencySkill } from '../lib/engine'
 import { learnedSet } from '../lib/learn'
 import { support } from '../lib/support'
@@ -19,7 +20,7 @@ const DEFAULT_SESSION_LEN = 16
 const FOCUS_WIDTH = 3 // max distinct current-skills a session works at once (bounds high-placement fan-out)
 // M5 Test mode (§19.7): assessment only. Teaching (intro + struggle lessons) has moved to Learn;
 // on struggle Test flags the pattern for re-teaching (needs-review) instead of re-teaching.
-type Phase = 'loading' | 'item' | 'cert' | 'summary' | 'learnfirst'
+type Phase = 'loading' | 'item' | 'lesson' | 'cert' | 'summary' | 'learnfirst'
 
 export function Session(props: { child: Child; onExit: () => void; onTrophies: () => void; onLearn: () => void }) {
   const attemptsRef = useRef<Attempt[]>([])
@@ -42,6 +43,9 @@ export function Session(props: { child: Child; onExit: () => void; onTrophies: (
   const sessionCertsRef = useRef<Certificate[]>([]) // certificates minted THIS session (shown on the summary)
   const flaggedPatternRef = useRef<SkillDef | null>(null) // a pattern struggled this session → offer Learn on the summary (§19.7)
   const struggledRef = useRef<Set<string>>(new Set()) // skills flagged struggling this session → drop from focus (audit #3)
+  const introRef = useRef<Set<string>>(new Set())     // threaded skills whose first-encounter lesson has fired (§3)
+  const pendingRef = useRef<SkillDef | null>(null)    // skill whose item follows the just-shown threaded lesson
+  const [lessonView, setLessonView] = useState<import('../types').Lesson | null>(null)
   const [phase, setPhase] = useState<Phase>('loading')
   const [item, setItem] = useState<PackItem | null>(null)
   const [answered, setAnswered] = useState<ScoreResult | null>(null)
@@ -132,7 +136,16 @@ export function Session(props: { child: Child; onExit: () => void; onTrophies: (
     if (hasMastery) {
       // High-frequency sight words threaded throughout (§5/§6d): every Nth item, regardless of level.
       const threaded = threadedSkill(countRef.current)
-      if (threaded) { loadItem(threaded, undefined, true); return }
+      if (threaded) {
+        // Explicit-first (§3): sight words / letter-sounds live ONLY in Test (threaded, never a Learn
+        // pattern), so their heart-word method lesson has no other home. Deliver it ONCE, at first
+        // encounter (no prior attempts on this skill this-or-any session), before the item.
+        if (itemsAnswered(attemptsRef.current, threaded.id) === 0 && !introRef.current.has(threaded.id)) {
+          const lesson = getLesson(threaded.id)
+          if (lesson) { introRef.current.add(threaded.id); pendingRef.current = threaded; setLessonView(lesson); setPhase('lesson'); return }
+        }
+        loadItem(threaded, undefined, true); return
+      }
       // Cumulative interleave + fluency share a per-session cap so acquisition keeps the majority
       // of items (≤ ⌈len/3⌉ combined) even when several patterns are mastered and slow — otherwise
       // stacked review cadences could crowd out new learning for a max-support child (audit). Due
@@ -308,6 +321,14 @@ export function Session(props: { child: Child; onExit: () => void; onTrophies: (
         </div>
       </div>
     )
+  }
+
+  // Threaded-skill first-encounter lesson (§3): explicit heart-word instruction before the item.
+  if (phase === 'lesson' && lessonView) {
+    return <LessonView lesson={lessonView} onContinue={() => {
+      const sk = pendingRef.current; pendingRef.current = null; setLessonView(null)
+      if (sk) loadItem(sk, undefined, true); else advance()
+    }} />
   }
 
   if (phase === 'item' && item) {

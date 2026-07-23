@@ -109,8 +109,13 @@ try {
 
         const item = await page.evaluate(() => window.__item || null)
         if (!firstSkill) firstSkill = item.skillId
-        // #4 — the item right after a lesson is a guided-practice item at difficulty 1.
-        if (afterLesson) { if (item.difficulty !== 1) fail(`#4: post-lesson guided item should be difficulty 1, got ${item.difficulty}`); afterLesson = false }
+        // §3: Test only teaches THREADED skills (sight words / letter-sounds) at first encounter —
+        // never a pattern. So any lesson must be immediately followed by a threaded-skill item.
+        if (afterLesson) {
+          const THREADED = ['HF-words', 'HF-spell', 'PH-letter-sounds']
+          if (!THREADED.includes(item.skillId)) fail(`§3: Test lesson must precede a threaded skill, got ${item.skillId} (pattern teaching leaked)`)
+          afterLesson = false
+        }
         if (item.itemType === 'dictation') {
           // A high placement unlocks dictation rungs (word-by-word sentence build); answer correctly.
           for (let w = 0; w < item.words.length; w++) {
@@ -689,7 +694,9 @@ try {
   const bad = results.find(r => r.WRONG)
   // M5 (§19.7): teaching moved to Learn — Test fires NO lessons; and the child LEARNED a pattern
   // in Learn before Test could assess it.
-  if (good.lessons !== 0) fail('M5: Test must not teach (no lessons should fire in Test mode)')
+  // §3: Test may teach the THREADED sight-word / letter-sounds method once (at first encounter);
+  // that a lesson only ever precedes a threaded item is enforced per-lesson in playSession above.
+  // Pattern re-teaching stays out of Test (no lesson followed by a pattern item → no fail there).
   if (!(good.db.learn || []).some(r => r.learned)) fail('M5: Learn should have marked a pattern learned')
   if (bad.db.progress.some(p => p.skillId === 'SP-cvc-1')) fail('dual gate: encode must stay locked when decode <70%')
   if (bad.db.certs.length) fail('struggle path: no certificate should be awarded')
