@@ -1,9 +1,10 @@
 import { useEffect, useState } from 'react'
-import type { Child, Attempt, SkillProgress, Certificate, Aggregate, Daily, Usage, Settings, LearnState } from '../types'
-import { getAttempts, getProgress, getCertificates, getAggregates, getDaily, getUsage, getLearn, getSettings, putSettings, exportAll, importAll } from '../store'
+import type { Child, Attempt, SkillProgress, Certificate, Aggregate, Daily, Usage, Settings, LearnState, Review } from '../types'
+import { getAttempts, getProgress, getCertificates, getAggregates, getDaily, getUsage, getLearn, getReviews, getSettings, putSettings, exportAll, importAll } from '../store'
 import { SKILLS, getSkill } from '../lib/packs'
 import { PATTERNS, learnedSet } from '../lib/learn'
 import { computeReadiness, type Readiness } from '../lib/readiness'
+import { diagnose, type Diagnosis } from '../lib/diagnose'
 import { achievements, type Achievement } from '../lib/gamify'
 import { summarise, type Granularity } from '../lib/aggregate'
 import { setRate, setVoice, listVoices, onVoicesReady } from '../lib/audio'
@@ -18,6 +19,7 @@ interface CardData {
   certs: Certificate[]; aggs: Aggregate[]; daily: Daily[]; entryLabel: string
   badges: Achievement[]
   learnedCount: number; masteredPatterns: number; totalPatterns: number  // M5 Learn/Test progress (§19.9 P3)
+  diagnosis: Diagnosis            // M7.1 decode/spell struggle finding (§21.2 A) — read-only
 }
 const GRANS: { id: Granularity; label: string }[] = [
   { id: 'day', label: 'Daily' }, { id: 'week', label: 'Weekly' }, { id: 'month', label: 'Monthly' }, { id: 'year', label: 'Yearly' }
@@ -26,14 +28,14 @@ const GRANS: { id: Granularity; label: string }[] = [
 const pct = (n: number) => `${Math.round(n * 100)}%`
 const dot = (s: Readiness['status']) => s === 'On-Target' ? 'green' : s === 'Some-Risk' ? 'amber' : 'red'
 
-function buildCard(child: Child, attempts: Attempt[], progress: SkillProgress[], certs: Certificate[], aggs: Aggregate[], daily: Daily[], learn: LearnState[], usage?: Usage): CardData {
+function buildCard(child: Child, attempts: Attempt[], progress: SkillProgress[], certs: Certificate[], aggs: Aggregate[], daily: Daily[], learn: LearnState[], reviews: Review[], usage?: Usage): CardData {
   const mastered = new Set(progress.filter(p => p.status === 'mastered').map(p => p.skillId))
   const readiness = computeReadiness(attempts, mastered, aggs, SKILLS.length)
   const entry = child.entrySkillId ? getSkill(child.entrySkillId) : undefined
   const entryLabel = entry ? entry.iCanStatement : 'Not placed yet'
   const masteredPatterns = PATTERNS.filter(p => mastered.has(p.id) && (!p.encodePairId || mastered.has(p.encodePairId))).length
   return { child, readiness, usage, certs: certs.slice(-3).reverse(), aggs, daily, entryLabel, badges: achievements(attempts, certs, usage),
-    learnedCount: learnedSet(learn).size, masteredPatterns, totalPatterns: PATTERNS.length }
+    learnedCount: learnedSet(learn).size, masteredPatterns, totalPatterns: PATTERNS.length, diagnosis: diagnose(attempts, reviews) }
 }
 
 export function ParentDashboard(props: { children: Child[]; onExit: () => void; onReset: (c: Child) => void; onRemove: (c: Child) => void | Promise<void> }) {
@@ -91,10 +93,10 @@ export function ParentDashboard(props: { children: Child[]; onExit: () => void; 
 
   async function loadCards() {
     const data = await Promise.all(props.children.map(async c => {
-      const [a, p, ce, ag, dy, ln, u] = await Promise.all([
-        getAttempts(c.id), getProgress(c.id), getCertificates(c.id), getAggregates(c.id), getDaily(c.id), getLearn(c.id), getUsage(c.id)
+      const [a, p, ce, ag, dy, ln, rv, u] = await Promise.all([
+        getAttempts(c.id), getProgress(c.id), getCertificates(c.id), getAggregates(c.id), getDaily(c.id), getLearn(c.id), getReviews(c.id), getUsage(c.id)
       ])
-      return buildCard(c, a, p, ce, ag, dy, ln, u)
+      return buildCard(c, a, p, ce, ag, dy, ln, rv, u)
     }))
     setCards(data)
   }
@@ -226,6 +228,14 @@ export function ParentDashboard(props: { children: Child[]; onExit: () => void; 
               </>
             )
           })()}
+
+          {/* M7.1 decode/spell struggle finding (§21.2 A) — read-only; auto-adapt lands in M7.2. */}
+          <div className={'diagnosis' + (c.diagnosis.primary ? ' diagnosis-' + c.diagnosis.primary : '')}>
+            <b>What's going on:</b> {c.diagnosis.note}
+            {c.diagnosis.stuckConcepts.length > 0 && (
+              <div className="chips">{c.diagnosis.stuckConcepts.map(t => <span key={t} className="chip">{t.replace(/-/g, ' ')}</span>)}</div>
+            )}
+          </div>
 
           <div className="action">
             <b>Next step:</b> {c.readiness.action.text}

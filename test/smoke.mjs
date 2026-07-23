@@ -382,6 +382,7 @@ try {
       .catch(() => fail('dashboard: card did not render after PIN'))
     if (!/Dash/.test(await dp.evaluate(() => document.body.innerText))) fail('dashboard: child card missing')
     if (!/badges/.test(await dp.evaluate(() => document.body.innerText))) fail('M4 gamify: dashboard should show achievement badges')
+    if (!/What's going on/.test(await dp.evaluate(() => document.body.innerText))) fail('M7.1: dashboard should show the diagnostic finding')
     // Trend granularity toggle: Daily/Weekly/Monthly/Yearly present; switching to Daily works.
     for (const g of ['Daily', 'Weekly', 'Monthly', 'Yearly']) {
       if (!(await dp.getByRole('tab', { name: g }).count())) fail(`dashboard: missing ${g} trend toggle`)
@@ -650,6 +651,25 @@ try {
     if (mixed.status !== 'High-Risk') return 'readiness: reps must not inflate status out of High-Risk'
     if (mixed.growth.recentAccuracy !== 0) return 'readiness: reps must be excluded from recent accuracy'
     if (mixed.growth.assessedN !== 6) return 'readiness: assessedN should count assessment items only'
+    // M7.1 (§21.2 A): decode/spell struggle diagnostic (pure classify, self-gating).
+    const dg = window.__diagnose
+    const DNOW = Date.parse('2026-07-23T00:00:00Z')
+    const dgMk = (n, correct, mc) => Array.from({ length: n }, () => ({ correct, missedConcept: mc, review: false }))
+    if (dg.diagnose([...dgMk(15, true)], [], DNOW).primary !== null) return 'diagnose: a typical reader must not be flagged'
+    if (dg.diagnose([...dgMk(5, false, 'x')], [], DNOW).primary !== null) return 'diagnose: <MIN_ASSESSED must not diagnose'
+    // acquisition: low accuracy, misses SPREAD so confusion does not also trip.
+    const dgSpread = ['a', 'b', 'c', 'd', 'e'].flatMap(c => [{ correct: false, missedConcept: c, review: false }, { correct: false, missedConcept: c, review: false }])
+    if (dg.diagnose([...dgMk(6, true), ...dgSpread], [], DNOW).primary !== 'acquisition') return 'diagnose: low accuracy → acquisition'
+    // retention: accurate but past-due, un-advanced (stage-0) reviews pile up.
+    const dgStuck = [{ skillId: 'PH-cvc-1', stage: 0, status: 'scheduled', due: DNOW - 1000 }, { skillId: 'SP-cvc-1', stage: 0, status: 'scheduled', due: DNOW - 1000 }]
+    if (dg.diagnose([...dgMk(15, true)], dgStuck, DNOW).primary !== 'retention') return 'diagnose: past-due stage-0 reviews → retention'
+    if (dg.diagnose([...dgMk(15, true)], [{ skillId: 'x', stage: 0, status: 'scheduled', due: DNOW + 1e5 }], DNOW).primary !== null) return 'diagnose: a not-yet-due review must not signal retention'
+    // confusion: accurate overall but one miss concept dominates.
+    const dConf = dg.diagnose([...dgMk(12, true), ...dgMk(3, false, 'digraph-sh')], [], DNOW)
+    if (dConf.primary !== 'confusion' || !dConf.stuckConcepts.includes('digraph-sh')) return 'diagnose: a dominant miss concept → confusion'
+    // reps excluded from the signal (a struggling child cannot be masked by easy reps).
+    const dgReps = Array.from({ length: 9 }, () => ({ correct: false, missedConcept: 'z', review: true }))
+    if (dg.diagnose([...dgMk(12, true), ...dgReps], [], DNOW).primary !== null) return 'diagnose: non-assessment reps must be excluded'
     const before = await store.exportAll()
     if (before.schemaVersion !== 9) return 'export schemaVersion should be 9 (M6.4 dailygoal)'
     // M6.4 (§20.4): daily-goal progress + streak math (pure).
