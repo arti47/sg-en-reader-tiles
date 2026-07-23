@@ -88,8 +88,10 @@ export function Buddy(props: {
       {acc === 'headphones' && <g><path d="M22 48 Q50 12 78 48" fill="none" stroke="#333" strokeWidth="3" /><rect x="16" y="46" width="10" height="16" rx="4" fill="#333" /><rect x="74" y="46" width="10" height="16" rx="4" fill="#333" /></g>}
       {acc === 'backpack' && <path d="M30 44 Q42 52 30 68" fill="none" stroke="#00000044" strokeWidth="3" />}
 
-      {/* pet sidekick */}
-      {pet && <g className="buddy-pet" transform="translate(78 78)">{petShape(pet)}</g>}
+      {/* pet sidekick — position on an OUTER group (attribute transform); animate on the INNER
+          group so the bob's CSS transform doesn't override the positioning (CSS transform wins
+          over the SVG transform attribute, which would snap the pet to the 0,0 corner). */}
+      {pet && <g transform="translate(78 78)"><g className="buddy-pet">{petShape(pet)}</g></g>}
 
       {/* particle effect — front */}
       {fx === 'sparkle' && <g className="buddy-fx-twinkle" fill="#fff7c2">{spark(20, 30)}{spark(82, 34)}{spark(30, 82)}{spark(74, 78)}</g>}
