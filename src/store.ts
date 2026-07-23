@@ -52,8 +52,19 @@ function req<T>(store: string, mode: IDBTransactionMode, fn: (s: IDBObjectStore)
 export const getChildren = () => req<Child[]>('children', 'readonly', s => s.getAll())
 export const addChild = (c: Child) => req('children', 'readwrite', s => s.put(c))
 
-// Attempts
-export const addAttempt = (a: Attempt) => req('attempts', 'readwrite', s => s.put(a))
+// Attempts. Raw attempts are capped per child (§11): mastery/SRS use rolling windows and the
+// never-truncated `aggregates`/`daily` stores back the trend charts, so old raw rows are safe to
+// roll off — this bounds storage (the §13 eviction risk) without affecting any signal. Trimming
+// runs only when a child crosses the cap; the oldest (by ts) overflow rows are deleted.
+export const ATTEMPTS_CAP = 4000
+export async function addAttempt(a: Attempt): Promise<void> {
+  await req('attempts', 'readwrite', s => s.put(a))
+  const n = await req<number>('attempts', 'readonly', s => s.index('childId').count(a.childId))
+  if (n <= ATTEMPTS_CAP) return
+  const rows = await getAttempts(a.childId)
+  const doomed = rows.sort((x, y) => x.ts - y.ts).slice(0, rows.length - ATTEMPTS_CAP).map(r => r.id)
+  await run(['attempts'], 'readwrite', t => { const st = t.objectStore('attempts'); for (const id of doomed) st.delete(id) })
+}
 export const getAttempts = (childId: string) =>
   req<Attempt[]>('attempts', 'readonly', s => s.index('childId').getAll(childId))
 

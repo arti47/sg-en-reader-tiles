@@ -32,7 +32,7 @@ export function LearnMap(props: {
       </div>
       <h1>{props.name}'s learning map</h1>
       <p className="note" role="status">{learned} of {props.rows.length} patterns learned. {props.targetId ? 'Tap a lesson to learn or practise it.' : 'You\'ve learned every pattern! 🎉'}</p>
-      <div className="learn-map" role="list" aria-label="Your lessons — tap one to learn or practise it">
+      <div className="learn-map" role="group" aria-label="Your lessons — tap one to learn or practise it">
         {props.rows.map((r, i) => {
           const m = META[r.status]
           const open = i <= targetIdx
@@ -43,9 +43,11 @@ export function LearnMap(props: {
               <span className="lm-status">{open ? m.label : 'Locked'}</span>
             </>
           )
+          // Open rows are native <button>s (announced as buttons); locked rows are inert, non-focusable.
           return open
-            ? <button key={r.id} role="listitem" className={'lm-row lm-open lm-' + m.cls} onClick={() => props.onSelect(r.id)}>{inner}</button>
-            : <div key={r.id} role="listitem" className="lm-row lm-locked" aria-disabled="true">{inner}</div>
+            ? <button key={r.id} className={'lm-row lm-open lm-' + m.cls} onClick={() => props.onSelect(r.id)}
+                aria-label={`${r.label} — ${m.label}. Tap to learn or practise.`}>{inner}</button>
+            : <div key={r.id} className="lm-row lm-locked" aria-label={`${r.label} — locked`}>{inner}</div>
         })}
       </div>
     </div>
