@@ -259,7 +259,9 @@ h1 { font-size: 1.8rem; font-weight: 700; margin: 8px 0 0; }
 
 /* M6 (§20.2) Galaxy hub — a space background with tappable planet buttons. */
 .galaxy { position: relative; min-height: 70vh; }
-.galaxy-stars { position: absolute; inset: 0; width: 100%; height: 100%; background: radial-gradient(ellipse at 50% 0%, #2a2a5e 0%, #14143a 55%, #0b0b26 100%); border-radius: 16px; z-index: 0; }
+/* Full-screen space wallpaper: a fixed layer behind all content, filling the whole viewport
+   (edge to edge, under the padding + safe areas), only while the galaxy hub is mounted. */
+.galaxy-stars { position: fixed; inset: 0; width: 100vw; height: 100vh; background: radial-gradient(ellipse at 50% 0%, #2a2a5e 0%, #14143a 55%, #0b0b26 100%); z-index: -1; }
 .galaxy-inner { position: relative; z-index: 1; padding: 4px; color: #f4f1ea; }
 .galaxy-inner h1, .galaxy-inner .note { color: #f4f1ea; }
 .galaxy-inner .link { color: #ffd76a; }
