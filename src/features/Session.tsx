@@ -25,6 +25,7 @@ import { DictationItem } from './items/DictationItem'
 
 const DEFAULT_SESSION_LEN = 16
 const FOCUS_WIDTH = 3 // max distinct current-skills a session works at once (bounds high-placement fan-out)
+const FLAG_MIN_ITEMS = 5 // min assessment items on a skill before struggle can flag its pattern needs-review
 // M5 Test mode (§19.7): assessment only. Teaching (intro + struggle lessons) has moved to Learn;
 // on struggle Test flags the pattern for re-teaching (needs-review) instead of re-teaching.
 type Phase = 'loading' | 'item' | 'lesson' | 'cert' | 'summary' | 'learnfirst'
@@ -197,9 +198,15 @@ export function Session(props: { child: Child; onExit: () => void; onTrophies: (
     // supported practice (down-shift, §7 #5); the per-item error-correction still applies.
     if (struggling(attemptsRef.current, skill)) {
       const pat = patternDecodeSkill(skill)
-      void flagReview(props.child.id, pat.id)
-      flaggedPatternRef.current = pat // surface a "learn it" route on the session summary (§19.7)
-      struggledRef.current.add(skill.id) // don't keep re-serving this struggled skill (audit #3)
+      // Only DEMOTE a learned pattern to needs-review after enough assessment evidence (≥FLAG_MIN_ITEMS
+      // items on the skill), so a brief or abandoned Test round on a just-learned planet doesn't wipe
+      // it back to "needs teaching" (reported: re-entering a finished planet and quitting reverted it).
+      // Sustained struggle still flags it for re-teaching in Learn; the down-shift below is unaffected.
+      if (itemsAnswered(attemptsRef.current, skill.id) >= FLAG_MIN_ITEMS) {
+        void flagReview(props.child.id, pat.id)
+        flaggedPatternRef.current = pat // surface a "learn it" route on the session summary (§19.7)
+        struggledRef.current.add(skill.id) // don't keep re-serving this struggled skill (audit #3)
+      }
       const prereq = skill.prereqs.map(p => getSkill(p)).find(p => p && !p.threaded)
       if (prereq) { loadItem(prereq, 1, true); return } // down-shift = supported rep, not assessment
     }

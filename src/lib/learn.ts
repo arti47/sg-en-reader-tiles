@@ -28,11 +28,14 @@ export function nextToLearn(learned: Set<string>): SkillDef | undefined {
 }
 
 // Per-pattern status for the Learn map (§19.3), in priority order. `mastered` comes from the
-// caller (derived from progress/certificates — the single source of truth for mastery).
+// caller (derived from progress/certificates — the single source of truth for mastery). Mastered
+// wins over needs-review: a certified pattern is never knocked back to "needs teaching" by a rough
+// Test round (§7 "mastery = retention" — only a failed SRS review demotes), so it never reverts on
+// the galaxy. needs-review therefore only surfaces on a learned-but-not-yet-mastered pattern.
 export function patternStatus(patternId: string, rows: LearnState[], mastered: boolean): PatternStatus {
   const row = rows.find(r => r.patternId === patternId)
-  if (row?.needsReview) return 'needs-review'
   if (mastered) return 'mastered'
+  if (row?.needsReview) return 'needs-review'
   if (row?.learned) return 'learned'
   return 'not-started'
 }

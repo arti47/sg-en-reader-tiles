@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react'
 import type { Child, PatternStatus } from '../types'
-import { PATTERNS, nextToLearn, learnedSet, needsReviewSet, patternStatus } from '../lib/learn'
+import { PATTERNS, nextToLearn, learnedSet, patternStatus } from '../lib/learn'
 import { getLearn, getProgress, getWallet, getInventory, getDailyGoal } from '../store'
 import { rollGoal } from '../lib/economy'
 import { isoDay } from '../lib/aggregate'
@@ -43,8 +43,11 @@ export function GalaxyMap(props: {
       const learnRows = await getLearn(props.child.id)
       const prog = await getProgress(props.child.id)
       const masteredSkills = new Set(prog.filter(p => p.status === 'mastered').map(p => p.skillId))
-      const learned = learnedSet(learnRows); const needs = needsReviewSet(learnRows)
-      const target = PATTERNS.find(p => needs.has(p.id)) ?? nextToLearn(learned) ?? null
+      const learned = learnedSet(learnRows)
+      const isMastered = (p: typeof PATTERNS[number]) => masteredSkills.has(p.id) && (!p.encodePairId || masteredSkills.has(p.encodePairId))
+      // Target = the first pattern actually SHOWN as needs-review (mastered-but-flagged is masked by
+      // patternStatus, so it's never a re-learn target), else the Learn frontier.
+      const target = PATTERNS.find(p => patternStatus(p.id, learnRows, isMastered(p)) === 'needs-review') ?? nextToLearn(learned) ?? null
       const ti = target ? PATTERNS.findIndex(p => p.id === target.id) : PATTERNS.length - 1
       setTargetIdx(ti)
       setRows(PATTERNS.map((p, i) => {
