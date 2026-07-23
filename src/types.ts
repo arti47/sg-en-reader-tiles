@@ -85,8 +85,11 @@ export interface Child {
   pLevel: 1 | 2 | 3 | 4 | 5 | 6
   entrySkillId?: string
   difficultyFlags?: DifficultyFlag[]   // optional, captured at add-time (§14) — teacher context
+  buddy?: { character: string; name: string } // M6 §20.3 — chosen + named at add-time
   createdAt: number
 }
+// M6 §20.7 customisation inventory — cosmetic only, never affects pedagogy.
+export interface Inventory { childId: string; owned: string[]; equipped: { colour?: string; hat?: string } }
 export interface Attempt {
   id: string                     // uuid (was keyed by ts — collision risk)
   childId: string

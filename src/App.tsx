@@ -8,6 +8,7 @@ import { AddStudent } from './features/AddStudent'
 import { Session } from './features/Session'
 import { LearnRunner } from './features/LearnRunner'
 import { GalaxyMap } from './features/GalaxyMap'
+import { Shop } from './features/Shop'
 import { Placement } from './features/Placement'
 import { Trophies } from './features/Trophies'
 import { SoundWall } from './features/SoundWall'
@@ -37,7 +38,7 @@ if (import.meta.env.DEV) {
 }
 const m3demo = import.meta.env.DEV && typeof location !== 'undefined' && location.hash === '#m3demo'
 
-type View = 'pick' | 'add' | 'placement' | 'galaxy' | 'session' | 'learn' | 'dashboard' | 'trophies' | 'soundwall'
+type View = 'pick' | 'add' | 'placement' | 'galaxy' | 'session' | 'learn' | 'dashboard' | 'trophies' | 'soundwall' | 'shop'
 const APP_VERSION = __APP_VERSION__ // from package.json (§18.6), never hand-edited
 
 export default function App() {
@@ -104,9 +105,11 @@ export default function App() {
             onLearn={(pid) => { setLearnPattern(pid); setView('learn') }}
             onTest={() => setView('session')}
             onTrophies={() => setView('trophies')}
+            onShop={() => setView('shop')}
             onExit={() => { void refreshChildren(); setView('pick') }}
             onSoundWall={() => { setSwReturn('galaxy'); setView('soundwall') }} />
         )}
+        {view === 'shop' && active && <Shop child={active} onExit={() => setView('galaxy')} />}
         {view === 'trophies' && active && <Trophies child={active} onExit={() => { void refreshChildren(); setView('galaxy') }} onSoundWall={() => { setSwReturn('trophies'); setView('soundwall') }} />}
         {view === 'soundwall' && active && <SoundWall child={active} onExit={() => setView(swReturn)} />}
         {view === 'learn' && active && (

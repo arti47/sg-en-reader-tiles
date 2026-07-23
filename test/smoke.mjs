@@ -34,7 +34,7 @@ try {
 
     await page.goto(BASE, { waitUntil: 'networkidle' })
     await page.getByText('Add student').click()
-    await page.locator('input').fill('Test')
+    await page.locator('input').first().fill('Test')
     await page.getByRole('button', { name: 'P1', exact: true }).click()
     await page.getByRole('button', { name: 'Save' }).click()
 
@@ -65,10 +65,12 @@ try {
     const gx = await page.evaluate(() => ({
       planets: document.querySelectorAll('.planet').length,
       learn: document.querySelectorAll('.planet-learn').length,
-      locked: document.querySelectorAll('.planet-locked').length
+      locked: document.querySelectorAll('.planet-locked').length,
+      buddy: document.querySelectorAll('.galaxy-buddy .buddy').length // M6.3: the child's buddy renders
     }))
     if (gx.planets < 1) fail('galaxy: planets should render')
     if (gx.learn < 1) fail('galaxy: the active planet should be a tappable learn-planet')
+    if (gx.buddy < 1) fail('M6.3: the child buddy should render in the galaxy')
     // A low (struggle-path) placement leaves most planets locked; a high placement may lock none.
     if (WRONG && gx.locked < 1) fail('galaxy: planets past the frontier should be locked')
     // Warm-up must not stop abruptly: at least MIN_WARMUP (6) items even when the child
@@ -271,7 +273,7 @@ try {
     await op.goto(BASE, { waitUntil: 'networkidle' })
     for (const nm of ['Alexandra', 'Tom']) {
       await op.getByText('Add student').click()
-      await op.locator('input').fill(nm)
+      await op.locator('input').first().fill(nm)
       await op.getByRole('button', { name: 'P1', exact: true }).click()
       await op.getByRole('button', { name: 'Save' }).click()
       for (let i = 0; i < 30; i++) {
@@ -322,7 +324,7 @@ try {
     await dp.waitForFunction(() => document.documentElement.dataset.font === 'lexend', { timeout: 6000 })
       .catch(() => fail('M4 font: boot should set data-font=lexend'))
     await dp.getByText('Add student').click()
-    await dp.locator('input').fill('Dash')
+    await dp.locator('input').first().fill('Dash')
     await dp.getByRole('button', { name: 'P2', exact: true }).click()
     await dp.getByRole('button', { name: 'Save' }).click()
     for (let i = 0; i < 30; i++) {
@@ -620,7 +622,16 @@ try {
     if (mixed.growth.recentAccuracy !== 0) return 'readiness: reps must be excluded from recent accuracy'
     if (mixed.growth.assessedN !== 6) return 'readiness: assessedN should count assessment items only'
     const before = await store.exportAll()
-    if (before.schemaVersion !== 7) return 'export schemaVersion should be 7 (M6 wallet)'
+    if (before.schemaVersion !== 8) return 'export schemaVersion should be 8 (M6.3 inventory)'
+    // M6.3 (§20.3): shop buy→own→equip round-trip (cosmetic-only; store-level, deterministic).
+    await store.addCoins('shopc', 100)
+    const bought = await store.buyCosmetic('shopc', 'colour-sun', 30)
+    if (!bought.inv.owned.includes('colour-sun')) return 'shop: buy should add the item to owned'
+    if (bought.wallet.coins !== 70) return 'shop: buy should deduct the cost from coins'
+    const again = await store.buyCosmetic('shopc', 'colour-sun', 30) // idempotent — no double charge
+    if (again.wallet.coins !== 70) return 'shop: re-buying an owned item must not charge again'
+    await store.putInventory({ ...bought.inv, equipped: { colour: 'colour-sun' } })
+    if ((await store.getInventory('shopc')).equipped.colour !== 'colour-sun') return 'shop: equip should persist'
     // Trend summary (§11): summarise buckets weekly aggregates by day/week/month/year.
     const agg = window.__aggregate
     const aggs = [{ week: '2026-W29', items: 4, correct: 3 }, { week: '2026-W29', items: 2, correct: 2 }, { week: '2026-W30', items: 5, correct: 4 }]

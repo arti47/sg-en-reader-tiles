@@ -1,9 +1,10 @@
 import { useEffect, useRef, useState } from 'react'
 import type { Child, PatternStatus } from '../types'
 import { PATTERNS, nextToLearn, learnedSet, needsReviewSet, patternStatus } from '../lib/learn'
-import { getLearn, getProgress, getWallet } from '../store'
+import { getLearn, getProgress, getWallet, getInventory } from '../store'
 import { startStarfield } from '../lib/starfield'
 import { CoinCounter } from './CoinCounter'
+import { Buddy } from './Buddy'
 import { playSfx } from '../lib/audio-sfx'
 
 // M6 §20.2 — the unified galaxy-map HUB. Each pattern is a planet; the child taps one to travel
@@ -21,12 +22,14 @@ export function GalaxyMap(props: {
   onLearn: (patternId: string) => void
   onTest: () => void
   onTrophies: () => void
+  onShop: () => void
   onExit: () => void
   onSoundWall: () => void
 }) {
   const [rows, setRows] = useState<Row[]>([])
   const [targetIdx, setTargetIdx] = useState(-1)
   const [coins, setCoins] = useState(0)
+  const [equipped, setEquipped] = useState<{ colour?: string; hat?: string }>({})
   const [loading, setLoading] = useState(true)
   const canvasRef = useRef<HTMLCanvasElement>(null)
 
@@ -48,6 +51,7 @@ export function GalaxyMap(props: {
         return { id: p.id, label: p.iCanStatement.replace(/^I can /, ''), status, route }
       }))
       setCoins((await getWallet(props.child.id)).coins)
+      setEquipped((await getInventory(props.child.id)).equipped)
       setLoading(false)
     })()
   }, [props.child.id])
@@ -71,9 +75,14 @@ export function GalaxyMap(props: {
           <button className="link" onClick={props.onExit}>← Back</button>
           <span className="row" style={{ gap: 8, alignItems: 'center' }}>
             <CoinCounter coins={coins} />
-            <button className="btn ghost small" onClick={props.onTrophies}>🏆</button>
-            <button className="btn ghost small" onClick={props.onSoundWall}>🔊</button>
+            <button className="btn ghost small" onClick={props.onShop} aria-label="Shop">🛍️</button>
+            <button className="btn ghost small" onClick={props.onTrophies} aria-label="Trophies">🏆</button>
+            <button className="btn ghost small" onClick={props.onSoundWall} aria-label="Sound wall">🔊</button>
           </span>
+        </div>
+        <div className="galaxy-buddy">
+          <Buddy character={props.child.buddy?.character ?? 'robo'} state="idle" colour={equipped.colour} hat={equipped.hat} size={96} />
+          <button className="btn ghost small" onClick={props.onShop}>✨ Customise</button>
         </div>
         <h1>{props.child.name}'s galaxy</h1>
         <p className="note" role="status">{learnedCount} of {rows.length} planets explored. {targetIdx >= 0 && targetIdx < rows.length ? 'Tap your glowing planet!' : 'Whole galaxy explored! 🎉'}</p>

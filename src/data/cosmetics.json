@@ -1,0 +1,19 @@
+{
+  "_note": "M6 §20.3/§20.7 customisation catalogue. Cosmetic only — never affects pedagogy. buddies = base characters chosen at add-time (free); items = shop cosmetics bought with Star Coins.",
+  "buddies": [
+    { "id": "robo", "name": "Robo", "colour": "#6ad0e0" },
+    { "id": "alien", "name": "Zib", "colour": "#8ad06a" },
+    { "id": "blob", "name": "Gloop", "colour": "#c88ae0" }
+  ],
+  "items": [
+    { "id": "colour-sun", "kind": "colour", "name": "Sunburst", "cost": 30, "value": "#f2b134" },
+    { "id": "colour-rose", "kind": "colour", "name": "Rose", "cost": 30, "value": "#e05a7d" },
+    { "id": "colour-sky", "kind": "colour", "name": "Sky", "cost": 30, "value": "#4f9de0" },
+    { "id": "colour-lime", "kind": "colour", "name": "Lime", "cost": 40, "value": "#7ad04f" },
+    { "id": "colour-grape", "kind": "colour", "name": "Grape", "cost": 40, "value": "#9b5fe0" },
+    { "id": "colour-flame", "kind": "colour", "name": "Flame", "cost": 60, "value": "#e0562f" },
+    { "id": "hat-party", "kind": "hat", "name": "Party hat", "cost": 80, "value": "party" },
+    { "id": "hat-helmet", "kind": "hat", "name": "Space helmet", "cost": 120, "value": "helmet" },
+    { "id": "hat-crown", "kind": "hat", "name": "Crown", "cost": 200, "value": "crown" }
+  ]
+}

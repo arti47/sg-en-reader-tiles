@@ -1,5 +1,7 @@
 import { useState } from 'react'
 import type { Child, DifficultyFlag } from '../types'
+import { BUDDIES } from '../lib/cosmetics'
+import { Buddy } from './Buddy'
 
 const FLAGS: { id: DifficultyFlag; label: string }[] = [
   { id: 'decoding', label: 'Decoding' },
@@ -13,6 +15,8 @@ export function AddStudent(props: { onSave: (c: Child) => void; onCancel: () => 
   const [name, setName] = useState('')
   const [pLevel, setPLevel] = useState<1|2|3|4|5|6>(1)
   const [flags, setFlags] = useState<DifficultyFlag[]>([])
+  const [character, setCharacter] = useState(BUDDIES[0].id)
+  const [buddyName, setBuddyName] = useState('')
   const canSave = name.trim().length > 0
   const toggle = (f: DifficultyFlag) => setFlags(fs => fs.includes(f) ? fs.filter(x => x !== f) : [...fs, f])
   return (
@@ -43,10 +47,27 @@ export function AddStudent(props: { onSave: (c: Child) => void; onCancel: () => 
           ))}
         </div>
       </div>
+      <div className="field">
+        <span>Choose a space buddy 🚀</span>
+        <div className="buddy-choices">
+          {BUDDIES.map(b => (
+            <button key={b.id} type="button" aria-pressed={character === b.id}
+              className={'buddy-choice' + (character === b.id ? ' on' : '')} onClick={() => setCharacter(b.id)}>
+              <Buddy character={b.id} state="idle" size={64} />
+              <span className="note tiny">{b.name}</span>
+            </button>
+          ))}
+        </div>
+      </div>
+      <label className="field">
+        <span>Buddy's name <span className="note tiny">(optional)</span></span>
+        <input value={buddyName} onChange={e => setBuddyName(e.target.value)} placeholder={BUDDIES.find(b => b.id === character)?.name} />
+      </label>
       <div className="row">
         <button className="btn ghost" onClick={props.onCancel}>Cancel</button>
         <button className="btn" disabled={!canSave}
-          onClick={() => props.onSave({ id: crypto.randomUUID(), name: name.trim(), pLevel, difficultyFlags: flags.length ? flags : undefined, createdAt: Date.now() })}>
+          onClick={() => props.onSave({ id: crypto.randomUUID(), name: name.trim(), pLevel, difficultyFlags: flags.length ? flags : undefined,
+            buddy: { character, name: buddyName.trim() || (BUDDIES.find(b => b.id === character)?.name ?? 'Buddy') }, createdAt: Date.now() })}>
           Save
         </button>
       </div>

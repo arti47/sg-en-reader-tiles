@@ -276,6 +276,23 @@ h1 { font-size: 1.8rem; font-weight: 700; margin: 8px 0 0; }
 @media (prefers-reduced-motion: reduce) { .planet-active { animation: none; } }
 :root[data-calm="on"] .planet-active { animation: none; }
 
+/* M6.3 (§20.3) Buddy + customisation shop. */
+.buddy { display: block; }
+.buddy-bounce { animation: buddybounce 0.6s ease infinite; transform-origin: 50% 90%; }
+@keyframes buddybounce { 0%,100% { transform: translateY(0) scale(1); } 50% { transform: translateY(-6px) scale(1.04); } }
+@media (prefers-reduced-motion: reduce) { .buddy-bounce { animation: none; } }
+:root[data-calm="on"] .buddy-bounce { animation: none; }
+.galaxy-buddy { display: flex; flex-direction: column; align-items: center; gap: 4px; }
+.buddy-choices { display: flex; gap: 10px; flex-wrap: wrap; }
+.buddy-choice { display: flex; flex-direction: column; align-items: center; gap: 2px; padding: 8px; border: 3px solid transparent; border-radius: 14px; background: #f3efe6; cursor: pointer; font: inherit; }
+.buddy-choice.on { border-color: #1f6f6b; background: #eaf6f4; }
+.shop-preview { display: flex; justify-content: center; padding: 8px; }
+.shop-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(96px, 1fr)); gap: 10px; }
+.shop-item { display: flex; flex-direction: column; align-items: center; gap: 6px; padding: 10px; border-radius: 14px; background: #f3efe6; border: 2px solid transparent; }
+.shop-item.on { border-color: #1f6f6b; background: #eaf6f4; }
+.shop-swatch { width: 40px; height: 40px; border-radius: 50%; border: 2px solid #0002; }
+.shop-name { font-size: 0.85rem; font-weight: 700; text-align: center; }
+
 /* M6 (§20.4/§20.5) Star Coins counter + pop. Motion is disabled under reduced-motion / Calm Mode. */
 .coin-counter { display: inline-flex; align-items: center; gap: 3px; font-weight: 700; color: #b8860b; background: #fff7e0; border-radius: 999px; padding: 2px 10px; font-size: 0.95rem; }
 .coin-ico { font-size: 0.9em; }

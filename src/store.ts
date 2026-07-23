@@ -1,6 +1,6 @@
 // IndexedDB persistence (CLAUDE.md §11). No deps.
-import type { Child, Attempt, SkillProgress, Certificate, Review, Aggregate, Daily, Usage, Settings, LearnState, Wallet } from './types'
-export const SCHEMA_VERSION = 7
+import type { Child, Attempt, SkillProgress, Certificate, Review, Aggregate, Daily, Usage, Settings, LearnState, Wallet, Inventory } from './types'
+export const SCHEMA_VERSION = 8
 const DB = 'sg-reader'; const VER = SCHEMA_VERSION
 
 function open(): Promise<IDBDatabase> {
@@ -39,6 +39,10 @@ function open(): Promise<IDBDatabase> {
       if (oldV < 7) {
         // v7 adds M6 (§20.7) Star Coins wallet — additive reward state.
         if (!db.objectStoreNames.contains('wallet')) db.createObjectStore('wallet', { keyPath: 'childId' })
+      }
+      if (oldV < 8) {
+        // v8 adds M6.3 (§20.7) customisation inventory (owned + equipped cosmetics).
+        if (!db.objectStoreNames.contains('inventory')) db.createObjectStore('inventory', { keyPath: 'childId' })
       }
     }
     r.onsuccess = () => res(r.result)
@@ -170,8 +174,24 @@ export async function addCoins(childId: string, n: number): Promise<Wallet> {
   return next
 }
 
+// Customisation inventory (M6.3 §20.7). Cosmetic-only.
+export const getInventory = (childId: string) =>
+  req<Inventory | undefined>('inventory', 'readonly', s => s.get(childId))
+    .then(i => i ?? { childId, owned: [], equipped: {} })
+export const putInventory = (inv: Inventory) => req('inventory', 'readwrite', s => s.put(inv))
+// Buy a cosmetic: deduct coins + add to owned (idempotent — no double-charge if already owned).
+export async function buyCosmetic(childId: string, itemId: string, cost: number): Promise<{ inv: Inventory; wallet: Wallet }> {
+  const inv = await getInventory(childId); const wallet = await getWallet(childId)
+  if (inv.owned.includes(itemId)) return { inv, wallet }
+  if (wallet.coins < cost) return { inv, wallet } // caller checks affordability first; guard anyway
+  const nextInv: Inventory = { ...inv, owned: [...inv.owned, itemId] }
+  await putInventory(nextInv)
+  const nextWallet = await addCoins(childId, -cost)
+  return { inv: nextInv, wallet: nextWallet }
+}
+
 // Export / import (§11) — device-bound storage safety net. Full-DB JSON round-trip.
-const ALL_STORES = ['children', 'attempts', 'progress', 'certificates', 'reviews', 'aggregates', 'daily', 'usage', 'settings', 'learn', 'wallet']
+const ALL_STORES = ['children', 'attempts', 'progress', 'certificates', 'reviews', 'aggregates', 'daily', 'usage', 'settings', 'learn', 'wallet', 'inventory']
 export async function exportAll(): Promise<{ app: string; schemaVersion: number; exportedAt: number; stores: Record<string, unknown[]> }> {
   const db = await open()
   const stores: Record<string, unknown[]> = {}
@@ -204,7 +224,7 @@ function run(stores: string[], mode: IDBTransactionMode, fn: (t: IDBTransaction)
 // Delete all of a child's data (attempts by index; progress/certs/reviews/aggregates by
 // key prefix; usage by childId key).
 function clearChildData(childId: string): Promise<void> {
-  return run(['attempts', 'progress', 'certificates', 'reviews', 'aggregates', 'daily', 'usage', 'learn', 'wallet'], 'readwrite', t => {
+  return run(['attempts', 'progress', 'certificates', 'reviews', 'aggregates', 'daily', 'usage', 'learn', 'wallet', 'inventory'], 'readwrite', t => {
     const at = t.objectStore('attempts')
     at.index('childId').getAllKeys(childId).onsuccess = e =>
       (e.target as IDBRequest<IDBValidKey[]>).result.forEach(k => at.delete(k))
@@ -217,6 +237,7 @@ function clearChildData(childId: string): Promise<void> {
     }
     t.objectStore('usage').delete(childId)
     t.objectStore('wallet').delete(childId)
+    t.objectStore('inventory').delete(childId)
   })
 }
 
