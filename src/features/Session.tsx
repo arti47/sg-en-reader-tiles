@@ -1,11 +1,13 @@
 import { useEffect, useRef, useState } from 'react'
 import type { Child, PackItem, Attempt, SkillProgress, Difficulty, SkillDef, Certificate, Review } from '../types'
 import type { ScoreResult } from '../lib/scoring'
-import { addAttempt, getAttempts, getProgress, putProgress, putCertificate, getCertificates, getReviews, putReview, bumpAggregate, bumpDaily, getUsage, putUsage, getSettings, getLearn, flagReview, getWallet, addCoins } from '../store'
+import { addAttempt, getAttempts, getProgress, putProgress, putCertificate, getCertificates, getReviews, putReview, bumpAggregate, bumpDaily, getUsage, putUsage, getSettings, getLearn, flagReview, getWallet, addCoins, getDailyGoal, putDailyGoal } from '../store'
 import { setRate, setVoice } from '../lib/audio'
 import { playSfx } from '../lib/audio-sfx'
-import { coinsForAnswer, COIN_CERT } from '../lib/economy'
+import { coinsForAnswer, COIN_CERT, CHEST_BONUS, progressGoal, rollGoal } from '../lib/economy'
 import { CoinCounter } from './CoinCounter'
+import { RewardChest } from './RewardChest'
+import { Celebration } from './Celebration'
 import { XP_PER_CORRECT, XP_PER_CERT, achievements, type Achievement } from '../lib/gamify'
 import { SKILLS, getSkill, pickItem, getLesson } from '../lib/packs'
 import { LessonView } from './LessonView'
@@ -55,6 +57,11 @@ export function Session(props: { child: Child; onExit: () => void; onTrophies: (
   const [cert, setCert] = useState<Certificate | null>(null)
   const [count, setCount] = useState(0)
   const [coins, setCoins] = useState(0) // Star Coins total (M6 §20.4) — display only, cosmetic reward
+  const dgRef = useRef<import('../types').DailyGoal | null>(null) // daily goal (M6.4)
+  const [goalMet, setGoalMet] = useState(false)   // daily goal completed THIS session
+  const [streak, setStreak] = useState(0)
+  const [celebrateN, setCelebrateN] = useState(0) // confetti trigger (increment to fire)
+  const [chestDone, setChestDone] = useState(false)
   const [serve, setServe] = useState(0) // bumps every item served → forces renderer remount (fresh internal state)
   const startedRef = useRef(false)
   const sup = support(props.child.difficultyFlags) // §1 difficulty-flag personalisation (default = unchanged)
@@ -83,6 +90,7 @@ export function Session(props: { child: Child; onExit: () => void; onTrophies: (
       await countSession()
       usageRef.current = await getUsage(props.child.id)
       setCoins((await getWallet(props.child.id)).coins) // M6: current Star Coins for the counter
+      dgRef.current = rollGoal(await getDailyGoal(props.child.id), isoDay(Date.now())); setStreak(dgRef.current.streak) // M6.4 daily goal
       // Baseline of already-earned badges so the summary can highlight ones earned THIS session.
       startBadgesRef.current = new Set(achievements(attemptsRef.current, certsAsArray(), usageRef.current).filter(b => b.earned).map(b => b.id))
       advance(true)
@@ -228,7 +236,15 @@ export function Session(props: { child: Child; onExit: () => void; onTrophies: (
     // M6 (§20.4/§20.5): sound + Star Coins for this answer (cosmetic reward — no pedagogy impact).
     playSfx(r.correct ? 'correct' : 'wrong')
     const earned = coinsForAnswer(r.correct, servedReviewRef.current)
-    if (earned > 0) { playSfx('coin'); void addCoins(props.child.id, earned).then(w => setCoins(w.coins)) }
+    if (earned > 0) {
+      playSfx('coin'); void addCoins(props.child.id, earned).then(w => setCoins(w.coins))
+      // M6.4: count coins toward the daily goal; completing it awards a streak bonus + celebration.
+      if (dgRef.current) {
+        const { goal, bonus, justCompleted } = progressGoal(dgRef.current, isoDay(Date.now()), earned)
+        dgRef.current = goal; void putDailyGoal(goal)
+        if (justCompleted) { setGoalMet(true); setStreak(goal.streak); setCelebrateN(n => n + 1); playSfx('levelup'); void addCoins(props.child.id, bonus).then(w => setCoins(w.coins)) }
+      }
+    }
     if (r.correct) xpGainRef.current += XP_PER_CORRECT
     const now = Date.now()
     // The channels whose retention a pattern's certificate depends on: decode AND encode (§7 #2).
@@ -253,7 +269,7 @@ export function Session(props: { child: Child; onExit: () => void; onTrophies: (
         await putCertificate(props.child.id, c); certsRef.current.add(patternSkill.id); setCert(c)
         sessionCertsRef.current = [...sessionCertsRef.current, c]
         xpGainRef.current += XP_PER_CERT
-        playSfx('levelup'); void addCoins(props.child.id, COIN_CERT).then(w => setCoins(w.coins)) // M6 mastery bonus
+        playSfx('levelup'); setCelebrateN(n => n + 1); void addCoins(props.child.id, COIN_CERT).then(w => setCoins(w.coins)) // M6 mastery bonus
       }
     } else if (!wasPatternDone && patternMastered(attemptsRef.current, patternSkill, masteredRef.current)) {
       // Dual gate cleared → PROVISIONAL mastery: advance now (keeps momentum), but WITHHOLD the
@@ -281,10 +297,14 @@ export function Session(props: { child: Child; onExit: () => void; onTrophies: (
     const gotSomething = sessionCertsRef.current.length > 0 || newBadges.length > 0
     return (
       <div className="stack center">
-        <div className="cert">🌟</div>
-        <h1>Great session, {props.child.name}!</h1>
+        <Celebration trigger={celebrateN} />
+        <div className="cert">🚀</div>
+        <h1>Mission complete, {props.child.name}!</h1>
         <p className="stem">+{xpGainRef.current} XP</p>
         <p className="note">{count} activities done{mastered.length ? ` · ${mastered.length} skill${mastered.length > 1 ? 's' : ''} mastered` : ''}.</p>
+        {/* M6.4: mission reward chest — tap to claim a coin bonus. */}
+        <RewardChest bonus={CHEST_BONUS} onOpen={() => { if (chestDone) return; setChestDone(true); setCelebrateN(n => n + 1); void addCoins(props.child.id, CHEST_BONUS).then(w => setCoins(w.coins)) }} />
+        {goalMet && <p className="note goal-met">🔥 Daily goal complete! {streak}-day streak — bonus coins added!</p>}
         {gotSomething && (
           <div className="new-awards" aria-live="polite">
             <b>New this session!</b>
@@ -347,6 +367,7 @@ export function Session(props: { child: Child; onExit: () => void; onTrophies: (
     const isDictation = item.itemType === 'dictation'
     return (
       <div className="stack">
+        <Celebration trigger={celebrateN} />
         <div className="row" style={{ justifyContent: 'space-between', alignItems: 'center' }}>
           <button className="link" onClick={props.onExit}>← Back</button>
           <span className="row" style={{ gap: 10, alignItems: 'center' }}>
@@ -354,6 +375,8 @@ export function Session(props: { child: Child; onExit: () => void; onTrophies: (
             <span className="note">{Math.min(count + 1, lenRef.current)}/{lenRef.current}</span>
           </span>
         </div>
+        {/* M6.4: mission goal bar fills as the child answers. */}
+        <div className="goalbar" aria-hidden="true"><div className="goalbar-fill" style={{ width: `${Math.round((count / lenRef.current) * 100)}%` }} /></div>
         {isTile ? <TileItem key={serve} item={item} onAnswer={onAnswer} />
           : isDictation ? <DictationItem key={serve} item={item} onAnswer={onAnswer} />
             : isCloze ? <ClozeItem key={serve} item={item} onAnswer={onAnswer} />

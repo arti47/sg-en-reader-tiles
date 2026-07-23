@@ -90,6 +90,8 @@ export interface Child {
 }
 // M6 §20.7 customisation inventory — cosmetic only, never affects pedagogy.
 export interface Inventory { childId: string; owned: string[]; equipped: { colour?: string; hat?: string } }
+// M6.4 §20.7 daily goal + streak — engagement mechanic; coins are cosmetic only.
+export interface DailyGoal { childId: string; day: string; progress: number; target: number; streak: number; lastGoalDay: string }
 export interface Attempt {
   id: string                     // uuid (was keyed by ts — collision risk)
   childId: string

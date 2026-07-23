@@ -101,7 +101,7 @@ try {
         // a stale/answered screen while window.__item has already advanced.
         const kind = await page.waitForFunction(() => {
           const t = document.body.innerText
-          if (/Great session/.test(t)) return 'summary'
+          if (/Mission complete/.test(t)) return 'summary'
           if (/Certificate earned!/.test(t)) return 'cert'
           if (/Let's learn this/.test(t)) return 'lesson'
           const hasContinue = [...document.querySelectorAll('button')].some(b => b.textContent.trim() === 'Continue')
@@ -239,6 +239,14 @@ try {
       // must surface a "New this session!" award block (child sees achievements immediately).
       const summaryText = await page.evaluate(() => document.body.innerText)
       if (!/New this session/.test(summaryText)) fail('summary: should highlight new awards after earning a certificate')
+      // M6.4: the mission reward chest awards coins on open.
+      const coinsBeforeChest = (await readDb()).wallet?.[0]?.coins ?? 0
+      await page.getByRole('button', { name: /Open your reward chest/ }).click({ force: true }) // force: chest wiggles (infinite anim)
+      // The award (addCoins) is async — poll the wallet until it reflects the chest bonus.
+      await page.waitForFunction((before) => new Promise(res => {
+        const o = indexedDB.open('sg-reader')
+        o.onsuccess = () => { o.result.transaction('wallet').objectStore('wallet').getAll().onsuccess = e => res((e.target.result[0]?.coins ?? 0) > before) }
+      }), coinsBeforeChest, { timeout: 6000 }).catch(() => fail('M6.4: opening the chest should award coins'))
       db = await readDb()
       // Child-facing trophy room, reached from the summary → shows badges + the earned certificate.
       await page.getByRole('button', { name: /My trophies/ }).click()
@@ -622,7 +630,18 @@ try {
     if (mixed.growth.recentAccuracy !== 0) return 'readiness: reps must be excluded from recent accuracy'
     if (mixed.growth.assessedN !== 6) return 'readiness: assessedN should count assessment items only'
     const before = await store.exportAll()
-    if (before.schemaVersion !== 8) return 'export schemaVersion should be 8 (M6.3 inventory)'
+    if (before.schemaVersion !== 9) return 'export schemaVersion should be 9 (M6.4 dailygoal)'
+    // M6.4 (§20.4): daily-goal progress + streak math (pure).
+    const ec = window.__economy
+    const g0 = { childId: 'g', day: '2026-07-23', progress: 0, target: ec.DAILY_TARGET, streak: 0, lastGoalDay: '' }
+    const r1 = ec.progressGoal(g0, '2026-07-23', ec.DAILY_TARGET) // reach target in one go
+    if (!r1.justCompleted || r1.goal.streak !== 1 || r1.bonus <= 0) return 'M6.4: reaching the target should complete the goal + streak 1 + bonus'
+    const r2 = ec.progressGoal(r1.goal, '2026-07-23', 10) // same day, already done → no re-complete
+    if (r2.justCompleted) return 'M6.4: goal completes once per day'
+    const r3 = ec.progressGoal(r1.goal, '2026-07-24', ec.DAILY_TARGET) // next day → streak 2
+    if (!r3.justCompleted || r3.goal.streak !== 2) return 'M6.4: consecutive-day completion should extend the streak'
+    const r4 = ec.progressGoal(r1.goal, '2026-07-26', ec.DAILY_TARGET) // gap → streak resets to 1
+    if (r4.goal.streak !== 1) return 'M6.4: a gap should reset the streak to 1'
     // M6.3 (§20.3): shop buy→own→equip round-trip (cosmetic-only; store-level, deterministic).
     await store.addCoins('shopc', 100)
     const bought = await store.buyCosmetic('shopc', 'colour-sun', 30)

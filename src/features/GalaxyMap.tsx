@@ -1,7 +1,9 @@
 import { useEffect, useRef, useState } from 'react'
 import type { Child, PatternStatus } from '../types'
 import { PATTERNS, nextToLearn, learnedSet, needsReviewSet, patternStatus } from '../lib/learn'
-import { getLearn, getProgress, getWallet, getInventory } from '../store'
+import { getLearn, getProgress, getWallet, getInventory, getDailyGoal } from '../store'
+import { rollGoal } from '../lib/economy'
+import { isoDay } from '../lib/aggregate'
 import { startStarfield } from '../lib/starfield'
 import { CoinCounter } from './CoinCounter'
 import { Buddy } from './Buddy'
@@ -30,6 +32,7 @@ export function GalaxyMap(props: {
   const [targetIdx, setTargetIdx] = useState(-1)
   const [coins, setCoins] = useState(0)
   const [equipped, setEquipped] = useState<{ colour?: string; hat?: string }>({})
+  const [goal, setGoal] = useState<{ progress: number; target: number; streak: number } | null>(null)
   const [loading, setLoading] = useState(true)
   const canvasRef = useRef<HTMLCanvasElement>(null)
 
@@ -52,6 +55,8 @@ export function GalaxyMap(props: {
       }))
       setCoins((await getWallet(props.child.id)).coins)
       setEquipped((await getInventory(props.child.id)).equipped)
+      const dg = rollGoal(await getDailyGoal(props.child.id), isoDay(Date.now()))
+      setGoal({ progress: dg.progress, target: dg.target, streak: dg.streak })
       setLoading(false)
     })()
   }, [props.child.id])
@@ -85,6 +90,12 @@ export function GalaxyMap(props: {
           <button className="btn ghost small" onClick={props.onShop}>✨ Customise</button>
         </div>
         <h1>{props.child.name}'s galaxy</h1>
+        {goal && (
+          <div className="daily-goal">
+            <span className="note">Today's goal {goal.streak > 0 ? `· ${goal.streak}🔥` : ''}</span>
+            <div className="goalbar"><div className="goalbar-fill" style={{ width: `${Math.min(100, Math.round((goal.progress / goal.target) * 100))}%` }} /></div>
+          </div>
+        )}
         <p className="note" role="status">{learnedCount} of {rows.length} planets explored. {targetIdx >= 0 && targetIdx < rows.length ? 'Tap your glowing planet!' : 'Whole galaxy explored! 🎉'}</p>
         <div className="planets" role="group" aria-label="Your planets — tap one to travel there">
           {rows.map((r, i) => {

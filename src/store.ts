@@ -1,6 +1,7 @@
 // IndexedDB persistence (CLAUDE.md §11). No deps.
-import type { Child, Attempt, SkillProgress, Certificate, Review, Aggregate, Daily, Usage, Settings, LearnState, Wallet, Inventory } from './types'
-export const SCHEMA_VERSION = 8
+import type { Child, Attempt, SkillProgress, Certificate, Review, Aggregate, Daily, Usage, Settings, LearnState, Wallet, Inventory, DailyGoal } from './types'
+import { DAILY_TARGET } from './lib/economy'
+export const SCHEMA_VERSION = 9
 const DB = 'sg-reader'; const VER = SCHEMA_VERSION
 
 function open(): Promise<IDBDatabase> {
@@ -43,6 +44,10 @@ function open(): Promise<IDBDatabase> {
       if (oldV < 8) {
         // v8 adds M6.3 (§20.7) customisation inventory (owned + equipped cosmetics).
         if (!db.objectStoreNames.contains('inventory')) db.createObjectStore('inventory', { keyPath: 'childId' })
+      }
+      if (oldV < 9) {
+        // v9 adds M6.4 (§20.7) daily goal + streak.
+        if (!db.objectStoreNames.contains('dailygoal')) db.createObjectStore('dailygoal', { keyPath: 'childId' })
       }
     }
     r.onsuccess = () => res(r.result)
@@ -179,6 +184,12 @@ export const getInventory = (childId: string) =>
   req<Inventory | undefined>('inventory', 'readonly', s => s.get(childId))
     .then(i => i ?? { childId, owned: [], equipped: {} })
 export const putInventory = (inv: Inventory) => req('inventory', 'readwrite', s => s.put(inv))
+
+// Daily goal + streak (M6.4 §20.7).
+export const getDailyGoal = (childId: string) =>
+  req<DailyGoal | undefined>('dailygoal', 'readonly', s => s.get(childId))
+    .then(d => d ?? { childId, day: '', progress: 0, target: DAILY_TARGET, streak: 0, lastGoalDay: '' })
+export const putDailyGoal = (d: DailyGoal) => req('dailygoal', 'readwrite', s => s.put(d))
 // Buy a cosmetic: deduct coins + add to owned (idempotent — no double-charge if already owned).
 export async function buyCosmetic(childId: string, itemId: string, cost: number): Promise<{ inv: Inventory; wallet: Wallet }> {
   const inv = await getInventory(childId); const wallet = await getWallet(childId)
@@ -191,7 +202,7 @@ export async function buyCosmetic(childId: string, itemId: string, cost: number)
 }
 
 // Export / import (§11) — device-bound storage safety net. Full-DB JSON round-trip.
-const ALL_STORES = ['children', 'attempts', 'progress', 'certificates', 'reviews', 'aggregates', 'daily', 'usage', 'settings', 'learn', 'wallet', 'inventory']
+const ALL_STORES = ['children', 'attempts', 'progress', 'certificates', 'reviews', 'aggregates', 'daily', 'usage', 'settings', 'learn', 'wallet', 'inventory', 'dailygoal']
 export async function exportAll(): Promise<{ app: string; schemaVersion: number; exportedAt: number; stores: Record<string, unknown[]> }> {
   const db = await open()
   const stores: Record<string, unknown[]> = {}
@@ -224,7 +235,7 @@ function run(stores: string[], mode: IDBTransactionMode, fn: (t: IDBTransaction)
 // Delete all of a child's data (attempts by index; progress/certs/reviews/aggregates by
 // key prefix; usage by childId key).
 function clearChildData(childId: string): Promise<void> {
-  return run(['attempts', 'progress', 'certificates', 'reviews', 'aggregates', 'daily', 'usage', 'learn', 'wallet', 'inventory'], 'readwrite', t => {
+  return run(['attempts', 'progress', 'certificates', 'reviews', 'aggregates', 'daily', 'usage', 'learn', 'wallet', 'inventory', 'dailygoal'], 'readwrite', t => {
     const at = t.objectStore('attempts')
     at.index('childId').getAllKeys(childId).onsuccess = e =>
       (e.target as IDBRequest<IDBValidKey[]>).result.forEach(k => at.delete(k))
@@ -238,6 +249,7 @@ function clearChildData(childId: string): Promise<void> {
     t.objectStore('usage').delete(childId)
     t.objectStore('wallet').delete(childId)
     t.objectStore('inventory').delete(childId)
+    t.objectStore('dailygoal').delete(childId)
   })
 }
 
