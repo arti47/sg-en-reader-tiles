@@ -30,12 +30,13 @@ import * as sounds from './lib/sounds'
 import * as economy from './lib/economy'
 import * as diagnoseLib from './lib/diagnose'
 import * as adaptLib from './lib/adapt'
+import * as fatigueLib from './lib/fatigue'
 import { getSkill, SKILLS, pickItem } from './lib/packs'
 
 if (import.meta.env.DEV) {
   const w = window as unknown as Record<string, unknown>
   w.__srs = srs; w.__engine = engine; w.__getSkill = getSkill
-  w.__store = store; w.__readiness = readiness; w.__aggregate = aggregate; w.__scoring = scoring; w.__gamify = gamify; w.__support = support; w.__learn = learn; w.__sounds = sounds; w.__economy = economy; w.__diagnose = diagnoseLib; w.__adapt = adaptLib
+  w.__store = store; w.__readiness = readiness; w.__aggregate = aggregate; w.__scoring = scoring; w.__gamify = gamify; w.__support = support; w.__learn = learn; w.__sounds = sounds; w.__economy = economy; w.__diagnose = diagnoseLib; w.__adapt = adaptLib; w.__fatigue = fatigueLib
   // Runtime pack-wiring guard (§18.11): the id of any enabled scope skill whose pack isn't
   // actually imported in packs.ts (pickItem returns nothing → the session aborts to summary).
   w.__unwiredSkills = SKILLS.filter(s => !pickItem(s.id, 3, new Set())).map(s => s.id)

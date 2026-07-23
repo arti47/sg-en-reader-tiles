@@ -686,8 +686,20 @@ try {
     const ext = srs.onReviewPass(rv0, DNOW, 4)
     if (ext.status !== 'scheduled') return 'srs: extra stage should schedule one more review, not graduate'
     if (srs.onReviewPass(ext, DNOW, 4).status !== 'graduated') return 'srs: graduates after the extra stage'
+    // M7.3 (§21.2 C): fatigue detection (pure, invisible) + episode store round-trip (DB v10).
+    const ft = window.__fatigue
+    const steady = Array.from({ length: 8 }, () => ({ latencyMs: 1000, correct: true }))
+    if (ft.detectFatigue(steady).fatigued) return 'fatigue: steady fast+correct must not be fatigued'
+    if (ft.detectFatigue(steady.slice(0, 3)).fatigued) return 'fatigue: <MIN_ITEMS must not detect'
+    const rising = [...Array.from({ length: 4 }, () => ({ latencyMs: 1000, correct: true })), ...Array.from({ length: 3 }, () => ({ latencyMs: 4000, correct: true }))]
+    if (!ft.detectFatigue(rising).fatigued) return 'fatigue: rising latency → fatigued'
+    const cluster = [...Array.from({ length: 4 }, () => ({ latencyMs: 1000, correct: true })), { latencyMs: 1000, correct: false }, { latencyMs: 1000, correct: false }, { latencyMs: 1000, correct: false }]
+    const cs = ft.detectFatigue(cluster)
+    if (!cs.fatigued || !cs.errorCluster) return 'fatigue: an error cluster → fatigued'
+    await store.addFatigueEpisode('fz', { ts: 1, skillId: 'PH-cvc-1', sessionPos: 6, latencyRatio: 2, errorCluster: false })
+    if ((await store.getFatigue('fz')).episodes.length !== 1) return 'fatigue store: addFatigueEpisode/getFatigue round-trip'
     const before = await store.exportAll()
-    if (before.schemaVersion !== 9) return 'export schemaVersion should be 9 (M6.4 dailygoal)'
+    if (before.schemaVersion !== 10) return 'export schemaVersion should be 10 (M7.3 fatigue)'
     // M6.4 (§20.4): daily-goal progress + streak math (pure).
     const ec = window.__economy
     const g0 = { childId: 'g', day: '2026-07-23', progress: 0, target: ec.DAILY_TARGET, streak: 0, lastGoalDay: '' }

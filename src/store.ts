@@ -1,7 +1,7 @@
 // IndexedDB persistence (CLAUDE.md §11). No deps.
-import type { Child, Attempt, SkillProgress, Certificate, Review, Aggregate, Daily, Usage, Settings, LearnState, Wallet, Inventory, DailyGoal } from './types'
+import type { Child, Attempt, SkillProgress, Certificate, Review, Aggregate, Daily, Usage, Settings, LearnState, Wallet, Inventory, DailyGoal, FatigueLog, FatigueEpisode } from './types'
 import { DAILY_TARGET } from './lib/economy'
-export const SCHEMA_VERSION = 9
+export const SCHEMA_VERSION = 10
 const DB = 'sg-reader'; const VER = SCHEMA_VERSION
 
 function open(): Promise<IDBDatabase> {
@@ -48,6 +48,10 @@ function open(): Promise<IDBDatabase> {
       if (oldV < 9) {
         // v9 adds M6.4 (§20.7) daily goal + streak.
         if (!db.objectStoreNames.contains('dailygoal')) db.createObjectStore('dailygoal', { keyPath: 'childId' })
+      }
+      if (oldV < 10) {
+        // v10 adds M7.3 (§21.2 C) fatigue episode log — parent-facing; never read by the engine.
+        if (!db.objectStoreNames.contains('fatigue')) db.createObjectStore('fatigue', { keyPath: 'childId' })
       }
     }
     r.onsuccess = () => res(r.result)
@@ -190,6 +194,17 @@ export const getDailyGoal = (childId: string) =>
   req<DailyGoal | undefined>('dailygoal', 'readonly', s => s.get(childId))
     .then(d => d ?? { childId, day: '', progress: 0, target: DAILY_TARGET, streak: 0, lastGoalDay: '' })
 export const putDailyGoal = (d: DailyGoal) => req('dailygoal', 'readwrite', s => s.put(d))
+
+// Fatigue episode log (M7.3 §21.2 C) — parent-facing only; the engine never reads it. Capped.
+const FATIGUE_CAP = 50
+export const getFatigue = (childId: string) =>
+  req<FatigueLog | undefined>('fatigue', 'readonly', s => s.get(childId))
+    .then(f => f ?? { childId, episodes: [] })
+export async function addFatigueEpisode(childId: string, ep: FatigueEpisode): Promise<void> {
+  const f = await getFatigue(childId)
+  const episodes = [...f.episodes, ep].slice(-FATIGUE_CAP)
+  await req('fatigue', 'readwrite', s => s.put({ childId, episodes }))
+}
 // Buy a cosmetic: deduct coins + add to owned (idempotent — no double-charge if already owned).
 export async function buyCosmetic(childId: string, itemId: string, cost: number): Promise<{ inv: Inventory; wallet: Wallet }> {
   const inv = await getInventory(childId); const wallet = await getWallet(childId)
@@ -202,7 +217,7 @@ export async function buyCosmetic(childId: string, itemId: string, cost: number)
 }
 
 // Export / import (§11) — device-bound storage safety net. Full-DB JSON round-trip.
-const ALL_STORES = ['children', 'attempts', 'progress', 'certificates', 'reviews', 'aggregates', 'daily', 'usage', 'settings', 'learn', 'wallet', 'inventory', 'dailygoal']
+const ALL_STORES = ['children', 'attempts', 'progress', 'certificates', 'reviews', 'aggregates', 'daily', 'usage', 'settings', 'learn', 'wallet', 'inventory', 'dailygoal', 'fatigue']
 export async function exportAll(): Promise<{ app: string; schemaVersion: number; exportedAt: number; stores: Record<string, unknown[]> }> {
   const db = await open()
   const stores: Record<string, unknown[]> = {}
@@ -235,7 +250,7 @@ function run(stores: string[], mode: IDBTransactionMode, fn: (t: IDBTransaction)
 // Delete all of a child's data (attempts by index; progress/certs/reviews/aggregates by
 // key prefix; usage by childId key).
 function clearChildData(childId: string): Promise<void> {
-  return run(['attempts', 'progress', 'certificates', 'reviews', 'aggregates', 'daily', 'usage', 'learn', 'wallet', 'inventory', 'dailygoal'], 'readwrite', t => {
+  return run(['attempts', 'progress', 'certificates', 'reviews', 'aggregates', 'daily', 'usage', 'learn', 'wallet', 'inventory', 'dailygoal', 'fatigue'], 'readwrite', t => {
     const at = t.objectStore('attempts')
     at.index('childId').getAllKeys(childId).onsuccess = e =>
       (e.target as IDBRequest<IDBValidKey[]>).result.forEach(k => at.delete(k))
@@ -250,6 +265,7 @@ function clearChildData(childId: string): Promise<void> {
     t.objectStore('wallet').delete(childId)
     t.objectStore('inventory').delete(childId)
     t.objectStore('dailygoal').delete(childId)
+    t.objectStore('fatigue').delete(childId)
   })
 }
 

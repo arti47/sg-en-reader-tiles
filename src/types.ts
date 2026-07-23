@@ -95,6 +95,10 @@ export type Equipped = Partial<Record<CosmeticSlot, string>>
 export interface Inventory { childId: string; owned: string[]; equipped: Equipped }
 // M6.4 §20.7 daily goal + streak — engagement mechanic; coins are cosmetic only.
 export interface DailyGoal { childId: string; day: string; progress: number; target: number; streak: number; lastGoalDay: string }
+// M7.3 §21.2 C fatigue log — parent-facing record of within-session tiring/struggle episodes.
+// Never read by the pedagogy engine (it only eases + offers a break in the moment).
+export interface FatigueEpisode { ts: number; skillId: string; sessionPos: number; latencyRatio: number; errorCluster: boolean }
+export interface FatigueLog { childId: string; episodes: FatigueEpisode[] }
 export interface Attempt {
   id: string                     // uuid (was keyed by ts — collision risk)
   childId: string

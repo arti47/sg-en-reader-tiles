@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react'
 import type { Child, PackItem, Attempt, SkillProgress, Difficulty, SkillDef, Certificate, Review, Equipped } from '../types'
 import type { ScoreResult } from '../lib/scoring'
-import { addAttempt, getAttempts, getProgress, putProgress, putCertificate, getCertificates, getReviews, putReview, bumpAggregate, bumpDaily, getUsage, putUsage, getSettings, getLearn, flagReview, getWallet, addCoins, getDailyGoal, putDailyGoal } from '../store'
+import { addAttempt, getAttempts, getProgress, putProgress, putCertificate, getCertificates, getReviews, putReview, bumpAggregate, bumpDaily, getUsage, putUsage, getSettings, getLearn, flagReview, getWallet, addCoins, getDailyGoal, putDailyGoal, addFatigueEpisode } from '../store'
 import { setRate, setVoice } from '../lib/audio'
 import { playSfx } from '../lib/audio-sfx'
 import { coinsForAnswer, COIN_CERT, CHEST_BONUS, progressGoal, rollGoal } from '../lib/economy'
@@ -18,6 +18,7 @@ import { learnedSet } from '../lib/learn'
 import { support } from '../lib/support'
 import { diagnose } from '../lib/diagnose'
 import { adaptFor, NO_ADAPT, type Adaptation } from '../lib/adapt'
+import { detectFatigue, type SessionAnswer } from '../lib/fatigue'
 import { scheduleFirst, onReviewPass, onReviewFail, dueReviews, DUE_CAP, REVIEW_OFFSETS_MS } from '../lib/srs'
 import { isoWeek, isConsecutiveWeek, isoDay } from '../lib/aggregate'
 import { McqItem } from './items/McqItem'
@@ -27,6 +28,8 @@ import { DictationItem } from './items/DictationItem'
 
 const DEFAULT_SESSION_LEN = 16
 const FOCUS_WIDTH = 3 // max distinct current-skills a session works at once (bounds high-placement fan-out)
+const EASE_WINS = 3        // M7.3: confidence-break items (easier mastered skill) served on fatigue (§21.2 C)
+const FATIGUE_COOLDOWN = 6 // items to wait after a fatigue trigger before detecting again (let easing work)
 // M5 Test mode (§19.7): assessment only. Teaching (intro + struggle lessons) has moved to Learn;
 // on struggle Test flags the pattern for re-teaching (needs-review) instead of re-teaching.
 type Phase = 'loading' | 'item' | 'lesson' | 'cert' | 'summary' | 'learnfirst'
@@ -71,6 +74,12 @@ export function Session(props: { child: Child; onExit: () => void; onTrophies: (
   const startedRef = useRef(false)
   const sup = support(props.child.difficultyFlags) // §1 difficulty-flag personalisation (default = unchanged)
   const adaptRef = useRef<Adaptation>(NO_ADAPT)     // M7.2 data-driven adaptation (set on mount from the diagnosis)
+  const sessionAnsRef = useRef<SessionAnswer[]>([]) // M7.3 this-session answers (latency+correct) for fatigue detection
+  const easeRef = useRef(0)                         // M7.3 remaining confidence-break items to serve
+  const fatigueCoolRef = useRef(0)                  // M7.3 cooldown after a fatigue trigger
+  const offeredBreatherRef = useRef(false)          // M7.3 breather offered once this session
+  const [offerBreather, setOfferBreather] = useState(false) // M7.3 show the non-forced "take a break" banner
+  const [paused, setPaused] = useState(false)               // M7.3 calm pause screen (child chose to break)
 
   useEffect(() => {
     if (startedRef.current) return // guard React StrictMode double-invoke (would race two advance()s, e.g. dropping a due review)
@@ -135,6 +144,14 @@ export function Session(props: { child: Child; onExit: () => void; onTrophies: (
   // Choose next skill (interleave eligible), then serve lesson-on-struggle or an item.
   function advance(initial = false) {
     if (!initial && countRef.current >= lenRef.current) { setPhase('summary'); return }
+    // M7.3 (§21.2 C): fatigue confidence break — serve a few EASY items on an already-mastered skill
+    // (a guaranteed win) before resuming. Never forces an end; if nothing is mastered yet (raw
+    // beginner) there is nothing to ease to, so skip serving — the breather offer + log still fire.
+    if (easeRef.current > 0) {
+      const eased = SKILLS.find(s => s.strand === 'phonics' && !s.threaded && isMastered(attemptsRef.current, s, masteredRef.current))
+      if (eased) { easeRef.current -= 1; reviewingRef.current = null; loadItem(eased, 1, true); return }
+      easeRef.current = 0
+    }
     // Guided practice after a lesson (§8): a short block of easier (difficulty-1) items on the
     // just-taught skill before returning to normal rotation, so a child who just failed isn't
     // dropped straight back into a harder item.
@@ -246,6 +263,19 @@ export function Session(props: { child: Child; onExit: () => void; onTrophies: (
     await bumpDaily(props.child.id, isoDay(a.ts), r.correct, a.latencyMs / 60000)
 
     countRef.current += 1; setCount(countRef.current)
+    // M7.3 (§21.2 C): invisible fatigue detection over this session's answers. On a trigger, queue a
+    // confidence break, offer a non-forced breather (once), and log the episode for the adult. Never
+    // a timer, never forces an early end. Cooldown after a trigger so easing has a chance to work.
+    sessionAnsRef.current.push({ latencyMs: a.latencyMs, correct: r.correct })
+    if (fatigueCoolRef.current > 0) fatigueCoolRef.current -= 1
+    else if (easeRef.current === 0) {
+      const sig = detectFatigue(sessionAnsRef.current)
+      if (sig.fatigued) {
+        easeRef.current = EASE_WINS; fatigueCoolRef.current = FATIGUE_COOLDOWN
+        void addFatigueEpisode(props.child.id, { ts: a.ts, skillId: skill.id, sessionPos: countRef.current, latencyRatio: sig.latencyRatio, errorCluster: sig.errorCluster })
+        if (!offeredBreatherRef.current) { offeredBreatherRef.current = true; setOfferBreather(true) }
+      }
+    }
     // M6 (§20.4/§20.5): sound + Star Coins for this answer (cosmetic reward — no pedagogy impact).
     playSfx(r.correct ? 'correct' : 'wrong')
     const earned = coinsForAnswer(r.correct, servedReviewRef.current)
@@ -376,6 +406,19 @@ export function Session(props: { child: Child; onExit: () => void; onTrophies: (
     }} />
   }
 
+  // M7.3 (§21.2 C): a calm, non-forced pause the child chose from the breather offer. Nothing is
+  // scored or lost; "Resume" returns to the same item. Never auto-triggered, never time-limited.
+  if (paused) {
+    return (
+      <div className="stack center" aria-live="polite">
+        <div className="cert">🌿</div>
+        <h1>Take your time, {props.child.name}.</h1>
+        <p className="note">Have a little rest. Your place is saved — come back when you're ready.</p>
+        <button className="btn" onClick={() => setPaused(false)}>I'm ready — resume</button>
+      </div>
+    )
+  }
+
   if (phase === 'item' && item) {
     const isTile = item.itemType === 'build_word' || item.itemType === 'spell_tiles'
     const isCloze = item.itemType === 'grammar_cloze'
@@ -383,6 +426,16 @@ export function Session(props: { child: Child; onExit: () => void; onTrophies: (
     return (
       <div className="stack">
         <Celebration trigger={celebrateN} />
+        {/* M7.3 non-forced breather offer — the child can take a break or keep going. */}
+        {offerBreather && (
+          <div className="breather" role="status">
+            <span>😌 Feeling tired? You can take a little break.</span>
+            <div className="row" style={{ gap: 8 }}>
+              <button className="btn small" onClick={() => { setOfferBreather(false); setPaused(true) }}>Take a break</button>
+              <button className="btn ghost small" onClick={() => setOfferBreather(false)}>Keep going</button>
+            </div>
+          </div>
+        )}
         <div className="row" style={{ justifyContent: 'space-between', alignItems: 'center' }}>
           <button className="link" onClick={props.onExit}>← Back</button>
           <span className="row" style={{ gap: 10, alignItems: 'center' }}>

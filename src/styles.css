@@ -203,6 +203,9 @@ h1 { font-size: 1.8rem; font-weight: 700; margin: 8px 0 0; }
 /* M7.1 decode/spell struggle finding — neutral by default; tinted amber when a difficulty is flagged. */
 .diagnosis { background: var(--teal-soft); border-radius: 12px; padding: 10px 12px; margin-top: 8px; }
 .diagnosis-acquisition, .diagnosis-retention, .diagnosis-confusion { background: var(--no-soft); }
+/* M7.3 non-forced fatigue breather offer (dyslexia-safe: no timer, no animation). */
+.breather { background: var(--teal-soft); border-radius: 12px; padding: 10px 12px; display: flex; flex-direction: column; gap: 8px; }
+.fatigue-note { color: #6b5b3e; }
 .chips { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 6px; }
 .chip { background: var(--no-soft); color: #7a3d16; border-radius: 999px; padding: 3px 10px; font-size: .8rem; font-weight: 600; }
 .certs-list ul { margin: 6px 0 0; padding-left: 18px; }
