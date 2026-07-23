@@ -10,10 +10,10 @@ import { Buddy } from './Buddy'
 import { playSfx } from '../lib/audio-sfx'
 
 // M6 §20.2 — the unified galaxy-map HUB. Each pattern is a planet; the child taps one to travel
-// there. The active planet (needs-review, else the frontier) and every earlier one are tappable;
-// later planets are locked. A planet that still needs teaching (not-started / learning /
-// needs-review) routes to LEARN (the buddy teaches); a learned/mastered planet is a MISSION (Test).
-// Reads only pedagogy state (learn store + progress) — it never writes it (engine frozen).
+// there. The active planet (the Learn frontier) and every earlier one are tappable; later planets
+// are locked. A planet that still needs teaching (not-started / learning) routes to LEARN (the buddy
+// teaches); a learned/mastered planet is a MISSION (Test) and is NEVER reverted by a rough Test round
+// (§19.3, reported). Reads only pedagogy state (learn store + progress) — it never writes it (engine frozen).
 type Row = { id: string; label: string; status: PatternStatus; route: 'learn' | 'test' | 'locked' }
 const ICON: Record<PatternStatus, string> = {
   'not-started': '🪐', 'learning': '🌗', 'learned': '🚀', 'mastered': '🏆', 'needs-review': '🛠️'
@@ -117,7 +117,7 @@ export function GalaxyMap(props: {
           {rows.map((r, i) => {
             const active = i === targetIdx
             const cls = `planet planet-${r.route}` + (active ? ' planet-active' : '')
-            const label = `${r.label} — ${r.route === 'locked' ? 'locked' : r.route === 'test' ? 'mission ready' : r.status === 'needs-review' ? 'needs practice' : 'new planet'}`
+            const label = `${r.label} — ${r.route === 'locked' ? 'locked' : r.route === 'test' ? 'mission ready' : 'new planet'}`
             return r.route === 'locked'
               ? <div key={r.id} className={cls} aria-label={label}><span className="planet-ico" aria-hidden="true">🔒</span><span className="planet-name">{r.label}</span></div>
               : <button key={r.id} className={cls} onClick={() => tap(r)} aria-label={label}>
