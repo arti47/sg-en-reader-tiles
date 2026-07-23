@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from 'react'
 import type { PackItem } from '../../types'
 import { scoreMcq, type ScoreResult } from '../../lib/scoring'
 import { speak, phoneme, phonemeSeq } from '../../lib/audio'
+import { playSfx } from '../../lib/audio-sfx'
 
 // grammar_mcq / decode_choice: tap a choice. decode_choice plays its prompt — an isolated
 // phoneme clip (letter-sounds, T01) when `phonemeId` is set, else the spoken word via TTS.
@@ -41,6 +42,7 @@ export function McqItem(props: { item: PackItem; quiet?: boolean; onAnswer: (r: 
   useEffect(() => { if (isAudio) playPrompt() }, [item.id])
 
   function choose(id: string) {
+    playSfx('tap') // M6.5 juice — a soft click on every tap
     if (props.quiet) { setPicked(id); props.onAnswer(scoreMcq(item, id), id); return } // placement: assess-only
     if (correcting) {
       if (id === item.correctChoiceId && firstRef.current) {

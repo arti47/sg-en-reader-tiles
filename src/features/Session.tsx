@@ -8,6 +8,8 @@ import { coinsForAnswer, COIN_CERT, CHEST_BONUS, progressGoal, rollGoal } from '
 import { CoinCounter } from './CoinCounter'
 import { RewardChest } from './RewardChest'
 import { Celebration } from './Celebration'
+import { Buddy, type BuddyState } from './Buddy'
+import { getInventory } from '../store'
 import { XP_PER_CORRECT, XP_PER_CERT, achievements, type Achievement } from '../lib/gamify'
 import { SKILLS, getSkill, pickItem, getLesson } from '../lib/packs'
 import { LessonView } from './LessonView'
@@ -62,6 +64,7 @@ export function Session(props: { child: Child; onExit: () => void; onTrophies: (
   const [streak, setStreak] = useState(0)
   const [celebrateN, setCelebrateN] = useState(0) // confetti trigger (increment to fire)
   const [chestDone, setChestDone] = useState(false)
+  const [equipped, setEquipped] = useState<{ colour?: string; hat?: string }>({}) // M6.5 buddy cosmetics
   const [serve, setServe] = useState(0) // bumps every item served → forces renderer remount (fresh internal state)
   const startedRef = useRef(false)
   const sup = support(props.child.difficultyFlags) // §1 difficulty-flag personalisation (default = unchanged)
@@ -91,6 +94,7 @@ export function Session(props: { child: Child; onExit: () => void; onTrophies: (
       usageRef.current = await getUsage(props.child.id)
       setCoins((await getWallet(props.child.id)).coins) // M6: current Star Coins for the counter
       dgRef.current = rollGoal(await getDailyGoal(props.child.id), isoDay(Date.now())); setStreak(dgRef.current.streak) // M6.4 daily goal
+      setEquipped((await getInventory(props.child.id)).equipped) // M6.5 buddy reactions
       // Baseline of already-earned badges so the summary can highlight ones earned THIS session.
       startBadgesRef.current = new Set(achievements(attemptsRef.current, certsAsArray(), usageRef.current).filter(b => b.earned).map(b => b.id))
       advance(true)
@@ -377,6 +381,10 @@ export function Session(props: { child: Child; onExit: () => void; onTrophies: (
         </div>
         {/* M6.4: mission goal bar fills as the child answers. */}
         <div className="goalbar" aria-hidden="true"><div className="goalbar-fill" style={{ width: `${Math.round((count / lenRef.current) * 100)}%` }} /></div>
+        {/* M6.5: the buddy reacts to the last answer. */}
+        <div className="session-buddy"><Buddy character={props.child.buddy?.character ?? 'robo'}
+          state={(answered ? (answered.correct ? 'cheer' : 'sad') : 'idle') as BuddyState}
+          colour={equipped.colour} hat={equipped.hat} size={56} /></div>
         {isTile ? <TileItem key={serve} item={item} onAnswer={onAnswer} />
           : isDictation ? <DictationItem key={serve} item={item} onAnswer={onAnswer} />
             : isCloze ? <ClozeItem key={serve} item={item} onAnswer={onAnswer} />

@@ -2,6 +2,7 @@ import { useEffect, useMemo, useRef, useState } from 'react'
 import type { PackItem } from '../../types'
 import { scoreTiles, type ScoreResult } from '../../lib/scoring'
 import { speak } from '../../lib/audio'
+import { playSfx } from '../../lib/audio-sfx'
 
 // Directional mnemonic for the classic dyslexia letter reversals (§5). Shown only when the first
 // wrong tile is exactly the mirror letter (b↔d, p↔q) — the single most iconic decoding error.
@@ -42,6 +43,7 @@ export function TileItem(props: { item: PackItem; onAnswer: (r: ScoreResult, ans
 
   function place(t: { key: string; g: string }) {
     if (checked || built.length >= target.length) return
+    playSfx('tap') // M6.5 juice
     const next = [...built, t]
     setBuilt(next)
     // During correction the child copies the revealed model → auto-complete on an exact match.

@@ -302,6 +302,8 @@ h1 { font-size: 1.8rem; font-weight: 700; margin: 8px 0 0; }
 @media (prefers-reduced-motion: reduce) { .buddy-bounce { animation: none; } }
 :root[data-calm="on"] .buddy-bounce { animation: none; }
 .galaxy-buddy { display: flex; flex-direction: column; align-items: center; gap: 4px; }
+.session-buddy { display: flex; justify-content: center; }
+.daily-goal { display: flex; flex-direction: column; gap: 3px; }
 .buddy-choices { display: flex; gap: 10px; flex-wrap: wrap; }
 .buddy-choice { display: flex; flex-direction: column; align-items: center; gap: 2px; padding: 8px; border: 3px solid transparent; border-radius: 14px; background: #f3efe6; cursor: pointer; font: inherit; }
 .buddy-choice.on { border-color: #1f6f6b; background: #eaf6f4; }

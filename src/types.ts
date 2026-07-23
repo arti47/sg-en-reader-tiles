@@ -132,7 +132,8 @@ export interface Usage { childId: string; weeklySessionTarget: number; sessionsT
 export interface Settings { pin?: string; ttsRate: number; englishVariant: 'en-SG'; sessionLength: number; font?: 'lexend' | 'dyslexic'; voiceURI?: string;
   // M6 (§20): sound effects on by default, ambient music off by default, calm mode dials
   // animation + sound down globally (dyslexia-safe). Absent = default.
-  sfx?: boolean; music?: boolean; calmMode?: boolean }
+  sfx?: boolean; music?: boolean; calmMode?: boolean;
+  arcade?: boolean } // M6.5 §20.6 — opt-in Fluency Arcade (speed game over mastered patterns), default off
 
 // M6 (§20.7) Star Coins wallet — additive reward state, never affects pedagogy.
 export interface Wallet { childId: string; coins: number; lifetimeCoins: number }

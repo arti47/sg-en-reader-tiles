@@ -292,6 +292,14 @@ export function ParentDashboard(props: { children: Child[]; onExit: () => void; 
         </div>
         <p className="note tiny">Calm mode reduces animation and sound for a gentler experience.</p>
         <div className="set-row">
+          <span>Fluency Arcade</span>
+          <div className="row" style={{ gap: 6 }}>
+            <button className={'btn small' + (settings?.arcade ? '' : ' ghost')} onClick={() => updateSettings({ arcade: true })}>On</button>
+            <button className={'btn small' + (settings?.arcade ? ' ghost' : '')} onClick={() => updateSettings({ arcade: false })}>Off</button>
+          </div>
+        </div>
+        <p className="note tiny">An optional timed speed game over mastered patterns — off by default; never part of lessons.</p>
+        <div className="set-row">
           <span>Font</span>
           <div className="row" style={{ gap: 6 }}>
             <button className={'btn small' + ((settings?.font ?? 'lexend') === 'lexend' ? '' : ' ghost')} onClick={() => updateSettings({ font: 'lexend' })}>Lexend</button>

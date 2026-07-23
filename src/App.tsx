@@ -9,6 +9,7 @@ import { Session } from './features/Session'
 import { LearnRunner } from './features/LearnRunner'
 import { GalaxyMap } from './features/GalaxyMap'
 import { Shop } from './features/Shop'
+import { FluencyArcade } from './features/FluencyArcade'
 import { Placement } from './features/Placement'
 import { Trophies } from './features/Trophies'
 import { SoundWall } from './features/SoundWall'
@@ -39,7 +40,7 @@ if (import.meta.env.DEV) {
 }
 const m3demo = import.meta.env.DEV && typeof location !== 'undefined' && location.hash === '#m3demo'
 
-type View = 'pick' | 'add' | 'placement' | 'galaxy' | 'session' | 'learn' | 'dashboard' | 'trophies' | 'soundwall' | 'shop'
+type View = 'pick' | 'add' | 'placement' | 'galaxy' | 'session' | 'learn' | 'dashboard' | 'trophies' | 'soundwall' | 'shop' | 'arcade'
 const APP_VERSION = __APP_VERSION__ // from package.json (§18.6), never hand-edited
 
 export default function App() {
@@ -48,6 +49,7 @@ export default function App() {
   const [swReturn, setSwReturn] = useState<View>('galaxy') // where the Sound wall returns to
   const [active, setActive] = useState<Child | null>(null)
   const [learnPattern, setLearnPattern] = useState<string | null>(null) // planet tapped to learn (M6 §20.2)
+  const [arcadeOn, setArcadeOn] = useState(false) // M6.5 §20.6 — Fluency Arcade enabled (parent setting)
   const [reload, setReload] = useState<null | (() => void)>(null)
   const [xpByChild, setXpByChild] = useState<Record<string, number>>({})
 
@@ -62,9 +64,11 @@ export default function App() {
   useEffect(() => { void getSettings().then(s => {
     document.documentElement.dataset.font = s.font ?? 'lexend'
     setVoice(s.voiceURI)
-    setSfxEnabled(s.sfx ?? true); setCalm(s.calmMode ?? false); setMusicEnabled(s.music ?? false)
+    setSfxEnabled(s.sfx ?? true); setCalm(s.calmMode ?? false); setMusicEnabled(s.music ?? false); setArcadeOn(s.arcade ?? false)
     if (s.calmMode) document.documentElement.dataset.calm = 'on'; else delete document.documentElement.dataset.calm
   }) }, [])
+  // Re-read the arcade toggle whenever we return to the galaxy (parent may have changed it).
+  useEffect(() => { if (view === 'galaxy') void getSettings().then(s => setArcadeOn(s.arcade ?? false)) }, [view])
   // A11y: move focus to the screen on each view change so screen readers announce it (§18.12).
   const mainRef = useRef<HTMLElement>(null)
   useEffect(() => { mainRef.current?.focus() }, [view])
@@ -107,10 +111,13 @@ export default function App() {
             onTest={() => setView('session')}
             onTrophies={() => setView('trophies')}
             onShop={() => setView('shop')}
+            arcadeEnabled={arcadeOn}
+            onArcade={() => setView('arcade')}
             onExit={() => { void refreshChildren(); setView('pick') }}
             onSoundWall={() => { setSwReturn('galaxy'); setView('soundwall') }} />
         )}
         {view === 'shop' && active && <Shop child={active} onExit={() => setView('galaxy')} />}
+        {view === 'arcade' && active && <FluencyArcade child={active} onExit={() => setView('galaxy')} />}
         {view === 'trophies' && active && <Trophies child={active} onExit={() => { void refreshChildren(); setView('galaxy') }} onSoundWall={() => { setSwReturn('trophies'); setView('soundwall') }} />}
         {view === 'soundwall' && active && <SoundWall child={active} onExit={() => setView(swReturn)} />}
         {view === 'learn' && active && (

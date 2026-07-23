@@ -25,6 +25,8 @@ export function GalaxyMap(props: {
   onTest: () => void
   onTrophies: () => void
   onShop: () => void
+  onArcade: () => void
+  arcadeEnabled: boolean
   onExit: () => void
   onSoundWall: () => void
 }) {
@@ -81,6 +83,7 @@ export function GalaxyMap(props: {
           <span className="row" style={{ gap: 8, alignItems: 'center' }}>
             <CoinCounter coins={coins} />
             <button className="btn ghost small" onClick={props.onShop} aria-label="Shop">🛍️</button>
+            {props.arcadeEnabled && <button className="btn ghost small" onClick={props.onArcade} aria-label="Fluency Arcade">⚡</button>}
             <button className="btn ghost small" onClick={props.onTrophies} aria-label="Trophies">🏆</button>
             <button className="btn ghost small" onClick={props.onSoundWall} aria-label="Sound wall">🔊</button>
           </span>

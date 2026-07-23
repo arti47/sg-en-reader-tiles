@@ -66,11 +66,20 @@ try {
       planets: document.querySelectorAll('.planet').length,
       learn: document.querySelectorAll('.planet-learn').length,
       locked: document.querySelectorAll('.planet-locked').length,
-      buddy: document.querySelectorAll('.galaxy-buddy .buddy').length // M6.3: the child's buddy renders
+      buddy: document.querySelectorAll('.galaxy-buddy .buddy').length, // M6.3: the child's buddy renders
+      arcade: document.querySelectorAll('[aria-label="Fluency Arcade"]').length // M6.5: opt-in, default off
     }))
     if (gx.planets < 1) fail('galaxy: planets should render')
     if (gx.learn < 1) fail('galaxy: the active planet should be a tappable learn-planet')
     if (gx.buddy < 1) fail('M6.3: the child buddy should render in the galaxy')
+    if (gx.arcade !== 0) fail('M6.5: Fluency Arcade must be OFF by default (no entry on the galaxy)')
+    // M6.5 a11y: Calm Mode disables animation (verify the CSS guard on the glowing active planet).
+    const calmAnim = await page.evaluate(() => {
+      document.documentElement.dataset.calm = 'on'
+      const el = document.querySelector('.planet-active'); const a = el ? getComputedStyle(el).animationName : 'none'
+      delete document.documentElement.dataset.calm; return a
+    })
+    if (calmAnim !== 'none') fail('M6.5 a11y: Calm Mode should disable the planet-active animation')
     // A low (struggle-path) placement leaves most planets locked; a high placement may lock none.
     if (WRONG && gx.locked < 1) fail('galaxy: planets past the frontier should be locked')
     // Warm-up must not stop abruptly: at least MIN_WARMUP (6) items even when the child
