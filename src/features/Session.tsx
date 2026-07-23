@@ -11,7 +11,7 @@ import { Celebration } from './Celebration'
 import { Buddy, type BuddyState } from './Buddy'
 import { getInventory } from '../store'
 import { XP_PER_CORRECT, XP_PER_CERT, achievements, type Achievement } from '../lib/gamify'
-import { SKILLS, getSkill, pickItem, getLesson } from '../lib/packs'
+import { SKILLS, getSkill, pickItem, getLesson, drillItemsFor } from '../lib/packs'
 import { LessonView } from './LessonView'
 import { rollingAccuracy, itemsAnswered, nextDifficulty, isMastered, patternMastered, struggling, eligibleSkills, patternDecodeSkill, interleavedReviewSkill, threadedSkill, fluencySkill } from '../lib/engine'
 import { learnedSet } from '../lib/learn'
@@ -30,6 +30,8 @@ const DEFAULT_SESSION_LEN = 16
 const FOCUS_WIDTH = 3 // max distinct current-skills a session works at once (bounds high-placement fan-out)
 const EASE_WINS = 3        // M7.3: confidence-break items (easier mastered skill) served on fatigue (§21.2 C)
 const FATIGUE_COOLDOWN = 6 // items to wait after a fatigue trigger before detecting again (let easing work)
+const DRILL_EVERY = 5      // M7.4: cadence for a confusable-pair drill when confusion is diagnosed (§21.2 D)
+const DRILL_CAP = 4        // max targeted drills per session (don't crowd out new-skill acquisition)
 // M5 Test mode (§19.7): assessment only. Teaching (intro + struggle lessons) has moved to Learn;
 // on struggle Test flags the pattern for re-teaching (needs-review) instead of re-teaching.
 type Phase = 'loading' | 'item' | 'lesson' | 'cert' | 'summary' | 'learnfirst'
@@ -78,6 +80,7 @@ export function Session(props: { child: Child; onExit: () => void; onTrophies: (
   const easeRef = useRef(0)                         // M7.3 remaining confidence-break items to serve
   const fatigueCoolRef = useRef(0)                  // M7.3 cooldown after a fatigue trigger
   const offeredBreatherRef = useRef(false)          // M7.3 breather offered once this session
+  const drillServedRef = useRef(0)                  // M7.4 confusable-pair drills served this session
   const [offerBreather, setOfferBreather] = useState(false) // M7.3 show the non-forced "take a break" banner
   const [paused, setPaused] = useState(false)               // M7.3 calm pause screen (child chose to break)
 
@@ -140,6 +143,14 @@ export function Session(props: { child: Child; onExit: () => void; onTrophies: (
     if (import.meta.env.DEV) (window as unknown as { __item?: PackItem }).__item = it
     setItem(it); setAnswered(null); setPhase('item'); setServe(s => s + 1); startRef.current = Date.now()
   }
+  // M7.4 (§21.2 D): serve a SPECIFIC pool item (a confusable-pair drill) as a review-tagged rep.
+  // onAnswer derives the skill from item.skillId, so no skill arg is needed.
+  function serveDrill(it: PackItem) {
+    seenRef.current.add(it.id)
+    servedReviewRef.current = true
+    if (import.meta.env.DEV) (window as unknown as { __item?: PackItem }).__item = it
+    setItem(it); setAnswered(null); setPhase('item'); setServe(s => s + 1); startRef.current = Date.now()
+  }
 
   // Choose next skill (interleave eligible), then serve lesson-on-struggle or an item.
   function advance(initial = false) {
@@ -160,6 +171,17 @@ export function Session(props: { child: Child; onExit: () => void; onTrophies: (
       guidedRef.current.left -= 1
       if (guidedRef.current.left <= 0) guidedRef.current = null
       if (gs) { reviewingRef.current = null; loadItem(gs, 1, true); return }
+    }
+    // M7.4 (§21.2 D): confusable-pair drill when CONFUSION is diagnosed — every DRILL_EVERY-th item,
+    // serve a targeted real-word minimal-pair drill on a stuck concept (rotating), capped per session
+    // so it never crowds out new-skill acquisition. Review-tagged (targeted practice, not re-assessment);
+    // items are drawn only from skills the child has already answered (decodable in-range).
+    if (adaptRef.current.drillConcepts.length && !initial && countRef.current > 0 &&
+        countRef.current % DRILL_EVERY === 0 && drillServedRef.current < DRILL_CAP) {
+      const concept = adaptRef.current.drillConcepts[drillServedRef.current % adaptRef.current.drillConcepts.length]
+      const answeredSkills = new Set(attemptsRef.current.map(a => a.skillId))
+      const pool = drillItemsFor(concept, answeredSkills, seenRef.current)
+      if (pool.length) { drillServedRef.current += 1; reviewingRef.current = null; serveDrill(pool[Math.floor(Math.random() * pool.length)]); return }
     }
     // Due spaced-repetition reviews first (§7): easier items on already-mastered skills.
     const dueSkillId = dueQueueRef.current.shift()

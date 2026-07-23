@@ -12,8 +12,9 @@ export interface Adaptation {
   guidedBonus: number       // + items in the post-lesson / re-practice guided block (acquisition)
   dueCapBonus: number       // + due reviews served at the start of a session (retention)
   extraReviewStage: boolean // + one SRS stage before graduation → more retrieval (retention, conservative)
+  drillConcepts: string[]   // error concepts to serve confusable-pair drills for (confusion, M7.4)
 }
-export const NO_ADAPT: Adaptation = { paBonus: 0, guidedBonus: 0, dueCapBonus: 0, extraReviewStage: false }
+export const NO_ADAPT: Adaptation = { paBonus: 0, guidedBonus: 0, dueCapBonus: 0, extraReviewStage: false, drillConcepts: [] }
 
 export function adaptFor(dx: Diagnosis): Adaptation {
   const cats = new Set(dx.categories) // act on EVERY tripped category (a child can be both)
@@ -21,6 +22,7 @@ export function adaptFor(dx: Diagnosis): Adaptation {
     paBonus: cats.has('acquisition') ? 2 : 0,
     guidedBonus: cats.has('acquisition') ? 2 : 0,
     dueCapBonus: cats.has('retention') ? 2 : 0,
-    extraReviewStage: cats.has('retention')
+    extraReviewStage: cats.has('retention'),
+    drillConcepts: cats.has('confusion') ? dx.stuckConcepts : []
   }
 }

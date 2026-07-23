@@ -1,6 +1,8 @@
 // Pack + scope loading and pure lookups (CLAUDE.md §12, §18.7).
 import type { ContentPack, PackItem, SkillDef, Lesson, Difficulty } from '../types'
 import scope from '../data/scopeAndSequence.json'
+import graphemeConcepts from '../data/graphemeConcepts.json'
+const GCONCEPT = graphemeConcepts as Record<string, string> // grapheme → error concept (§7)
 import phonicsLs from '../data/packs/phonics-L01-letter-sounds.json'
 import phonicsCvc1 from '../data/packs/phonics-L02a-cvc-1.json'
 import spellingCvc1 from '../data/packs/spelling-L02a-cvc-1.json'
@@ -181,4 +183,20 @@ export function pickItem(skillId: string, difficulty: Difficulty, seen: Set<stri
 // Next unlocked skill respecting prereqs, given the set of mastered skill ids.
 export function nextUnlockedSkill(mastered: Set<string>): SkillDef | undefined {
   return SKILLS.find(s => !mastered.has(s.id) && s.prereqs.every(p => mastered.has(p)))
+}
+
+// M7.4 (§21.2 D) confusable-pair drills. Pool items that TARGET a given error concept — either the
+// item's authored `missedConceptOnFail` is the concept, or one of its grapheme tiles maps to it
+// (so a grapheme-level encode confusion like a substituted digraph is caught too). Restricted to
+// skills the child can already access (`allowed` = skills they've answered → decodable in-range)
+// and not recently seen. Such items already carry the confusable grapheme as a distractor/choice,
+// so re-serving one IS a real-word minimal-pair drill on that confusion — no new content needed.
+export function drillItemsFor(concept: string, allowed: Set<string>, seen: Set<string>): PackItem[] {
+  const out: PackItem[] = []
+  for (const p of PACKS) for (const it of p.items) {
+    if (!allowed.has(it.skillId) || seen.has(it.id)) continue
+    const hit = it.missedConceptOnFail === concept || (it.graphemes ?? []).some(g => GCONCEPT[g] === concept)
+    if (hit) out.push(it)
+  }
+  return out
 }

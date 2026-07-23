@@ -678,6 +678,16 @@ try {
     if (aRet.dueCapBonus <= 0 || !aRet.extraReviewStage) return 'adapt: retention → more due reviews + an extra SRS stage'
     const aAcq = ad.adaptFor(dg.diagnose([...dgMk(6, true), ...dgSpread], [], DNOW))
     if (aAcq.paBonus <= 0 || aAcq.guidedBonus <= 0) return 'adapt: acquisition → more PA + a longer guided block'
+    // M7.4 (§21.2 D): confusion → drillConcepts; drillItemsFor selects targeted pool items in-range.
+    const aConf = ad.adaptFor(dConf)
+    if (!aConf.drillConcepts.includes('digraph-sh')) return 'adapt: confusion → drillConcepts (the stuck graphemes)'
+    if (aTyp.drillConcepts.length) return 'adapt: a typical reader must get no drills'
+    const pk = window.__packs
+    const cvcItem = pk.pickItem('PH-cvc-1', 3, new Set())
+    const concept = cvcItem.missedConceptOnFail
+    const drills = pk.drillItemsFor(concept, new Set(['PH-cvc-1']), new Set())
+    if (!drills.length || !drills.every(i => i.skillId === 'PH-cvc-1')) return 'drill: items for a real concept, restricted to allowed skills'
+    if (pk.drillItemsFor(concept, new Set(['SP-two-syllable']), new Set()).some(i => i.skillId === 'PH-cvc-1')) return 'drill: must exclude skills not in the allowed set'
     // The extra SRS stage is conservative-only: it demands ONE MORE retrieval, never an easier bar.
     const srs = window.__srs
     let rv0 = { skillId: 'z', stage: 0, due: 0, status: 'scheduled' }
