@@ -2,7 +2,9 @@ import { useEffect, useRef, useState } from 'react'
 import type { Child, PackItem, SkillDef } from '../types'
 import { pickItem, getSkill, getLesson } from '../lib/packs'
 import { nextToLearn, PATTERNS, learnedSet, needsReviewSet } from '../lib/learn'
-import { getLearn, setLearned, clearReview, getSettings, addCoins, getDailyGoal, putDailyGoal } from '../store'
+import { getLearn, setLearned, clearReview, getSettings, addCoins, getDailyGoal, putDailyGoal, getAttempts, getReviews } from '../store'
+import { diagnose } from '../lib/diagnose'
+import { adaptFor } from '../lib/adapt'
 import { setRate, setVoice, phoneme, speak } from '../lib/audio'
 import { playSfx } from '../lib/audio-sfx'
 import { COIN_LEARN, progressGoal, rollGoal } from '../lib/economy'
@@ -55,6 +57,7 @@ export function LearnRunner(props: { child: Child; onExit: () => void; onSoundWa
   const learnedRef = useRef<Set<string>>(new Set())    // patterns learned so far (source for the review pick)
   const paPoolRef = useRef<PackItem[]>([])             // this unit's phonemic-awareness warm-up items (§3)
   const paIdxRef = useRef(0)
+  const paBonusRef = useRef(0)                          // M7.2: extra PA items when acquisition is diagnosed (§21.2 B)
   const seenRef = useRef<Set<string>>(new Set())
   const soundsRef = useRef<SoundCard[]>([])         // this pattern's sound-intro cards (§19.13)
   const [soundIdx, setSoundIdx] = useState(0)
@@ -88,6 +91,8 @@ export function LearnRunner(props: { child: Child; onExit: () => void; onSoundWa
     const rows = await getLearn(props.child.id)
     const learned = learnedSet(rows); const needs = needsReviewSet(rows)
     learnedRef.current = learned
+    // M7.2 (§21.2 B): acquisition auto-adapt → a longer phonemic-awareness warm-up (self-gates to 0).
+    paBonusRef.current = adaptFor(diagnose(await getAttempts(props.child.id), await getReviews(props.child.id))).paBonus
     const target = (props.initialPattern && PATTERNS.find(p => p.id === props.initialPattern))
       ?? PATTERNS.find(p => needs.has(p.id)) ?? nextToLearn(learned) ?? null
     if (!target) { setPhase('alldone'); return }
@@ -107,7 +112,7 @@ export function LearnRunner(props: { child: Child; onExit: () => void; onSoundWa
     reviewSkillRef.current = priors.length ? priors[Math.floor(Math.random() * priors.length)] : null
     // §3 audit: open a CVC unit with a phonemic-awareness warm-up (oral blend/segment) before
     // any grapheme work. Shuffle the PA pool and take PA_N.
-    paPoolRef.current = [...paItemsFor(target.id)].sort(() => Math.random() - 0.5).slice(0, PA_N)
+    paPoolRef.current = [...paItemsFor(target.id)].sort(() => Math.random() - 0.5).slice(0, PA_N + paBonusRef.current)
     paIdxRef.current = 0
     if (paPoolRef.current.length) loadPA()
     else startReviewOrSounds()

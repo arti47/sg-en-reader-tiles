@@ -14,11 +14,14 @@ export function scheduleFirst(skillId: string, now: number): Review {
   return { skillId, stage: 0, due: now + REVIEW_OFFSETS_MS[0], status: 'scheduled' }
 }
 
-// A review was passed → advance to the next interval, or graduate after the last.
-export function onReviewPass(r: Review, now: number): Review {
+// A review was passed → advance to the next interval, or graduate after the last. `maxStages`
+// (default = the 3 canonical intervals) can be raised by M7.2 retention auto-adapt to demand ONE
+// MORE retrieval before graduating (conservative-only — more reviews, never an easier bar); the
+// extra stage reuses the longest (+21d) interval.
+export function onReviewPass(r: Review, now: number, maxStages: number = REVIEW_OFFSETS_MS.length): Review {
   const next = r.stage + 1
-  if (next >= REVIEW_OFFSETS_MS.length) return { ...r, stage: next, status: 'graduated' }
-  return { ...r, stage: next, due: now + REVIEW_OFFSETS_MS[next], status: 'scheduled' }
+  if (next >= maxStages) return { ...r, stage: next, status: 'graduated' }
+  return { ...r, stage: next, due: now + REVIEW_OFFSETS_MS[Math.min(next, REVIEW_OFFSETS_MS.length - 1)], status: 'scheduled' }
 }
 
 // A review was failed → demote to the first interval (short re-practice) at the

@@ -16,7 +16,9 @@ import { LessonView } from './LessonView'
 import { rollingAccuracy, itemsAnswered, nextDifficulty, isMastered, patternMastered, struggling, eligibleSkills, patternDecodeSkill, interleavedReviewSkill, threadedSkill, fluencySkill } from '../lib/engine'
 import { learnedSet } from '../lib/learn'
 import { support } from '../lib/support'
-import { scheduleFirst, onReviewPass, onReviewFail, dueReviews } from '../lib/srs'
+import { diagnose } from '../lib/diagnose'
+import { adaptFor, NO_ADAPT, type Adaptation } from '../lib/adapt'
+import { scheduleFirst, onReviewPass, onReviewFail, dueReviews, DUE_CAP, REVIEW_OFFSETS_MS } from '../lib/srs'
 import { isoWeek, isConsecutiveWeek, isoDay } from '../lib/aggregate'
 import { McqItem } from './items/McqItem'
 import { TileItem } from './items/TileItem'
@@ -68,7 +70,7 @@ export function Session(props: { child: Child; onExit: () => void; onTrophies: (
   const [serve, setServe] = useState(0) // bumps every item served → forces renderer remount (fresh internal state)
   const startedRef = useRef(false)
   const sup = support(props.child.difficultyFlags) // §1 difficulty-flag personalisation (default = unchanged)
-  const GUIDED_ITEMS = sup.guidedItems
+  const adaptRef = useRef<Adaptation>(NO_ADAPT)     // M7.2 data-driven adaptation (set on mount from the diagnosis)
 
   useEffect(() => {
     if (startedRef.current) return // guard React StrictMode double-invoke (would race two advance()s, e.g. dropping a due review)
@@ -89,7 +91,10 @@ export function Session(props: { child: Child; onExit: () => void; onTrophies: (
       reviewsRef.current = await getReviews(props.child.id)
       learnedRef.current = learnedSet(await getLearn(props.child.id)) // M5 Test gate (§19.7)
       for (const c of await getCertificates(props.child.id)) certsRef.current.add(c.skillId)
-      dueQueueRef.current = dueReviews(reviewsRef.current, Date.now()).map(r => r.skillId)
+      // M7.2 (§21.2 B): data-driven adaptation from the diagnosis — ADDITIVE only, bar frozen.
+      // Retention → serve MORE due reviews this session (self-gates to NO_ADAPT for a typical reader).
+      adaptRef.current = adaptFor(diagnose(attemptsRef.current, reviewsRef.current))
+      dueQueueRef.current = dueReviews(reviewsRef.current, Date.now(), DUE_CAP + adaptRef.current.dueCapBonus).map(r => r.skillId)
       await countSession()
       usageRef.current = await getUsage(props.child.id)
       setCoins((await getWallet(props.child.id)).coins) // M6: current Star Coins for the counter
@@ -262,11 +267,13 @@ export function Session(props: { child: Child; onExit: () => void; onTrophies: (
       // easier (difficulty-1) items on the forgotten skill NOW, not just a re-test in 2 days (§7 #1).
       const rev = reviewsRef.current.find(x => x.skillId === skill.id)
       if (rev) {
-        const upd = r.correct ? onReviewPass(rev, now) : onReviewFail(rev, now)
+        // Retention auto-adapt (§21.2 B): demand one extra retrieval before graduating (conservative).
+        const upd = r.correct ? onReviewPass(rev, now, REVIEW_OFFSETS_MS.length + (adaptRef.current.extraReviewStage ? 1 : 0)) : onReviewFail(rev, now)
         reviewsRef.current = reviewsRef.current.map(x => x.skillId === skill.id ? upd : x)
         await putReview(props.child.id, upd)
       }
-      if (!r.correct) guidedRef.current = { id: skill.id, left: GUIDED_ITEMS } // immediate re-practice
+      // Acquisition auto-adapt (§21.2 B): a longer guided re-practice block (more scaffolded reps).
+      if (!r.correct) guidedRef.current = { id: skill.id, left: sup.guidedItems + adaptRef.current.guidedBonus } // immediate re-practice
       // Retention = mastery (§7 #1/#2): the certificate (withheld at acquisition) is minted only once
       // BOTH channels have retained (each review stage ≥ 1 = ≥2 review items across the pattern), so
       // spelling retention is verified too, not just decoding.

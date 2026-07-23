@@ -670,6 +670,22 @@ try {
     // reps excluded from the signal (a struggling child cannot be masked by easy reps).
     const dgReps = Array.from({ length: 9 }, () => ({ correct: false, missedConcept: 'z', review: true }))
     if (dg.diagnose([...dgMk(12, true), ...dgReps], [], DNOW).primary !== null) return 'diagnose: non-assessment reps must be excluded'
+    // M7.2 (§21.2 B): auto-adapt maps the diagnosis → ADDITIVE deltas (self-gating; bar frozen).
+    const ad = window.__adapt
+    const aTyp = ad.adaptFor(dg.diagnose([...dgMk(15, true)], [], DNOW))
+    if (aTyp.paBonus || aTyp.guidedBonus || aTyp.dueCapBonus || aTyp.extraReviewStage) return 'adapt: a typical reader must get NO adaptation'
+    const aRet = ad.adaptFor(dg.diagnose([...dgMk(15, true)], dgStuck, DNOW))
+    if (aRet.dueCapBonus <= 0 || !aRet.extraReviewStage) return 'adapt: retention → more due reviews + an extra SRS stage'
+    const aAcq = ad.adaptFor(dg.diagnose([...dgMk(6, true), ...dgSpread], [], DNOW))
+    if (aAcq.paBonus <= 0 || aAcq.guidedBonus <= 0) return 'adapt: acquisition → more PA + a longer guided block'
+    // The extra SRS stage is conservative-only: it demands ONE MORE retrieval, never an easier bar.
+    const srs = window.__srs
+    let rv0 = { skillId: 'z', stage: 0, due: 0, status: 'scheduled' }
+    rv0 = srs.onReviewPass(rv0, DNOW); rv0 = srs.onReviewPass(rv0, DNOW) // → stage 2, scheduled
+    if (srs.onReviewPass(rv0, DNOW).status !== 'graduated') return 'srs: default graduates after 3 stages'
+    const ext = srs.onReviewPass(rv0, DNOW, 4)
+    if (ext.status !== 'scheduled') return 'srs: extra stage should schedule one more review, not graduate'
+    if (srs.onReviewPass(ext, DNOW, 4).status !== 'graduated') return 'srs: graduates after the extra stage'
     const before = await store.exportAll()
     if (before.schemaVersion !== 9) return 'export schemaVersion should be 9 (M6.4 dailygoal)'
     // M6.4 (§20.4): daily-goal progress + streak math (pure).
