@@ -25,12 +25,11 @@ import { DictationItem } from './items/DictationItem'
 
 const DEFAULT_SESSION_LEN = 16
 const FOCUS_WIDTH = 3 // max distinct current-skills a session works at once (bounds high-placement fan-out)
-const FLAG_MIN_ITEMS = 5 // min assessment items on a skill before struggle can flag its pattern needs-review
 // M5 Test mode (§19.7): assessment only. Teaching (intro + struggle lessons) has moved to Learn;
 // on struggle Test flags the pattern for re-teaching (needs-review) instead of re-teaching.
 type Phase = 'loading' | 'item' | 'lesson' | 'cert' | 'summary' | 'learnfirst'
 
-export function Session(props: { child: Child; onExit: () => void; onTrophies: () => void; onLearn: () => void }) {
+export function Session(props: { child: Child; onExit: () => void; onTrophies: () => void; onLearn: (patternId?: string) => void }) {
   const attemptsRef = useRef<Attempt[]>([])
   const diffRef = useRef<Map<string, Difficulty>>(new Map())
   const seenRef = useRef<Set<string>>(new Set())
@@ -198,15 +197,13 @@ export function Session(props: { child: Child; onExit: () => void; onTrophies: (
     // supported practice (down-shift, §7 #5); the per-item error-correction still applies.
     if (struggling(attemptsRef.current, skill)) {
       const pat = patternDecodeSkill(skill)
-      // Only DEMOTE a learned pattern to needs-review after enough assessment evidence (≥FLAG_MIN_ITEMS
-      // items on the skill), so a brief or abandoned Test round on a just-learned planet doesn't wipe
-      // it back to "needs teaching" (reported: re-entering a finished planet and quitting reverted it).
-      // Sustained struggle still flags it for re-teaching in Learn; the down-shift below is unaffected.
-      if (itemsAnswered(attemptsRef.current, skill.id) >= FLAG_MIN_ITEMS) {
-        void flagReview(props.child.id, pat.id)
-        flaggedPatternRef.current = pat // surface a "learn it" route on the session summary (§19.7)
-        struggledRef.current.add(skill.id) // don't keep re-serving this struggled skill (audit #3)
-      }
+      // Struggle no longer REVERTS the planet on the galaxy (reported: re-entering a finished planet
+      // and doing badly wiped it back to "needs teaching"). A finished planet stays explored; we only
+      // record an internal needs-review HINT and offer a "📘 Learn it again" button on the summary,
+      // so re-teaching is the child's choice, not an automatic demotion. Down-shift below is unaffected.
+      void flagReview(props.child.id, pat.id)         // internal hint for the summary re-teach button
+      flaggedPatternRef.current = pat                 // → "📘 Learn it again" on the summary (§19.7)
+      struggledRef.current.add(skill.id)              // don't keep re-serving this struggled skill (audit #3)
       const prereq = skill.prereqs.map(p => getSkill(p)).find(p => p && !p.threaded)
       if (prereq) { loadItem(prereq, 1, true); return } // down-shift = supported rep, not assessment
     }
@@ -331,7 +328,7 @@ export function Session(props: { child: Child; onExit: () => void; onTrophies: (
           <p className="note">Tricky one today: <b>{flaggedPatternRef.current.iCanStatement.replace(/^I can /, '')}</b>. Learn it again to make it easier.</p>
         )}
         <div className="row" style={{ gap: 8 }}>
-          {flaggedPatternRef.current && <button className="btn" onClick={props.onLearn}>📘 Learn it again</button>}
+          {flaggedPatternRef.current && <button className="btn" onClick={() => props.onLearn(flaggedPatternRef.current?.id)}>📘 Learn it again</button>}
           <button className="btn ghost" onClick={props.onTrophies}>🏆 My trophies</button>
           <button className="btn" onClick={props.onExit}>Done</button>
         </div>
@@ -357,7 +354,7 @@ export function Session(props: { child: Child; onExit: () => void; onTrophies: (
         <h1>Let's learn first, {props.child.name}!</h1>
         <p className="note">There's nothing to test yet. Learn a new pattern, then come back to Test it.</p>
         <div className="row" style={{ gap: 8 }}>
-          <button className="btn" onClick={props.onLearn}>📘 Go to Learn</button>
+          <button className="btn" onClick={() => props.onLearn()}>📘 Go to Learn</button>
           <button className="btn ghost" onClick={props.onExit}>Back</button>
         </div>
       </div>

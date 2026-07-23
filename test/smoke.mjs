@@ -267,16 +267,26 @@ try {
       if (!/My certificates/.test(troText) || !/I can/.test(troText)) fail('trophies: earned certificate missing')
       if (await page.evaluate(() => document.documentElement.scrollWidth > window.innerWidth + 1)) fail('trophies: horizontal overflow at 390px')
     } else {
-      // M5 Phase 3 needs-review loop (§19.3): Test flagged the struggled pattern → Learn resurfaces
-      // it (target = the needs-review pattern) and re-learning CLEARS the flag.
+      // §19.7 (updated per report "re-entering a finished planet and quitting wipes my progress"):
+      // a bad Test round NO LONGER reverts the finished planet on the galaxy — it stays explored.
+      // Test records an internal needs-review HINT and offers a "📘 Learn it again" button on the
+      // summary; re-teaching is the child's choice, not an automatic demotion.
       db = await readDb()
-      if (!(db.learn || []).some(r => r.patternId === 'PH-cvc-1' && r.needsReview)) fail('M5 P3: Test struggle should flag the pattern needs-review')
-      await returnToGalaxy() // summary → galaxy
-      await learnActivePlanet() // the needs-review pattern is now the active learn-planet → re-teach clears the flag
+      const cvc0 = (db.learn || []).find(r => r.patternId === 'PH-cvc-1')
+      if (!cvc0 || !cvc0.learned) fail('struggle must NOT un-learn the finished pattern')
+      if (!cvc0.needsReview) fail('struggle should record an internal needs-review hint')
+      // The fix: patternStatus keeps a learned pattern EXPLORED (never 'needs-review'), so the galaxy
+      // planet does not revert even while flagged.
+      const st = await page.evaluate(() =>
+        window.__learn.patternStatus('PH-cvc-1', [{ patternId: 'PH-cvc-1', learned: true, needsReview: true }], false))
+      if (st !== 'learned') fail(`patternStatus: a learned+needsReview pattern must stay 'learned', got '${st}'`)
+      // Re-teach is user-initiated from the summary; it resurfaces the flagged pattern → clears the hint.
+      await page.getByRole('button', { name: /Learn it again/ }).click()
+      await walkLearn()
       db = await readDb()
       const cvc = (db.learn || []).find(r => r.patternId === 'PH-cvc-1')
-      if (!cvc || cvc.needsReview) fail('M5 P3: re-learning a needs-review pattern should clear the flag')
-      if (!cvc.learned) fail('M5 P3: the re-learned pattern should stay learned')
+      if (!cvc || cvc.needsReview) fail('re-learning should clear the needs-review hint')
+      if (!cvc.learned) fail('the re-learned pattern should stay learned')
     }
     results.push({ WRONG, errors, overflow, lessons, db, firstSkill, sawSoundCard, sawPA, sawReadText, walkedPattern })
     await ctx.close()

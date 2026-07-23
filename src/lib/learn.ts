@@ -27,15 +27,16 @@ export function nextToLearn(learned: Set<string>): SkillDef | undefined {
   return PATTERNS.find(p => !learned.has(p.id) && patternPrereqs(p).every(id => learned.has(id)))
 }
 
-// Per-pattern status for the Learn map (§19.3), in priority order. `mastered` comes from the
-// caller (derived from progress/certificates — the single source of truth for mastery). Mastered
-// wins over needs-review: a certified pattern is never knocked back to "needs teaching" by a rough
-// Test round (§7 "mastery = retention" — only a failed SRS review demotes), so it never reverts on
-// the galaxy. needs-review therefore only surfaces on a learned-but-not-yet-mastered pattern.
+// Per-pattern status for the galaxy (§19.3). `mastered` comes from the caller (derived from
+// progress/certificates — the single source of truth for mastery). A pattern the child has LEARNED
+// is always shown as explored (learned/mastered) and is NEVER knocked back to "needs teaching" by a
+// rough Test round — reverting a finished planet reads as lost progress (reported). The needsReview
+// flag is therefore NOT a galaxy status: it is only an internal re-teach hint that the Test summary's
+// "Learn it again" button acts on (LearnRunner resurfaces it), so a bad/abandoned mission never wipes
+// a finished planet. (§7 "mastery = retention" — only a failed SRS review actually demotes.)
 export function patternStatus(patternId: string, rows: LearnState[], mastered: boolean): PatternStatus {
   const row = rows.find(r => r.patternId === patternId)
   if (mastered) return 'mastered'
-  if (row?.needsReview) return 'needs-review'
   if (row?.learned) return 'learned'
   return 'not-started'
 }

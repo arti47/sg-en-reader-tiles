@@ -129,7 +129,7 @@ export default function App() {
           <Session child={active}
             onExit={() => { void refreshChildren(); setView('galaxy') }}
             onTrophies={() => setView('trophies')}
-            onLearn={() => { setLearnPattern(null); setView('learn') }} />
+            onLearn={(pid) => { setLearnPattern(pid ?? null); setView('learn') }} />
         )}
         {view === 'dashboard' && (
           <ParentDashboard children={children} onExit={() => setView('pick')} onReset={resetStudent} onRemove={removeStudent} />

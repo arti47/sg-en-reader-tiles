@@ -44,10 +44,9 @@ export function GalaxyMap(props: {
       const prog = await getProgress(props.child.id)
       const masteredSkills = new Set(prog.filter(p => p.status === 'mastered').map(p => p.skillId))
       const learned = learnedSet(learnRows)
-      const isMastered = (p: typeof PATTERNS[number]) => masteredSkills.has(p.id) && (!p.encodePairId || masteredSkills.has(p.encodePairId))
-      // Target = the first pattern actually SHOWN as needs-review (mastered-but-flagged is masked by
-      // patternStatus, so it's never a re-learn target), else the Learn frontier.
-      const target = PATTERNS.find(p => patternStatus(p.id, learnRows, isMastered(p)) === 'needs-review') ?? nextToLearn(learned) ?? null
+      // The active planet is the Learn frontier (a finished planet is never resurfaced here — a bad
+      // Test round no longer reverts it; re-teach is offered on the Test summary instead).
+      const target = nextToLearn(learned) ?? null
       const ti = target ? PATTERNS.findIndex(p => p.id === target.id) : PATTERNS.length - 1
       setTargetIdx(ti)
       setRows(PATTERNS.map((p, i) => {
@@ -110,9 +109,7 @@ export function GalaxyMap(props: {
             <button className="btn big" onClick={props.onTest}>🚀 Start a mission <span className="note tiny">(earn ⭐)</span></button>
           )}
           {targetIdx >= 0 && targetIdx < rows.length && rows[targetIdx]?.route === 'learn' && (
-            <button className="btn big" onClick={() => props.onLearn(rows[targetIdx].id)}>
-              📘 {rows[targetIdx].status === 'needs-review' ? 'Practise' : 'Learn'} the next planet
-            </button>
+            <button className="btn big" onClick={() => props.onLearn(rows[targetIdx].id)}>📘 Learn the next planet</button>
           )}
         </div>
         <p className="note tiny">…or tap any planet below.</p>
