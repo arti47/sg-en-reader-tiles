@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react'
-import type { Child, PackItem, Attempt, SkillProgress, Difficulty, SkillDef, Certificate, Review } from '../types'
+import type { Child, PackItem, Attempt, SkillProgress, Difficulty, SkillDef, Certificate, Review, Equipped } from '../types'
 import type { ScoreResult } from '../lib/scoring'
 import { addAttempt, getAttempts, getProgress, putProgress, putCertificate, getCertificates, getReviews, putReview, bumpAggregate, bumpDaily, getUsage, putUsage, getSettings, getLearn, flagReview, getWallet, addCoins, getDailyGoal, putDailyGoal } from '../store'
 import { setRate, setVoice } from '../lib/audio'
@@ -64,7 +64,7 @@ export function Session(props: { child: Child; onExit: () => void; onTrophies: (
   const [streak, setStreak] = useState(0)
   const [celebrateN, setCelebrateN] = useState(0) // confetti trigger (increment to fire)
   const [chestDone, setChestDone] = useState(false)
-  const [equipped, setEquipped] = useState<{ colour?: string; hat?: string }>({}) // M6.5 buddy cosmetics
+  const [equipped, setEquipped] = useState<Equipped>({}) // M6.5 buddy cosmetics
   const [serve, setServe] = useState(0) // bumps every item served → forces renderer remount (fresh internal state)
   const startedRef = useRef(false)
   const sup = support(props.child.difficultyFlags) // §1 difficulty-flag personalisation (default = unchanged)
@@ -388,7 +388,7 @@ export function Session(props: { child: Child; onExit: () => void; onTrophies: (
         {/* M6.5: the buddy reacts to the last answer. */}
         <div className="session-buddy"><Buddy character={props.child.buddy?.character ?? 'robo'}
           state={(answered ? (answered.correct ? 'cheer' : 'sad') : 'idle') as BuddyState}
-          colour={equipped.colour} hat={equipped.hat} size={56} /></div>
+          {...equipped} size={56} /></div>
         {isTile ? <TileItem key={serve} item={item} onAnswer={onAnswer} />
           : isDictation ? <DictationItem key={serve} item={item} onAnswer={onAnswer} />
             : isCloze ? <ClozeItem key={serve} item={item} onAnswer={onAnswer} />

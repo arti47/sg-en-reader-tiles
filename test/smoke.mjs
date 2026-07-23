@@ -670,8 +670,12 @@ try {
     if (bought.wallet.coins !== 70) return 'shop: buy should deduct the cost from coins'
     const again = await store.buyCosmetic('shopc', 'colour-sun', 30) // idempotent — no double charge
     if (again.wallet.coins !== 70) return 'shop: re-buying an owned item must not charge again'
-    await store.putInventory({ ...bought.inv, equipped: { colour: 'colour-sun' } })
-    if ((await store.getInventory('shopc')).equipped.colour !== 'colour-sun') return 'shop: equip should persist'
+    // Expanded catalogue (§20.3): buy a second-slot item (a pet) and equip BOTH slots at once.
+    const pet = await store.buyCosmetic('shopc', 'pet-star', 60)
+    if (!pet.inv.owned.includes('pet-star') || pet.wallet.coins !== 10) return 'shop: second-slot (pet) buy should own + deduct'
+    await store.putInventory({ ...pet.inv, equipped: { colour: 'colour-sun', pet: 'pet-star' } })
+    const eq = (await store.getInventory('shopc')).equipped
+    if (eq.colour !== 'colour-sun' || eq.pet !== 'pet-star') return 'shop: multi-slot equip (colour + pet) should persist'
     // Trend summary (§11): summarise buckets weekly aggregates by day/week/month/year.
     const agg = window.__aggregate
     const aggs = [{ week: '2026-W29', items: 4, correct: 3 }, { week: '2026-W29', items: 2, correct: 2 }, { week: '2026-W30', items: 5, correct: 4 }]

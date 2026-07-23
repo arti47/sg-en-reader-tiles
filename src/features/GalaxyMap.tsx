@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react'
-import type { Child, PatternStatus } from '../types'
+import type { Child, PatternStatus, Equipped } from '../types'
 import { PATTERNS, nextToLearn, learnedSet, patternStatus } from '../lib/learn'
 import { getLearn, getProgress, getWallet, getInventory, getDailyGoal } from '../store'
 import { rollGoal } from '../lib/economy'
@@ -33,7 +33,7 @@ export function GalaxyMap(props: {
   const [rows, setRows] = useState<Row[]>([])
   const [targetIdx, setTargetIdx] = useState(-1)
   const [coins, setCoins] = useState(0)
-  const [equipped, setEquipped] = useState<{ colour?: string; hat?: string }>({})
+  const [equipped, setEquipped] = useState<Equipped>({})
   const [goal, setGoal] = useState<{ progress: number; target: number; streak: number } | null>(null)
   const [loading, setLoading] = useState(true)
   const canvasRef = useRef<HTMLCanvasElement>(null)
@@ -91,7 +91,7 @@ export function GalaxyMap(props: {
           </span>
         </div>
         <div className="galaxy-buddy">
-          <Buddy character={props.child.buddy?.character ?? 'robo'} state="idle" colour={equipped.colour} hat={equipped.hat} size={96} />
+          <Buddy character={props.child.buddy?.character ?? 'robo'} state="idle" {...equipped} size={96} />
           <button className="btn ghost small" onClick={props.onShop}>✨ Customise</button>
         </div>
         <h1>{props.child.name}'s galaxy</h1>

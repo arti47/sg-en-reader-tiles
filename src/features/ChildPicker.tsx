@@ -1,8 +1,13 @@
-import type { Child } from '../types'
+import { useEffect, useState } from 'react'
+import type { Child, Equipped } from '../types'
 import { level } from '../lib/gamify'
+import { getInventory } from '../store'
+import { Buddy } from './Buddy'
 
 // Home screen (§14). Student management lives in the Teacher area. M6 (§20.2): tapping a child
 // launches THEIR galaxy hub (which houses Learn / missions / trophies) — one big Play button.
+// Each card shows the child's customised buddy (equipped cosmetics) so purchases are visible on
+// the most-seen screen (§20.3).
 export function ChildPicker(props: {
   children: Child[]
   xpByChild?: Record<string, number>
@@ -10,6 +15,16 @@ export function ChildPicker(props: {
   onAdd: () => void
   onParent: () => void
 }) {
+  const [looks, setLooks] = useState<Record<string, Equipped>>({})
+  useEffect(() => {
+    let live = true
+    void (async () => {
+      const entries = await Promise.all(props.children.map(async c => [c.id, (await getInventory(c.id)).equipped] as const))
+      if (live) setLooks(Object.fromEntries(entries))
+    })()
+    return () => { live = false }
+  }, [props.children])
+
   return (
     <div className="stack">
       <div className="row" style={{ justifyContent: 'space-between', alignItems: 'center' }}>
@@ -19,7 +34,9 @@ export function ChildPicker(props: {
       <div className="tile-grid">
         {props.children.map(c => (
           <div key={c.id} className="avatar">
-            <span className="avatar-letter">{c.name.charAt(0).toUpperCase()}</span>
+            <span className="avatar-buddy" aria-hidden="true">
+              <Buddy character={c.buddy?.character ?? 'robo'} state="idle" size={76} {...(looks[c.id] ?? {})} />
+            </span>
             <span className="avatar-name">{c.name}</span>
             <span className="avatar-sub">P{c.pLevel}{props.xpByChild ? ` · ⭐ Lvl ${level(props.xpByChild[c.id] ?? 0)}` : ''}</span>
 

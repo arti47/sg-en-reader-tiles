@@ -1,19 +1,48 @@
 {
-  "_note": "M6 §20.3/§20.7 customisation catalogue. Cosmetic only — never affects pedagogy. buddies = base characters chosen at add-time (free); items = shop cosmetics bought with Star Coins.",
+  "_note": "M6 §20.3/§20.7 customisation catalogue. Cosmetic only — never affects pedagogy. buddies = base characters chosen at add-time (free); items = shop cosmetics bought with Star Coins. kind = equip slot (colour|hat|accessory|pet|background|effect). rarity (common|rare|legendary) is display-only (badge/border). Pricing = frequent-wins: most 15-80, a few premium ~120-200.",
   "buddies": [
     { "id": "robo", "name": "Robo", "colour": "#6ad0e0" },
     { "id": "alien", "name": "Zib", "colour": "#8ad06a" },
     { "id": "blob", "name": "Gloop", "colour": "#c88ae0" }
   ],
   "items": [
-    { "id": "colour-sun", "kind": "colour", "name": "Sunburst", "cost": 30, "value": "#f2b134" },
-    { "id": "colour-rose", "kind": "colour", "name": "Rose", "cost": 30, "value": "#e05a7d" },
-    { "id": "colour-sky", "kind": "colour", "name": "Sky", "cost": 30, "value": "#4f9de0" },
-    { "id": "colour-lime", "kind": "colour", "name": "Lime", "cost": 40, "value": "#7ad04f" },
-    { "id": "colour-grape", "kind": "colour", "name": "Grape", "cost": 40, "value": "#9b5fe0" },
-    { "id": "colour-flame", "kind": "colour", "name": "Flame", "cost": 60, "value": "#e0562f" },
-    { "id": "hat-party", "kind": "hat", "name": "Party hat", "cost": 80, "value": "party" },
-    { "id": "hat-helmet", "kind": "hat", "name": "Space helmet", "cost": 120, "value": "helmet" },
-    { "id": "hat-crown", "kind": "hat", "name": "Crown", "cost": 200, "value": "crown" }
+    { "id": "colour-sun", "kind": "colour", "name": "Sunburst", "cost": 30, "value": "#f2b134", "rarity": "common" },
+    { "id": "colour-rose", "kind": "colour", "name": "Rose", "cost": 30, "value": "#e05a7d", "rarity": "common" },
+    { "id": "colour-sky", "kind": "colour", "name": "Sky", "cost": 30, "value": "#4f9de0", "rarity": "common" },
+    { "id": "colour-lime", "kind": "colour", "name": "Lime", "cost": 40, "value": "#7ad04f", "rarity": "common" },
+    { "id": "colour-grape", "kind": "colour", "name": "Grape", "cost": 40, "value": "#9b5fe0", "rarity": "common" },
+    { "id": "colour-flame", "kind": "colour", "name": "Flame", "cost": 60, "value": "#e0562f", "rarity": "common" },
+    { "id": "colour-teal", "kind": "colour", "name": "Teal", "cost": 70, "value": "#22b3a0", "rarity": "rare" },
+    { "id": "colour-magenta", "kind": "colour", "name": "Magenta", "cost": 80, "value": "#d63bb0", "rarity": "rare" },
+    { "id": "colour-gold", "kind": "colour", "name": "Gold", "cost": 120, "value": "#f5c518", "rarity": "legendary" },
+
+    { "id": "hat-party", "kind": "hat", "name": "Party hat", "cost": 45, "value": "party", "rarity": "common" },
+    { "id": "hat-cap", "kind": "hat", "name": "Cap", "cost": 30, "value": "cap", "rarity": "common" },
+    { "id": "hat-wizard", "kind": "hat", "name": "Wizard hat", "cost": 70, "value": "wizard", "rarity": "rare" },
+    { "id": "hat-helmet", "kind": "hat", "name": "Space helmet", "cost": 90, "value": "helmet", "rarity": "rare" },
+    { "id": "hat-crown", "kind": "hat", "name": "Crown", "cost": 160, "value": "crown", "rarity": "legendary" },
+
+    { "id": "acc-bowtie", "kind": "accessory", "name": "Bow tie", "cost": 20, "value": "bowtie", "rarity": "common" },
+    { "id": "acc-glasses", "kind": "accessory", "name": "Cool shades", "cost": 25, "value": "glasses", "rarity": "common" },
+    { "id": "acc-scarf", "kind": "accessory", "name": "Scarf", "cost": 35, "value": "scarf", "rarity": "common" },
+    { "id": "acc-headphones", "kind": "accessory", "name": "Headphones", "cost": 55, "value": "headphones", "rarity": "common" },
+    { "id": "acc-backpack", "kind": "accessory", "name": "Backpack", "cost": 60, "value": "backpack", "rarity": "rare" },
+    { "id": "acc-wings", "kind": "accessory", "name": "Star wings", "cost": 110, "value": "wings", "rarity": "legendary" },
+
+    { "id": "bg-deepspace", "kind": "background", "name": "Deep space", "cost": 25, "value": "deepspace", "rarity": "common" },
+    { "id": "bg-nebula", "kind": "background", "name": "Nebula", "cost": 40, "value": "nebula", "rarity": "common" },
+    { "id": "bg-moon", "kind": "background", "name": "Moon", "cost": 50, "value": "moon", "rarity": "common" },
+    { "id": "bg-planet", "kind": "background", "name": "Ringed planet", "cost": 60, "value": "planet", "rarity": "rare" },
+    { "id": "bg-sunset", "kind": "background", "name": "Cosmic sunset", "cost": 80, "value": "sunset", "rarity": "rare" },
+
+    { "id": "fx-glow", "kind": "effect", "name": "Glow", "cost": 30, "value": "glow", "rarity": "common" },
+    { "id": "fx-sparkle", "kind": "effect", "name": "Sparkles", "cost": 45, "value": "sparkle", "rarity": "common" },
+    { "id": "fx-rainbow", "kind": "effect", "name": "Rainbow aura", "cost": 90, "value": "rainbow", "rarity": "rare" },
+    { "id": "fx-stars", "kind": "effect", "name": "Star swirl", "cost": 130, "value": "stars", "rarity": "legendary" },
+
+    { "id": "pet-star", "kind": "pet", "name": "Twinkle", "cost": 60, "value": "star", "rarity": "common" },
+    { "id": "pet-moon", "kind": "pet", "name": "Luna", "cost": 90, "value": "moon", "rarity": "rare" },
+    { "id": "pet-comet", "kind": "pet", "name": "Zoom", "cost": 140, "value": "comet", "rarity": "legendary" },
+    { "id": "pet-bot", "kind": "pet", "name": "Bolt", "cost": 180, "value": "bot", "rarity": "legendary" }
   ]
 }

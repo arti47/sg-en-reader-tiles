@@ -88,8 +88,11 @@ export interface Child {
   buddy?: { character: string; name: string } // M6 §20.3 — chosen + named at add-time
   createdAt: number
 }
-// M6 §20.7 customisation inventory — cosmetic only, never affects pedagogy.
-export interface Inventory { childId: string; owned: string[]; equipped: { colour?: string; hat?: string } }
+// M6 §20.7 customisation inventory — cosmetic only, never affects pedagogy. Six equip slots
+// (colour + hat + accessory + pet + background + effect); each holds an owned cosmetic id.
+export type CosmeticSlot = 'colour' | 'hat' | 'accessory' | 'pet' | 'background' | 'effect'
+export type Equipped = Partial<Record<CosmeticSlot, string>>
+export interface Inventory { childId: string; owned: string[]; equipped: Equipped }
 // M6.4 §20.7 daily goal + streak — engagement mechanic; coins are cosmetic only.
 export interface DailyGoal { childId: string; day: string; progress: number; target: number; streak: number; lastGoalDay: string }
 export interface Attempt {

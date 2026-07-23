@@ -1,7 +1,8 @@
 import { useEffect, useState } from 'react'
-import type { Child, Certificate } from '../types'
-import { getAttempts, getCertificates, getUsage } from '../store'
+import type { Child, Certificate, Equipped } from '../types'
+import { getAttempts, getCertificates, getUsage, getInventory } from '../store'
 import { xp as calcXp, level, toNextLevel, achievements, type Achievement } from '../lib/gamify'
+import { Buddy } from './Buddy'
 
 // Child-facing trophy room (§14). Celebratory, growth-only: level + XP bar, earned
 // certificates ("I can…" statements), and the achievement badges (earned/locked). No
@@ -11,15 +12,17 @@ export function Trophies(props: { child: Child; onExit: () => void; onSoundWall:
   const [totalXp, setTotalXp] = useState(0)
   const [certs, setCerts] = useState<Certificate[]>([])
   const [badges, setBadges] = useState<Achievement[]>([])
+  const [look, setLook] = useState<Equipped>({})
 
   useEffect(() => {
     void (async () => {
-      const [attempts, cs, usage] = await Promise.all([
-        getAttempts(props.child.id), getCertificates(props.child.id), getUsage(props.child.id)
+      const [attempts, cs, usage, inv] = await Promise.all([
+        getAttempts(props.child.id), getCertificates(props.child.id), getUsage(props.child.id), getInventory(props.child.id)
       ])
       setTotalXp(calcXp(attempts, cs))
       setCerts(cs.sort((a, b) => b.awardedAt - a.awardedAt))
       setBadges(achievements(attempts, cs, usage))
+      setLook(inv.equipped)
       setLoading(false)
     })()
   }, [props.child.id])
@@ -39,6 +42,8 @@ export function Trophies(props: { child: Child; onExit: () => void; onSoundWall:
           <button className="link" onClick={props.onExit}>Done</button>
         </div>
       </div>
+
+      <div className="trophy-buddy"><Buddy character={props.child.buddy?.character ?? 'robo'} state="celebrate" size={150} {...look} /></div>
 
       <div className="trophy-level">
         <span className="trophy-lvl">⭐ Level {lvl}</span>
