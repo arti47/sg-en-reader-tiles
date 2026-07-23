@@ -1,6 +1,6 @@
 // IndexedDB persistence (CLAUDE.md §11). No deps.
-import type { Child, Attempt, SkillProgress, Certificate, Review, Aggregate, Daily, Usage, Settings, LearnState } from './types'
-export const SCHEMA_VERSION = 6
+import type { Child, Attempt, SkillProgress, Certificate, Review, Aggregate, Daily, Usage, Settings, LearnState, Wallet } from './types'
+export const SCHEMA_VERSION = 7
 const DB = 'sg-reader'; const VER = SCHEMA_VERSION
 
 function open(): Promise<IDBDatabase> {
@@ -35,6 +35,10 @@ function open(): Promise<IDBDatabase> {
       if (oldV < 6) {
         // v6 adds M5 Learn/Test dual-mode per-pattern learn state (§19.4).
         if (!db.objectStoreNames.contains('learn')) db.createObjectStore('learn', { keyPath: 'key' })
+      }
+      if (oldV < 7) {
+        // v7 adds M6 (§20.7) Star Coins wallet — additive reward state.
+        if (!db.objectStoreNames.contains('wallet')) db.createObjectStore('wallet', { keyPath: 'childId' })
       }
     }
     r.onsuccess = () => res(r.result)
@@ -155,8 +159,19 @@ export const getSettings = () =>
     .then(r => r ?? { key: 'app', ttsRate: 0.4, englishVariant: 'en-SG' as const, sessionLength: 16 })
 export const putSettings = (st: Settings) => req('settings', 'readwrite', s => s.put({ ...st, key: 'app' }))
 
+// Star Coins wallet (M6 §20.7). additive reward state — never read by the pedagogy engine.
+export const getWallet = (childId: string) =>
+  req<Wallet | undefined>('wallet', 'readonly', s => s.get(childId))
+    .then(w => w ?? { childId, coins: 0, lifetimeCoins: 0 })
+export async function addCoins(childId: string, n: number): Promise<Wallet> {
+  const w = await getWallet(childId)
+  const next: Wallet = { childId, coins: w.coins + n, lifetimeCoins: w.lifetimeCoins + Math.max(0, n) }
+  await req('wallet', 'readwrite', s => s.put(next))
+  return next
+}
+
 // Export / import (§11) — device-bound storage safety net. Full-DB JSON round-trip.
-const ALL_STORES = ['children', 'attempts', 'progress', 'certificates', 'reviews', 'aggregates', 'daily', 'usage', 'settings', 'learn']
+const ALL_STORES = ['children', 'attempts', 'progress', 'certificates', 'reviews', 'aggregates', 'daily', 'usage', 'settings', 'learn', 'wallet']
 export async function exportAll(): Promise<{ app: string; schemaVersion: number; exportedAt: number; stores: Record<string, unknown[]> }> {
   const db = await open()
   const stores: Record<string, unknown[]> = {}
@@ -189,7 +204,7 @@ function run(stores: string[], mode: IDBTransactionMode, fn: (t: IDBTransaction)
 // Delete all of a child's data (attempts by index; progress/certs/reviews/aggregates by
 // key prefix; usage by childId key).
 function clearChildData(childId: string): Promise<void> {
-  return run(['attempts', 'progress', 'certificates', 'reviews', 'aggregates', 'daily', 'usage', 'learn'], 'readwrite', t => {
+  return run(['attempts', 'progress', 'certificates', 'reviews', 'aggregates', 'daily', 'usage', 'learn', 'wallet'], 'readwrite', t => {
     const at = t.objectStore('attempts')
     at.index('childId').getAllKeys(childId).onsuccess = e =>
       (e.target as IDBRequest<IDBValidKey[]>).result.forEach(k => at.delete(k))
@@ -201,6 +216,7 @@ function clearChildData(childId: string): Promise<void> {
         })
     }
     t.objectStore('usage').delete(childId)
+    t.objectStore('wallet').delete(childId)
   })
 }
 

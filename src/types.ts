@@ -124,7 +124,13 @@ export interface Daily { childId: string; day: string; items: number; correct: n
 // Usage/fidelity mechanic (§14) — sessions toward a weekly target + streak.
 export interface Usage { childId: string; weeklySessionTarget: number; sessionsThisWeek: number; weekKey: string; streakWeeks: number; lastSessionTs: number }
 // Global settings (§11).
-export interface Settings { pin?: string; ttsRate: number; englishVariant: 'en-SG'; sessionLength: number; font?: 'lexend' | 'dyslexic'; voiceURI?: string }
+export interface Settings { pin?: string; ttsRate: number; englishVariant: 'en-SG'; sessionLength: number; font?: 'lexend' | 'dyslexic'; voiceURI?: string;
+  // M6 (§20): sound effects on by default, ambient music off by default, calm mode dials
+  // animation + sound down globally (dyslexia-safe). Absent = default.
+  sfx?: boolean; music?: boolean; calmMode?: boolean }
+
+// M6 (§20.7) Star Coins wallet — additive reward state, never affects pedagogy.
+export interface Wallet { childId: string; coins: number; lifetimeCoins: number }
 export interface Review {
   skillId: string
   due: number                    // next review timestamp

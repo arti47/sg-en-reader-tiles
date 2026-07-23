@@ -1,8 +1,11 @@
 import { useEffect, useRef, useState } from 'react'
 import type { Child, PackItem, Attempt, SkillProgress, Difficulty, SkillDef, Certificate, Review } from '../types'
 import type { ScoreResult } from '../lib/scoring'
-import { addAttempt, getAttempts, getProgress, putProgress, putCertificate, getCertificates, getReviews, putReview, bumpAggregate, bumpDaily, getUsage, putUsage, getSettings, getLearn, flagReview } from '../store'
+import { addAttempt, getAttempts, getProgress, putProgress, putCertificate, getCertificates, getReviews, putReview, bumpAggregate, bumpDaily, getUsage, putUsage, getSettings, getLearn, flagReview, getWallet, addCoins } from '../store'
 import { setRate, setVoice } from '../lib/audio'
+import { playSfx } from '../lib/audio-sfx'
+import { coinsForAnswer, COIN_CERT } from '../lib/economy'
+import { CoinCounter } from './CoinCounter'
 import { XP_PER_CORRECT, XP_PER_CERT, achievements, type Achievement } from '../lib/gamify'
 import { SKILLS, getSkill, pickItem, getLesson } from '../lib/packs'
 import { LessonView } from './LessonView'
@@ -51,6 +54,7 @@ export function Session(props: { child: Child; onExit: () => void; onTrophies: (
   const [answered, setAnswered] = useState<ScoreResult | null>(null)
   const [cert, setCert] = useState<Certificate | null>(null)
   const [count, setCount] = useState(0)
+  const [coins, setCoins] = useState(0) // Star Coins total (M6 §20.4) — display only, cosmetic reward
   const [serve, setServe] = useState(0) // bumps every item served → forces renderer remount (fresh internal state)
   const startedRef = useRef(false)
   const sup = support(props.child.difficultyFlags) // §1 difficulty-flag personalisation (default = unchanged)
@@ -78,6 +82,7 @@ export function Session(props: { child: Child; onExit: () => void; onTrophies: (
       dueQueueRef.current = dueReviews(reviewsRef.current, Date.now()).map(r => r.skillId)
       await countSession()
       usageRef.current = await getUsage(props.child.id)
+      setCoins((await getWallet(props.child.id)).coins) // M6: current Star Coins for the counter
       // Baseline of already-earned badges so the summary can highlight ones earned THIS session.
       startBadgesRef.current = new Set(achievements(attemptsRef.current, certsAsArray(), usageRef.current).filter(b => b.earned).map(b => b.id))
       advance(true)
@@ -220,6 +225,10 @@ export function Session(props: { child: Child; onExit: () => void; onTrophies: (
     await bumpDaily(props.child.id, isoDay(a.ts), r.correct, a.latencyMs / 60000)
 
     countRef.current += 1; setCount(countRef.current)
+    // M6 (§20.4/§20.5): sound + Star Coins for this answer (cosmetic reward — no pedagogy impact).
+    playSfx(r.correct ? 'correct' : 'wrong')
+    const earned = coinsForAnswer(r.correct, servedReviewRef.current)
+    if (earned > 0) { playSfx('coin'); void addCoins(props.child.id, earned).then(w => setCoins(w.coins)) }
     if (r.correct) xpGainRef.current += XP_PER_CORRECT
     const now = Date.now()
     // The channels whose retention a pattern's certificate depends on: decode AND encode (§7 #2).
@@ -244,6 +253,7 @@ export function Session(props: { child: Child; onExit: () => void; onTrophies: (
         await putCertificate(props.child.id, c); certsRef.current.add(patternSkill.id); setCert(c)
         sessionCertsRef.current = [...sessionCertsRef.current, c]
         xpGainRef.current += XP_PER_CERT
+        playSfx('levelup'); void addCoins(props.child.id, COIN_CERT).then(w => setCoins(w.coins)) // M6 mastery bonus
       }
     } else if (!wasPatternDone && patternMastered(attemptsRef.current, patternSkill, masteredRef.current)) {
       // Dual gate cleared → PROVISIONAL mastery: advance now (keeps momentum), but WITHHOLD the
@@ -339,7 +349,10 @@ export function Session(props: { child: Child; onExit: () => void; onTrophies: (
       <div className="stack">
         <div className="row" style={{ justifyContent: 'space-between', alignItems: 'center' }}>
           <button className="link" onClick={props.onExit}>← Back</button>
-          <span className="note">{Math.min(count + 1, lenRef.current)}/{lenRef.current}</span>
+          <span className="row" style={{ gap: 10, alignItems: 'center' }}>
+            <CoinCounter coins={coins} />
+            <span className="note">{Math.min(count + 1, lenRef.current)}/{lenRef.current}</span>
+          </span>
         </div>
         {isTile ? <TileItem key={serve} item={item} onAnswer={onAnswer} />
           : isDictation ? <DictationItem key={serve} item={item} onAnswer={onAnswer} />

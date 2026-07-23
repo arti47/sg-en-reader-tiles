@@ -7,6 +7,7 @@ import { computeReadiness, type Readiness } from '../lib/readiness'
 import { achievements, type Achievement } from '../lib/gamify'
 import { summarise, type Granularity } from '../lib/aggregate'
 import { setRate, setVoice, listVoices, onVoicesReady } from '../lib/audio'
+import { setSfxEnabled, setMusicEnabled, setCalm } from '../lib/audio-sfx'
 
 // Parent dashboard (§10, §11, §14). PIN-gated, growth-framed, parent-only. Per-child readiness
 // + action plan + weekly usage/streak + trend chart; global export/import backup.
@@ -118,6 +119,9 @@ export function ParentDashboard(props: { children: Child[]; onExit: () => void; 
     if (patch.font) document.documentElement.dataset.font = patch.font
     if (patch.ttsRate) setRate(patch.ttsRate)
     if ('voiceURI' in patch) setVoice(patch.voiceURI)
+    if ('sfx' in patch) setSfxEnabled(patch.sfx ?? true)
+    if ('music' in patch) setMusicEnabled(patch.music ?? false)
+    if ('calmMode' in patch) { setCalm(patch.calmMode ?? false); if (patch.calmMode) document.documentElement.dataset.calm = 'on'; else delete document.documentElement.dataset.calm }
   }
   const clamp = (n: number, lo: number, hi: number) => Math.min(hi, Math.max(lo, n))
 
@@ -264,6 +268,29 @@ export function ParentDashboard(props: { children: Child[]; onExit: () => void; 
 
       <div className="dash-card">
         <b>Settings</b>
+        {/* M6 (§20): sound effects, ambient music, and Calm Mode (dials animation + sound down). */}
+        <div className="set-row">
+          <span>Sound effects</span>
+          <div className="row" style={{ gap: 6 }}>
+            <button className={'btn small' + ((settings?.sfx ?? true) ? '' : ' ghost')} onClick={() => updateSettings({ sfx: true })}>On</button>
+            <button className={'btn small' + ((settings?.sfx ?? true) ? ' ghost' : '')} onClick={() => updateSettings({ sfx: false })}>Off</button>
+          </div>
+        </div>
+        <div className="set-row">
+          <span>Music</span>
+          <div className="row" style={{ gap: 6 }}>
+            <button className={'btn small' + (settings?.music ? '' : ' ghost')} onClick={() => updateSettings({ music: true })}>On</button>
+            <button className={'btn small' + (settings?.music ? ' ghost' : '')} onClick={() => updateSettings({ music: false })}>Off</button>
+          </div>
+        </div>
+        <div className="set-row">
+          <span>Calm mode</span>
+          <div className="row" style={{ gap: 6 }}>
+            <button className={'btn small' + (settings?.calmMode ? '' : ' ghost')} onClick={() => updateSettings({ calmMode: true })}>On</button>
+            <button className={'btn small' + (settings?.calmMode ? ' ghost' : '')} onClick={() => updateSettings({ calmMode: false })}>Off</button>
+          </div>
+        </div>
+        <p className="note tiny">Calm mode reduces animation and sound for a gentler experience.</p>
         <div className="set-row">
           <span>Font</span>
           <div className="row" style={{ gap: 6 }}>

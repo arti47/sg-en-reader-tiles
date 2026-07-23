@@ -29,6 +29,7 @@ export function onVoicesReady(cb: () => void): () => void {
   } catch { return () => {} }
 }
 
+import { duckMusic, unduckMusic } from './audio-sfx'
 export function speak(text: string) {
   try {
     const synth = window.speechSynthesis
@@ -39,6 +40,8 @@ export function speak(text: string) {
     if (synth.paused) synth.resume()
     const u = new SpeechSynthesisUtterance(text)
     u.rate = rate
+    // Duck ambient music while speaking so it never competes with the TTS (M6 §20.1).
+    duckMusic(); u.onend = unduckMusic; u.onerror = unduckMusic
     const voices = synth.getVoices()
     // Prefer the chosen voice; else Samantha (owner default); else first en-GB; else platform default.
     const chosen = (voiceURI && voices.find(v => v.voiceURI === voiceURI))

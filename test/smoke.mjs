@@ -66,13 +66,14 @@ try {
     const readDb = () => page.evaluate(() => new Promise(res => {
       const o = indexedDB.open('sg-reader')
       o.onsuccess = () => {
-        const t = o.result.transaction(['progress', 'certificates', 'reviews', 'aggregates', 'usage', 'learn'], 'readonly'); const out = {}
+        const t = o.result.transaction(['progress', 'certificates', 'reviews', 'aggregates', 'usage', 'learn', 'wallet'], 'readonly'); const out = {}
         t.objectStore('progress').getAll().onsuccess = e => out.progress = e.target.result
         t.objectStore('certificates').getAll().onsuccess = e => out.certs = e.target.result
         t.objectStore('reviews').getAll().onsuccess = e => out.reviews = e.target.result
         t.objectStore('aggregates').getAll().onsuccess = e => out.aggregates = e.target.result
         t.objectStore('usage').getAll().onsuccess = e => out.usage = e.target.result
         t.objectStore('learn').getAll().onsuccess = e => out.learn = e.target.result
+        t.objectStore('wallet').getAll().onsuccess = e => out.wallet = e.target.result
         t.oncomplete = () => res(out)
       }
     }))
@@ -612,7 +613,7 @@ try {
     if (mixed.growth.recentAccuracy !== 0) return 'readiness: reps must be excluded from recent accuracy'
     if (mixed.growth.assessedN !== 6) return 'readiness: assessedN should count assessment items only'
     const before = await store.exportAll()
-    if (before.schemaVersion !== 6) return 'export schemaVersion should be 6'
+    if (before.schemaVersion !== 7) return 'export schemaVersion should be 7 (M6 wallet)'
     // Trend summary (§11): summarise buckets weekly aggregates by day/week/month/year.
     const agg = window.__aggregate
     const aggs = [{ week: '2026-W29', items: 4, correct: 3 }, { week: '2026-W29', items: 2, correct: 2 }, { week: '2026-W30', items: 5, correct: 4 }]
@@ -712,6 +713,8 @@ try {
   // that a lesson only ever precedes a threaded item is enforced per-lesson in playSession above.
   // Pattern re-teaching stays out of Test (no lesson followed by a pattern item → no fail there).
   if (!(good.db.learn || []).some(r => r.learned)) fail('M5: Learn should have marked a pattern learned')
+  // M6.1 (§20.4): correct assessment answers earn Star Coins (cosmetic reward; pedagogy untouched).
+  if (!(good.db.wallet || []).some(w => w.coins > 0)) fail('M6.1: correct answers should earn Star Coins')
   if (bad.db.progress.some(p => p.skillId === 'SP-cvc-1')) fail('dual gate: encode must stay locked when decode <70%')
   if (bad.db.certs.length) fail('struggle path: no certificate should be awarded')
   // M5.1 (§19.13): the CVC Learn unit (struggle-path frontier) opens with phoneme sound-intro cards.
