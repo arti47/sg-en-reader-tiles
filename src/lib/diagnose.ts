@@ -90,3 +90,28 @@ export function diagnose(attempts: Attempt[], reviews: Review[], now: number = D
   const primary = categories[0]
   return { ...base, categories, primary, note: NOTE[primary](base) }
 }
+
+// M7.5 (§21.2 E) parent coaching. Concrete, growth-framed "how to help" steps for the primary
+// difficulty — what to do, what to say, which pair to drill. Empty when nothing is flagged.
+const COACH: Record<DiagnosisCategory, (d: Diagnosis) => string[]> = {
+  acquisition: () => [
+    'Keep sessions short and daily — ten focused minutes beats one long sitting.',
+    'On a hard word, say each sound slowly and have them copy you, then blend the sounds together.',
+    "Name the wins out loud — progress at this stage is slow and steady, and that's exactly normal."
+  ],
+  retention: () => [
+    "Start each session with a quick recap of last time's sounds before anything new.",
+    'Spread practice across the week — little and often makes it stick better than cramming.',
+    'When they forget, cue the sound and let them recall it rather than telling them outright.'
+  ],
+  confusion: d => [
+    d.stuckConcepts.length
+      ? `Zero in on the mix-up (${d.stuckConcepts.map(humanize).join(', ')}) — practise the pair side by side so the difference is clear.`
+      : 'Practise the mixed-up sounds side by side so the difference is clear.',
+    'Give a memory hook for flipped letters (e.g. “b” makes its bat first, then the ball).',
+    'Go slow on just these — a few correct in a row builds the right habit.'
+  ]
+}
+export function coaching(dx: Diagnosis): string[] {
+  return dx.primary ? COACH[dx.primary](dx) : []
+}

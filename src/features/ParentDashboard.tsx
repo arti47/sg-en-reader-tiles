@@ -4,7 +4,7 @@ import { getAttempts, getProgress, getCertificates, getAggregates, getDaily, get
 import { SKILLS, getSkill } from '../lib/packs'
 import { PATTERNS, learnedSet } from '../lib/learn'
 import { computeReadiness, type Readiness } from '../lib/readiness'
-import { diagnose, type Diagnosis } from '../lib/diagnose'
+import { diagnose, coaching, type Diagnosis } from '../lib/diagnose'
 import { achievements, type Achievement } from '../lib/gamify'
 import { summarise, type Granularity } from '../lib/aggregate'
 import { setRate, setVoice, listVoices, onVoicesReady } from '../lib/audio'
@@ -238,6 +238,12 @@ export function ParentDashboard(props: { children: Child[]; onExit: () => void; 
             )}
             {c.fatigue.episodes.length > 0 && (
               <p className="note tiny fatigue-note">🌿 {c.fatigue.episodes.length} tiring moment{c.fatigue.episodes.length > 1 ? 's' : ''} logged — short, frequent sessions help most.</p>
+            )}
+            {c.diagnosis.primary && (
+              <div className="coaching" aria-label="How to help">
+                <b>How to help:</b>
+                <ul>{coaching(c.diagnosis).map((a, i) => <li key={i}>{a}</li>)}</ul>
+              </div>
             )}
           </div>
 

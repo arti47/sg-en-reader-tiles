@@ -688,6 +688,11 @@ try {
     const drills = pk.drillItemsFor(concept, new Set(['PH-cvc-1']), new Set())
     if (!drills.length || !drills.every(i => i.skillId === 'PH-cvc-1')) return 'drill: items for a real concept, restricted to allowed skills'
     if (pk.drillItemsFor(concept, new Set(['SP-two-syllable']), new Set()).some(i => i.skillId === 'PH-cvc-1')) return 'drill: must exclude skills not in the allowed set'
+    // M7.5 (§21.2 E): parent coaching — concrete actions for a flagged difficulty, none when typical.
+    if (dg.coaching(dg.diagnose([...dgMk(15, true)], [], DNOW)).length) return 'coaching: a typical reader gets no actions'
+    const cCoach = dg.coaching(dConf)
+    if (cCoach.length < 2 || !cCoach.join(' ').includes('digraph')) return 'coaching: confusion → concept-aware actions'
+    if (dg.coaching(dg.diagnose([...dgMk(15, true)], dgStuck, DNOW)).length < 2) return 'coaching: retention → actions'
     // The extra SRS stage is conservative-only: it demands ONE MORE retrieval, never an easier bar.
     const srs = window.__srs
     let rv0 = { skillId: 'z', stage: 0, due: 0, status: 'scheduled' }
