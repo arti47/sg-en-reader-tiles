@@ -88,6 +88,29 @@ const lessons = { 'HF-words': {
 writeFileSync(join(dir, 'phonics-L12-hf.json'), JSON.stringify(
   { packId: 'phonics-L12-hf', strand: 'phonics', skillIds: ['HF-words'], version: 1, items, lessons }, null, 2) + '\n')
 
+// Sight-word SPELLING (§3 audit #2): the encode channel for high-frequency words — build the word
+// from letter tiles with the heart part flagged. Kept to ≤5-letter words so tile-building stays
+// achievable for the occasional threaded rep. Uses the HF-words envelope (highFrequency escape
+// hatch); graphemes are the letters (irregular words have no decodable segmentation).
+const POOL = 'abcdefghijklmnopqrstuvwxyz'.split('')
+const spellWords = WORDS.filter(([w]) => w.length <= 5)
+const spellItems = spellWords.map(([w, d, , heart], i) => {
+  const g = [...w]
+  const dist = POOL.filter(x => !g.includes(x)).sort(() => Math.random() - 0.5).slice(0, d + 1)
+  return { id: `sp-hf-${num(i)}`, skillId: 'HF-spell', itemType: 'build_word', difficulty: d,
+    stem: 'Build the tricky word you hear.', displayWord: w, audioText: w, graphemes: g,
+    distractorGraphemes: dist, ...(heart ? { heart } : {}),
+    missedConceptOnFail: 'sight-word', rationale: `"${w}" — spell the regular letters, remember the heart part.`, decodableWithin: 'HF-words' }
+})
+const spellLesson = { 'HF-spell': {
+  iCanStatement: 'I can spell tricky high-frequency words, remembering just the heart part.',
+  explanation: "To SPELL a heart word, write the regular letters the way they sound, then remember the one tricky part by heart. In said you hear /s/ /e/ /d/ but you must remember the heart part is spelled 'ai'. Say the letters as you build: s-a-i-d.",
+  workedExamples: [ { text: 'was', note: "Build w-a-s; the heart part is 'a' (it says /o/)." }, { text: 'the', note: "Build t-h-e; the heart part is 'e' (it says /uh/)." } ]
+} }
+writeFileSync(join(dir, 'spelling-L12-hf.json'), JSON.stringify(
+  { packId: 'spelling-L12-hf', strand: 'spelling', skillIds: ['HF-spell'], version: 1, items: spellItems, lessons: spellLesson }, null, 2) + '\n')
+console.log(`Wrote ${spellItems.length} HF spelling items.`)
+
 const hfList = [...new Set(WORDS.flatMap(([w, , dd]) => [w, ...dd]))].sort()
 console.log(`Wrote ${items.length} HF items.`)
 console.log('HF-words highFrequency list (paste into decodability.json):')

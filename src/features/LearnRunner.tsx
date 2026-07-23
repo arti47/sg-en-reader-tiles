@@ -26,11 +26,23 @@ const SPELL_N = 4
 // previously-learned pattern before teaching the new one, so prior patterns are revisited during
 // Learn (not only via Test's interleave). Skipped when nothing has been learned yet.
 const REVIEW_N = 1
+// Connected-text reading (§3 audit — OG lesson arc ends by reading decodable TEXT, not just words):
+// after spelling, a Learn unit reads one decodable sentence (the T19 reading pack for the pattern),
+// so the child transfers the pattern from isolated words to connected text within teaching.
+const READTEXT_N = 1
+// pattern (decode skill) → its connected-text reading skill (T19). Only patterns with enough letters
+// to form sentences have one (CVC reading is gated at the last CVC sub-unit).
+const READING_FOR: Record<string, string> = {
+  'PH-cvc-4': 'RD-cvc-sentences', 'PH-digraphs': 'RD-digraph-sentences', 'PH-blends': 'RD-blend-sentences',
+  'PH-silent-e': 'RD-silente-sentences', 'PH-vowel-teams-b': 'RD-vowelteam-sentences',
+  'PH-r-controlled-b': 'RD-rcontrolled-sentences', 'PH-diphthongs-b': 'RD-diphthong-sentences',
+  'PH-two-syllable': 'RD-twosyllable-sentences'
+}
 // Phonemic awareness (§3 audit): the CVC sub-units OPEN with a couple of oral blend/segment items
 // (hear the sounds → blend; count the sounds) — the upstream skill a weak/dyslexic reader needs
 // before grapheme work. Learn-only, participation-based; pulled from lib/pa (not a Test skill).
 const PA_N = 2
-type Phase = 'loading' | 'map' | 'pa' | 'review' | 'sound' | 'intro' | 'read' | 'spellIntro' | 'spell' | 'done'
+type Phase = 'loading' | 'map' | 'pa' | 'review' | 'sound' | 'intro' | 'read' | 'spellIntro' | 'spell' | 'text' | 'done'
 // A sound-intro card (§19.13): a NEW sound met for the first time, or a NEW spelling of a sound
 // the child already knows ("same sound, new way to spell it").
 type SoundCard = { kind: 'new' | 'spelling'; sound: Sound; graphemes: string[] }
@@ -39,6 +51,7 @@ export function LearnRunner(props: { child: Child; onExit: () => void; onSoundWa
   const patternRef = useRef<SkillDef | null>(null)  // the next target (needs-review first, else frontier)
   const encodeRef = useRef<SkillDef | null>(null)
   const reviewSkillRef = useRef<SkillDef | null>(null) // a prior learned pattern to warm up on (§3 cumulative)
+  const readingSkillRef = useRef<string | null>(null)  // this pattern's connected-text reading skill (§3)
   const learnedRef = useRef<Set<string>>(new Set())    // patterns learned so far (source for the review pick)
   const paPoolRef = useRef<PackItem[]>([])             // this unit's phonemic-awareness warm-up items (§3)
   const paIdxRef = useRef(0)
@@ -160,11 +173,25 @@ export function LearnRunner(props: { child: Child; onExit: () => void; onSoundWa
       stepRef.current += 1
       if (stepRef.current >= READ_N) { setPhase('spellIntro'); return }
       loadPractice(patternRef.current!.id, 'read')
-    } else {
-      stepRef.current += 1
-      if (stepRef.current >= SPELL_N) { void finish(); return }
-      loadPractice(encodeRef.current!.id, 'spell')
+      return
     }
+    if (current === 'spell') {
+      stepRef.current += 1
+      if (stepRef.current >= SPELL_N) { beginTextOrFinish(); return }
+      loadPractice(encodeRef.current!.id, 'spell')
+      return
+    }
+    // current === 'text': read one decodable sentence, then finish.
+    stepRef.current += 1
+    if (stepRef.current >= READTEXT_N) { void finish(); return }
+    loadPractice(readingSkillRef.current!, 'text')
+  }
+
+  // After spelling: read a decodable sentence for the pattern (if it has a reading pack), else finish.
+  function beginTextOrFinish() {
+    const rd = READING_FOR[patternRef.current!.id]
+    if (rd && getSkill(rd)) { readingSkillRef.current = rd; stepRef.current = 0; loadPractice(rd, 'text') }
+    else void finish()
   }
 
   async function finish() {
@@ -221,9 +248,10 @@ export function LearnRunner(props: { child: Child; onExit: () => void; onSoundWa
     return <div className="stack center"><button className="btn" onClick={beginSpell}>Start spelling</button></div>
   }
 
-  if ((phase === 'pa' || phase === 'review' || phase === 'read' || phase === 'spell') && item) {
+  if ((phase === 'pa' || phase === 'review' || phase === 'read' || phase === 'spell' || phase === 'text') && item) {
     const isTile = phase === 'spell'
-    const badge = phase === 'pa' ? '🎧 listen to the sounds' : phase === 'review' ? '🔁 quick review' : isTile ? 'spell it' : 'read it'
+    const badge = phase === 'pa' ? '🎧 listen to the sounds' : phase === 'review' ? '🔁 quick review'
+      : phase === 'text' ? '📖 read the sentence' : isTile ? 'spell it' : 'read it'
     return (
       <div className="stack">
         <div className="row" style={{ justifyContent: 'space-between', alignItems: 'center' }}>

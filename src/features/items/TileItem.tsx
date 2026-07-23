@@ -65,6 +65,9 @@ export function TileItem(props: { item: PackItem; onAnswer: (r: ScoreResult, ans
         <button className="btn ghost" onClick={() => speak(word)} aria-label="Hear the word again">🔊 Hear it</button>
       </div>
       <p className="stem">{item.stem}</p>
+      {item.heart && (
+        <p className="heart-note">💛 Heart word — the tricky part to remember by heart is <b>{item.heart}</b>.</p>
+      )}
       {correcting && !checked && (
         <div className="model-word" aria-label="Copy this spelling">{target.map((g, i) => <span key={i} className="model-tile">{g}</span>)}</div>
       )}

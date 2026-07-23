@@ -1,0 +1,1207 @@
+{
+  "packId": "spelling-L12-hf",
+  "strand": "spelling",
+  "skillIds": [
+    "HF-spell"
+  ],
+  "version": 1,
+  "items": [
+    {
+      "id": "sp-hf-001",
+      "skillId": "HF-spell",
+      "itemType": "build_word",
+      "difficulty": 1,
+      "stem": "Build the tricky word you hear.",
+      "displayWord": "the",
+      "audioText": "the",
+      "graphemes": [
+        "t",
+        "h",
+        "e"
+      ],
+      "distractorGraphemes": [
+        "l",
+        "d"
+      ],
+      "heart": "e (says /uh/)",
+      "missedConceptOnFail": "sight-word",
+      "rationale": "\"the\" — spell the regular letters, remember the heart part.",
+      "decodableWithin": "HF-words"
+    },
+    {
+      "id": "sp-hf-002",
+      "skillId": "HF-spell",
+      "itemType": "build_word",
+      "difficulty": 1,
+      "stem": "Build the tricky word you hear.",
+      "displayWord": "was",
+      "audioText": "was",
+      "graphemes": [
+        "w",
+        "a",
+        "s"
+      ],
+      "distractorGraphemes": [
+        "j",
+        "e"
+      ],
+      "heart": "a (says /o/)",
+      "missedConceptOnFail": "sight-word",
+      "rationale": "\"was\" — spell the regular letters, remember the heart part.",
+      "decodableWithin": "HF-words"
+    },
+    {
+      "id": "sp-hf-003",
+      "skillId": "HF-spell",
+      "itemType": "build_word",
+      "difficulty": 1,
+      "stem": "Build the tricky word you hear.",
+      "displayWord": "of",
+      "audioText": "of",
+      "graphemes": [
+        "o",
+        "f"
+      ],
+      "distractorGraphemes": [
+        "a",
+        "m"
+      ],
+      "heart": "f (says /v/)",
+      "missedConceptOnFail": "sight-word",
+      "rationale": "\"of\" — spell the regular letters, remember the heart part.",
+      "decodableWithin": "HF-words"
+    },
+    {
+      "id": "sp-hf-004",
+      "skillId": "HF-spell",
+      "itemType": "build_word",
+      "difficulty": 1,
+      "stem": "Build the tricky word you hear.",
+      "displayWord": "to",
+      "audioText": "to",
+      "graphemes": [
+        "t",
+        "o"
+      ],
+      "distractorGraphemes": [
+        "c",
+        "d"
+      ],
+      "heart": "o (says /oo/)",
+      "missedConceptOnFail": "sight-word",
+      "rationale": "\"to\" — spell the regular letters, remember the heart part.",
+      "decodableWithin": "HF-words"
+    },
+    {
+      "id": "sp-hf-005",
+      "skillId": "HF-spell",
+      "itemType": "build_word",
+      "difficulty": 1,
+      "stem": "Build the tricky word you hear.",
+      "displayWord": "do",
+      "audioText": "do",
+      "graphemes": [
+        "d",
+        "o"
+      ],
+      "distractorGraphemes": [
+        "h",
+        "a"
+      ],
+      "heart": "o (says /oo/)",
+      "missedConceptOnFail": "sight-word",
+      "rationale": "\"do\" — spell the regular letters, remember the heart part.",
+      "decodableWithin": "HF-words"
+    },
+    {
+      "id": "sp-hf-006",
+      "skillId": "HF-spell",
+      "itemType": "build_word",
+      "difficulty": 1,
+      "stem": "Build the tricky word you hear.",
+      "displayWord": "you",
+      "audioText": "you",
+      "graphemes": [
+        "y",
+        "o",
+        "u"
+      ],
+      "distractorGraphemes": [
+        "q",
+        "w"
+      ],
+      "heart": "ou",
+      "missedConceptOnFail": "sight-word",
+      "rationale": "\"you\" — spell the regular letters, remember the heart part.",
+      "decodableWithin": "HF-words"
+    },
+    {
+      "id": "sp-hf-007",
+      "skillId": "HF-spell",
+      "itemType": "build_word",
+      "difficulty": 2,
+      "stem": "Build the tricky word you hear.",
+      "displayWord": "your",
+      "audioText": "your",
+      "graphemes": [
+        "y",
+        "o",
+        "u",
+        "r"
+      ],
+      "distractorGraphemes": [
+        "z",
+        "p",
+        "e"
+      ],
+      "heart": "our",
+      "missedConceptOnFail": "sight-word",
+      "rationale": "\"your\" — spell the regular letters, remember the heart part.",
+      "decodableWithin": "HF-words"
+    },
+    {
+      "id": "sp-hf-008",
+      "skillId": "HF-spell",
+      "itemType": "build_word",
+      "difficulty": 1,
+      "stem": "Build the tricky word you hear.",
+      "displayWord": "are",
+      "audioText": "are",
+      "graphemes": [
+        "a",
+        "r",
+        "e"
+      ],
+      "distractorGraphemes": [
+        "p",
+        "g"
+      ],
+      "heart": "re",
+      "missedConceptOnFail": "sight-word",
+      "rationale": "\"are\" — spell the regular letters, remember the heart part.",
+      "decodableWithin": "HF-words"
+    },
+    {
+      "id": "sp-hf-009",
+      "skillId": "HF-spell",
+      "itemType": "build_word",
+      "difficulty": 2,
+      "stem": "Build the tricky word you hear.",
+      "displayWord": "they",
+      "audioText": "they",
+      "graphemes": [
+        "t",
+        "h",
+        "e",
+        "y"
+      ],
+      "distractorGraphemes": [
+        "w",
+        "i",
+        "c"
+      ],
+      "heart": "ey (says /ay/)",
+      "missedConceptOnFail": "sight-word",
+      "rationale": "\"they\" — spell the regular letters, remember the heart part.",
+      "decodableWithin": "HF-words"
+    },
+    {
+      "id": "sp-hf-010",
+      "skillId": "HF-spell",
+      "itemType": "build_word",
+      "difficulty": 3,
+      "stem": "Build the tricky word you hear.",
+      "displayWord": "their",
+      "audioText": "their",
+      "graphemes": [
+        "t",
+        "h",
+        "e",
+        "i",
+        "r"
+      ],
+      "distractorGraphemes": [
+        "n",
+        "d",
+        "o",
+        "u"
+      ],
+      "heart": "ei",
+      "missedConceptOnFail": "sight-word",
+      "rationale": "\"their\" — spell the regular letters, remember the heart part.",
+      "decodableWithin": "HF-words"
+    },
+    {
+      "id": "sp-hf-011",
+      "skillId": "HF-spell",
+      "itemType": "build_word",
+      "difficulty": 2,
+      "stem": "Build the tricky word you hear.",
+      "displayWord": "there",
+      "audioText": "there",
+      "graphemes": [
+        "t",
+        "h",
+        "e",
+        "r",
+        "e"
+      ],
+      "distractorGraphemes": [
+        "g",
+        "w",
+        "d"
+      ],
+      "heart": "ere",
+      "missedConceptOnFail": "sight-word",
+      "rationale": "\"there\" — spell the regular letters, remember the heart part.",
+      "decodableWithin": "HF-words"
+    },
+    {
+      "id": "sp-hf-012",
+      "skillId": "HF-spell",
+      "itemType": "build_word",
+      "difficulty": 2,
+      "stem": "Build the tricky word you hear.",
+      "displayWord": "where",
+      "audioText": "where",
+      "graphemes": [
+        "w",
+        "h",
+        "e",
+        "r",
+        "e"
+      ],
+      "distractorGraphemes": [
+        "j",
+        "b",
+        "x"
+      ],
+      "heart": "wh",
+      "missedConceptOnFail": "sight-word",
+      "rationale": "\"where\" — spell the regular letters, remember the heart part.",
+      "decodableWithin": "HF-words"
+    },
+    {
+      "id": "sp-hf-013",
+      "skillId": "HF-spell",
+      "itemType": "build_word",
+      "difficulty": 2,
+      "stem": "Build the tricky word you hear.",
+      "displayWord": "were",
+      "audioText": "were",
+      "graphemes": [
+        "w",
+        "e",
+        "r",
+        "e"
+      ],
+      "distractorGraphemes": [
+        "f",
+        "z",
+        "n"
+      ],
+      "heart": "ere",
+      "missedConceptOnFail": "sight-word",
+      "rationale": "\"were\" — spell the regular letters, remember the heart part.",
+      "decodableWithin": "HF-words"
+    },
+    {
+      "id": "sp-hf-014",
+      "skillId": "HF-spell",
+      "itemType": "build_word",
+      "difficulty": 1,
+      "stem": "Build the tricky word you hear.",
+      "displayWord": "here",
+      "audioText": "here",
+      "graphemes": [
+        "h",
+        "e",
+        "r",
+        "e"
+      ],
+      "distractorGraphemes": [
+        "d",
+        "k"
+      ],
+      "heart": "ere",
+      "missedConceptOnFail": "sight-word",
+      "rationale": "\"here\" — spell the regular letters, remember the heart part.",
+      "decodableWithin": "HF-words"
+    },
+    {
+      "id": "sp-hf-015",
+      "skillId": "HF-spell",
+      "itemType": "build_word",
+      "difficulty": 1,
+      "stem": "Build the tricky word you hear.",
+      "displayWord": "one",
+      "audioText": "one",
+      "graphemes": [
+        "o",
+        "n",
+        "e"
+      ],
+      "distractorGraphemes": [
+        "f",
+        "s"
+      ],
+      "heart": "o (says /w/)",
+      "missedConceptOnFail": "sight-word",
+      "rationale": "\"one\" — spell the regular letters, remember the heart part.",
+      "decodableWithin": "HF-words"
+    },
+    {
+      "id": "sp-hf-016",
+      "skillId": "HF-spell",
+      "itemType": "build_word",
+      "difficulty": 2,
+      "stem": "Build the tricky word you hear.",
+      "displayWord": "once",
+      "audioText": "once",
+      "graphemes": [
+        "o",
+        "n",
+        "c",
+        "e"
+      ],
+      "distractorGraphemes": [
+        "y",
+        "d",
+        "f"
+      ],
+      "heart": "o (says /w/)",
+      "missedConceptOnFail": "sight-word",
+      "rationale": "\"once\" — spell the regular letters, remember the heart part.",
+      "decodableWithin": "HF-words"
+    },
+    {
+      "id": "sp-hf-017",
+      "skillId": "HF-spell",
+      "itemType": "build_word",
+      "difficulty": 1,
+      "stem": "Build the tricky word you hear.",
+      "displayWord": "come",
+      "audioText": "come",
+      "graphemes": [
+        "c",
+        "o",
+        "m",
+        "e"
+      ],
+      "distractorGraphemes": [
+        "i",
+        "f"
+      ],
+      "heart": "o (says /u/)",
+      "missedConceptOnFail": "sight-word",
+      "rationale": "\"come\" — spell the regular letters, remember the heart part.",
+      "decodableWithin": "HF-words"
+    },
+    {
+      "id": "sp-hf-018",
+      "skillId": "HF-spell",
+      "itemType": "build_word",
+      "difficulty": 2,
+      "stem": "Build the tricky word you hear.",
+      "displayWord": "some",
+      "audioText": "some",
+      "graphemes": [
+        "s",
+        "o",
+        "m",
+        "e"
+      ],
+      "distractorGraphemes": [
+        "t",
+        "l",
+        "z"
+      ],
+      "heart": "o (says /u/)",
+      "missedConceptOnFail": "sight-word",
+      "rationale": "\"some\" — spell the regular letters, remember the heart part.",
+      "decodableWithin": "HF-words"
+    },
+    {
+      "id": "sp-hf-019",
+      "skillId": "HF-spell",
+      "itemType": "build_word",
+      "difficulty": 2,
+      "stem": "Build the tricky word you hear.",
+      "displayWord": "could",
+      "audioText": "could",
+      "graphemes": [
+        "c",
+        "o",
+        "u",
+        "l",
+        "d"
+      ],
+      "distractorGraphemes": [
+        "f",
+        "e",
+        "n"
+      ],
+      "heart": "l (silent)",
+      "missedConceptOnFail": "sight-word",
+      "rationale": "\"could\" — spell the regular letters, remember the heart part.",
+      "decodableWithin": "HF-words"
+    },
+    {
+      "id": "sp-hf-020",
+      "skillId": "HF-spell",
+      "itemType": "build_word",
+      "difficulty": 2,
+      "stem": "Build the tricky word you hear.",
+      "displayWord": "would",
+      "audioText": "would",
+      "graphemes": [
+        "w",
+        "o",
+        "u",
+        "l",
+        "d"
+      ],
+      "distractorGraphemes": [
+        "t",
+        "i",
+        "a"
+      ],
+      "heart": "l (silent)",
+      "missedConceptOnFail": "sight-word",
+      "rationale": "\"would\" — spell the regular letters, remember the heart part.",
+      "decodableWithin": "HF-words"
+    },
+    {
+      "id": "sp-hf-021",
+      "skillId": "HF-spell",
+      "itemType": "build_word",
+      "difficulty": 2,
+      "stem": "Build the tricky word you hear.",
+      "displayWord": "who",
+      "audioText": "who",
+      "graphemes": [
+        "w",
+        "h",
+        "o"
+      ],
+      "distractorGraphemes": [
+        "v",
+        "b",
+        "g"
+      ],
+      "heart": "wh (says /h/)",
+      "missedConceptOnFail": "sight-word",
+      "rationale": "\"who\" — spell the regular letters, remember the heart part.",
+      "decodableWithin": "HF-words"
+    },
+    {
+      "id": "sp-hf-022",
+      "skillId": "HF-spell",
+      "itemType": "build_word",
+      "difficulty": 1,
+      "stem": "Build the tricky word you hear.",
+      "displayWord": "what",
+      "audioText": "what",
+      "graphemes": [
+        "w",
+        "h",
+        "a",
+        "t"
+      ],
+      "distractorGraphemes": [
+        "c",
+        "v"
+      ],
+      "heart": "wh",
+      "missedConceptOnFail": "sight-word",
+      "rationale": "\"what\" — spell the regular letters, remember the heart part.",
+      "decodableWithin": "HF-words"
+    },
+    {
+      "id": "sp-hf-023",
+      "skillId": "HF-spell",
+      "itemType": "build_word",
+      "difficulty": 2,
+      "stem": "Build the tricky word you hear.",
+      "displayWord": "want",
+      "audioText": "want",
+      "graphemes": [
+        "w",
+        "a",
+        "n",
+        "t"
+      ],
+      "distractorGraphemes": [
+        "i",
+        "h",
+        "g"
+      ],
+      "heart": "a (says /o/)",
+      "missedConceptOnFail": "sight-word",
+      "rationale": "\"want\" — spell the regular letters, remember the heart part.",
+      "decodableWithin": "HF-words"
+    },
+    {
+      "id": "sp-hf-024",
+      "skillId": "HF-spell",
+      "itemType": "build_word",
+      "difficulty": 1,
+      "stem": "Build the tricky word you hear.",
+      "displayWord": "said",
+      "audioText": "said",
+      "graphemes": [
+        "s",
+        "a",
+        "i",
+        "d"
+      ],
+      "distractorGraphemes": [
+        "h",
+        "j"
+      ],
+      "heart": "ai (says /e/)",
+      "missedConceptOnFail": "sight-word",
+      "rationale": "\"said\" — spell the regular letters, remember the heart part.",
+      "decodableWithin": "HF-words"
+    },
+    {
+      "id": "sp-hf-025",
+      "skillId": "HF-spell",
+      "itemType": "build_word",
+      "difficulty": 1,
+      "stem": "Build the tricky word you hear.",
+      "displayWord": "been",
+      "audioText": "been",
+      "graphemes": [
+        "b",
+        "e",
+        "e",
+        "n"
+      ],
+      "distractorGraphemes": [
+        "q",
+        "m"
+      ],
+      "missedConceptOnFail": "sight-word",
+      "rationale": "\"been\" — spell the regular letters, remember the heart part.",
+      "decodableWithin": "HF-words"
+    },
+    {
+      "id": "sp-hf-026",
+      "skillId": "HF-spell",
+      "itemType": "build_word",
+      "difficulty": 2,
+      "stem": "Build the tricky word you hear.",
+      "displayWord": "does",
+      "audioText": "does",
+      "graphemes": [
+        "d",
+        "o",
+        "e",
+        "s"
+      ],
+      "distractorGraphemes": [
+        "t",
+        "j",
+        "l"
+      ],
+      "heart": "oe (says /u/)",
+      "missedConceptOnFail": "sight-word",
+      "rationale": "\"does\" — spell the regular letters, remember the heart part.",
+      "decodableWithin": "HF-words"
+    },
+    {
+      "id": "sp-hf-027",
+      "skillId": "HF-spell",
+      "itemType": "build_word",
+      "difficulty": 2,
+      "stem": "Build the tricky word you hear.",
+      "displayWord": "done",
+      "audioText": "done",
+      "graphemes": [
+        "d",
+        "o",
+        "n",
+        "e"
+      ],
+      "distractorGraphemes": [
+        "u",
+        "w",
+        "f"
+      ],
+      "heart": "o (says /u/)",
+      "missedConceptOnFail": "sight-word",
+      "rationale": "\"done\" — spell the regular letters, remember the heart part.",
+      "decodableWithin": "HF-words"
+    },
+    {
+      "id": "sp-hf-028",
+      "skillId": "HF-spell",
+      "itemType": "build_word",
+      "difficulty": 1,
+      "stem": "Build the tricky word you hear.",
+      "displayWord": "give",
+      "audioText": "give",
+      "graphemes": [
+        "g",
+        "i",
+        "v",
+        "e"
+      ],
+      "distractorGraphemes": [
+        "o",
+        "d"
+      ],
+      "heart": "i (short)",
+      "missedConceptOnFail": "sight-word",
+      "rationale": "\"give\" — spell the regular letters, remember the heart part.",
+      "decodableWithin": "HF-words"
+    },
+    {
+      "id": "sp-hf-029",
+      "skillId": "HF-spell",
+      "itemType": "build_word",
+      "difficulty": 1,
+      "stem": "Build the tricky word you hear.",
+      "displayWord": "have",
+      "audioText": "have",
+      "graphemes": [
+        "h",
+        "a",
+        "v",
+        "e"
+      ],
+      "distractorGraphemes": [
+        "c",
+        "x"
+      ],
+      "heart": "a (short)",
+      "missedConceptOnFail": "sight-word",
+      "rationale": "\"have\" — spell the regular letters, remember the heart part.",
+      "decodableWithin": "HF-words"
+    },
+    {
+      "id": "sp-hf-030",
+      "skillId": "HF-spell",
+      "itemType": "build_word",
+      "difficulty": 2,
+      "stem": "Build the tricky word you hear.",
+      "displayWord": "live",
+      "audioText": "live",
+      "graphemes": [
+        "l",
+        "i",
+        "v",
+        "e"
+      ],
+      "distractorGraphemes": [
+        "o",
+        "a",
+        "y"
+      ],
+      "heart": "i (short)",
+      "missedConceptOnFail": "sight-word",
+      "rationale": "\"live\" — spell the regular letters, remember the heart part.",
+      "decodableWithin": "HF-words"
+    },
+    {
+      "id": "sp-hf-031",
+      "skillId": "HF-spell",
+      "itemType": "build_word",
+      "difficulty": 2,
+      "stem": "Build the tricky word you hear.",
+      "displayWord": "love",
+      "audioText": "love",
+      "graphemes": [
+        "l",
+        "o",
+        "v",
+        "e"
+      ],
+      "distractorGraphemes": [
+        "g",
+        "n",
+        "q"
+      ],
+      "heart": "o (says /u/)",
+      "missedConceptOnFail": "sight-word",
+      "rationale": "\"love\" — spell the regular letters, remember the heart part.",
+      "decodableWithin": "HF-words"
+    },
+    {
+      "id": "sp-hf-032",
+      "skillId": "HF-spell",
+      "itemType": "build_word",
+      "difficulty": 1,
+      "stem": "Build the tricky word you hear.",
+      "displayWord": "put",
+      "audioText": "put",
+      "graphemes": [
+        "p",
+        "u",
+        "t"
+      ],
+      "distractorGraphemes": [
+        "a",
+        "b"
+      ],
+      "heart": "u (says /oo/)",
+      "missedConceptOnFail": "sight-word",
+      "rationale": "\"put\" — spell the regular letters, remember the heart part.",
+      "decodableWithin": "HF-words"
+    },
+    {
+      "id": "sp-hf-033",
+      "skillId": "HF-spell",
+      "itemType": "build_word",
+      "difficulty": 2,
+      "stem": "Build the tricky word you hear.",
+      "displayWord": "pull",
+      "audioText": "pull",
+      "graphemes": [
+        "p",
+        "u",
+        "l",
+        "l"
+      ],
+      "distractorGraphemes": [
+        "a",
+        "s",
+        "f"
+      ],
+      "heart": "u (says /oo/)",
+      "missedConceptOnFail": "sight-word",
+      "rationale": "\"pull\" — spell the regular letters, remember the heart part.",
+      "decodableWithin": "HF-words"
+    },
+    {
+      "id": "sp-hf-034",
+      "skillId": "HF-spell",
+      "itemType": "build_word",
+      "difficulty": 2,
+      "stem": "Build the tricky word you hear.",
+      "displayWord": "full",
+      "audioText": "full",
+      "graphemes": [
+        "f",
+        "u",
+        "l",
+        "l"
+      ],
+      "distractorGraphemes": [
+        "k",
+        "g",
+        "m"
+      ],
+      "heart": "u (says /oo/)",
+      "missedConceptOnFail": "sight-word",
+      "rationale": "\"full\" — spell the regular letters, remember the heart part.",
+      "decodableWithin": "HF-words"
+    },
+    {
+      "id": "sp-hf-035",
+      "skillId": "HF-spell",
+      "itemType": "build_word",
+      "difficulty": 2,
+      "stem": "Build the tricky word you hear.",
+      "displayWord": "push",
+      "audioText": "push",
+      "graphemes": [
+        "p",
+        "u",
+        "s",
+        "h"
+      ],
+      "distractorGraphemes": [
+        "f",
+        "d",
+        "r"
+      ],
+      "heart": "u (says /oo/)",
+      "missedConceptOnFail": "sight-word",
+      "rationale": "\"push\" — spell the regular letters, remember the heart part.",
+      "decodableWithin": "HF-words"
+    },
+    {
+      "id": "sp-hf-036",
+      "skillId": "HF-spell",
+      "itemType": "build_word",
+      "difficulty": 3,
+      "stem": "Build the tricky word you hear.",
+      "displayWord": "sure",
+      "audioText": "sure",
+      "graphemes": [
+        "s",
+        "u",
+        "r",
+        "e"
+      ],
+      "distractorGraphemes": [
+        "d",
+        "w",
+        "v",
+        "m"
+      ],
+      "heart": "su (says /sh/)",
+      "missedConceptOnFail": "sight-word",
+      "rationale": "\"sure\" — spell the regular letters, remember the heart part.",
+      "decodableWithin": "HF-words"
+    },
+    {
+      "id": "sp-hf-037",
+      "skillId": "HF-spell",
+      "itemType": "build_word",
+      "difficulty": 1,
+      "stem": "Build the tricky word you hear.",
+      "displayWord": "two",
+      "audioText": "two",
+      "graphemes": [
+        "t",
+        "w",
+        "o"
+      ],
+      "distractorGraphemes": [
+        "d",
+        "k"
+      ],
+      "heart": "w (silent)",
+      "missedConceptOnFail": "sight-word",
+      "rationale": "\"two\" — spell the regular letters, remember the heart part.",
+      "decodableWithin": "HF-words"
+    },
+    {
+      "id": "sp-hf-038",
+      "skillId": "HF-spell",
+      "itemType": "build_word",
+      "difficulty": 2,
+      "stem": "Build the tricky word you hear.",
+      "displayWord": "four",
+      "audioText": "four",
+      "graphemes": [
+        "f",
+        "o",
+        "u",
+        "r"
+      ],
+      "distractorGraphemes": [
+        "y",
+        "i",
+        "a"
+      ],
+      "heart": "ou",
+      "missedConceptOnFail": "sight-word",
+      "rationale": "\"four\" — spell the regular letters, remember the heart part.",
+      "decodableWithin": "HF-words"
+    },
+    {
+      "id": "sp-hf-039",
+      "skillId": "HF-spell",
+      "itemType": "build_word",
+      "difficulty": 1,
+      "stem": "Build the tricky word you hear.",
+      "displayWord": "any",
+      "audioText": "any",
+      "graphemes": [
+        "a",
+        "n",
+        "y"
+      ],
+      "distractorGraphemes": [
+        "o",
+        "v"
+      ],
+      "heart": "a (says /e/)",
+      "missedConceptOnFail": "sight-word",
+      "rationale": "\"any\" — spell the regular letters, remember the heart part.",
+      "decodableWithin": "HF-words"
+    },
+    {
+      "id": "sp-hf-040",
+      "skillId": "HF-spell",
+      "itemType": "build_word",
+      "difficulty": 2,
+      "stem": "Build the tricky word you hear.",
+      "displayWord": "many",
+      "audioText": "many",
+      "graphemes": [
+        "m",
+        "a",
+        "n",
+        "y"
+      ],
+      "distractorGraphemes": [
+        "u",
+        "e",
+        "c"
+      ],
+      "heart": "a (says /e/)",
+      "missedConceptOnFail": "sight-word",
+      "rationale": "\"many\" — spell the regular letters, remember the heart part.",
+      "decodableWithin": "HF-words"
+    },
+    {
+      "id": "sp-hf-041",
+      "skillId": "HF-spell",
+      "itemType": "build_word",
+      "difficulty": 3,
+      "stem": "Build the tricky word you hear.",
+      "displayWord": "again",
+      "audioText": "again",
+      "graphemes": [
+        "a",
+        "g",
+        "a",
+        "i",
+        "n"
+      ],
+      "distractorGraphemes": [
+        "j",
+        "e",
+        "r",
+        "l"
+      ],
+      "heart": "ai (says /e/)",
+      "missedConceptOnFail": "sight-word",
+      "rationale": "\"again\" — spell the regular letters, remember the heart part.",
+      "decodableWithin": "HF-words"
+    },
+    {
+      "id": "sp-hf-042",
+      "skillId": "HF-spell",
+      "itemType": "build_word",
+      "difficulty": 3,
+      "stem": "Build the tricky word you hear.",
+      "displayWord": "great",
+      "audioText": "great",
+      "graphemes": [
+        "g",
+        "r",
+        "e",
+        "a",
+        "t"
+      ],
+      "distractorGraphemes": [
+        "i",
+        "h",
+        "o",
+        "x"
+      ],
+      "heart": "ea (says /ay/)",
+      "missedConceptOnFail": "sight-word",
+      "rationale": "\"great\" — spell the regular letters, remember the heart part.",
+      "decodableWithin": "HF-words"
+    },
+    {
+      "id": "sp-hf-043",
+      "skillId": "HF-spell",
+      "itemType": "build_word",
+      "difficulty": 2,
+      "stem": "Build the tricky word you hear.",
+      "displayWord": "buy",
+      "audioText": "buy",
+      "graphemes": [
+        "b",
+        "u",
+        "y"
+      ],
+      "distractorGraphemes": [
+        "i",
+        "e",
+        "t"
+      ],
+      "heart": "uy (says /igh/)",
+      "missedConceptOnFail": "sight-word",
+      "rationale": "\"buy\" — spell the regular letters, remember the heart part.",
+      "decodableWithin": "HF-words"
+    },
+    {
+      "id": "sp-hf-044",
+      "skillId": "HF-spell",
+      "itemType": "build_word",
+      "difficulty": 3,
+      "stem": "Build the tricky word you hear.",
+      "displayWord": "busy",
+      "audioText": "busy",
+      "graphemes": [
+        "b",
+        "u",
+        "s",
+        "y"
+      ],
+      "distractorGraphemes": [
+        "c",
+        "l",
+        "m",
+        "t"
+      ],
+      "heart": "u (says /i/)",
+      "missedConceptOnFail": "sight-word",
+      "rationale": "\"busy\" — spell the regular letters, remember the heart part.",
+      "decodableWithin": "HF-words"
+    },
+    {
+      "id": "sp-hf-045",
+      "skillId": "HF-spell",
+      "itemType": "build_word",
+      "difficulty": 3,
+      "stem": "Build the tricky word you hear.",
+      "displayWord": "build",
+      "audioText": "build",
+      "graphemes": [
+        "b",
+        "u",
+        "i",
+        "l",
+        "d"
+      ],
+      "distractorGraphemes": [
+        "g",
+        "e",
+        "c",
+        "j"
+      ],
+      "heart": "ui (says /i/)",
+      "missedConceptOnFail": "sight-word",
+      "rationale": "\"build\" — spell the regular letters, remember the heart part.",
+      "decodableWithin": "HF-words"
+    },
+    {
+      "id": "sp-hf-046",
+      "skillId": "HF-spell",
+      "itemType": "build_word",
+      "difficulty": 2,
+      "stem": "Build the tricky word you hear.",
+      "displayWord": "work",
+      "audioText": "work",
+      "graphemes": [
+        "w",
+        "o",
+        "r",
+        "k"
+      ],
+      "distractorGraphemes": [
+        "a",
+        "u",
+        "p"
+      ],
+      "heart": "or (says /er/)",
+      "missedConceptOnFail": "sight-word",
+      "rationale": "\"work\" — spell the regular letters, remember the heart part.",
+      "decodableWithin": "HF-words"
+    },
+    {
+      "id": "sp-hf-047",
+      "skillId": "HF-spell",
+      "itemType": "build_word",
+      "difficulty": 2,
+      "stem": "Build the tricky word you hear.",
+      "displayWord": "word",
+      "audioText": "word",
+      "graphemes": [
+        "w",
+        "o",
+        "r",
+        "d"
+      ],
+      "distractorGraphemes": [
+        "a",
+        "s",
+        "m"
+      ],
+      "heart": "or (says /er/)",
+      "missedConceptOnFail": "sight-word",
+      "rationale": "\"word\" — spell the regular letters, remember the heart part.",
+      "decodableWithin": "HF-words"
+    },
+    {
+      "id": "sp-hf-048",
+      "skillId": "HF-spell",
+      "itemType": "build_word",
+      "difficulty": 3,
+      "stem": "Build the tricky word you hear.",
+      "displayWord": "world",
+      "audioText": "world",
+      "graphemes": [
+        "w",
+        "o",
+        "r",
+        "l",
+        "d"
+      ],
+      "distractorGraphemes": [
+        "g",
+        "h",
+        "n",
+        "m"
+      ],
+      "heart": "or (says /er/)",
+      "missedConceptOnFail": "sight-word",
+      "rationale": "\"world\" — spell the regular letters, remember the heart part.",
+      "decodableWithin": "HF-words"
+    },
+    {
+      "id": "sp-hf-049",
+      "skillId": "HF-spell",
+      "itemType": "build_word",
+      "difficulty": 3,
+      "stem": "Build the tricky word you hear.",
+      "displayWord": "learn",
+      "audioText": "learn",
+      "graphemes": [
+        "l",
+        "e",
+        "a",
+        "r",
+        "n"
+      ],
+      "distractorGraphemes": [
+        "f",
+        "g",
+        "m",
+        "t"
+      ],
+      "heart": "ear (says /er/)",
+      "missedConceptOnFail": "sight-word",
+      "rationale": "\"learn\" — spell the regular letters, remember the heart part.",
+      "decodableWithin": "HF-words"
+    },
+    {
+      "id": "sp-hf-050",
+      "skillId": "HF-spell",
+      "itemType": "build_word",
+      "difficulty": 2,
+      "stem": "Build the tricky word you hear.",
+      "displayWord": "eye",
+      "audioText": "eye",
+      "graphemes": [
+        "e",
+        "y",
+        "e"
+      ],
+      "distractorGraphemes": [
+        "a",
+        "n",
+        "b"
+      ],
+      "missedConceptOnFail": "sight-word",
+      "rationale": "\"eye\" — spell the regular letters, remember the heart part.",
+      "decodableWithin": "HF-words"
+    }
+  ],
+  "lessons": {
+    "HF-spell": {
+      "iCanStatement": "I can spell tricky high-frequency words, remembering just the heart part.",
+      "explanation": "To SPELL a heart word, write the regular letters the way they sound, then remember the one tricky part by heart. In said you hear /s/ /e/ /d/ but you must remember the heart part is spelled 'ai'. Say the letters as you build: s-a-i-d.",
+      "workedExamples": [
+        {
+          "text": "was",
+          "note": "Build w-a-s; the heart part is 'a' (it says /o/)."
+        },
+        {
+          "text": "the",
+          "note": "Build t-h-e; the heart part is 'e' (it says /uh/)."
+        }
+      ]
+    }
+  }
+}

@@ -148,6 +148,8 @@ try {
     // then click Done back to the picker. Learn always answers correctly (participation-based).
     let sawSoundCard = false
     let sawPA = false // §3 audit: CVC Learn units open with a phonemic-awareness warm-up (pa_blend/pa_count)
+    let sawReadText = false // §3 audit #1: a Learn unit ends by reading a decodable sentence (passage_question)
+    let walkedPattern = null // the PH-* pattern actually taught in this Learn walk (for the #1 assertion)
     async function walkLearn() {
       for (let step = 0; step < 80; step++) {
         const kind = await page.waitForFunction(() => {
@@ -166,6 +168,8 @@ try {
         if (kind === 'lesson') { await page.getByRole('button', { name: "Let's try" }).click(); continue }
         const it = await page.evaluate(() => window.__item || null)
         if (/^pa_/.test(it.itemType || '')) sawPA = true // phonemic-awareness warm-up item (§3)
+        if (it.itemType === 'passage_question') sawReadText = true // connected-text read step (§3 #1)
+        if (it.itemType === 'decode_choice' && /^PH-/.test(it.skillId || '')) walkedPattern = it.skillId // the taught pattern
         if (it.graphemes) {
           for (const g of it.graphemes) await page.locator('button.tile:not([disabled])', { hasText: lbl(g) }).first().click()
           await page.getByRole('button', { name: 'Check' }).click()
@@ -232,7 +236,7 @@ try {
       if (!cvc || cvc.needsReview) fail('M5 P3: re-learning a needs-review pattern should clear the flag')
       if (!cvc.learned) fail('M5 P3: the re-learned pattern should stay learned')
     }
-    results.push({ WRONG, errors, overflow, lessons, db, firstSkill, sawSoundCard, sawPA })
+    results.push({ WRONG, errors, overflow, lessons, db, firstSkill, sawSoundCard, sawPA, sawReadText, walkedPattern })
     await ctx.close()
   }
 
@@ -557,15 +561,18 @@ try {
     }
     // T17 sentence manipulation gated deep behind grammar/cloze — never eligible up front.
     if (e.eligibleSkills([]).map(s => s.id).includes('SM-editing')) return 'T17: editing must be gated behind grammar/cloze'
-    // T12/T01 — sight words + letter-sounds are threaded (every 4th item, rotating), never eligible.
+    // T12/T01 — sight words (read + spell) + letter-sounds are threaded (every 4th item, rotating),
+    // never eligible in the normal rotation.
     if (e.eligibleSkills([]).map(s => s.id).includes('HF-words')) return 'T12: HF must be threaded, not eligible'
+    if (e.eligibleSkills([]).map(s => s.id).includes('HF-spell')) return '#2: HF-spell must be threaded, not eligible'
     if (e.threadedSkill(0) || e.threadedSkill(3)) return 'threaded: none off-cadence'
-    // Two threaded skills now (letter-sounds first in scope, then HF) → they rotate every 4th item.
-    if (e.threadedSkill(4)?.id !== 'HF-words') return 'threaded: 4th item should be HF (2nd threaded)'
-    if (e.threadedSkill(8)?.id !== 'PH-letter-sounds') return 'threaded: 8th item should be letter-sounds (1st threaded)'
-    let threads = 0, sawHF = false, sawLS = false
-    for (let n = 1; n <= 16; n++) { const t = e.threadedSkill(n); if (t) { threads++; sawHF ||= t.id === 'HF-words'; sawLS ||= t.id === 'PH-letter-sounds' } }
-    if (threads !== 4 || !sawHF || !sawLS) return 'threaded: 4 fires per 16, both HF and letter-sounds appear'
+    // Three threaded skills now in scope order — letter-sounds, HF-words, HF-spell — rotate every 4th.
+    if (e.threadedSkill(4)?.id !== 'HF-words') return 'threaded: 4th item should be HF-words'
+    if (e.threadedSkill(8)?.id !== 'HF-spell') return 'threaded: 8th item should be HF-spell'
+    if (e.threadedSkill(12)?.id !== 'PH-letter-sounds') return 'threaded: 12th item should be letter-sounds'
+    let threads = 0, sawHF = false, sawLS = false, sawHFsp = false
+    for (let n = 1; n <= 16; n++) { const t = e.threadedSkill(n); if (t) { threads++; sawHF ||= t.id === 'HF-words'; sawLS ||= t.id === 'PH-letter-sounds'; sawHFsp ||= t.id === 'HF-spell' } }
+    if (threads !== 4 || !sawHF || !sawLS || !sawHFsp) return 'threaded: 4 fires per 16; HF-words, HF-spell, letter-sounds all appear'
     return 'ok'
   })
 
@@ -690,6 +697,13 @@ try {
   if (!bad.sawSoundCard) fail('M5.1: CVC Learn unit should show phoneme sound-intro cards before reading')
   // §3 audit: the CVC Learn unit opens with a phonemic-awareness (oral blend/count) warm-up.
   if (!bad.sawPA) fail('§3: CVC Learn unit should show a phonemic-awareness warm-up (pa_blend/pa_count)')
+  // §3 audit #1: when the pattern actually TAUGHT in a Learn walk is reading-bearing, that unit must
+  // end with a connected-text read (passage_question). Keyed to the walked pattern, not placement-
+  // credited patterns, so it's deterministic.
+  const READING_PATTERNS = ['PH-cvc-4', 'PH-digraphs', 'PH-blends', 'PH-silent-e', 'PH-vowel-teams-b', 'PH-r-controlled-b', 'PH-diphthongs-b', 'PH-two-syllable']
+  for (const r of [good, bad]) {
+    if (READING_PATTERNS.includes(r.walkedPattern) && !r.sawReadText) fail(`§3 #1: Learn unit for reading-bearing ${r.walkedPattern} should read a sentence (WRONG=${r.WRONG})`)
+  }
 
   console.log('PASS — placement→session, mastery/dual-gate/SRS, M2 dashboard, M3 strands, M4 polish (font toggle+persist, XP/level, settings), zero errors, no overflow')
   stop(); process.exit(0)

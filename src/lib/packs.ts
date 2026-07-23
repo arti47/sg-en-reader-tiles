@@ -43,6 +43,7 @@ import spellingNg from '../data/packs/spelling-L14-ng.json'
 import phonicsRvt from '../data/packs/phonics-L15-r-vowel-teams.json'
 import spellingRvt from '../data/packs/spelling-L15-r-vowel-teams.json'
 import phonicsHf from '../data/packs/phonics-L12-hf.json'
+import spellingHf from '../data/packs/spelling-L12-hf.json'
 import dictationCvc from '../data/packs/dictation-L02-cvc.json'
 import dictationDig from '../data/packs/dictation-L03-digraphs.json'
 import dictationBl from '../data/packs/dictation-L04-blends.json'
@@ -116,6 +117,7 @@ const PACKS: ContentPack[] = [
   phonicsRvt as ContentPack,
   spellingRvt as ContentPack,
   phonicsHf as ContentPack,
+  spellingHf as ContentPack,
   dictationCvc as ContentPack,
   dictationDig as ContentPack,
   dictationBl as ContentPack,

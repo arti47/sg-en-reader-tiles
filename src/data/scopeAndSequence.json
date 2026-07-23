@@ -743,6 +743,21 @@
           }
         },
         {
+          "id": "HF-spell",
+          "strand": "spelling",
+          "objective": "Spell high-frequency (heart) words from tiles.",
+          "iCanStatement": "I can spell tricky high-frequency words, remembering just the heart part.",
+          "prereqs": [],
+          "itemType": "build_word",
+          "itemPool": "spelling-L12-hf",
+          "threaded": true,
+          "mastery": {
+            "window": 12,
+            "accuracyToPass": 0.85,
+            "minItems": 12
+          }
+        },
+        {
           "id": "SP-cvc-dictation",
           "strand": "spelling",
           "objective": "Spell short decodable sentences from dictation (word by word).",
